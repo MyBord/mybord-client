@@ -1,0 +1,22 @@
+&.projections {
+  background-color: $white;
+  section:last-of-type {
+    margin-bottom: 0;
+  }
+  table {
+    color: #565E5F;
+    table-layout: fixed;
+    tr {
+      th {
+        font-size: 13px;
+      }
+      td:first-of-type {
+        font-weight: 700;
+        font-size: 13px;
+      }
+      td:not(:first-of-type) {
+        text-align: center;
+      }
+    }
+  }
+}

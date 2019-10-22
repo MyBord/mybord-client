@@ -1,0 +1,23 @@
+&.general {
+  background-color: $white;
+  padding: 2.5% 5%;
+
+  > section {
+    &:not(:last-of-type) {
+      margin-bottom: 5%;
+    }
+  }
+  table {
+    td {
+      padding: .5% 0;
+      color: #565e5f;
+      strong {
+        font-size: 16px;
+      }
+    }
+  }
+  h3 {
+    color: $blue;
+    font-weight: 300;
+  }
+}

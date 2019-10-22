@@ -1,0 +1,16 @@
+&.history {
+  .table.striped {
+    overflow: inherit !important;
+  }
+  .table.striped .tbody .tr:first-of-type {
+    border-top: none;
+  }
+  .td, .th {
+    width: 25%;
+  }
+  .th {
+    text-align: center;
+    padding: 1% 0;
+  }
+  height: 100%;
+}

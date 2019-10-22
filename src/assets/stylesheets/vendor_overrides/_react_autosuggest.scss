@@ -1,0 +1,110 @@
+.inputContainer {
+  position: relative;
+  .icon {
+    position: absolute;
+    top: 6px;
+    right: 5px;
+    width: 24px;
+    height: 24px;
+    color: $darkGrey;
+  }
+}
+
+.react-autosuggest__container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  min-width: 220px;
+}
+
+.react-autosuggest__input {
+  width: 220px;
+  padding: 5px 30px 5px 10px;
+  font-family: $helvetica-neue;
+  font-weight: 300;
+  font-size: 15px;
+  border: 1px solid #aaa;
+  border-radius: 0;
+  letter-spacing: 0.5px;
+}
+
+.react-autosuggest__input--focused {
+  outline: none;
+}
+
+.react-autosuggest__input--open {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.react-autosuggest__suggestions-container {
+  display: none;
+  .add-new-prospect {
+    text-decoration: none;
+    color: $blue;
+    i {
+      font-size: 22px;
+    }
+  }
+  .footer {
+    position: sticky;
+    bottom: 0;
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: $white;
+    display: flex;
+    align-items: center;
+    font-family: $helvetica-neue;
+    span {
+      display: flex;
+      align-items: center;
+      a {
+        font-family: $helvetica-neue;
+      }
+    }
+  }
+}
+
+.react-autosuggest__suggestions-container--open {
+  display: block;
+  position: absolute;
+  top: 54px;
+  width: 260px;
+  max-height: 300px;
+  overflow-y: auto;
+  border: 1px solid #aaa;
+  background-color: #fff;
+  font-family: $helvetica-neue;
+  font-size: 16px;
+  z-index: 2;
+}
+
+.react-autosuggest__suggestions-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.react-autosuggest__suggestion {
+  cursor: pointer;
+  padding: 10px 20px;
+  &:nth-child(even) {
+    background-color: $darkWhite;
+  }
+  &:nth-child(odd) {
+    background-color: $lightGrey;
+  }
+  section {
+    &:last-of-type {
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+  }
+}
+
+.react-autosuggest__suggestion--highlighted {
+  background-color: $white !important;
+  .prospect-name {
+    color: $blue;
+  }
+}

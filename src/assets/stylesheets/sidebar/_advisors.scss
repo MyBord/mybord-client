@@ -1,0 +1,36 @@
+&.advisors {
+  flex-shrink: 0;
+  padding-bottom: 20px;
+  border-bottom: solid 1px $darkGrey;
+  > section {
+    > section:first-of-type {
+      font-size: 14px;
+      display: flex;
+      flex: 1;
+      align-items: center;
+      color: #565e5f;
+      justify-content: space-between;
+      &.editing {
+        .advisor {
+          width: 100%;
+          display: flex;
+          align-items: center;
+        }
+        .fa-pencil {
+          padding-left: 5%;
+          color: $blue;
+        }
+      }
+    }
+    .buttons {
+      padding-top: 5%;
+      display: flex;
+      justify-content: space-between;
+      input {
+        margin-bottom: 5px;
+        max-width: 48%;
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+&.date-range-selector {
+  cursor: pointer;
+  padding: 0 5px;
+  margin: 0 5px;
+  align-items: center;
+  &.closed {
+    display: inline;
+  }
+  &.open {
+    display: inline-flex;
+  }
+  .date-picker {
+    max-width: 100px;
+    display: inline-block;
+    input {
+      height: 20px;
+    }
+  }
+}

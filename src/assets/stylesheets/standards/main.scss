@@ -1,0 +1,24 @@
+main {
+  &.prospect, &.admin {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    overflow-y: auto;
+    > section {
+      display: flex;
+      flex: 1;
+    }
+  }
+  &.filterable-paginated-report {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+  }
+  &.user-activity-reports {
+    h3.heading {
+      margin-left: 1%;
+      color: $blue;
+      font-weight: 300;
+    }
+  }
+}

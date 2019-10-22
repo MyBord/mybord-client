@@ -1,0 +1,39 @@
+// ToDo: remove this file and styling
+@import "~styles/_colors";
+@import "~styles/_fonts";
+
+@media print {
+  nav {
+    section {
+      display: none !important;
+    }
+    section.section-navigation-logo {
+      display: flex !important;
+      .div-navigation-logo {
+        padding: 0;
+      }
+    }
+  }
+
+  .reactListTable-table {
+    height: auto !important;
+  }
+
+  .section-footer {
+    display: flex !important;
+  }
+
+  .fa-download {
+    display: none !important;
+  }
+
+  a {
+    text-decoration: none;
+    font-family: @rockwell;
+    color: @black !important;
+  }
+
+  .section-sort-carets {
+    display: none !important;
+  }
+}

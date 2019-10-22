@@ -1,0 +1,33 @@
+.radio-checkbox {
+  display: flex;
+  align-items: center;
+  .fa-circle-thin {
+    width: 16px;
+    height: 16px;
+    text-align: center;
+  }
+  .fa-stack {
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    .fa-circle {
+      font-size: 10px;
+    }
+    .fa-circle-thin {
+      font-size: 16px;
+    }
+  }
+  input[type="checkbox"] {
+    display: none;
+  }
+  input[type="checkbox"]:checked {
+    ~ .fa-circle-thin {
+      display: none;
+    }
+  }
+  input[type="checkbox"]:not(:checked) {
+    ~ .fa-stack {
+      display: none;
+    }
+  }
+}

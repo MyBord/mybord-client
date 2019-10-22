@@ -1,0 +1,62 @@
+// TABLE SIDEBAR MODAL
+@sidebarWidth: 25vw;
+@minSidebarWidth: 20rem;
+
+// TRAY MODAL
+@trayTabHeight: 2.5rem;
+@trayHeaderHeight: 3rem;
+@trayExpandedHeight: 80vh;
+
+// NAVIGATION
+@menuWidth: 25rem;
+@navigationLeftPadding: 1rem;
+@navigationMarginRight: 2rem;
+@navigationHeight: 4.5rem;
+@navigationLogoWidth: 12vw;
+@navigationBarWidth: 16vw;
+@navigationSearchWidth: 20vw;
+@navigationSearchWidthNoAdvisorsTab: 28vw;
+@navigationMenuIconWidth: 30px;
+// the width of the menu button is the sum of the width of the icon plus the right margin of
+// the application frame.
+@navigationMenuButtonSectionWidth: calc(@navigationMarginRight + @navigationMenuIconWidth);
+// the total width of the navigation component, except for the navigation modal components.
+@navigationAlmostWidth: calc(
+  @navigationLeftPadding
+  + @navigationLogoWidth
+  + (3 * @navigationBarWidth)
+  + @navigationSearchWidth
+  + @navigationMenuButtonSectionWidth
+);
+
+// NAVIGATION - MODALS
+// the calculated width of the two navigation modal components
+@navigationModalWidth: calc(100vw - @navigationAlmostWidth);
+@navigationModalWidthNoAdvisorsTab: calc(100vw - @navigationAlmostWidth + 8vw);
+@navigationModalBodyWidth: 20rem;
+// calculates how far away from the right side of the dom the navigation modal body should be, given
+// its caret should point below the modal icon, and the caret should stick out from the body
+// 3/4 of the width of the body.
+@navigationModalIconSize: 2.2rem;
+@navigationModalCaretRight: calc(
+        (@navigationModalWidth / 2)
+        + @navigationMenuButtonSectionWidth
+        - (@navigationModalIconSize / 2)
+        + 0.1rem
+);
+@navigationModalBodyTop: 4rem;
+@navigationModalCaretTop: @navigationModalBodyTop - 1rem;
+@navigationModalBodyRightMargin: calc(-@navigationModalBodyWidth / 4);
+
+// Other
+@appHeaderHeight: 46px;
+@appBodyHeight: calc(100vh - @navigationHeight - @appHeaderHeight);
+@appBodyHeightNoHeader: calc(100vh - @navigationHeight);
+
+// Toast Sizes
+@sectionToasterTop: 8rem;
+@sectionToasterRight: 1rem;
+@sectionToasterVerticalPadding: 1.5rem;
+@toastWidth: 18rem;
+@toastHorizontalPadding: 1.75rem;
+@toastOffScreen: -(@toastWidth + @toastHorizontalPadding * 2 + @sectionToasterRight * 2);

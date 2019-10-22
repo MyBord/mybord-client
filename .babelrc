@@ -1,0 +1,27 @@
+{
+  "presets": [
+    "@babel/preset-react",
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "node": "current"
+        }
+      }
+    ]
+  ],
+  "plugins": [
+    ["babel-plugin-transform-builtin-extend", {
+      "globals": ["Error", "Array"],
+      "approximate": true
+    }],
+    ["module-resolver", {
+      "root": ["./src"],
+      "alias": {
+        "shared": "./src/app/shared/",
+        "static": "./src/static/",
+        "storybook": "./src/thirdParty/storybook/"
+      }
+    }]
+  ]
+}
