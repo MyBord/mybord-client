@@ -69,11 +69,6 @@
   padding: 1rem;
 }
 
-.hamburgerButtonExample {
-  position: relative;
-  width: 4rem;
-}
-
 .header {
   background: $grey;
   border-bottom: 0.125rem solid $darkGrey;
@@ -103,7 +98,7 @@
 
 .markdownTable {
   margin-left: 1rem;
-  width: 100%;
+  width: calc(100% - 1rem);
   table {
     border-collapse: collapse;
     border-spacing: 0;
