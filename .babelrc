@@ -20,7 +20,8 @@
       "alias": {
         "shared": "./src/app/shared/",
         "static": "./src/static/",
-        "storybook": "./src/thirdParty/storybook/"
+        "storybook": "./src/thirdParty/storybook/",
+        "styles": "./src/styles/"
       }
     }]
   ]

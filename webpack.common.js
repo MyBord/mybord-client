@@ -125,6 +125,7 @@ const config = {
       shared: path.resolve(__dirname, 'src/app/shared/'),
       static: path.resolve(__dirname, 'src/static/'),
       storybook: path.resolve(__dirname, 'src/thirdParty/storybook/'),
+      styles: path.resolve(__dirname, 'src/styles/'),
     },
   },
 };
