@@ -1,0 +1,29 @@
+@import "~styles/colors";
+@import "~styles/sizes";
+
+.header {
+  background: $appBackground;
+  height: $headerHeight;
+}
+
+.main {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+  width: 100%;
+}
+
+.nav {
+  background: $white;
+  border-right: 0.0625rem solid $navBorder;
+  display: flex;
+  width: $navWidth;
+  @media screen and (max-width: $mobileWindowWidth) {
+    display: none;
+  }
+}
+
+.section {
+  background: $appBackground;
+  flex: 1 1 auto;
+}

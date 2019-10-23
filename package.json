@@ -9,7 +9,8 @@
     "copy-index": "cp src/index.html dist/index.html",
     "devWebpack": "webpack --config webpack.dev.js",
     "prodWebpack": "webpack --config webpack.prod.js",
-    "start": "webpack-dev-server --inline --hot --history-api-fallback --config webpack.dev.js",
+    "start": "webpack-dev-server --inline --hot --history-api-fallback --config webpack.dev.js --open",
+
     "build:dev": "npm-run-all remove-dist devWebpack copy-index",
     "build:internal": "INTERNAL=true npm-run-all remove-dist prodWebpack copy-index",
     "build:prod": "npm-run-all remove-dist prodWebpack copy-index"
