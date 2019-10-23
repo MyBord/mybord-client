@@ -5,6 +5,7 @@
   background: $white;
   border-right: 0.0625rem solid $navBorder;
   display: flex;
+  flex-direction: column;
   width: $navWidth;
   @media screen and (max-width: $mobileWindowWidth) {
     display: none;
