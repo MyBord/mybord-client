@@ -10,6 +10,9 @@
     "allowJs": true,
     "baseUrl": ".",
     "paths": {
+      "header/*": ["src/app/header/*"],
+      "navigation/*": ["src/app/navigation/*"],
+      "pages/*": ["src/app/pages/*"],
       "shared/*": ["src/app/shared/*"],
       "static/*": ["src/static/*"],
       "storybook/*": ["src/thirdParty/storybook/*"],

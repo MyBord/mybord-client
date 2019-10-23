@@ -1,0 +1,12 @@
+@import "~styles/colors";
+@import "~styles/sizes";
+
+.nav {
+  background: $white;
+  border-right: 0.0625rem solid $navBorder;
+  display: flex;
+  width: $navWidth;
+  @media screen and (max-width: $mobileWindowWidth) {
+    display: none;
+  }
+}

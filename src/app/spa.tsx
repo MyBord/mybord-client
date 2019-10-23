@@ -1,18 +1,15 @@
 import * as React from 'react';
+import Header from 'header/header';
+import HomePage from 'pages/homePage/homePage';
+import Navigation from 'navigation/navigation';
 import * as styles from './spa.module.scss';
 
 const Spa: React.FC = () => (
   <>
-    <nav className={styles.nav}>
-      This is the nav
-    </nav>
+    <Navigation />
     <main className={styles.main}>
-      <header className={styles.header}>
-        This is the header
-      </header>
-      <section className={styles.section}>
-        This is the app
-      </section>
+      <Header />
+      <HomePage />
     </main>
   </>
 );

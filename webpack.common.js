@@ -122,6 +122,9 @@ const config = {
   resolve: {
     extensions: ['.jsx', '.js', '.tsx', '.ts', '.scss'],
     alias: {
+      header: path.resolve(__dirname, 'src/app/header/'),
+      navigation: path.resolve(__dirname, 'src/app/navigation/'),
+      pages: path.resolve(__dirname, 'src/app/pages/'),
       shared: path.resolve(__dirname, 'src/app/shared/'),
       static: path.resolve(__dirname, 'src/static/'),
       storybook: path.resolve(__dirname, 'src/thirdParty/storybook/'),
