@@ -6,8 +6,13 @@
   border-right: 0.0625rem solid $navBorder;
   display: flex;
   flex-direction: column;
-  width: $navWidth;
+  width: $navWidthCollapsed;
   @media screen and (max-width: $mobileWindowWidth) {
     display: none;
   }
+}
+
+:export {
+  navWidthCollapsed: $navWidthCollapsed;
+  navWidthExpanded: $navWidthExpanded;
 }

@@ -1,20 +1,23 @@
 import * as React from 'react';
-import { animated, useSpring } from 'react-spring';
+import { motion } from 'framer-motion';
 import * as styles from './navigation.module.scss';
 
+const variants = {
+  collapsed: { width: styles.navWidthCollapsed },
+  expanded: { width: styles.navWidthExpanded },
+};
+
 const Navigation: React.FC = () => {
-  const [isExpanded, setState] = React.useState(false);
-  const styleProps = useSpring({ width: isExpanded ? '20rem' : '10rem' });
+  const [isExpanded, setIsExpanded] = React.useState(false);
   return (
-    <animated.nav
+    <motion.nav
       className={styles.nav}
-      style={styleProps}
+      initial={false}
+      animate={isExpanded ? 'expanded' : 'collapsed'}
+      variants={variants}
     >
-      This is the nav
-      {isExpanded ? 'EXPANDED' : 'COLLAPSED'}
-      <button onClick={() => setState(!isExpanded)} type="button">Click Me</button>
-      <div>foo bar</div>
-    </animated.nav>
+      <button onClick={() => setIsExpanded(!isExpanded)} type="button">Click Me</button>
+    </motion.nav>
   );
 };
 

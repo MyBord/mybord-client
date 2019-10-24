@@ -8,4 +8,8 @@ describe('basic rendering', () => {
   test('component renders', () => {
     expect(setup().length).toBe(1);
   });
+
+  test('navigation is collapsed by default', () => {
+    expect(true).toBeFalsy(); // ToDo - write this test
+  });
 });
