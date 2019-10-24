@@ -18,6 +18,7 @@
     ["module-resolver", {
       "root": ["./src"],
       "alias": {
+        "buttons": "./src/app/shared/buttons/",
         "header": "./src/app/header/",
         "navigation": "./src/app/navigation/",
         "pages": "./src/app/pages/",

@@ -12,7 +12,7 @@ const config = {
     `${SRC_DIR}/index.scss`,
   ],
   output: {
-    path: `${DIST_DIR}/app/`,
+    path: `${DIST_DIR}/`,
     filename: 'bundle.js',
     publicPath: '/app/',
   },
@@ -122,6 +122,7 @@ const config = {
   resolve: {
     extensions: ['.jsx', '.js', '.tsx', '.ts', '.scss'],
     alias: {
+      buttons: path.resolve(__dirname, 'src/app/shared/buttons/'),
       header: path.resolve(__dirname, 'src/app/header/'),
       navigation: path.resolve(__dirname, 'src/app/navigation/'),
       pages: path.resolve(__dirname, 'src/app/pages/'),
