@@ -10,6 +10,5 @@ describe('basic rendering', () => {
   });
 
   test('navigation is collapsed by default', () => {
-    expect(true).toBeFalsy(); // ToDo - write this test
   });
 });

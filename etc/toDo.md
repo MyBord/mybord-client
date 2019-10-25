@@ -2,3 +2,4 @@
 * add circle ci
 * create docs and main readme
 remove unicons?
+write test for navigation

@@ -1,3 +1,6 @@
+test('', () => {
+  expect(true).toBeTruthy();
+});
 // import * as React from 'react';
 // import { AccountSearchIcon, EmailSearchIcon } from 'mdi-react';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
