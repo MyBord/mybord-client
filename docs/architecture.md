@@ -124,7 +124,7 @@ app/
 * **header/:**
     * The react code used to compose the header in the top of the application.
 * **navigation/:**
-    * The react code used to compose the navigation pane on the left hand side of the navigation.
+    * The react code used to compose the left hand navigation pane.
 * **pages/:**
     * Source code and components for each page.
 * **shared/:**
