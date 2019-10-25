@@ -11,7 +11,6 @@
     "prodWebpack": "webpack --config webpack.prod.js",
     "start": "webpack-dev-server --inline --hot --history-api-fallback --config webpack.dev.js --open",
     "build:dev": "npm-run-all remove-dist devWebpack copy-index",
-    "build:internal": "INTERNAL=true npm-run-all remove-dist prodWebpack copy-index",
     "build:prod": "npm-run-all remove-dist prodWebpack copy-index"
   },
   "authors": [
@@ -90,8 +89,11 @@
     "connected-react-router": "^5.0.1",
     "framer-motion": "^1.6.14",
     "history": "^4.7.2",
+    "lord-icon-element": "^1.1.5",
+    "lottie-web": "^5.5.9",
     "react": "~16.9.0",
     "react-dom": "~16.9.0",
+    "react-lottie": "^1.2.3",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.2.2",
     "styled-components": "3.2.3"

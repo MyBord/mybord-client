@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { motion } from 'framer-motion';
 import * as styles from './navigation.module.scss';
-import HamburgerButton from 'buttons/hamburgerButton/hamburgerButton';
 
 const variants = {
   collapsed: { width: styles.navWidthCollapsed },
@@ -18,7 +17,6 @@ const Navigation: React.FC = () => {
       variants={variants}
     >
       <button onClick={() => setIsExpanded(!isExpanded)} type="button">Click Me</button>
-      <HamburgerButton />
     </motion.nav>
   );
 };
