@@ -1,5 +1,7 @@
 # MyBord
 
+[![CircleCI](https://circleci.com/gh/jimmy-e/mybord.svg?style=svg)](https://circleci.com/gh/jimmy-e/mybord)
+
 The repository is the codebase for the mybord.io and uses the following:
 
   * Front-End
