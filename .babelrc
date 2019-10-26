@@ -20,6 +20,7 @@
       "alias": {
         "buttons": "./src/app/shared/buttons/",
         "header": "./src/app/header/",
+        "lottie": "./src/thirdParty/lottie/",
         "navigation": "./src/app/navigation/",
         "pages": "./src/app/pages/",
         "shared": "./src/app/shared/",

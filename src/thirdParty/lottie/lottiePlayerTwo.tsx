@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import * as React from 'react';
 import Lottie from 'react-lottie';
-import animationData from './sample.json';
+import animationData from './lotties/hamburger.json';
 
 // eslint-disable-next-line react/prefer-stateless-function
-class UncontrolledLottie extends Component {
-  render() {
+class UncontrolledLottie extends React.Component {
+  public render(): React.ReactElement {
     const defaultOptions = {
       loop: true,
       autoplay: true,

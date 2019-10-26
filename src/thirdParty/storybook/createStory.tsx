@@ -40,12 +40,16 @@ export default ({
         <article>
           <h2 className={styles.h2}>Description</h2>
           <h3 className={styles.h3}>How To Use</h3>
+          {/*
+            // @ts-ignore */}
           <ReactMarkdown
             className={styles.markdownCode}
             renderers={{ code: CodeBlock }}
             source={howTo}
           />
           <h3 className={styles.h3}>API</h3>
+          {/*
+            // @ts-ignore */}
           <ReactMarkdown
             className={styles.markdownTable}
             renderers={{ code: CodeBlock }}

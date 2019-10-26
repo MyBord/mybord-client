@@ -124,6 +124,7 @@ const config = {
     alias: {
       buttons: path.resolve(__dirname, 'src/app/shared/buttons/'),
       header: path.resolve(__dirname, 'src/app/header/'),
+      lottie: path.resolve(__dirname, 'src/thirdParty/lottie/'),
       navigation: path.resolve(__dirname, 'src/app/navigation/'),
       pages: path.resolve(__dirname, 'src/app/pages/'),
       shared: path.resolve(__dirname, 'src/app/shared/'),

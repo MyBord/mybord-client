@@ -39,47 +39,47 @@ It is assumed that the general repo of the codebase will look something like thi
 ```
 
 * **`.circleci/config.yml`:**
-    * config file to run Circle CI.
+  * config file to run Circle CI.
 * **.storybook:**
-    * config files to run storybook.
+  * config files to run storybook.
 * **dist/:**
-    * folder that contains the app build.
+  * folder that contains the app build.
 * **docs/:**
-    * folder that contains the app documentation.
+  * folder that contains the app documentation.
 * **`etc/toDo.md`:**
-    * a space to put notes regarding the application in general.
+  * a space to put notes regarding the application in general.
 * **`etc/prToDo.md`:**
-    * a space to put notes regarding a current branch / pr.
+  * a space to put notes regarding a current branch / pr.
 * **`node_modules`:**
-    * folder that holds all npm packages. should be git ignored.
+  * folder that holds all npm packages. should be git ignored.
 * **src/:**
-    * folder that contains the application source code.
+  * folder that contains the application source code.
 * **`.babelrc`:**
-    * babel configs.
+  * babel configs.
 * **`.eslintrc.js`:**
-    * eslint configs.
+  * eslint configs.
 * **`.gitignore`:**
-    * configuration list of git ignores.
+  * configuration list of git ignores.
 * **`package.json`:**
-    * MyBord's package manager and metadata.
+  * MyBord's package manager and metadata.
 * **`postcss.config.js`:**
-    * config file for PostCSS.
+  * config file for PostCSS.
 * **`README.md`:**
-    * MyBord's root readme document.
+  * MyBord's root readme document.
 * **`setupJest.js`:**
-    * configures jest.
+  * configures jest.
 * **`tsconfig.json`:**
-    * Specifies how TypeScript should be compiled.
+  * Specifies how TypeScript should be compiled.
 * **`typings.d.ts`:**
-    * Allows us to add global custom typings.
+  * Allows us to add global custom typings.
 * **`webpack.common.js`:**
-    * universal webpack configs.
+  * universal webpack configs.
 * **`webpack.dev.js`:**
-    * webpack configs exclusive for dev builds.
+  * webpack configs exclusive for dev builds.
 * **`webpack.prod.js`:**
-    * webpack configs exclusive for prod builds.
+  * webpack configs exclusive for prod builds.
 * **`yarn.lock`:**
-    * yarn's package lock file.
+  * yarn's package lock file.
 
 ## II. src folder
 The app folder should be organized in the following fashion:
@@ -89,24 +89,36 @@ src/
   |- app/ 
   |- styles/ 
   |- thirdParty/ 
+     |- lottie/ 
+        |- lotties/ 
+        |- lottiePlayer.tsx 
+     |- storybook/ 
   |- index.html
   |- index.scss
   |- index.tsx
 ```
 
 * **app/:**
-    * The folder that contains the react application source code.
+  * The folder that contains the react application source code.
 * **styles/:**
-    * Contains all global styling. Note that styling dedicated to individual components should be
-     stored in the components folders within the react folder.
+  * Contains all global styling. Note that styling dedicated to individual components should be
+   stored in the components folders within the react folder.
 * **thirdParty/:**
-    * Javascript and react code used for integrating third party tooling such as Storybook.
+  * Javascript and react code used for integrating third party tooling such as Storybook.
+* **thirdParty/lottie/:**
+  * Folder containing [Lottie](https://airbnb.io/lottie/#/) code.
+* **thirdParty/lottie/lotties:**
+  * Folder containing [Lottie](https://airbnb.io/lottie/#/) json files.
+* **`thirdParty/lottie/lottiePlayer.tsx`:**
+  * Utility component to play lottie file.
+* **thirdParty/storybook/:**
+  * Folder containing storybook code and universal tooling / wrapper.
 * **`index.html`:**
-    * root html file used for the app.
+  * root html file used for the app.
 * **`index.scss`:**
-    * The application's root stylesheet.
+  * The application's root stylesheet.
 * **`index.tsx`:**
-    * The executable javascript of the app.
+  * The executable javascript of the app.
 
 ## III. app folder
 
@@ -122,19 +134,19 @@ app/
 ```
 
 * **header/:**
-    * The react code used to compose the header in the top of the application.
+  * The react code used to compose the header in the top of the application.
 * **navigation/:**
-    * The react code used to compose the left hand navigation pane.
+  * The react code used to compose the left hand navigation pane.
 * **pages/:**
-    * Source code and components for each page.
+  * Source code and components for each page.
 * **shared/:**
-    * Components shared across the header, navigation, and / or pages.
+  * Components shared across the header, navigation, and / or pages.
 * **`spa.moduel.scss`:**
-    * Stylings for `spa.tsx`.
+  * Stylings for `spa.tsx`.
 * **`spa.test.tsx`:**
-    * Test script for the `spa.tsx`.
+  * Test script for the `spa.tsx`.
 * **`spa.tsx`:**
-    * Actual root, highest parent react component used to define the application. The 'SPA'.
+  * Actual root, highest parent react component used to define the application. The 'SPA'.
 
 # III. Additional Resources
 
