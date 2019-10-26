@@ -87,6 +87,7 @@ The app folder should be organized in the following fashion:
 ```
 src/
   |- app/ 
+  |- hooks/ 
   |- styles/ 
   |- thirdParty/ 
      |- lottie/ 
@@ -100,6 +101,8 @@ src/
 
 * **app/:**
   * The folder that contains the react application source code.
+* **hooks/:**
+  * Folder containing custom hooks.
 * **styles/:**
   * Contains all global styling. Note that styling dedicated to individual components should be
    stored in the components folders within the react folder.

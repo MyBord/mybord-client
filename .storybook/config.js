@@ -12,7 +12,7 @@ addParameters({
   },
 });
 
-const req = require.context('../src/app', true, /\.stories\.[tj]sx$/);
+const req = require.context('../src', true, /\.stories\.[tj]sx$/);
 
 const loadStories = () => {
   req.keys().forEach(filename => req(filename));

@@ -14,6 +14,7 @@ module.exports = {
     '\\.(css|scss|less)$': 'identity-obj-proxy',
     '^buttons(.*)$': '<rootDir>/src/app/shared/buttons$1',
     '^header(.*)$': '<rootDir>/src/app/header$1',
+    '^hooks(.*)$': '<rootDir>/src/app/hooks$1',
     '^lottie(.*)$': '<rootDir>/src/thirdParty/lottie$1',
     '^navigation(.*)$': '<rootDir>/src/app/navigation$1',
     '^pages(.*)$': '<rootDir>/src/app/pages$1',

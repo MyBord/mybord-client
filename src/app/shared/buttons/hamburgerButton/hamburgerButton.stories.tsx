@@ -1,4 +1,7 @@
+import * as React from 'react';
 import createScratchPad from 'storybook/createScratchPad';
 import HamburgerButton from './hamburgerButton';
 
-createScratchPad(HamburgerButton, 'HamburgerButton');
+const Component: React.FC = () => <HamburgerButton onClick={() => {}} />;
+
+createScratchPad(Component, 'HamburgerButton');
