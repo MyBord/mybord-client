@@ -21,16 +21,14 @@ const LottiePlayer: React.FC<Props> = ({
   };
 
   return (
-    <>
-      <Lottie
-        direction={direction}
-        height={size}
-        isStopped={isStopped}
-        isPaused={false}
-        options={defaultOptions}
-        width={size}
-      />
-    </>
+    <Lottie
+      direction={direction}
+      height={size}
+      isStopped={isStopped}
+      isPaused={false}
+      options={defaultOptions}
+      width={size}
+    />
   );
 };
 
