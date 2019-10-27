@@ -1,14 +1,16 @@
 import * as React from 'react';
 import Lottie from 'react-lottie';
-import useToggle from 'hooks/useToggle';
 
 interface Props {
   animationData: object;
+  isPaused: boolean;
+  isStopped: boolean;
   size: number;
 }
 
-const LottiePlayer: React.FC<Props> = ({ animationData, size }) => {
-  const [isStopped, toggle] = useToggle(true);
+const LottiePlayer: React.FC<Props> = ({
+  animationData, isPaused, isStopped, size,
+}) => {
   const defaultOptions = {
     loop: false,
     autoplay: false,
@@ -19,16 +21,13 @@ const LottiePlayer: React.FC<Props> = ({ animationData, size }) => {
   };
 
   return (
-    <>
-      <Lottie
-        height={size}
-        options={defaultOptions}
-        isStopped={isStopped}
-        width={size}
-      />
-      {isStopped ? 'TRUE' : 'FALSE'}
-      <button type="button" onClick={toggle}>Click Me</button>
-    </>
+    <Lottie
+      height={size}
+      isPaused={isPaused}
+      isStopped={isStopped}
+      options={defaultOptions}
+      width={size}
+    />
   );
 };
 
