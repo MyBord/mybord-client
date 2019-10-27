@@ -3,31 +3,34 @@ import Lottie from 'react-lottie';
 
 interface Props {
   animationData: object;
-  isPaused: boolean;
-  isStopped: boolean;
+  direction?: number;
+  isStopped?: boolean;
   size: number;
 }
 
 const LottiePlayer: React.FC<Props> = ({
-  animationData, isPaused, isStopped, size,
+  animationData, direction = 1, isStopped = false, size,
 }) => {
   const defaultOptions = {
-    loop: false,
-    autoplay: false,
     animationData,
+    autoplay: false,
+    loop: false,
     rendererSettings: {
       preserveAspectRatio: 'xMidYMid slice',
     },
   };
 
   return (
-    <Lottie
-      height={size}
-      isPaused={isPaused}
-      isStopped={isStopped}
-      options={defaultOptions}
-      width={size}
-    />
+    <>
+      <Lottie
+        direction={direction}
+        height={size}
+        isStopped={isStopped}
+        isPaused={false}
+        options={defaultOptions}
+        width={size}
+      />
+    </>
   );
 };
 

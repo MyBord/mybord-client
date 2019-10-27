@@ -1,45 +1,32 @@
 import * as React from 'react';
 import LottiePlayer from 'lottie/lottiePlayer';
 import animationData from 'lottie/lotties/hamburger.json';
-import useToggle from 'hooks/useToggle';
 
 interface Props {
   onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 const HamburgerButton: React.FC<Props> = ({ onClick }) => {
-  const [isStopped, toggleStop] = useToggle(true);
-  const [isPaused, togglePause] = useToggle();
-  const playLottie = (): void => {
-    toggleStop();
-    setTimeout(() => togglePause(), 1000);
-  };
-
-  const unPause = (): void => {
-    togglePause();
-  };
+  const [isStopped, setStop] = React.useState(true);
+  const [direction, setDirection] = React.useState(1);
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>): void => {
     onClick(event);
+    if (!isStopped) {
+      setDirection(direction * -1);
+    }
+    setStop(false);
   };
 
   return (
-    <>
-      <button
-        onClick={handleClick}
-        type="button"
-      >
-        Hamburger
-      </button>
-      <button type="button" onClick={playLottie}>Click Me</button>
-      <button type="button" onClick={unPause}>unPause</button>
+    <button type="button" onClick={handleClick}>
       <LottiePlayer
         animationData={animationData}
-        size={200}
-        isPaused={isPaused}
+        direction={direction}
         isStopped={isStopped}
+        size={200}
       />
-    </>
+    </button>
   );
 };
 
