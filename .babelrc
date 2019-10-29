@@ -21,7 +21,7 @@
         "buttons": "./src/app/shared/buttons/",
         "header": "./src/app/header/",
         "hooks": "./src/hooks/",
-        "lottie": "./src/thirdParty/lottie/",
+        "lotty": "./src/thirdParty/lotty/",
         "navigation": "./src/app/navigation/",
         "pages": "./src/app/pages/",
         "shared": "./src/app/shared/",

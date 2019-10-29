@@ -1,6 +1,6 @@
 import * as React from 'react';
-import LottiePlayer from 'lottie/lottiePlayer';
-import animationData from 'lottie/lotties/hamburger.json';
+import LottiePlayer from 'lotty/lottiePlayer';
+import animationData from 'lotty/lotties/hamburger.json';
 
 interface Props {
   onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;

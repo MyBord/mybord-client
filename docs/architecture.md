@@ -90,7 +90,7 @@ src/
   |- hooks/ 
   |- styles/ 
   |- thirdParty/ 
-     |- lottie/ 
+     |- lotty/ 
         |- lotties/ 
         |- lottiePlayer.tsx 
      |- storybook/ 
@@ -108,8 +108,9 @@ src/
    stored in the components folders within the react folder.
 * **thirdParty/:**
   * Javascript and react code used for integrating third party tooling such as Storybook.
-* **thirdParty/lottie/:**
-  * Folder containing [Lottie](https://airbnb.io/lottie/#/) code.
+* **thirdParty/lotty/:**
+  * Folder containing [Lottie](https://airbnb.io/lottie/#/) code. Note this folder is named
+   'lotty' and not 'lottie' so it's folder alias won't create conflicts.
 * **thirdParty/lottie/lotties:**
   * Folder containing [Lottie](https://airbnb.io/lottie/#/) json files.
 * **`thirdParty/lottie/lottiePlayer.tsx`:**
