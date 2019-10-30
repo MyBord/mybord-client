@@ -10,3 +10,4 @@ write storybook for navigation
 write test for navigation
 write test for custom hook
 write general test for nav - including clicking away
+change hamburger button color to be app 'black'

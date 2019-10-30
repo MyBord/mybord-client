@@ -77,15 +77,18 @@
 
 .link {
   background: transparent;
+  border: none;
   color: $blue;
+  cursor: pointer;
   font-size: 1rem;
   margin-right: 1rem;
+  outline: 0;
   padding: 0;
   width: auto;
   &:hover {
-    color: $blue;
+    color: $navy;
     span {
-      background: $blue;
+      background: $navy;
     }
   }
 }
@@ -97,6 +100,7 @@
 }
 
 .markdownTable {
+  font-family: $poppins;
   margin-left: 1rem;
   width: calc(100% - 1rem);
   table {

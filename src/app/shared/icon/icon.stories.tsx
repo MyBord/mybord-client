@@ -7,7 +7,7 @@ createStory({
   Demo: IconDemo,
   Examples: IconExamples,
   demoMargin: true,
-  description: 'Icons used in our app.',
+  description: 'All icons that are used in our app.',
   api,
   componentName: 'Icon',
   howTo,
