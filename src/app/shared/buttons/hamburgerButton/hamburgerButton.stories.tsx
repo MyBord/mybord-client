@@ -1,7 +1,14 @@
-import * as React from 'react';
-import createScratchPad from 'storybook/createScratchPad';
-import HamburgerButton from './hamburgerButton';
+import createStory from 'storybook/createStory';
+import HamburgerButtonDemo from './hamburgerButton.demo';
+import { api, howTo } from './hamburgerButton.markup';
 
-const Component: React.FC = () => <HamburgerButton onClick={() => {}} />;
-
-createScratchPad(Component, 'HamburgerButton');
+createStory({
+  Demo: HamburgerButtonDemo,
+  Examples: HamburgerButtonDemo,
+  api,
+  componentName: 'Hamburger Button',
+  demoMargin: true,
+  description: 'Hamburger Button used in our navigation.',
+  howTo,
+  rootDirectory: 'Buttons',
+});
