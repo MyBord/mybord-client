@@ -6,7 +6,6 @@ The repository is the codebase for the mybord.io and uses the following:
 
   * Front-End
     * [React](https://reactjs.org)
-    * [Sass](https://sass-lang.com)
     * [TypeScript](https://www.typescriptlang.org)
   * Build  
     * [Webpack](https://webpack.js.org)
@@ -16,6 +15,9 @@ The repository is the codebase for the mybord.io and uses the following:
   * Testing  
     * [Jest](https://jestjs.io)
     * [Enzyme](https://airbnb.io/enzyme/)
+  * Styling
+    * [Sass](https://sass-lang.com)
+    * [CSS Modules](https://github.com/css-modules/css-modules)
   * Design
     * [Storybook](https://storybook.js.org)
     * [Framer Motion](https://www.framer.com/motion/)

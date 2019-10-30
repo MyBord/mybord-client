@@ -1,9 +1,12 @@
-remove unicons?
-write test for navigation
+DONE
+* write test for hamburger - DONE
+* write test for lottie player - DONE
 
-write test for lottie player
-write tests and storybook for hamburger button
+ToDo:
+fix storybook styling
+remove unicons and replace with nucleo
+write storybook for hamburger
+write storybook for navigation
+write test for navigation
 write test for custom hook
-style hamburger
-write test for hamburger
-write test for lottie player
+write general test for nav - including clicking away

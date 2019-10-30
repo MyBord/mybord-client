@@ -1,6 +1,7 @@
 import * as React from 'react';
 import LottiePlayer from 'lotty/lottiePlayer';
 import animationData from 'lotty/lotties/hamburger.json';
+import * as styles from './hamburgerButton.module.scss';
 
 interface Props {
   onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
@@ -19,12 +20,16 @@ const HamburgerButton: React.FC<Props> = ({ onClick }) => {
   };
 
   return (
-    <button type="button" onClick={handleClick}>
+    <button
+      className={styles.button}
+      onClick={handleClick}
+      type="button"
+    >
       <LottiePlayer
         animationData={animationData}
         direction={direction}
         isStopped={isStopped}
-        size={200}
+        size={50}
       />
     </button>
   );
