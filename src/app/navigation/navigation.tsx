@@ -10,11 +10,25 @@ const variants = {
 
 const Navigation: React.FC = () => {
   const [isExpanded, setIsExpanded] = React.useState(false);
+  const navigationRef = React.useRef(null);
+
+  const handleClickOutside = (event: MouseEvent): void => {
+    if (!navigationRef.current.contains(event.target)) {
+      setIsExpanded(false);
+    }
+  };
+
+  React.useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  });
+
   return (
     <motion.nav
-      className={styles.nav}
-      initial={false}
       animate={isExpanded ? 'expanded' : 'collapsed'}
+      className={styles.nav}
+      ref={navigationRef}
+      initial={false}
       variants={variants}
     >
       <HamburgerButton onClick={() => setIsExpanded(!isExpanded)} />

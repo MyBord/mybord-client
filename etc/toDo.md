@@ -1,11 +1,11 @@
 DONE
 * write test for hamburger - DONE
 * write test for lottie player - DONE
+* write storybook for hamburger
+* fix storybook styling
 
 ToDo:
-fix storybook styling
 remove unicons and replace with nucleo
-write storybook for hamburger
 write storybook for navigation
 write test for navigation
 write test for custom hook
