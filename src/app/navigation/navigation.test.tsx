@@ -2,6 +2,7 @@ import * as React from 'react';
 import {
   ReactWrapper, ShallowWrapper, mount, shallow,
 } from 'enzyme';
+import { act } from 'react-dom/test-utils';
 import HamburgerButton from 'buttons/hamburgerButton/hamburgerButton';
 import Navigation from './navigation';
 
@@ -47,12 +48,21 @@ describe('functionality', () => {
   });
 
   test('clicking the hamburger button while the navigation is expanded collapses the navigation', () => {
-
   });
 
   test('if the navigation is collapsed, clicking anywhere outside of the navigation keeps it collapsed', () => {
   });
 
   test('if the navigation is expanded, clicking anywhere outside of the navigation collapses it', () => {
+    const map: any = {};
+    document.addEventListener = jest.fn((event, callback) => {
+      map[event] = callback;
+    });
+    const wrapper = setupShallow();
+    console.log(wrapper.html());
+    console.log(wrapper.props());
+    act(() => {
+      map.mousedown({ target: document.createElement('div') });
+    });
   });
 });
