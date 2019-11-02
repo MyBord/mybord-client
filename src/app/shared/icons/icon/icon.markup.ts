@@ -7,7 +7,7 @@ export const api = `
 
 export const howTo = `
 \`\`\`
-import Icon from 'icon/icon';
+import Icon from 'icons/icon/icon';
 
 <Icon
   iconName="email"

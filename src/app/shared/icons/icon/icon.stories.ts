@@ -11,4 +11,5 @@ createStory({
   demoMargin: true,
   description: 'All icons that are used in our app.',
   howTo,
+  rootDirectory: 'Icons',
 });
