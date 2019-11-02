@@ -12,6 +12,7 @@ const IconDemo: React.FC = () => (
   <Icon
     // @ts-ignore - don't care that the `options` addon is not a string type.
     iconName={options('Icon Name', iconNameOptions, iconList[0], { display: 'select' })}
+    size={60}
   />
 );
 

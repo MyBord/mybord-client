@@ -125,6 +125,7 @@ const config = {
       buttons: path.resolve(__dirname, 'src/app/shared/buttons/'),
       header: path.resolve(__dirname, 'src/app/header/'),
       hooks: path.resolve(__dirname, 'src/hooks/'),
+      icon: path.resolve(__dirname, 'src/app/shared/icon/'),
       lotty: path.resolve(__dirname, 'src/thirdParty/lotty/'),
       navigation: path.resolve(__dirname, 'src/app/navigation/'),
       pages: path.resolve(__dirname, 'src/app/pages/'),

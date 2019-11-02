@@ -1,9 +1,12 @@
 import * as React from 'react';
-import * as Unicons from '@iconscout/react-unicons';
+import BikeIcon from './individualIcons/bikeIcon';
+import HouseIcon from './individualIcons/houseIcon';
+import UserIcon from './individualIcons/userIcon';
 
 export const icons = {
-  dashboard: 'foo',
-  favorite: 'foo',
+  bike: 'foo',
+  house: 'foo',
+  user: 'foo',
 };
 
 // declaring an IconName type from an object instead of an array
@@ -14,14 +17,17 @@ export type IconName = keyof typeof icons;
 
 interface Props {
   iconName: IconName;
+  size: number;
 }
 
-const Icon: React.FC<Props> = ({ iconName }) => {
+const Icon: React.FC<Props> = ({ iconName, size }) => {
   switch (iconName) {
-    case 'dashboard':
-      return <Unicons.UilDesktop />;
-    case 'favorite':
-      return <Unicons.UilStar />;
+    case 'bike':
+      return <BikeIcon size={size} />;
+    case 'house':
+      return <HouseIcon size={size} />;
+    case 'user':
+      return <UserIcon size={size} />;
     default:
       throw Error('Component: `Icon` - iconName parameter is invalid, expected icon cannot be'
         + ' found.');

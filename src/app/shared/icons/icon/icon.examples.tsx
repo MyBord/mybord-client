@@ -8,7 +8,7 @@ const IconExamples: React.FC = () => (
       Object.keys(icons).map((iconName: IconName) => (
         <div className={styles.exampleDiv}>
           <div className={styles.exampleDivCenter}>
-            <Icon iconName={iconName} />
+            <Icon iconName={iconName} size={60} />
           </div>
           <p className={styles.exampleP}>{iconName.charAt(0).toUpperCase() + iconName.slice(1)}</p>
         </div>

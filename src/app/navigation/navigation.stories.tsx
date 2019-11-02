@@ -1,5 +1,12 @@
-import * as React from 'react';
-import createScratchPad from 'storybook/createScratchPad';
-import Navigation from './navigation';
+import createStory from 'storybook/createStory';
+import NavigationDemo from './navigation.demo';
+import { howTo } from './navigation.markup';
 
-createScratchPad(Navigation, 'Navigation');
+createStory({
+  Demo: NavigationDemo,
+  demoHeader: false,
+  description: 'Add icon with possible text to indicate ux behaviour that adds another element.',
+  componentName: 'Navigation Menu',
+  howTo,
+  rootDirectory: 'Navigation',
+});

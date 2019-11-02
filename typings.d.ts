@@ -1,2 +1,2 @@
 declare module '*.module.scss';
-declare module '@iconscout/*';
+declare module '@sambego/storybook-styles';

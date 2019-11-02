@@ -15,6 +15,7 @@
       "buttons/*": ["src/app/shared/buttons/*"],
       "header/*": ["src/app/header/*"],
       "hooks/*": ["src/hooks/*"],
+      "icon/*": ["src/app/shared/icon/*"],
       "lotty/*": ["src/thirdParty/lotty/*"],
       "navigation/*": ["src/app/navigation/*"],
       "pages/*": ["src/app/pages/*"],
