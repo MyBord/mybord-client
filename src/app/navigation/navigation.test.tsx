@@ -24,6 +24,7 @@ describe('basic rendering', () => {
   });
 
   test('mousedown event listener is added on mount and removed on unmount', () => {
+    // mocking event listeners and setting up wrapper.
     const map: { [key: string]: EventListenerOrEventListenerObject } = {};
     document.addEventListener = jest.fn((event, callback) => {
       map[event] = callback;
@@ -32,41 +33,46 @@ describe('basic rendering', () => {
       delete map[event];
     });
     const wrapper = setupMount();
+
+    // expecting specific listener to be instantiated, and then removed on unmount.
     expect(typeof map.mousedown).toBe('function');
     wrapper.unmount();
     expect(map.mousedown).toBeUndefined();
   });
-
-  test('event listener is removed on unmount', () => {
-  });
 });
 
 describe('functionality', () => {
-  test('clicking the hamburger button expands the navigation by default', () => {
+  test('clicking the hamburger button expands the navigation and collapses it', () => {
+    const wrapper = setupShallow();
+    expect(wrapper.prop('animate')).toBe('collapsed');
+    wrapper.find(HamburgerButton).simulate('click');
+    expect(wrapper.prop('animate')).toBe('expanded');
+    wrapper.find(HamburgerButton).simulate('click');
+    expect(wrapper.prop('animate')).toBe('collapsed');
   });
 
-  test('clicking the hamburger button while the navigation is collapsed expands the navigation', () => {
-  });
-
-  test('clicking the hamburger button while the navigation is expanded collapses the navigation', () => {
-  });
-
-  test('if the navigation is collapsed, clicking anywhere outside of the navigation keeps it collapsed', () => {
-  });
-
-  test('if the navigation is expanded, clicking anywhere outside of the navigation collapses it', () => {
+  test('if the navigation is expanded, clicking anywhere outside of the navigation'
+    + ' collapses it', () => {
+    // mocking listener and setting up wrapper.
     const map: any = {};
     document.addEventListener = jest.fn((event, callback) => {
       map[event] = callback;
     });
     const wrapper = setupMount();
+
+    // nav is collapsed by default
     expect(wrapper.find(motion.nav).prop('animate')).toBe('collapsed');
-    wrapper.find('button').simulate('click');
-    console.log(wrapper.find(motion.nav).prop('animate'));
-    console.log(map.mousedown);
+
+    // clicking hamburger expands nav.
+    wrapper.find(HamburgerButton).simulate('click');
+    wrapper.update();
+    expect(wrapper.find(motion.nav).prop('animate')).toBe('expanded');
+
+    // clicking outside of nav, while expanded, collapses it.
     act(() => {
-      map.mousedown({ target: wrapper.getDOMNode() });
+      map.mousedown({ target: document.createElement('a') });
     });
-    console.log(wrapper.find(motion.nav).prop('animate'));
+    wrapper.update();
+    expect(wrapper.find(motion.nav).prop('animate')).toBe('collapsed');
   });
 });
