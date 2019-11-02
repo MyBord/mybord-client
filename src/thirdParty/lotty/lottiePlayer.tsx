@@ -7,10 +7,11 @@ interface Props {
   isPaused?: boolean;
   isStopped?: boolean;
   size: number;
+  speed?: number;
 }
 
 const LottiePlayer: React.FC<Props> = ({
-  animationData, direction = 1, isPaused = false, isStopped = false, size,
+  animationData, direction = 1, isPaused = false, isStopped = false, size, speed = undefined,
 }) => {
   const defaultOptions = {
     animationData,
@@ -25,10 +26,11 @@ const LottiePlayer: React.FC<Props> = ({
     <Lottie
       direction={direction}
       height={size}
-      isStopped={isStopped}
       isPaused={isPaused}
+      isStopped={isStopped}
       options={defaultOptions}
       width={size}
+      speed={speed}
     />
   );
 };

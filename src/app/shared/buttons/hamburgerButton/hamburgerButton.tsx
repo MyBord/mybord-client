@@ -30,6 +30,7 @@ const HamburgerButton: React.FC<Props> = ({ onClick }) => {
         direction={direction}
         isStopped={isStopped}
         size={50}
+        speed={0.6}
       />
     </button>
   );

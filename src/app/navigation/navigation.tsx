@@ -32,7 +32,9 @@ const Navigation: React.FC = () => {
       initial={false}
       variants={variants}
     >
-      <HamburgerButton onClick={() => setIsExpanded(!isExpanded)} />
+      <div className={styles.buttonDiv}>
+        <HamburgerButton onClick={() => setIsExpanded(!isExpanded)} />
+      </div>
       <NavigationButton iconName="dashboard" label="Dashboard" />
       <NavigationButton iconName="user" label="Following" />
       <NavigationButton iconName="chart" label="Trending" />
