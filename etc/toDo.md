@@ -18,6 +18,7 @@ make header ... in mean time, remove header
 make general page
 add tooltips
 fix scenario when click outside nav and collapse nav, but button doesn't change
+fix speed of navigation
 
 
 ## Navigation:

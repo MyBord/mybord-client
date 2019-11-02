@@ -6,6 +6,7 @@
   border-right: 0.0625rem solid $navBorder;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   overflow: hidden;
   width: $navWidthCollapsed;
 }
