@@ -4,12 +4,13 @@ import Lottie from 'react-lottie';
 interface Props {
   animationData: any;
   direction?: number;
+  isPaused?: boolean;
   isStopped?: boolean;
   size: number;
 }
 
 const LottiePlayer: React.FC<Props> = ({
-  animationData, direction = 1, isStopped = false, size,
+  animationData, direction = 1, isPaused = false, isStopped = false, size,
 }) => {
   const defaultOptions = {
     animationData,
@@ -25,7 +26,7 @@ const LottiePlayer: React.FC<Props> = ({
       direction={direction}
       height={size}
       isStopped={isStopped}
-      isPaused={false}
+      isPaused={isPaused}
       options={defaultOptions}
       width={size}
     />

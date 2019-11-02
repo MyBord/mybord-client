@@ -1,4 +1,4 @@
-DONE
+## DONE
 * write test for hamburger - DONE
 * write test for lottie player - DONE
 * write storybook for hamburger
@@ -6,22 +6,34 @@ DONE
 * write test for navigation
 * write storybook for navigation
 
-ToDo:
+## ToDo:
+make custom typography
 write test for custom hook
 write tests for icons
+write tests for animated icons
+write tests for navigation button
+update tests for nav
 change hamburger button color to be app 'black'
-make header
+make header ... in mean time, remove header
 make general page
-write test for animated icon component
-
-Dashboard
-Following
-Favorites - get heart
-Trending - icon have
-Settings - icon have
-
-Logout
+add tooltips
+fix scenario when click outside nav and collapse nav, but button doesn't change
 
 
-long term
+## Navigation:
+
+Left Nav:
+* Dashboard
+* Following
+* Favorites
+* Trending
+
+Header
+* Search
+* profile / settings / Logout
+* notifications
+* About
+
+## long term
 - lazy load user icons
+- lazy load animated icon lottie files

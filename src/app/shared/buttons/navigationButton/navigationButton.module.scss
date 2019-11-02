@@ -1,0 +1,21 @@
+@import "~styles/sizes";
+
+.button {
+  align-items: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  outline: none;
+  padding: 0;
+  width: $navWidthExpanded;
+}
+
+.iconDiv {
+  width: $navWidthCollapsed;
+}
+
+.p {
+  font-size: 1rem;
+  font-weight: 100;
+}

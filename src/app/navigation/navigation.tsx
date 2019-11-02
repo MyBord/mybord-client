@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { motion } from 'framer-motion';
 import HamburgerButton from 'buttons/hamburgerButton/hamburgerButton';
-import Icon from 'icons/icon/icon';
+import NavigationButton from 'buttons/navigationButton/navigationButton';
 import * as styles from './navigation.module.scss';
 
 const variants = {
@@ -33,7 +33,9 @@ const Navigation: React.FC = () => {
       variants={variants}
     >
       <HamburgerButton onClick={() => setIsExpanded(!isExpanded)} />
-      <Icon iconName="user" size={60} />
+      <NavigationButton iconName="dashboard" label="Dashboard" />
+      <NavigationButton iconName="user" label="Following" />
+      <NavigationButton iconName="chart" label="Trending" />
     </motion.nav>
   );
 };
