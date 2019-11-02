@@ -3,6 +3,7 @@ import {
   ReactWrapper, ShallowWrapper, mount, shallow,
 } from 'enzyme';
 import { act } from 'react-dom/test-utils';
+import { motion } from 'framer-motion';
 import HamburgerButton from 'buttons/hamburgerButton/hamburgerButton';
 import Navigation from './navigation';
 
@@ -58,11 +59,14 @@ describe('functionality', () => {
     document.addEventListener = jest.fn((event, callback) => {
       map[event] = callback;
     });
-    const wrapper = setupShallow();
-    console.log(wrapper.html());
-    console.log(wrapper.props());
+    const wrapper = setupMount();
+    expect(wrapper.find(motion.nav).prop('animate')).toBe('collapsed');
+    wrapper.find('button').simulate('click');
+    console.log(wrapper.find(motion.nav).prop('animate'));
+    console.log(map.mousedown);
     act(() => {
-      map.mousedown({ target: document.createElement('div') });
+      map.mousedown({ target: wrapper.getDOMNode() });
     });
+    console.log(wrapper.find(motion.nav).prop('animate'));
   });
 });
