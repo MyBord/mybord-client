@@ -12,12 +12,13 @@ write tests for icons
 change hamburger button color to be app 'black'
 make header
 make general page
+write test for animated icon component
 
 Dashboard
 Following
-Favorites
-Trending
-Settings
+Favorites - get heart
+Trending - icon have
+Settings - icon have
 
 Logout
 

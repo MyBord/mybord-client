@@ -15,7 +15,7 @@ module.exports = {
     '^buttons(.*)$': '<rootDir>/src/app/shared/buttons$1',
     '^header(.*)$': '<rootDir>/src/app/header$1',
     '^hooks(.*)$': '<rootDir>/src/hooks$1',
-    '^icon(.*)$': '<rootDir>/src/app/shared/icon$1',
+    '^icons(.*)$': '<rootDir>/src/app/shared/icons$1',
     '^lotty(.*)$': '<rootDir>/src/thirdParty/lotty$1',
     '^navigation(.*)$': '<rootDir>/src/app/navigation$1',
     '^pages(.*)$': '<rootDir>/src/app/pages$1',

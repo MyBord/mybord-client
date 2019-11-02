@@ -2,7 +2,7 @@ import * as React from 'react';
 import Lottie from 'react-lottie';
 
 interface Props {
-  animationData: object;
+  animationData: any;
   direction?: number;
   isStopped?: boolean;
   size: number;

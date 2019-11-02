@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { motion } from 'framer-motion';
 import HamburgerButton from 'buttons/hamburgerButton/hamburgerButton';
-import Icon from 'icon/icon';
+import Icon from 'icons/icon/icon';
 import * as styles from './navigation.module.scss';
 
 const variants = {
