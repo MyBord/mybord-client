@@ -3,7 +3,7 @@ import * as styles from './header.module.scss';
 
 const Header: React.FC = () => (
   <header className={styles.header}>
-    This is the header
+    {/*This is the header*/}
   </header>
 );
 

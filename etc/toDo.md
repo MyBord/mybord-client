@@ -10,7 +10,6 @@
 update tests for nav
 make header ... in mean time, remove header
 make general page
-fix scenario when click outside nav and collapse nav, but button doesn't change
 write test for custom useToggleLottie hook
 
 

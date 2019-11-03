@@ -5,6 +5,7 @@ import {
 import { act } from 'react-dom/test-utils';
 import { motion } from 'framer-motion';
 import HamburgerButton from 'buttons/hamburgerButton/hamburgerButton';
+import NavigationButton from 'buttons/navigationButton/navigationButton';
 import Navigation from './navigation';
 
 const setupShallow = (): ShallowWrapper => shallow(<Navigation />);
@@ -21,6 +22,10 @@ describe('basic rendering', () => {
 
   test('hamburger button renders', () => {
     expect(setupShallow().find(HamburgerButton).length).toBe(1);
+  });
+
+  test('navigation button renders', () => {
+    expect(setupShallow().find(NavigationButton).length).toBeGreaterThan(0);
   });
 
   test('mousedown event listener is added on mount and removed on unmount', () => {
@@ -76,3 +81,5 @@ describe('functionality', () => {
     expect(wrapper.find(motion.nav).prop('animate')).toBe('collapsed');
   });
 });
+
+// nav buttons render
