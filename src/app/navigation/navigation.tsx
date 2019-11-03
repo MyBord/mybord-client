@@ -10,12 +10,22 @@ const variants = {
 };
 
 const Navigation: React.FC = () => {
+  const [isStopped, setStop] = React.useState(true);
+  const [direction, setDirection] = React.useState(1);
   const [isExpanded, setIsExpanded] = React.useState(false);
   const navigationRef = React.useRef(null);
+
+  const toggleButton = (): void => {
+    if (!isStopped) {
+      setDirection(direction * -1);
+    }
+    setStop(false);
+  };
 
   const handleClickOutside = (event: MouseEvent): void => {
     if (!navigationRef.current.contains(event.target)) {
       setIsExpanded(false);
+      toggleButton();
     }
   };
 
@@ -23,6 +33,11 @@ const Navigation: React.FC = () => {
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   });
+
+  const handleClick = (): void => {
+    setIsExpanded(!isExpanded);
+    toggleButton();
+  };
 
   return (
     <motion.nav
@@ -34,7 +49,11 @@ const Navigation: React.FC = () => {
       variants={variants}
     >
       <div className={styles.buttonDiv}>
-        <HamburgerButton onClick={() => setIsExpanded(!isExpanded)} />
+        <HamburgerButton
+          direction={direction}
+          isStopped={isStopped}
+          onClick={handleClick}
+        />
       </div>
       <NavigationButton iconName="dashboard" label="Dashboard" />
       <NavigationButton active iconName="user" label="Following" />

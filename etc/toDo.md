@@ -7,7 +7,6 @@
 * write storybook for navigation
 
 ## ToDo:
-fix usetoggle test to return array
 update tests for nav
 make header ... in mean time, remove header
 make general page
