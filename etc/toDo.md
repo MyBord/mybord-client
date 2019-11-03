@@ -7,9 +7,7 @@
 * write storybook for navigation
 
 ## ToDo:
-make custom typography
 write test for custom hook
-write tests for icons
 write tests for animated icons
 write tests for navigation button
 update tests for nav
