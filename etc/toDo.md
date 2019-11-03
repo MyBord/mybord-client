@@ -8,8 +8,7 @@
 
 ## ToDo:
 write test for custom hook
-write tests for animated icons
-write tests for navigation button
+write tests for navigation button and storybook
 update tests for nav
 change hamburger button color to be app 'black'
 make header ... in mean time, remove header
@@ -38,3 +37,4 @@ Header
 ## long term
 - lazy load user icons
 - lazy load animated icon lottie files
+- add error boundaries

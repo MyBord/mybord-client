@@ -26,22 +26,17 @@ interface Props {
 const AnimatedIcon: React.FC<Props> = ({
   iconName, isPaused = false, isStopped, size,
 }) => {
-  const getAnimationData = (): any => {
-    try {
-      return icons[iconName];
-    } catch {
-      throw Error('Component: `AnimatedIcon` - iconName parameter is invalid');
-    }
-  };
-
-  return (
-    <LottiePlayer
-      animationData={getAnimationData()}
-      isPaused={isPaused}
-      isStopped={isStopped}
-      size={size}
-    />
-  );
+  if (icons[iconName]) {
+    return (
+      <LottiePlayer
+        animationData={icons[iconName]}
+        isPaused={isPaused}
+        isStopped={isStopped}
+        size={size}
+      />
+    );
+  }
+  throw Error('Component: `AnimatedIcon` - iconName parameter is invalid');
 };
 
 export default AnimatedIcon;
