@@ -2,6 +2,7 @@ import * as React from 'react';
 import { motion } from 'framer-motion';
 import HamburgerButton from 'buttons/hamburgerButton/hamburgerButton';
 import NavigationButton from 'buttons/navigationButton/navigationButton';
+import useToggleLottie from 'hooks/useToggleLottie';
 import * as styles from './navigation.module.scss';
 
 const variants = {
@@ -10,22 +11,16 @@ const variants = {
 };
 
 const Navigation: React.FC = () => {
-  const [isStopped, setStop] = React.useState(true);
-  const [direction, setDirection] = React.useState(1);
+  const [direction, isStopped, toggleLottie] = useToggleLottie();
   const [isExpanded, setIsExpanded] = React.useState(false);
   const navigationRef = React.useRef(null);
-
-  const toggleButton = (): void => {
-    if (!isStopped) {
-      setDirection(direction * -1);
-    }
-    setStop(false);
-  };
 
   const handleClickOutside = (event: MouseEvent): void => {
     if (!navigationRef.current.contains(event.target)) {
       setIsExpanded(false);
-      toggleButton();
+      if (isExpanded) {
+        toggleLottie();
+      }
     }
   };
 
@@ -36,7 +31,7 @@ const Navigation: React.FC = () => {
 
   const handleClick = (): void => {
     setIsExpanded(!isExpanded);
-    toggleButton();
+    toggleLottie();
   };
 
   return (
