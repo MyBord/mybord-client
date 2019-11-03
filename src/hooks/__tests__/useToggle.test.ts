@@ -3,36 +3,39 @@ import useToggle from '../useToggle';
 
 test('should be `false` by default and toggle accurately', () => {
   const { result } = renderHook(() => useToggle());
-
-  expect(result.current.state).toBeFalsy();
-
+  expect(result.current[0]).toBeFalsy();
   act(() => {
-    result.current.toggle();
+    result.current[1]();
   });
-
-  expect(result.current.state).toBeTruthy();
-
+  expect(result.current[0]).toBeTruthy();
   act(() => {
-    result.current.toggle();
+    result.current[1]();
   });
+  expect(result.current[0]).toBeFalsy();
+});
 
-  expect(result.current.state).toBeFalsy();
+test('should toggle accurately when started with `false` state', () => {
+  const { result } = renderHook(() => useToggle(false));
+  expect(result.current[0]).toBeFalsy();
+  act(() => {
+    result.current[1]();
+  });
+  expect(result.current[0]).toBeTruthy();
+  act(() => {
+    result.current[1]();
+  });
+  expect(result.current[0]).toBeFalsy();
 });
 
 test('should toggle accurately when started with `true` state', () => {
   const { result } = renderHook(() => useToggle(true));
-
-  expect(result.current.state).toBeTruthy();
-
+  expect(result.current[0]).toBeTruthy();
   act(() => {
-    result.current.toggle();
+    result.current[1]();
   });
-
-  expect(result.current.state).toBeFalsy();
-
+  expect(result.current[0]).toBeFalsy();
   act(() => {
-    result.current.toggle();
+    result.current[1]();
   });
-
-  expect(result.current.state).toBeTruthy();
+  expect(result.current[0]).toBeTruthy();
 });

@@ -5,7 +5,7 @@ import { AnimatedIconNames } from 'types/iconTypes';
 import AnimatedIcon, { animatedIcons } from './animatedIcon';
 
 const AnimatedIconExamples: React.FC = () => {
-  const { state, toggle } = useToggle(true);
+  const [state, toggle] = useToggle(true);
   return (
     <>
       <button className={styles.exampleButton} onClick={toggle} type="button">Animate</button>

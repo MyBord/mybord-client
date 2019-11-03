@@ -8,13 +8,10 @@
 
 ## ToDo:
 fix usetoggle test to return array
-write tests for navigation button and storybook
 update tests for nav
 make header ... in mean time, remove header
 make general page
 fix scenario when click outside nav and collapse nav, but button doesn't change
-fix speed of navigation
-add stories and tests for navigation button
 
 
 ## Navigation:
