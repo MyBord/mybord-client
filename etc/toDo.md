@@ -7,11 +7,11 @@
 * write storybook for navigation
 
 ## ToDo:
-update tests for nav
-make header ... in mean time, remove header
 make general page
-write test for custom useToggleLottie hook
-
+make tests for pages
+make can't page
+make loading
+make general background page
 
 ## Navigation:
 
@@ -32,3 +32,4 @@ Header
 - lazy load animated icon lottie files
 - add error boundaries
 - add storybook for colors
+- look into react-router code splitting

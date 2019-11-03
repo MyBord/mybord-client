@@ -8,12 +8,6 @@ const config = merge(common, {
     contentBase: './dist',
     historyApiFallback: true,
     hot: true,
-    proxy: {
-      '/api': {
-        target: 'http://localhost:5001',
-        secure: false,
-      },
-    },
     allowedHosts: [
       'localhost',
     ],

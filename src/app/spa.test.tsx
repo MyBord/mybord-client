@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { ShallowWrapper, shallow } from 'enzyme';
 import Header from 'header/header';
-import HomePage from 'pages/homePage/homePage';
 import Navigation from 'navigation/navigation';
+import Routes from 'pages/routes';
 import Spa from './spa';
 
 const setup = (): ShallowWrapper => shallow(<Spa />);
@@ -21,8 +21,8 @@ describe('basic rendering', () => {
     expect(wrapper.find(Header).length).toBe(1);
   });
 
-  test('HomePage renders', () => {
-    expect(wrapper.find(HomePage).length).toBe(1);
+  test('Routes renders', () => {
+    expect(wrapper.find(Routes).length).toBe(1);
   });
 
   test('Navigation renders', () => {

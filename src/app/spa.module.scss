@@ -1,6 +1,11 @@
 @import "~styles/colors";
 @import "~styles/sizes";
 
+.section {
+  background: $appBackground;
+  flex: auto;
+}
+
 .main {
   display: flex;
   flex-flow: column;
