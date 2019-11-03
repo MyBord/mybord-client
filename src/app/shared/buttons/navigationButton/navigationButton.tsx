@@ -1,11 +1,12 @@
 import * as React from 'react';
-import AnimatedIcon, { IconName } from 'icons/animatedIcon/animatedIcon';
+import AnimatedIcon from 'icons/animatedIcon/animatedIcon';
 import Typography from 'shared/typography/typography';
+import { AnimatedIconNames } from 'types/iconTypes';
 import * as styles from './navigationButton.module.scss';
 
 interface Props {
   active?: boolean;
-  iconName: IconName;
+  iconName: AnimatedIconNames;
   label: string;
 }
 

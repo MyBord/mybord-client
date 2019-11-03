@@ -1,9 +1,10 @@
 import * as React from 'react';
 import { ReactWrapper, mount } from 'enzyme';
 import LottiePlayer from 'lotty/lottiePlayer';
-import AnimatedIcon, { IconName, icons } from './animatedIcon';
+import { AnimatedIconNames } from 'types/iconTypes';
+import AnimatedIcon, { animatedIcons } from './animatedIcon';
 
-const setup = (iconName: IconName): ReactWrapper => mount(
+const setup = (iconName: AnimatedIconNames): ReactWrapper => mount(
   <AnimatedIcon
     iconName={iconName}
     isStopped={false}
@@ -12,11 +13,11 @@ const setup = (iconName: IconName): ReactWrapper => mount(
 );
 
 describe('basic rendering', () => {
-  const iconRenderTest = (iconName: IconName): void => test(`icon ${iconName} renders`, () => {
+  const iconRenderTest = (iconName: AnimatedIconNames): void => test(`icon ${iconName} renders`, () => {
     expect(setup(iconName).find(LottiePlayer).length).toBe(1);
   });
 
-  Object.keys(icons).forEach((icon: IconName) => iconRenderTest(icon));
+  Object.keys(animatedIcons).forEach((icon: AnimatedIconNames) => iconRenderTest(icon));
 });
 
 describe('conditional rendering', () => {

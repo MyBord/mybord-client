@@ -1,11 +1,12 @@
 import * as React from 'react';
 import * as styles from 'storybook/storybook.module.scss';
-import Icon, { icons, IconName } from './icon';
+import { IconNames } from 'types/iconTypes';
+import Icon, { iconNames } from './icon';
 
 const IconExamples: React.FC = () => (
   <div className={styles.examplesDivGroup}>
     {
-      Object.keys(icons).map((iconName: IconName) => (
+      Object.keys(iconNames).map((iconName: IconNames) => (
         <div className={styles.exampleDiv}>
           <div className={styles.exampleDivCenter}>
             <Icon iconName={iconName} size={60} />

@@ -1,8 +1,9 @@
 import * as React from 'react';
 import { ReactWrapper, mount } from 'enzyme';
-import Icon, { IconName, icons } from './icon';
+import { IconNames } from 'types/iconTypes';
+import Icon, { iconNames } from './icon';
 
-const setup = (iconName: IconName): ReactWrapper => mount(
+const setup = (iconName: IconNames): ReactWrapper => mount(
   <Icon
     iconName={iconName}
     size={60}
@@ -10,11 +11,11 @@ const setup = (iconName: IconName): ReactWrapper => mount(
 );
 
 describe('basic rendering', () => {
-  const iconRenderTest = (iconName: IconName): void => test(`icon ${iconName} renders`, () => {
+  const iconRenderTest = (iconName: IconNames): void => test(`icon ${iconName} renders`, () => {
     expect(setup(iconName).find('svg').length).toBe(1);
   });
 
-  Object.keys(icons).forEach((icon: IconName) => iconRenderTest(icon));
+  Object.keys(iconNames).forEach((iconName: IconNames) => iconRenderTest(iconName));
 });
 
 describe('conditional rendering', () => {

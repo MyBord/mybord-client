@@ -1,7 +1,8 @@
 import * as React from 'react';
 import * as styles from 'storybook/storybook.module.scss';
 import useToggle from 'hooks/useToggle';
-import AnimatedIcon, { icons, IconName } from './animatedIcon';
+import { AnimatedIconNames } from 'types/iconTypes';
+import AnimatedIcon, { animatedIcons } from './animatedIcon';
 
 const AnimatedIconExamples: React.FC = () => {
   const { state, toggle } = useToggle(true);
@@ -10,7 +11,7 @@ const AnimatedIconExamples: React.FC = () => {
       <button className={styles.exampleButton} onClick={toggle} type="button">Animate</button>
       <div className={styles.examplesDivGroup}>
         {
-          Object.keys(icons).map((iconName: IconName) => (
+          Object.keys(animatedIcons).map((iconName: AnimatedIconNames) => (
             <div className={styles.exampleDiv}>
               <div className={styles.exampleDivCenter}>
                 <AnimatedIcon

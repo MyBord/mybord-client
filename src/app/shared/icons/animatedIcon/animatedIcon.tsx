@@ -5,8 +5,9 @@ import chartAnimation from 'lotty/lotties/chart.json';
 import dashboardAnimation from 'lotty/lotties/dashboard.json';
 import gearAnimation from 'lotty/lotties/gear.json';
 import userAnimation from 'lotty/lotties/user.json';
+import { AnimatedIconNames } from 'types/iconTypes';
 
-export const icons = {
+export const animatedIcons = {
   back: backAnimation,
   chart: chartAnimation,
   dashboard: dashboardAnimation,
@@ -14,10 +15,8 @@ export const icons = {
   user: userAnimation,
 };
 
-export type IconName = keyof typeof icons;
-
 interface Props {
-  iconName: IconName;
+  iconName: AnimatedIconNames;
   isPaused?: boolean;
   isStopped: boolean;
   size: number;
@@ -26,10 +25,10 @@ interface Props {
 const AnimatedIcon: React.FC<Props> = ({
   iconName, isPaused = false, isStopped, size,
 }) => {
-  if (icons[iconName]) {
+  if (animatedIcons[iconName]) {
     return (
       <LottiePlayer
-        animationData={icons[iconName]}
+        animationData={animatedIcons[iconName]}
         isPaused={isPaused}
         isStopped={isStopped}
         size={size}

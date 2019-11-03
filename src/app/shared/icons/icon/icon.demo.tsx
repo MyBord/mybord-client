@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { number, optionsKnob as options } from '@storybook/addon-knobs';
-import Icon, { icons } from './icon';
+import Icon, { iconNames } from './icon';
 
-const iconList = Object.keys(icons);
+const iconList = Object.keys(iconNames);
 const iconNameOptions: {[key: string]: string} = {};
 iconList.forEach((iconName) => {
   iconNameOptions[iconName] = iconName;

@@ -1,22 +1,21 @@
 import * as React from 'react';
+import { IconNames } from 'types/iconTypes';
 import BikeIcon from './individualIcons/bikeIcon';
 import HouseIcon from './individualIcons/houseIcon';
 import UserIcon from './individualIcons/userIcon';
 
-export const icons = {
+// declaring an iconNames from an object instead of an array
+// (e.g. ['iconName1', 'iconName2'])
+// because TS sucks at accessing values in arrays so we can re-use that array in other places.
+// https://github.com/microsoft/TypeScript/issues/20965
+export const iconNames = {
   bike: 'foo',
   house: 'foo',
   user: 'foo',
 };
 
-// declaring an IconName type from an object instead of an array
-// (e.g. ['iconName1', 'iconName2'])
-// because TS sucks at accessing values in arrays so we can re-use that array in other places.
-// https://github.com/microsoft/TypeScript/issues/20965
-export type IconName = keyof typeof icons;
-
 interface Props {
-  iconName: IconName;
+  iconName: IconNames;
   size: number;
 }
 
