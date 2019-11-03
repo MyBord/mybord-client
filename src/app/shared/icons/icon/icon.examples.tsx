@@ -3,7 +3,7 @@ import * as styles from 'storybook/storybook.module.scss';
 import Icon, { icons, IconName } from './icon';
 
 const IconExamples: React.FC = () => (
-  <div className={styles.examplesDiv}>
+  <div className={styles.examplesDivGroup}>
     {
       Object.keys(icons).map((iconName: IconName) => (
         <div className={styles.exampleDiv}>

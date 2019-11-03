@@ -20,6 +20,7 @@ add tooltips
 fix scenario when click outside nav and collapse nav, but button doesn't change
 fix speed of navigation
 change speed of hamburger button
+add stories and tests for navigation button
 
 
 ## Navigation:

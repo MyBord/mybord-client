@@ -133,6 +133,7 @@ const config = {
       static: path.resolve(__dirname, 'src/static/'),
       storybook: path.resolve(__dirname, 'src/thirdParty/storybook/'),
       styles: path.resolve(__dirname, 'src/styles/'),
+      typography: path.resolve(__dirname, 'src/app/shared/typography/'),
     },
   },
 };

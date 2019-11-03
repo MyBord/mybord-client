@@ -22,7 +22,8 @@
       "shared/*": ["src/app/shared/*"],
       "static/*": ["src/static/*"],
       "storybook/*": ["src/thirdParty/storybook/*"],
-      "styles/*": ["src/styles/*"]
+      "styles/*": ["src/styles/*"],
+      "typography/*": ["src/app/shared/typography/*"]
     }
   }
 }

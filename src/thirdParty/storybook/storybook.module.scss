@@ -30,6 +30,11 @@
   font-size: 1rem;
 }
 
+.exampleBlock {
+  height: 1.5rem;
+  width: 100%;
+}
+
 .exampleButton {
   margin-left: 1rem;
 }
@@ -52,10 +57,23 @@
 }
 
 .examplesDiv {
-  display: flex;
-  flex-wrap: wrap;
   margin-left: 1rem;
   width: calc(100% - 1rem);
+}
+
+.examplesDivGroup {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.examplesDivList {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  > h3 {
+    padding: 0;
+    margin: 1rem 0;
+  }
 }
 
 .h1 {

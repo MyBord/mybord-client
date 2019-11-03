@@ -22,6 +22,7 @@ module.exports = {
     '^shared(.*)$': '<rootDir>/src/app/shared$1',
     '^storybook(.*)$': '<rootDir>/src/thirdParty/storybook$1',
     '^styles(.*)$': '<rootDir>/src/styles$1',
+    '^typography(.*)$': '<rootDir>/src/typography$1',
   },
   setupFilesAfterEnv: ['<rootDir>/setupTests.js'],
   preset: 'ts-jest',

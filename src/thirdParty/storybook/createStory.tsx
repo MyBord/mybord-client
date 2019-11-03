@@ -73,7 +73,9 @@ export default ({
           && (
           <article>
             <h2 className={styles.h2}>All Examples</h2>
-            <Examples />
+            <div className={styles.examplesDiv}>
+              <Examples />
+            </div>
           </article>
           )
         }

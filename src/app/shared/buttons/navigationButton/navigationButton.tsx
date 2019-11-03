@@ -1,5 +1,6 @@
 import * as React from 'react';
 import AnimatedIcon, { IconName } from 'icons/animatedIcon/animatedIcon';
+import Typography from 'shared/typography/typography';
 import * as styles from './navigationButton.module.scss';
 
 interface Props {
@@ -24,7 +25,7 @@ const NavigationButton: React.FC<Props> = ({ iconName, label }) => {
           size={40}
         />
       </div>
-      <p className={styles.p}>{label}</p>
+      <Typography text={label} type="text" />
     </button>
   );
 };

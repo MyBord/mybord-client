@@ -8,7 +8,7 @@ const AnimatedIconExamples: React.FC = () => {
   return (
     <>
       <button className={styles.exampleButton} onClick={setState} type="button">Animate</button>
-      <div className={styles.examplesDiv}>
+      <div className={styles.examplesDivGroup}>
         {
           Object.keys(icons).map((iconName: IconName) => (
             <div className={styles.exampleDiv}>
