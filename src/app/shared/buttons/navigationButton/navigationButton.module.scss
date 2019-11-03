@@ -1,3 +1,4 @@
+@import "~styles/colors";
 @import "~styles/sizes";
 
 .button {
@@ -9,9 +10,17 @@
   margin: 0.5rem 0;
   outline: none;
   padding: 0;
+  position: relative;
   width: $navWidthExpanded;
 }
 
 .iconDiv {
   width: $navWidthCollapsed;
+}
+
+.span {
+  border-radius: 0 0.5625rem 0.5625rem 0;
+  border: 0.125rem solid $blue;
+  height: 70%;
+  position: absolute;
 }

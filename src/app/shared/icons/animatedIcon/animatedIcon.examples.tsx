@@ -4,10 +4,10 @@ import useToggle from 'hooks/useToggle';
 import AnimatedIcon, { icons, IconName } from './animatedIcon';
 
 const AnimatedIconExamples: React.FC = () => {
-  const [state, setState] = useToggle(true);
+  const { state, toggle } = useToggle(true);
   return (
     <>
-      <button className={styles.exampleButton} onClick={setState} type="button">Animate</button>
+      <button className={styles.exampleButton} onClick={toggle} type="button">Animate</button>
       <div className={styles.examplesDivGroup}>
         {
           Object.keys(icons).map((iconName: IconName) => (

@@ -4,11 +4,12 @@ import Typography from 'shared/typography/typography';
 import * as styles from './navigationButton.module.scss';
 
 interface Props {
+  active?: boolean;
   iconName: IconName;
   label: string;
 }
 
-const NavigationButton: React.FC<Props> = ({ iconName, label }) => {
+const NavigationButton: React.FC<Props> = ({ active = false, iconName, label }) => {
   const [state, setState] = React.useState(true);
 
   return (
@@ -18,6 +19,7 @@ const NavigationButton: React.FC<Props> = ({ iconName, label }) => {
       onClick={() => console.log('click')}
       type="button"
     >
+      {active && <span className={styles.span} />}
       <div className={styles.iconDiv}>
         <AnimatedIcon
           iconName={iconName}

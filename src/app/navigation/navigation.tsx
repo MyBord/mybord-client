@@ -28,15 +28,16 @@ const Navigation: React.FC = () => {
     <motion.nav
       animate={isExpanded ? 'expanded' : 'collapsed'}
       className={styles.nav}
-      ref={navigationRef}
       initial={false}
+      ref={navigationRef}
+      transition={{ duration: 0.3 }}
       variants={variants}
     >
       <div className={styles.buttonDiv}>
         <HamburgerButton onClick={() => setIsExpanded(!isExpanded)} />
       </div>
       <NavigationButton iconName="dashboard" label="Dashboard" />
-      <NavigationButton iconName="user" label="Following" />
+      <NavigationButton active iconName="user" label="Following" />
       <NavigationButton iconName="chart" label="Trending" />
     </motion.nav>
   );

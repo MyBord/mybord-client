@@ -7,16 +7,13 @@
 * write storybook for navigation
 
 ## ToDo:
-write test for custom hook
 write tests for navigation button and storybook
 update tests for nav
-change hamburger button color to be app 'black'
 make header ... in mean time, remove header
 make general page
 add tooltips
 fix scenario when click outside nav and collapse nav, but button doesn't change
 fix speed of navigation
-change speed of hamburger button
 add stories and tests for navigation button
 
 
@@ -38,3 +35,4 @@ Header
 - lazy load user icons
 - lazy load animated icon lottie files
 - add error boundaries
+- add storybook for colors
