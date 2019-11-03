@@ -94,6 +94,7 @@ src/
         |- lotties/ 
         |- lottiePlayer.tsx 
      |- storybook/ 
+  |- types/ 
   |- index.html
   |- index.scss
   |- index.tsx
@@ -117,6 +118,8 @@ src/
   * Utility component to play lottie file.
 * **thirdParty/storybook/:**
   * Folder containing storybook code and universal tooling / wrapper.
+* **types/:**
+  * Folder containing types and interfaces used across the app.
 * **`index.html`:**
   * root html file used for the app.
 * **`index.scss`:**

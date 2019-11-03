@@ -23,7 +23,8 @@
       "static/*": ["src/static/*"],
       "storybook/*": ["src/thirdParty/storybook/*"],
       "styles/*": ["src/styles/*"],
-      "typography/*": ["src/app/shared/typography/*"]
+      "typography/*": ["src/app/shared/typography/*"],
+      "types/*": ["src/types/*"]
     }
   }
 }
