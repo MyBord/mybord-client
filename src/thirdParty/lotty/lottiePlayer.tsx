@@ -3,20 +3,29 @@ import Lottie from 'react-lottie';
 
 interface Props {
   animationData: any;
+  autoplay?: boolean;
   direction?: number;
   isPaused?: boolean;
   isStopped?: boolean;
+  loop?: boolean;
   size: number;
   speed?: number;
 }
 
 const LottiePlayer: React.FC<Props> = ({
-  animationData, direction = 1, isPaused = false, isStopped = false, size, speed = undefined,
+  animationData,
+  autoplay = false,
+  direction = 1,
+  isPaused = false,
+  isStopped = false,
+  loop = false,
+  size,
+  speed = undefined,
 }) => {
   const defaultOptions = {
     animationData,
-    autoplay: false,
-    loop: false,
+    autoplay,
+    loop,
     rendererSettings: {
       preserveAspectRatio: 'xMidYMid slice',
     },

@@ -1,21 +1,18 @@
 @import "~styles/colors";
 @import "~styles/sizes";
 
-.button {
+.iconDiv {
+  width: $navWidthCollapsed;
+}
+
+.link {
   align-items: center;
-  background: transparent;
-  border: none;
   cursor: pointer;
   display: flex;
   margin: 0.5rem 0;
-  outline: none;
-  padding: 0;
   position: relative;
+  text-decoration: none;
   width: $navWidthExpanded;
-}
-
-.iconDiv {
-  width: $navWidthCollapsed;
 }
 
 .span {

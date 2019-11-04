@@ -1,11 +1,14 @@
 import * as React from 'react';
+import { MemoryRouter } from 'react-router-dom';
 import Navigation from './navigation';
 import * as styles from './navigation.demo.module.scss';
 
 const NavigationDemo: React.FC = () => (
-  <div className={styles.div}>
-    <Navigation />
-  </div>
+  <MemoryRouter>
+    <div className={styles.div}>
+      <Navigation />
+    </div>
+  </MemoryRouter>
 );
 
 export default NavigationDemo;

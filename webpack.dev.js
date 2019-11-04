@@ -5,12 +5,13 @@ const config = merge(common, {
   mode: 'development',
   devtool: 'inline-source-map',
   devServer: {
-    contentBase: './dist',
-    historyApiFallback: true,
-    hot: true,
     allowedHosts: [
       'localhost',
     ],
+    contentBase: './dist',
+    historyApiFallback: true,
+    hot: true,
+    open: true,
   },
 });
 

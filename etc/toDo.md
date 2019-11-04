@@ -12,6 +12,7 @@ make tests for pages
 make can't page
 make loading
 make general background page
+make navigation button active state dynamic
 
 ## Navigation:
 
@@ -33,3 +34,4 @@ Header
 - add error boundaries
 - add storybook for colors
 - look into react-router code splitting
+- add relay

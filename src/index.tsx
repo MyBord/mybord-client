@@ -1,8 +1,12 @@
 import 'babel-polyfill';
 import * as React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import { render } from 'react-dom';
 import Spa from './app/spa';
 
 render(
-  <Spa />, document.getElementById('app'),
+  <BrowserRouter>
+    <Spa />
+  </BrowserRouter>,
+  document.getElementById('app'),
 );

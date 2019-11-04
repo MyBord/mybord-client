@@ -4,6 +4,7 @@ export const api = `
 | active   | does the button reflect the page that the user is currently on, and thus show the active indicator | -         | false         | boolean |
 | iconName | name of icon to be rendered; only certain strings are permitted                                    | ✔         | -             | string  |
 | label    | button label                                                                                       | ✔         | -             | string  |
+| to       | the page that the button should link to when clicked                                               | ✔         | -             | string  |
 `;
 
 export const howTo = `

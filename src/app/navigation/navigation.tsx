@@ -50,9 +50,22 @@ const Navigation: React.FC = () => {
           onClick={handleClick}
         />
       </div>
-      <NavigationButton iconName="dashboard" label="Dashboard" />
-      <NavigationButton active iconName="user" label="Following" />
-      <NavigationButton iconName="chart" label="Trending" />
+      <NavigationButton
+        iconName="dashboard"
+        label="Dashboard"
+        to=""
+      />
+      <NavigationButton
+        active
+        iconName="user"
+        label="Following"
+        to="following"
+      />
+      <NavigationButton
+        iconName="chart"
+        label="Trending"
+        to="trending"
+      />
     </motion.nav>
   );
 };

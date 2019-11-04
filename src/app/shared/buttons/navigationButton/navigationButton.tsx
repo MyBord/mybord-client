@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 import AnimatedIcon from 'icons/animatedIcon/animatedIcon';
 import Typography from 'shared/typography/typography';
 import { AnimatedIconNames } from 'types/iconTypes';
@@ -8,17 +9,17 @@ interface Props {
   active?: boolean;
   iconName: AnimatedIconNames;
   label: string;
+  to: string;
 }
 
-const NavigationButton: React.FC<Props> = ({ active = false, iconName, label }) => {
+const NavigationButton: React.FC<Props> = ({ active = false, iconName, label, to }) => {
   const [state, setState] = React.useState(true);
 
   return (
-    <button
-      className={styles.button}
+    <Link
+      className={styles.link}
       onMouseEnter={() => setState(false)}
-      onClick={() => console.log('click')}
-      type="button"
+      to={`/${to}`}
     >
       {active && <span className={styles.span} />}
       <div className={styles.iconDiv}>
@@ -29,7 +30,7 @@ const NavigationButton: React.FC<Props> = ({ active = false, iconName, label }) 
         />
       </div>
       <Typography text={label} type="text" />
-    </button>
+    </Link>
   );
 };
 
