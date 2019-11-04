@@ -86,6 +86,7 @@ The app folder should be organized in the following fashion:
 
 ```
 src/
+  |- api/ 
   |- app/ 
   |- hooks/ 
   |- styles/ 
@@ -100,6 +101,11 @@ src/
   |- index.tsx
 ```
 
+* **api:**
+    * The api folder contains the http service related scripts that are used to connect to any and
+    all api's used in the app.
+* **app/:**
+  * The folder that contains the react application source code.
 * **app/:**
   * The folder that contains the react application source code.
 * **hooks/:**

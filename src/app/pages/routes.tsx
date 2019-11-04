@@ -3,25 +3,35 @@ import { Route, Switch } from 'react-router-dom';
 import CantPage from 'pages/cantPage/cantPage';
 import DashboardPage from 'pages/dashboardPage/dashboardPage';
 import FollowingPage from 'pages/followingPage/followingPage';
+import Spinner from 'icons/spinner/spinner';
 import TrendingPage from 'pages/trendingPage/trendingPage';
 
-const Routes = () => (
+const Routes: React.FC = () => (
   <Switch>
     <Route
       exact
       path="/"
-      component={DashboardPage}
-    />
+    >
+      <React.Suspense fallback={<Spinner />}>
+        <DashboardPage />
+      </React.Suspense>
+    </Route>
     <Route
       exact
       path="/following"
-      component={FollowingPage}
-    />
+    >
+      <React.Suspense fallback={<Spinner />}>
+        <FollowingPage />
+      </React.Suspense>
+    </Route>
     <Route
       exact
       path="/trending"
-      component={TrendingPage}
-    />
+    >
+      <React.Suspense fallback={<Spinner />}>
+        <TrendingPage />
+      </React.Suspense>
+    </Route>
     <Route
       path="*"
       component={CantPage}

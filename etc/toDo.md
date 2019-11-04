@@ -1,18 +1,12 @@
-## DONE
-* write test for hamburger - DONE
-* write test for lottie player - DONE
-* write storybook for hamburger
-* fix storybook styling
-* write test for navigation
-* write storybook for navigation
-
 ## ToDo:
 make general page
 make tests for pages
 make can't page
 make loading
-make general background page
 make navigation button active state dynamic
+remove need to add demo for every storybook
+add fade transitions from transitioning from spinner to page
+add transitions for pages
 
 ## Navigation:
 

@@ -122,6 +122,7 @@ const config = {
   resolve: {
     extensions: ['.jsx', '.js', '.tsx', '.ts', '.scss'],
     alias: {
+      api: path.resolve(__dirname, 'src/api/'),
       buttons: path.resolve(__dirname, 'src/app/shared/buttons/'),
       header: path.resolve(__dirname, 'src/app/header/'),
       hooks: path.resolve(__dirname, 'src/hooks/'),

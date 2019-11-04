@@ -12,6 +12,7 @@
     "sourceMap": true,
     "target": "es5",
     "paths": {
+      "api/*": ["src/api/*"],
       "buttons/*": ["src/app/shared/buttons/*"],
       "header/*": ["src/app/header/*"],
       "hooks/*": ["src/hooks/*"],

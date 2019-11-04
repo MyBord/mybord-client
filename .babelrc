@@ -18,6 +18,7 @@
     ["module-resolver", {
       "root": ["./src"],
       "alias": {
+        "api": "./src/api/",
         "buttons": "./src/app/shared/buttons/",
         "header": "./src/app/header/",
         "hooks": "./src/hooks/",
