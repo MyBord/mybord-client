@@ -81,5 +81,3 @@ describe('functionality', () => {
     expect(wrapper.find(motion.nav).prop('animate')).toBe('collapsed');
   });
 });
-
-// nav buttons render
