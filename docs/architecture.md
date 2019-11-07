@@ -140,6 +140,7 @@ app/
   |- header/ 
   |- navigation/ 
   |- pages/ 
+  |- routing/ 
   |- shared/ 
   |- spa.module.scss
   |- spa.test.tsx
@@ -152,6 +153,8 @@ app/
   * The react code used to compose the left hand navigation pane.
 * **pages/:**
   * Source code and components for each page.
+* **routing/:**
+  * Contains code for how the application should be routed.
 * **shared/:**
   * Components shared across the header, navigation, and / or pages.
 * **`spa.moduel.scss`:**

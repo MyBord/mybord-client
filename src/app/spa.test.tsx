@@ -2,7 +2,7 @@ import * as React from 'react';
 import { ShallowWrapper, shallow } from 'enzyme';
 import Header from 'header/header';
 import Navigation from 'navigation/navigation';
-import Routes from 'pages/routes';
+import Routes from './routing/routes';
 import Spa from './spa';
 
 const setup = (): ShallowWrapper => shallow(<Spa />);
