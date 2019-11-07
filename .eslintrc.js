@@ -62,45 +62,6 @@ module.exports = {
     '@typescript-eslint/semi': ['error'],
     'react/destructuring-assignment': [false, 'always', { 'ignoreClassFields': true }],
     'react/jsx-filename-extension': [1, { 'extensions': ['.jsx', '.tsx'] }],
-    "react/sort-comp": [2, 
-      { 
-        order: [
-          'static-methods',
-          'lifecycle',
-          'everything-else',
-          'render'
-        ], 
-        groups: {
-        lifecycle: [
-          'displayName',
-          'propTypes',
-          'contextTypes',
-          'childContextTypes',
-          'mixins',
-          'statics',
-          'defaultProps',
-          'constructor',
-          'getDefaultProps',
-          'state',
-          'getInitialState',
-          'getChildContext',
-          'getDerivedStateFromProps',
-          'componentWillMount',
-          'UNSAFE_componentWillMount',
-          'componentDidMount',
-          'componentWillReceiveProps',
-          'UNSAFE_componentWillReceiveProps',
-          'shouldComponentUpdate',
-          'componentWillUpdate',
-          'UNSAFE_componentWillUpdate',
-          'getSnapshotBeforeUpdate',
-          'componentDidUpdate',
-          'componentDidCatch',
-          'componentWillUnmount'
-          ]
-        }
-      }
-    ]
   },
   settings: {
     'import/extensions': [
