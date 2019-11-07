@@ -7,3 +7,25 @@ html, body {
   display: flex;
   height: 100%;
 }
+
+.fade-enter {
+  opacity: 0;
+  z-index: 1;
+}
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 2s linear 2s;
+}
+
+/* exit */
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit.fade-exit-active {
+  opacity: 0;
+  transition: opacity 1s linear;
+}
+.fade-exit-done {
+  opacity: 0;
+}
+
