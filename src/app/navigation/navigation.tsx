@@ -56,7 +56,6 @@ const Navigation: React.FC = () => {
         to=""
       />
       <NavigationButton
-        active
         iconName="user"
         label="Following"
         to="following"

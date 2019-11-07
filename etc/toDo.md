@@ -6,6 +6,7 @@ make loading
 make navigation button active state dynamic
 add transitions for pages
 update docs about routing folder
+update navigation button
 
 ## Navigation:
 

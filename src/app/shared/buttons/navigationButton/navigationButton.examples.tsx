@@ -4,12 +4,12 @@ import { MemoryRouter } from 'react-router-dom';
 import NavigationButton from './navigationButton';
 
 const NavigationButtonExamples: React.FC = () => (
-  <MemoryRouter>
+  <MemoryRouter initialEntries={['/bar']}>
     <div className={styles.examplesDivList}>
       <h3 className={styles.h3}>Default</h3>
       <NavigationButton iconName="chart" label="Trending" to="foo" />
       <h3 className={styles.h3}>Active (on current page)</h3>
-      <NavigationButton active iconName="chart" label="Trending" to="foo" />
+      <NavigationButton iconName="chart" label="Trending" to="bar" />
     </div>
   </MemoryRouter>
 );
