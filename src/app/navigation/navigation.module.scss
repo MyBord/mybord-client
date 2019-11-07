@@ -1,0 +1,25 @@
+@import "~styles/colors";
+@import "~styles/sizes";
+
+.buttonDiv {
+  margin-right: calc((#{$navWidthCollapsed} - 50px) / 2);
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.nav {
+  background: $white;
+  border-right: 0.0625rem solid $navBorder;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  width: $navWidthCollapsed;
+}
+
+:export {
+  navWidthCollapsed: $navWidthCollapsed;
+  navWidthExpanded: $navWidthExpanded;
+}

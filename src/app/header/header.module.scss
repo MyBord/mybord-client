@@ -1,0 +1,7 @@
+@import "~styles/colors";
+@import "~styles/sizes";
+
+.header {
+  background: $appBackground;
+  height: $headerHeight;
+}

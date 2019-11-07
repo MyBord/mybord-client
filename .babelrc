@@ -1,0 +1,38 @@
+{
+  "presets": [
+    "@babel/preset-react",
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "node": "current"
+        }
+      }
+    ]
+  ],
+  "plugins": [
+    ["babel-plugin-transform-builtin-extend", {
+      "globals": ["Error", "Array"],
+      "approximate": true
+    }],
+    ["module-resolver", {
+      "root": ["./src"],
+      "alias": {
+        "api": "./src/api/",
+        "buttons": "./src/app/shared/buttons/",
+        "header": "./src/app/header/",
+        "hooks": "./src/hooks/",
+        "icons": "./src/app/shared/icons/",
+        "lotty": "./src/thirdParty/lotty/",
+        "navigation": "./src/app/navigation/",
+        "pages": "./src/app/pages/",
+        "shared": "./src/app/shared/",
+        "static": "./src/static/",
+        "storybook": "./src/thirdParty/storybook/",
+        "styles": "./src/styles/",
+        "typography": "./src/app/shared/typography/",
+        "types": "./src/types/"
+      }
+    }]
+  ]
+}
