@@ -9,6 +9,7 @@ const config = merge(common, {
       'localhost',
     ],
     contentBase: './dist',
+    historyApiFallback: true,
     hot: true,
     open: true,
   },

@@ -4,8 +4,6 @@ make tests for pages
 make can't page
 make loading
 make navigation button active state dynamic
-remove need to add demo for every storybook
-add fade transitions from transitioning from spinner to page
 add transitions for pages
 
 ## Navigation:
