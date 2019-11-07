@@ -12,7 +12,7 @@ const config = {
     `${SRC_DIR}/index.scss`,
   ],
   output: {
-    path: `${DIST_DIR}/`,
+    path: `${DIST_DIR}/app/`,
     filename: 'bundle.js',
     publicPath: '/app/',
   },
