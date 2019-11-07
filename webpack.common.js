@@ -8,11 +8,11 @@ const SRC_DIR = path.resolve(__dirname, 'src');
 const config = {
   entry: [
     'babel-polyfill',
-    `${SRC_DIR}/index.tsx`,
+    `${SRC_DIR}/index.jsx`,
     `${SRC_DIR}/index.scss`,
   ],
   output: {
-    path: `${DIST_DIR}/`,
+    path: `${DIST_DIR}/app/`,
     filename: 'bundle.js',
     publicPath: '/app/',
   },
