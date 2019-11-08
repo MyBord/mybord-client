@@ -39,20 +39,9 @@ describe('basic rendering', () => {
       .toBe(chartAnimation);
   });
 
-  test('span does not render by default', () => {
-    expect(wrapper.find('span').length).toBe(0);
-  });
-
   test('label is rendered accurately', () => {
     expect(wrapper.find(Typography).length).toBe(1);
     expect(wrapper.find(Typography).text()).toBe('hello world');
-  });
-});
-
-describe('conditional rendering', () => {
-  test('span renders if `active=true`', () => {
-    const wrapper = setup('chart', 'hello world', { active: true });
-    expect(wrapper.find('span').length).toBe(1);
   });
 });
 

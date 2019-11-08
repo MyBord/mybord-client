@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import AnimatedIcon from 'icons/animatedIcon/animatedIcon';
 import Typography from 'shared/typography/typography';
 import { AnimatedIconNames } from 'types/iconTypes';
@@ -13,15 +13,12 @@ interface Props {
 
 const NavigationButton: React.FC<Props> = ({ iconName, label, to }) => {
   const [state, setState] = React.useState(true);
-  const location = useLocation();
-
   return (
     <Link
       className={styles.link}
       onMouseEnter={() => setState(false)}
       to={`/${to}`}
     >
-      {location.pathname === `/${to}` && <span className={styles.span} />}
       <div className={styles.iconDiv}>
         <AnimatedIcon
           iconName={iconName}

@@ -89,6 +89,7 @@ src/
   |- api/ 
   |- app/ 
   |- hooks/ 
+  |- static/ 
   |- styles/ 
   |- thirdParty/ 
      |- lotty/ 
@@ -110,6 +111,8 @@ src/
   * The folder that contains the react application source code.
 * **hooks/:**
   * Folder containing custom hooks.
+* **static/:**
+  * Contains static data that is often used for application configuration and dummy data.
 * **styles/:**
   * Contains all global styling. Note that styling dedicated to individual components should be
    stored in the components folders within the react folder.

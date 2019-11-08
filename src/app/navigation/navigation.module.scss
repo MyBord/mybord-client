@@ -19,6 +19,10 @@
   width: $navWidthCollapsed;
 }
 
+.section {
+  position: relative;
+}
+
 :export {
   navWidthCollapsed: $navWidthCollapsed;
   navWidthExpanded: $navWidthExpanded;

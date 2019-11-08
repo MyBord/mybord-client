@@ -1,7 +1,19 @@
 // source: https://reactjs.org/docs/concurrent-mode-suspense.html#what-is-suspense-exactly
 // source: https://codesandbox.io/s/frosty-hermann-bztrp
 
-const wrapPromise = (promise: Promise<object>): { read(): object } => {
+import videos from 'static/videos';
+
+interface Data {
+  data: any;
+}
+
+interface Wrapper {
+  read(): Data;
+}
+
+const timeout = 1000;
+
+const wrapPromise = (promise: Promise<Data>): Wrapper => {
   let status = 'pending';
   let result: object;
   const suspender = promise.then(
@@ -15,6 +27,7 @@ const wrapPromise = (promise: Promise<object>): { read(): object } => {
     },
   );
   return {
+    // @ts-ignore
     // eslint-disable-next-line consistent-return
     read() {
       if (status === 'pending') {
@@ -28,14 +41,25 @@ const wrapPromise = (promise: Promise<object>): { read(): object } => {
   };
 };
 
-const sampleFetch = (): Promise<object> => new Promise((resolve) => {
+const sampleFetch = (): Promise<Data> => new Promise((resolve) => {
   setTimeout(() => {
     resolve({
       data: true,
     });
-  }, 3000);
+  }, timeout);
 });
 
-export default {
+const getVideos = (): Promise<Data> => new Promise((resolve) => {
+  setTimeout(() => {
+    resolve({
+      data: videos,
+    });
+  }, timeout);
+});
+
+const fakeApi = {
   sampleData: wrapPromise(sampleFetch()),
+  videos: wrapPromise(getVideos()),
 };
+
+export default fakeApi;

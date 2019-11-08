@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import HamburgerButton from 'buttons/hamburgerButton/hamburgerButton';
 import NavigationButton from 'buttons/navigationButton/navigationButton';
 import useToggleLottie from 'hooks/useToggleLottie';
+import PageIndicator from './pageIndicator/pageIndicator';
 import * as styles from './navigation.module.scss';
 
 const variants = {
@@ -50,21 +51,24 @@ const Navigation: React.FC = () => {
           onClick={handleClick}
         />
       </div>
-      <NavigationButton
-        iconName="dashboard"
-        label="Dashboard"
-        to=""
-      />
-      <NavigationButton
-        iconName="user"
-        label="Following"
-        to="following"
-      />
-      <NavigationButton
-        iconName="chart"
-        label="Trending"
-        to="trending"
-      />
+      <section className={styles.section}>
+        <PageIndicator />
+        <NavigationButton
+          iconName="dashboard"
+          label="Dashboard"
+          to=""
+        />
+        <NavigationButton
+          iconName="user"
+          label="Following"
+          to="following"
+        />
+        <NavigationButton
+          iconName="chart"
+          label="Trending"
+          to="trending"
+        />
+      </section>
     </motion.nav>
   );
 };

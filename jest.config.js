@@ -21,6 +21,7 @@ module.exports = {
     '^navigation(.*)$': '<rootDir>/src/app/navigation$1',
     '^pages(.*)$': '<rootDir>/src/app/pages$1',
     '^shared(.*)$': '<rootDir>/src/app/shared$1',
+    '^static(.*)$': '<rootDir>/src/static$1',
     '^storybook(.*)$': '<rootDir>/src/thirdParty/storybook$1',
     '^styles(.*)$': '<rootDir>/src/styles$1',
     '^typography(.*)$': '<rootDir>/src/app/shared/typography$1',

@@ -1,9 +1,14 @@
 import * as React from 'react';
+import LottiePlayer from 'lotty/lottiePlayer';
+import cantAnimation from 'lotty/lotties/cant.json';
 
 const CantPage: React.FC = () => (
-  <section>
-    Note Found
-  </section>
+  <LottiePlayer
+    animationData={cantAnimation}
+    autoplay
+    loop
+    size={600}
+  />
 );
 
 export default CantPage;

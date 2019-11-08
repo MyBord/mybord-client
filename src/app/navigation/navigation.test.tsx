@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { MemoryRouter } from 'react-router-dom';
 import {
   ReactWrapper, ShallowWrapper, mount, shallow,
 } from 'enzyme';
@@ -7,9 +8,14 @@ import { motion } from 'framer-motion';
 import HamburgerButton from 'buttons/hamburgerButton/hamburgerButton';
 import NavigationButton from 'buttons/navigationButton/navigationButton';
 import Navigation from './navigation';
+import PageIndicator from './pageIndicator/pageIndicator';
 
 const setupShallow = (): ShallowWrapper => shallow(<Navigation />);
-const setupMount = (): ReactWrapper => mount(<Navigation />);
+const setupMount = (): ReactWrapper => mount(
+  <MemoryRouter>
+    <Navigation />
+  </MemoryRouter>,
+);
 
 describe('basic rendering', () => {
   test('component renders', () => {
@@ -26,6 +32,10 @@ describe('basic rendering', () => {
 
   test('navigation button renders', () => {
     expect(setupShallow().find(NavigationButton).length).toBeGreaterThan(0);
+  });
+
+  test('Page Indicator renders', () => {
+    expect(setupShallow().find(PageIndicator).length).toBe(1);
   });
 
   test('mousedown event listener is added on mount and removed on unmount', () => {
