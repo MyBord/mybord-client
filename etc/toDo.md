@@ -1,5 +1,6 @@
 ## ToDo:
 types/gapi
+move api key and client id
 
 ## Navigation:
 
