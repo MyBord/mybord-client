@@ -5,15 +5,22 @@ import GAPI from 'google/gapi';
 const init = (WrappedComponent: React.FC): React.FC => {
   const InitWrapper: React.FC = () => {
     React.useEffect(() => {
-      const gapi = new GAPI();
       // @ts-ignore
       const initializeGapi = async (): Promise => {
-        await gapi.initialize();
-        await gapi.execute();
+        const gapi = new GAPI();
+        const foo = await gapi.initialize();
+        console.log('************');
+        console.log(foo);
       };
       initializeGapi();
     });
-    return <WrappedComponent />;
+    // if (gapi.)
+    return (
+      <>
+        <button type="button" onClick={() => new GAPI().getVideoData('6-8k-o_ofDw')}>Load</button>
+        <WrappedComponent />
+      </>
+    );
   };
 
   return InitWrapper;

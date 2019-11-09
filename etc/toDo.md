@@ -1,6 +1,7 @@
 ## ToDo:
 types/gapi
 move api key and client id
+change gapi to tsx
 
 ## Navigation:
 
