@@ -1,6 +1,7 @@
-/node_modules
-/.out
-/dist
-.DS_Store
-/coverage
 *.log
+.DS_Store
+.env
+/.out
+/coverage
+/dist
+/node_modules

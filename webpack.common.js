@@ -1,6 +1,7 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const webpack = require('webpack');
+const Dotenv = require('dotenv-webpack');
 
 const DIST_DIR = path.resolve(__dirname, 'dist');
 const SRC_DIR = path.resolve(__dirname, 'src');
@@ -118,6 +119,7 @@ const config = {
     new webpack.DefinePlugin({
       'process.env.INTERNAL': JSON.stringify(process.env.INTERNAL),
     }),
+    new Dotenv(),
   ],
   resolve: {
     extensions: ['.jsx', '.js', '.tsx', '.ts', '.scss'],
