@@ -5,6 +5,7 @@ import * as styles from './storybook.module.scss';
 interface Props {
   Demo: React.FC;
   componentName: string;
+  demoCenter?: boolean;
   demoHeader?: boolean;
   demoMargin?: boolean;
   description: string;
@@ -13,7 +14,7 @@ interface Props {
 }
 
 const DemoPage: React.FC<Props> = ({
-  Demo, componentName, demoHeader, demoMargin, description, path, summaryPage,
+  Demo, componentName, demoCenter, demoHeader, demoMargin, description, path, summaryPage,
 }) => (
   <section className={styles.demoSection}>
     {
@@ -29,6 +30,7 @@ const DemoPage: React.FC<Props> = ({
     }
     <div
       className={[
+        demoCenter ? styles.demoCenter : undefined,
         !demoHeader ? styles.demoComponent : undefined,
         demoMargin ? styles.demoMargin : undefined,
       ].join(' ')}

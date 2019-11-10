@@ -1,0 +1,16 @@
+@import "~styles/_colors";
+
+.div {
+  background: $white;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  height: 15rem;
+  overflow: hidden;
+  width: 15rem;
+}
+
+.img {
+  max-height:100%;
+  max-width:100%;
+}

@@ -9,6 +9,8 @@ interface Props {
   Examples?: React.FC; // React component to be rendered in examples section
   api?: string; // api markup documentation
   componentName: string; // name of component that is to be displayed in header.
+  demoCenter?: boolean; // if true, the demo component should be rendered in the center of the
+  // viewport
   demoHeader?: boolean; // if false, remove the header from the demo view.
   demoMargin?: boolean; // if true, the demo component should be rendered with extra margin in the
   // viewport
@@ -38,6 +40,7 @@ const bothPages = (props: Props): void => {
       <DemoPage
         Demo={props.Demo}
         componentName={props.componentName}
+        demoCenter={props.demoCenter}
         demoHeader={props.demoHeader}
         demoMargin={props.demoMargin}
         description={props.description}
@@ -56,6 +59,7 @@ const demoPageOnly = (props: Props): void => {
       <DemoPage
         Demo={props.Demo}
         componentName={props.componentName}
+        demoCenter={props.demoCenter}
         demoHeader={props.demoHeader}
         demoMargin={props.demoMargin}
         description={props.description}
@@ -70,6 +74,7 @@ export default ({
   Examples,
   api,
   componentName,
+  demoCenter = false,
   demoHeader = true,
   demoMargin = false,
   description,
@@ -83,6 +88,7 @@ export default ({
       Examples,
       api,
       componentName,
+      demoCenter,
       demoHeader,
       demoMargin,
       description,
@@ -95,6 +101,7 @@ export default ({
       Examples,
       api,
       componentName,
+      demoCenter,
       demoHeader,
       demoMargin,
       description,

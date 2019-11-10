@@ -1,19 +1,15 @@
 import * as React from 'react';
-import { optionsKnob as options, text } from '@storybook/addon-knobs';
-import Typography, { typographyTypes } from './typography';
-
-const typographyList = Object.keys(typographyTypes);
-const typographyOptions: {[key: string]: string} = {};
-typographyList.forEach((type) => {
-  typographyOptions[type] = type;
-});
+import Typography from './typography';
+import * as styles from 'storybook/storybook.module.scss';
 
 const TypographyDemo: React.FC = () => (
-  <Typography
-    text={text('Text', 'Hello World')}
-    // @ts-ignore - don't care that the `options` addon is not a string type.
-    type={options('Type', typographyOptions, typographyList[0], { display: 'select' })}
-  />
+  <div className={styles.examplesDivList}>
+    <h3 className={styles.h3}>-- Weight --</h3>
+    <Typography text="Light Text" weight="light" />
+    <Typography text="Regular Text" />
+    <Typography text="Bold Text" weight="bold" />
+    <div className={styles.exampleBlock} />
+  </div>
 );
 
 export default TypographyDemo;

@@ -1,8 +1,6 @@
 ## ToDo:
-types/gapi
-move api key and client id
-change gapi to tsx
-enable concurrent mode
+update typography
+update icons
 
 ## Navigation:
 

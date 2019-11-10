@@ -4,8 +4,9 @@ import VideoCardDemo from './videoCard.demo';
 createStory({
   Demo: VideoCardDemo,
   componentName: 'Video Card',
+  demoCenter: true,
   demoMargin: true,
   description: 'Card used to display a youtube video.',
-  noSummaryPage: true,
   rootDirectory: 'Cards',
+  summaryPage: false,
 });
