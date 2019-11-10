@@ -1,19 +1,24 @@
 import * as React from 'react';
-import Typography from 'typography/typography';
 import Icon from 'icons/icon/icon';
+import Typography from 'typography/typography';
+import { VideoData } from 'types/videoTypes';
 import * as styles from './videoCard.module.scss';
 
-const VideoCard: React.FC = () => (
+interface Props {
+  videoData: VideoData;
+}
+
+const VideoCard: React.FC<Props> = ({ videoData }) => (
   <div className={styles.container}>
     <img
       alt="video thumbnail"
       className={styles.img}
-      src="https://i.ytimg.com/vi/ImEnWAVRLU0/mqdefault.jpg"
+      src={videoData.videoThumbnail}
     />
     <div className={styles.title}>
       <Typography
         size="medium"
-        text="Mike Ross and Rachel Zane Meet For The First Time | Suits"
+        text={videoData.videoTitle}
         weight="bold"
       />
     </div>
@@ -21,32 +26,41 @@ const VideoCard: React.FC = () => (
       <img
         alt="channel icon"
         className={styles.channelIcon}
-        src="https://yt3.ggpht.com/a-/AAuE7mB3fAbzXqOP6_An4ADb6ykmjTqDbcH38xwvtw=s68-c-k-c0x00ffffff-no-rj-mo"
+        src={videoData.channelThumbnail}
       />
       <div className={styles.channelTitle}>
         <Typography
           size="small"
-          text="Suits International"
+          text={videoData.channelTitle}
         />
       </div>
     </div>
-    <div className={styles.statsDiv}>
-      <div className={styles.likesDiv}>
+    <div className={styles.statsContainer}>
+      <div className={styles.statsDiv}>
         <div className={styles.iconDiv}>
           <Icon iconName="thumbsUp" size={16} />
         </div>
         <Typography
           size="small"
-          text="12345"
+          text={videoData.likes}
         />
       </div>
-      <div className={styles.viewsDiv}>
+      <div className={styles.statsDiv}>
         <div className={styles.iconDiv}>
           <Icon iconName="eye" size={16} />
         </div>
         <Typography
           size="small"
-          text="12345"
+          text={videoData.views}
+        />
+      </div>
+      <div className={styles.statsDiv}>
+        <div className={styles.iconDiv}>
+          <Icon iconName="calendar" size={16} />
+        </div>
+        <Typography
+          size="small"
+          text={videoData.duration}
         />
       </div>
     </div>

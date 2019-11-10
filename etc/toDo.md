@@ -1,6 +1,7 @@
 ## ToDo:
 update typography
 update icons
+add video time
 
 ## Navigation:
 

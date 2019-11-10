@@ -1,21 +1,21 @@
 import * as React from 'react';
 import fakeApi from 'api/fakeApi';
-import VideoDisplay from 'pages/dashboardPage/video';
 import VideoCard from 'shared/cards/videoCard/videoCard';
+import gapi from 'google/gapi';
 
 const DashboardPage: React.FC = () => {
   const videos = fakeApi.videos.read();
-  // return videos.data.map((link: string) => (
-  //   <VideoDisplay
-  //     key={`video-display-${link}`}
-  //     link={link}
-  //   />
-  // ));
+  const [videoData, setVideoData] = React.useState(null);
+  const handleClick = async (): Promise<void> => {
+    const result = await gapi.getVideoData('lLSOEddX3sY');
+    setVideoData(result);
+  };
   return (
     <>
-      <VideoCard />
-      <VideoCard />
-      <VideoCard />
+      <button onClick={handleClick} type="button">Click Me</button>
+      {
+        videoData && <VideoCard videoData={videoData} />
+      }
     </>
   );
 };

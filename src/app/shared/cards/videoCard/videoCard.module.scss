@@ -34,21 +34,17 @@
   max-width:100%;
 }
 
-.likesDiv {
+.statsContainer {
+  align-items: center;
   display: flex;
-  margin-right: 1rem;
+  justify-content: space-between;
+  margin: 0 0.75rem 0.75rem 0.75rem;
 }
 
 .statsDiv {
-  align-items: center;
   display: flex;
-  margin: 0 0.75rem 0.75rem 0.75rem;
 }
 
 .title {
   margin: 0.75rem 0.75rem 0 0.75rem;
-}
-
-.viewsDiv {
-  display: flex;
 }

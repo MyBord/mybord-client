@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { IconNames } from 'types/iconTypes';
+import CalendarIcon from './individualIcons/calendarIcon';
 import EyeIcon from './individualIcons/eyeIcon';
 import ThumbsUpIcon from './individualIcons/thumbsUpIcon';
 
@@ -8,6 +9,7 @@ import ThumbsUpIcon from './individualIcons/thumbsUpIcon';
 // because TS sucks at accessing values in arrays so we can re-use that array in other places.
 // https://github.com/microsoft/TypeScript/issues/20965
 export const iconNames = {
+  calendar: 'foo',
   eye: 'foo',
   thumbsUp: 'foo',
 };
@@ -19,6 +21,8 @@ interface Props {
 
 const Icon: React.FC<Props> = ({ iconName, size }) => {
   switch (iconName) {
+    case 'calendar':
+      return <CalendarIcon size={size} />;
     case 'eye':
       return <EyeIcon size={size} />;
     case 'thumbsUp':
