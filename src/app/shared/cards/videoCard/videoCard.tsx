@@ -9,14 +9,23 @@ const VideoCard: React.FC = () => (
       className={styles.img}
       src="https://i.ytimg.com/vi/ImEnWAVRLU0/mqdefault.jpg"
     />
-    <Typography
-      text="This is a video title"
-      type="boldText"
-    />
-    <Typography
-      text="this is channel info"
-      type="text"
-    />
+    <div className={styles.title}>
+      <Typography
+        text="Mike Ross and Rachel Zane Meet For The First Time | Suits"
+        weight="bold"
+      />
+    </div>
+    <div>
+      <img
+        alt="channel icon"
+        className={styles.img}
+        src="https://yt3.ggpht.com/a-/AAuE7mB3fAbzXqOP6_An4ADb6ykmjTqDbcH38xwvtw=s68-c-k-c0x00ffffff-no-rj-mo"
+      />
+      <Typography
+        size="small"
+        text="Suits International"
+      />
+    </div>
   </div>
 );
 

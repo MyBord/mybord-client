@@ -4,6 +4,9 @@ import * as styles from 'storybook/storybook.module.scss';
 
 const TypographyDemo: React.FC = () => (
   <div className={styles.examplesDivList}>
+    <h3 className={styles.h3}>-- Sizes --</h3>
+    <Typography text="Small" size="small" />
+    <Typography text="Normal" />
     <h3 className={styles.h3}>-- Weight --</h3>
     <Typography text="Light Text" weight="light" />
     <Typography text="Regular Text" />

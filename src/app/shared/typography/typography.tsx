@@ -2,13 +2,18 @@ import * as React from 'react';
 import * as styles from './typography.module.scss';
 
 interface Props {
+  size?: 'normal' | 'small';
   text: string;
   weight?: 'bold' | 'light' | 'regular';
 }
 
-const Typography: React.FC<Props> = ({ text, weight = 'regular' }) => (
+const Typography: React.FC<Props> = ({
+  size = 'normal',
+  text,
+  weight = 'regular',
+}) => (
   <p
-    className={[styles.typography, styles[weight]].join(' ')}
+    className={[styles.typography, styles[size], styles[weight]].join(' ')}
   >
     {text}
   </p>

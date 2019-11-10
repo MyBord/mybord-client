@@ -5,12 +5,16 @@
   border-radius: 0.5rem;
   display: flex;
   flex-direction: column;
-  height: 15rem;
+  height: 18rem;
   overflow: hidden;
-  width: 15rem;
+  width: 18rem;
 }
 
 .img {
   max-height:100%;
   max-width:100%;
+}
+
+.title {
+  margin: 0.75rem;
 }

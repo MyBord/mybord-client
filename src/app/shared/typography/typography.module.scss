@@ -4,7 +4,17 @@
 .typography {
   color: $black;
   font-family: $poppins;
-  font-size: 1rem;
+  margin: 0;
+}
+
+// ----- sizes ----- //
+
+.normal {
+  font-size: 0.875rem;
+}
+
+.small {
+  font-size: 0.75rem;
 }
 
 // ----- weights ----- //

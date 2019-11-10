@@ -26,7 +26,7 @@ const NavigationButton: React.FC<Props> = ({ iconName, label, to }) => {
           size={40}
         />
       </div>
-      <Typography text={label} type="text" />
+      <Typography text={label} />
     </Link>
   );
 };
