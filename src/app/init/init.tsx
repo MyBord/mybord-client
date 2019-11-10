@@ -9,12 +9,7 @@ const init = (WrappedComponent: React.FC): React.FC => {
       };
       initializeGapi();
     });
-    return (
-      <>
-        <button type="button" onClick={() => gapi.getVideoData('6-8k-o_ofDw')}>Load</button>
-        <WrappedComponent />
-      </>
-    );
+    return <WrappedComponent />;
   };
 
   return InitWrapper;
