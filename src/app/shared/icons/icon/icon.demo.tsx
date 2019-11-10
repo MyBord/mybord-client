@@ -1,19 +1,21 @@
 import * as React from 'react';
-import { number, optionsKnob as options } from '@storybook/addon-knobs';
+import * as styles from 'storybook/storybook.module.scss';
+import { IconNames } from 'types/iconTypes';
 import Icon, { iconNames } from './icon';
 
-const iconList = Object.keys(iconNames);
-const iconNameOptions: {[key: string]: string} = {};
-iconList.forEach((iconName) => {
-  iconNameOptions[iconName] = iconName;
-});
-
 const IconDemo: React.FC = () => (
-  <Icon
-    // @ts-ignore - don't care that the `options` addon is not a string type.
-    iconName={options('Icon Name', iconNameOptions, iconList[0], { display: 'select' })}
-    size={number('Icon Size', 60)}
-  />
+  <div className={styles.examplesDivGroup}>
+    {
+      Object.keys(iconNames).map((iconName: IconNames) => (
+        <div className={styles.exampleDiv}>
+          <div className={styles.exampleDivCenter}>
+            <Icon iconName={iconName} size={60} />
+          </div>
+          <p className={styles.exampleP}>{iconName.charAt(0).toUpperCase() + iconName.slice(1)}</p>
+        </div>
+      ))
+    }
+  </div>
 );
 
 export default IconDemo;

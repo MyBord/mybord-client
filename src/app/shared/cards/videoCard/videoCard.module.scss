@@ -1,13 +1,32 @@
 @import "~styles/_colors";
 
-.div {
+.container {
   background: $white;
   border-radius: 0.5rem;
   display: flex;
   flex-direction: column;
-  height: 18rem;
+  height: 16rem;
   overflow: hidden;
-  width: 18rem;
+  width: 15rem;
+}
+
+.channelDiv {
+  align-items: center;
+  display: flex;
+  margin: 0.75rem;
+}
+
+.channelIcon {
+  border-radius: 50%;
+  width: 1.25rem;
+}
+
+.channelTitle {
+  margin-left: 0.25rem;
+}
+
+.iconDiv {
+  margin-right: 0.5rem;
 }
 
 .img {
@@ -15,6 +34,21 @@
   max-width:100%;
 }
 
+.likesDiv {
+  display: flex;
+  margin-right: 1rem;
+}
+
+.statsDiv {
+  align-items: center;
+  display: flex;
+  margin: 0 0.75rem 0.75rem 0.75rem;
+}
+
 .title {
-  margin: 0.75rem;
+  margin: 0.75rem 0.75rem 0 0.75rem;
+}
+
+.viewsDiv {
+  display: flex;
 }

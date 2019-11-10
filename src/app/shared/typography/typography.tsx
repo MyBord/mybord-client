@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as styles from './typography.module.scss';
 
 interface Props {
-  size?: 'normal' | 'small';
+  size?: 'medium' | 'normal' | 'small';
   text: string;
   weight?: 'bold' | 'light' | 'regular';
 }
