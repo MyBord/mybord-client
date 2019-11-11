@@ -2,6 +2,8 @@
 update typography
 update icons
 add video time
+rename video card to youtube card
+separate out components of youtube card
 
 ## Navigation:
 

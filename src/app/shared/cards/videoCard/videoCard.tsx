@@ -15,6 +15,7 @@ const VideoCard: React.FC<Props> = ({ videoData }) => (
       className={styles.img}
       src={videoData.videoThumbnail}
     />
+    <p>{videoData.duration}</p>
     <div className={styles.title}>
       <Typography
         size="medium"
@@ -60,7 +61,7 @@ const VideoCard: React.FC<Props> = ({ videoData }) => (
         </div>
         <Typography
           size="small"
-          text={videoData.duration}
+          text={videoData.publishedAt}
         />
       </div>
     </div>
