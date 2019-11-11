@@ -1,7 +1,7 @@
 import initialize from './initialize';
-import getVideoData from './youtube';
+import getYoutubeData from './youtube';
 
 export default {
-  getVideoData,
+  getYoutubeData,
   initialize,
 };

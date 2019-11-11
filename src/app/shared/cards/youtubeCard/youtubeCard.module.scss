@@ -1,0 +1,11 @@
+@import "~styles/_colors";
+
+.container {
+  background: $white;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  height: 16rem;
+  overflow: hidden;
+  width: 15rem;
+}

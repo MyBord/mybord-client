@@ -1,4 +1,4 @@
-import { VideoData } from 'types/videoTypes';
+import { YoutubeData } from 'types/youtubeTypes';
 import { formatDuration, formatNumber, formatPublishedAt } from './utils';
 
 declare global {
@@ -19,7 +19,7 @@ const getChannelData = async (channelId: string): Promise<string> => {
   }
 };
 
-const getVideoData = async (videoId: string): Promise<VideoData> => {
+const getYoutubeData = async (videoId: string): Promise<YoutubeData> => {
   try {
     const videoResponse = await window.gapi.client.youtube.videos.list({
       part: 'contentDetails,snippet,statistics',
@@ -42,4 +42,4 @@ const getVideoData = async (videoId: string): Promise<VideoData> => {
   }
 };
 
-export default getVideoData;
+export default getYoutubeData;

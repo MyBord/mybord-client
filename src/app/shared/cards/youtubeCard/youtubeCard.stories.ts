@@ -1,9 +1,9 @@
 import createStory from 'storybook/createStory';
-import VideoCardDemo from './videoCard.demo';
+import YoutubeCardDemo from './youtubeCard.demo';
 
 createStory({
-  Demo: VideoCardDemo,
-  componentName: 'Video Card',
+  Demo: YoutubeCardDemo,
+  componentName: 'Youtube Card',
   demoCenter: true,
   demoMargin: true,
   description: 'Card used to display a youtube video.',

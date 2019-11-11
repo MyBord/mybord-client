@@ -1,25 +1,19 @@
 import * as React from 'react';
 import Icon from 'icons/icon/icon';
 import Typography from 'typography/typography';
-import { VideoData } from 'types/videoTypes';
-import * as styles from './videoCard.module.scss';
+import { YoutubeData } from 'types/youtubeTypes';
+import * as styles from './youtubeCardDescription.module.scss';
 
 interface Props {
-  videoData: VideoData;
+  youtubeData: YoutubeData;
 }
 
-const VideoCard: React.FC<Props> = ({ videoData }) => (
-  <div className={styles.container}>
-    <img
-      alt="video thumbnail"
-      className={styles.img}
-      src={videoData.videoThumbnail}
-    />
-    <p>{videoData.duration}</p>
+const YoutubeCardDescription: React.FC<Props> = ({ youtubeData }) => (
+  <>
     <div className={styles.title}>
       <Typography
         size="medium"
-        text={videoData.videoTitle}
+        text={youtubeData.videoTitle}
         weight="bold"
       />
     </div>
@@ -27,12 +21,12 @@ const VideoCard: React.FC<Props> = ({ videoData }) => (
       <img
         alt="channel icon"
         className={styles.channelIcon}
-        src={videoData.channelThumbnail}
+        src={youtubeData.channelThumbnail}
       />
       <div className={styles.channelTitle}>
         <Typography
           size="small"
-          text={videoData.channelTitle}
+          text={youtubeData.channelTitle}
         />
       </div>
     </div>
@@ -43,7 +37,7 @@ const VideoCard: React.FC<Props> = ({ videoData }) => (
         </div>
         <Typography
           size="small"
-          text={videoData.likes}
+          text={youtubeData.likes}
         />
       </div>
       <div className={styles.statsDiv}>
@@ -52,7 +46,7 @@ const VideoCard: React.FC<Props> = ({ videoData }) => (
         </div>
         <Typography
           size="small"
-          text={videoData.views}
+          text={youtubeData.views}
         />
       </div>
       <div className={styles.statsDiv}>
@@ -61,11 +55,11 @@ const VideoCard: React.FC<Props> = ({ videoData }) => (
         </div>
         <Typography
           size="small"
-          text={videoData.publishedAt}
+          text={youtubeData.publishedAt}
         />
       </div>
     </div>
-  </div>
+  </>
 );
 
-export default VideoCard;
+export default YoutubeCardDescription;
