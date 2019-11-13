@@ -92,6 +92,7 @@ src/
   |- static/ 
   |- styles/ 
   |- thirdParty/ 
+     |- google/ 
      |- lotty/ 
         |- lotties/ 
         |- lottiePlayer.tsx 
@@ -118,6 +119,8 @@ src/
    stored in the components folders within the react folder.
 * **thirdParty/:**
   * Javascript and react code used for integrating third party tooling such as Storybook.
+* **thirdParty/google/:**
+  * Code used for interacting with the google api.
 * **thirdParty/lotty/:**
   * Folder containing [Lottie](https://airbnb.io/lottie/#/) code. Note this folder is named
    'lotty' and not 'lottie' so it's folder alias won't create conflicts.
@@ -141,6 +144,7 @@ src/
 ```
 app/
   |- header/ 
+  |- init/ 
   |- navigation/ 
   |- pages/ 
   |- routing/ 
@@ -152,6 +156,8 @@ app/
 
 * **header/:**
   * The react code used to compose the header in the top of the application.
+* **init/:**
+  * Code that is used to first initialize the application.
 * **navigation/:**
   * The react code used to compose the left hand navigation pane.
 * **pages/:**
