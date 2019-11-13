@@ -21,13 +21,15 @@ const loadYoutubeApi = async (): Promise<void> => {
   }
 };
 
-export default (): void => {
-  window.gapi.load('client:auth2', async () => {
-    try {
-      await authenticate();
-      await loadYoutubeApi();
-    } catch (error) {
-      throw Error(`Error initializing gapi client: ${error}`);
-    }
-  });
+export default async (): Promise<string> => {
+  try {
+    await new Promise((resolve) => {
+      window.gapi.load('client:auth2', resolve);
+    });
+    await authenticate();
+    await loadYoutubeApi();
+    return 'foo';
+  } catch (error) {
+    throw Error(`Error initializing gapi client: ${error}`);
+  }
 };

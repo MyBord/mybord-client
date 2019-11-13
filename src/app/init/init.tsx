@@ -5,7 +5,8 @@ const init = (WrappedComponent: React.FC): React.FC => {
   const InitWrapper: React.FC = () => {
     React.useEffect(() => {
       const initializeGapi = async (): Promise<void> => {
-        await gapi.initialize();
+        const foo = await gapi.initialize();
+        console.log(foo);
       };
       initializeGapi();
     });
