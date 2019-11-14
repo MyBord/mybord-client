@@ -14,7 +14,7 @@ module.exports = {
     '\\.(css|scss|less)$': 'identity-obj-proxy',
     '^api(.*)$': '<rootDir>/src/api$1',
     '^buttons(.*)$': '<rootDir>/src/app/shared/buttons$1',
-    '^google(.*)$': '<rootDir>/src/thirdParty/google$1',
+    '^gapi(.*)$': '<rootDir>/src/thirdParty/gapi$1',
     '^header(.*)$': '<rootDir>/src/app/header$1',
     '^hooks(.*)$': '<rootDir>/src/hooks$1',
     '^icons(.*)$': '<rootDir>/src/app/shared/icons$1',

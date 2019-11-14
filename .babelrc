@@ -20,7 +20,7 @@
       "alias": {
         "api": "./src/api/",
         "buttons": "./src/app/shared/buttons/",
-        "google": "./src/thirdParty/google/",
+        "gapi": "./src/thirdParty/gapi/",
         "header": "./src/app/header/",
         "hooks": "./src/hooks/",
         "icons": "./src/app/shared/icons/",

@@ -1,7 +1,7 @@
 // source: https://reactjs.org/docs/concurrent-mode-suspense.html#what-is-suspense-exactly
 // source: https://codesandbox.io/s/frosty-hermann-bztrp
 
-import gapi from 'google/gapi';
+import gapi from 'gapi/gapi';
 import videos from 'static/videos';
 import promiseWrapper from './promiseWrapper';
 

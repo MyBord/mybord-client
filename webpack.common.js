@@ -126,7 +126,7 @@ const config = {
     alias: {
       api: path.resolve(__dirname, 'src/api/'),
       buttons: path.resolve(__dirname, 'src/app/shared/buttons/'),
-      google: path.resolve(__dirname, 'src/thirdParty/google/'),
+      gapi: path.resolve(__dirname, 'src/thirdParty/gapi/'),
       header: path.resolve(__dirname, 'src/app/header/'),
       hooks: path.resolve(__dirname, 'src/hooks/'),
       icons: path.resolve(__dirname, 'src/app/shared/icons/'),

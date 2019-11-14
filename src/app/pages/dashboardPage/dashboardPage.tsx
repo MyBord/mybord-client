@@ -1,7 +1,7 @@
 import * as React from 'react';
 import fakeApi from 'api/fakeApi';
 import YoutubeCard from 'shared/cards/youtubeCard/youtubeCard';
-import gapi from 'google/gapi';
+import gapi from 'gapi/gapi';
 
 const DashboardPage: React.FC = () => {
   const videos = fakeApi.videos.read();
