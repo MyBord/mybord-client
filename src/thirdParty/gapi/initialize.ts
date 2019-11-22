@@ -14,6 +14,16 @@ const authenticate = async (): Promise<void> => {
   }
 };
 
+const loadGapi = async (): Promise<void> => {
+  try {
+    await new Promise((resolve) => {
+      window.gapi.load('client:auth2', resolve);
+    });
+  } catch (error) {
+    throw Error(`Error initializing gapi client: ${error}`);
+  }
+};
+
 const loadYoutubeApi = async (): Promise<void> => {
   window.gapi.client.setApiKey(process.env.GAPI_KEY);
   try {
@@ -25,6 +35,7 @@ const loadYoutubeApi = async (): Promise<void> => {
 
 export default async (): Promise<void> => {
   try {
+    await loadGapi();
     await authenticate();
     await loadYoutubeApi();
   } catch (error) {

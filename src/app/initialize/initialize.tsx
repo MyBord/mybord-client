@@ -1,40 +1,18 @@
 import * as React from 'react';
-import Spinner from 'icons/spinner/spinner';
-import initializeApis from 'initialize/initializeApis';
 import gapi from 'gapi/gapi';
 
-// ToDo: Maybe call this `InitializeApplication` instead since the frame of the application will
-//  be outside of this?
-
-const initialize = (WrappedComponent: React.FC): React.FC => {
-  const VeryFirstComponent: React.FC = () => {
-    const [isLoaded, setIsLoaded] = React.useState(false);
+const initializeApplication = (WrappedComponent: React.FC): React.FC => {
+  const InitWrapper: React.FC = () => {
     React.useEffect(() => {
-      const loadGapi = async (): Promise<void> => {
-        await gapi.load();
+      const initializeGapi = async (): Promise<void> => {
+        await gapi.initialize();
       };
-      loadGapi();
-      setIsLoaded(true);
+      initializeGapi();
     });
-    if (isLoaded) {
-      return <Wrapper />;
-    }
-    return null;
+    return <WrappedComponent />;
   };
 
-  const InitializedWrapper: React.FC = () => {
-    initializeApis();
-    // return <WrappedComponent />;
-    return <h1>hello world</h1>;
-  };
-
-  const Wrapper: React.FC = () => (
-    <React.Suspense fallback={<Spinner />}>
-      <InitializedWrapper />
-    </React.Suspense>
-  );
-
-  return VeryFirstComponent;
+  return InitWrapper;
 };
 
-export default initialize;
+export default initializeApplication;
