@@ -38,7 +38,8 @@ const getYoutubeData = async (videoId: string): Promise<YoutubeData> => {
       views: formatNumber(statistics.viewCount),
     };
   } catch (error) {
-    throw Error(`Error loading youtube video api: ${error}`);
+    // throw Error(`Error loading youtube video api: ${error}`);
+    throw Error(error);
   }
 };
 

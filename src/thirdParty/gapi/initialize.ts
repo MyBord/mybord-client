@@ -6,8 +6,6 @@ declare global {
 
 const authenticate = async (): Promise<void> => {
   try {
-    console.log('testing authentication method:');
-    console.log(window.gapi);
     await window.gapi.auth2.init({ clientId: process.env.GAPI_CLIENT_ID });
   } catch (error) {
     throw Error(`Error authenticating gapi client: ${error}`);
