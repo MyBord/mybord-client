@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Header from 'header/header';
 import Navigation from 'navigation/navigation';
-import * as styles from './spa.module.scss';
+import * as styles from './layout.module.scss';
 
 interface Props {
   children: React.ReactNode;

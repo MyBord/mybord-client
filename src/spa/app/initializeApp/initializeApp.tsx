@@ -1,7 +1,7 @@
 import * as React from 'react';
 import gapi from 'gapi/gapi';
 
-const initializeApplication = (WrappedComponent: React.FC): React.FC => {
+const initializeApp = (WrappedComponent: React.FC): React.FC => {
   const InitWrapper: React.FC = () => {
     React.useEffect(() => {
       const initializeGapi = async (): Promise<void> => {
@@ -15,4 +15,4 @@ const initializeApplication = (WrappedComponent: React.FC): React.FC => {
   return InitWrapper;
 };
 
-export default initializeApplication;
+export default initializeApp;
