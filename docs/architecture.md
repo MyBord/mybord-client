@@ -87,7 +87,7 @@ The app folder should be organized in the following fashion:
 ```
 src/
   |- api/ 
-  |- app/ 
+  |- spa/ 
   |- hooks/ 
   |- static/ 
   |- styles/ 
@@ -106,9 +106,7 @@ src/
 * **api:**
     * The api folder contains the http service related scripts that are used to connect to any and
     all api's used in the app.
-* **app/:**
-  * The folder that contains the react application source code.
-* **app/:**
+* **spa/:**
   * The folder that contains the react application source code.
 * **hooks/:**
   * Folder containing custom hooks.
@@ -139,37 +137,38 @@ src/
 * **`index.tsx`:**
   * The executable javascript of the app.
 
-## III. app folder
+## III. spa folder
 
 ```
-app/
-  |- header/ 
-  |- init/ 
-  |- navigation/ 
-  |- pages/ 
-  |- routing/ 
-  |- shared/ 
-  |- spa.module.scss
-  |- spa.test.tsx
+spa/
+  |- app/ 
+     |- initializeApp/
+     |- pages/
+     |- routing/
+     |- shared/
+  |- layout/ 
+     |- header/
+     |- navigation/
   |- spa.tsx
 ```
 
-* **header/:**
-  * The react code used to compose the header in the top of the application.
-* **init/:**
-  * Code that is used to first initialize the application.
-* **navigation/:**
-  * The react code used to compose the left hand navigation pane.
-* **pages/:**
+* **app/:**
+  * The react application that lives inside of our layout / navigation frame.
+* **app/inititializeApp/:**
+  * Code that is used to make sure the application is properly initialized before any
+   functionality is accessed.
+* **app/pages/:**
   * Source code and components for each page.
-* **routing/:**
+* **app/routing/:**
   * Contains code for how the application should be routed.
-* **shared/:**
-  * Components shared across the header, navigation, and / or pages.
-* **`spa.moduel.scss`:**
-  * Stylings for `spa.tsx`.
-* **`spa.test.tsx`:**
-  * Test script for the `spa.tsx`.
+* **app/shared/:**
+  * Components shared across the our application, e.g. buttons, typography, inputs, etc.
+* **layout/:**
+  * The frame of our application / it's navigation.
+* **layout/header/:**
+  * The react code used to compose the header in the top of the application.
+* **layout/navigation/:**
+  * The react code used to compose the left hand navigation pane.
 * **`spa.tsx`:**
   * Actual root, highest parent react component used to define the application. The 'SPA'.
 
