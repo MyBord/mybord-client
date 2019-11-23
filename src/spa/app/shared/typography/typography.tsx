@@ -4,7 +4,7 @@ import * as styles from './typography.module.scss';
 interface Props {
   color?: 'black' | 'transparentWhite' | 'white';
   font?: 'poppins' | 'roboto';
-  size?: 'medium' | 'normal' | 'small';
+  size?: 'large' | 'medium' | 'normal' | 'small';
   text: string;
   weight?: 'bold' | 'light' | 'regular';
 }

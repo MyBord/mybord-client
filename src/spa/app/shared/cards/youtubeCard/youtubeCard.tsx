@@ -1,6 +1,5 @@
 import * as React from 'react';
-// import api, { Resource } from 'api/api';
-import api, { Resource } from 'api/mockApi';
+import api, { Resource } from 'api/api';
 import YoutubeCardDescription from './youtubeCardDescription/youtubeCardDescription';
 import YoutubeCardThumbnail from './youtubeCardThumbnail/youtubeCardThumbnail';
 import * as styles from './youtubeCard.module.scss';

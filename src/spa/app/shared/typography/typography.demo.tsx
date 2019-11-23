@@ -15,6 +15,7 @@ const TypographyDemo: React.FC = () => (
     <Typography text="Small" size="small" />
     <Typography text="Medium" size="medium" />
     <Typography text="Normal" />
+    <Typography text="Large" size="large" />
     <h3 className={styles.h3}>-- Weight --</h3>
     <Typography text="Light Text" weight="light" />
     <Typography text="Regular Text" />

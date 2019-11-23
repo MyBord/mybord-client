@@ -145,6 +145,7 @@ src/
 ```
 spa/
   |- app/ 
+     |- errorBoundary/
      |- initializeApp/
      |- pages/
      |- routing/
@@ -157,6 +158,8 @@ spa/
 
 * **app/:**
   * The react application that lives inside of our layout / navigation frame.
+* **app/errorBoundary/:**
+  * Code used to handle react error boundaries in our application.
 * **app/inititializeApp/:**
   * Code that is used to make sure the application is properly initialized before any
    functionality is accessed.

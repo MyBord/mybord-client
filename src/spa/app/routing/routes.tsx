@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { Switch, Route, useLocation } from 'react-router-dom';
 import CantPage from 'pages/cantPage/cantPage';
 import DashboardPage from 'pages/dashboardPage/dashboardPage';
+import ErrorPage from 'pages/errorPage/errorPage';
 import FollowingPage from 'pages/followingPage/followingPage';
 import Spinner from 'icons/spinner/spinner';
 import TrendingPage from 'pages/trendingPage/trendingPage';
@@ -50,14 +51,19 @@ const Routes: React.FC = () => {
             <DashboardPage />
           </RouteWrapper>
         </Route>
-        <Route exact path="/trending">
+        <Route exact path="/error">
           <RouteWrapper>
-            <TrendingPage />
+            <ErrorPage />
           </RouteWrapper>
         </Route>
         <Route exact path="/following">
           <RouteWrapper>
             <FollowingPage />
+          </RouteWrapper>
+        </Route>
+        <Route exact path="/trending">
+          <RouteWrapper>
+            <TrendingPage />
           </RouteWrapper>
         </Route>
         <Route path="/*">

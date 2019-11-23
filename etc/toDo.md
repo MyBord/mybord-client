@@ -6,6 +6,7 @@ rename video card to youtube card
 separate out components of youtube card
 make spinner fade in and fade out
 move app frame outside of initialize
+add language to 404 page
 
 ## Navigation:
 
