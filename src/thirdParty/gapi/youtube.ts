@@ -21,12 +21,19 @@ const getChannelData = async (channelId: string): Promise<string> => {
 
 const getYoutubeData = async (videoId: string): Promise<YoutubeData> => {
   try {
+    console.log('a');
+    console.log(window);
+    console.log(window.gapi);
+    console.log(window.gapi.client);
+    console.log(window.gapi.client.youtube);
     const videoResponse = await window.gapi.client.youtube.videos.list({
       part: 'contentDetails,snippet,statistics',
       id: videoId,
     });
+    console.log('b');
     const { contentDetails, snippet, statistics } = videoResponse.result.items[0];
     const channelThumbnail = await getChannelData(snippet.channelId);
+    console.log('c');
     return {
       channelThumbnail,
       channelTitle: snippet.channelTitle,
@@ -38,8 +45,7 @@ const getYoutubeData = async (videoId: string): Promise<YoutubeData> => {
       views: formatNumber(statistics.viewCount),
     };
   } catch (error) {
-    // throw Error(`Error loading youtube video api: ${error}`);
-    throw Error(error);
+    throw Error(`Error loading youtube video api: ${error}`);
   }
 };
 
