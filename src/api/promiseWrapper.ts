@@ -1,15 +1,10 @@
-// source: https://reactjs.org/docs/concurrent-mode-suspense.html#what-is-suspense-exactly
-// source: https://codesandbox.io/s/frosty-hermann-bztrp
-
-interface Data {
-  data: any;
-}
-
 interface Wrapper {
-  read(): Data;
+  read(): {
+    data: any;
+  };
 }
 
-export default (promise: Promise<Data>): Wrapper => {
+export default (promise: Promise<any>): Wrapper => {
   let status = 'pending';
   let result: object;
   const suspender = promise.then(
