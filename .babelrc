@@ -28,6 +28,7 @@
         "initializeApp": "./src/spa/app/initializeApp/",
         "layout": "./src/spa/layout/",
         "lotty": "./src/thirdParty/lotty/",
+        "mockData": "./src/mockData/",
         "navigation": "./src/spa/layout/navigation/",
         "pages": "./src/spa/app/pages/",
         "routing": "./src/spa/app/routing/",

@@ -87,8 +87,9 @@ The app folder should be organized in the following fashion:
 ```
 src/
   |- api/ 
-  |- spa/ 
   |- hooks/ 
+  |- mockData/ 
+  |- spa/ 
   |- static/ 
   |- styles/ 
   |- thirdParty/ 
@@ -106,10 +107,12 @@ src/
 * **api:**
     * The api folder contains the http service related scripts that are used to connect to any and
     all api's used in the app.
-* **spa/:**
-  * The folder that contains the react application source code.
 * **hooks/:**
   * Folder containing custom hooks.
+* **mockData/:**
+  * Data to be re-used for things like tests, mock api's, storybooks, and more.
+* **spa/:**
+  * The folder that contains the react application source code.
 * **static/:**
   * Contains static data that is often used for application configuration and dummy data.
 * **styles/:**

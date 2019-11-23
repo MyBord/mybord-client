@@ -134,6 +134,7 @@ const config = {
       initializeApp: path.resolve(__dirname, 'src/spa/app/initializeApp/'),
       layout: path.resolve(__dirname, 'src/spa/layout/'),
       lotty: path.resolve(__dirname, 'src/thirdParty/lotty/'),
+      mockData: path.resolve(__dirname, 'src/mockData/'),
       navigation: path.resolve(__dirname, 'src/spa/layout/navigation/'),
       pages: path.resolve(__dirname, 'src/spa/app/pages/'),
       routing: path.resolve(__dirname, 'src/spa/app/routing/'),

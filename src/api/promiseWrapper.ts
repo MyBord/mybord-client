@@ -1,10 +1,10 @@
-interface Wrapper {
+export interface PromiseWrapper {
   read(): {
     data: any;
   };
 }
 
-export default (promise: Promise<any>): Wrapper => {
+export const promiseWrapper = (promise: Promise<any>): PromiseWrapper => {
   let status = 'pending';
   let result: object;
   const suspender = promise.then(

@@ -1,22 +1,39 @@
 import * as React from 'react';
-import * as styles from './youtubeCard.module.scss';
+// import api, { Resource } from 'api/api';
+import api, { Resource } from 'api/mockApi';
 import YoutubeCardDescription from './youtubeCardDescription/youtubeCardDescription';
 import YoutubeCardThumbnail from './youtubeCardThumbnail/youtubeCardThumbnail';
+import * as styles from './youtubeCard.module.scss';
 
 interface Props {
-  resource: object; // ToDo: fix typing
+  resource: Resource;
 }
 
-// @ts-ignore // ToDo
+interface SamplePageProps {
+  videoId: string;
+}
+
+const SamplePage: React.FC<SamplePageProps> = ({ videoId }) => {
+  const youtubeVideoDataResource = api.getYoutubeVideoData(videoId);
+  return (
+    <React.Suspense
+      fallback={<h1>Loading profile...</h1>}
+    >
+      <YoutubeCard resource={youtubeVideoDataResource} />
+    </React.Suspense>
+  );
+};
+
 const YoutubeCard: React.FC<Props> = ({ resource }) => {
-  // @ts-ignore // ToDo
   const youtubeData = resource.youtubeVideoData.read();
   return (
     <div className={styles.container}>
+      // @ts-ignore // ToDo
       <YoutubeCardThumbnail youtubeData={youtubeData} />
+      // @ts-ignore // ToDo
       <YoutubeCardDescription youtubeData={youtubeData} />
     </div>
   );
 };
 
-export default YoutubeCard;
+export default SamplePage;

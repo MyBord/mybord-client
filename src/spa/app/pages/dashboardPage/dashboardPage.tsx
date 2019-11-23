@@ -1,12 +1,12 @@
 import * as React from 'react';
-import SamplePage from 'pages/samplePage/samplePage';
+import YoutubeCard from 'shared/cards/youtubeCard/youtubeCard';
 
 const DashboardPage: React.FC = () => (
   <>
-    <SamplePage videoId="ff4fgQxPaO0" />
-    <SamplePage videoId="XmnZ9HZTHjw" />
-    <SamplePage videoId="32zzZE658ec" />
-    <SamplePage videoId="i0dvv4fTiqA" />
+    <YoutubeCard videoId="ff4fgQxPaO0" />
+    <YoutubeCard videoId="XmnZ9HZTHjw" />
+    <YoutubeCard videoId="32zzZE658ec" />
+    <YoutubeCard videoId="i0dvv4fTiqA" />
   </>
 );
 

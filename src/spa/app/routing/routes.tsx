@@ -4,7 +4,6 @@ import { Switch, Route, useLocation } from 'react-router-dom';
 import CantPage from 'pages/cantPage/cantPage';
 import DashboardPage from 'pages/dashboardPage/dashboardPage';
 import FollowingPage from 'pages/followingPage/followingPage';
-import SamplePage from 'pages/samplePage/samplePage';
 import Spinner from 'icons/spinner/spinner';
 import TrendingPage from 'pages/trendingPage/trendingPage';
 import * as styles from './routes.module.scss';
@@ -59,12 +58,6 @@ const Routes: React.FC = () => {
         <Route exact path="/following">
           <RouteWrapper>
             <FollowingPage />
-          </RouteWrapper>
-        </Route>
-        <Route exact path="/sample">
-          <RouteWrapper>
-            // @ts-ignore
-            <SamplePage id={1} />
           </RouteWrapper>
         </Route>
         <Route path="/*">
