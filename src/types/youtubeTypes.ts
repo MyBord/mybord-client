@@ -4,6 +4,7 @@ export interface YoutubeData {
   duration: string;
   likes: string;
   publishedAt: string;
+  videoId: string;
   videoThumbnail: string;
   videoTitle: string;
   views: string;

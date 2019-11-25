@@ -25,7 +25,9 @@ const getYoutubeVideoData = async (videoId: string): Promise<YoutubeData> => {
       part: 'contentDetails,snippet,statistics',
       id: videoId,
     });
-    const { contentDetails, snippet, statistics } = videoResponse.result.items[0];
+    const {
+      contentDetails, id, snippet, statistics,
+    } = videoResponse.result.items[0];
     const channelThumbnail = await getChannelData(snippet.channelId);
     return {
       channelThumbnail,
@@ -33,6 +35,7 @@ const getYoutubeVideoData = async (videoId: string): Promise<YoutubeData> => {
       duration: formatDuration(contentDetails.duration),
       likes: formatNumber(statistics.likeCount),
       publishedAt: formatPublishedAt(snippet.publishedAt),
+      videoId: id,
       videoThumbnail: snippet.thumbnails.medium.url,
       videoTitle: snippet.title,
       views: formatNumber(statistics.viewCount),

@@ -8,6 +8,7 @@ export default {
   duration: '01:02:03',
   likes: '123,456',
   publishedAt: '3y ago',
+  videoId: 'XmnZ9HZTHjw',
   videoThumbnail: 'https://i.ytimg.com/vi/kJQP7kiw5Fk/mqdefault.jpg',
   videoTitle: loremIpsum,
   views: '987,123',

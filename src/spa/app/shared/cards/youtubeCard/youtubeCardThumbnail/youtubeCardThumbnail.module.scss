@@ -3,6 +3,11 @@
 .container {
   display: flex;
   position: relative;
+  &:hover {
+    > .playButtonDiv {
+      opacity: 1;
+    }
+  }
 }
 
 .durationDiv {
@@ -22,6 +27,8 @@
 
 .playButtonDiv {
   left: 50%;
+  opacity: 0;
+  transition: opacity 0.2s ease;
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
