@@ -4,6 +4,8 @@ import * as styles from './typography.module.scss';
 interface Props {
   color?: 'black' | 'transparentWhite' | 'white';
   font?: 'poppins' | 'roboto';
+  maxTextLength?: number;
+  showExpandCollapseButton?: boolean;
   size?: 'large' | 'medium' | 'normal' | 'small';
   text: string;
   weight?: 'bold' | 'light' | 'regular';
@@ -12,21 +14,33 @@ interface Props {
 const Typography: React.FC<Props> = ({
   color = 'black',
   font = 'poppins',
+  maxTextLength = null,
   size = 'normal',
   text,
   weight = 'regular',
-}) => (
-  <p
-    className={[
-      styles.typography,
-      styles[color],
-      styles[font],
-      styles[size],
-      styles[weight],
-    ].join(' ')}
-  >
-    {text}
-  </p>
-);
+}) => {
+  const renderText = (): string => {
+    if (maxTextLength && text.length > maxTextLength) {
+      return (
+        `${text.slice(0, maxTextLength)}...`
+      );
+    }
+    return text;
+  };
+
+  return (
+    <p
+      className={[
+        styles.typography,
+        styles[color],
+        styles[font],
+        styles[size],
+        styles[weight],
+      ].join(' ')}
+    >
+      {renderText()}
+    </p>
+  );
+};
 
 export default Typography;

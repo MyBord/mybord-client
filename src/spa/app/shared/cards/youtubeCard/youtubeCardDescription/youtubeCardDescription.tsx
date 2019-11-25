@@ -5,15 +5,16 @@ import { YoutubeData } from 'types/youtubeTypes';
 import * as styles from './youtubeCardDescription.module.scss';
 
 interface Props {
-  youtubeData: YoutubeData;
+  youtubeVideoData: YoutubeData;
 }
 
-const YoutubeCardDescription: React.FC<Props> = ({ youtubeData }) => (
+const YoutubeCardDescription: React.FC<Props> = ({ youtubeVideoData }) => (
   <>
     <div className={styles.title}>
       <Typography
+        maxTextLength={65}
         size="medium"
-        text={youtubeData.videoTitle}
+        text={youtubeVideoData.videoTitle}
         weight="bold"
       />
     </div>
@@ -21,12 +22,13 @@ const YoutubeCardDescription: React.FC<Props> = ({ youtubeData }) => (
       <img
         alt="channel icon"
         className={styles.channelIcon}
-        src={youtubeData.channelThumbnail}
+        src={youtubeVideoData.channelThumbnail}
       />
       <div className={styles.channelTitle}>
         <Typography
+          maxTextLength={36}
           size="small"
-          text={youtubeData.channelTitle}
+          text={youtubeVideoData.channelTitle}
         />
       </div>
     </div>
@@ -37,7 +39,7 @@ const YoutubeCardDescription: React.FC<Props> = ({ youtubeData }) => (
         </div>
         <Typography
           size="small"
-          text={youtubeData.likes}
+          text={youtubeVideoData.likes}
         />
       </div>
       <div className={styles.statsDiv}>
@@ -46,7 +48,7 @@ const YoutubeCardDescription: React.FC<Props> = ({ youtubeData }) => (
         </div>
         <Typography
           size="small"
-          text={youtubeData.views}
+          text={youtubeVideoData.views}
         />
       </div>
       <div className={styles.statsDiv}>
@@ -55,7 +57,7 @@ const YoutubeCardDescription: React.FC<Props> = ({ youtubeData }) => (
         </div>
         <Typography
           size="small"
-          text={youtubeData.publishedAt}
+          text={youtubeVideoData.publishedAt}
         />
       </div>
     </div>

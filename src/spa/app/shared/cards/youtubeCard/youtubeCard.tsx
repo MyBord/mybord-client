@@ -24,13 +24,13 @@ const SamplePage: React.FC<SamplePageProps> = ({ videoId }) => {
 };
 
 const YoutubeCard: React.FC<Props> = ({ resource }) => {
-  const youtubeData = resource.youtubeVideoData.read();
+  const youtubeVideoData = resource.youtubeVideoData.read();
   return (
     <div className={styles.container}>
       // @ts-ignore // ToDo
-      <YoutubeCardThumbnail youtubeData={youtubeData} />
+      <YoutubeCardThumbnail youtubeVideoData={youtubeVideoData} />
       // @ts-ignore // ToDo
-      <YoutubeCardDescription youtubeData={youtubeData} />
+      <YoutubeCardDescription youtubeVideoData={youtubeVideoData} />
     </div>
   );
 };

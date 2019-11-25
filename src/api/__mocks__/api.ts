@@ -1,5 +1,5 @@
 import youtubeVideoMockData from 'mockData/youtubeVideoMockData';
-import { PromiseWrapper, promiseWrapper } from './promiseWrapper';
+import { PromiseWrapper, promiseWrapper } from '../promiseWrapper';
 
 export interface Resource {
   [key: string]: PromiseWrapper;

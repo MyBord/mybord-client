@@ -1,12 +1,7 @@
 ## ToDo:
-update typography
-update icons
-add video time
-rename video card to youtube card
-separate out components of youtube card
 make spinner fade in and fade out
-move app frame outside of initialize
-add language to 404 page
+add shadow for youtube card
+add expand / collapse for youtube card
 
 ## Navigation:
 

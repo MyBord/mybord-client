@@ -4,22 +4,22 @@ import { YoutubeData } from 'types/youtubeTypes';
 import * as styles from './youtubeCardThumbnail.module.scss';
 
 interface Props {
-  youtubeData: YoutubeData;
+  youtubeVideoData: YoutubeData;
 }
 
-const YoutubeCardThumbnail: React.FC<Props> = ({ youtubeData }) => (
+const YoutubeCardThumbnail: React.FC<Props> = ({ youtubeVideoData }) => (
   <div className={styles.container}>
     <img
       alt="video thumbnail"
       className={styles.img}
-      src={youtubeData.videoThumbnail}
+      src={youtubeVideoData.videoThumbnail}
     />
     <div className={styles.durationDiv}>
       <Typography
         color="white"
         font="roboto"
         size="small"
-        text={youtubeData.duration}
+        text={youtubeVideoData.duration}
         weight="light"
       />
     </div>
