@@ -19,11 +19,11 @@ const addonConfigs = () => {
 
   addParameters({
     backgrounds: [ // adds background addon configs
-      // { name: 'white', value: '#ffffff', default: true },
+      { name: 'white', value: '#ffffff', default: true },
       { name: 'white', value: '#ffffff'},
       { name: 'blue', value: '#44a9cc' },
       // { name: 'grey', value: '#F3F5Fa', default: true },
-      { name: 'darkGrey', value: '#d7d8d4', default: true },
+      // { name: 'darkGrey', value: '#d7d8d4', default: true },
     ],
     viewport: { // adds viewport addon configs
       viewports: {

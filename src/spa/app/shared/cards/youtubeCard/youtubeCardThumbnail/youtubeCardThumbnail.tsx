@@ -1,4 +1,5 @@
 import * as React from 'react';
+import PlayButton from 'buttons/playButton/playButton';
 import Typography from 'typography/typography';
 import { YoutubeData } from 'types/youtubeTypes';
 import * as styles from './youtubeCardThumbnail.module.scss';
@@ -14,6 +15,9 @@ const YoutubeCardThumbnail: React.FC<Props> = ({ youtubeVideoData }) => (
       className={styles.img}
       src={youtubeVideoData.videoThumbnail}
     />
+    <div className={styles.playButtonDiv}>
+      <PlayButton onClick={() => console.log('foo')} />
+    </div>
     <div className={styles.durationDiv}>
       <Typography
         color="white"

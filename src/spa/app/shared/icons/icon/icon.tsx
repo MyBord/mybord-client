@@ -11,6 +11,7 @@ import ThumbsUpIcon from './individualIcons/thumbsUpIcon';
 export const iconNames = {
   calendar: 'foo',
   eye: 'foo',
+  play: 'foo',
   thumbsUp: 'foo',
 };
 

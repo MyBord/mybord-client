@@ -1,0 +1,35 @@
+@import "~styles/_colors";
+
+.arrow {
+  border-bottom: 1rem solid transparent;
+  border-left: 1rem solid $transparentWhite;
+  border-radius: 0.125rem;
+  border-top: 1rem solid transparent;
+  height: 0;
+  left: 55%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+}
+
+.arrowContainer {
+  position: relative;
+}
+
+.button {
+  background: $transparentBlack;
+  border-radius: 50%;
+  border: 0.0625rem solid $black;
+  cursor: pointer;
+  height: 3.5rem;
+  outline: none;
+  transition: background 0.25s ease;
+  width: 3.5rem;
+  &:hover {
+    background: $transparentBlackDarker;
+  }
+  &:active {
+    background: $transparentBlackLighter;
+  }
+}
