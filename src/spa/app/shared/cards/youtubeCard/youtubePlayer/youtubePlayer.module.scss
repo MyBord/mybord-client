@@ -1,7 +1,22 @@
-.iFrame {
-  width: 100%;
-  border: none;
-}
+@import "~styles/_sizes";
 
 .div {
+  height: 100%;
+  width: 100%;
 }
+
+.overlayDiv {
+  height: $youtubeCardHeight;
+  position: absolute;
+  width: $youtubeCardWidth;
+}
+
+.overlayDivHide {
+  opacity: 0;
+
+}
+
+.overlayDivShow {
+  opacity: 1;
+}
+

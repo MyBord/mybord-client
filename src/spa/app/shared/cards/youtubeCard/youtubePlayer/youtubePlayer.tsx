@@ -1,51 +1,80 @@
 import * as React from 'react';
-import useMount from 'hooks/useMount';
+import { motion, AnimatePresence } from 'framer-motion';
+import { YoutubeData } from 'types/youtubeTypes';
+import YoutubeCardThumbnailComponent from '../youtubeCardThumbnail/youtubeCardThumbnailComponent';
 import * as styles from './youtubePlayer.module.scss';
 
 declare global {
   interface Window {
     YT: any;
+    onYouTubeIframeAPIReady: Function;
   }
 }
 
 interface Props {
-  setIsYoutubePlayerLoaded: (isYoutubePlayerLoaded: boolean) => void;
-  videoId: string;
+  youtubeVideoData: YoutubeData;
 }
 
-const YoutubePlayer: React.FC<Props> = ({ setIsYoutubePlayerLoaded, videoId }) => {
-  const videoFrameId = `youtube-player-${videoId}`;
-  const readyFn = (): void => console.log('this is ready');
-  const onYouTubeIframeAPIReady = (): void => {
+const YoutubePlayer: React.FC<Props> = ({ youtubeVideoData }) => {
+  const videoFrameId = `youtube-player-${youtubeVideoData.videoId}`;
+  const [isYoutubePlayerLoaded, setIsYoutubePlayerLoaded] = React.useState(false);
+
+  const onPlayerReady = (event: { [key: string]: any }): void => {
+    setIsYoutubePlayerLoaded(true);
+    event.target.playVideo();
+  };
+
+  const loadVideo = (): void => {
+    // the Player object is created uniquely based on the videoId
     const player = new window.YT.Player(videoFrameId, {
-      videoId,
+      videoId: youtubeVideoData.videoId,
       events: {
-        onReady: readyFn,
+        onReady: onPlayerReady,
       },
     });
-    console.log('Video API is loaded');
   };
 
-  const mountIframeApiReady = (): void => {
-    // @ts-ignore
-    window.onYouTubeIframeAPIReady = onYouTubeIframeAPIReady();
-  };
-  useMount(mountIframeApiReady);
+  React.useEffect(() => {
+    // If not, load the script asynchronously
+    if (!window.YT) {
+      const tag = document.createElement('script');
+      tag.src = 'https://www.youtube.com/iframe_api';
+
+      // onYouTubeIframeAPIReady will load the video after the script is loaded
+      window.onYouTubeIframeAPIReady = loadVideo;
+
+      const firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    } else { // If script is already there, load the video directly
+      loadVideo();
+    }
+  }, []);
 
   return (
-    <div className={styles.div}>
-      // @ts-ignore;
-      <button type="button" onClick={() => window.bark()}>click me</button>
-      <iframe
-        allowFullScreen
-        id={videoFrameId}
-        className={styles.iFrame}
-        onLoad={() => setIsYoutubePlayerLoaded(true)}
-        src={`https://www.youtube.com/embed/${videoId}?color=white&autoplay=1`}
-        title="youtube video"
-      />
-    </div>
+    <>
+      <AnimatePresence>
+        {!isYoutubePlayerLoaded && (
+          <motion.div
+            animate={{ opacity: 1 }}
+            className={styles.overlayDiv}
+            exit={{ opacity: 0 }}
+            initial={{ opacity: 1 }}
+            transition={{ duration: 5 }}
+          >
+            <YoutubeCardThumbnailComponent youtubeVideoData={youtubeVideoData} />
+          </motion.div>
+        )}
+      </AnimatePresence>
+      <div className={styles.div} id={videoFrameId} />
+    </>
   );
 };
 
 export default YoutubePlayer;
+// {
+//   !isYoutubePlayerLoaded
+//   && (
+//     <div className={styles.overlayDiv}>
+//     </div>
+//   )
+// }

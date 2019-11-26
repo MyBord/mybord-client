@@ -2,6 +2,8 @@
 make spinner fade in and fade out
 add shadow for youtube card
 add expand / collapse for youtube card
+add tooltips for long titles
+rename youtube thumbnail to youtube player
 
 ## Navigation:
 

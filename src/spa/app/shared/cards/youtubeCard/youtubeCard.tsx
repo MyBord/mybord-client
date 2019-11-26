@@ -1,7 +1,7 @@
 import * as React from 'react';
 import api, { Resource } from 'api/api';
 import YoutubeCardDescription from './youtubeCardDescription/youtubeCardDescription';
-import YoutubeCardThumbnail from './youtubeCardThumbnail/youtubeCardThumbnail';
+import YoutubeCardThumbnailContainer from './youtubeCardThumbnail/youtubeCardThumbnailContainer';
 import * as styles from './youtubeCard.module.scss';
 
 interface Props {
@@ -28,9 +28,9 @@ const YoutubeCard: React.FC<Props> = ({ resource }) => {
   return (
     <div className={styles.container}>
       // @ts-ignore // ToDo
-      <YoutubeCardThumbnail youtubeVideoData={youtubeVideoData} />
+      <YoutubeCardThumbnailContainer youtubeVideoData={youtubeVideoData} />
       // @ts-ignore // ToDo
-      <YoutubeCardDescription youtubeVideoData={youtubeVideoData} />
+      {/* <YoutubeCardDescription youtubeVideoData={youtubeVideoData} /> */}
     </div>
   );
 };
