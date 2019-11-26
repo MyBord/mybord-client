@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { YoutubeData } from 'types/youtubeTypes';
 import YoutubeCardThumbnailComponent from './youtubeCardThumbnailComponent';
 import YoutubePlayer from '../youtubePlayer/youtubePlayer';
@@ -10,18 +11,35 @@ interface Props {
 
 const YoutubeCardThumbnailContainer: React.FC<Props> = ({ youtubeVideoData }) => {
   const [showYoutubePlayer, setShowYoutubePlayer] = React.useState(false);
+  const [isYoutubePlayerLoaded, setIsYoutubePlayerLoaded] = React.useState(false);
 
-  if (!showYoutubePlayer) {
-    return (
-      <YoutubeCardThumbnailComponent
-        setShowYoutubePlayer={setShowYoutubePlayer}
-        youtubeVideoData={youtubeVideoData}
-      />
-    );
-  }
   return (
     <div className={styles.container}>
-      <YoutubePlayer youtubeVideoData={youtubeVideoData} />
+      <AnimatePresence>
+        {!isYoutubePlayerLoaded && (
+          <motion.div
+            animate={{ opacity: 1 }}
+            className={styles.overlayDiv}
+            exit={{ opacity: 0 }}
+            initial={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+          >
+            <YoutubeCardThumbnailComponent
+              setShowYoutubePlayer={setShowYoutubePlayer}
+              youtubeVideoData={youtubeVideoData}
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
+      {
+        showYoutubePlayer
+        && (
+          <YoutubePlayer
+            setIsYoutubePlayerLoaded={setIsYoutubePlayerLoaded}
+            youtubeVideoData={youtubeVideoData}
+          />
+        )
+      }
     </div>
   );
 };

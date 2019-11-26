@@ -7,7 +7,7 @@
   display: flex;
   position: relative;
   &:hover {
-    > .playButtonDiv {
+    > div > .playButtonDiv {
       opacity: 1;
     }
   }
@@ -26,6 +26,12 @@
 .img {
   height:100%;
   width:100%;
+}
+
+.overlayDiv {
+  height: $youtubeCardHeight;
+  position: absolute;
+  width: $youtubeCardWidth;
 }
 
 .playButtonDiv {

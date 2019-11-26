@@ -1,7 +1,5 @@
 import * as React from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { YoutubeData } from 'types/youtubeTypes';
-import YoutubeCardThumbnailComponent from '../youtubeCardThumbnail/youtubeCardThumbnailComponent';
 import * as styles from './youtubePlayer.module.scss';
 
 declare global {
@@ -12,12 +10,12 @@ declare global {
 }
 
 interface Props {
+  setIsYoutubePlayerLoaded: (isYoutubePlayerLoaded: boolean) => void;
   youtubeVideoData: YoutubeData;
 }
 
-const YoutubePlayer: React.FC<Props> = ({ youtubeVideoData }) => {
+const YoutubePlayer: React.FC<Props> = ({ setIsYoutubePlayerLoaded, youtubeVideoData }) => {
   const videoFrameId = `youtube-player-${youtubeVideoData.videoId}`;
-  const [isYoutubePlayerLoaded, setIsYoutubePlayerLoaded] = React.useState(false);
 
   const onPlayerReady = (event: { [key: string]: any }): void => {
     setIsYoutubePlayerLoaded(true);
@@ -51,30 +49,8 @@ const YoutubePlayer: React.FC<Props> = ({ youtubeVideoData }) => {
   }, []);
 
   return (
-    <>
-      <AnimatePresence>
-        {!isYoutubePlayerLoaded && (
-          <motion.div
-            animate={{ opacity: 1 }}
-            className={styles.overlayDiv}
-            exit={{ opacity: 0 }}
-            initial={{ opacity: 1 }}
-            transition={{ duration: 5 }}
-          >
-            <YoutubeCardThumbnailComponent youtubeVideoData={youtubeVideoData} />
-          </motion.div>
-        )}
-      </AnimatePresence>
-      <div className={styles.div} id={videoFrameId} />
-    </>
+    <div className={styles.div} id={videoFrameId} />
   );
 };
 
 export default YoutubePlayer;
-// {
-//   !isYoutubePlayerLoaded
-//   && (
-//     <div className={styles.overlayDiv}>
-//     </div>
-//   )
-// }

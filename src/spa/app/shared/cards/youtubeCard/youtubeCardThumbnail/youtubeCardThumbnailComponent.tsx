@@ -12,7 +12,7 @@ interface Props {
 const YoutubeCardThumbnailComponent: React.FC<Props> = ({
   setShowYoutubePlayer, youtubeVideoData,
 }) => (
-  <div className={styles.container}>
+  <>
     <img
       alt="video thumbnail"
       className={styles.img}
@@ -35,7 +35,7 @@ const YoutubeCardThumbnailComponent: React.FC<Props> = ({
         weight="light"
       />
     </div>
-  </div>
+  </>
 );
 
 export default YoutubeCardThumbnailComponent;
