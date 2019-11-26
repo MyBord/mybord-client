@@ -1,4 +1,5 @@
 import * as React from 'react';
+import useMount from 'hooks/useMount';
 import * as styles from './youtubePlayer.module.scss';
 
 declare global {
@@ -13,27 +14,31 @@ interface Props {
 }
 
 const YoutubePlayer: React.FC<Props> = ({ setIsYoutubePlayerLoaded, videoId }) => {
-  const foo = (): void => console.log('ready');
-  const bar = (): void => console.log('change');
-  let player;
-  console.log('bark');
-  const onYouTubePlayerAPIReady = (): void => {
-    player = new window.YT.Player(`youtube-player-${videoId}`, {
-      height: '390',
-      width: '640',
+  const videoFrameId = `youtube-player-${videoId}`;
+  const readyFn = (): void => console.log('this is ready');
+  const onYouTubeIframeAPIReady = (): void => {
+    const player = new window.YT.Player(videoFrameId, {
       videoId,
       events: {
-        onReady: foo,
-        onStateChange: bar,
+        onReady: readyFn,
       },
     });
+    console.log('Video API is loaded');
   };
+
+  const mountIframeApiReady = (): void => {
+    // @ts-ignore
+    window.onYouTubeIframeAPIReady = onYouTubeIframeAPIReady();
+  };
+  useMount(mountIframeApiReady);
 
   return (
     <div className={styles.div}>
+      // @ts-ignore;
+      <button type="button" onClick={() => window.bark()}>click me</button>
       <iframe
         allowFullScreen
-        id={`youtube-player-${videoId}`}
+        id={videoFrameId}
         className={styles.iFrame}
         onLoad={() => setIsYoutubePlayerLoaded(true)}
         src={`https://www.youtube.com/embed/${videoId}?color=white&autoplay=1`}
