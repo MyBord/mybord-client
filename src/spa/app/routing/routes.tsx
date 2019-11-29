@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Switch, Route, useLocation } from 'react-router-dom';
+import {
+  Switch, Redirect, Route, useLocation,
+} from 'react-router-dom';
 import CantPage from 'pages/cantPage/cantPage';
 import DashboardPage from 'pages/dashboardPage/dashboardPage';
 import ErrorPage from 'pages/errorPage/errorPage';
@@ -46,7 +48,12 @@ const Routes: React.FC = () => {
   return (
     <AnimatePresence exitBeforeEnter>
       <Switch location={location} key={location.key}>
-        <Route exact path="/">
+        <Route
+          exact
+          path="/"
+          render={() => <Redirect to="/myBord" />}
+        />
+        <Route exact path="/myBord">
           <RouteWrapper>
             <DashboardPage />
           </RouteWrapper>

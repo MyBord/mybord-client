@@ -86,6 +86,7 @@ The app folder should be organized in the following fashion:
 
 ```
 src/
+  |- assets/ 
   |- api/ 
   |- hooks/ 
   |- mockData/ 
@@ -105,6 +106,8 @@ src/
   |- index.tsx
 ```
 
+* **assets:**
+    * Image assets used in the app.
 * **api:**
     * The api folder contains the http service related scripts that are used to connect to any and
     all api's used in the app.

@@ -20,6 +20,7 @@
       "alias": {
         "api": "./src/api/",
         "app": "./src/spa/app/",
+        "assets": "./src/assets/",
         "buttons": "./src/spa/app/shared/buttons/",
         "gapi": "./src/thirdParty/gapi/",
         "header": "./src/spa/app/header/",

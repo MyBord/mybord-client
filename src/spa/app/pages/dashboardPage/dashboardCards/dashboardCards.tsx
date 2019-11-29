@@ -8,15 +8,15 @@ import * as styles from './dashboardCards.module.scss';
 const DashboardCards: React.FC = () => (
   <section className={styles.section}>
     {
-      videos.map((videoUrl: string) => (
-        <YoutubeCard key={videoUrl} videoId={getYoutubeId(videoUrl)} />
+      videos.map((videoUrl: string, index) => (
+        <YoutubeCard key={`${videoUrl}-${index}`} videoId={getYoutubeId(videoUrl)} />
       ))
     }
     {
       // we create some phantom cards that do not appear visible but are rendered so that we can
       // `justify-content: center` our flexbox card content while having our last row be
       // left-aligned.
-      Array(10).fill(null).map(() => <PhantomCard />)
+      Array(10).fill(null).map((value, index) => <PhantomCard key={`phantom-card-${index}`} />)
     }
   </section>
 );

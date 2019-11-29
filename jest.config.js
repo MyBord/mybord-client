@@ -14,6 +14,7 @@ module.exports = {
     '\\.(css|scss|less)$': 'identity-obj-proxy',
     '^api(.*)$': '<rootDir>/src/api$1',
     '^app(.*)$': '<rootDir>/src/spa/app$1',
+    '^assets(.*)$': '<rootDir>/src/assets$1',
     '^buttons(.*)$': '<rootDir>/src/spa/app/shared/buttons$1',
     '^gapi(.*)$': '<rootDir>/src/thirdParty/gapi$1',
     '^header(.*)$': '<rootDir>/src/spa/layout/header$1',

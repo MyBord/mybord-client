@@ -1,0 +1,16 @@
+@import "~styles/colors";
+
+.activeLink {
+  p {
+    color: $blue;
+    transition: 0.25s color ease;
+  }
+}
+
+.link {
+  margin: 1rem;
+  text-decoration: none;
+  p {
+    transition: 0.25s color ease;
+  }
+}

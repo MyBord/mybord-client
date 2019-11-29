@@ -13,14 +13,24 @@
   border-right: 0.0625rem solid $navBorder;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   overflow: hidden;
   position: relative;
   width: $navWidthCollapsed;
 }
 
-.section {
+.iconSection {
   position: relative;
+}
+
+.img {
+  width: 3rem;
+}
+
+.logoSection {
+  align-items: center;
+  display: flex;
+  height: $headerHeight;
+  justify-content: center;
 }
 
 :export {

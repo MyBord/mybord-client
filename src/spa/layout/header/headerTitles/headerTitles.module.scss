@@ -1,0 +1,12 @@
+@import "~styles/colors";
+@import "~styles/sizes";
+
+.div {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  margin-left: 1rem;
+  > p {
+    margin: 1rem;
+  }
+}
