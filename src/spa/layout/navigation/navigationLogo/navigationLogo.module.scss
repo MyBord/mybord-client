@@ -1,0 +1,12 @@
+@import "~styles/sizes";
+
+.img {
+  width: 3rem;
+}
+
+.section {
+  align-items: center;
+  display: flex;
+  height: $headerHeight;
+  justify-content: center;
+}

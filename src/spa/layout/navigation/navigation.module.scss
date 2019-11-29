@@ -1,13 +1,6 @@
 @import "~styles/colors";
 @import "~styles/sizes";
 
-.buttonDiv {
-  margin-right: calc((#{$navWidthCollapsed} - 50px) / 2);
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-
 .nav {
   background: $white;
   border-right: 0.0625rem solid $navBorder;
@@ -15,25 +8,5 @@
   flex-direction: column;
   overflow: hidden;
   position: relative;
-  width: $navWidthCollapsed;
-}
-
-.iconSection {
-  position: relative;
-}
-
-.img {
-  width: 3rem;
-}
-
-.logoSection {
-  align-items: center;
-  display: flex;
-  height: $headerHeight;
-  justify-content: center;
-}
-
-:export {
-  navWidthCollapsed: $navWidthCollapsed;
-  navWidthExpanded: $navWidthExpanded;
+  width: $navWidth;
 }
