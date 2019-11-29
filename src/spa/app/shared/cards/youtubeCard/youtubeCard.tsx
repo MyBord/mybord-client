@@ -1,11 +1,12 @@
 import * as React from 'react';
 import api, { Resource } from 'api/api';
+import { YoutubeData } from 'types/youtubeTypes';
 import YoutubeCardDescription from './youtubeCardDescription/youtubeCardDescription';
 import YoutubeCardThumbnailContainer from './youtubeCardThumbnail/youtubeCardThumbnailContainer';
 import * as styles from './youtubeCard.module.scss';
 
 interface Props {
-  resource: Resource;
+  resource: Resource<YoutubeData>;
 }
 
 interface SamplePageProps {
@@ -27,10 +28,8 @@ const YoutubeCard: React.FC<Props> = ({ resource }) => {
   const youtubeVideoData = resource.youtubeVideoData.read();
   return (
     <div className={styles.container}>
-      // @ts-ignore // ToDo
       <YoutubeCardThumbnailContainer youtubeVideoData={youtubeVideoData} />
-      // @ts-ignore // ToDo
-      {/* <YoutubeCardDescription youtubeVideoData={youtubeVideoData} /> */}
+      <YoutubeCardDescription youtubeVideoData={youtubeVideoData} />
     </div>
   );
 };

@@ -32,6 +32,7 @@ module.exports = {
     '^styles(.*)$': '<rootDir>/src/styles$1',
     '^typography(.*)$': '<rootDir>/src/app/shared/typography$1',
     '^types(.*)$': '<rootDir>/src/types$1',
+    '^utils(.*)$': '<rootDir>/src/utils$1',
   },
   setupFilesAfterEnv: ['<rootDir>/setupTests.js'],
   preset: 'ts-jest',

@@ -2,7 +2,7 @@
 @import "~styles/_sizes";
 
 .container {
-  height: $youtubeCardHeight;
+  height: $youtubeCardThumbnailHeight;
   width: $youtubeCardWidth;
   display: flex;
   position: relative;
@@ -29,7 +29,7 @@
 }
 
 .overlayDiv {
-  height: $youtubeCardHeight;
+  height: $youtubeCardThumbnailHeight;
   position: absolute;
   width: $youtubeCardWidth;
 }

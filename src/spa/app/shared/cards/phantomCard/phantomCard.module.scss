@@ -1,0 +1,9 @@
+@import "~styles/_colors";
+@import "~styles/_sizes";
+
+.div {
+  visibility: hidden;
+  margin: $youtubeCardMargin;
+  min-width: $youtubeCardWidth;
+  width: $youtubeCardWidth;
+}

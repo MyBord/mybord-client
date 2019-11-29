@@ -4,20 +4,32 @@ add shadow for youtube card
 add expand / collapse for youtube card
 add tooltips for long titles
 rename youtube thumbnail to youtube player
+when clicking play for youtube video, hide play button
+fix ts-ignoreing in youtube card
+add transition to player circle being shown on and off when hovering on and off
 
 ## Navigation:
 
 Left Nav:
 * Dashboard
 * Following
-* Favorites
 * Trending
 
 Header
-* Search
-* profile / settings / Logout
+* profile / settings / Logout / about
 * notifications
-* About
+
+dashboard page
+* filter - category , tag
+* generic search
+* grid vs row
+* upload
+* my favorites
+* individual card
+  - favorite it
+  - edit tags
+* sort by - category, date uploaded, etc
+* size
 
 ## long term
 - lazy load user icons

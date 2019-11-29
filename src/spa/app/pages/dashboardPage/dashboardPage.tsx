@@ -1,13 +1,13 @@
 import * as React from 'react';
-import YoutubeCard from 'shared/cards/youtubeCard/youtubeCard';
+import DashboardCards from './dashboardCards/dashboardCards';
+import DashboardHeader from './dashboardHeader/dashboardHeader';
+import * as styles from './dashboardPage.module.scss';
 
 const DashboardPage: React.FC = () => (
-  <>
-    <YoutubeCard videoId="ff4fgQxPaO0" />
-    <YoutubeCard videoId="XmnZ9HZTHjw" />
-    <YoutubeCard videoId="32zzZE658ec" />
-    <YoutubeCard videoId="i0dvv4fTiqA" />
-  </>
+  <section className={styles.section}>
+    <DashboardHeader />
+    <DashboardCards />
+  </section>
 );
 
 export default DashboardPage;

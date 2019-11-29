@@ -144,6 +144,7 @@ const config = {
       styles: path.resolve(__dirname, 'src/styles/'),
       typography: path.resolve(__dirname, 'src/spa/app/shared/typography/'),
       types: path.resolve(__dirname, 'src/types/'),
+      utils: path.resolve(__dirname, 'src/utils/'),
     },
   },
 };

@@ -31,7 +31,8 @@
       "storybook/*": ["src/thirdParty/storybook/*"],
       "styles/*": ["src/styles/*"],
       "typography/*": ["src/spa/app/shared/typography/*"],
-      "types/*": ["src/types/*"]
+      "types/*": ["src/types/*"],
+      "utils/*": ["src/types/*"]
     }
   }
 }

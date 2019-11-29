@@ -63,6 +63,7 @@ module.exports = {
     '@typescript-eslint/semi': ['error'],
     'react/destructuring-assignment': [false, 'always', { 'ignoreClassFields': true }],
     'react/jsx-filename-extension': [1, { 'extensions': ['.jsx', '.tsx'] }],
+    'react/no-array-index-key': 1,
   },
   settings: {
     'import/extensions': [
