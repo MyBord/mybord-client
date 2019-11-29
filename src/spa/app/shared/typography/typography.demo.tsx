@@ -6,6 +6,7 @@ const TypographyDemo: React.FC = () => (
   <div className={styles.examplesDivList}>
     <h3 className={styles.h3}>-- Colors --</h3>
     <Typography color="black" text="Black" />
+    <Typography color="lightGrey" text="Light Grey" />
     <Typography color="white" text="White" />
     <Typography color="transparentWhite" text="Transparent White" />
     <h3 className={styles.h3}>-- Fonts --</h3>
