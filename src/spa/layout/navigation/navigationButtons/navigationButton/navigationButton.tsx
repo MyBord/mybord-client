@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Link } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import Icon from 'icons/icon/icon';
 import { IconNames } from 'types/iconTypes';
 import * as styles from './navigationButton.module.scss';
@@ -9,16 +9,23 @@ interface Props {
   link: string;
 }
 
-const NavigationButton: React.FC<Props> = ({ iconName, link }) => (
-  <Link
-    className={styles.link}
-    to={`/${link}`}
-  >
-    <Icon
-      iconName={iconName}
-      size={30}
-    />
-  </Link>
-);
+const NavigationButton: React.FC<Props> = ({ iconName, link }) => {
+  const location = useLocation();
+  const path = `/${link}`;
+  return (
+    <Link
+      className={[
+        styles.link,
+        location.pathname === path ? styles.activeLink : undefined,
+      ].join(' ')}
+      to={path}
+    >
+      <Icon
+        iconName={iconName}
+        size={30}
+      />
+    </Link>
+  );
+};
 
 export default NavigationButton;

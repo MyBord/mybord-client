@@ -1,7 +1,17 @@
+@import "~styles/colors";
 @import "~styles/sizes";
 
+.hr {
+  border-color: $navBorder;
+  bottom: 0;
+  margin: 0;
+  position: absolute;
+  width: 80%;
+  border-width: 0 0 1px 0;
+}
+
 .img {
-  width: 3rem;
+  width: 2.25rem;
 }
 
 .section {
@@ -9,4 +19,5 @@
   display: flex;
   height: $headerHeight;
   justify-content: center;
+  position: relative;
 }

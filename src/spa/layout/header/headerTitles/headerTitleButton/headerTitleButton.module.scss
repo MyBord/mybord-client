@@ -2,7 +2,7 @@
 
 .activeLink {
   p {
-    color: $blue;
+    color: $blue !important;
     transition: 0.25s color ease;
   }
 }
@@ -10,6 +10,12 @@
 .link {
   margin: 1rem;
   text-decoration: none;
+  &:hover {
+    p {
+      color: $black;
+      transition: 0.25s color ease;
+    }
+  }
   p {
     transition: 0.25s color ease;
   }

@@ -6,7 +6,11 @@ import {
 import CantPage from 'pages/cantPage/cantPage';
 import DashboardPage from 'pages/dashboardPage/dashboardPage';
 import ErrorPage from 'pages/errorPage/errorPage';
+import FavoritesPage from 'pages/favoritesPage/favoritesPage';
 import FollowingPage from 'pages/followingPage/followingPage';
+import HistoryPage from 'pages/historyPage/historyPage';
+import InboxPage from 'pages/inboxPage/inboxPage';
+import PlaylistPage from 'pages/playlistPage/playlistPage';
 import Spinner from 'icons/spinner/spinner';
 import TrendingPage from 'pages/trendingPage/trendingPage';
 import * as styles from './routes.module.scss';
@@ -63,9 +67,29 @@ const Routes: React.FC = () => {
             <ErrorPage />
           </RouteWrapper>
         </Route>
+        <Route exact path="/favorites">
+          <RouteWrapper>
+            <FavoritesPage />
+          </RouteWrapper>
+        </Route>
         <Route exact path="/following">
           <RouteWrapper>
             <FollowingPage />
+          </RouteWrapper>
+        </Route>
+        <Route exact path="/history">
+          <RouteWrapper>
+            <HistoryPage />
+          </RouteWrapper>
+        </Route>
+        <Route exact path="/inbox">
+          <RouteWrapper>
+            <InboxPage />
+          </RouteWrapper>
+        </Route>
+        <Route exact path="/playlist">
+          <RouteWrapper>
+            <PlaylistPage />
           </RouteWrapper>
         </Route>
         <Route exact path="/trending">

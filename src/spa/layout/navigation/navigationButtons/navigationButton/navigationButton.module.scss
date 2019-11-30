@@ -1,6 +1,15 @@
 @import "~styles/colors";
 @import "~styles/sizes";
 
+.activeLink {
+  > svg {
+    * {
+      stroke: $blue !important;
+      transition: 0.5s stroke ease;
+    }
+  }
+}
+
 .link {
   align-items: center;
   cursor: pointer;
@@ -9,4 +18,18 @@
   margin: $navigationButtonMargin 0;
   position: relative;
   text-decoration: none;
+  &:hover {
+    > svg {
+      * {
+        stroke: $darkBlack;
+        transition: 0.5s stroke ease;
+      }
+    }
+  }
+  > svg {
+    * {
+      stroke: $black;
+      transition: 0.5s stroke ease;
+    }
+  }
 }

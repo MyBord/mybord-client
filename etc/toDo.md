@@ -8,6 +8,7 @@ when clicking play for youtube video, hide play button
 fix ts-ignoreing in youtube card
 add transition to player circle being shown on and off when hovering on and off
 create custom scroll
+add more pages for other icons
 
 ## Navigation:
 

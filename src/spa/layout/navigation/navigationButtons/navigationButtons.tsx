@@ -1,23 +1,39 @@
 import * as React from 'react';
 import NavigationButton from './navigationButton/navigationButton';
-import PageIndicator from '../pageIndicator/pageIndicator';
 import * as styles from './navigationButtons.module.scss';
 
 const NavigationButtons: React.FC = () => (
-  <section className={styles.section}>
-    {/* <PageIndicator /> */}
-    <NavigationButton
-      iconName="thumbsUp"
-      link="myBord"
-    />
-    <NavigationButton
-      iconName="thumbsUp"
-      link="/trending"
-    />
-    <NavigationButton
-      iconName="thumbsUp"
-      link="/following"
-    />
+  <section>
+    <section className={styles.section}>
+      <NavigationButton
+        iconName="dashboard"
+        link="myBord"
+      />
+      <NavigationButton
+        iconName="chart"
+        link="trending"
+      />
+      <NavigationButton
+        iconName="addUser"
+        link="following"
+      />
+      <NavigationButton
+        iconName="calendar"
+        link="history"
+      />
+      <NavigationButton
+        iconName="mail"
+        link="inbox"
+      />
+      <NavigationButton
+        iconName="playlist"
+        link="playlist"
+      />
+      <NavigationButton
+        iconName="star"
+        link="favorites"
+      />
+    </section>
   </section>
 );
 
