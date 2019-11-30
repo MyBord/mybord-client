@@ -1,9 +1,11 @@
 import * as React from 'react';
 import { IconNames } from 'types/iconTypes';
 import AddUserIcon from './individualIcons/addUserIcon';
+import BellIcon from './individualIcons/bellIcon';
 import CalendarIcon from './individualIcons/calendarIcon';
 import ChartIcon from './individualIcons/chartIcon';
 import DashboardIcon from './individualIcons/dashboardIcon';
+import DownArrowIcon from './individualIcons/downArrowIcon';
 import EyeIcon from './individualIcons/eyeIcon';
 import MailIcon from './individualIcons/mailIcon';
 import PlaylistIcon from './individualIcons/playlistIcon';
@@ -19,8 +21,10 @@ export const iconNames = {
   calendar: 'foo',
   chart: 'foo',
   dashboard: 'foo',
+  downArrow: 'foo',
   eye: 'foo',
   mail: 'foo',
+  notification: 'foo',
   playlist: 'foo',
   star: 'foo',
   thumbsUp: 'foo',
@@ -41,10 +45,14 @@ const Icon: React.FC<Props> = ({ iconName, size }) => {
       return <ChartIcon size={size} />;
     case 'dashboard':
       return <DashboardIcon size={size} />;
+    case 'downArrow':
+      return <DownArrowIcon size={size} />;
     case 'eye':
       return <EyeIcon size={size} />;
     case 'mail':
       return <MailIcon size={size} />;
+    case 'notification':
+      return <BellIcon size={size} />;
     case 'playlist':
       return <PlaylistIcon size={size} />;
     case 'star':

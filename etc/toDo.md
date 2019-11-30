@@ -9,6 +9,8 @@ fix ts-ignoreing in youtube card
 add transition to player circle being shown on and off when hovering on and off
 create custom scroll
 add more pages for other icons
+add clicks for notifications and hover action for notification bell
+add hover for profile image and modal
 
 ## Navigation:
 
