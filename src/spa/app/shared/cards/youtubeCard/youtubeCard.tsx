@@ -13,7 +13,7 @@ interface SamplePageProps {
   videoId: string;
 }
 
-const SamplePage: React.FC<SamplePageProps> = ({ videoId }) => {
+const YoutubeCardContainer: React.FC<SamplePageProps> = ({ videoId }) => {
   const youtubeVideoDataResource = api.getYoutubeVideoData(videoId);
   return (
     <React.Suspense
@@ -34,4 +34,4 @@ const YoutubeCard: React.FC<Props> = ({ resource }) => {
   );
 };
 
-export default SamplePage;
+export default YoutubeCardContainer;
