@@ -1,23 +1,17 @@
 ## ToDo:
+add loader for initialization
 make spinner fade in and fade out
-add shadow for youtube card
-add expand / collapse for youtube card
-add tooltips for long titles
-rename youtube thumbnail to youtube player
 when clicking play for youtube video, hide play button
-fix ts-ignoreing in youtube card
 add transition to player circle being shown on and off when hovering on and off
-create custom scroll
-add more pages for other icons
-add clicks for notifications and hover action for notification bell
+when clicking play button on youtube video and youtube isn't ready yet, have button show spinner
+
+# UI Improvements
 add hover for profile image and modal
+add clicks for notifications and hover action for notification bell
+create custom scroll
+add tooltips for long titles
 
 ## Navigation:
-
-Left Nav:
-* Dashboard
-* Following
-* Trending
 
 Header
 * profile / settings / Logout / about
