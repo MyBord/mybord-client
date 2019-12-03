@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Spinner from 'icons/spinner/spinner';
 import gapi from 'gapi/gapi';
 import useToggle from 'hooks/useToggle';
 
@@ -15,7 +16,7 @@ const initializeApp = (WrappedComponent: React.FC): React.FC => {
     if (isInitialized) {
       return <WrappedComponent />;
     }
-    return <h1>Initializing...</h1>;
+    return <Spinner />;
   };
 
   return InitWrapper;
