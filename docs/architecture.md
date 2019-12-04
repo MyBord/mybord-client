@@ -22,6 +22,7 @@ It is assumed that the general repo of the codebase will look something like thi
     |- toDo.md
     |- prToDo.md
   node_modules/
+  server/
   src/
   .babelrc
   .eslintrc.js
@@ -52,8 +53,10 @@ It is assumed that the general repo of the codebase will look something like thi
   * a space to put notes regarding a current branch / pr.
 * **`node_modules`:**
   * folder that holds all npm packages. should be git ignored.
+* **server/:**
+  * folder that contains the application server source code.
 * **src/:**
-  * folder that contains the application source code.
+  * folder that contains the application client-side source code.
 * **`.babelrc`:**
   * babel configs.
 * **`.eslintrc.js`:**

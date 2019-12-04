@@ -6,11 +6,12 @@
     "jsx": "react",
     "module": "es6",
     "moduleResolution": "node",
+    "noEmit": true,
     "noImplicitAny": true,
     "outDir": "./dist/",
     "resolveJsonModule": true,
     "sourceMap": true,
-    "target": "es5",
+    "target": "esnext",
     "paths": {
       "api/*": ["src/api/*"],
       "app/*": ["src/spa/app/*"],
