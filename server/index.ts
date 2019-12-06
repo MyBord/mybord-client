@@ -4,13 +4,13 @@ import { ApolloServer, gql } from 'apollo-server-express';
 // Demo Data
 const posts = [
   {
-    id: 1, body: 'body 1', published: true, title: 'title 1',
+    id: 1, author: 1, body: 'body 1', published: true, title: 'title 1',
   },
   {
-    id: 2, body: 'body 2', published: true, title: 'title 2',
+    id: 2, author: 1, body: 'body 2', published: true, title: 'title 2',
   },
   {
-    id: 3, body: 'body 3', published: false, title: 'title 3',
+    id: 3, author: 2, body: 'body 3', published: false, title: 'title 3',
   },
 ];
 
@@ -37,6 +37,7 @@ const typeDefs = gql`
   
   type Post {
     id: ID!,
+    author: User!,
     body: String!,
     published: Boolean!,
     title: String!,
@@ -47,6 +48,7 @@ const typeDefs = gql`
     age: Int!,
     email: String!,
     name: String!,
+    posts: [Post!]!,
   }
 `;
 
@@ -83,6 +85,16 @@ const resolvers = {
         user.name.toLowerCase().includes(args.query.toLowerCase())
       ));
     },
+  },
+  Post: {
+    author: (parent, args, context, info) => (
+      users.find((user) => user.id === parent.author)
+    ),
+  },
+  User: {
+    posts: (parent, args, context, info) => (
+      posts.filter((post) => post.author === parent.id)
+    ),
   },
 };
 
