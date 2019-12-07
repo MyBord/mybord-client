@@ -5,37 +5,37 @@ import { ApolloServer, gql } from 'apollo-server-express';
 // Demo Data
 const comments = [
   {
-    id: 101, author: 303, post: 201, text: 'comment 1',
+    id: '101', author: '303', post: '201', text: 'comment 1',
   },
   {
-    id: 102, author: 301, post: 203, text: 'comment 2',
+    id: '102', author: '301', post: '203', text: 'comment 2',
   },
   {
-    id: 103, author: 302, post: 202, text: 'comment 3',
+    id: '103', author: '302', post: '202', text: 'comment 3',
   },
 ];
 
 const posts = [
   {
-    id: 201, author: 301, body: 'body 1', published: true, title: 'title 1',
+    id: '201', author: '301', body: 'body 1', published: true, title: 'title 1',
   },
   {
-    id: 202, author: 301, body: 'body 2', published: true, title: 'title 2',
+    id: '202', author: '301', body: 'body 2', published: true, title: 'title 2',
   },
   {
-    id: 203, author: 302, body: 'body 3', published: false, title: 'title 3',
+    id: '203', author: '302', body: 'body 3', published: false, title: 'title 3',
   },
 ];
 
 const users = [
   {
-    id: 301, age: 30, email: 'jimmy@gmail.com', name: 'Jimmy',
+    id: '301', age: '30', email: 'jimmy@gmail.com', name: 'Jimmy',
   },
   {
-    id: 302, age: 40, email: 'bob@gmail.com', name: 'Bob',
+    id: '302', age: '40', email: 'bob@gmail.com', name: 'Bob',
   },
   {
-    id: 303, age: 50, email: 'john@gmail.com', name: 'John',
+    id: '303', age: '50', email: 'john@gmail.com', name: 'John',
   },
 ];
 
@@ -50,8 +50,28 @@ const typeDefs = gql`
   }
   
   type Mutation {
-    createPost(author: ID!, body: String!, published: Boolean!, title: String!): Post!,
-    createUser(age: Int!, email: String!, name: String!): User!,
+    createComment(data: CreateCommentInput): Comment!,
+    createPost(data: CreatePostInput): Post!,
+    createUser(data: CreateUserInput): User!,
+  }
+  
+  input CreateCommentInput {
+    author: ID!,
+    post: ID!,
+    text: String!,
+  }
+  
+  input CreatePostInput {
+    author: ID!,
+    body: String!,
+    published: Boolean!,
+    title: String!,
+  }
+  
+  input CreateUserInput {
+    age: Int!,
+    email: String!,
+    name: String!,
   }
   
   type Comment {
@@ -116,8 +136,28 @@ const resolvers = {
     },
   },
   Mutation: {
+    createComment: (parent, args, context, info) => {
+      const postExists = posts.some((post) => post.id === args.data.post && post.published);
+      const userExists = users.some((user) => user.id === args.data.author);
+
+      if (!postExists) {
+        throw new Error('Post not found.');
+      }
+      if (!userExists) {
+        throw new Error('User not found.');
+      }
+
+      const comment = {
+        id: uuidv4(),
+        ...args.data,
+      };
+
+      comments.push(comment);
+
+      return comment;
+    },
     createPost: (parent, args, context, info) => {
-      const userExists = users.some((user) => user.id === args.author);
+      const userExists = users.some((user) => user.id === args.data.author);
 
       if (!userExists) {
         throw new Error('User not found.');
@@ -125,10 +165,7 @@ const resolvers = {
 
       const post = {
         id: uuidv4(),
-        title: args.title,
-        body: args.body,
-        published: args.published,
-        author: args.author,
+        ...args.data,
       };
 
       posts.push(post);
@@ -136,7 +173,7 @@ const resolvers = {
       return post;
     },
     createUser: (parent, args, context, info) => {
-      const emailTaken = users.some((user) => user.email === args.email);
+      const emailTaken = users.some((user) => user.email === args.data.email);
 
       if (emailTaken) {
         throw new Error('Email is already taken.');
@@ -144,9 +181,7 @@ const resolvers = {
 
       const user = {
         id: uuidv4(),
-        age: args.age,
-        email: args.email,
-        name: args.name,
+        ...args.data,
       };
 
       users.push(user);
