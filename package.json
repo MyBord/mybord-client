@@ -9,7 +9,7 @@
     "copy-index": "cp src/index.html dist/index.html",
     "devWebpack": "webpack --config webpack.dev.js",
     "prodWebpack": "webpack --config webpack.prod.js",
-    "run-server": "nodemon server/index.ts --ext js,ts,graphql --exec babel-node --extensions '.ts'",
+    "run-server": "nodemon server/server.ts --ext js,ts,graphql --exec babel-node --extensions '.ts'",
     "start": "webpack-dev-server --config webpack.dev.js",
     "build:dev": "npm-run-all remove-dist devWebpack copy-index",
     "build:prod": "npm-run-all remove-dist prodWebpack copy-index"
