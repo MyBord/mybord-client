@@ -9,7 +9,7 @@
     "copy-index": "cp src/index.html dist/index.html",
     "devWebpack": "webpack --config webpack.dev.js",
     "prodWebpack": "webpack --config webpack.prod.js",
-    "run-server": "nodemon server/index.ts --exec babel-node --extensions '.ts'",
+    "run-server": "nodemon server/index.ts --ext js,ts,graphql --exec babel-node --extensions '.ts'",
     "start": "webpack-dev-server --config webpack.dev.js",
     "build:dev": "npm-run-all remove-dist devWebpack copy-index",
     "build:prod": "npm-run-all remove-dist prodWebpack copy-index"
@@ -100,6 +100,7 @@
     "express": "^4.17.1",
     "framer-motion": "^1.6.14",
     "graphql": "^14.5.8",
+    "graphql-import": "^0.7.1",
     "history": "^4.7.2",
     "lord-icon-element": "^1.1.5",
     "lottie-web": "^5.5.9",

@@ -1,104 +1,8 @@
 import express from 'express';
 import uuidv4 from 'uuid/v4';
-import { ApolloServer, gql } from 'apollo-server-express';
-
-// Demo Data
-const comments = [
-  {
-    id: '101', author: '303', post: '201', text: 'comment 1',
-  },
-  {
-    id: '102', author: '301', post: '203', text: 'comment 2',
-  },
-  {
-    id: '103', author: '302', post: '202', text: 'comment 3',
-  },
-];
-
-const posts = [
-  {
-    id: '201', author: '301', body: 'body 1', published: true, title: 'title 1',
-  },
-  {
-    id: '202', author: '301', body: 'body 2', published: true, title: 'title 2',
-  },
-  {
-    id: '203', author: '302', body: 'body 3', published: false, title: 'title 3',
-  },
-];
-
-const users = [
-  {
-    id: '301', age: '30', email: 'jimmy@gmail.com', name: 'Jimmy',
-  },
-  {
-    id: '302', age: '40', email: 'bob@gmail.com', name: 'Bob',
-  },
-  {
-    id: '303', age: '50', email: 'john@gmail.com', name: 'John',
-  },
-];
-
-// type definitions (schema)
-const typeDefs = gql`
-  type Query {
-    comments: [Comment!]!,
-    me: User!,
-    post: Post!,
-    posts(query: String): [Post!]!,
-    users(query: String): [User!]!,
-  }
-  
-  type Mutation {
-    createComment(data: CreateCommentInput): Comment!,
-    createPost(data: CreatePostInput): Post!,
-    createUser(data: CreateUserInput): User!,
-  }
-  
-  input CreateCommentInput {
-    author: ID!,
-    post: ID!,
-    text: String!,
-  }
-  
-  input CreatePostInput {
-    author: ID!,
-    body: String!,
-    published: Boolean!,
-    title: String!,
-  }
-  
-  input CreateUserInput {
-    age: Int!,
-    email: String!,
-    name: String!,
-  }
-  
-  type Comment {
-    id: ID!,
-    author: User!,
-    post: Post!,
-    text: String!,
-  }
-  
-  type Post {
-    id: ID!,
-    author: User!,
-    body: String!,
-    comments: [Comment!]!,
-    published: Boolean!,
-    title: String!,
-  }
-  
-  type User {
-    id: ID!,
-    age: Int!,
-    comments: [Comment!]!,
-    email: String!,
-    name: String!,
-    posts: [Post!]!,
-  }
-`;
+import { ApolloServer } from 'apollo-server-express';
+import { importSchema } from 'graphql-import';
+import db from './db';
 
 // resolvers
 const resolvers = {
@@ -115,30 +19,30 @@ const resolvers = {
       published: () => true,
       title: () => 'sample title',
     }),
-    comments: () => comments,
-    posts: (parent, args, context, info) => {
+    comments: (parent, args, { db }, info) => db.comments,
+    posts: (parent, args, { db }, info) => {
       if (!args.query) {
-        return posts;
+        return db.posts;
       }
-      return posts.filter((post) => {
+      return db.posts.filter((post) => {
         const isBodyMatch = post.body.toLowerCase().includes(args.query.toLowerCase());
         const isTitleMatch = post.title.toLowerCase().includes(args.query.toLowerCase());
         return isBodyMatch || isTitleMatch;
       });
     },
-    users: (parent, args, context, info) => {
+    users: (parent, args, { db }, info) => {
       if (!args.query) {
-        return users;
+        return db.users;
       }
-      return users.filter((user) => (
+      return db.users.filter((user) => (
         user.name.toLowerCase().includes(args.query.toLowerCase())
       ));
     },
   },
   Mutation: {
-    createComment: (parent, args, context, info) => {
-      const postExists = posts.some((post) => post.id === args.data.post && post.published);
-      const userExists = users.some((user) => user.id === args.data.author);
+    createComment: (parent, args, { db }, info) => {
+      const postExists = db.posts.some((post) => post.id === args.data.post && post.published);
+      const userExists = db.users.some((user) => user.id === args.data.author);
 
       if (!postExists) {
         throw new Error('Post not found.');
@@ -152,12 +56,12 @@ const resolvers = {
         ...args.data,
       };
 
-      comments.push(comment);
+      db.comments.push(comment);
 
       return comment;
     },
-    createPost: (parent, args, context, info) => {
-      const userExists = users.some((user) => user.id === args.data.author);
+    createPost: (parent, args, { db }, info) => {
+      const userExists = db.users.some((user) => user.id === args.data.author);
 
       if (!userExists) {
         throw new Error('User not found.');
@@ -168,12 +72,12 @@ const resolvers = {
         ...args.data,
       };
 
-      posts.push(post);
+      db.posts.push(post);
 
       return post;
     },
-    createUser: (parent, args, context, info) => {
-      const emailTaken = users.some((user) => user.email === args.data.email);
+    createUser: (parent, args, { db }, info) => {
+      const emailTaken = db.users.some((user) => user.email === args.data.email);
 
       if (emailTaken) {
         throw new Error('Email is already taken.');
@@ -184,38 +88,91 @@ const resolvers = {
         ...args.data,
       };
 
-      users.push(user);
+      db.users.push(user);
 
       return user;
     },
+    deleteComment: (parent, args, { db }, info) => {
+      const commentIndex = db.comments.findIndex((comment) => comment.id === args.id);
+
+      if (commentIndex === -1) {
+        throw new Error('Comment not found.');
+      }
+
+      const deletedComment = db.comments.splice(commentIndex, 1);
+
+      return deletedComment[0];
+    },
+    deletePost: (parent, args, { db }, info) => {
+      const postIndex = db.posts.findIndex((post) => post.id === args.id);
+
+      if (postIndex === -1) {
+        throw new Error('Post not found.');
+      }
+
+      const deletedPost = db.posts.splice(postIndex, 1);
+
+      db.comments = db.comments.filter((comment) => comment.post !== args.id);
+
+      return deletedPost[0];
+    },
+    deleteUser: (parent, args, { db }, info) => {
+      const userIndex = db.users.findIndex((user) => user.id === args.id);
+
+      if (userIndex === -1) {
+        throw new Error('User not found');
+      }
+
+      const deletedUser = db.users.splice(userIndex, 1);
+
+      db.posts = db.posts.filter((post) => {
+        const match = post.author === args.id;
+
+        if (match) {
+          db.comments = db.comments.filter((comment) => comment.post !== post.id);
+        }
+
+        return !match;
+      });
+
+      db.comments = db.comments.filter((comment) => comment.author !== args.id);
+
+      return deletedUser[0];
+    },
   },
   Comment: {
-    author: (parent, args, context, info) => (
-      users.find((user) => user.id === parent.author)
+    author: (parent, args, { db }, info) => (
+      db.users.find((user) => user.id === parent.author)
     ),
-    post: (parent, args, context, info) => (
-      posts.find((post) => post.id === parent.post)
+    post: (parent, args, { db }, info) => (
+      db.posts.find((post) => post.id === parent.post)
     ),
   },
   Post: {
-    author: (parent, args, context, info) => (
-      users.find((user) => user.id === parent.author)
+    author: (parent, args, { db }, info) => (
+      db.find((user) => user.id === parent.author)
     ),
-    comments: (parent, args, context, info) => (
-      comments.filter((comment) => comment.post === parent.id)
+    comments: (parent, args, { db }, info) => (
+      db.comments.filter((comment) => comment.post === parent.id)
     ),
   },
   User: {
-    comments: (parent, args, context, info) => (
-      comments.filter((comment) => comment.author === parent.id)
+    comments: (parent, args, { db }, info) => (
+      db.comments.filter((comment) => comment.author === parent.id)
     ),
-    posts: (parent, args, context, info) => (
-      posts.filter((post) => post.author === parent.id)
+    posts: (parent, args, { db }, info) => (
+      db.posts.filter((post) => post.author === parent.id)
     ),
   },
 };
 
-const server = new ApolloServer({ typeDefs, resolvers });
+const server = new ApolloServer({
+  context: {
+    db,
+  },
+  resolvers,
+  typeDefs: importSchema('./server/schema.graphql'),
+});
 
 const app = express();
 server.applyMiddleware({ app });
