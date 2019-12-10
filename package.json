@@ -7,12 +7,14 @@
     "build-storybook": "build-storybook -c .storybook -o .out",
     "remove-dist": "rm -rf dist",
     "copy-index": "cp src/index.html dist/index.html",
-    "devWebpack": "webpack --config webpack.dev.js",
-    "prodWebpack": "webpack --config webpack.prod.js",
+    "devWebpack": "webpack --config src/build/webpack.development.js",
+    "prodWebpack": "webpack --config src/build/webpack.production.js",
     "run-server": "nodemon server/server.ts --ext js,ts,graphql --exec babel-node --extensions '.ts'",
-    "start": "webpack-dev-server --config webpack.dev.js",
+    "start": "webpack-dev-server --config src/build/webpack.development.js",
     "build:dev": "npm-run-all remove-dist devWebpack copy-index",
-    "build:prod": "npm-run-all remove-dist prodWebpack copy-index"
+    "build:prod": "npm-run-all remove-dist prodWebpack copy-index",
+    "foo": "webpack --config server/build/webpack.$NODE_ENV.js",
+    "bar": "node dist/server"
   },
   "authors": [
     "Jimmy Emery"
@@ -54,6 +56,7 @@
     "babel-loader": "^8.0.6",
     "babel-plugin-module-resolver": "^3.2.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^0.28.7",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
@@ -89,7 +92,8 @@
     "webpack": "^4.16.5",
     "webpack-cli": "^3.1.0",
     "webpack-dev-server": "^3.1.5",
-    "webpack-merge": "^4.1.4"
+    "webpack-merge": "^4.1.4",
+    "webpack-node-externals": "^1.7.2"
   },
   "dependencies": {
     "apollo-server-express": "^2.9.12",

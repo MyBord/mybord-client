@@ -33,9 +33,6 @@ It is assumed that the general repo of the codebase will look something like thi
   setupJest.js
   tsconfig.json
   typings.d.ts
-  webpack.common.js
-  webpack.dev.js
-  webpack.prod.js
   yarn.lock
 ```
 
@@ -44,7 +41,7 @@ It is assumed that the general repo of the codebase will look something like thi
 * **.storybook:**
   * config files to run storybook.
 * **dist/:**
-  * folder that contains the app build.
+  * folder that contains the front-end application build / bundle.
 * **docs/:**
   * folder that contains the app documentation.
 * **`etc/toDo.md`:**
@@ -54,9 +51,9 @@ It is assumed that the general repo of the codebase will look something like thi
 * **`node_modules`:**
   * folder that holds all npm packages. should be git ignored.
 * **server/:**
-  * folder that contains the application server source code.
+  * folder that contains the application server / back-end source code.
 * **src/:**
-  * folder that contains the application client-side source code.
+  * folder that contains the application client-side / front-end source code.
 * **`.babelrc`:**
   * babel configs.
 * **`.eslintrc.js`:**
@@ -75,12 +72,6 @@ It is assumed that the general repo of the codebase will look something like thi
   * Specifies how TypeScript should be compiled.
 * **`typings.d.ts`:**
   * Allows us to add global custom typings.
-* **`webpack.common.js`:**
-  * universal webpack configs.
-* **`webpack.dev.js`:**
-  * webpack configs exclusive for dev builds.
-* **`webpack.prod.js`:**
-  * webpack configs exclusive for prod builds.
 * **`yarn.lock`:**
   * yarn's package lock file.
 
@@ -91,6 +82,7 @@ The app folder should be organized in the following fashion:
 src/
   |- assets/ 
   |- api/ 
+  |- build/ 
   |- hooks/ 
   |- mockData/ 
   |- spa/ 
@@ -114,6 +106,8 @@ src/
 * **api:**
     * The api folder contains the http service related scripts that are used to connect to any and
     all api's used in the app.
+* **build/:**
+  * Folder containing build configs aka webpack for our app.
 * **hooks/:**
   * Folder containing custom hooks.
 * **mockData/:**
