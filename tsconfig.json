@@ -4,11 +4,10 @@
     "baseUrl": ".",
     "esModuleInterop": true,
     "jsx": "react",
-    "module": "es6",
+    "module": "esnext",
     "moduleResolution": "node",
-    "noEmit": true,
     "noImplicitAny": true,
-    "outDir": "./dist/",
+    "outDir": "dist",
     "resolveJsonModule": true,
     "sourceMap": true,
     "target": "esnext",
@@ -36,5 +35,7 @@
       "types/*": ["src/types/*"],
       "utils/*": ["src/types/*"]
     }
-  }
+  },
+  "exclude": [ "node_modules" ],
+  "include": [ "server/**/*.ts" ]
 }
