@@ -9,12 +9,12 @@
     "copy-index": "cp src/index.html dist/index.html",
     "devWebpack": "webpack --config src/build/webpack.development.js",
     "prodWebpack": "webpack --config src/build/webpack.production.js",
-    "run-server": "nodemon server/server.ts --ext js,ts,graphql --exec babel-node --extensions '.ts'",
     "start": "webpack-dev-server --config src/build/webpack.development.js",
-    "build:dev": "npm-run-all remove-dist devWebpack copy-index",
-    "build:prod": "npm-run-all remove-dist prodWebpack copy-index",
-    "foo": "webpack --config server/build/webpack.$NODE_ENV.js",
-    "bar": "node dist/server"
+    "build:devApp": "npm-run-all remove-dist devWebpack copy-index",
+    "build:prodApp": "npm-run-all remove-dist prodWebpack copy-index",
+    "build:devServer": "webpack --config server/build/webpack.development.js",
+    "build:prodServer": "webpack --config server/build/webpack.production.js",
+    "run:server": "node server/dist/server"
   },
   "authors": [
     "Jimmy Emery"
