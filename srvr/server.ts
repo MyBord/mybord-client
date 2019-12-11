@@ -19,8 +19,3 @@ app.listen(
   { port },
   () => console.log(`Server ready at http://localhost:${port}${server.graphqlPath}`),
 );
-
-if (module.hot) {
-  module.hot.accept();
-  module.hot.dispose(() => server.stop());
-}
