@@ -1,0 +1,19 @@
+# import * from '../post/postSchema.graphql'
+# import * from '../user/userSchema.graphql'
+
+# ----- INPUTS ----- #
+
+input CreateCommentInput {
+  author: ID!,
+  post: ID!,
+  text: String!,
+}
+
+# ----- TYPES ----- #
+
+type Comment {
+  id: ID!,
+  author: User!,
+  post: Post!,
+  text: String!,
+}

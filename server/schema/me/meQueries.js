@@ -1,5 +1,5 @@
 export default {
-  me: (): object => ({
+  me: () => ({
     age: () => 30,
     email: () => 'foo@gmail.com',
     id: () => 'abc123',
