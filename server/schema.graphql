@@ -1,23 +1,7 @@
-# import './schema/comment/commentSchema.graphql'
-# import './schema/post/postSchema.graphql'
-# import './schema/user/userSchema.graphql'
+#import './schema/comment/commentSchema.graphql'
+#import './schema/me/meSchema.graphql'
+#import './schema/post/postSchema.graphql'
+#import './schema/user/userSchema.graphql'
 
-type Query {
-  comments: [Comment!]!
-  post: Post!
-  posts(query: String): [Post!]!
-  users(query: String): [User!]!
-}
-
-extend type Query {
-  me: User!
-}
-
-type Mutation {
-  createComment(data: CreateCommentInput): Comment!
-  createPost(data: CreatePostInput): Post!
-  createUser(data: CreateUserInput): User!
-  deleteComment(id: ID!): Comment!
-  deletePost(id: ID!): Post!
-  deleteUser(id: ID!): User!
-}
+type Query
+type Mutation

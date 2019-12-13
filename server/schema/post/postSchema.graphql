@@ -1,3 +1,17 @@
+# ----- QUERIES ----- #
+
+extend type Query {
+  post: Post!
+  posts(query: String): [Post!]!
+}
+
+# ----- MUTATIONS ----- #
+
+extend type Mutation {
+  createPost(data: CreatePostInput): Post!
+  deletePost(id: ID!): Post!
+}
+
 # ----- INPUTS ----- #
 
 input CreatePostInput {

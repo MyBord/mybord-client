@@ -1,3 +1,16 @@
+# ----- QUERIES ----- #
+
+extend type Query {
+  comments: [Comment!]!
+}
+
+# ----- MUTATIONS ----- #
+
+extend type Mutation {
+  createComment(data: CreateCommentInput): Comment!
+  deleteComment(id: ID!): Comment!
+}
+
 # ----- INPUTS ----- #
 
 input CreateCommentInput {

@@ -1,3 +1,16 @@
+# ----- QUERIES ----- #
+
+extend type Query {
+  users(query: String): [User!]!
+}
+
+# ----- MUTATIONS ----- #
+
+extend type Mutation {
+  createUser(data: CreateUserInput): User!
+  deleteUser(id: ID!): User!
+}
+
 # ----- INPUTS ----- #
 
 input CreateUserInput {
