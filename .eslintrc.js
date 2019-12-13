@@ -27,7 +27,7 @@ module.exports = {
     },
     project: './tsconfig.json',
   },
-  plugins: ['@typescript-eslint', 'jest'],
+  plugins: ['@typescript-eslint', 'jest', 'graphql'],
   rules: {
     'import/no-extraneous-dependencies': [
       'error',

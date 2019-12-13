@@ -3,6 +3,7 @@ when clicking play for youtube video, hide play button
 add transition to player circle being shown on and off when hovering on and off
 when clicking play button on youtube video and youtube isn't ready yet, have button show spinner
 outline architecture for server folder and update all other architecture docs
+ignore dist folders, remove root dist folder
 
 # UI Improvements
 make spinner fade in and fade out
