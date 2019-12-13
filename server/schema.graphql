@@ -1,6 +1,6 @@
-# import * from './schema/comment/commentSchema.graphql'
-# import * from './schema/post/postSchema.graphql'
-# import * from './schema/user/userSchema.graphql'
+# import './schema/comment/commentSchema.graphql'
+# import './schema/post/postSchema.graphql'
+# import './schema/user/userSchema.graphql'
 
 type Query {
   comments: [Comment!]!
