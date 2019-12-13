@@ -1,6 +1,3 @@
-# import * from '../comment/commentSchema.graphql'
-# import * from '../post/postSchema.graphql'
-
 # ----- INPUTS ----- #
 
 input CreateUserInput {
