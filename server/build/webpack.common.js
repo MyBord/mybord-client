@@ -9,9 +9,12 @@ module.exports = {
         use: 'ts-loader',
       },
       {
-        test: /\.(graphql|gql)$/,
+        test: /\.graphql$/,
         exclude: /node_modules/,
-        loader: 'graphql-tag/loader',
+        use: [
+          { loader: 'graphql-tag/loader' },
+          { loader: 'graphql-import-loader' },
+        ],
       },
     ],
   },

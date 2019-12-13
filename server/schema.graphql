@@ -3,18 +3,21 @@
 # import * from './schema/user/userSchema.graphql'
 
 type Query {
-  comments: [Comment!]!,
+  comments: [Comment!]!
+  post: Post!
+  posts(query: String): [Post!]!
+  users(query: String): [User!]!
+}
+
+extend type Query {
   me: User!
-  post: Post!,
-  posts(query: String): [Post!]!,
-  users(query: String): [User!]!,
 }
 
 type Mutation {
-  createComment(data: CreateCommentInput): Comment!,
-  createPost(data: CreatePostInput): Post!,
-  createUser(data: CreateUserInput): User!,
-  deleteComment(id: ID!): Comment!,
-  deletePost(id: ID!): Post!,
-  deleteUser(id: ID!): User!,
+  createComment(data: CreateCommentInput): Comment!
+  createPost(data: CreatePostInput): Post!
+  createUser(data: CreateUserInput): User!
+  deleteComment(id: ID!): Comment!
+  deletePost(id: ID!): Post!
+  deleteUser(id: ID!): User!
 }
