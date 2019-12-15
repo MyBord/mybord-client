@@ -12,8 +12,8 @@
     "start": "webpack-dev-server --config src/build/webpack.src.development.js",
     "build:devApp": "npm-run-all remove-dist devWebpack copy-index",
     "build:prodApp": "npm-run-all remove-dist prodWebpack copy-index",
-    "build:devServer": "webpack --config server/build/webpack.src.development.js",
-    "build:prodServer": "webpack --config server/build/webpack.src.production.js",
+    "build:devServer": "webpack --config server/build/webpack.server.development.js",
+    "build:prodServer": "webpack --config server/build/webpack.server.production.js",
     "run:server": "node server/dist/server"
   },
   "authors": [
