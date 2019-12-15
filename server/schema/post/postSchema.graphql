@@ -13,6 +13,12 @@ extend type Mutation {
   updatePost(id: ID!, data: UpdatePostInput!): Post!
 }
 
+# ----- SUBSCRIPTIONS ----- #
+
+extend type Subscription {
+  post: PostSubscriptionPayload!
+}
+
 # ----- INPUTS ----- #
 
 input CreatePostInput {
@@ -37,4 +43,9 @@ type Post {
   comments: [Comment!]!
   published: Boolean!
   title: String!
+}
+
+type PostSubscriptionPayload {
+  data: Post!
+  mutation: String!
 }

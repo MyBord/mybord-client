@@ -1,7 +1,7 @@
 import uuidv4 from 'uuid/v4';
 
 export default {
-  createPost: (parent, args, { db }, info) => {
+  createPost: (parent, args, { db, pubsub }, info) => {
     const userExists = db.users.some((user) => user.id === args.data.author);
 
     if (!userExists) {
@@ -15,23 +15,42 @@ export default {
 
     db.posts.push(post);
 
+    if (args.data.published) {
+      pubsub.publish('post', {
+        post: {
+          data: post,
+          mutation: 'CREATED',
+        },
+      });
+    }
+
     return post;
   },
-  deletePost: (parent, args, { db }, info) => {
+  deletePost: (parent, args, { db, pubsub }, info) => {
     const postIndex = db.posts.findIndex((post) => post.id === args.id);
 
     if (postIndex === -1) {
       throw new Error('Post not found.');
     }
 
-    const deletedPost = db.posts.splice(postIndex, 1);
+    const [post] = db.posts.splice(postIndex, 1);
 
     db.comments = db.comments.filter((comment) => comment.post !== args.id);
 
-    return deletedPost[0];
+    if (post.published) {
+      pubsub.publish('post', {
+        post: {
+          data: post,
+          mutation: 'DELETED',
+        },
+      });
+    }
+
+    return post;
   },
-  updatePost: (parent, { id, data }, { db }, info) => {
+  updatePost: (parent, { id, data }, { db, pubsub }, info) => {
     const post = db.posts.find((p) => p.id === id);
+    const originalPost = { ...post };
 
     if (!post) {
       throw new Error('Post not found');
@@ -47,6 +66,29 @@ export default {
 
     if (typeof data.published === 'boolean') {
       post.published = data.published;
+
+      if (originalPost.published && !post.published) {
+        pubsub.publish('post', {
+          post: {
+            data: originalPost,
+            mutation: 'DELETED',
+          },
+        });
+      } else if (!originalPost.published && post.published) {
+        pubsub.publish('post', {
+          post: {
+            data: post,
+            mutation: 'CREATED',
+          },
+        });
+      }
+    } else if (post.published) {
+      pubsub.publish('post', {
+        post: {
+          data: post,
+          mutation: 'UPDATED',
+        },
+      });
     }
 
     return post;
