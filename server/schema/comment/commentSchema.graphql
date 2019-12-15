@@ -12,6 +12,12 @@ extend type Mutation {
   updateComment(id: ID!, data: UpdateCommentInput!): Comment!
 }
 
+# ----- SUBSCRIPTIONS ----- #
+
+extend type Subscription {
+  comment(postId: ID!): Comment!
+}
+
 # ----- INPUTS ----- #
 
 input CreateCommentInput {

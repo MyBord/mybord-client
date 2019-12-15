@@ -1,6 +1,7 @@
 import mutations from './schema/mutations';
 import queries from './schema/queries';
 import resolvers from './schema/resolvers';
+import subscriptions from './schema/subscriptions';
 
 export default {
   Mutation: {
@@ -8,6 +9,9 @@ export default {
   },
   Query: {
     ...queries,
+  },
+  Subscription: {
+    ...subscriptions,
   },
   ...resolvers,
 };
