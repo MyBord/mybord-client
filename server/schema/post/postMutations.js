@@ -30,4 +30,25 @@ export default {
 
     return deletedPost[0];
   },
+  updatePost: (parent, { id, data }, { db }, info) => {
+    const post = db.posts.find((p) => p.id === id);
+
+    if (!post) {
+      throw new Error('Post not found');
+    }
+
+    if (typeof data.title === 'string') {
+      post.title = data.title;
+    }
+
+    if (typeof data.body === 'string') {
+      post.body = data.body;
+    }
+
+    if (typeof data.published === 'boolean') {
+      post.published = data.published;
+    }
+
+    return post;
+  },
 };

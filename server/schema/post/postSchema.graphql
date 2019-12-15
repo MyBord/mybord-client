@@ -10,24 +10,31 @@ extend type Query {
 extend type Mutation {
   createPost(data: CreatePostInput): Post!
   deletePost(id: ID!): Post!
+  updatePost(id: ID!, data: UpdatePostInput!): Post!
 }
 
 # ----- INPUTS ----- #
 
 input CreatePostInput {
-  author: ID!,
-  body: String!,
-  published: Boolean!,
-  title: String!,
+  author: ID!
+  body: String!
+  published: Boolean!
+  title: String!
+}
+
+input UpdatePostInput {
+  body: String
+  published: Boolean
+  title: String
 }
 
 # ----- TYPES ----- #
 
 type Post {
-  id: ID!,
-  author: User!,
-  body: String!,
-  comments: [Comment!]!,
-  published: Boolean!,
-  title: String!,
+  id: ID!
+  author: User!
+  body: String!
+  comments: [Comment!]!
+  published: Boolean!
+  title: String!
 }

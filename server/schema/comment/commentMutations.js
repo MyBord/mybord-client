@@ -32,4 +32,17 @@ export default {
 
     return deletedComment[0];
   },
+  updateComment: (parent, { id, data }, { db }, info) => {
+    const comment = db.comments.find((c) => c.id === id);
+
+    if (!comment) {
+      throw new Error('Comment not found');
+    }
+
+    if (typeof data.text === 'string') {
+      comment.text = data.text;
+    }
+
+    return comment;
+  },
 };

@@ -9,21 +9,26 @@ extend type Query {
 extend type Mutation {
   createComment(data: CreateCommentInput): Comment!
   deleteComment(id: ID!): Comment!
+  updateComment(id: ID!, data: UpdateCommentInput!): Comment!
 }
 
 # ----- INPUTS ----- #
 
 input CreateCommentInput {
-  author: ID!,
-  post: ID!,
-  text: String!,
+  author: ID!
+  post: ID!
+  text: String!
+}
+
+input UpdateCommentInput {
+  text: String
 }
 
 # ----- TYPES ----- #
 
 type Comment {
-  id: ID!,
-  author: User!,
-  post: Post!,
-  text: String!,
+  id: ID!
+  author: User!
+  post: Post!
+  text: String!
 }
