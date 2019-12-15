@@ -74,7 +74,7 @@ module.exports = {
     ],
     'import/resolver': {
       webpack: {
-        config: 'webpack.common.js',
+        config: 'src/build/webpack.src.common.js',
       }
     }
   },
