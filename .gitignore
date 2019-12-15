@@ -3,5 +3,5 @@
 .env
 /.out
 /coverage
-/dist
 /node_modules
+**/dist
