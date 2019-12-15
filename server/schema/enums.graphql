@@ -1,0 +1,7 @@
+# ----- ENUMS ----- #
+
+enum MutationType {
+  CREATED
+  DELETED
+  UPDATED
+}

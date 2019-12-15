@@ -1,4 +1,5 @@
 #import './schema/comment/commentSchema.graphql'
+#import './schema/enums.graphql'
 #import './schema/me/meSchema.graphql'
 #import './schema/post/postSchema.graphql'
 #import './schema/user/userSchema.graphql'

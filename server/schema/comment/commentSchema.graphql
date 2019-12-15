@@ -15,7 +15,7 @@ extend type Mutation {
 # ----- SUBSCRIPTIONS ----- #
 
 extend type Subscription {
-  comment(postId: ID!): Comment!
+  comment(postId: ID!): CommentSubscriptionPayload!
 }
 
 # ----- INPUTS ----- #
@@ -37,4 +37,9 @@ type Comment {
   author: User!
   post: Post!
   text: String!
+}
+
+type CommentSubscriptionPayload {
+  data: Comment!
+  mutation: MutationType!
 }

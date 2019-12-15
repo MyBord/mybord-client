@@ -47,5 +47,5 @@ type Post {
 
 type PostSubscriptionPayload {
   data: Post!
-  mutation: String!
+  mutation: MutationType!
 }
