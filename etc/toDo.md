@@ -5,6 +5,7 @@ when clicking play button on youtube video and youtube isn't ready yet, have but
 outline architecture for server folder and update all other architecture docs
 ignore dist folders, remove root dist folder
 update names of webpack files
+hide db secrets in docker file
 
 # UI Improvements
 make spinner fade in and fade out
