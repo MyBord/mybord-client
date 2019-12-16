@@ -7,7 +7,7 @@ const common = require('./webpack.server.common.js');
 
 module.exports = merge(common, {
   devtool: 'source-map',
-  entry: [path.join(__dirname, '../server.ts')],
+  entry: [path.join(__dirname, '../server.js')],
   externals: [nodeExternals({})],
   mode: 'production',
   plugins: [new CleanWebpackPlugin()],
