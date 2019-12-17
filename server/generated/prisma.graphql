@@ -1,5 +1,5 @@
 # source: http://localhost:4466
-# timestamp: Sun Dec 15 2019 21:25:25 GMT-0500 (Eastern Standard Time)
+# timestamp: Mon Dec 16 2019 21:24:17 GMT-0500 (Eastern Standard Time)
 
 type AggregateComment {
   count: Int!
@@ -21,8 +21,6 @@ type BatchPayload {
 type Comment implements Node {
   id: ID!
   text: String!
-  author: User!
-  post: Post!
 }
 
 """A connection to a list of items."""
@@ -38,8 +36,6 @@ type CommentConnection {
 input CommentCreateInput {
   id: ID
   text: String!
-  author: UserCreateOneInput!
-  post: PostCreateOneInput!
 }
 
 """An edge in a connection."""
@@ -102,8 +98,6 @@ input CommentSubscriptionWhereInput {
 
 input CommentUpdateInput {
   text: String
-  author: UserUpdateOneRequiredInput
-  post: PostUpdateOneRequiredInput
 }
 
 input CommentUpdateManyMutationInput {
@@ -199,8 +193,6 @@ input CommentWhereInput {
 
   """All values not ending with the given string."""
   text_not_ends_with: String
-  author: UserWhereInput
-  post: PostWhereInput
 }
 
 input CommentWhereUniqueInput {
@@ -220,23 +212,23 @@ scalar Long
 
 type Mutation {
   createComment(data: CommentCreateInput!): Comment!
-  createUser(data: UserCreateInput!): User!
   createPost(data: PostCreateInput!): Post!
+  createUser(data: UserCreateInput!): User!
   updateComment(data: CommentUpdateInput!, where: CommentWhereUniqueInput!): Comment
-  updateUser(data: UserUpdateInput!, where: UserWhereUniqueInput!): User
   updatePost(data: PostUpdateInput!, where: PostWhereUniqueInput!): Post
+  updateUser(data: UserUpdateInput!, where: UserWhereUniqueInput!): User
   deleteComment(where: CommentWhereUniqueInput!): Comment
-  deleteUser(where: UserWhereUniqueInput!): User
   deletePost(where: PostWhereUniqueInput!): Post
+  deleteUser(where: UserWhereUniqueInput!): User
   upsertComment(where: CommentWhereUniqueInput!, create: CommentCreateInput!, update: CommentUpdateInput!): Comment!
-  upsertUser(where: UserWhereUniqueInput!, create: UserCreateInput!, update: UserUpdateInput!): User!
   upsertPost(where: PostWhereUniqueInput!, create: PostCreateInput!, update: PostUpdateInput!): Post!
+  upsertUser(where: UserWhereUniqueInput!, create: UserCreateInput!, update: UserUpdateInput!): User!
   updateManyComments(data: CommentUpdateManyMutationInput!, where: CommentWhereInput): BatchPayload!
-  updateManyUsers(data: UserUpdateManyMutationInput!, where: UserWhereInput): BatchPayload!
   updateManyPosts(data: PostUpdateManyMutationInput!, where: PostWhereInput): BatchPayload!
+  updateManyUsers(data: UserUpdateManyMutationInput!, where: UserWhereInput): BatchPayload!
   deleteManyComments(where: CommentWhereInput): BatchPayload!
-  deleteManyUsers(where: UserWhereInput): BatchPayload!
   deleteManyPosts(where: PostWhereInput): BatchPayload!
+  deleteManyUsers(where: UserWhereInput): BatchPayload!
   executeRaw(database: PrismaDatabase, query: String!): Json!
 }
 
@@ -269,7 +261,6 @@ type PageInfo {
 
 type Post implements Node {
   id: ID!
-  author: User!
   body: String!
   published: Boolean!
   title: String!
@@ -286,24 +277,6 @@ type PostConnection {
 }
 
 input PostCreateInput {
-  id: ID
-  body: String!
-  published: Boolean!
-  title: String!
-  author: UserCreateOneWithoutPostsInput!
-}
-
-input PostCreateManyWithoutAuthorInput {
-  create: [PostCreateWithoutAuthorInput!]
-  connect: [PostWhereUniqueInput!]
-}
-
-input PostCreateOneInput {
-  create: PostCreateInput
-  connect: PostWhereUniqueInput
-}
-
-input PostCreateWithoutAuthorInput {
   id: ID
   body: String!
   published: Boolean!
@@ -335,141 +308,6 @@ type PostPreviousValues {
   body: String!
   published: Boolean!
   title: String!
-}
-
-input PostScalarWhereInput {
-  """Logical AND on all given filters."""
-  AND: [PostScalarWhereInput!]
-
-  """Logical OR on all given filters."""
-  OR: [PostScalarWhereInput!]
-
-  """Logical NOT on all given filters combined by AND."""
-  NOT: [PostScalarWhereInput!]
-  id: ID
-
-  """All values that are not equal to given value."""
-  id_not: ID
-
-  """All values that are contained in given list."""
-  id_in: [ID!]
-
-  """All values that are not contained in given list."""
-  id_not_in: [ID!]
-
-  """All values less than the given value."""
-  id_lt: ID
-
-  """All values less than or equal the given value."""
-  id_lte: ID
-
-  """All values greater than the given value."""
-  id_gt: ID
-
-  """All values greater than or equal the given value."""
-  id_gte: ID
-
-  """All values containing the given string."""
-  id_contains: ID
-
-  """All values not containing the given string."""
-  id_not_contains: ID
-
-  """All values starting with the given string."""
-  id_starts_with: ID
-
-  """All values not starting with the given string."""
-  id_not_starts_with: ID
-
-  """All values ending with the given string."""
-  id_ends_with: ID
-
-  """All values not ending with the given string."""
-  id_not_ends_with: ID
-  body: String
-
-  """All values that are not equal to given value."""
-  body_not: String
-
-  """All values that are contained in given list."""
-  body_in: [String!]
-
-  """All values that are not contained in given list."""
-  body_not_in: [String!]
-
-  """All values less than the given value."""
-  body_lt: String
-
-  """All values less than or equal the given value."""
-  body_lte: String
-
-  """All values greater than the given value."""
-  body_gt: String
-
-  """All values greater than or equal the given value."""
-  body_gte: String
-
-  """All values containing the given string."""
-  body_contains: String
-
-  """All values not containing the given string."""
-  body_not_contains: String
-
-  """All values starting with the given string."""
-  body_starts_with: String
-
-  """All values not starting with the given string."""
-  body_not_starts_with: String
-
-  """All values ending with the given string."""
-  body_ends_with: String
-
-  """All values not ending with the given string."""
-  body_not_ends_with: String
-  published: Boolean
-
-  """All values that are not equal to given value."""
-  published_not: Boolean
-  title: String
-
-  """All values that are not equal to given value."""
-  title_not: String
-
-  """All values that are contained in given list."""
-  title_in: [String!]
-
-  """All values that are not contained in given list."""
-  title_not_in: [String!]
-
-  """All values less than the given value."""
-  title_lt: String
-
-  """All values less than or equal the given value."""
-  title_lte: String
-
-  """All values greater than the given value."""
-  title_gt: String
-
-  """All values greater than or equal the given value."""
-  title_gte: String
-
-  """All values containing the given string."""
-  title_contains: String
-
-  """All values not containing the given string."""
-  title_not_contains: String
-
-  """All values starting with the given string."""
-  title_starts_with: String
-
-  """All values not starting with the given string."""
-  title_not_starts_with: String
-
-  """All values ending with the given string."""
-  title_ends_with: String
-
-  """All values not ending with the given string."""
-  title_not_ends_with: String
 }
 
 type PostSubscriptionPayload {
@@ -509,21 +347,7 @@ input PostSubscriptionWhereInput {
   node: PostWhereInput
 }
 
-input PostUpdateDataInput {
-  body: String
-  published: Boolean
-  title: String
-  author: UserUpdateOneRequiredWithoutPostsInput
-}
-
 input PostUpdateInput {
-  body: String
-  published: Boolean
-  title: String
-  author: UserUpdateOneRequiredWithoutPostsInput
-}
-
-input PostUpdateManyDataInput {
   body: String
   published: Boolean
   title: String
@@ -533,52 +357,6 @@ input PostUpdateManyMutationInput {
   body: String
   published: Boolean
   title: String
-}
-
-input PostUpdateManyWithoutAuthorInput {
-  create: [PostCreateWithoutAuthorInput!]
-  connect: [PostWhereUniqueInput!]
-  set: [PostWhereUniqueInput!]
-  disconnect: [PostWhereUniqueInput!]
-  delete: [PostWhereUniqueInput!]
-  update: [PostUpdateWithWhereUniqueWithoutAuthorInput!]
-  updateMany: [PostUpdateManyWithWhereNestedInput!]
-  deleteMany: [PostScalarWhereInput!]
-  upsert: [PostUpsertWithWhereUniqueWithoutAuthorInput!]
-}
-
-input PostUpdateManyWithWhereNestedInput {
-  where: PostScalarWhereInput!
-  data: PostUpdateManyDataInput!
-}
-
-input PostUpdateOneRequiredInput {
-  create: PostCreateInput
-  connect: PostWhereUniqueInput
-  update: PostUpdateDataInput
-  upsert: PostUpsertNestedInput
-}
-
-input PostUpdateWithoutAuthorDataInput {
-  body: String
-  published: Boolean
-  title: String
-}
-
-input PostUpdateWithWhereUniqueWithoutAuthorInput {
-  where: PostWhereUniqueInput!
-  data: PostUpdateWithoutAuthorDataInput!
-}
-
-input PostUpsertNestedInput {
-  update: PostUpdateDataInput!
-  create: PostCreateInput!
-}
-
-input PostUpsertWithWhereUniqueWithoutAuthorInput {
-  where: PostWhereUniqueInput!
-  update: PostUpdateWithoutAuthorDataInput!
-  create: PostCreateWithoutAuthorInput!
 }
 
 input PostWhereInput {
@@ -714,7 +492,6 @@ input PostWhereInput {
 
   """All values not ending with the given string."""
   title_not_ends_with: String
-  author: UserWhereInput
 }
 
 input PostWhereUniqueInput {
@@ -727,14 +504,14 @@ enum PrismaDatabase {
 
 type Query {
   comments(where: CommentWhereInput, orderBy: CommentOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Comment]!
-  users(where: UserWhereInput, orderBy: UserOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [User]!
   posts(where: PostWhereInput, orderBy: PostOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Post]!
+  users(where: UserWhereInput, orderBy: UserOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [User]!
   comment(where: CommentWhereUniqueInput!): Comment
-  user(where: UserWhereUniqueInput!): User
   post(where: PostWhereUniqueInput!): Post
+  user(where: UserWhereUniqueInput!): User
   commentsConnection(where: CommentWhereInput, orderBy: CommentOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): CommentConnection!
-  usersConnection(where: UserWhereInput, orderBy: UserOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): UserConnection!
   postsConnection(where: PostWhereInput, orderBy: PostOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): PostConnection!
+  usersConnection(where: UserWhereInput, orderBy: UserOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): UserConnection!
 
   """Fetches an object given its ID"""
   node(
@@ -745,15 +522,14 @@ type Query {
 
 type Subscription {
   comment(where: CommentSubscriptionWhereInput): CommentSubscriptionPayload
-  user(where: UserSubscriptionWhereInput): UserSubscriptionPayload
   post(where: PostSubscriptionWhereInput): PostSubscriptionPayload
+  user(where: UserSubscriptionWhereInput): UserSubscriptionPayload
 }
 
 type User implements Node {
   id: ID!
   email: String!
   name: String!
-  posts(where: PostWhereInput, orderBy: PostOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Post!]
   createdAt: DateTime!
   updatedAt: DateTime!
 }
@@ -769,23 +545,6 @@ type UserConnection {
 }
 
 input UserCreateInput {
-  id: ID
-  email: String!
-  name: String!
-  posts: PostCreateManyWithoutAuthorInput
-}
-
-input UserCreateOneInput {
-  create: UserCreateInput
-  connect: UserWhereUniqueInput
-}
-
-input UserCreateOneWithoutPostsInput {
-  create: UserCreateWithoutPostsInput
-  connect: UserWhereUniqueInput
-}
-
-input UserCreateWithoutPostsInput {
   id: ID
   email: String!
   name: String!
@@ -858,50 +617,14 @@ input UserSubscriptionWhereInput {
   node: UserWhereInput
 }
 
-input UserUpdateDataInput {
-  email: String
-  name: String
-  posts: PostUpdateManyWithoutAuthorInput
-}
-
 input UserUpdateInput {
   email: String
   name: String
-  posts: PostUpdateManyWithoutAuthorInput
 }
 
 input UserUpdateManyMutationInput {
   email: String
   name: String
-}
-
-input UserUpdateOneRequiredInput {
-  create: UserCreateInput
-  connect: UserWhereUniqueInput
-  update: UserUpdateDataInput
-  upsert: UserUpsertNestedInput
-}
-
-input UserUpdateOneRequiredWithoutPostsInput {
-  create: UserCreateWithoutPostsInput
-  connect: UserWhereUniqueInput
-  update: UserUpdateWithoutPostsDataInput
-  upsert: UserUpsertWithoutPostsInput
-}
-
-input UserUpdateWithoutPostsDataInput {
-  email: String
-  name: String
-}
-
-input UserUpsertNestedInput {
-  update: UserUpdateDataInput!
-  create: UserCreateInput!
-}
-
-input UserUpsertWithoutPostsInput {
-  update: UserUpdateWithoutPostsDataInput!
-  create: UserCreateWithoutPostsInput!
 }
 
 input UserWhereInput {
@@ -1077,9 +800,6 @@ input UserWhereInput {
 
   """All values greater than or equal the given value."""
   updatedAt_gte: DateTime
-  posts_every: PostWhereInput
-  posts_some: PostWhereInput
-  posts_none: PostWhereInput
 }
 
 input UserWhereUniqueInput {

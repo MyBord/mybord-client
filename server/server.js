@@ -4,6 +4,7 @@ import { ApolloServer, PubSub } from 'apollo-server-express';
 import db from './db';
 import resolvers from './rootResolvers';
 import schema from './schema.graphql';
+import './prisma';
 
 const pubsub = new PubSub();
 
