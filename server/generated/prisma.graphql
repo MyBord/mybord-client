@@ -1,5 +1,5 @@
 # source: http://localhost:4466
-# timestamp: Fri Dec 20 2019 15:43:05 GMT-0500 (Eastern Standard Time)
+# timestamp: Fri Dec 20 2019 17:15:30 GMT-0500 (Eastern Standard Time)
 
 type AggregateComment {
   count: Int!
@@ -1140,6 +1140,7 @@ type User implements Node {
   name: String!
   email: String!
   password: String!
+  token: String
   posts(where: PostWhereInput, orderBy: PostOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Post!]
   comments(where: CommentWhereInput, orderBy: CommentOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Comment!]
   createdAt: DateTime!
@@ -1161,6 +1162,7 @@ input UserCreateInput {
   name: String!
   email: String!
   password: String!
+  token: String
   posts: PostCreateManyWithoutAuthorInput
   comments: CommentCreateManyWithoutAuthorInput
 }
@@ -1180,6 +1182,7 @@ input UserCreateWithoutCommentsInput {
   name: String!
   email: String!
   password: String!
+  token: String
   posts: PostCreateManyWithoutAuthorInput
 }
 
@@ -1188,6 +1191,7 @@ input UserCreateWithoutPostsInput {
   name: String!
   email: String!
   password: String!
+  token: String
   comments: CommentCreateManyWithoutAuthorInput
 }
 
@@ -1209,6 +1213,8 @@ enum UserOrderByInput {
   email_DESC
   password_ASC
   password_DESC
+  token_ASC
+  token_DESC
   createdAt_ASC
   createdAt_DESC
   updatedAt_ASC
@@ -1220,6 +1226,7 @@ type UserPreviousValues {
   name: String!
   email: String!
   password: String!
+  token: String
   createdAt: DateTime!
   updatedAt: DateTime!
 }
@@ -1265,6 +1272,7 @@ input UserUpdateInput {
   name: String
   email: String
   password: String
+  token: String
   posts: PostUpdateManyWithoutAuthorInput
   comments: CommentUpdateManyWithoutAuthorInput
 }
@@ -1273,6 +1281,7 @@ input UserUpdateManyMutationInput {
   name: String
   email: String
   password: String
+  token: String
 }
 
 input UserUpdateOneRequiredWithoutCommentsInput {
@@ -1293,6 +1302,7 @@ input UserUpdateWithoutCommentsDataInput {
   name: String
   email: String
   password: String
+  token: String
   posts: PostUpdateManyWithoutAuthorInput
 }
 
@@ -1300,6 +1310,7 @@ input UserUpdateWithoutPostsDataInput {
   name: String
   email: String
   password: String
+  token: String
   comments: CommentUpdateManyWithoutAuthorInput
 }
 
@@ -1482,6 +1493,46 @@ input UserWhereInput {
 
   """All values not ending with the given string."""
   password_not_ends_with: String
+  token: String
+
+  """All values that are not equal to given value."""
+  token_not: String
+
+  """All values that are contained in given list."""
+  token_in: [String!]
+
+  """All values that are not contained in given list."""
+  token_not_in: [String!]
+
+  """All values less than the given value."""
+  token_lt: String
+
+  """All values less than or equal the given value."""
+  token_lte: String
+
+  """All values greater than the given value."""
+  token_gt: String
+
+  """All values greater than or equal the given value."""
+  token_gte: String
+
+  """All values containing the given string."""
+  token_contains: String
+
+  """All values not containing the given string."""
+  token_not_contains: String
+
+  """All values starting with the given string."""
+  token_starts_with: String
+
+  """All values not starting with the given string."""
+  token_not_starts_with: String
+
+  """All values ending with the given string."""
+  token_ends_with: String
+
+  """All values not ending with the given string."""
+  token_not_ends_with: String
   createdAt: DateTime
 
   """All values that are not equal to given value."""
