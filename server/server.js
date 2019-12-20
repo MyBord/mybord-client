@@ -1,15 +1,16 @@
 import http from 'http';
 import express from 'express';
-import { ApolloServer, PubSub } from 'apollo-server-express';
+import { ApolloServer } from 'apollo-server-express';
 import db from './db';
-import resolvers from './rootResolvers';
-import schema from './schema.graphql';
-import './prisma';
-
-const pubsub = new PubSub();
+import resolvers from './resolvers/resolvers';
+import schema from './generated/prisma.graphql';
+import prisma from './prisma';
 
 const server = new ApolloServer({
-  context: { db, pubsub },
+  context: {
+    db,
+    prisma,
+  },
   resolvers,
   typeDefs: schema,
 });

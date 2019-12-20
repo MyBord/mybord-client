@@ -7,6 +7,7 @@ ignore dist folders, remove root dist folder
 update names of webpack files
 hide db secrets in docker file
 turn prisma queries into async await
+make all server files js
 
 # UI Improvements
 make spinner fade in and fade out

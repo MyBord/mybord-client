@@ -15,7 +15,7 @@
     "build:prodApp": "npm-run-all remove-dist prodWebpack copy-index",
     "build:devServer": "webpack --config server/build/webpack.server.development.js",
     "build:prodServer": "webpack --config server/build/webpack.server.production.js",
-    "run:server": "node server/dist/server"
+    "run:server": "nodemon server/dist/server"
   },
   "authors": [
     "Jimmy Emery"
@@ -121,7 +121,6 @@
     "react-lottie": "^1.2.3",
     "react-router": "^5.1.2",
     "react-router-dom": "^5.1.2",
-    "styled-components": "3.2.3",
-    "uuid": "^3.3.3"
+    "styled-components": "3.2.3"
   }
 }

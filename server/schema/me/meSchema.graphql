@@ -1,5 +1,0 @@
-# ----- QUERIES ----- #
-
-extend type Query {
-  me: User!
-}
