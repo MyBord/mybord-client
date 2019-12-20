@@ -1,13 +1,12 @@
-## ToDo:
+## ToDo - BE:
+hide db secrets in docker file
+move datamodel.prisma to schema folder, have it import schemas per schema type
+
+## ToDo - FE:
+update all sass files to less
 when clicking play for youtube video, hide play button
 add transition to player circle being shown on and off when hovering on and off
 when clicking play button on youtube video and youtube isn't ready yet, have button show spinner
-outline architecture for server folder and update all other architecture docs
-ignore dist folders, remove root dist folder
-update names of webpack files
-hide db secrets in docker file
-turn prisma queries into async await
-make all server files js
 
 # UI Improvements
 make spinner fade in and fade out

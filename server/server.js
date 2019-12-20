@@ -2,7 +2,7 @@ import http from 'http';
 import express from 'express';
 import { ApolloServer } from 'apollo-server-express';
 import db from './db';
-import resolvers from './resolvers/resolvers';
+import resolvers from './schema/resolvers';
 import schema from './generated/prisma.graphql';
 import prisma from './prisma';
 
