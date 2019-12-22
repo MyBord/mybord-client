@@ -2,8 +2,10 @@ import http from 'http';
 import express from 'express';
 import { ApolloServer } from 'apollo-server-express';
 import db from './db';
-import resolvers from './schema/resolvers';
+// import resolvers from './schema/resolvers';
+import resolvers from './resolversFoo';
 import schema from './generated/prisma.graphql';
+// import schemaTwo from './schema.graphql';
 import prisma from './prisma';
 
 const server = new ApolloServer({
@@ -12,6 +14,7 @@ const server = new ApolloServer({
     prisma,
   },
   resolvers,
+  // typeDefs: schemaTwo,
   typeDefs: schema,
 });
 
