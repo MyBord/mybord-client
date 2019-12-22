@@ -1,5 +1,0 @@
-# import './foo.graphql';
-
-type Query {
-  bar: String!
-}

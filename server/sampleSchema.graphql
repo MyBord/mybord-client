@@ -1,0 +1,5 @@
+#import './secondSchema.graphql'
+
+type Query {
+  foo: String!
+}
