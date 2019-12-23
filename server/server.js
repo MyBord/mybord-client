@@ -2,6 +2,7 @@ import http from 'http';
 import express from 'express';
 import { ApolloServer } from 'apollo-server-express';
 import resolvers from './schema/resolvers';
+import generatedSchema from './generated/prisma.graphql';
 import schema from './schema/schema.graphql';
 import prisma from './prisma';
 
@@ -10,7 +11,7 @@ const server = new ApolloServer({
     prisma,
   },
   resolvers,
-  typeDefs: schema,
+  typeDefs: [generatedSchema, schema],
 });
 
 const app = express();

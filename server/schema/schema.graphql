@@ -1,7 +1,6 @@
-#import '../generated/prisma.graphql'
 #import './secondSchema.graphql'
 
-type Foo {
+extend type Query {
+  foo: String!
   bar: String!
 }
-
