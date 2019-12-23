@@ -1,0 +1,7 @@
+#import '../generated/prisma.graphql'
+#import './secondSchema.graphql'
+
+type Foo {
+  bar: String!
+}
+

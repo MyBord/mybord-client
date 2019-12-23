@@ -1,18 +1,15 @@
 import http from 'http';
 import express from 'express';
 import { ApolloServer } from 'apollo-server-express';
-// import resolvers from './schema/resolvers';
-// import schema from './generated/prisma.graphql';
-import resolvers from './sampleResolvers';
-import schema from './sampleSchema.graphql';
-// import prisma from './prisma';
+import resolvers from './schema/resolvers';
+import schema from './schema/schema.graphql';
+import prisma from './prisma';
 
 const server = new ApolloServer({
-  // context: {
-  //   prisma,
-  // },
+  context: {
+    prisma,
+  },
   resolvers,
-  // typeDefs: schemaTwo,
   typeDefs: schema,
 });
 

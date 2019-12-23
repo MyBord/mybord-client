@@ -2,6 +2,7 @@
 hide db secrets in docker file
 move datamodel.prisma to schema folder, have it import schemas per schema type
 add secrets back into prisma.yml and prisma.js
+add passport
 
 ## ToDo - FE:
 update all sass files to less
