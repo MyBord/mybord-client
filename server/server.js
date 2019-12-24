@@ -7,8 +7,11 @@ import schema from './schema/schema.graphql';
 import prisma from './prisma';
 
 const server = new ApolloServer({
-  context: {
-    prisma,
+  context(request) {
+    return {
+      prisma,
+      request,
+    };
   },
   resolvers,
   typeDefs: [generatedSchema, schema],

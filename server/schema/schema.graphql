@@ -1,6 +1,5 @@
-#import './secondSchema.graphql'
+#import './user/userSchema.graphql'
 
-extend type Query {
-  foo: String!
-  bar: String!
+type Placeholder {
+  foo: String
 }

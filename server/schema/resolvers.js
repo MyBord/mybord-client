@@ -8,8 +8,6 @@ export default {
   },
   Query: {
     ...queries,
-    foo: () => 'foo query',
-    bar: () => 'bar query',
   },
   Subscription: {
     ...subscriptions,
