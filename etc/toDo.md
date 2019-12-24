@@ -7,7 +7,8 @@ move datamodel.prisma to schema folder, have it import schemas per schema type
 add secrets back into prisma.yml and prisma.js
 add passport
 when throwing errors, add status codes
-** update comment mutation verification
+make sure to lock down individual queries and subscriptions, mutations for prod app
+make resolvers TS
 
 ## ToDo - FE:
 update all sass files to less

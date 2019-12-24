@@ -26,7 +26,7 @@ export default {
     };
   },
   deleteUser: async (parent, args, { prisma, request }, info) => {
-    verifyUserAccess(args.where.id, request);
+    verifyUserAccess({ request, userId: args.where.id });
     return prisma.mutation.deleteUser(args, info);
   },
   loginUser: async (parent, args, { prisma }, info) => {
@@ -52,7 +52,7 @@ export default {
     };
   },
   updateUser: async (parent, args, { prisma, request }, info) => {
-    verifyUserAccess(args.where.id, request);
+    verifyUserAccess({ request, userId: args.where.id });
     return prisma.mutation.updateUser(args, info);
   },
 };
