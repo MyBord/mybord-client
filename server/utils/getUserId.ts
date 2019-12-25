@@ -4,7 +4,6 @@ import { Request } from '../types/requestTypes';
 const getUserId = (request: Request, requireAuthentication: boolean = true): string => {
   const header = request.req
     ? request.req.headers.authorization
-    // @ts-ignore
     : request.connection.context.Authorization;
 
   if (header) {

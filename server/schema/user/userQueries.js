@@ -20,6 +20,8 @@ export default {
     // exists in the db. This essentially is can serve as a loophole to see if certain users
     // exist given the presence of certain restricted fields. These restricted fields are:
     // - user email address
+    // - user token
+    // - user hashed password
     const finalArgs = {
       ...args,
       where: {
@@ -50,8 +52,10 @@ export default {
 
       const strippedUser = {
         ...user,
-        email: null,
+        email: 'null',
+        password: 'null',
         posts: userPosts,
+        token: null,
       };
       return strippedUser;
     });
