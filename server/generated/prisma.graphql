@@ -1,5 +1,5 @@
 # source: http://localhost:4466
-# timestamp: Sun Dec 22 2019 20:32:46 GMT-0500 (Eastern Standard Time)
+# timestamp: Tue Dec 24 2019 20:49:49 GMT-0500 (Eastern Standard Time)
 
 type AggregateComment {
   count: Int!
@@ -1138,7 +1138,7 @@ type Subscription {
 type User implements Node {
   id: ID!
   name: String!
-  email: String!
+  email: String
   password: String!
   token: String
   posts(where: PostWhereInput, orderBy: PostOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Post!]
@@ -1160,7 +1160,7 @@ type UserConnection {
 input UserCreateInput {
   id: ID
   name: String!
-  email: String!
+  email: String
   password: String!
   token: String
   posts: PostCreateManyWithoutAuthorInput
@@ -1180,7 +1180,7 @@ input UserCreateOneWithoutPostsInput {
 input UserCreateWithoutCommentsInput {
   id: ID
   name: String!
-  email: String!
+  email: String
   password: String!
   token: String
   posts: PostCreateManyWithoutAuthorInput
@@ -1189,7 +1189,7 @@ input UserCreateWithoutCommentsInput {
 input UserCreateWithoutPostsInput {
   id: ID
   name: String!
-  email: String!
+  email: String
   password: String!
   token: String
   comments: CommentCreateManyWithoutAuthorInput
@@ -1224,7 +1224,7 @@ enum UserOrderByInput {
 type UserPreviousValues {
   id: ID!
   name: String!
-  email: String!
+  email: String
   password: String!
   token: String
   createdAt: DateTime!

@@ -1,3 +1,8 @@
+import verifyUserAccess from '../../utils/verifyUserAccess';
+
 export default {
-  comments: (parent, args, { prisma }, info) => prisma.query.comments(args, info),
+  comments: async (parent, args, { prisma, request }, info) => {
+    verifyUserAccess({ request, requireAuthentication: false });
+    return prisma.query.comments(args, info);
+  },
 };

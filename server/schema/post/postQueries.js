@@ -10,6 +10,7 @@ export default {
     const finalArgs = {
       ...args,
       where: {
+        ...args.where,
         published: true,
       },
     };

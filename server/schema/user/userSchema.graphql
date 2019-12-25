@@ -6,3 +6,7 @@ input LoginUserInput {
 extend type Mutation {
   loginUser(data: LoginUserInput): User!
 }
+
+extend type Query {
+  me(userId: ID!): User!
+}
