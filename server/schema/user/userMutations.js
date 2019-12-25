@@ -22,7 +22,12 @@ export default {
 
     return {
       ...user,
-      token: jwt.sign({ userId: user.id }, '$9zW3eBT77N3$eJTH8D$'),
+      token: jwt.sign(
+        { userId: user.id },
+        '$9zW3eBT77N3$eJTH8D$',
+        // { expiresIn: '1h' },
+        { expiresIn: '1 second' },
+      ),
     };
   },
   deleteUser: async (parent, args, { prisma, request }, info) => {
@@ -48,7 +53,12 @@ export default {
 
     return {
       ...user,
-      token: jwt.sign({ userId: user.id }, '$9zW3eBT77N3$eJTH8D$'),
+      token: jwt.sign(
+        { userId: user.id },
+        '$9zW3eBT77N3$eJTH8D$',
+        // { expiresIn: '1h' },
+        { expiresIn: '1 second' },
+      ),
     };
   },
   updateUser: async (parent, args, { prisma, request }, info) => {
