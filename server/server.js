@@ -20,7 +20,7 @@ const server = new ApolloServer({
 const app = express();
 server.applyMiddleware({ app });
 
-const PORT = 5000;
+const PORT = process.env.PORT || 4000;
 
 const httpServer = http.createServer(app);
 server.installSubscriptionHandlers(httpServer);

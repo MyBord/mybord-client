@@ -112,6 +112,7 @@
     "graphql": "^14.5.8",
     "graphql-cli": "^3.0.14",
     "graphql-tag": "^2.10.1",
+    "heroku": "^7.35.1",
     "history": "^4.7.2",
     "jsonwebtoken": "^8.5.1",
     "lord-icon-element": "^1.1.5",
