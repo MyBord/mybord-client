@@ -4,7 +4,13 @@ import { ApolloServer } from 'apollo-server-express';
 import resolvers from './schema/resolvers';
 import generatedSchema from './generated/prisma.graphql';
 import schema from './schema/schema.graphql';
-import prisma from './prisma';
+import { Prisma } from 'prisma-binding';
+
+const prisma = new Prisma({
+  endpoint: 'http://localhost:4466',
+  // secret: '%cx^&2DYo9pf@11E6gt^',
+  typeDefs: 'server/generated/prisma.graphql',
+});
 
 const server = new ApolloServer({
   context(request) {

@@ -4,11 +4,11 @@ const nodeExternals = require('webpack-node-externals');
 const path = require('path');
 const webpack = require('webpack');
 
-const common = require('./webpack.server.common.js');
+const common = require('./webpack.common.js');
 
 module.exports = merge.smart(common, {
   devtool: 'inline-source-map',
-  entry: ['webpack/hot/poll?1000', path.join(__dirname, '../server.js')],
+  entry: ['webpack/hot/poll?1000', path.join(__dirname, 'src/index.ts')],
   externals: [
     nodeExternals({
       whitelist: ['webpack/hot/poll?1000'],

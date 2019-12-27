@@ -22,6 +22,3 @@ The repository is the codebase for the mybord.io and uses the following:
     * [Storybook](https://storybook.js.org)
     * [Framer Motion](https://www.framer.com/motion/)
     * [Lottie](https://airbnb.io/lottie/#/)
-
-Further documentation can be found regarding [application architecture](https://github.com/jimmy-e/mybord/tree/master/docs/architecture.md)
-and [build process](https://github.com/jimmy-e/mybord/tree/master/docs/build.md).
