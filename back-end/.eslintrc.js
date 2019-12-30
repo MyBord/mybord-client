@@ -3,7 +3,7 @@ module.exports = {
     'jest/globals': true
   },
   extends: [
-    'airbnb',
+    'airbnb-base',
     'plugin:@typescript-eslint/recommended',
   ],
   globals: {
