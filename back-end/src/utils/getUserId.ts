@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken';
-import { Request } from '../types/requestTypes';
+import { Request } from 'types/requestTypes';
 
 const getUserId = (request: Request, requireAuthentication: boolean = true): string => {
   const header = request.req

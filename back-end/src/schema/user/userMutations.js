@@ -1,7 +1,7 @@
 import bcrypt from 'bcryptjs';
-import generateToken from '../../utils/generateToken';
-import hashPassword from '../../utils/hashPassword';
-import verifyUserAccess from '../../utils/verifyUserAccess';
+import generateToken from 'utils/generateToken';
+import hashPassword from 'utils/hashPassword';
+import verifyUserAccess from 'utils/verifyUserAccess';
 
 export default {
   createUser: async (parent, args, { prisma }, info) => {

@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken';
-import { Request } from '../types/requestTypes';
+import { Request } from 'types/requestTypes';
 
 interface Props {
   request: Request;

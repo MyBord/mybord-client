@@ -9,7 +9,13 @@
     "outDir": "dist",
     "resolveJsonModule": true,
     "sourceMap": true,
-    "target": "esnext"
+    "target": "esnext",
+    "paths": {
+      "generated/*": ["src/generated/*"],
+      "schema/*": ["src/schema/*"],
+      "types/*": ["src/types/*"],
+      "utils/*": ["src/utils/*"]
+    }
   },
   "exclude": [ "node_modules" ],
   "include": [ "**/*.ts", "**/*.js" ]

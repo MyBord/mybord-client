@@ -1,4 +1,4 @@
-import verifyUserAccess from '../../utils/verifyUserAccess';
+import verifyUserAccess from 'utils/verifyUserAccess';
 
 export default {
   createComment: async (parent, args, { prisma, request }, info) => {

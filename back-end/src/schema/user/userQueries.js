@@ -1,5 +1,5 @@
-import getUserId from '../../utils/getUserId';
-import verifyUserAccess from '../../utils/verifyUserAccess';
+import getUserId from 'utils/getUserId';
+import verifyUserAccess from 'utils/verifyUserAccess';
 
 export default {
   me: async (parent, args, { prisma, request }, info) => {

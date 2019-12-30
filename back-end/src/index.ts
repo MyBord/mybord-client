@@ -2,9 +2,9 @@ import http from 'http';
 import express from 'express';
 import { ApolloServer } from 'apollo-server-express';
 import { Prisma } from 'prisma-binding';
-import resolvers from './schema/resolvers';
-import generatedSchema from './generated/prisma.graphql';
-import schema from './schema/schema.graphql';
+import resolvers from 'schema/resolvers';
+import generatedSchema from 'generated/prisma.graphql';
+import schema from 'schema/schema.graphql';
 
 // Creates new Prisma instance
 const prisma = new Prisma({
