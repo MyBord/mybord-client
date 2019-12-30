@@ -1,7 +1,8 @@
+*.lock
 *.log
-.DS_Store
-.env
 /.out
-/coverage
-/node_modules
 **/dist/
+/back-end/node_modules/
+/front-end/node_modules/
+**/yarn.lock
+**.env
