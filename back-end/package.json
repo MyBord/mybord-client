@@ -1,13 +1,15 @@
 {
-  "name": "myBoard-server",
+  "name": "myBord-server",
   "scripts": {
     "get-schema": "graphql get-schema -p prisma",
     "remove-dist": "rm -rf dist",
-    "devWebpack": "webpack --config webpack.dev.js",
-    "prodWebpack": "webpack --config webpack.prod.js",
-    "build:dev": "npm-run-all remove-dist devWebpack",
-    "build:prod": "npm-run-all remove-dist prodWebpack",
-    "run:dev": "nodemon dist/server",
+    "prisma-delete:dev": "cd src/prisma/ && env-cmd -f ../../dev.env prisma delete -f",
+    "prisma-deploy:dev": "cd src/prisma/ && env-cmd -f ../../dev.env prisma deploy",
+    "webpack:dev": "webpack --config webpack.dev.js",
+    "webpack:prod": "webpack --config webpack.prod.js",
+    "build:dev": "npm-run-all remove-dist webpack:dev",
+    "build:prod": "npm-run-all remove-dist webpack:prod",
+    "run:dev": "env-cmd -f dev.env nodemon dist/index",
     "start": "webpack-dev-server --config src/build/webpack.src.development.js"
   },
   "authors": [
@@ -58,6 +60,7 @@
     "babel-plugin-transform-builtin-extend": "^1.1.2",
     "bcryptjs": "^2.4.3",
     "dotenv-webpack": "^1.7.0",
+    "env-cmd": "^10.0.1",
     "express": "^4.17.1",
     "graphql": "^14.5.8",
     "graphql-cli": "^3.0.14",

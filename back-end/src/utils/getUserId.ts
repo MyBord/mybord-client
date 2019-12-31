@@ -8,7 +8,7 @@ const getUserId = (request: Request, requireAuthentication: boolean = true): str
 
   if (header) {
     const token = header.split(' ')[1];
-    const decoded: any = jwt.verify(token, '$9zW3eBT77N3$eJTH8D$');
+    const decoded: any = jwt.verify(token, process.env.JWT_SECRET);
     return decoded.userId;
   }
 

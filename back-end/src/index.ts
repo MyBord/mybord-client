@@ -8,9 +8,9 @@ import schema from 'schema/schema.graphql';
 
 // Creates new Prisma instance
 const prisma = new Prisma({
-  endpoint: 'http://localhost:4466',
-  // secret: '%cx^&2DYo9pf@11E6gt^',
-  typeDefs: 'server/generated/prisma.graphql',
+  endpoint: process.env.PRISMA_ENDPOINT,
+  secret: process.env.PRISMA_SECRET,
+  typeDefs: 'src/generated/prisma.graphql',
 });
 
 // Creates new Apollo Server

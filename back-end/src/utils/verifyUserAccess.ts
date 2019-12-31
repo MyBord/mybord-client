@@ -20,7 +20,7 @@ const verifyUserAccess = ({
     }
 
     const token = header.split(' ')[1];
-    const decoded: any = jwt.verify(token, '$9zW3eBT77N3$eJTH8D$');
+    const decoded: any = jwt.verify(token, process.env.JWT_SECRET);
 
     if (userId !== decoded.userId) {
       throw new Error('User does not have access.');

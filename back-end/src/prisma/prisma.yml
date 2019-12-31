@@ -3,4 +3,4 @@ datamodel:
   - ../schema/comment/commentModel.graphql
   - ../schema/post/postModel.graphql
   - ../schema/user/userModel.graphql
-#secret: '%cx^&2DYo9pf@11E6gt^'
+secret: ${env:PRISMA_SECRET}

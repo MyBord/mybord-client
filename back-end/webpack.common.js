@@ -3,7 +3,7 @@ const path = require('path');
 const SRC_DIR = path.resolve(__dirname, 'src');
 
 const output = {
-  filename: 'server.js',
+  filename: 'index.js',
   path: path.resolve(__dirname, 'dist'),
 };
 
