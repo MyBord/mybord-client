@@ -1,7 +1,5 @@
-*.lock
 *.log
 /.out
 **/dist/
 node_modules/
-**/yarn.lock
 **.env
