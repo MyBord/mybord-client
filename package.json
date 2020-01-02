@@ -1,5 +1,5 @@
 {
-  "name": "myBoard",
+  "name": "myBord",
   "main": "index.js",
   "scripts": {
     "test": "jest",
@@ -7,11 +7,11 @@
     "build-storybook": "build-storybook -c .storybook -o .out",
     "remove-dist": "rm -rf dist",
     "copy-index": "cp src/index.html dist/index.html",
-    "devWebpack": "webpack --config webpack.dev.js",
-    "prodWebpack": "webpack --config webpack.prod.js",
-    "start": "webpack-dev-server --config webpack.dev.js",
-    "build:dev": "npm-run-all remove-dist devWebpack copy-index",
-    "build:prod": "npm-run-all remove-dist prodWebpack copy-index"
+    "webpack:dev": "webpack --config webpack.dev.js",
+    "webpack:prod": "webpack --config webpack.prod.js",
+    "build:dev": "npm-run-all remove-dist webpack:dev copy-index",
+    "build:prod": "npm-run-all remove-dist webpack:prod copy-index",
+    "start": "webpack-dev-server --config webpack.dev.js"
   },
   "authors": [
     "Jimmy Emery"
