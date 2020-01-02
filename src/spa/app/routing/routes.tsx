@@ -10,6 +10,7 @@ import FavoritesPage from 'pages/favoritesPage/favoritesPage';
 import FollowingPage from 'pages/followingPage/followingPage';
 import HistoryPage from 'pages/historyPage/historyPage';
 import InboxPage from 'pages/inboxPage/inboxPage';
+import LoginPage from 'pages/loginPage/loginPage';
 import PlaylistPage from 'pages/playlistPage/playlistPage';
 import Spinner from 'icons/spinner/spinner';
 import TrendingPage from 'pages/trendingPage/trendingPage';
@@ -85,6 +86,11 @@ const Routes: React.FC = () => {
         <Route exact path="/inbox">
           <RouteWrapper>
             <InboxPage />
+          </RouteWrapper>
+        </Route>
+        <Route exact path="/login">
+          <RouteWrapper>
+            <LoginPage />
           </RouteWrapper>
         </Route>
         <Route exact path="/playlist">
