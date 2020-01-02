@@ -1,21 +1,17 @@
 {
-  "name": "myBoard",
+  "name": "myBord",
   "main": "index.js",
   "scripts": {
     "test": "jest",
     "storybook": "start-storybook",
     "build-storybook": "build-storybook -c .storybook -o .out",
     "remove-dist": "rm -rf src/dist",
-    "copy-index": "cp src/index.html src/dist/index.html",
-    "devWebpack": "webpack --config src/build/webpack.src.development.js",
-    "prodWebpack": "webpack --config src/build/webpack.src.production.js",
-    "start": "webpack-dev-server --config src/build/webpack.src.development.js",
-    "get-schema": "graphql get-schema -p prisma",
-    "build:devApp": "npm-run-all remove-dist devWebpack copy-index",
-    "build:prodApp": "npm-run-all remove-dist prodWebpack copy-index",
-    "build:devServer": "webpack --config server/build/webpack.server.development.js",
-    "build:prodServer": "webpack --config server/build/webpack.server.production.js",
-    "run:server": "nodemon server/dist/server"
+    "copy-index": "cp src/index.html dist/index.html",
+    "webpack:dev": "webpack --config webpack.dev.js",
+    "webpack:prod": "webpack --config webpack.prod.js",
+    "build:dev": "npm-run-all remove-dist webpack:dev copy-index",
+    "build:prod": "npm-run-all remove-dist webpack:prod copy-index",
+    "start": "webpack-dev-server --config webpack.dev.js"
   },
   "authors": [
     "Jimmy Emery"

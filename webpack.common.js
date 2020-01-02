@@ -1,11 +1,9 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const webpack = require('webpack');
 const Dotenv = require('dotenv-webpack');
 
-const DIST_DIR = path.resolve(__dirname, '../dist/');
-const ROOT_DIR = path.resolve(__dirname, '../../');
-const SRC_DIR = path.resolve(__dirname, '../');
+const DIST_DIR = path.resolve(__dirname, 'dist/');
+const SRC_DIR = path.resolve(__dirname, 'src/');
 
 const config = {
   entry: [
@@ -99,7 +97,7 @@ const config = {
             },
           },
         }],
-        exclude: path.resolve(ROOT_DIR, 'node_modules'),
+        exclude: path.resolve(__dirname, 'node_modules'),
         include: __dirname,
       },
       {
@@ -116,9 +114,6 @@ const config = {
   plugins: [
     new MiniCssExtractPlugin({
       filename: 'application.css',
-    }),
-    new webpack.DefinePlugin({
-      'process.env.INTERNAL': JSON.stringify(process.env.INTERNAL),
     }),
     new Dotenv(),
   ],

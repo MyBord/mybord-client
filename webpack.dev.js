@@ -1,5 +1,5 @@
 const merge = require('webpack-merge');
-const common = require('./webpack.src.common.js');
+const common = require('./webpack.common.js');
 
 const config = merge(common, {
   mode: 'development',
@@ -8,7 +8,7 @@ const config = merge(common, {
     allowedHosts: [
       'localhost',
     ],
-    contentBase: '../dist',
+    contentBase: 'dist',
     historyApiFallback: true,
     hot: true,
     open: true,

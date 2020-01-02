@@ -35,7 +35,5 @@
       "types/*": ["src/types/*"],
       "utils/*": ["src/types/*"]
     }
-  },
-  "exclude": [ "node_modules" ],
-  "include": [ "server/**/*.ts" ]
+  }
 }
