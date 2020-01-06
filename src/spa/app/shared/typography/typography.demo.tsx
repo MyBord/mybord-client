@@ -9,6 +9,7 @@ const TypographyDemo: React.FC = () => (
     <Typography color="lightGrey" text="Light Grey" />
     <Typography color="white" text="White" />
     <Typography color="transparentWhite" text="Transparent White" />
+    <Typography color="blue" text="Blue" />
     <h3 className={styles.h3}>-- Fonts --</h3>
     <Typography text="Poppins" />
     <Typography font="roboto" text="Roboto" />

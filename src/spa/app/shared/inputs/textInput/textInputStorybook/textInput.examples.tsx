@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as styles from 'storybook/storybook.module.less';
 import TextInput from '../textInput';
 
-const AntTextInputExamples: React.FC = () => (
+const TextInputExamples: React.FC = () => (
   <section
     className={[styles.examplesSection, styles.widthLimit25].join(' ')}
   >
@@ -22,4 +22,4 @@ const AntTextInputExamples: React.FC = () => (
   </section>
 );
 
-export default AntTextInputExamples;
+export default TextInputExamples;

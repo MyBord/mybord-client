@@ -2,7 +2,7 @@ import * as React from 'react';
 import { boolean, select, text } from '@storybook/addon-knobs';
 import TextInput from '../textInput';
 
-const AntTextInputDemo: React.FC = () => (
+const TextInputDemo: React.FC = () => (
   <TextInput
     defaultValue="not-a-valid-email"
     disabled={boolean('disabled', false)}
@@ -12,4 +12,4 @@ const AntTextInputDemo: React.FC = () => (
   />
 );
 
-export default AntTextInputDemo;
+export default TextInputDemo;

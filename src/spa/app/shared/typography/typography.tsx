@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as styles from './typography.module.less';
 
 interface Props {
-  color?: 'black' | 'lightGrey' | 'transparentWhite' | 'white';
+  color?: 'black' | 'blue' | 'lightGrey' | 'transparentWhite' | 'white';
   font?: 'poppins' | 'roboto';
   maxTextLength?: number;
   showExpandCollapseButton?: boolean;

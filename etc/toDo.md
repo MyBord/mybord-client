@@ -5,6 +5,9 @@ add transition to player circle being shown on and off when hovering on and off
 when clicking play button on youtube video and youtube isn't ready yet, have button show spinner
 add credentials
 
+## login form
+fix redirect for 'forgot password'
+
 # UI Improvements
 make spinner fade in and fade out
 add hover for profile image and modal

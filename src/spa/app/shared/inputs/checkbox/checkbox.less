@@ -1,0 +1,30 @@
+@import '~antd/lib/checkbox/style/index.less';
+@import '~styles/_colors';
+@import '~styles/_fonts';
+
+@checkbox-size: 12px;
+
+.ant-checkbox-checked:not(.ant-checkbox-disabled) {
+  .ant-checkbox-inner {
+    background-color: @blue;
+  }
+}
+
+.ant-checkbox {
+  :focus {
+    outline: none;
+  }
+}
+
+.ant-checkbox-inner {
+  border-color: @blue !important;
+  //height: 0.75rem;
+  //width: 0.75rem;
+}
+
+.ant-checkbox-wrapper {
+  span:nth-child(2) {
+    color: @black;
+    font-family: @poppins;
+  }
+}
