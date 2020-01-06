@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import Icon from 'icons/icon/icon';
 import { IconNames } from 'types/iconTypes';
-import * as styles from './navigationButton.module.scss';
+import * as styles from './navigationButton.module.less';
 
 interface Props {
   iconName: IconNames;

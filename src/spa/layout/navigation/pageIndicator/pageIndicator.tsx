@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { motion } from 'framer-motion';
 import { useLocation } from 'react-router-dom';
-import * as styles from './pageIndicator.module.scss';
+import * as styles from './pageIndicator.module.less';
 
 const variants = {
   '/': {

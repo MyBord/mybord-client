@@ -1,6 +1,6 @@
 import * as React from 'react';
 import NavigationButton from './navigationButton/navigationButton';
-import * as styles from './navigationButtons.module.scss';
+import * as styles from './navigationButtons.module.less';
 
 const NavigationButtons: React.FC = () => (
   <section>

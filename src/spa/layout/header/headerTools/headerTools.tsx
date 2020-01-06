@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Icon from 'icons/icon/icon';
 import profilePhoto from 'assets/profilePhoto.jpg';
-import * as styles from './headerTools.module.scss';
+import * as styles from './headerTools.module.less';
 
 const HeaderTools: React.FC = () => (
   <section className={styles.section}>

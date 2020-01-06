@@ -1,5 +1,5 @@
 import * as React from 'react';
-import * as styles from './playButton.module.scss';
+import * as styles from './playButton.module.less';
 
 interface Props {
   onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;

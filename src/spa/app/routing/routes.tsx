@@ -14,7 +14,7 @@ import LoginPage from 'pages/loginPage/loginPage';
 import PlaylistPage from 'pages/playlistPage/playlistPage';
 import Spinner from 'icons/spinner/spinner';
 import TrendingPage from 'pages/trendingPage/trendingPage';
-import * as styles from './routes.module.scss';
+import * as styles from './routes.module.less';
 
 const variants = {
   initial: {

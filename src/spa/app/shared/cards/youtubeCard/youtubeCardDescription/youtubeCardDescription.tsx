@@ -2,7 +2,7 @@ import * as React from 'react';
 import Icon from 'icons/icon/icon';
 import Typography from 'typography/typography';
 import { YoutubeData } from 'types/youtubeTypes';
-import * as styles from './youtubeCardDescription.module.scss';
+import * as styles from './youtubeCardDescription.module.less';
 
 interface Props {
   youtubeVideoData: YoutubeData;

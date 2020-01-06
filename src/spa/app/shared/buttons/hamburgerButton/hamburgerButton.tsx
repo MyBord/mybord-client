@@ -1,7 +1,7 @@
 import * as React from 'react';
 import LottiePlayer from 'lotty/lottiePlayer';
 import animationData from 'lotty/lotties/hamburger.json';
-import * as styles from './hamburgerButton.module.scss';
+import * as styles from './hamburgerButton.module.less';
 
 interface Props {
   direction: number;

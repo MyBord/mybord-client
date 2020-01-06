@@ -1,5 +1,5 @@
-@import "~styles/colors";
-@import "~styles/fonts";
+@import "~styles/_colors";
+@import "~styles/_fonts";
 
 .buttonExamples {
   margin-left: 1rem;
@@ -30,8 +30,8 @@
 }
 
 .description {
-  color: $black;
-  font-family: $poppins;
+  color: @black;
+  font-family: @poppins;
   font-size: 1rem;
 }
 
@@ -55,8 +55,8 @@
 }
 
 .exampleP {
-  color: $black;
-  font-family: $poppins;
+  color: @black;
+  font-family: @poppins;
   font-size: 1rem;
   margin-left: 0.5rem;
 }
@@ -85,38 +85,38 @@
 }
 
 .h1 {
-  color: $black;
-  font-family: $poppins;
+  color: @black;
+  font-family: @poppins;
   font-size: 2rem;
   margin: 0 0 1rem 0;
 }
 
 .h2 {
-  color: $black;
-  font-family: $poppins;
+  color: @black;
+  font-family: @poppins;
   font-size: 1.5rem;
   margin: 2rem 0 0 0;
   padding: 1rem;
 }
 
 .h3 {
-  color: $black;
-  font-family: $poppins;
+  color: @black;
+  font-family: @poppins;
   font-size: 1rem;
   margin: 0;
   padding: 1rem;
 }
 
 .header {
-  background: $grey;
-  border-bottom: 0.125rem solid $grey;
+  background: @grey;
+  border-bottom: 0.125rem solid @grey;
   padding: 2rem 1rem 0 1rem;
 }
 
 .link {
   background: transparent;
   border: none;
-  color: $blue;
+  color: @blue;
   cursor: pointer;
   font-size: 1rem;
   margin-right: 1rem;
@@ -124,9 +124,9 @@
   padding: 0;
   width: auto;
   &:hover {
-    color: $navy;
+    color: @navy;
     span {
-      background: $navy;
+      background: @navy;
     }
   }
 }
@@ -138,32 +138,32 @@
 }
 
 .markdownTable {
-  font-family: $poppins;
+  font-family: @poppins;
   margin-left: 1rem;
   width: calc(100% - 1rem);
   table {
     border-collapse: collapse;
     border-spacing: 0;
-    color: $black;
+    color: @black;
     padding: 0;
     tr {
       background-color: white;
-      border-top: 0.0625rem solid $gitBorder;
+      border-top: 0.0625rem solid @gitBorder;
       margin: 0;
       padding: 0;
     }
     tr:nth-child(2n) {
-      background-color: $gitBackground;
+      background-color: @gitBackground;
     }
     tr, th {
-      border: 0.0625rem solid $gitBorder;
+      border: 0.0625rem solid @gitBorder;
       font-weight: bold;
       margin: 0;
       padding: 0.375rem 0.8125rem;
       text-align: left;
     }
     tr, td {
-      border: 0.0625rem solid $gitBorder;
+      border: 0.0625rem solid @gitBorder;
       font-weight: normal;
       margin: 0;
       padding: 0.375rem 0.8125rem;
@@ -179,7 +179,7 @@
 }
 
 .span {
-  background: $blue;
+  background: @blue;
   display: flex;
   height: 0.3rem;
   margin-top: 0.1rem;

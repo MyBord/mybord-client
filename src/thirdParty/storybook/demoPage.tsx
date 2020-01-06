@@ -1,6 +1,6 @@
 import * as React from 'react';
 import StorybookHeader from './storybookHeader';
-import * as styles from './storybook.module.scss';
+import * as styles from './storybook.module.less';
 
 interface Props {
   Demo: React.FC;

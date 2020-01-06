@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { linkTo } from '@storybook/addon-links';
-import * as styles from 'storybook/storybook.module.scss';
+import * as styles from 'storybook/storybook.module.less';
 
 interface Props {
   componentName: string;

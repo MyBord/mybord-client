@@ -1,10 +1,10 @@
-@import "~styles/colors";
-@import "~styles/sizes";
+@import "~styles/_colors";
+@import "~styles/_sizes";
 
 .activeLink {
   > svg {
     * {
-      stroke: $blue !important;
+      stroke: @blue !important;
       transition: 0.5s stroke ease;
     }
   }
@@ -14,21 +14,21 @@
   align-items: center;
   cursor: pointer;
   display: flex;
-  height: $navigationButtonHeight;
-  margin: $navigationButtonMargin 0;
+  height: @navigationButtonHeight;
+  margin: @navigationButtonMargin 0;
   position: relative;
   text-decoration: none;
   &:hover {
     > svg {
       * {
-        stroke: $darkBlack;
+        stroke: @darkBlack;
         transition: 0.5s stroke ease;
       }
     }
   }
   > svg {
     * {
-      stroke: $black;
+      stroke: @black;
       transition: 0.5s stroke ease;
     }
   }

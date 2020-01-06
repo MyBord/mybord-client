@@ -1,5 +1,5 @@
 import * as React from 'react';
-import * as styles from './dashboardHeader.module.scss';
+import * as styles from './dashboardHeader.module.less';
 
 const DashboardHeader: React.FC = () => (
   <section className={styles.section}>

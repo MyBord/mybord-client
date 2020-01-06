@@ -3,7 +3,7 @@ import YoutubeCard from 'shared/cards/youtubeCard/youtubeCard';
 import PhantomCard from 'shared/cards/phantomCard/phantomCard';
 import getYoutubeId from 'utils/getYoutubeId';
 import videos from 'static/videos';
-import * as styles from './dashboardCards.module.scss';
+import * as styles from './dashboardCards.module.less';
 
 const DashboardCards: React.FC = () => (
   <section className={styles.section}>

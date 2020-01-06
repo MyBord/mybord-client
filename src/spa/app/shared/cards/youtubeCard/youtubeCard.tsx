@@ -3,7 +3,7 @@ import api, { Resource } from 'api/api';
 import { YoutubeData } from 'types/youtubeTypes';
 import YoutubeCardDescription from './youtubeCardDescription/youtubeCardDescription';
 import YoutubeCardThumbnailContainer from './youtubeCardThumbnail/youtubeCardThumbnailContainer';
-import * as styles from './youtubeCard.module.scss';
+import * as styles from './youtubeCard.module.less';
 
 interface Props {
   resource: Resource<YoutubeData>;

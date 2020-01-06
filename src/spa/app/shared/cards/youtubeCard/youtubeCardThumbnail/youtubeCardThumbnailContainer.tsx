@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { YoutubeData } from 'types/youtubeTypes';
 import YoutubeCardThumbnailComponent from './youtubeCardThumbnailComponent';
 import YoutubePlayer from '../youtubePlayer/youtubePlayer';
-import * as styles from './youtubeCardThumbnail.module.scss';
+import * as styles from './youtubeCardThumbnail.module.less';
 
 interface Props {
   youtubeVideoData: YoutubeData;

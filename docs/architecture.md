@@ -102,7 +102,7 @@ src/
   |- types/ 
   |- utils/ 
   |- index.html
-  |- index.scss
+  |- index.less
   |- index.tsx
 ```
 
@@ -141,7 +141,7 @@ src/
   * Folder containing utility functions.
 * **`index.html`:**
   * root html file used for the app.
-* **`index.scss`:**
+* **`index.less`:**
   * The application's root stylesheet.
 * **`index.tsx`:**
   * The executable javascript of the app.

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import * as styles from 'storybook/storybook.module.scss';
+import * as styles from 'storybook/storybook.module.less';
 import useToggle from 'hooks/useToggle';
 import { AnimatedIconNames } from 'types/iconTypes';
 import AnimatedIcon, { animatedIcons } from './animatedIcon';

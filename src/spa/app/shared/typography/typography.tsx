@@ -1,5 +1,5 @@
 import * as React from 'react';
-import * as styles from './typography.module.scss';
+import * as styles from './typography.module.less';
 
 interface Props {
   color?: 'black' | 'lightGrey' | 'transparentWhite' | 'white';

@@ -2,7 +2,7 @@
 
 .arrow {
   border-bottom: 1rem solid transparent;
-  border-left: 1rem solid $transparentWhite;
+  border-left: 1rem solid @transparentWhite;
   border-radius: 0.125rem;
   border-top: 1rem solid transparent;
   height: 0;
@@ -18,18 +18,18 @@
 }
 
 .button {
-  background: $transparentBlack;
+  background: @transparentBlack;
   border-radius: 50%;
-  border: 0.0625rem solid $black;
+  border: 0.0625rem solid @black;
   cursor: pointer;
   height: 3.5rem;
   outline: none;
   transition: background 0.25s ease;
   width: 3.5rem;
   &:hover {
-    background: $transparentBlackDarker;
+    background: @transparentBlackDarker;
   }
   &:active {
-    background: $transparentBlackLighter;
+    background: @transparentBlackLighter;
   }
 }

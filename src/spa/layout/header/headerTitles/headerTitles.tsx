@@ -1,6 +1,6 @@
 import * as React from 'react';
 import HeaderTitleButton from './headerTitleButton/headerTitleButton';
-import * as styles from './headerTitles.module.scss';
+import * as styles from './headerTitles.module.less';
 
 const HeaderTitles: React.FC = () => (
   <div className={styles.div}>

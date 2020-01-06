@@ -10,7 +10,7 @@ const config = {
   entry: [
     'babel-polyfill',
     `${SRC_DIR}/index.tsx`,
-    `${SRC_DIR}/index.scss`,
+    `${SRC_DIR}/index.less`,
   ],
   output: {
     path: `${DIST_DIR}/app/`,
@@ -47,17 +47,17 @@ const config = {
         ],
       },
       {
-        test: /\.scss$/,
-        exclude: /\.module\.scss$/,
+        test: /\.less$/,
+        exclude: /\.module\.less$/,
         use: [
           MiniCssExtractPlugin.loader,
           'css-loader',
           'postcss-loader',
-          'sass-loader',
+          'less-loader',
         ],
       },
       {
-        test: /\.module\.scss$/,
+        test: /\.module\.less$/,
         use: [
           {
             loader: 'style-loader',
@@ -74,7 +74,8 @@ const config = {
             loader: 'postcss-loader',
           },
           {
-            loader: 'sass-loader',
+            loader: 'less-loader',
+            options: { javascriptEnabled: true },
           },
         ],
       },
@@ -122,7 +123,7 @@ const config = {
     new Dotenv(),
   ],
   resolve: {
-    extensions: ['.jsx', '.js', '.tsx', '.ts', '.scss'],
+    extensions: ['.jsx', '.js', '.tsx', '.ts', '.less'],
     alias: {
       api: path.resolve(__dirname, 'src/api/'),
       app: path.resolve(__dirname, 'src/spa/app/'),

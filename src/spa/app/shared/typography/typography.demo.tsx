@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Typography from './typography';
-import * as styles from 'storybook/storybook.module.scss';
+import * as styles from 'storybook/storybook.module.less';
 
 const TypographyDemo: React.FC = () => (
   <div className={styles.examplesDivList}>

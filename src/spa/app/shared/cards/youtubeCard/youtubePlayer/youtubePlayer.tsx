@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { YoutubeData } from 'types/youtubeTypes';
-import * as styles from './youtubePlayer.module.scss';
+import * as styles from './youtubePlayer.module.less';
 
 declare global {
   interface Window {

@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as ReactMarkdown from 'react-markdown';
 import CodeBlock from './codeBlock';
 import StorybookHeader from './storybookHeader';
-import * as styles from './storybook.module.scss';
+import * as styles from './storybook.module.less';
 
 interface Props {
   Examples?: React.FC;
