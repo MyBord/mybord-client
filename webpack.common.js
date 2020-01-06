@@ -53,7 +53,10 @@ const config = {
           MiniCssExtractPlugin.loader,
           'css-loader',
           'postcss-loader',
-          'less-loader',
+          {
+            loader: 'less-loader',
+            options: { javascriptEnabled: true },
+          },
         ],
       },
       {
@@ -134,6 +137,7 @@ const config = {
       hooks: path.resolve(__dirname, 'src/hooks/'),
       icons: path.resolve(__dirname, 'src/spa/app/shared/icons/'),
       initializeApp: path.resolve(__dirname, 'src/spa/app/initializeApp/'),
+      inputs: path.resolve(__dirname, 'src/spa/app/shared/inputs/'),
       layout: path.resolve(__dirname, 'src/spa/layout/'),
       lotty: path.resolve(__dirname, 'src/thirdParty/lotty/'),
       mockData: path.resolve(__dirname, 'src/mockData/'),

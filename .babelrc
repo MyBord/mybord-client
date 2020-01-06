@@ -27,6 +27,7 @@
         "hooks": "./src/hooks/",
         "icons": "./src/spa/app/shared/icons/",
         "initializeApp": "./src/spa/app/initializeApp/",
+        "inputs": "./src/spa/app/shared/inputs/",
         "layout": "./src/spa/layout/",
         "lotty": "./src/thirdParty/lotty/",
         "mockData": "./src/mockData/",

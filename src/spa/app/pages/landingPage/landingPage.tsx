@@ -1,7 +1,11 @@
 import * as React from 'react';
+import LoginForm from './loginForm/loginForm';
+import * as styles from './landingPage.module.less';
 
 const LandingPage: React.FC = () => (
-  <h1>This is the landing Page</h1>
+  <main className={styles.main}>
+    <LoginForm />
+  </main>
 );
 
 export default LandingPage;

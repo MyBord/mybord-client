@@ -21,6 +21,7 @@ module.exports = {
     '^hooks(.*)$': '<rootDir>/src/hooks$1',
     '^icons(.*)$': '<rootDir>/src/spa/app/shared/icons$1',
     '^initializeApp(.*)$': '<rootDir>/src/spa/app/initializeApp$1',
+    '^inputs(.*)$': '<rootDir>/src/spa/app/shared/inputs$1',
     '^layout(.*)$': '<rootDir>/src/spa/layout$1',
     '^lotty(.*)$': '<rootDir>/src/thirdParty/lotty$1',
     '^mockData(.*)$': '<rootDir>/src/mockData$1',
