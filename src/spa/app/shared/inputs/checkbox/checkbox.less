@@ -4,6 +4,11 @@
 
 @checkbox-size: 12px;
 
+.ant-checkbox-checked::after{
+  animation: none;
+  border: none;
+}
+
 .ant-checkbox-checked:not(.ant-checkbox-disabled) {
   .ant-checkbox-inner {
     background-color: @blue;
@@ -18,13 +23,12 @@
 
 .ant-checkbox-inner {
   border-color: @blue !important;
-  //height: 0.75rem;
-  //width: 0.75rem;
 }
 
 .ant-checkbox-wrapper {
   span:nth-child(2) {
     color: @black;
     font-family: @poppins;
+    user-select: none;
   }
 }
