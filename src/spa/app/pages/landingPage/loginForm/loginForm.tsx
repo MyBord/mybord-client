@@ -3,17 +3,24 @@ import { Form } from 'antd';
 import Anchor from 'inputs/anchor/anchor';
 import Button from 'buttons/button/button';
 import Checkbox from 'inputs/checkbox/checkbox';
+import logo from 'assets/logo.png';
+import PasswordInput from 'inputs/passwordInput/passwordInput';
 import TextInput from 'inputs/textInput/textInput';
+import Typography from 'typography/typography';
 import * as styles from './loginForm.module.less';
 
 const LoginForm: React.FC = () => (
   <div className={styles.formContainer}>
+    <div className={styles.logoDiv}>
+      <img alt="MyBord logo" className={styles.img} src={logo} />
+      <Typography size="xl" text="MyBord.io" weight="bold" />
+    </div>
     <Form
       className={styles.form}
       onSubmit={() => console.log('-- form submitted --')}
     >
       <TextInput placeholder="Email" type="email" />
-      <TextInput placeholder="Password" type="password" />
+      <PasswordInput placeholder="Password" />
       <div className={styles.loginDiv}>
         <Checkbox label="Remember Me" />
         <Form.Item>

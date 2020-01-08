@@ -6,7 +6,7 @@ interface Props {
   font?: 'poppins' | 'roboto';
   maxTextLength?: number;
   showExpandCollapseButton?: boolean;
-  size?: 'large' | 'medium' | 'normal' | 'small';
+  size?: 'large' | 'medium' | 'normal' | 'small' | 'xl';
   text: string;
   weight?: 'bold' | 'light' | 'regular';
 }
