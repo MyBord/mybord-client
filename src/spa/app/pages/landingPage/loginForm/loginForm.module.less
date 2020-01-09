@@ -1,25 +1,45 @@
 @import '~styles/_ant';
+@import '~styles/_hr';
+@import '~styles/_sizes';
+
+@formHorizontalPadding: 1.5rem;
 
 .buttonDiv {
   display: flex;
-  button:first-child {
-    margin-right: 2rem;
+  justify-content: space-between;
+  button {
+    height: 2.25rem;
+    justify-content: center;
+    width: 9rem;
   }
 }
 
+.hr {
+  .hrMixin;
+  width: 30%;
+}
+
+.hrDiv {
+  align-items: center;
+  display: flex;
+  margin-bottom: @formItemMarginBottom;
+}
+
+.hrText {
+  margin: 0 1rem;
+}
+
 .form {
-  background: pink;
-  width: 20rem;
-  height: 30rem;
+  padding: 1.25rem @formHorizontalPadding;
+  width: 24rem;
 }
 
 .formContainer {
-  position: absolute;
+  background: @white;
+  border-radius: 0.25rem;
   left: 5rem;
+  position: absolute;
   top: 5rem;
-  background: lightblue;
-  width: 40rem;
-  height: 40rem;
 }
 
 .img {
@@ -34,6 +54,18 @@
 }
 
 .logoDiv {
-  display: flex;
   align-items: center;
+  display: flex;
+  margin: 0.5rem 0 0 @formHorizontalPadding;
+}
+
+.socialLoginDiv {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  button {
+    height: 2.25rem;
+    justify-content: center;
+    width: 9rem;
+  }
 }

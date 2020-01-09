@@ -7,6 +7,8 @@ import ChartIcon from './individualIcons/chartIcon';
 import DashboardIcon from './individualIcons/dashboardIcon';
 import DownArrowIcon from './individualIcons/downArrowIcon';
 import EyeIcon from './individualIcons/eyeIcon';
+import FacebookIcon from './individualIcons/facebookIcon';
+import GoogleIcon from './individualIcons/googleIcon';
 import MailIcon from './individualIcons/mailIcon';
 import PlaylistIcon from './individualIcons/playlistIcon';
 import StarIcon from './individualIcons/starIcon';
@@ -23,6 +25,8 @@ export const iconNames = {
   dashboard: 'foo',
   downArrow: 'foo',
   eye: 'foo',
+  facebook: 'foo',
+  google: 'foo',
   mail: 'foo',
   notification: 'foo',
   playlist: 'foo',
@@ -49,6 +53,10 @@ const Icon: React.FC<Props> = ({ iconName, size }) => {
       return <DownArrowIcon size={size} />;
     case 'eye':
       return <EyeIcon size={size} />;
+    case 'facebook':
+      return <FacebookIcon size={size} />;
+    case 'google':
+      return <GoogleIcon size={size} />;
     case 'mail':
       return <MailIcon size={size} />;
     case 'notification':
