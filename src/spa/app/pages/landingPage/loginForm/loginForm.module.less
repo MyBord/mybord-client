@@ -1,6 +1,7 @@
-@import '~styles/_ant';
+@import '~styles/_colors';
 @import '~styles/_hr';
 @import '~styles/_sizes';
+@import '~styles/_shadows';
 
 @formHorizontalPadding: 1.5rem;
 
@@ -10,33 +11,19 @@
   button {
     height: 2.25rem;
     justify-content: center;
-    width: 9rem;
+    width: 7.5rem;
   }
-}
-
-.hr {
-  .hrMixin;
-  width: 30%;
-}
-
-.hrDiv {
-  align-items: center;
-  display: flex;
-  margin-bottom: @formItemMarginBottom;
-}
-
-.hrText {
-  margin: 0 1rem;
 }
 
 .form {
   padding: 1.25rem @formHorizontalPadding;
-  width: 24rem;
+  width: 20rem;
 }
 
 .formContainer {
   background: @white;
   border-radius: 0.25rem;
+  box-shadow: @cardBoxShadow;
   left: 5rem;
   position: absolute;
   top: 5rem;
@@ -56,16 +43,13 @@
 .logoDiv {
   align-items: center;
   display: flex;
-  margin: 0.5rem 0 0 @formHorizontalPadding;
+  margin: 1rem 0 0 @formHorizontalPadding;
 }
 
 .socialLoginDiv {
-  align-items: center;
   display: flex;
-  justify-content: space-between;
-  button {
-    height: 2.25rem;
-    justify-content: center;
-    width: 9rem;
+  margin-top: 1rem;
+  > button:first-of-type {
+    margin: 0 0.375rem;
   }
 }

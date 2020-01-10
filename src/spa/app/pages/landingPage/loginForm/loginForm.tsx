@@ -8,6 +8,7 @@ import PasswordInput from 'inputs/passwordInput/passwordInput';
 import TextInput from 'inputs/textInput/textInput';
 import Typography from 'typography/typography';
 import * as styles from './loginForm.module.less';
+import './loginForm.less';
 
 const LoginForm: React.FC = () => (
   <div className={styles.formContainer}>
@@ -35,20 +36,10 @@ const LoginForm: React.FC = () => (
           <Button label="Sign Up" onClick={() => {}} type="secondary" />
         </Form.Item>
       </div>
-      <div className={styles.hrDiv}>
-        <hr className={styles.hr} />
-        <div className={styles.hrText}>
-          <Typography text="or login with" />
-        </div>
-        <hr className={styles.hr} />
-      </div>
       <div className={styles.socialLoginDiv}>
-        <Form.Item>
-          <Button iconName="google" label="Google" onClick={() => {}} />
-        </Form.Item>
-        <Form.Item>
-          <Button iconName="facebook" label="Facebook" onClick={() => {}} />
-        </Form.Item>
+        <Typography text="or login with" />
+        <Anchor label="Google" onClick={() => {}} />
+        <Anchor label="Facebook" onClick={() => {}} />
       </div>
     </Form>
   </div>
