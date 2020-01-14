@@ -7,6 +7,9 @@ add credentials
 
 ## login form
 fix redirect for 'forgot password'
+make background image full size
+save background image to s3
+set image loading delay for slow network
 
 # UI Improvements
 make spinner fade in and fade out

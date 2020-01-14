@@ -132,6 +132,7 @@ const config = {
       app: path.resolve(__dirname, 'src/spa/app/'),
       assets: path.resolve(__dirname, 'src/assets/'),
       buttons: path.resolve(__dirname, 'src/spa/app/shared/buttons/'),
+      forms: path.resolve(__dirname, 'src/spa/app/shared/forms/'),
       gapi: path.resolve(__dirname, 'src/thirdParty/gapi/'),
       header: path.resolve(__dirname, 'src/spa/layout/header/'),
       hooks: path.resolve(__dirname, 'src/hooks/'),

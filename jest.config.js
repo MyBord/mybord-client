@@ -16,6 +16,7 @@ module.exports = {
     '^app(.*)$': '<rootDir>/src/spa/app$1',
     '^assets(.*)$': '<rootDir>/src/assets$1',
     '^buttons(.*)$': '<rootDir>/src/spa/app/shared/buttons$1',
+    '^forms(.*)$': '<rootDir>/src/spa/app/shared/forms$1',
     '^gapi(.*)$': '<rootDir>/src/thirdParty/gapi$1',
     '^header(.*)$': '<rootDir>/src/spa/layout/header$1',
     '^hooks(.*)$': '<rootDir>/src/hooks$1',

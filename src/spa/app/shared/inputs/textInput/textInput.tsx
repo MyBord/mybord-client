@@ -21,7 +21,7 @@ const TextInput: React.FC<Props> = ({
   onPressEnter,
   placeholder = null,
   status = null,
-  type = null,
+  type = 'text',
 }) => {
   const [isHelpRendered, setIsHelpRendered] = React.useState(false);
 

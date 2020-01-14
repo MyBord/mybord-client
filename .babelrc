@@ -22,6 +22,7 @@
         "app": "./src/spa/app/",
         "assets": "./src/assets/",
         "buttons": "./src/spa/app/shared/buttons/",
+        "forms": "./src/spa/app/shared/forms/",
         "gapi": "./src/thirdParty/gapi/",
         "header": "./src/spa/app/header/",
         "hooks": "./src/hooks/",
