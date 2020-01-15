@@ -100,6 +100,7 @@
     "dotenv-webpack": "^1.7.0",
     "framer-motion": "^1.6.14",
     "graphql": "^14.5.8",
+    "graphql-tag": "^2.10.1",
     "history": "^4.7.2",
     "lord-icon-element": "^1.1.5",
     "lottie-web": "^5.5.9",
