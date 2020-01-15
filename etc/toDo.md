@@ -1,3 +1,5 @@
+add about setion for myboard that points to github, even in landing page
+
 ## ToDo:
 create landing page
 when clicking play for youtube video, hide play button
