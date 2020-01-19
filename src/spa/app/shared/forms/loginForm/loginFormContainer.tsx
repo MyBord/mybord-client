@@ -33,10 +33,21 @@ const LoginForm: React.FC<Props> = ({ form }) => {
     console.log(data);
   };
 
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
+    event.preventDefault();
+    form.validateFields((error) => {
+      if (!error) {
+        if (formStatus === 'login') {
+          handleLogin();
+        }
+      }
+    });
+  };
+
   return (
     <Form
       className={styles.form}
-      onSubmit={() => console.log('-- form submitted --')}
+      onSubmit={handleSubmit}
     >
       <LoginFormComponent
         form={form}

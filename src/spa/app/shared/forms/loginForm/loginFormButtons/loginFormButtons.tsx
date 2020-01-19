@@ -52,7 +52,11 @@ const LoginFormButtons: React.FC<Props> = ({ form, formStatus, setFormStatus }) 
               fieldName="login"
               form={form}
             >
-              <Button label="Login" onClick={handleLogin} />
+              <Button
+                htmlType="submit"
+                label="Login"
+                onClick={handleLogin}
+              />
             </FormItem>
           )
         }
@@ -61,6 +65,7 @@ const LoginFormButtons: React.FC<Props> = ({ form, formStatus, setFormStatus }) 
           form={form}
         >
           <Button
+            htmlType={formStatus === 'login' ? 'button' : 'submit'}
             label="Sign Up"
             onClick={handleSignUp}
             type={formStatus === 'login' ? 'secondary' : 'primary'}

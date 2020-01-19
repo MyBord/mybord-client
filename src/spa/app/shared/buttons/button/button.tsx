@@ -6,6 +6,7 @@ import * as styles from './button.module.less';
 import './button.less';
 
 interface Props {
+  htmlType?: 'button' | 'reset' | 'submit';
   iconName?: IconNames;
   label: string;
   onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
@@ -13,6 +14,7 @@ interface Props {
 }
 
 const Button: React.FC<Props> = ({
+  htmlType = 'button',
   iconName = null,
   label,
   onClick,
@@ -20,6 +22,7 @@ const Button: React.FC<Props> = ({
 }) => (
   <AntButton
     className={[styles.button, styles[type]].join(' ')}
+    htmlType={htmlType}
     onClick={onClick}
     type={type === 'primary' ? 'primary' : null}
   >

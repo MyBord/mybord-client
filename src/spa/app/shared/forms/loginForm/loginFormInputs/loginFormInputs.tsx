@@ -24,6 +24,8 @@ const LoginFormInputs: React.FC<Props> = ({ form, formStatus }) => (
     <FormItem
       fieldName="email"
       form={form}
+      message="foo bar"
+      required
     >
       <TextInput placeholder="Email" type="email" />
     </FormItem>
