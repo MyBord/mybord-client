@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Form } from 'antd';
+import FormItem from 'forms/formItem';
 import PasswordInput from 'inputs/passwordInput/passwordInput';
 import TextInput from 'inputs/textInput/textInput';
 import { FormProp, LoginFormStatus } from 'types/formTypes';
@@ -13,38 +13,34 @@ const LoginFormInputs: React.FC<Props> = ({ form, formStatus }) => (
   <>
     {
       formStatus === 'signUp' && (
-        <Form.Item>
-          {
-            form.getFieldDecorator('name')(
-              <TextInput placeholder="Name" />,
-            )
-          }
-        </Form.Item>
+        <FormItem
+          fieldName="name"
+          form={form}
+        >
+          <TextInput placeholder="Name" />
+        </FormItem>
       )
     }
-    <Form.Item>
-      {
-        form.getFieldDecorator('email')(
-          <TextInput placeholder="Email" type="email" />,
-        )
-      }
-    </Form.Item>
-    <Form.Item>
-      {
-        form.getFieldDecorator('password')(
-          <PasswordInput placeholder="Password" />,
-        )
-      }
-    </Form.Item>
+    <FormItem
+      fieldName="email"
+      form={form}
+    >
+      <TextInput placeholder="Email" type="email" />
+    </FormItem>
+    <FormItem
+      fieldName="password"
+      form={form}
+    >
+      <PasswordInput placeholder="Password" />
+    </FormItem>
     {
       formStatus === 'signUp' && (
-        <Form.Item>
-          {
-            form.getFieldDecorator('password-confirm')(
-              <PasswordInput placeholder="Confirm Password" />,
-            )
-          }
-        </Form.Item>
+        <FormItem
+          fieldName="password-confirm"
+          form={form}
+        >
+          <PasswordInput placeholder="Confirm Password" />
+        </FormItem>
       )
     }
   </>

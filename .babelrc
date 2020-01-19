@@ -35,6 +35,8 @@
         "navigation": "./src/spa/layout/navigation/",
         "pages": "./src/spa/app/pages/",
         "routing": "./src/spa/app/routing/",
+        "schema": "./src/server/schema/",
+        "server": "./src/server/",
         "shared": "./src/spa/app/shared/",
         "static": "./src/static/",
         "storybook": "./src/thirdParty/storybook/",

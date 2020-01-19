@@ -145,6 +145,8 @@ const config = {
       navigation: path.resolve(__dirname, 'src/spa/layout/navigation/'),
       pages: path.resolve(__dirname, 'src/spa/app/pages/'),
       routing: path.resolve(__dirname, 'src/spa/app/routing/'),
+      schema: path.resolve(__dirname, 'src/server/schema/'),
+      server: path.resolve(__dirname, 'src/server/'),
       shared: path.resolve(__dirname, 'src/spa/app/shared/'),
       static: path.resolve(__dirname, 'src/static/'),
       storybook: path.resolve(__dirname, 'src/thirdParty/storybook/'),

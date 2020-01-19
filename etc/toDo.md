@@ -12,6 +12,7 @@ fix redirect for 'forgot password'
 make background image full size
 save background image to s3
 set image loading delay for slow network
+handle loading and error for query for login
 
 # UI Improvements
 make spinner fade in and fade out

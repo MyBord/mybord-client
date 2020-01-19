@@ -3,15 +3,17 @@ import { Form } from 'antd';
 import Anchor from 'inputs/anchor/anchor';
 import Button from 'buttons/button/button';
 import Checkbox from 'inputs/checkbox/checkbox';
-import { LoginFormStatus } from 'types/formTypes';
+import FormItem from 'forms/formItem';
+import { FormProp, LoginFormStatus } from 'types/formTypes';
 import * as styles from './loginFormButtons.module.less';
 
 interface Props {
+  form: FormProp;
   formStatus: LoginFormStatus;
   setFormStatus: (status: LoginFormStatus) => void;
 }
 
-const LoginFormButtons: React.FC<Props> = ({ formStatus, setFormStatus }) => {
+const LoginFormButtons: React.FC<Props> = ({ form, formStatus, setFormStatus }) => {
   const handleLogin = (): void => {
     setFormStatus('login');
   };
@@ -22,12 +24,20 @@ const LoginFormButtons: React.FC<Props> = ({ formStatus, setFormStatus }) => {
   return (
     <>
       <div className={styles.rememberForgotDiv}>
-        <Checkbox label="Remember Me" />
+        <FormItem
+          fieldName="remember-me"
+          form={form}
+        >
+          <Checkbox label="Remember Me" />
+        </FormItem>
         {
           formStatus === 'login' && (
-            <Form.Item>
+            <FormItem
+              fieldName="forgot-password"
+              form={form}
+            >
               <Anchor label="Forgot Password?" link="https://www.google.com" />
-            </Form.Item>
+            </FormItem>
           )
         }
       </div>
@@ -38,23 +48,32 @@ const LoginFormButtons: React.FC<Props> = ({ formStatus, setFormStatus }) => {
       >
         {
           formStatus === 'login' && (
-            <Form.Item>
+            <FormItem
+              fieldName="login"
+              form={form}
+            >
               <Button label="Login" onClick={handleLogin} />
-            </Form.Item>
+            </FormItem>
           )
         }
-        <Form.Item>
+        <FormItem
+          fieldName="sign-up"
+          form={form}
+        >
           <Button
             label="Sign Up"
             onClick={handleSignUp}
             type={formStatus === 'login' ? 'secondary' : 'primary'}
           />
-        </Form.Item>
+        </FormItem>
         {
           formStatus === 'signUp' && (
-            <Form.Item>
+            <FormItem
+              fieldName="back"
+              form={form}
+            >
               <Anchor label="back" onClick={() => setFormStatus('login')} />
-            </Form.Item>
+            </FormItem>
           )
         }
       </div>

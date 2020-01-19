@@ -1,7 +1,7 @@
 import * as React from 'react';
 import gql from 'graphql-tag';
 import { useQuery } from '@apollo/react-hooks';
-import LoginFormContainer from 'forms/loginForm/loginFormContainer';
+import LoginFormFinal from 'forms/loginForm/loginFormFinal';
 import loginBackground from 'assets/loginBackground.jpg';
 import * as styles from './landingPage.module.less';
 
@@ -28,7 +28,7 @@ const LandingPage: React.FC = () => {
         className={styles.img}
         src={loginBackground}
       />
-      <LoginFormContainer />
+      <LoginFormFinal />
     </main>
   );
 };

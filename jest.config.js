@@ -29,6 +29,8 @@ module.exports = {
     '^navigation(.*)$': '<rootDir>/src/spa/layout/navigation$1',
     '^pages(.*)$': '<rootDir>/src/spa/app/pages$1',
     '^routing(.*)$': '<rootDir>/src/spa/app/routing$1',
+    '^schema(.*)$': '<rootDir>/src/server/schema$1',
+    '^server(.*)$': '<rootDir>/src/server$1',
     '^shared(.*)$': '<rootDir>/src/spa/app/shared$1',
     '^static(.*)$': '<rootDir>/src/static$1',
     '^storybook(.*)$': '<rootDir>/src/thirdParty/storybook$1',
