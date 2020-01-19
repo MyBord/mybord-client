@@ -1,5 +1,5 @@
 import * as React from 'react';
-import FormItem from 'forms/formItem';
+import FormItem from 'forms/formItem/formItem';
 import PasswordInput from 'inputs/passwordInput/passwordInput';
 import TextInput from 'inputs/textInput/textInput';
 import { FormProp, LoginFormStatus } from 'types/formTypes';
@@ -24,14 +24,18 @@ const LoginFormInputs: React.FC<Props> = ({ form, formStatus }) => (
     <FormItem
       fieldName="email"
       form={form}
-      message="foo bar"
       required
+      requiredMessage="Please enter your email address."
+      type="email"
+      typeMessage="You entered an invalid email address."
     >
-      <TextInput placeholder="Email" type="email" />
+      <TextInput placeholder="Email" />
     </FormItem>
     <FormItem
       fieldName="password"
       form={form}
+      required
+      requiredMessage="Please enter your password."
     >
       <PasswordInput placeholder="Password" />
     </FormItem>

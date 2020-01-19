@@ -18,9 +18,7 @@ const TextInputDemo: React.FC = () => (
     <h3 className={styles.h3}>Error</h3>
     <TextInput
       defaultValue="not-a-valid-email"
-      helpMessage="Please enter a valid email"
       placeholder="Enter Email"
-      status="error"
     />
     <h3 className={styles.h3}>Disabled</h3>
     <TextInput disabled />

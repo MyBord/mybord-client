@@ -7,20 +7,15 @@ import LoginFormSocial from './loginFormSocial/loginFormSocial';
 interface Props {
   form: FormProp;
   formStatus: any;
-  handleLogin: () => void;
   setFormStatus: any;
 }
 
 const LoginFormComponent: React.FC<Props> = ({
   form,
   formStatus,
-  handleLogin,
   setFormStatus,
 }) => (
   <>
-      // @ts-ignore
-    <button type="button" onClick={() => console.log(form.getFieldsValue())}>foo</button>
-    <button type="button" onClick={handleLogin}>login</button>
     <LoginFormInputs form={form} formStatus={formStatus} />
     <LoginFormButtons
       form={form}

@@ -52,7 +52,6 @@ const LoginForm: React.FC<Props> = ({ form }) => {
       <LoginFormComponent
         form={form}
         formStatus={formStatus}
-        handleLogin={handleLogin}
         setFormStatus={setFormStatus}
       />
     </Form>

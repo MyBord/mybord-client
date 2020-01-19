@@ -1,4 +1,3 @@
-add about setion for myboard that points to github, even in landing page
 
 ## ToDo:
 create landing page
@@ -13,6 +12,12 @@ make background image full size
 save background image to s3
 set image loading delay for slow network
 handle loading and error for query for login
+fix modal popup
+add about setion for myboard that points to github, even in landing page
+add password validation
+embed captcha for signup
+export default Form.create()(TemplateInput);
+make sure everything is wrapped in a form item, and checkbox is default unchecked
 
 # UI Improvements
 make spinner fade in and fade out
