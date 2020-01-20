@@ -14,9 +14,10 @@ interface Props {
 
 const LoginForm: React.FC<Props> = ({ form }) => {
   const [formStatus, setFormStatus] = React.useState<LoginFormStatus>('login');
+  const [hasIncorrectCreds, setHasIncorrectCreds] = React.useState(false);
   const [loginUser, { data }] = useMutation(LOGIN_USER);
 
-  // @ts-ignore
+  // @ts-ignore // ToDo: remove ts ignore
   const handleLogin = async (): void => {
     const values = form.getFieldsValue();
     try {
@@ -27,7 +28,10 @@ const LoginForm: React.FC<Props> = ({ form }) => {
         },
       });
     } catch (error) {
-      handleError(error);
+      const { status } = handleError(error);
+      if (status === 401) {
+        setHasIncorrectCreds(true);
+      }
     }
     console.log('user data:');
     console.log(data);
@@ -52,6 +56,7 @@ const LoginForm: React.FC<Props> = ({ form }) => {
       <LoginFormComponent
         form={form}
         formStatus={formStatus}
+        hasIncorrectCreds={hasIncorrectCreds}
         setFormStatus={setFormStatus}
       />
     </Form>

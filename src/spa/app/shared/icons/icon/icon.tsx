@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { IconNames } from 'types/iconTypes';
+import { IconProps } from 'types/iconTypes';
 import AddUserIcon from './individualIcons/addUserIcon';
 import BellIcon from './individualIcons/bellIcon';
 import CalendarIcon from './individualIcons/calendarIcon';
@@ -13,6 +13,7 @@ import MailIcon from './individualIcons/mailIcon';
 import PlaylistIcon from './individualIcons/playlistIcon';
 import StarIcon from './individualIcons/starIcon';
 import ThumbsUpIcon from './individualIcons/thumbsUpIcon';
+import WarningIcon from './individualIcons/warningIcon';
 
 // declaring an iconNames from an object instead of an array
 // (e.g. ['iconName1', 'iconName2'])
@@ -32,14 +33,15 @@ export const iconNames = {
   playlist: 'foo',
   star: 'foo',
   thumbsUp: 'foo',
+  warning: 'foo',
 };
 
-interface Props {
-  iconName: IconNames;
-  size: number;
-}
-
-const Icon: React.FC<Props> = ({ iconName, size }) => {
+const Icon: React.FC<IconProps> = ({
+  color = 'black',
+  iconName,
+  size,
+  strokeWidth = 2,
+}) => {
   switch (iconName) {
     case 'addUser':
       return <AddUserIcon size={size} />;
@@ -67,6 +69,14 @@ const Icon: React.FC<Props> = ({ iconName, size }) => {
       return <StarIcon size={size} />;
     case 'thumbsUp':
       return <ThumbsUpIcon size={size} />;
+    case 'warning':
+      return (
+        <WarningIcon
+          color={color}
+          size={size}
+          strokeWidth={strokeWidth}
+        />
+      );
     default:
       throw Error('Component: `Icon` - iconName parameter is invalid, expected icon cannot be'
         + ' found.');

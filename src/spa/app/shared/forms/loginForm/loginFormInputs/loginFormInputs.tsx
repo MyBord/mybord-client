@@ -11,16 +11,6 @@ interface Props {
 
 const LoginFormInputs: React.FC<Props> = ({ form, formStatus }) => (
   <>
-    {
-      formStatus === 'signUp' && (
-        <FormItem
-          fieldName="name"
-          form={form}
-        >
-          <TextInput placeholder="Name" />
-        </FormItem>
-      )
-    }
     <FormItem
       fieldName="email"
       form={form}

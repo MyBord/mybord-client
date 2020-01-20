@@ -1,21 +1,34 @@
 import * as React from 'react';
-import { FormProp } from 'types/formTypes';
+import Alert from 'shared/alert/alert';
+import FormItem from 'forms/formItem/formItem';
+import { FormProp, LoginFormStatus } from 'types/formTypes';
 import LoginFormButtons from './loginFormButtons/loginFormButtons';
 import LoginFormInputs from './loginFormInputs/loginFormInputs';
 import LoginFormSocial from './loginFormSocial/loginFormSocial';
 
 interface Props {
   form: FormProp;
-  formStatus: any;
-  setFormStatus: any;
+  formStatus: LoginFormStatus;
+  hasIncorrectCreds: boolean;
+  setFormStatus: (status: LoginFormStatus) => void;
 }
 
 const LoginFormComponent: React.FC<Props> = ({
   form,
   formStatus,
+  hasIncorrectCreds,
   setFormStatus,
 }) => (
   <>
+    {
+      hasIncorrectCreds && (
+        <FormItem fieldName="alert" form={form}>
+          <Alert
+            message="email or password is incorrect"
+          />
+        </FormItem>
+      )
+    }
     <LoginFormInputs form={form} formStatus={formStatus} />
     <LoginFormButtons
       form={form}

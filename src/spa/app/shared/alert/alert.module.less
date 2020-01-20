@@ -1,0 +1,20 @@
+@import "~styles/_colors";
+@import "~styles/_fonts";
+
+.alert {
+  align-items: center;
+  background-color: @yellowHalf;
+  display: flex;
+  padding: 0.5rem 0.9375rem;
+
+  > svg {
+    margin-right: 0.375rem;
+  }
+
+  :global {
+    .ant-alert-message {
+      color: @black;
+      font-family: @poppins;
+    }
+  }
+}

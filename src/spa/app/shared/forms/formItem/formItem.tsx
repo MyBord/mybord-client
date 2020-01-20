@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Form } from 'antd';
-import { FormProp } from 'types/formTypes';
+import { GetFieldDecoratorOptionsType, FormProp } from 'types/formTypes';
 
 interface Props {
   children: React.ReactNode;
@@ -29,7 +29,7 @@ const FormItem: React.FC<Props> = ({
     rules.push({ type, message: typeMessage });
   }
 
-  const options = {
+  const options: GetFieldDecoratorOptionsType = {
     rules,
   };
 

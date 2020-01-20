@@ -18,6 +18,9 @@ add password validation
 embed captcha for signup
 export default Form.create()(TemplateInput);
 make sure everything is wrapped in a form item, and checkbox is default unchecked
+add spinner for login and signup buttons
+handle error when username or password is incorrect
+handle redirect when logged in successfully
 
 # UI Improvements
 make spinner fade in and fade out
