@@ -16,8 +16,8 @@ const LoginFormInputs: React.FC<Props> = ({ form, formStatus }) => (
       form={form}
       required
       requiredMessage="Please enter your email address."
-      type="email"
-      typeMessage="You entered an invalid email address."
+      type={formStatus === 'signUp' && 'email'}
+      typeMessage={formStatus === 'signUp' && 'You entered an invalid email address'}
     >
       <TextInput placeholder="Email" />
     </FormItem>

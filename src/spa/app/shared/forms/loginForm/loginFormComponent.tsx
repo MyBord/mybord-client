@@ -20,15 +20,12 @@ const LoginFormComponent: React.FC<Props> = ({
   setFormStatus,
 }) => (
   <>
-    {
-      hasIncorrectCreds && (
-        <FormItem fieldName="alert" form={form}>
-          <Alert
-            message="email or password is incorrect"
-          />
-        </FormItem>
-      )
-    }
+    <FormItem fieldName="alert" form={form}>
+      <Alert
+        message="email or password is incorrect"
+        showAlert={hasIncorrectCreds}
+      />
+    </FormItem>
     <LoginFormInputs form={form} formStatus={formStatus} />
     <LoginFormButtons
       form={form}
