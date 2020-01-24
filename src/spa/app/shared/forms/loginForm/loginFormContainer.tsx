@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { Form } from 'antd';
-import { useMutation } from '@apollo/react-hooks';
+import { useMutation, useLazyQuery } from '@apollo/react-hooks';
 import { FormProp, LoginFormStatus } from 'types/formTypes';
 import handleError from 'server/errors/handleError';
-import { LOGIN_USER } from 'schema/users';
+import { IS_AUTHENTICATED, LOGIN_USER } from 'schema/users';
 import LoginFormComponent from './loginFormComponent';
 import * as styles from './loginForm.module.less';
 import './loginForm.less';
@@ -15,7 +15,8 @@ interface Props {
 const LoginForm: React.FC<Props> = ({ form }) => {
   const [formStatus, setFormStatus] = React.useState<LoginFormStatus>('login');
   const [hasIncorrectCreds, setHasIncorrectCreds] = React.useState(false);
-  const [loginUser, { data }] = useMutation(LOGIN_USER);
+  const [loginUser] = useMutation(LOGIN_USER);
+  const [isAuthenticated, { called, data, loading }] = useLazyQuery(IS_AUTHENTICATED);
 
   // @ts-ignore // ToDo: remove ts ignore
   const handleLogin = async (): void => {
@@ -33,8 +34,6 @@ const LoginForm: React.FC<Props> = ({ form }) => {
         setHasIncorrectCreds(true);
       }
     }
-    console.log('user data:');
-    console.log(data);
   };
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
@@ -43,10 +42,16 @@ const LoginForm: React.FC<Props> = ({ form }) => {
       if (!error) {
         if (formStatus === 'login') {
           handleLogin();
+          isAuthenticated();
         }
       }
     });
   };
+
+  if (called && !loading) {
+    console.log('@@@@@@@@@@@@@@@@@');
+    console.log(data);
+  }
 
   return (
     <Form
