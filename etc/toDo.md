@@ -24,6 +24,7 @@ add tooltips for long titles
 when clicking play for youtube video, hide play button
 add transition to player circle being shown on and off when hovering on and off
 when clicking play button on youtube video and youtube isn't ready yet, have button show spinner
+create skeletons for login page, etc for slow network
 
 ## Navigation:
 
