@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Form } from 'antd';
-import { useMutation, useLazyQuery, useApolloClient } from '@apollo/react-hooks';
+import { useLazyQuery, useMutation } from '@apollo/react-hooks';
 import { FormProp, LoginFormStatus } from 'types/formTypes';
 import handleError from 'server/errors/handleError';
 import { IS_AUTHENTICATED, LOGIN_USER } from 'schema/users';
@@ -16,13 +16,6 @@ const LoginForm: React.FC<Props> = ({ form }) => {
   const [formStatus, setFormStatus] = React.useState<LoginFormStatus>('login');
   const [hasIncorrectCreds, setHasIncorrectCreds] = React.useState(false);
   const [isAuthenticated, { called, data, loading }] = useLazyQuery(IS_AUTHENTICATED);
-  const client = useApolloClient();
-  // const [loginUser] = useMutation(LOGIN_USER, {
-  //   async onCompleted() {
-  //     const isAuthenticatedResults = await client.query({ query: IS_AUTHENTICATED });
-  //     console.log(isAuthenticatedResults);
-  //   },
-  // });
   const [loginUser] = useMutation(LOGIN_USER);
 
   // @ts-ignore // ToDo: remove ts ignore
@@ -35,6 +28,7 @@ const LoginForm: React.FC<Props> = ({ form }) => {
           password: values.password,
         },
       });
+      isAuthenticated();
     } catch (error) {
       const { status } = handleError(error);
       if (status === 401) {
@@ -49,7 +43,6 @@ const LoginForm: React.FC<Props> = ({ form }) => {
       if (!error) {
         if (formStatus === 'login') {
           handleLogin();
-          isAuthenticated();
         }
       }
     });
