@@ -1,32 +1,43 @@
-// import * as React from 'react';
-// import { BrowserRouter } from 'react-router-dom';
-// import App from 'app/app';
-// import ErrorBoundary from 'app/errorBoundary/errorBoundary';
-// import Layout from 'layout/layout';
-//
-// const Spa: React.FC = () => (
-//   <BrowserRouter>
-//     <Layout>
-//       <ErrorBoundary>
-//         <App />
-//       </ErrorBoundary>
-//     </Layout>
-//   </BrowserRouter>
-// );
-//
-// export default Spa;
-
 import * as React from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import LandingPage from 'pages/landingPage/landingPage';
-import ErrorBoundary from 'app/errorBoundary/errorBoundary';
+import SpaProviders from 'context/spaProviders';
+import App from 'app/app';
 
 const Spa: React.FC = () => (
   <BrowserRouter>
-    <ErrorBoundary>
-      <LandingPage />
-    </ErrorBoundary>
+    <SpaProviders>
+      <App />
+    </SpaProviders>
   </BrowserRouter>
 );
 
 export default Spa;
+//
+//
+// import * as React from 'react';
+// import { BrowserRouter } from 'react-router-dom';
+// import ErrorBoundary from 'app/errorBoundary/errorBoundary';
+// import LandingPage from 'pages/landingPage/landingPage';
+// import SpaProviders from 'context/spaProviders';
+// import { useAuthenticationContext } from 'context/authenticationContext';
+//
+// const Spa: React.FC = () => {
+//   const { userAuthentication } = useAuthenticationContext();
+//   console.log(userAuthentication);
+//
+//   return (
+//     <BrowserRouter>
+//       <ErrorBoundary>
+//         <SpaProviders>
+//           {
+//             userAuthentication.isAuthenticated
+//               ? <h1>logged in</h1>
+//               : <LandingPage />
+//           }
+//         </SpaProviders>
+//       </ErrorBoundary>
+//     </BrowserRouter>
+//   );
+// };
+//
+// export default Spa;

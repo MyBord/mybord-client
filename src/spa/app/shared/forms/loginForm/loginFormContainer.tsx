@@ -1,10 +1,11 @@
 import * as React from 'react';
 import { Form } from 'antd';
 import { useLazyQuery, useMutation } from '@apollo/react-hooks';
-import { FormProp, LoginFormStatus } from 'types/formTypes';
-import handleError from 'server/errors/handleError';
-import { IS_AUTHENTICATED, LOGIN_USER } from 'schema/users';
 import LoginFormComponent from './loginFormComponent';
+import handleError from 'server/errors/handleError';
+import { FormProp, LoginFormStatus } from 'types/formTypes';
+import { IS_AUTHENTICATED, LOGIN_USER } from 'schema/users';
+import { useAuthenticationContext } from 'context/authenticationContext';
 import * as styles from './loginForm.module.less';
 import './loginForm.less';
 
@@ -17,6 +18,7 @@ const LoginForm: React.FC<Props> = ({ form }) => {
   const [hasIncorrectCreds, setHasIncorrectCreds] = React.useState(false);
   const [isAuthenticated, { called, data, loading }] = useLazyQuery(IS_AUTHENTICATED);
   const [loginUser] = useMutation(LOGIN_USER);
+  const { authenticateUser } = useAuthenticationContext();
 
   // @ts-ignore // ToDo: remove ts ignore
   const handleLogin = async (): void => {
@@ -29,6 +31,7 @@ const LoginForm: React.FC<Props> = ({ form }) => {
         },
       });
       isAuthenticated();
+      authenticateUser();
     } catch (error) {
       const { status } = handleError(error);
       if (status === 401) {

@@ -16,6 +16,7 @@
       "app/*": ["src/spa/app/*"],
       "assets/*": ["src/assets/*"],
       "buttons/*": ["src/spa/app/shared/buttons/*"],
+      "context/*": ["src/context/*"],
       "forms/*": ["src/spa/app/shared/forms/*"],
       "gapi/*": ["src/thirdParty/gapi/*"],
       "header/*": ["src/spa/layout/header/*"],
