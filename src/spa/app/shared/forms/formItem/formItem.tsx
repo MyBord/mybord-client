@@ -36,11 +36,7 @@ const FormItem: React.FC<Props> = ({
   return (
     <Form.Item>
       {
-        form.getFieldDecorator(fieldName, options)(
-          <div>
-            {children}
-          </div>,
-        )
+        form.getFieldDecorator(fieldName, options)(children)
       }
     </Form.Item>
   );
