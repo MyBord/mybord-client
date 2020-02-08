@@ -9,6 +9,8 @@ interface Props {
 
 const LoginFormSocial: React.FC<Props> = ({ formStatus }) => {
   switch (formStatus) {
+    case 'forgot':
+      return null;
     case 'login':
       return <LoginFormLoginSocial />;
     case 'signUp':
