@@ -1,43 +1,25 @@
 import * as React from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import SpaProviders from 'context/spaProviders';
 import App from 'app/app';
+import Landing from 'landing/landing';
+import SpaProviders from 'context/spaProviders';
+import { useAuthenticationContext } from 'context/authenticationContext';
+
+const SpaContent: React.FC = () => {
+  const { userAuthentication } = useAuthenticationContext();
+  if (userAuthentication.isAuthenticated) {
+    return <App />
+  }
+  return <Landing />
+};
 
 const Spa: React.FC = () => (
   <BrowserRouter>
     <SpaProviders>
-      <App />
+      <SpaContent />
     </SpaProviders>
   </BrowserRouter>
 );
 
+
 export default Spa;
-//
-//
-// import * as React from 'react';
-// import { BrowserRouter } from 'react-router-dom';
-// import ErrorBoundary from 'app/errorBoundary/errorBoundary';
-// import LandingPage from 'pages/landingPage/landingPage';
-// import SpaProviders from 'context/spaProviders';
-// import { useAuthenticationContext } from 'context/authenticationContext';
-//
-// const Spa: React.FC = () => {
-//   const { userAuthentication } = useAuthenticationContext();
-//   console.log(userAuthentication);
-//
-//   return (
-//     <BrowserRouter>
-//       <ErrorBoundary>
-//         <SpaProviders>
-//           {
-//             userAuthentication.isAuthenticated
-//               ? <h1>logged in</h1>
-//               : <LandingPage />
-//           }
-//         </SpaProviders>
-//       </ErrorBoundary>
-//     </BrowserRouter>
-//   );
-// };
-//
-// export default Spa;

@@ -1,5 +1,6 @@
 https://github.com/apollographql/apollo-client/issues/5143
 update architecture docs
+make error page and 404 page for landing routes
 
 ## login form
 * Priorities

@@ -7,11 +7,9 @@ interface Props {
 }
 
 const Checkbox: React.FC<Props> = ({ label }) => (
-  <Form.Item>
-    <AntCheckbox>
-      {label}
-    </AntCheckbox>
-  </Form.Item>
+  <AntCheckbox>
+    {label}
+  </AntCheckbox>
 );
 
 export default Checkbox;
