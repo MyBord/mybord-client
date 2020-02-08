@@ -5,4 +5,4 @@ export type GetFieldDecoratorOptionsType = GetFieldDecoratorOptions;
 
 export type FormProp = FormProps['form'];
 
-export type LoginFormStatus = 'login' | 'signUp';
+export type LoginFormStatus = 'forgot' | 'login' | 'signUp';

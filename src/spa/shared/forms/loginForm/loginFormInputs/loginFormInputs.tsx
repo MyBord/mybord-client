@@ -21,14 +21,18 @@ const LoginFormInputs: React.FC<Props> = ({ form, formStatus }) => (
     >
       <TextInput placeholder="Email" />
     </FormItem>
-    <FormItem
-      fieldName="password"
-      form={form}
-      required
-      requiredMessage="Please enter your password."
-    >
-      <PasswordInput placeholder="Password" />
-    </FormItem>
+    {
+      formStatus !== 'forgot' && (
+        <FormItem
+          fieldName="password"
+          form={form}
+          required
+          requiredMessage="Please enter your password."
+        >
+          <PasswordInput placeholder="Password" />
+        </FormItem>
+      )
+    }
     {
       formStatus === 'signUp' && (
         <FormItem

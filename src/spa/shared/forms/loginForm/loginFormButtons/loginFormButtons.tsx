@@ -13,6 +13,9 @@ interface Props {
 }
 
 const LoginFormButtons: React.FC<Props> = ({ form, formStatus, setFormStatus }) => {
+  const handleForgot = (): void => {
+    setFormStatus('forgot');
+  };
   const handleLogin = (): void => {
     setFormStatus('login');
   };
@@ -22,54 +25,62 @@ const LoginFormButtons: React.FC<Props> = ({ form, formStatus, setFormStatus }) 
 
   return (
     <>
-      <div className={styles.rememberForgotDiv}>
-        <FormItem
-          fieldName="remember-me"
-          form={form}
-        >
-          <Checkbox label="Remember Me" />
-        </FormItem>
-        {
-          formStatus === 'login' && (
+      {
+        formStatus !== 'forgot' && (
+          <div className={styles.rememberForgotDiv}>
             <FormItem
-              fieldName="forgot-password"
+              fieldName="remember-me"
               form={form}
             >
-              <Anchor label="Forgot Password?" link="https://www.google.com" />
+              <Checkbox label="Remember Me" />
             </FormItem>
-          )
-        }
-      </div>
+            {
+              formStatus === 'login' && (
+                <FormItem
+                  fieldName="forgot-password"
+                  form={form}
+                >
+                  <Anchor label="Forgot Password?" onClick={handleForgot} />
+                </FormItem>
+              )
+            }
+          </div>
+        )
+      }
       <div className={[
         styles.buttonDiv,
         formStatus === 'login' ? styles.loginDiv : styles.signUpDiv,
       ].join(' ')}
       >
         {
-          formStatus === 'login' && (
+          formStatus !== 'signUp' && (
             <FormItem
-              fieldName="login"
+              fieldName={formStatus === 'login' ? 'login' : 'reset-password'}
               form={form}
             >
               <Button
                 htmlType="submit"
-                label="Login"
+                label={formStatus === 'login' ? 'Login' : 'Reset Password'}
                 onClick={handleLogin}
               />
             </FormItem>
           )
         }
-        <FormItem
-          fieldName="sign-up"
-          form={form}
-        >
-          <Button
-            htmlType={formStatus === 'login' ? 'button' : 'submit'}
-            label="Sign Up"
-            onClick={handleSignUp}
-            type={formStatus === 'login' ? 'secondary' : 'primary'}
-          />
-        </FormItem>
+        {
+          formStatus !== 'forgot' && (
+            <FormItem
+              fieldName="sign-up"
+              form={form}
+            >
+              <Button
+                htmlType={formStatus === 'signUp' ? 'submit' : 'button'}
+                label="Sign Up"
+                onClick={handleSignUp}
+                type={formStatus === 'login' ? 'secondary' : 'primary'}
+              />
+            </FormItem>
+          )
+        }
         {
           formStatus === 'signUp' && (
             <FormItem

@@ -32,7 +32,11 @@ const LoginFormComponent: React.FC<Props> = ({
       formStatus={formStatus}
       setFormStatus={setFormStatus}
     />
-    <LoginFormSocial formStatus={formStatus} />
+    {
+      formStatus !== 'forgot' && (
+        <LoginFormSocial formStatus={formStatus} />
+      )
+    }
   </>
 );
 

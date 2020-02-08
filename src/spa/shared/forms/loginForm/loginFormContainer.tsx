@@ -43,8 +43,14 @@ const LoginForm: React.FC<Props> = ({ form }) => {
     event.preventDefault();
     form.validateFields((error) => {
       if (!error) {
-        if (formStatus === 'login') {
+        if (formStatus === 'forgot') {
+          console.log('forgot submit handler');
+        } else if (formStatus === 'login') {
           handleLogin();
+        } else if (formStatus === 'signUp') {
+          console.log('signup submit handler');
+        } else {
+          throw new Error('Unexpected status');
         }
       }
     });
@@ -59,6 +65,7 @@ const LoginForm: React.FC<Props> = ({ form }) => {
     // or 2. return a 401 error, which is already handled in `handleLogin`. Thus, this block
     // should never be reached and should probably be thrown to an error reporting tool such
     // as sentry.
+    throw new Error('Unable to authenticate');
   }
 
   return (
