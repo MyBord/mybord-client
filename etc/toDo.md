@@ -1,4 +1,5 @@
 https://github.com/apollographql/apollo-client/issues/5143
+update architecture docs
 
 ## login form
 * Priorities

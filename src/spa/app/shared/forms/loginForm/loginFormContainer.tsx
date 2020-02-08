@@ -31,7 +31,6 @@ const LoginForm: React.FC<Props> = ({ form }) => {
         },
       });
       isAuthenticated();
-      authenticateUser();
     } catch (error) {
       const { status } = handleError(error);
       if (status === 401) {
@@ -52,8 +51,14 @@ const LoginForm: React.FC<Props> = ({ form }) => {
   };
 
   if (called && !loading) {
-    console.log('@@@@@@@@@@@@@@@@@');
-    console.log(data);
+    if (data.isAuthenticated) {
+      authenticateUser();
+    }
+    // Note: the else block should never be reached because when attempting to login the user, the
+    // server should either 1. successfully login the user, and thus they are authenticated,
+    // or 2. return a 401 error, which is already handled in `handleLogin`. Thus, this block
+    // should never be reached and should probably be thrown to an error reporting tool such
+    // as sentry.
   }
 
   return (
@@ -71,5 +76,4 @@ const LoginForm: React.FC<Props> = ({ form }) => {
   );
 };
 
-const LoginFormContainer = Form.create()(LoginForm);
-export default LoginFormContainer;
+export default Form.create()(LoginForm);
