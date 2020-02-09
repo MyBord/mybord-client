@@ -14,7 +14,8 @@ const LoginFormForgotButtons: React.FC<Props> = ({ form }) => {
   };
 
   return (
-    <div className={styles.buttonDiv}>
+    <div className={[styles.buttonDiv, styles.forgotButtonDiv].join(' ')}>
+      <div className={styles.forgotDiv} />
       <FormItem
         fieldName="reset-password"
         form={form}
