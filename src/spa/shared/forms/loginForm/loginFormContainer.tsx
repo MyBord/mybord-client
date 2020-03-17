@@ -57,15 +57,17 @@ const LoginForm: React.FC<Props> = ({ form }) => {
   };
 
   if (called && !loading) {
-    if (data.isAuthenticated) {
-      authenticateUser();
-    }
+    console.log('55555555555');
+    console.log(data);
+    // if (data.isAuthenticated) {
+    //   authenticateUser();
+    // }
     // Note: the else block should never be reached because when attempting to login the user, the
     // server should either 1. successfully login the user, and thus they are authenticated,
     // or 2. return a 401 error, which is already handled in `handleLogin`. Thus, this block
     // should never be reached and should probably be thrown to an error reporting tool such
     // as sentry.
-    throw new Error('Unable to authenticate');
+    // throw new Error('Unable to authenticate'); // ToDo: turn back on
   }
 
   return (
