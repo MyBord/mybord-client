@@ -15,12 +15,14 @@ This document is used to outline current project management priorities.
   * add stylelint
   * fix failing tests
   * outline project management here
+  * add tooltip for nav
+  * add hover state for nav
 
 ### B. High
 
   * when clicking play for youtube video, hide play button
-add transition to player circle being shown on and off when hovering on and off
-when clicking play button on youtube video and youtube isn't ready yet, have button show spinner
+  * add transition to player circle being shown on and off when hovering on and off
+  * when clicking play button on youtube video and youtube isn't ready yet, have button show spinner
 
 ### C. Medium
 
