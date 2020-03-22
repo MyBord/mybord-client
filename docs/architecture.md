@@ -1,18 +1,51 @@
 # Architecture Guide
 
-This summarizes the general architecture behind the MyBord codebase.
+This summarizes the general architecture behind the MyBord front-end codebase.
 
 ## Table of Contents
 
-* [I. Root](#i-root)   
-* [II. src Folder](#ii-src-folder)
-* [III. server Folder](#iii-server-folder)
-* [IV. third party Folder](#iv-third-party-folder)
-* [V. spa folder](#v-spa-folder)
-* [V. app folder](#vi-app-folder)
-* [V. landing folder](#vii-landing-folder)
+* [I. Summary](#i-summary)   
+* [II. Architecture](#ii-architecture)   
+  * [A. Root Folder](#a-root)
+  * [B. src Folder](#b-src-folder)
+  * [C. server Folder](#c-server-folder)
+  * [D. third party Folder](#d-third-party-folder)
+  * [E. spa folder](#e-spa-folder)
+  * [F. app folder](#f-app-folder)
+  * [G. landing folder](#g-landing-folder)
+* [III. Additional Resources](#iii-additional-resources)   
 
-## I. Root
+## I. Summary
+
+Architecture throughout the codebase, and the documentation behind them, should accomplish the
+following:
+
+* **Scalability:**
+    * To support the application's continuous growth both in terms of volume and complexity.
+* **Team growth:**
+    * If and when a development team grows, to enable multiple developers with various expertise
+    levels to collaborate and develop on the application simultaneously. This should allow
+    development to occur in the following ways:
+        * Allows developers to easily work independently on the application without having to worry
+        about other developers interfering with their code. Allows developers to not have to worry
+        about learning or worrying about other areas of the application in which they do not own
+        (multiple developers simultaneously building different components without having to worry
+        about how other teammates are building those components and how said components work).
+        * Enable teammates to collaborate easily and understand each other's work quickly given a
+        development structure / architecture.
+* **DRY-ability:**
+    * Reduce redundancies in the codebase as well as make it easy to reduce future redundancies.
+* **Learn-ability:**
+    * Structure the application in such a way that it is easily understandable and easy for new
+    developers to join and quickly begin developing. This will reduce the team's bus factor,
+    making sure that one of our high points of failure is not having to lose a developer with highly
+    developed domain knowledge.
+
+## II. Architecture
+
+The following outlines how the MyBord front-end codebase is architected.
+
+### A. Root
 
 The following architecture details are concerned with what should be contained in the root of the
 application folder.
@@ -89,7 +122,7 @@ application folder.
 * **`yarn.lock`:**
   * yarn's package lock file.
 
-## II. src folder
+### B. src folder
 
 The src folder contains the source code for our application and is organized in the following
 manner:
@@ -125,16 +158,16 @@ src/
   * Data to be re-used for things like tests, mock api's, storybooks, and more.
 * **server/:**
   * The folder that contains how the application communicates to the backend. See the [server
-   folder outline](#iii-server-folder) for additional details.
+   folder outline](#c-server-folder) for additional details.
 * **spa/:**
   * The folder that contains the react application source code. See the 
-  [spa folder outline](#v-spa-folder) for additional details.
+  [spa folder outline](#e-spa-folder) for additional details.
 * **styles/:**
   * Contains all global styling. Note that styling dedicated to individual components should be
    stored in the components folders within the react folder.
 * **thirdParty/:**
   * Javascript and react code used for integrating third party tooling such as Storybook. See the
-  [third party folder outline](#iv-third-party-folder) for additional details.
+  [third party folder outline](#d-third-party-folder) for additional details.
 * **types/:**
   * Folder containing types and interfaces used across the app.
 * **utils/:**
@@ -146,7 +179,7 @@ src/
 * **`index.tsx`:**
   * The executable javascript of the app.
 
-## III. server folder
+### C. server folder
 
 The server folder contains contains how the application communicates to the backend and is organized
 in the following manner:
@@ -164,7 +197,7 @@ src/
   * This folder should mirror our backend graphql schema for all related graphql queries, mutations,
   and subscriptions.
   
-## IV. third party folder
+### D. third party folder
 
 The third party folder contains javascript and react code used for integrating third party
 tooling. It is organized in the following manner:
@@ -191,7 +224,7 @@ src/
 * **storybook/:**
   * Folder containing storybook code and universal tooling / wrapper.
 
-## V. spa folder
+### E. spa folder
 
 The spa folder contains the react application source code and is organized in the following manner:
 
@@ -206,10 +239,10 @@ src/
 
 * **app/:**
   * The source code for the MyBord application (once a user is able to login). For further
-   details, see the [app folder outline](#vi-app-folder).
+   details, see the [app folder outline](#f-app-folder).
 * **landing/:**
   * The source code for what users see and interact with when they are not logged in. For further
-   details, see the [landing folder outline](#vii-landing-folder).
+   details, see the [landing folder outline](#g-landing-folder).
 * **shared/:**   
   * This folder contains react components that are not exclusive to any route or page but are shared
    across the app (including possibly the landing page).
@@ -218,7 +251,7 @@ src/
   Delegates if the user should be directed to the 'app' application or the 'landing' application
   based on the users authentication.
   
-## VI. app folder
+### F. app folder
 
 The app folder contains the react source code for the MyBord application (when the user is
 authenticated), and is organized in the following manner:
@@ -248,7 +281,7 @@ src/
 * **`app.tsx`:**
   * The root app component.
 
-## VII. landing folder
+### G. landing folder
 
 The landing folder contains the react source code for what users interact with when they are not
 logged in / authenticated, and is organized in the following manner:
@@ -269,9 +302,10 @@ src/
 * **`landing.tsx`:**
   * The root landing component.
 
-# III. Additional Resources
+## III. Additional Resources
 
-Here are some additional resources regarding structuring a react / redux app:
+Here are some additional resources regarding structuring a react application (as well as redux
+related content if you need):
 
 * [redux.js.org: suggested code structure (official Redux recommendations)](https://redux.js.org/faq/code-structure)
 * [reactjs.org: file structure recommendations (official React recommendations)](https://reactjs.org/docs/faq-structure.html)
