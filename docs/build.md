@@ -7,12 +7,12 @@ This summarizes the build process for the MyBord codebase as well as any other c
 * [II. ESLint](#ii-eslint)
 * [III. Importing](#iii-importing)
 * [IV. Testing and Jest](#iv-testing-and-jest)
-* [V. Webpack](#v-webpack)
-* [VI. Yarn](#vi-yarn)
+* [V. Yarn](#v-yarn)
 
 ## I. Babel
 
 ### A. Summary
+
 Babel is a javascript compiler. Its configs can be found at
 [.babelrc](https://github.com/jimmy-e/mybord/blob/master/.babelrc).
 
@@ -33,6 +33,7 @@ Note: for babel preset-env, declaring `"useBuiltIns": true` tells babel to handl
 * [Documentation](https://babeljs.io/docs/en/babel-preset-react)
 
 #### i. @babel/preset-env
+
 "@babel/preset-env is a smart preset that allows you to use the latest JavaScript without needing to
 micromanage which syntax transforms (and optionally, browser polyfills) are needed by your target
 environment(s). This both makes your life easier and JavaScript bundles smaller!"
@@ -300,10 +301,12 @@ In order to implement aliased importing when using Typescript, we need to add ou
 * [Webpack resolve configation](https://webpack.js.org/configuration/resolve/).
 
 ## IV. Testing and Jest
+
 `package.json` is configured to run jest by running the command `yarn test`. If you want to watch
 your test files, you can use the command `jest --watch`.
 
 ### B. `jest.config.js`
+
 `jest.config.js` is stored in the root of the directory and is the jest configuration file. You 
 can see more details [here](https://jestjs.io/docs/en/configuration).
 
@@ -320,18 +323,13 @@ module's location.
 files.
 
 ### B. `setupTests.js`
+
 `setupTests.js` is stored in the root of the directory and runs every time jest is run. It does 
 the following:
 
 * Creates a new enzyme adapter.
 
-## V. Webpack
-
-### Resolve
-Webpack provides options to change how modules are resolved and thus provide easier syntactic 
-imports. [Source](https://webpack.js.org/configuration/resolve/).
-
-## VI. Yarn
+## V. Yarn
 
 ### A. Yarn Commands
 
@@ -345,9 +343,9 @@ imports. [Source](https://webpack.js.org/configuration/resolve/).
     * remove the `dist` folder.
   * `copy-index`
     * copy the source `index.html` file to the `dist` folder.
-  * `devWebpack`
+  * `webpack:dev`
     * run webpack with the dev configurations.
-  * `prodWebpack`
+  * `webpack:prod`
     * run webpack with the prod configurations.
   * `start`
     * run a local version of the application.
@@ -355,14 +353,3 @@ imports. [Source](https://webpack.js.org/configuration/resolve/).
     * build a dev build of the application.
   * `build:prod`
     * build a prod build of the application.
-    
-### B. Using Yarn
-
-How to:
-
-  * Run tests: `yarn test`
-  * Run storybook: `yarn storybook`
-  * Build storybook: `yarn build-storybook`
-  * Run the application locally: `yarn start`
-  * Build a dev application: `yarn build:dev`
-  * Build a prod application: `yarn build:prod`
