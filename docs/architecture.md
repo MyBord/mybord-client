@@ -57,7 +57,6 @@ application folder.
   dist/
   docs/
   etc/
-    |- toDo.md
     |- prToDo.md
   node_modules/
   src/
@@ -85,8 +84,6 @@ application folder.
   * folder that contains the app build.
 * **docs/:**
   * folder that contains the app documentation.
-* **`etc/toDo.md`:**
-  * a space to put notes regarding the application in general and project management.
 * **`etc/prToDo.md`:**
   * a space to put notes regarding a current branch / pr.
 * **`node_modules`:**
