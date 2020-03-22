@@ -1,3 +1,11 @@
+architecture docs about principles
+react principles and other principles
+inspect docs on github
+stylelint
+yarn commands
+fix failing tests
+outline project management here
+
 https://github.com/apollographql/apollo-client/issues/5143
 update architecture docs
 make error page and 404 page for landing routes

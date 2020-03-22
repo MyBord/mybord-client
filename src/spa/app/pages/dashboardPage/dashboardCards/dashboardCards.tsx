@@ -2,7 +2,7 @@ import * as React from 'react';
 import YoutubeCard from 'shared/cards/youtubeCard/youtubeCard';
 import PhantomCard from 'shared/cards/phantomCard/phantomCard';
 import getYoutubeId from 'utils/getYoutubeId';
-import videos from 'static/videos';
+import videos from 'mockData/mockVideoList';
 import * as styles from './dashboardCards.module.less';
 
 const DashboardCards: React.FC = () => (
