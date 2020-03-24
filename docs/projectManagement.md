@@ -11,8 +11,6 @@ This document is used to outline current project management priorities.
 
 ### A. Highest
   
-  * update README at root
-  * inspect docs on github
   * add tooltip for nav
   * add hover state for nav
 
