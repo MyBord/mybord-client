@@ -16,7 +16,7 @@ the following:
   * Build  
     * [Webpack](https://webpack.js.org)
     * [Babel](https://babeljs.io)
-    * [EsLint](https://eslint.org)
+    * [ESLint](https://eslint.org)
     * [CircleCI](https://circleci.com)
   * Testing  
     * [Jest](https://jestjs.io)
@@ -30,11 +30,11 @@ the following:
     * [Framer Motion](https://www.framer.com/motion/)
     * [Lottie](https://airbnb.io/lottie/#/)
 
-Further documentation can be below:
+Further documentation can be found below:
 
   * [Architecture](https://github.com/jimmy-e/mybord/tree/master/docs/architecture.md)
   * [Build Process](https://github.com/jimmy-e/mybord/tree/master/docs/build.md)
   * [Product Outline](https://github.com/jimmy-e/mybord/tree/master/docs/productOutline.md)
   * [Project Management](https://github.com/jimmy-e/mybord/tree/master/docs/projectManagement.md)
   * [React Implementation, architecture & principles](https://github.com/jimmy-e/mybord/tree/master/docs/react.md)
-  * [Storybook Configuration, build process, and implementation](https://github.com/jimmy-e/mybord/tree/master/docs/react.md)
+  * [Storybook Configuration, build process, and implementation](https://github.com/jimmy-e/mybord/tree/master/docs/storybook.md)
