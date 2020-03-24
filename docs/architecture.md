@@ -63,6 +63,8 @@ application folder.
   .babelrc
   .eslintrc.js
   .gitignore
+  .stylelintignore
+  .stylelintrc
   .jest.config.js
   package.json
   postcss.config.js
@@ -96,6 +98,10 @@ application folder.
   * eslint configs.
 * **`.gitignore`:**
   * configuration list of git ignores.
+* **`.stylelintignore`:**
+  * configuration of folders for stylelint to ignore.
+* **`.stylelintrc`:**
+  * configuration of stylelint rules.
 * **`.jest.config.js`:**
   * jest configs.
 * **`package.json`:**
