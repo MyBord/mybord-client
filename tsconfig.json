@@ -34,12 +34,11 @@
       "schema/*": ["src/server/schema/*"],
       "server/*": ["src/server/*"],
       "shared/*": ["src/spa/shared/*"],
-      "static/*": ["src/static/*"],
       "storybook/*": ["src/thirdParty/storybook/*"],
       "styles/*": ["src/styles/*"],
       "typography/*": ["src/spa/shared/typography/*"],
       "types/*": ["src/types/*"],
-      "utils/*": ["src/types/*"]
+      "utils/*": ["src/utils/*"]
     }
   }
 }

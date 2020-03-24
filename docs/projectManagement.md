@@ -13,7 +13,6 @@ This document is used to outline current project management priorities.
   
   * update README at root
   * inspect docs on github
-  * add stylelint
   * fix failing tests
   * outline project management here
   * add tooltip for nav

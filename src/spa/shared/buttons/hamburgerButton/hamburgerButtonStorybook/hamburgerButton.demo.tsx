@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { action } from '@storybook/addon-actions';
 import useToggleLottie from 'hooks/useToggleLottie';
-import HamburgerButton from './hamburgerButton';
+import HamburgerButton from '../hamburgerButton';
 
 const HamburgerButtonDemo: React.FC = () => {
   const [direction, isStopped, toggleLottie] = useToggleLottie();
