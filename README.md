@@ -33,8 +33,8 @@ the following:
 Further documentation can be below:
 
   * [Architecture](https://github.com/jimmy-e/mybord/tree/master/docs/architecture.md)
-  * [Build Process](https://github.com/jimmy-e/mybord/tree/master/docs/build.md).
-  * [Product Outline](https://github.com/jimmy-e/mybord/tree/master/docs/productOutline.md).
-  * [Project Management](https://github.com/jimmy-e/mybord/tree/master/docs/projectManagement.md).
-  * [React Implementation, architecture & principles](https://github.com/jimmy-e/mybord/tree/master/docs/react.md).
-  * [Storybook Configuration, build process, and implementation](https://github.com/jimmy-e/mybord/tree/master/docs/react.md).
+  * [Build Process](https://github.com/jimmy-e/mybord/tree/master/docs/build.md)
+  * [Product Outline](https://github.com/jimmy-e/mybord/tree/master/docs/productOutline.md)
+  * [Project Management](https://github.com/jimmy-e/mybord/tree/master/docs/projectManagement.md)
+  * [React Implementation, architecture & principles](https://github.com/jimmy-e/mybord/tree/master/docs/react.md)
+  * [Storybook Configuration, build process, and implementation](https://github.com/jimmy-e/mybord/tree/master/docs/react.md)
