@@ -28,6 +28,7 @@ module.exports = {
     '^layout(.*)$': '<rootDir>/src/spa/app/layout$1',
     '^lotty(.*)$': '<rootDir>/src/thirdParty/lotty$1',
     '^mockData(.*)$': '<rootDir>/src/mockData$1',
+    '^modals(.*)$': '<rootDir>/src/spa/shared/modals$1',
     '^navigation(.*)$': '<rootDir>/src/spa/app/layout/navigation$1',
     '^pages(.*)$': '<rootDir>/src/spa/app/pages$1',
     '^routing(.*)$': '<rootDir>/src/spa/app/routing$1',

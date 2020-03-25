@@ -13,6 +13,8 @@ This document is used to outline current project management priorities.
   
   * add tooltip for nav
   * add hover state for nav
+  * fix why pages aren't working
+  * disable chrome tooltip from showing up when hovering over icon
 
 ### B. High
 

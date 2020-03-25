@@ -28,6 +28,7 @@
       "layout/*": ["src/spa/app/layout/*"],
       "lotty/*": ["src/thirdParty/lotty/*"],
       "mockData/*": ["src/mockData/*"],
+      "modals/*": ["src/spa/shared/modals/*"],
       "navigation/*": ["src/spa/app/layout/navigation/*"],
       "pages/*": ["src/spa/app/pages/*"],
       "routing/*": ["src/spa/app/routing/*"],

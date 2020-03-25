@@ -144,6 +144,7 @@ const config = {
       layout: path.resolve(__dirname, 'src/spa/app/layout/'),
       lotty: path.resolve(__dirname, 'src/thirdParty/lotty/'),
       mockData: path.resolve(__dirname, 'src/mockData/'),
+      modals: path.resolve(__dirname, 'src/spa/shared/modals/'),
       navigation: path.resolve(__dirname, 'src/spa/app/layout/navigation/'),
       pages: path.resolve(__dirname, 'src/spa/app/pages/'),
       routing: path.resolve(__dirname, 'src/spa/app/routing/'),
