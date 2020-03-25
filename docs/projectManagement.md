@@ -19,9 +19,12 @@ This document is used to outline current project management priorities.
   * when clicking play for youtube video, hide play button
   * add transition to player circle being shown on and off when hovering on and off
   * when clicking play button on youtube video and youtube isn't ready yet, have button show spinner
+  * fix shadows of card
+  * add 'add card button'
 
 ### C. Medium
 
+  * when clicking on navigation logo, should redirect to home page
   * make error page and 404 page for landing routes
   * login form
     * fix spacing
