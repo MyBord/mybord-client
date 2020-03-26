@@ -25,8 +25,8 @@ const YoutubeCardThumbnailContainer: React.FC<Props> = ({ youtubeVideoData }) =>
             transition={{ duration: 1 }}
           >
             <YoutubeCardThumbnailComponent
+              isYoutubePlayerLoaded={isYoutubePlayerLoaded}
               setShowYoutubePlayer={setShowYoutubePlayer}
-              showYoutubePlayer={showYoutubePlayer}
               youtubeVideoData={youtubeVideoData}
             />
           </motion.div>

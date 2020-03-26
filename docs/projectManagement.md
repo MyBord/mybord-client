@@ -10,11 +10,13 @@ This document is used to outline current project management priorities.
 ## I. Priority Levels
 
 ### A. Highest
+
+  * alignment with thumbs up and text is off
   
 ### B. High
 
-  * when clicking play button on youtube video and youtube isn't ready yet, have button show spinner
   * add header with filters and 'add card button'
+  * add ability to fetch data via graphql backend
 
 ### C. Medium
 

@@ -24,6 +24,7 @@
   cursor: pointer;
   height: 3.5rem;
   outline: none;
+  position: relative;
   transition: background 0.25s ease;
   width: 3.5rem;
   &:hover {
@@ -32,4 +33,11 @@
   &:active {
     background: @transparentBlackLighter;
   }
+}
+
+.spinnerContainer {
+  position: absolute;
+  left: 0;
+  opacity: 0.6;
+  top: 0;
 }
