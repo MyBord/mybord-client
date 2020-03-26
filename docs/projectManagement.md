@@ -11,15 +11,10 @@ This document is used to outline current project management priorities.
 
 ### A. Highest
   
-  * fix why pages aren't working
-
 ### B. High
 
-  * when clicking play for youtube video, hide play button
-  * add transition to player circle being shown on and off when hovering on and off
   * when clicking play button on youtube video and youtube isn't ready yet, have button show spinner
-  * fix shadows of card
-  * add 'add card button'
+  * add header with filters and 'add card button'
 
 ### C. Medium
 
