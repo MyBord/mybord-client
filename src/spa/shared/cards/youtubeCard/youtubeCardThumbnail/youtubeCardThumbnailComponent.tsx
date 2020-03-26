@@ -6,11 +6,14 @@ import * as styles from './youtubeCardThumbnail.module.less';
 
 interface Props {
   setShowYoutubePlayer?: (showYoutubePlayer: boolean) => void;
+  showYoutubePlayer: boolean;
   youtubeVideoData: YoutubeData;
 }
 
 const YoutubeCardThumbnailComponent: React.FC<Props> = ({
-  setShowYoutubePlayer, youtubeVideoData,
+  setShowYoutubePlayer,
+  showYoutubePlayer,
+  youtubeVideoData,
 }) => (
   <>
     <img
@@ -22,7 +25,7 @@ const YoutubeCardThumbnailComponent: React.FC<Props> = ({
       setShowYoutubePlayer
       && (
       <div className={styles.playButtonDiv}>
-        <PlayButton onClick={() => setShowYoutubePlayer(true)} />
+        <PlayButton onClick={() => setShowYoutubePlayer(true)} shouldSpin={!showYoutubePlayer} />
       </div>
       )
     }
