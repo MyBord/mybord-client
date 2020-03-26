@@ -29,6 +29,15 @@ the following:
     * [Storybook](https://storybook.js.org)
     * [Framer Motion](https://www.framer.com/motion/)
     * [Lottie](https://airbnb.io/lottie/#/)
+  * Component Library  
+    * [Ant Design](https://ant.design/)
+  * Icons  
+    * [Nucleo](https://nucleoapp.com/)
+    * [Lordicon](https://lordicon.com/)
+    * [shape.so](https://shape.so/)
+  * Illustrations
+    * [shape.so](https://shape.so/)
+    * [Lottie Files](https://lottiefiles.com/)
 
 Further documentation can be found below:
 
