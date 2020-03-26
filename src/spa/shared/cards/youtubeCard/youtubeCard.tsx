@@ -16,9 +16,7 @@ interface SamplePageProps {
 const YoutubeCardContainer: React.FC<SamplePageProps> = ({ videoId }) => {
   const youtubeVideoDataResource = api.getYoutubeVideoData(videoId);
   return (
-    <React.Suspense
-      fallback={<h1>Loading profile...</h1>}
-    >
+    <React.Suspense fallback={<h1>Loading profile...</h1>}>
       <YoutubeCard resource={youtubeVideoDataResource} />
     </React.Suspense>
   );
