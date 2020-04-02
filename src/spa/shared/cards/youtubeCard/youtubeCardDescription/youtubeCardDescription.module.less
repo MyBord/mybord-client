@@ -13,19 +13,23 @@
   margin-left: 0.25rem;
 }
 
-.iconDiv {
-  margin-right: 0.5rem;
-}
-
 .statsContainer {
-  align-items: center;
   display: flex;
   justify-content: space-between;
   margin: 0 0.75rem 0.75rem 0.75rem;
+  :first-child {
+    > p {
+      margin-top: 0.125rem;
+    }
+  }
 }
 
 .statsDiv {
+  align-items: center;
   display: flex;
+  > svg {
+    margin-right: 0.5rem;
+  }
 }
 
 .title {

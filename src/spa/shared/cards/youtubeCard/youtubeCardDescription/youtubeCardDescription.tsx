@@ -34,27 +34,21 @@ const YoutubeCardDescription: React.FC<Props> = ({ youtubeVideoData }) => (
     </div>
     <div className={styles.statsContainer}>
       <div className={styles.statsDiv}>
-        <div className={styles.iconDiv}>
-          <Icon iconName="thumbsUp" size={16} />
-        </div>
+        <Icon iconName="thumbsUp" size={16} />
         <Typography
           size="small"
           text={youtubeVideoData.likes}
         />
       </div>
       <div className={styles.statsDiv}>
-        <div className={styles.iconDiv}>
-          <Icon iconName="eye" size={16} />
-        </div>
+        <Icon iconName="eye" size={16} />
         <Typography
           size="small"
           text={youtubeVideoData.views}
         />
       </div>
       <div className={styles.statsDiv}>
-        <div className={styles.iconDiv}>
-          <Icon iconName="calendar" size={16} />
-        </div>
+        <Icon iconName="calendar" size={16} />
         <Typography
           size="small"
           text={youtubeVideoData.publishedAt}
