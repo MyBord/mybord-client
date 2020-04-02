@@ -11,8 +11,6 @@ This document is used to outline current project management priorities.
 
 ### A. Highest
 
-  * alignment with thumbs up and text is off
-  
 ### B. High
 
   * add header with filters and 'add card button'
