@@ -11,7 +11,7 @@ import Spa from './spa/spa';
 const client = new ApolloClient({
   link: new HttpLink({
     credentials: 'include',
-    uri: 'http://localhost:8000/graphql',
+    uri: 'http://localhost:4000/graphql',
   }),
   cache: new InMemoryCache(),
 });
