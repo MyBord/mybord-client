@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { Form } from 'antd';
 import { useLazyQuery, useMutation } from '@apollo/react-hooks';
+import formWrapper from 'forms/formWrapper/formWrapper';
 import handleError from 'server/errors/handleError';
 import { FormProp, LoginFormStatus } from 'types/formTypes';
 import { IS_AUTHENTICATED, LOGIN_USER } from 'schema/users';
@@ -14,7 +14,7 @@ interface Props {
 }
 
 /* eslint-disable brace-style */
-const LoginForm: React.FC<Props> = ({ form }) => {
+const LoginForm: React.FC = () => {
   const [formStatus, setFormStatus] = React.useState<LoginFormStatus>('login');
   const [hasIncorrectCreds, setHasIncorrectCreds] = React.useState(false);
   const [isAuthenticatedQuery, { called, data, loading }] = useLazyQuery(IS_AUTHENTICATED);
@@ -22,7 +22,7 @@ const LoginForm: React.FC<Props> = ({ form }) => {
   const { authenticateUser } = useAuthenticationContext();
 
   // Function that gets invoked when the user clicks on the 'login' button
-  const handleLogin = async (): Promise<void> => {
+  const handleLogin = async (form: FormProp): Promise<void> => {
     const values = form.getFieldsValue();
     try {
       // try to login the user / auth the user to the backend
@@ -44,30 +44,24 @@ const LoginForm: React.FC<Props> = ({ form }) => {
   };
 
   // Function that gets invoked when the 'submit' button is invoked, whichever button that may be
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
-    event.preventDefault();
-    // validate the form fields first to make sure that they meet the necessary requirements
-    form.validateFields((error) => {
-      if (!error) {
-        // If the user has forgotten their creds, send them an email to have them reset their
-        // creds when they click on the 'reset password' button
-        if (formStatus === 'forgot') {
-          console.log('forgot submit handler');
-        }
-        // if the user clicks login, try to log them in
-        else if (formStatus === 'login') {
-          handleLogin();
-        }
-        // if the user clicks 'sign up', register them to the db
-        else if (formStatus === 'signUp') {
-          console.log('signup submit handler');
-        }
-        // Throw an error for anything else
-        else {
-          throw new Error('Unexpected status');
-        }
-      }
-    });
+  const handleSubmit = (form: FormProp): void => {
+    // If the user has forgotten their creds, send them an email to have them reset their
+    // creds when they click on the 'reset password' button
+    if (formStatus === 'forgot') {
+      console.log('forgot submit handler');
+    }
+    // if the user clicks login, try to log them in
+    else if (formStatus === 'login') {
+      handleLogin(form);
+    }
+    // if the user clicks 'sign up', register them to the db
+    else if (formStatus === 'signUp') {
+      console.log('signup submit handler');
+    }
+    // Throw an error for anything else
+    else {
+      throw new Error('Unexpected status');
+    }
   };
 
   // After the user tries to login, if the back-end says they are authenticated, then update
@@ -87,19 +81,18 @@ const LoginForm: React.FC<Props> = ({ form }) => {
     }
   }
 
-  return (
-    <Form
-      className={styles.form}
-      onSubmit={handleSubmit}
-    >
-      <LoginFormComponent
-        form={form}
-        formStatus={formStatus}
-        hasIncorrectCreds={hasIncorrectCreds}
-        setFormStatus={setFormStatus}
-      />
-    </Form>
+  const FormContent: React.FC<Props> = ({ form }) => (
+    <LoginFormComponent
+      form={form}
+      formStatus={formStatus}
+      hasIncorrectCreds={hasIncorrectCreds}
+      setFormStatus={setFormStatus}
+    />
   );
+
+  const Form = formWrapper(FormContent, handleSubmit, 'login');
+
+  return <Form />;
 };
 
-export default Form.create()(LoginForm);
+export default LoginForm;

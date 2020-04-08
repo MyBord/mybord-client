@@ -4,7 +4,7 @@ import LoginFormContainer from './loginFormContainer';
 import * as styles from './loginForm.module.less';
 
 const LoginFormFinal: React.FC = () => (
-  <div className={styles.formContainer}>
+  <div className={styles.loginForm}>
     <LoginFormHeader />
     <LoginFormContainer />
   </div>
