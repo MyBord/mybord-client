@@ -1,19 +1,13 @@
 import * as React from 'react';
 
-interface UserAuthentication {
-  isAuthenticated: boolean;
-}
-
 interface AuthenticationState {
-  userAuthentication: UserAuthentication;
   authenticateUser: () => void;
+  isAuthenticated: boolean;
   unAuthenticateUser: () => void;
 }
 
 const initialAuthenticationState: AuthenticationState = {
-  userAuthentication: {
-    isAuthenticated: false,
-  },
+  isAuthenticated: false,
   authenticateUser: () => {},
   unAuthenticateUser: () => {},
 };
@@ -25,16 +19,14 @@ export const AuthenticationContextProvider = (props: object): React.ReactElement
   const authenticateUser = (): void => setisAuthenticated(true);
   const unAuthenticateUser = (): void => setisAuthenticated(false);
 
-  const userAuthentication = {
-    isAuthenticated,
-  };
-
   return (
     <AuthenticationContext.Provider
-      value={{ userAuthentication, authenticateUser, unAuthenticateUser }}
+      value={{ authenticateUser, isAuthenticated, unAuthenticateUser }}
       {...props}
     />
   );
 };
 
-export const useAuthenticationContext = (): AuthenticationState => React.useContext(AuthenticationContext);
+export const useAuthenticationContext = (): AuthenticationState => (
+  React.useContext(AuthenticationContext)
+);

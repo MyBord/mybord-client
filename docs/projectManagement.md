@@ -11,8 +11,21 @@ This document is used to outline current project management priorities.
 
 ### A. Highest
 
+  * test transition from login to app
+  * add comments to login form container
+  * create form wrapper and form item wrapper
+  * change login route to '/login'
+  * work with login page
+    * user logs in, goes to app
+    * user logs in, gets denied
+    * user signs up
+    * user forgets password - add 'back' button to forgot form
+    * user signs in with facebook
+    * user signs in with google
+
 ### B. High
 
+  * add error boundary to login app
   * add header with filters and 'add card button'
   * add ability to fetch data via graphql backend
 

@@ -1,7 +1,5 @@
 import * as React from 'react';
 import { RouteComponentProps, withRouter } from 'react-router-dom';
-import LottiePlayer from 'lotty/lottiePlayer';
-import constructionAnimation from 'lotty/lotties/construction.json';
 
 interface Props extends RouteComponentProps {
   children: React.ReactNode;
