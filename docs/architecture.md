@@ -66,6 +66,7 @@ application folder.
   .stylelintignore
   .stylelintrc
   .jest.config.js
+  LICENSE.md
   package.json
   postcss.config.js
   README.md
@@ -104,6 +105,8 @@ application folder.
   * configuration of stylelint rules.
 * **`.jest.config.js`:**
   * jest configs.
+* **`LICENSE.md`:**
+  * Contains the software license / copyright.
 * **`package.json`:**
   * MyBord's package manager and metadata.
 * **`postcss.config.js`:**
