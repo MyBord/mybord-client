@@ -11,6 +11,7 @@ This document is used to outline current project management priorities.
 
 ### A. Highest
 
+  * add images to docs
   * work with login page
     * user logs in, goes to app
     * user logs in, gets denied
