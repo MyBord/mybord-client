@@ -1,4 +1,4 @@
-<img align="right" width="300" height="300" src="https://pngimage.net/wp-content/uploads/2018/05/civil-engineering-png-1.png">
+<img align="right" width="294" height="257" src="https://pngimage.net/wp-content/uploads/2018/05/civil-engineering-png-1.png">
 
 # Architecture Guide
 
