@@ -1,4 +1,4 @@
-<img align="right" width="400" height="257" src="https://www.pacificlearningacademy.com/wp-content/uploads/2017/07/to-do-image-298x351-2.jpg">
+<img align="right" width="306" height="282" src="https://github.com/jimmy-e/mybord/blob/master/etc/assets/projectManagement.jpg">
 
 # Project Management
 
