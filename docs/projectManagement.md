@@ -1,3 +1,5 @@
+<img align="right" width="400" height="257" src="https://www.pinpng.com/pngs/m/0-468_checklist-png-transparent-image-transparent-background-checklist-icon.png">
+
 # Project Management
 
 This document is used to outline current project management priorities.
