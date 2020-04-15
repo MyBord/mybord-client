@@ -1,3 +1,5 @@
+<img align="right" width="320" height="225" src="https://github.com/jimmy-e/mybord/blob/master/etc/assets/react.png">
+
 # React
 
 The following documentation summarizes how react is used in the codebase, how it is organized, the
