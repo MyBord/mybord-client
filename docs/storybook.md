@@ -1,3 +1,5 @@
+<img align="right" width="100" height="100" src="https://github.com/jimmy-e/mybord/blob/master/etc/assets/storybook.png">
+
 # Storybook
 
 "[Storybook](https://storybook.js.org/) is a user interface development environment and playground
