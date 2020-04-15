@@ -1,4 +1,4 @@
-<img align="right" width="294" height="257" src="https://p7.hiclipart.com/preview/538/363/651/architectural-engineering-civil-engineering-general-contractor-construction-management-construction.jpg">
+<img align="right" width="280" height="230" src="https://github.com/jimmy-e/mybord/blob/master/etc/assets/build.jpg">
 
 # Build
 
