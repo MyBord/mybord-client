@@ -1,3 +1,5 @@
+<img align="right" width="294" height="257" src="https://p7.hiclipart.com/preview/538/363/651/architectural-engineering-civil-engineering-general-contractor-construction-management-construction.jpg">
+
 # Build
 
 This summarizes the build process for the MyBord codebase as well as any other config files.
