@@ -1,4 +1,4 @@
-<img align="right" width="294" height="257" src="https://github.com/jimmy-e/mybord/blob/master/etc/assets/architecture.png">
+<img align="right" width="294" height="257" src="https://github.com/jimmy-e/mybord/blob/master/etc/assets/architecture.png" alt="architecture">
 
 # Architecture Guide
 
