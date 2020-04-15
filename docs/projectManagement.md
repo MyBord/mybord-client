@@ -1,4 +1,4 @@
-<img align="right" width="400" height="257" src="https://www.pinpng.com/pngs/m/0-468_checklist-png-transparent-image-transparent-background-checklist-icon.png">
+<img align="right" width="400" height="257" src="https://bvfamilie.nl/wp-content/uploads/2019/02/shutterstock_180231269-2.jpg">
 
 # Project Management
 
