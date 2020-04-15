@@ -1,3 +1,5 @@
+<img align="right" width="300" height="169" src="https://github.com/jimmy-e/mybord/blob/master/etc/assets/product.jpg">
+
 # Product Outline
 
 This document is used to outline product details.
