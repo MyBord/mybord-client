@@ -59,6 +59,7 @@ application folder.
   dist/
   docs/
   etc/
+    |- assets/
     |- prToDo.md
   node_modules/
   src/
@@ -89,6 +90,8 @@ application folder.
   * folder that contains the app build.
 * **docs/:**
   * folder that contains the app documentation.
+* **etc/assets:**
+  * folder containing images used in our docs.
 * **`etc/prToDo.md`:**
   * a space to put notes regarding a current branch / pr.
 * **`node_modules`:**
