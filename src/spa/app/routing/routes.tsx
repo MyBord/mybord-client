@@ -57,6 +57,11 @@ const Routes: React.FC = () => {
           path="/"
           render={() => <Redirect to="/myBord" />}
         />
+        <Route
+          exact
+          path="/login"
+          render={() => <Redirect to="/myBord" />}
+        />
         <Route exact path="/myBord">
           <RouteWrapper>
             <DashboardPage />

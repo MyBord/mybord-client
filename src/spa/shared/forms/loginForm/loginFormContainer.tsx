@@ -6,7 +6,6 @@ import { FormProp, LoginFormStatus } from 'types/formTypes';
 import { IS_AUTHENTICATED, LOGIN_USER } from 'schema/users';
 import { useAuthenticationContext } from 'context/authenticationContext';
 import LoginFormComponent from './loginFormComponent';
-import * as styles from './loginForm.module.less';
 import './loginForm.less';
 
 interface Props {
