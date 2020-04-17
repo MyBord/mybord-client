@@ -13,7 +13,6 @@ This document is used to outline current project management priorities.
 
 ### A. Highest
 
-  * add images to docs
   * work with login page
     * user logs in, goes to app
     * user logs in, gets denied
@@ -28,6 +27,9 @@ This document is used to outline current project management priorities.
 
 ### B. High
 
+  * fix navigation tooltip double rendering when hovering away
+  * replace coffee login image
+  * add about section to login page
   * add error boundary to login app
   * add header with filters and 'add card button'
   * add ability to fetch data via graphql backend
