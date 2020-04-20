@@ -33,7 +33,7 @@ const SpaContent: React.FC = () => {
 const Spa: React.FC = () => (
   <BrowserRouter>
     <SpaProviders>
-      <SpaContent />
+      <App />
     </SpaProviders>
   </BrowserRouter>
 );
