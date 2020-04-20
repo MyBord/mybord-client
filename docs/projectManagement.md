@@ -13,6 +13,7 @@ This document is used to outline current project management priorities.
 
 ### A. Highest
 
+  * remove uri from index, apollo client, etc
   * work with login page
     * user logs in, goes to app
     * user logs in, gets denied
@@ -27,6 +28,7 @@ This document is used to outline current project management priorities.
 
 ### B. High
 
+  * create env var for uri variable / endpoint
   * fix navigation tooltip double rendering when hovering away
   * replace coffee login image
   * add about section to login page

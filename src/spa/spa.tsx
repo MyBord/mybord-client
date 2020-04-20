@@ -38,5 +38,4 @@ const Spa: React.FC = () => (
   </BrowserRouter>
 );
 
-
 export default Spa;
