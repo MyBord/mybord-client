@@ -14,6 +14,7 @@ This document is used to outline current project management priorities.
 ### A. Highest
 
   * remove uri from index, apollo client, etc
+  * document root index html
   * work with login page
     * user logs in, goes to app
     * user logs in, gets denied
