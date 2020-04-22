@@ -1,7 +1,9 @@
 @import "~styles/_colors";
+@import "~styles/_sizes";
 
 .div {
   align-items: center;
+  cursor: pointer;
   display: flex;
   margin: 0 2rem 0 1rem;
   > svg {
@@ -15,4 +17,13 @@
 .img {
   border-radius: 50%;
   width: 2.25rem;
+}
+
+.popover {
+  top: @headerHeight !important;
+  :global {
+    .ant-popover-content {
+      width: 10rem;
+    }
+  }
 }

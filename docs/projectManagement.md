@@ -21,6 +21,7 @@ This document is used to outline current project management priorities.
   * post entire youtube url
   * fix navigation tooltip double rendering when hovering away
   * create env var for uri variable / endpoint
+  * make logout and about sections in profile modal functional
 
 ### B. High
 
