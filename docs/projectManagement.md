@@ -18,6 +18,8 @@ This document is used to outline current project management priorities.
   * display list
   * remove gapi, etc
   make margin of video cards dynamic
+  * add notifications modal
+  * add profile modal
   * post entire youtube url
   * remove gapi folder and moment and numeral packages?
   * remove uri from index, apollo client, etc

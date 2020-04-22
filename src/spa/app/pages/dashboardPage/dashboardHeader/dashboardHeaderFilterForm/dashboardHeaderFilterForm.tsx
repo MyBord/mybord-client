@@ -6,6 +6,7 @@ import TextInput from 'inputs/textInput/textInput';
 import formWrapper from 'forms/formWrapper/formWrapper';
 import { CREATE_YOUTUBE_CARD } from 'schema/card';
 import { FormProp } from 'types/formTypes';
+import * as styles from './dashboardHeaderFilterForm.module.less';
 
 interface Props {
   form: FormProp;
@@ -23,12 +24,14 @@ const DashboardHeaderFilterForm: React.FC = () => {
   };
 
   const FormContent: React.FC<Props> = ({ form }) => (
-    <>
+    <div className={styles.div}>
       <FormItem fieldName="add-youtube-video-input" form={form}>
-        <TextInput placeholder="Add youtube url" />
+        <TextInput placeholder="youtube url" />
       </FormItem>
-      <Button htmlType="submit" label="Add" />
-    </>
+      <FormItem fieldName="add-youtube-video-submit" form={form}>
+        <Button htmlType="submit" label="Add Video" />
+      </FormItem>
+    </div>
   );
 
   const Form = formWrapper(FormContent, handleSubmit);
