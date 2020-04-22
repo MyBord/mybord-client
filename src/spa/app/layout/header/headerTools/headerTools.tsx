@@ -1,17 +1,14 @@
 import * as React from 'react';
-import Icon from 'icons/icon/icon';
-import profilePhoto from 'assets/profilePhoto.jpg';
+import HeaderNotifications from './headerNotifications/headerNotifications';
+import HeaderProfile from './headerProfile/headerProfile';
 import * as styles from './headerTools.module.less';
 
 const HeaderTools: React.FC = () => (
   <section className={styles.section}>
     <hr className={styles.hr} />
-    <Icon iconName="notification" size={30} />
+    <HeaderNotifications />
     <hr className={styles.hr} />
-    <div className={styles.div}>
-      <img alt="profile img" className={styles.img} src={profilePhoto} />
-      <Icon iconName="downArrow" size={10} />
-    </div>
+    <HeaderProfile />
   </section>
 );
 
