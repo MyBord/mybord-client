@@ -4,7 +4,7 @@ import { useLazyQuery } from '@apollo/react-hooks';
 import App from 'app/app';
 import Landing from 'landing/landing';
 import SpaProviders from 'context/spaProviders';
-import { IS_AUTHENTICATED } from 'schema/users';
+import { IS_AUTHENTICATED } from 'schema/user';
 import { useAuthenticationContext } from 'context/authenticationContext';
 
 const SpaContent: React.FC = () => {

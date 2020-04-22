@@ -3,7 +3,7 @@ import { useLazyQuery, useMutation } from '@apollo/react-hooks';
 import formWrapper from 'forms/formWrapper/formWrapper';
 import handleError from 'server/errors/handleError';
 import { FormProp, LoginFormStatus } from 'types/formTypes';
-import { IS_AUTHENTICATED, LOGIN_USER } from 'schema/users';
+import { IS_AUTHENTICATED, LOGIN_USER } from 'schema/user';
 import { useAuthenticationContext } from 'context/authenticationContext';
 import LoginFormComponent from './loginFormComponent';
 import './loginForm.less';
@@ -31,6 +31,7 @@ const LoginForm: React.FC = () => {
           password: values.password,
         },
       });
+
       // ask the backend if the user is now authenticated
       isAuthenticatedQuery();
     } catch (error) {
@@ -49,14 +50,17 @@ const LoginForm: React.FC = () => {
     if (formStatus === 'forgot') {
       console.log('forgot submit handler');
     }
+
     // if the user clicks login, try to log them in
     else if (formStatus === 'login') {
       handleLogin(form);
     }
+
     // if the user clicks 'sign up', register them to the db
     else if (formStatus === 'signUp') {
       console.log('signup submit handler');
     }
+
     // Throw an error for anything else
     else {
       throw new Error('Unexpected status');
@@ -70,6 +74,7 @@ const LoginForm: React.FC = () => {
     if (isAuthenticated) {
       authenticateUser();
     }
+
     // Note: the else block should never be reached because when attempting to login the user, the
     // server should either 1. successfully login the user, and thus they are authenticated,
     // or 2. return a 401 error, which is already handled in `handleLogin`. Thus, this block

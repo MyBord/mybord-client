@@ -13,6 +13,8 @@ This document is used to outline current project management priorities.
 
 ### A. Highest
 
+  * post entire youtube url
+  * remove gapi folder and moment and numeral packages?
   * remove uri from index, apollo client, etc
   * document root index html
   * work with login page

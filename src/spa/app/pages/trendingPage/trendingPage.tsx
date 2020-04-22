@@ -1,6 +1,6 @@
 import * as React from 'react';
 import api, { Resource } from 'api/api';
-import { Foo } from 'schema/users';
+import { Foo } from 'schema/user';
 import LottiePlayer from 'lotty/lottiePlayer';
 import trendingAnimation from 'lotty/lotties/trending.json';
 
