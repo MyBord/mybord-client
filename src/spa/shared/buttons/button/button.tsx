@@ -10,7 +10,7 @@ interface Props {
   iconName?: IconNames;
   label: string;
   loading?: boolean;
-  onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
   type?: 'primary' | 'secondary';
 }
 

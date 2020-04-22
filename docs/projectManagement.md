@@ -13,6 +13,11 @@ This document is used to outline current project management priorities.
 
 ### A. Highest
 
+  * error handling when youtube url is invalid
+  * subscribe to changes
+  * display list
+  * remove gapi, etc
+  make margin of video cards dynamic
   * post entire youtube url
   * remove gapi folder and moment and numeral packages?
   * remove uri from index, apollo client, etc
