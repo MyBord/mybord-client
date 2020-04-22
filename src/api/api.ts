@@ -1,7 +1,7 @@
 import axios from 'axios';
 import gapi from 'gapi/gapi';
 import { GqlString } from 'types/gqlTypes';
-import { YoutubeData } from 'types/youtubeTypes';
+import { YoutubeVideoData } from 'types/youtubeTypes';
 import { PromiseWrapper, promiseWrapper } from './promiseWrapper';
 
 export interface Resource<T> { // ToDo: remove
@@ -24,14 +24,14 @@ const get = async (gqlString: GqlString): Promise<any> => {
 
 // Uses axios to fetch data from our grqphql endpoint via a graphql query and returns it in a
 // promiseWrapper to be used in concurrent mode.
-const query = (gqlString: GqlString): Resource<object> => {
+const query = (gqlString: GqlString): Resource<any> => {
   const promise = get(gqlString);
   return {
     data: promiseWrapper(promise),
   };
 };
 
-const getYoutubeVideoData = (videoId: string): Resource<YoutubeData> => {
+const getYoutubeVideoData = (videoId: string): Resource<YoutubeVideoData> => {
   const youtubeVideoDataPromise = gapi.getYoutubeVideoData(videoId);
   return {
     youtubeVideoData: promiseWrapper(youtubeVideoDataPromise),

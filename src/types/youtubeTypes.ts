@@ -1,4 +1,4 @@
-export interface YoutubeData {
+export interface YoutubeVideoData {
   channelThumbnail: string;
   channelTitle: string;
   duration: string;

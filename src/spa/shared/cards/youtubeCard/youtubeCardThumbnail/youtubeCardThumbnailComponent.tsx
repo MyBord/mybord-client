@@ -1,13 +1,13 @@
 import * as React from 'react';
 import PlayButton from 'buttons/playButton/playButton';
 import Typography from 'typography/typography';
-import { YoutubeData } from 'types/youtubeTypes';
+import { YoutubeVideoData } from 'types/youtubeTypes';
 import * as styles from './youtubeCardThumbnail.module.less';
 
 interface Props {
   isYoutubePlayerLoaded: boolean;
   setShowYoutubePlayer?: (showYoutubePlayer: boolean) => void;
-  youtubeVideoData: YoutubeData;
+  youtubeVideoData: YoutubeVideoData;
 }
 
 const YoutubeCardThumbnailComponent: React.FC<Props> = ({

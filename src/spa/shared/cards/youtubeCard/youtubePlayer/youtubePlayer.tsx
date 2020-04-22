@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { YoutubeData } from 'types/youtubeTypes';
+import { YoutubeVideoData } from 'types/youtubeTypes';
 import * as styles from './youtubePlayer.module.less';
 
 declare global {
@@ -11,7 +11,7 @@ declare global {
 
 interface Props {
   setIsYoutubePlayerLoaded: (isYoutubePlayerLoaded: boolean) => void;
-  youtubeVideoData: YoutubeData;
+  youtubeVideoData: YoutubeVideoData;
 }
 
 const YoutubePlayer: React.FC<Props> = ({ setIsYoutubePlayerLoaded, youtubeVideoData }) => {
