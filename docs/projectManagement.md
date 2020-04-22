@@ -15,14 +15,17 @@ This document is used to outline current project management priorities.
 
   * error handling when youtube url is invalid
   * subscribe to changes
-  * display list
   * remove gapi, etc
-  make margin of video cards dynamic
+  * make margin of video cards dynamic
   * add notifications modal
   * add profile modal
   * post entire youtube url
   * remove gapi folder and moment and numeral packages?
-  * remove uri from index, apollo client, etc
+  * fix navigation tooltip double rendering when hovering away
+  * create env var for uri variable / endpoint
+
+### B. High
+
   * document root index html
   * work with login page
     * user logs in, goes to app
@@ -35,16 +38,10 @@ This document is used to outline current project management priorities.
     * validate email
     * validate password
     * I am not a robot
-
-### B. High
-
-  * create env var for uri variable / endpoint
-  * fix navigation tooltip double rendering when hovering away
   * replace coffee login image
   * add about section to login page
   * add error boundary to login app
   * add header with filters and 'add card button'
-  * add ability to fetch data via graphql backend
 
 ### C. Medium
 
