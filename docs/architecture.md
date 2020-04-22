@@ -216,15 +216,12 @@ tooling. It is organized in the following manner:
 ```
 src/
   |- thirdParty/ 
-     |- google/ 
      |- lotty/ 
         |- lotties/ 
         |- lottiePlayer.tsx 
      |- storybook/ 
 ```
 
-* **google/:**
-  * Code used for interacting with the google api.
 * **lotty/:**
   * Folder containing [Lottie](https://airbnb.io/lottie/#/) code. Note this folder is named
    'lotty' and not 'lottie' so it's folder alias won't create conflicts.
@@ -272,7 +269,6 @@ src/
   |- spa/
     |- app/ 
       |- errorBoundary/ 
-      |- initializeApp/ 
       |- layout/ 
       |- pages/ 
       |- routing/ 
@@ -281,8 +277,6 @@ src/
 
 * **errorBoundary/:**
   * The react error boundary used for our application.
-* **initializeApp/:**
-  * Code used to initialize the app before it runs.
 * **layout/:**
   * The frame and navigation of the application.
 * **pages/:**

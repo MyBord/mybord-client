@@ -14,13 +14,11 @@ This document is used to outline current project management priorities.
 ### A. Highest
 
   * error handling when youtube url is invalid
-  * subscribe to changes
-  * remove gapi, etc
+  * add subscription for cards
   * make margin of video cards dynamic
   * add notifications modal
   * add profile modal
   * post entire youtube url
-  * remove gapi folder and moment and numeral packages?
   * fix navigation tooltip double rendering when hovering away
   * create env var for uri variable / endpoint
 

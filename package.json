@@ -108,8 +108,6 @@
     "history": "^4.7.2",
     "lord-icon-element": "^1.1.5",
     "lottie-web": "^5.5.9",
-    "moment": "^2.24.0",
-    "numeral": "^2.0.6",
     "react": "^0.0.0-experimental-38dd17ab9",
     "react-dom": "^0.0.0-experimental-38dd17ab9",
     "react-lottie": "^1.2.3",

@@ -2,7 +2,6 @@ import * as React from 'react';
 import ErrorBoundary from 'app/errorBoundary/errorBoundary';
 import Layout from 'layout/layout';
 import Routes from 'routing/routes';
-import initializeApp from 'initializeApp/initializeApp';
 
 const App: React.FC = () => (
   <Layout>
@@ -12,4 +11,4 @@ const App: React.FC = () => (
   </Layout>
 );
 
-export default initializeApp(App);
+export default App;

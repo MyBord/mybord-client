@@ -1,10 +1,8 @@
 import axios from 'axios';
-import gapi from 'gapi/gapi';
 import { GqlString } from 'types/gqlTypes';
-import { YoutubeVideoData } from 'types/youtubeTypes';
 import { PromiseWrapper, promiseWrapper } from './promiseWrapper';
 
-export interface Resource<T> { // ToDo: remove
+export interface Resource<T> {
   [key: string]: PromiseWrapper<T>;
 }
 
@@ -31,14 +29,6 @@ const query = (gqlString: GqlString): Resource<any> => {
   };
 };
 
-const getYoutubeVideoData = (videoId: string): Resource<YoutubeVideoData> => {
-  const youtubeVideoDataPromise = gapi.getYoutubeVideoData(videoId);
-  return {
-    youtubeVideoData: promiseWrapper(youtubeVideoDataPromise),
-  };
-};
-
 export default {
-  getYoutubeVideoData,
   query,
 };
