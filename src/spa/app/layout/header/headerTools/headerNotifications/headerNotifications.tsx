@@ -7,8 +7,9 @@ import * as styles from './headerNotifications.module.less';
 const HeaderNotifications: React.FC = () => (
   <Popover
     content={<HeaderNotificationsPopoverContent />}
+    hideTip
     overlayClassName={styles.popover}
-    placement="bottomLeft"
+    placement="bottom"
     title="Notifications"
   >
     <div className={styles.iconDiv}>

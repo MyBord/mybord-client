@@ -1,14 +1,18 @@
 import * as React from 'react';
 import Typography from 'typography/typography';
-import * as styles from './headerNotificationsPopoverContent.module.less';
+import Empty from 'icons/empty/empty';
+import * as styles from './headerNotifications.module.less';
 
 const HeaderNotificationsPopoverContent: React.FC = () => (
-  <Typography
-    iconName="logout"
-    onClick={() => console.log('logout')}
-    size="three"
-    text="Logout"
-  />
+  <>
+    <Empty text="You don't have any notifications" />
+    <Typography
+      iconName="logout"
+      onClick={() => console.log('logout')}
+      size="three"
+      text="Logout"
+    />
+  </>
 );
 
 export default HeaderNotificationsPopoverContent;
