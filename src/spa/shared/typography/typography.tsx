@@ -34,6 +34,16 @@ const Typography: React.FC<Props> = ({
   text,
   weight = 'regular',
 }) => {
+  const renderTypographyText = (): React.ReactElement => (
+    <TypographyText
+      color={link || onClick ? 'blue' : color}
+      iconName={iconName}
+      maxTextLength={maxTextLength}
+      size={size}
+      text={text}
+    />
+  );
+
   if (link) {
     return (
       <Link
@@ -45,13 +55,7 @@ const Typography: React.FC<Props> = ({
         ].join(' ')}
         to={link}
       >
-        <TypographyText
-          color={color}
-          iconName={iconName}
-          maxTextLength={maxTextLength}
-          size={size}
-          text={text}
-        />
+        {renderTypographyText()}
       </Link>
     );
   }
@@ -69,13 +73,7 @@ const Typography: React.FC<Props> = ({
         type="button"
         onClick={onClick}
       >
-        <TypographyText
-          color={color}
-          iconName={iconName}
-          maxTextLength={maxTextLength}
-          size={size}
-          text={text}
-        />
+        {renderTypographyText()}
       </button>
     );
   }
@@ -90,13 +88,7 @@ const Typography: React.FC<Props> = ({
         styles[weight],
       ].join(' ')}
     >
-      <TypographyText
-        color={color}
-        iconName={iconName}
-        maxTextLength={maxTextLength}
-        size={size}
-        text={text}
-      />
+      {renderTypographyText()}
     </p>
   );
 };
