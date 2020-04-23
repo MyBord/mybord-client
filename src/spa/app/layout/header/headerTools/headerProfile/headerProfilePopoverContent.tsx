@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Typography from 'typography/typography';
-import * as styles from './headerProfilePopoverContent.module.less';
+import * as styles from './headerProfile.module.less';
 
 const HeaderProfilePopoverContent: React.FC = () => (
   <ul className={styles.ul}>
