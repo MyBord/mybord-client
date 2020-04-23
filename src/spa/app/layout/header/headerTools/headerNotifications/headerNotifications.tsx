@@ -9,7 +9,7 @@ const HeaderNotifications: React.FC = () => (
     content={<HeaderNotificationsPopoverContent />}
     hideTip
     overlayClassName={styles.popover}
-    placement="bottom"
+    placement="bottomLeft"
     title="Notifications"
   >
     <div className={styles.iconDiv}>

@@ -2,15 +2,13 @@ import * as React from 'react';
 import { Empty as AntEmpty } from 'antd';
 import * as styles from './empty.module.less';
 
-interface Props {
-  text: string;
-}
-
-const Empty: React.FC<Props> = ({ text }) => (
-  <AntEmpty
-    description={text}
-    image={AntEmpty.PRESENTED_IMAGE_SIMPLE}
-  />
+const Empty: React.FC = () => (
+  <div className={styles.div}>
+    <AntEmpty
+      description={false}
+      image={AntEmpty.PRESENTED_IMAGE_SIMPLE}
+    />
+  </div>
 );
 
 export default Empty;
