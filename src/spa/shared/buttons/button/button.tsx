@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Button as AntButton } from 'antd';
 import Icon from 'icons/icon/icon';
-import { IconNames } from 'types/iconTypes';
+import { IconNames } from 'types/iconNameTypes';
 import * as styles from './button.module.less';
 import './button.less';
 

@@ -1,22 +1,32 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
+import { IconNames } from 'types/iconNameTypes';
+import {
+  TypographyColor,
+  TypographyFont,
+  TypographySize,
+  TypographyWeight,
+} from 'types/typographyTypes';
+import TypographyText from './typographyText';
 import * as styles from './typography.module.less';
 
 interface Props {
-  color?: 'black' | 'blue' | 'lightGrey' | 'transparentWhite' | 'white';
-  font?: 'poppins' | 'roboto';
+  color?: TypographyColor;
+  font?: TypographyFont;
+  iconName?: IconNames;
   link?: string;
   maxTextLength?: number;
   onClick?: () => void;
   showExpandCollapseButton?: boolean;
-  size?: 'large' | 'medium' | 'normal' | 'small' | 'xl';
+  size?: TypographySize;
   text: string;
-  weight?: 'bold' | 'light' | 'regular';
+  weight?: TypographyWeight;
 }
 
 const Typography: React.FC<Props> = ({
   color = 'black',
   font = 'poppins',
+  iconName = null,
   link = null,
   maxTextLength = null,
   onClick = null,
@@ -24,15 +34,6 @@ const Typography: React.FC<Props> = ({
   text,
   weight = 'regular',
 }) => {
-  const renderText = (): string => {
-    if (maxTextLength && text.length > maxTextLength) {
-      return (
-        `${text.slice(0, maxTextLength)}...`
-      );
-    }
-    return text;
-  };
-
   if (link) {
     return (
       <Link
@@ -44,7 +45,13 @@ const Typography: React.FC<Props> = ({
         ].join(' ')}
         to={link}
       >
-        {renderText()}
+        <TypographyText
+          color={color}
+          iconName={iconName}
+          maxTextLength={maxTextLength}
+          size={size}
+          text={text}
+        />
       </Link>
     );
   }
@@ -62,7 +69,13 @@ const Typography: React.FC<Props> = ({
         type="button"
         onClick={onClick}
       >
-        {renderText()}
+        <TypographyText
+          color={color}
+          iconName={iconName}
+          maxTextLength={maxTextLength}
+          size={size}
+          text={text}
+        />
       </button>
     );
   }
@@ -77,7 +90,13 @@ const Typography: React.FC<Props> = ({
         styles[weight],
       ].join(' ')}
     >
-      {renderText()}
+      <TypographyText
+        color={color}
+        iconName={iconName}
+        maxTextLength={maxTextLength}
+        size={size}
+        text={text}
+      />
     </p>
   );
 };

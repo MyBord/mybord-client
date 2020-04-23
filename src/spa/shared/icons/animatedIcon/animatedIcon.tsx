@@ -5,7 +5,6 @@ import chartAnimation from 'lotty/lotties/chart.json';
 import dashboardAnimation from 'lotty/lotties/dashboard.json';
 import gearAnimation from 'lotty/lotties/gear.json';
 import userAnimation from 'lotty/lotties/user.json';
-import { AnimatedIconNames } from 'types/iconTypes';
 
 export const animatedIcons = {
   back: backAnimation,
@@ -15,6 +14,9 @@ export const animatedIcons = {
   user: userAnimation,
 };
 
+// This type is recreated from `iconNameTypes.ts` in order to avoid a dependency cycle
+export type AnimatedIconNames = keyof typeof animatedIcons;
+
 interface Props {
   iconName: AnimatedIconNames;
   isPaused?: boolean;
@@ -23,7 +25,10 @@ interface Props {
 }
 
 const AnimatedIcon: React.FC<Props> = ({
-  iconName, isPaused = false, isStopped, size,
+  iconName,
+  isPaused = false,
+  isStopped,
+  size,
 }) => {
   if (animatedIcons[iconName]) {
     return (

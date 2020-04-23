@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { IconProps } from 'types/iconTypes';
+import { IndividualIconProps } from 'types/iconTypes';
 import AddUserIcon from './individualIcons/addUserIcon';
 import BellIcon from './individualIcons/bellIcon';
 import CalendarIcon from './individualIcons/calendarIcon';
@@ -9,6 +9,7 @@ import DownArrowIcon from './individualIcons/downArrowIcon';
 import EyeIcon from './individualIcons/eyeIcon';
 import FacebookIcon from './individualIcons/facebookIcon';
 import GoogleIcon from './individualIcons/googleIcon';
+import LogoutIcon from './individualIcons/logoutIcon';
 import MailIcon from './individualIcons/mailIcon';
 import PlaylistIcon from './individualIcons/playlistIcon';
 import StarIcon from './individualIcons/starIcon';
@@ -28,6 +29,7 @@ export const iconNames = {
   eye: 'foo',
   facebook: 'foo',
   google: 'foo',
+  logout: 'foo',
   mail: 'foo',
   notification: 'foo',
   playlist: 'foo',
@@ -35,6 +37,13 @@ export const iconNames = {
   thumbsUp: 'foo',
   warning: 'foo',
 };
+
+// This type is recreated from `iconNameTypes.ts` in order to avoid a dependency cycle
+export type IconNames = keyof typeof iconNames;
+
+export interface IconProps extends IndividualIconProps {
+  iconName: IconNames;
+}
 
 const Icon: React.FC<IconProps> = ({
   color = 'black',
@@ -59,6 +68,8 @@ const Icon: React.FC<IconProps> = ({
       return <FacebookIcon size={size} />;
     case 'google':
       return <GoogleIcon size={size} />;
+    case 'logout':
+      return <LogoutIcon color={color} size={size} />;
     case 'mail':
       return <MailIcon size={size} />;
     case 'notification':
