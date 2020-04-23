@@ -10,7 +10,7 @@ const HeaderProfile: React.FC = () => (
     content={<HeaderProfilePopoverContent />}
     hideTip
     overlayClassName={styles.popover}
-    placement="bottom"
+    placement="bottomLeft"
     title="Profile Settings"
   >
     <div className={styles.div}>

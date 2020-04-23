@@ -8,7 +8,7 @@ interface Props {
   children: React.ReactNode;
   hideTip?: boolean;
   overlayClassName?: string;
-  placement?: 'bottom' | 'bottomRight' | 'top';
+  placement?: 'bottom' | 'bottomLeft' | 'bottomRight' | 'top';
   title?: string;
   trigger?: 'hover' | 'focus' | 'click';
 }
@@ -24,7 +24,6 @@ const Popover: React.FC<Props> = ({
 }) => (
   <AntPopover
     content={content}
-    defaultVisible
     overlayClassName={[
       hideTip ? styles.hideTip : undefined,
       overlayClassName,
