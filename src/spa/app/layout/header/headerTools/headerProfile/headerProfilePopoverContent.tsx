@@ -6,7 +6,8 @@ const HeaderProfilePopoverContent: React.FC = () => (
   <ul className={styles.ul}>
     <li>
       <Typography
-        iconName="logout"
+        // iconName="logout"
+        iconName="warning"
         onClick={() => console.log('logout')}
         size="large"
         text="Logout"
@@ -14,7 +15,7 @@ const HeaderProfilePopoverContent: React.FC = () => (
     </li>
     <li>
       <Typography
-        iconName="calendar"
+        iconName="mail"
         link="trending"
         size="large"
         text="About MyBord"
