@@ -1,13 +1,13 @@
 @import "~styles/_colors";
 @import "~styles/_fonts";
 
-// ----- overall styling ----- //
+// ----- OVERALL STYLING ----- //
 
 .typography {
   margin: 0;
 }
 
-// ----- colors ----- //
+// ----- COLORS ----- //
 
 .black {
   color: @black;
@@ -37,7 +37,7 @@
   color: @white;
 }
 
-// ----- fonts ----- //
+// ----- FONTS ----- //
 
 .poppins {
   font-family: @poppins;
@@ -47,7 +47,7 @@
   font-family: @roboto;
 }
 
-// ----- sizes ----- //
+// ----- SIZES ----- //
 
 .large {
   font-size: 1.25rem;
@@ -69,7 +69,7 @@
   font-size: 2.25rem;
 }
 
-// ----- weights ----- //
+// ----- WEIGHTS ----- //
 
 .bold {
   font-weight: 400;
@@ -83,18 +83,28 @@
   font-weight: 300;
 }
 
-// ----- button ----- //
+// ----- BUTTON & LINK ----- //
 
-.button {
-  background: transparent;
-  border: none;
+.buttonAndLinkMixin {
+  align-items: center;
   color: @blue;
-  cursor: pointer;
-  outline: none;
-  padding: 0;
+  display: flex;
   text-decoration: none;
   &:hover {
     color: @blueHover;
   }
+}
+
+.button {
+  .buttonAndLinkMixin;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+}
+
+.link {
+  .buttonAndLinkMixin;
 }
 

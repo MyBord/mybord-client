@@ -24,6 +24,7 @@ const Popover: React.FC<Props> = ({
 }) => (
   <AntPopover
     content={content}
+    defaultVisible
     overlayClassName={[
       hideTip ? styles.hideTip : undefined,
       overlayClassName,

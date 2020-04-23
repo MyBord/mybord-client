@@ -2,7 +2,6 @@ import * as React from 'react';
 import Icon from 'icons/icon/icon';
 import { IconNames } from 'types/iconNameTypes';
 import { TypographyColor, TypographySize } from 'types/typographyTypes';
-import * as styles from './typography.module.less';
 
 interface Props {
   color?: TypographyColor;

@@ -11,6 +11,7 @@ const HeaderProfile: React.FC = () => (
     hideTip
     overlayClassName={styles.popover}
     placement="bottom"
+    title="Profile Settings"
   >
     <div className={styles.div}>
       <img alt="profile img" className={styles.img} src={profilePhoto} />

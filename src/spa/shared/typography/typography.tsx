@@ -48,6 +48,7 @@ const Typography: React.FC<Props> = ({
     return (
       <Link
         className={[
+          styles.link,
           styles.typography,
           styles[font],
           styles[size],

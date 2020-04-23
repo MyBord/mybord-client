@@ -15,7 +15,7 @@ const HeaderProfilePopoverContent: React.FC = () => (
     </li>
     <li>
       <Typography
-        iconName="mail"
+        iconName="warning"
         link="trending"
         size="large"
         text="About MyBord"
