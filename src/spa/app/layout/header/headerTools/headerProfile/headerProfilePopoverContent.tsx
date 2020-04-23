@@ -9,7 +9,7 @@ const HeaderProfilePopoverContent: React.FC = () => (
         // iconName="logout"
         iconName="warning"
         onClick={() => console.log('logout')}
-        size="large"
+        size="three"
         text="Logout"
       />
     </li>
@@ -17,7 +17,7 @@ const HeaderProfilePopoverContent: React.FC = () => (
       <Typography
         iconName="warning"
         link="trending"
-        size="large"
+        size="three"
         text="About MyBord"
       />
     </li>

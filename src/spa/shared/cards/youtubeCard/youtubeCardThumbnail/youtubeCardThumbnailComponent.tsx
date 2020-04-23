@@ -36,7 +36,7 @@ const YoutubeCardThumbnailComponent: React.FC<Props> = ({
       <Typography
         color="white"
         font="roboto"
-        size="small"
+        size="one"
         text={youtubeVideoData.duration}
         weight="light"
       />

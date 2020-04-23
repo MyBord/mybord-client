@@ -20,7 +20,7 @@ const HeaderTitleButton: React.FC<Props> = ({ label, link }) => {
     >
       <Typography
         color="lightGrey"
-        size="large"
+        size="four"
         text={label}
       />
     </Link>

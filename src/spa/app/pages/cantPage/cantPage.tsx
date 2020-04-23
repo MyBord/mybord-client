@@ -13,7 +13,7 @@ const CantPage: React.FC = () => (
       size={600}
     />
     <Typography
-      size="large"
+      size="four"
       text="Sorry, page not found."
     />
   </div>

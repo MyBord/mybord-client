@@ -1,6 +1,6 @@
 import * as React from 'react';
-import Typography from './typography';
 import * as styles from 'storybook/storybook.module.less';
+import Typography from './typography';
 
 const TypographyDemo: React.FC = () => (
   <div className={styles.examplesDivList}>
@@ -14,11 +14,12 @@ const TypographyDemo: React.FC = () => (
     <Typography text="Poppins" />
     <Typography font="roboto" text="Roboto" />
     <h3 className={styles.h3}>-- Sizes --</h3>
-    <Typography text="Small" size="small" />
-    <Typography text="Medium" size="medium" />
+    <Typography text="One" size="one" />
+    <Typography text="Two" size="two" />
     <Typography text="Normal" />
-    <Typography text="Large" size="large" />
-    <Typography text="Extra Large" size="xl" />
+    <Typography text="Three" size="three" />
+    <Typography text="Four" size="four" />
+    <Typography text="Five" size="five" />
     <h3 className={styles.h3}>-- Weight --</h3>
     <Typography text="Light Text" weight="light" />
     <Typography text="Regular Text" />

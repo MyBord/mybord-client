@@ -10,10 +10,11 @@ export type TypographyColor =
 export type TypographyFont = 'poppins' | 'roboto';
 
 export type TypographySize =
-  'large'
-  | 'medium'
-  | 'normal'
-  | 'small'
-  | 'xl';
+  'one'
+  | 'two'
+  | 'three'
+  | 'four'
+  | 'five'
+  | 'normal';
 
 export type TypographyWeight = 'bold' | 'light' | 'regular';

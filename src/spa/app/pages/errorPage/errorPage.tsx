@@ -13,7 +13,7 @@ const ErrorPage: React.FC = () => (
       size={400}
     />
     <Typography
-      size="large"
+      size="four"
       text="Oops ... it looks like something went wrong."
     />
   </div>

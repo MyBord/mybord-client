@@ -29,16 +29,18 @@ const TypographyText: React.FC<Props> = ({
 
   const getIconSize = (): number => {
     switch (size) {
-      case 'large':
+      case 'one':
         return 24;
-      case 'medium':
+      case 'two':
+        return 24;
+      case 'three':
+        return 24;
+      case 'four':
+        return 24;
+      case 'five':
         return 24;
       case 'normal':
         return 24;
-      case 'small':
-        return 24;
-      case 'xl':
-        return 36;
       default:
         throw Error('incorrect size');
     }

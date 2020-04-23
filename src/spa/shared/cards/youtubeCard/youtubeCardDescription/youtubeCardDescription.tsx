@@ -13,7 +13,7 @@ const YoutubeCardDescription: React.FC<Props> = ({ youtubeVideoData }) => (
     <div className={styles.title}>
       <Typography
         maxTextLength={65}
-        size="medium"
+        size="two"
         text={youtubeVideoData.videoTitle}
         weight="bold"
       />
@@ -27,7 +27,7 @@ const YoutubeCardDescription: React.FC<Props> = ({ youtubeVideoData }) => (
       <div className={styles.channelTitle}>
         <Typography
           maxTextLength={36}
-          size="small"
+          size="one"
           text={youtubeVideoData.channelTitle}
         />
       </div>
@@ -36,21 +36,21 @@ const YoutubeCardDescription: React.FC<Props> = ({ youtubeVideoData }) => (
       <div className={styles.statsDiv}>
         <Icon iconName="thumbsUp" size={16} />
         <Typography
-          size="small"
+          size="one"
           text={youtubeVideoData.likes}
         />
       </div>
       <div className={styles.statsDiv}>
         <Icon iconName="eye" size={16} />
         <Typography
-          size="small"
+          size="one"
           text={youtubeVideoData.views}
         />
       </div>
       <div className={styles.statsDiv}>
         <Icon iconName="calendar" size={16} />
         <Typography
-          size="small"
+          size="one"
           text={youtubeVideoData.publishedAt}
         />
       </div>
