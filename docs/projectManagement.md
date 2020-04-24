@@ -15,6 +15,8 @@ This document is used to outline current project management priorities.
 
   * error handling when youtube url is invalid
   * add subscription for cards
+  * set cookie for if user is logged in
+    * https://expressjs.com/en/4x/api.html#res.cookie 
   * make margin of video cards dynamic
   * post entire youtube url
   * create env var for uri variable / endpoint
