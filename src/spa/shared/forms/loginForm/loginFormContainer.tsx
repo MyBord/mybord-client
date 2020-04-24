@@ -86,15 +86,12 @@ const LoginForm: React.FC = () => {
   }
 
   const FormContent: React.FC<Props> = ({ form }) => (
-    <>
-      <button type="button" onClick={authenticateUser}>Authenticate User</button>
-      <LoginFormComponent
-        form={form}
-        formStatus={formStatus}
-        hasIncorrectCreds={hasIncorrectCreds}
-        setFormStatus={setFormStatus}
-      />
-    </>
+    <LoginFormComponent
+      form={form}
+      formStatus={formStatus}
+      hasIncorrectCreds={hasIncorrectCreds}
+      setFormStatus={setFormStatus}
+    />
   );
 
   const Form = formWrapper(FormContent, handleSubmit, 'login');
