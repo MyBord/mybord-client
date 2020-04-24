@@ -7,17 +7,28 @@ import Landing from 'landing/landing';
 import { useAuthenticationContext } from 'context/authenticationContext';
 import * as styles from './spa.module.less';
 
-const animationConfig = {
-  initial: {
-    opacity: 1,
+const variants = {
+  app: {
+    initial: {
+      opacity: 0,
+    },
+    enter: {
+      opacity: 1,
+      transition: { duration: 1.0 },
+    },
   },
-  exit: {
-    opacity: 0,
-    transition: { duration: 10.0 },
+  landing: {
+    initial: {
+      opacity: 1,
+    },
+    exit: {
+      opacity: 0,
+      transition: { duration: 1.0 },
+    },
   },
 };
 
-const SampleComponent: React.FC = () => {
+const SpaContent: React.FC = () => {
   const { isAuthenticated } = useAuthenticationContext();
   return (
     <AnimatePresence>
@@ -27,13 +38,15 @@ const SampleComponent: React.FC = () => {
         exit="exit"
         initial="initial"
         key={isAuthenticated ? 'isAuthenticated' : 'notAuthenticated'}
-        variants={animationConfig}
+        variants={isAuthenticated ? variants.app : variants.landing}
       >
-        {
-          isAuthenticated
-            ? <App />
-            : <Landing />
-        }
+        <div className={styles.spaDivChild}>
+          {
+            isAuthenticated
+              ? <App />
+              : <Landing />
+          }
+        </div>
       </motion.div>
     </AnimatePresence>
   );
@@ -42,7 +55,7 @@ const SampleComponent: React.FC = () => {
 const Spa: React.FC = () => (
   <BrowserRouter>
     <SpaProviders>
-      <SampleComponent />
+      <SpaContent />
     </SpaProviders>
   </BrowserRouter>
 );
