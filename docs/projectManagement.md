@@ -11,17 +11,27 @@ This document is used to outline current project management priorities.
 
 ## I. Priority Levels
 
-### A. Highest
+### A. Highest - MVP
 
   * error handling when youtube url is invalid
   * add subscription for cards
   * set cookie for if user is logged in
     * https://expressjs.com/en/4x/api.html#res.cookie 
   * make margin of video cards dynamic
+  * fix youtube card
   * post entire youtube url
+  * add subscription to videos
+  * fix margin and padding for dashboard page with header
+  * add logout functionality
+  * add about page
   * create env var for uri variable / endpoint
+  * get different spinner
+  * update avatar
+  * remove google and facebook login
+  * remove forgot password
+  * have signup actually work for creating a new user
 
-### B. High
+### B. High - MVP
 
   * document root index html
   * work with login page
