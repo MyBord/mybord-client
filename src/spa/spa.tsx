@@ -1,39 +1,54 @@
 import * as React from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 import { BrowserRouter } from 'react-router-dom';
-import { useLazyQuery } from '@apollo/react-hooks';
-import App from 'app/app';
-import Landing from 'landing/landing';
 import SpaProviders from 'context/spaProviders';
-import { IS_AUTHENTICATED } from 'schema/user';
-import { useAuthenticationContext } from 'context/authenticationContext';
+import * as styles from './spa.module.less';
 
-const SpaContent: React.FC = () => {
-  const [isAuthenticatedQuery, { called, data, loading }] = useLazyQuery(IS_AUTHENTICATED);
-  const { authenticateUser, isAuthenticated } = useAuthenticationContext();
+const animationConfig = {
+  initial: {
+    opacity: 1,
+  },
+  enter: {
+    opacity: 1,
+    transition: { duration: 2.5 },
+  },
+  exit: {
+    opacity: 0,
+    transition: { duration: 2.5 },
+  },
+};
 
-  // See if the user is already authenticated, if they are, then deliver them to the app. If
-  // they are not, then deliver them to the login page where they can login and
-  // `isAuthenticated` will get updated.
-  React.useEffect(() => {
-    isAuthenticatedQuery();
-  }, []);
-
-  if (called && !loading) {
-    if (data.isAuthenticated) {
-      authenticateUser();
-    }
-  }
-
-  if (isAuthenticated) {
-    return <App />;
-  }
-  return <Landing />;
+const SampleComponent: React.FC = () => {
+  const [isWaiting, setIsWaiting] = React.useState(true);
+  return (
+    <div>
+      <button type="button" onClick={() => setIsWaiting(!isWaiting)}>
+        {isWaiting ? 'Turn off "Waiting"' : 'Turn on "Waiting"'}
+      </button>
+      <AnimatePresence exitBeforeEnter>
+        <motion.div
+          animate="enter"
+          exit="exit"
+          initial="initial"
+          // @ts-ignore
+          key={isWaiting}
+          variants={animationConfig}
+        >
+          {
+            isWaiting
+              ? <div className={styles.divOne}>Div One</div>
+              : <div className={styles.divTwo}>Div Two</div>
+          }
+        </motion.div>
+      </AnimatePresence>
+    </div>
+  );
 };
 
 const Spa: React.FC = () => (
   <BrowserRouter>
     <SpaProviders>
-      <App />
+      <SampleComponent />
     </SpaProviders>
   </BrowserRouter>
 );
