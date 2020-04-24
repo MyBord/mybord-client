@@ -34,7 +34,7 @@ const TypographyText: React.FC<Props> = ({
       case 'two':
         return 24;
       case 'three':
-        return 24;
+        return 18;
       case 'four':
         return 24;
       case 'five':
