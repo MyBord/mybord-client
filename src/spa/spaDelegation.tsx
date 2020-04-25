@@ -1,9 +1,7 @@
 import * as React from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { useLazyQuery } from '@apollo/react-hooks';
 import App from 'app/app';
 import Landing from 'landing/landing';
-import { IS_AUTHENTICATED } from 'schema/user';
 import { useAuthenticationContext } from 'context/authenticationContext';
 import * as styles from './spa.module.less';
 
@@ -32,22 +30,7 @@ const variants = {
 // the actual app if they are authenticated or if they should see the non-app landing page if
 // they are not authenticated
 const SpaDelegation: React.FC = () => {
-  const [isAuthenticatedQuery, { called, data, loading }] = useLazyQuery(IS_AUTHENTICATED);
-  const { isAuthenticated, authenticateUser } = useAuthenticationContext();
-
-  // See if the user is already authenticated, if they are, then deliver them to the app. If
-  // they are not, then deliver them to the login page where they can login and
-  // `isAuthenticated` will get updated.
-  React.useEffect(() => {
-    isAuthenticatedQuery();
-  }, []);
-
-  if (called && !loading) {
-    if (data.isAuthenticated) {
-      authenticateUser();
-    }
-  }
-
+  const { isAuthenticated } = useAuthenticationContext();
   return (
     <AnimatePresence>
       <motion.div
