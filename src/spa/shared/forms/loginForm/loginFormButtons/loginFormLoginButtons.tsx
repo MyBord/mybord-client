@@ -31,12 +31,12 @@ const LoginFormLoginButtons: React.FC<Props> = ({ form, setFormStatus }) => {
         >
           <Checkbox label="Remember Me" />
         </FormItem>
-        <FormItem
-          fieldName="forgot-password"
-          form={form}
-        >
-          <Anchor label="Forgot Password?" onClick={handleForgot} />
-        </FormItem>
+        {/* <FormItem */}
+        {/*  fieldName="forgot-password" */}
+        {/*  form={form} */}
+        {/* > */}
+        {/*  <Anchor label="Forgot Password?" onClick={handleForgot} /> */}
+        {/* </FormItem> */}
       </div>
       <div className={[styles.buttonDiv, styles.loginDiv].join(' ')}>
         <FormItem

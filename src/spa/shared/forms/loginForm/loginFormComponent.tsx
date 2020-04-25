@@ -32,7 +32,7 @@ const LoginFormComponent: React.FC<Props> = ({
       formStatus={formStatus}
       setFormStatus={setFormStatus}
     />
-    <LoginFormSocial formStatus={formStatus} />
+    {/* <LoginFormSocial formStatus={formStatus} /> */}
   </>
 );
 
