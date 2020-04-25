@@ -28,12 +28,12 @@ const LoginFormSignUpInputs: React.FC<Props> = ({ form }) => (
     >
       <PasswordInput placeholder="Password" />
     </FormItem>
-    <FormItem
-      fieldName="password-confirm"
-      form={form}
-    >
-      <PasswordInput placeholder="Confirm Password" />
-    </FormItem>
+    {/* <FormItem */}
+    {/*  fieldName="password-confirm" */}
+    {/*  form={form} */}
+    {/* > */}
+    {/*  <PasswordInput placeholder="Confirm Password" /> */}
+    {/* </FormItem> */}
   </>
 );
 

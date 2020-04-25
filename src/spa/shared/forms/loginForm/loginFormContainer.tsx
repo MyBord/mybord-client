@@ -3,7 +3,7 @@ import { useLazyQuery, useMutation } from '@apollo/react-hooks';
 import formWrapper from 'forms/formWrapper/formWrapper';
 import handleError from 'server/errors/handleError';
 import { FormProp, LoginFormStatus } from 'types/formTypes';
-import { IS_AUTHENTICATED, LOGIN_USER } from 'schema/user';
+import { CREATE_USER, IS_AUTHENTICATED, LOGIN_USER } from 'schema/user';
 import { useAuthenticationContext } from 'context/authenticationContext';
 import LoginFormComponent from './loginFormComponent';
 import './loginForm.less';
@@ -14,6 +14,7 @@ interface Props {
 
 /* eslint-disable brace-style */
 const LoginForm: React.FC = () => {
+  const [createUser] = useMutation(CREATE_USER);
   const [formStatus, setFormStatus] = React.useState<LoginFormStatus>('login');
   const [hasIncorrectCreds, setHasIncorrectCreds] = React.useState(false);
   const [isAuthenticatedQuery, { called, data, loading }] = useLazyQuery(IS_AUTHENTICATED);
@@ -43,6 +44,26 @@ const LoginForm: React.FC = () => {
     }
   };
 
+  // Function that gets invoked when the user clicks on the 'signup' button in order to create a
+  // user
+  const handleSignUp = async (form: FormProp): Promise<void> => {
+    const values = form.getFieldsValue();
+    try {
+      // try to create the new user with the backend
+      await createUser({
+        variables: {
+          email: values.email,
+          password: values.password,
+        },
+      });
+
+      // ask the backend if the user is now authenticated
+      isAuthenticatedQuery();
+    } catch (error) {
+      throw new Error(error);
+    }
+  };
+
   // Function that gets invoked when the 'submit' button is invoked, whichever button that may be
   const handleSubmit = (form: FormProp): void => {
     // If the user has forgotten their creds, send them an email to have them reset their
@@ -58,7 +79,7 @@ const LoginForm: React.FC = () => {
 
     // if the user clicks 'sign up', register them to the db
     else if (formStatus === 'signUp') {
-      console.log('signup submit handler');
+      handleSignUp(form);
     }
 
     // Throw an error for anything else

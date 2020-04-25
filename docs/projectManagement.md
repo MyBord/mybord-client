@@ -30,6 +30,10 @@ This document is used to outline current project management priorities.
   * remove google and facebook login
   * remove forgot password
   * have signup actually work for creating a new user
+  * add spinners to login buttons
+  * handle password validation from the backend
+  * don't have login form immediately complain when signing up and typing in email address that
+   isn't yet an email address
 
 ### B. High - MVP
 
@@ -45,6 +49,7 @@ This document is used to outline current project management priorities.
     * validate email
     * validate password
     * I am not a robot
+    * confirm password when creating user
   * replace coffee login image
   * add about section to login page
   * add error boundary to login app
