@@ -15,11 +15,8 @@ export const LOGIN_USER = gql`
   }
 `;
 
-export const Foo = gql`
-  query {
-    foo {
-      name
-      state
-    }
+export const LOGOUT_USER = gql`
+  query logoutUser {
+    logoutUser
   }
 `;
