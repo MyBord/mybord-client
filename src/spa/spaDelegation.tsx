@@ -3,6 +3,8 @@ import { AnimatePresence, motion } from 'framer-motion';
 import App from 'app/app';
 import Landing from 'landing/landing';
 import { useAuthenticationContext } from 'context/authenticationContext';
+import { useQuery } from '@apollo/react-hooks';
+import { IS_AUTHENTICATED } from 'schema/user';
 import * as styles from './spa.module.less';
 
 const variants = {
@@ -30,7 +32,13 @@ const variants = {
 // the actual app if they are authenticated or if they should see the non-app landing page if
 // they are not authenticated
 const SpaDelegation: React.FC = () => {
-  const { isAuthenticated } = useAuthenticationContext();
+  const { called, data, loading } = useQuery(IS_AUTHENTICATED);
+  const { isAuthenticated, authenticateUser } = useAuthenticationContext();
+
+  if (called && !loading && data.isAuthenticated) {
+    authenticateUser();
+  }
+
   return (
     <AnimatePresence>
       <motion.div

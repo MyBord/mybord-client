@@ -34,6 +34,7 @@ This document is used to outline current project management priorities.
   * handle password validation from the backend
   * don't have login form immediately complain when signing up and typing in email address that
    isn't yet an email address
+  * update spinner for login page / spa while spinner loads / initiates 
 
 ### B. High - MVP
 
