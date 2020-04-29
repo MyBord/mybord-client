@@ -1,7 +1,6 @@
 import * as React from 'react';
 import Icon from 'icons/icon/icon';
 import Popover from 'shared/modals/popover/popover';
-import profilePhoto from 'assets/profilePhoto.jpg';
 import HeaderProfilePopoverContent from './headerProfilePopoverContent';
 import * as styles from './headerProfile.module.less';
 
@@ -14,8 +13,10 @@ const HeaderProfile: React.FC = () => (
     title="Profile Settings"
   >
     <div className={styles.div}>
-      <img alt="profile img" className={styles.img} src={profilePhoto} />
-      <Icon iconName="downArrow" size={10} />
+      <Icon iconName="avatar" size={40} />
+      <div className={styles.arrowDiv}>
+        <Icon iconName="downArrow" size={10} />
+      </div>
     </div>
   </Popover>
 );

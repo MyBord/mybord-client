@@ -2,6 +2,7 @@ import * as React from 'react';
 import { IndividualIconProps } from 'types/iconTypes';
 import AboutIcon from './individualIcons/aboutIcon';
 import AddUserIcon from './individualIcons/addUserIcon';
+import AvatarIcon from './individualIcons/avatarIcon';
 import BellIcon from './individualIcons/bellIcon';
 import CalendarIcon from './individualIcons/calendarIcon';
 import ChartIcon from './individualIcons/chartIcon';
@@ -24,6 +25,7 @@ import WarningIcon from './individualIcons/warningIcon';
 export const iconNames = {
   about: 'foo',
   addUser: 'foo',
+  avatar: 'foo',
   calendar: 'foo',
   chart: 'foo',
   dashboard: 'foo',
@@ -58,6 +60,8 @@ const Icon: React.FC<IconProps> = ({
       return <AboutIcon color={color} size={size} />;
     case 'addUser':
       return <AddUserIcon size={size} />;
+    case 'avatar':
+      return <AvatarIcon size={size} />;
     case 'calendar':
       return <CalendarIcon size={size} />;
     case 'chart':
