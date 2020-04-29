@@ -13,34 +13,44 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
+  * fix margin and padding for dashboard page with header
+  * add logout functionality and page transition back to landing
+  * update avatar
+  * have signup actually work for creating a new user
+  * fix routing when going from landing to app
+
   * error handling when youtube url is invalid
   * add subscription for cards
-  * set cookie for if user is logged in
-    * https://expressjs.com/en/4x/api.html#res.cookie 
-  * make margin of video cards dynamic
-  * fix youtube card
   * post entire youtube url
   * add subscription to videos
-  * fix margin and padding for dashboard page with header
-  * add logout functionality
-  * add about page
-  * create env var for uri variable / endpoint
-  * get different spinner
-  * update avatar
-  * remove google and facebook login
-  * remove forgot password
-  * have signup actually work for creating a new user
-  * add spinners to login buttons
-  * handle password validation from the backend
-  * don't have login form immediately complain when signing up and typing in email address that
-   isn't yet an email address
   * have session be remembered by user 
-  * change spinner
-  * handle logout and page transition
+  * fix youtube card
 
 ### B. High - MVP
 
+  * add spinners to login buttons and add buttons
+  * Have youtube cards be restricted per user - if there are no cards, then provide instructions,
+    display that list is empty, etc
+  * get different spinner
+  * handle password validation from the backend
+  * create env var for uri variable / endpoint
+  * add about page - for app and landing
+  * make margin of video cards dynamic
   * document root index html
+  * replace coffee login image
+  * handle loading of landing page background image
+  * add error boundary to login app
+
+### C. Medium
+
+  * add header with filters and 'add card button'
+  * Each card should be marked as:
+    * favorite
+    * todo
+    * done
+    * delete
+    * edit tags
+  * create custom scroll bar  
   * work with login page
     * user logs in, goes to app
     * user logs in, gets denied
@@ -53,13 +63,8 @@ This document is used to outline current project management priorities.
     * validate password
     * I am not a robot
     * confirm password when creating user
-  * replace coffee login image
-  * add about section to login page
-  * add error boundary to login app
-  * add header with filters and 'add card button'
-
-### C. Medium
-
+  * don't have login form immediately complain when signing up and typing in email address that
+   isn't yet an email address
   * when clicking on navigation logo, should redirect to home page
   * make error page and 404 page for landing routes
   * login form
