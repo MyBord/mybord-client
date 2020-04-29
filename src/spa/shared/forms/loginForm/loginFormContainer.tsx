@@ -17,7 +17,9 @@ const LoginForm: React.FC = () => {
   const [createUser] = useMutation(CREATE_USER);
   const [formStatus, setFormStatus] = React.useState<LoginFormStatus>('login');
   const [hasIncorrectCreds, setHasIncorrectCreds] = React.useState(false);
-  const [isAuthenticatedQuery, { called, data, loading }] = useLazyQuery(IS_AUTHENTICATED, { fetchPolicy: 'no-cache' });
+  const [isAuthenticatedQuery, { called, data, loading }] = useLazyQuery(
+    IS_AUTHENTICATED, { fetchPolicy: 'no-cache' },
+  );
   const [loginUser] = useMutation(LOGIN_USER);
   const { authenticateUser } = useAuthenticationContext();
 
