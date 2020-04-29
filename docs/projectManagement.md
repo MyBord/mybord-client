@@ -36,6 +36,7 @@ This document is used to outline current project management priorities.
    isn't yet an email address
   * have session be remembered by user 
   * change spinner
+  * handle logout and page transition
 
 ### B. High - MVP
 
