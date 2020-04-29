@@ -11,7 +11,7 @@ import FollowingPage from 'pages/followingPage/followingPage';
 import HistoryPage from 'pages/historyPage/historyPage';
 import InboxPage from 'pages/inboxPage/inboxPage';
 import PlaylistPage from 'pages/playlistPage/playlistPage';
-import Spinner from 'icons/spinner/spinner';
+import Spinner from 'fallbacks/spinner/spinner';
 import TrendingPage from 'pages/trendingPage/trendingPage';
 import * as styles from './routes.module.less';
 

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { AuthenticationContextProvider } from './authenticationContext';
+import { AuthenticationContextProvider } from 'context/authenticationContext';
 
 interface Props {
   children: React.ReactNode;

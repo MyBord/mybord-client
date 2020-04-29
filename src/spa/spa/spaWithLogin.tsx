@@ -2,35 +2,19 @@ import * as React from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import App from 'app/app';
 import Landing from 'landing/landing';
+import { getTwoChildOpacityTransition } from 'framerMotion/animationVariants';
 import { useAuthenticationContext } from 'context/authenticationContext';
 import * as styles from './spa.module.less';
 
-const variants = {
-  app: {
-    initial: {
-      opacity: 0,
-    },
-    enter: {
-      opacity: 1,
-      transition: { duration: 1.0 },
-    },
-  },
-  landing: {
-    initial: {
-      opacity: 1,
-    },
-    exit: {
-      opacity: 0,
-      transition: { duration: 1.0 },
-    },
-  },
-};
-
-// This component is responsible for delegating what the user should see: if they should see
-// the actual app if they are authenticated or if they should see the non-app landing page if
-// they are not authenticated
-const SpaDelegation: React.FC = () => {
+// This component renders when a user has not already been authenticated / they do not have an
+// existing session with our application. When this occurs, we render the application with a
+// landing page that requires the user to sign in, and then, if they sign / are authenticated,
+// are directed to our 'app' via a nice FramerMotion transition.
+const SpaWithLogin: React.FC = () => {
   const { isAuthenticated } = useAuthenticationContext();
+
+  const animationVariants = getTwoChildOpacityTransition(1.0);
+
   return (
     <AnimatePresence>
       <motion.div
@@ -39,7 +23,7 @@ const SpaDelegation: React.FC = () => {
         exit="exit"
         initial="initial"
         key={isAuthenticated ? 'isAuthenticated' : 'notAuthenticated'}
-        variants={isAuthenticated ? variants.app : variants.landing}
+        variants={isAuthenticated ? animationVariants.lastChild : animationVariants.firstChild}
       >
         <div className={styles.spaDivChild}>
           {
@@ -53,4 +37,4 @@ const SpaDelegation: React.FC = () => {
   );
 };
 
-export default SpaDelegation;
+export default SpaWithLogin;

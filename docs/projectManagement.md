@@ -34,6 +34,9 @@ This document is used to outline current project management priorities.
   * handle password validation from the backend
   * don't have login form immediately complain when signing up and typing in email address that
    isn't yet an email address
+  * have session be remembered by user 
+  * change spinner
+  * handle logout and page transition
 
 ### B. High - MVP
 

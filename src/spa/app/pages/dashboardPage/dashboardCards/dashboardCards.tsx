@@ -1,6 +1,6 @@
 import * as React from 'react';
 import PhantomCard from 'shared/cards/phantomCard/phantomCard';
-import Spinner from 'icons/spinner/spinner';
+import Spinner from 'fallbacks/spinner/spinner';
 import YoutubeCard from 'shared/cards/youtubeCard/youtubeCard';
 import api, { Resource } from 'api/api';
 import { GET_USER_CARDS, GetUserCardsResponse, UserCard } from 'schema/card';
