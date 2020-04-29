@@ -6,7 +6,7 @@ import { HttpLink } from 'apollo-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 // @ts-ignore
 import { createRoot } from 'react-dom';
-import Spa from './spa/spa';
+import Spa from './spa/spa/spa';
 
 const client = new ApolloClient({
   link: new HttpLink({
