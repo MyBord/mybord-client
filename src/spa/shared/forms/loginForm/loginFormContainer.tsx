@@ -13,7 +13,7 @@ interface Props {
 }
 
 /* eslint-disable brace-style */
-const LoginForm: React.FC = () => {
+const LoginFormContainer: React.FC = () => {
   const [createUser] = useMutation(CREATE_USER);
   const [formStatus, setFormStatus] = React.useState<LoginFormStatus>('login');
   const [hasIncorrectCreds, setHasIncorrectCreds] = React.useState(false);
@@ -122,4 +122,4 @@ const LoginForm: React.FC = () => {
   return <Form />;
 };
 
-export default LoginForm;
+export default LoginFormContainer;
