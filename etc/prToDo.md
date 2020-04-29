@@ -7,3 +7,4 @@ Make sure to remove all notes before merging (except for this one, of course).
 * make architecture folder for framer motion
 * change name of spa delegation
 * fix css
+* transition is not working between login page
