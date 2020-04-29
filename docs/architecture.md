@@ -216,12 +216,15 @@ tooling. It is organized in the following manner:
 ```
 src/
   |- thirdParty/ 
+     |- framerMotion/ 
      |- lotty/ 
         |- lotties/ 
         |- lottiePlayer.tsx 
      |- storybook/ 
 ```
 
+* **framerMotion/:**
+  * This folder contains code that deals with our framer motion api and related animations.
 * **lotty/:**
   * Folder containing [Lottie](https://airbnb.io/lottie/#/) code. Note this folder is named
    'lotty' and not 'lottie' so it's folder alias won't create conflicts.
@@ -242,7 +245,7 @@ src/
     |- app/ 
     |- landing/ 
     |- shared/ 
-    |- spa.tsx
+    |- spa/ 
 ```
 
 * **app/:**
@@ -254,10 +257,11 @@ src/
 * **shared/:**   
   * This folder contains react components that are not exclusive to any route or page but are shared
    across the app (including possibly the landing page).
-* **`spa.tsx`:**
-  * The actual root, highest parent react component used to define the application. The 'SPA'.
-  Delegates if the user should be directed to the 'app' application or the 'landing' application
-  based on the users authentication.
+* **spa/:**
+  * This folder contains the actual code that invokes the final spa and initializes it. Although
+   it is certainly redundant to have a 'spa' folder under the 'spa' folder, I wasn't sure what
+   else to call this folder. Essentially, the first spa folder contains all react application
+   source code, and the second spa folder contains code that invokes the final spa.
   
 ### F. app folder
 
