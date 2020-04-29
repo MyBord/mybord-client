@@ -15,6 +15,7 @@ interface Props {
 // for the entire page. At the moment, the wrapper does the following on initialization:
 //   * Performs a backend query to determine if the current user has already been authenticated
 //     / has an existing session or not.
+// Note: We are not using Suspense here because we cannot have transitions between fallbacks.
 const initializeSpaWrapper = (WrappedComponent: React.FC<Props>): React.FC => {
   const WrappedSpa: React.FC = () => {
     const { called, data, loading } = useQuery(IS_AUTHENTICATED);
