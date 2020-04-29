@@ -23,7 +23,7 @@ const SpaWithLogin: React.FC = () => {
         exit="exit"
         initial="initial"
         key={isAuthenticated ? 'isAuthenticated' : 'notAuthenticated'}
-        variants={isAuthenticated ? animationVariants.app : animationVariants.landing}
+        variants={isAuthenticated ? animationVariants.lastChild : animationVariants.firstChild}
       >
         <div className={styles.spaDivChild}>
           {
