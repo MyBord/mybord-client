@@ -15,7 +15,6 @@ This document is used to outline current project management priorities.
 
   * fix margin and padding for dashboard page with header
   * add logout functionality and page transition back to landing
-  * update avatar
   * have signup actually work for creating a new user
   * fix routing when going from landing to app
 
