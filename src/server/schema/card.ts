@@ -4,8 +4,8 @@ import { YoutubeVideoData } from 'types/youtubeTypes';
 // ----- RESOLVERS ----- //
 
 export const CREATE_YOUTUBE_CARD = gql`
-  mutation createYoutubeCard($videoId: String!) {
-    createYoutubeCard(data: {videoId: $videoId}) {
+  mutation createYoutubeCard($videoUrl: String!) {
+    createYoutubeCard(data: {videoUrl: $videoUrl}) {
       id
     }
   }

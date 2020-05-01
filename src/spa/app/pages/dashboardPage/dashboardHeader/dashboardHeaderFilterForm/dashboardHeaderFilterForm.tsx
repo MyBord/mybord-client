@@ -18,7 +18,7 @@ const DashboardHeaderFilterForm: React.FC = () => {
   const handleSubmit = async (form: FormProp): Promise<void> => {
     await createYoutubeCard({
       variables: {
-        videoId: form.getFieldValue('add-youtube-video-input'),
+        videoUrl: form.getFieldValue('add-youtube-video-input'),
       },
     });
   };
