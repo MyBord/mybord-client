@@ -4,6 +4,7 @@ import Button from 'buttons/button/button';
 import FormItem from 'forms/formItem/formItem';
 import TextInput from 'inputs/textInput/textInput';
 import formWrapper from 'forms/formWrapper/formWrapper';
+import handleError from 'server/errors/handleError';
 import { CREATE_YOUTUBE_CARD } from 'schema/card';
 import { FormProp } from 'types/formTypes';
 import * as styles from './dashboardHeaderFilterForm.module.less';
@@ -16,11 +17,15 @@ const DashboardHeaderFilterForm: React.FC = () => {
   const [createYoutubeCard] = useMutation(CREATE_YOUTUBE_CARD);
 
   const handleSubmit = async (form: FormProp): Promise<void> => {
-    await createYoutubeCard({
-      variables: {
-        videoUrl: form.getFieldValue('add-youtube-video-input'),
-      },
-    });
+    try {
+      await createYoutubeCard({
+        variables: {
+          videoUrl: form.getFieldValue('add-youtube-video-input'),
+        },
+      });
+    } catch (error) {
+      const { message, status } = handleError(error);
+    }
   };
 
   const FormContent: React.FC<Props> = ({ form }) => (
