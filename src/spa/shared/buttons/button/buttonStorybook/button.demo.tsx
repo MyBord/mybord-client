@@ -3,7 +3,7 @@ import Button from '../button';
 import * as styles from 'storybook/storybook.module.less';
 
 const ButtonDemo: React.FC = () => {
-  const [isLoading, setIsLoading] = React.useState(false);
+  const [isWaiting, setIsWaiting] = React.useState(false);
 
   return (
     <>
@@ -14,8 +14,8 @@ const ButtonDemo: React.FC = () => {
       <h3 className={styles.h3}>-- Spinning Button --</h3>
       <Button
         label="Loading Button"
-        onClick={() => setIsLoading(true)}
-        loading={isLoading}
+        onClick={() => setIsWaiting(true)}
+        waiting={isWaiting}
       />
     </>
   );

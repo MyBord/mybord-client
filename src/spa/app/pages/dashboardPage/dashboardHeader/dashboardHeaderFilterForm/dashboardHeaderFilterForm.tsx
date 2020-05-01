@@ -16,15 +16,19 @@ interface Props {
 const DashboardHeaderFilterForm: React.FC = () => {
   const [createYoutubeCard] = useMutation(CREATE_YOUTUBE_CARD);
   const [inputErrorMessage, setInputErrorMessage] = React.useState(null);
+  const [isSubmitWaiting, setIsSubmitWaiting] = React.useState(false);
 
   const handleSubmit = async (form: FormProp): Promise<void> => {
     try {
+      setIsSubmitWaiting(true);
       await createYoutubeCard({
         variables: {
           videoUrl: form.getFieldValue('add-youtube-video-input'),
         },
       });
+      setIsSubmitWaiting(false);
     } catch (error) {
+      setIsSubmitWaiting(false);
       const { message, status } = handleError(error);
       if (status === 400) {
         setInputErrorMessage(message);
@@ -42,7 +46,11 @@ const DashboardHeaderFilterForm: React.FC = () => {
         <TextInput placeholder="youtube url" />
       </FormItem>
       <FormItem fieldName="add-youtube-video-submit" form={form}>
-        <Button htmlType="submit" label="Add Video" />
+        <Button
+          htmlType="submit"
+          label="Add Video"
+          waiting={isSubmitWaiting}
+        />
       </FormItem>
     </div>
   );

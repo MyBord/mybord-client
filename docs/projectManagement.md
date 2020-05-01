@@ -13,6 +13,7 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
+  * button isn't animating spinner (e.g. when adding youtube link)
   * add logout functionality and page transition back to landing
   * have signup actually work for creating a new user
   * fix routing when going from landing to app
