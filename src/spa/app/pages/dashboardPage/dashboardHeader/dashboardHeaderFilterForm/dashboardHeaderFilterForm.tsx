@@ -15,6 +15,7 @@ interface Props {
 
 const DashboardHeaderFilterForm: React.FC = () => {
   const [createYoutubeCard] = useMutation(CREATE_YOUTUBE_CARD);
+  const [inputErrorMessage, setInputErrorMessage] = React.useState(null);
 
   const handleSubmit = async (form: FormProp): Promise<void> => {
     try {
@@ -25,12 +26,19 @@ const DashboardHeaderFilterForm: React.FC = () => {
       });
     } catch (error) {
       const { message, status } = handleError(error);
+      if (status === 400) {
+        setInputErrorMessage(message);
+      }
     }
   };
 
   const FormContent: React.FC<Props> = ({ form }) => (
     <div className={styles.div}>
-      <FormItem fieldName="add-youtube-video-input" form={form}>
+      <FormItem
+        errorMessage={inputErrorMessage}
+        fieldName="add-youtube-video-input"
+        form={form}
+      >
         <TextInput placeholder="youtube url" />
       </FormItem>
       <FormItem fieldName="add-youtube-video-submit" form={form}>
