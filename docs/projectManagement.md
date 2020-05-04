@@ -15,13 +15,9 @@ This document is used to outline current project management priorities.
 
   * add logout functionality and page transition back to landing
   * make video url input required // use set fields?
-  * have signup actually work for creating a new user
   * fix routing when going from landing to app
   * fix double spinner when loading app
 
-  * error handling when youtube url is invalid
-  * add subscription for cards
-  * post entire youtube url
   * add subscription to videos
   * have session be remembered by user 
   * fix youtube card
@@ -35,7 +31,6 @@ This document is used to outline current project management priorities.
   * handle password validation from the backend
   * create env var for uri variable / endpoint
   * add about page - for app and landing
-  * make margin of video cards dynamic
   * document root index html
   * replace coffee login image
   * handle loading of landing page background image
@@ -43,6 +38,7 @@ This document is used to outline current project management priorities.
 
 ### C. Medium
 
+  * add profile management screen
   * add header with filters and 'add card button'
   * Each card should be marked as:
     * favorite

@@ -17,6 +17,7 @@ const LoginFormContainer: React.FC = () => {
   const [createUser] = useMutation(CREATE_USER);
   const [formStatus, setFormStatus] = React.useState<LoginFormStatus>('login');
   const [hasIncorrectCreds, setHasIncorrectCreds] = React.useState(false);
+  const [isAuthenticationWaiting, setIsAuthenticationWaiting] = React.useState(false);
   const [isAuthenticatedQuery, { called, data, loading }] = useLazyQuery(
     IS_AUTHENTICATED, { fetchPolicy: 'no-cache' },
   );
@@ -27,6 +28,8 @@ const LoginFormContainer: React.FC = () => {
   const handleLogin = async (form: FormProp): Promise<void> => {
     const values = form.getFieldsValue();
     try {
+      setIsAuthenticationWaiting(true);
+
       // try to login the user / auth the user to the backend
       await loginUser({
         variables: {
@@ -37,7 +40,11 @@ const LoginFormContainer: React.FC = () => {
 
       // ask the backend if the user is now authenticated
       isAuthenticatedQuery();
+
+      setIsAuthenticationWaiting(false);
     } catch (error) {
+      setIsAuthenticationWaiting(false);
+
       // If a 401 status is returned, notify the user that they have provided the incorrect creds
       const { status } = handleError(error);
       if (status === 401) {
@@ -51,6 +58,8 @@ const LoginFormContainer: React.FC = () => {
   const handleSignUp = async (form: FormProp): Promise<void> => {
     const values = form.getFieldsValue();
     try {
+      setIsAuthenticationWaiting(true);
+
       // try to create the new user with the backend
       await createUser({
         variables: {
@@ -61,7 +70,10 @@ const LoginFormContainer: React.FC = () => {
 
       // ask the backend if the user is now authenticated
       isAuthenticatedQuery();
+
+      setIsAuthenticationWaiting(false);
     } catch (error) {
+      setIsAuthenticationWaiting(false);
       throw new Error(error);
     }
   };
@@ -113,6 +125,7 @@ const LoginFormContainer: React.FC = () => {
       form={form}
       formStatus={formStatus}
       hasIncorrectCreds={hasIncorrectCreds}
+      isAuthenticationWaiting={isAuthenticationWaiting}
       setFormStatus={setFormStatus}
     />
   );

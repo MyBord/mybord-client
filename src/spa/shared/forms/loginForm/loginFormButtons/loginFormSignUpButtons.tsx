@@ -8,10 +8,15 @@ import * as styles from './loginFormButtons.module.less';
 
 interface Props {
   form: FormProp;
+  isAuthenticationWaiting: boolean;
   setFormStatus: (status: LoginFormStatus) => void;
 }
 
-const LoginFormSignUpButtons: React.FC<Props> = ({ form, setFormStatus }) => {
+const LoginFormSignUpButtons: React.FC<Props> = ({
+  form,
+  isAuthenticationWaiting,
+  setFormStatus,
+}) => {
   const handleBack = (): void => {
     setFormStatus('login');
   };
@@ -36,6 +41,7 @@ const LoginFormSignUpButtons: React.FC<Props> = ({ form, setFormStatus }) => {
         >
           <Button
             htmlType="submit"
+            isWaiting={isAuthenticationWaiting}
             label="Sign Up"
             onClick={handleSignUp}
             type="primary"

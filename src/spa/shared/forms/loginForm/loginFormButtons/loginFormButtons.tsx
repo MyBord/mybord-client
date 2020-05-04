@@ -7,17 +7,35 @@ import LoginFormSignUpButtons from './loginFormSignUpButtons';
 interface Props {
   form: FormProp;
   formStatus: LoginFormStatus;
+  isAuthenticationWaiting: boolean;
   setFormStatus: (status: LoginFormStatus) => void;
 }
 
-const LoginFormButtons: React.FC<Props> = ({ form, formStatus, setFormStatus }) => {
+const LoginFormButtons: React.FC<Props> = ({
+  form,
+  formStatus,
+  isAuthenticationWaiting,
+  setFormStatus,
+}) => {
   switch (formStatus) {
     case 'forgot':
       return <LoginFormForgotButtons form={form} />;
     case 'login':
-      return <LoginFormLoginButtons form={form} setFormStatus={setFormStatus} />;
+      return (
+        <LoginFormLoginButtons
+          form={form}
+          isAuthenticationWaiting={isAuthenticationWaiting}
+          setFormStatus={setFormStatus}
+        />
+      );
     case 'signUp':
-      return <LoginFormSignUpButtons form={form} setFormStatus={setFormStatus} />;
+      return (
+        <LoginFormSignUpButtons
+          form={form}
+          isAuthenticationWaiting={isAuthenticationWaiting}
+          setFormStatus={setFormStatus}
+        />
+      );
     default:
       throw new Error('Unexpected form status');
   }
