@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { LoadingOutlined } from '@ant-design/icons';
 import { Button as AntButton } from 'antd';
 import Icon from 'icons/icon/icon';
 import { IconNames } from 'types/iconNameTypes';
@@ -8,27 +9,31 @@ import './button.less';
 interface Props {
   htmlType?: 'button' | 'reset' | 'submit';
   iconName?: IconNames;
+  isWaiting?: boolean;
   label: string;
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
   type?: 'primary' | 'secondary';
-  waiting?: boolean;
 }
 
 const Button: React.FC<Props> = ({
   htmlType = 'button',
   iconName = null,
+  isWaiting = false,
   label,
   onClick,
   type = 'primary',
-  waiting = false,
 }) => (
   <AntButton
     className={[styles.button, styles[type]].join(' ')}
     htmlType={htmlType}
-    loading={waiting}
+    loading={isWaiting}
     onClick={onClick}
     type={type === 'primary' ? 'primary' : null}
   >
+    {
+      // @ts-ignore
+      isWaiting && <LoadingOutlined />
+    }
     {
       iconName && <Icon iconName={iconName} size={16} />
     }

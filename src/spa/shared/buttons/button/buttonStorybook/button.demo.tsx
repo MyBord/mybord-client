@@ -13,9 +13,9 @@ const ButtonDemo: React.FC = () => {
       <Button label="Secondary Button" onClick={() => {}} type="secondary" />
       <h3 className={styles.h3}>-- Spinning Button --</h3>
       <Button
+        isWaiting={isWaiting}
         label="Loading Button"
         onClick={() => setIsWaiting(true)}
-        waiting={isWaiting}
       />
     </>
   );
