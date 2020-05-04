@@ -2,16 +2,24 @@ import * as React from 'react';
 import { useLazyQuery } from '@apollo/react-hooks';
 import Typography from 'typography/typography';
 import { LOGOUT_USER } from 'schema/user';
+import { useAuthenticationContext } from 'context/authenticationContext';
 import * as styles from './headerProfile.module.less';
 
 const HeaderProfilePopoverContent: React.FC = () => {
   const [LogoutUserQuery] = useLazyQuery(LOGOUT_USER);
+  const { unAuthenticateUser } = useAuthenticationContext();
+
+  const handleClick = (): void => {
+    LogoutUserQuery();
+    unAuthenticateUser();
+  };
+
   return (
     <ul className={styles.ul}>
       <li>
         <Typography
           iconName="logout"
-          onClick={LogoutUserQuery}
+          onClick={handleClick}
           size="three"
           text="Logout"
         />

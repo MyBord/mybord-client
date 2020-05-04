@@ -17,6 +17,7 @@ This document is used to outline current project management priorities.
   * make video url input required // use set fields?
   * have signup actually work for creating a new user
   * fix routing when going from landing to app
+  * fix double spinner when loading app
 
   * error handling when youtube url is invalid
   * add subscription for cards
