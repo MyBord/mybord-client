@@ -39,7 +39,6 @@ const DashboardHeaderFilterForm: React.FC = () => {
   const FormContent: React.FC<Props> = ({ form }) => (
     <div className={styles.div}>
       <FormItem
-        errorMessage={inputErrorMessage}
         fieldName="add-youtube-video-input"
         form={form}
         required

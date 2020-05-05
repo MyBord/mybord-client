@@ -14,7 +14,7 @@ const LoginFormLoginInputs: React.FC<Props> = ({ form }) => (
       fieldName="email"
       form={form}
       required
-      requiredMessage="Please enter your email address."
+      requiredMessage="Please enter your email address"
     >
       <TextInput placeholder="Email" />
     </FormItem>
@@ -22,7 +22,7 @@ const LoginFormLoginInputs: React.FC<Props> = ({ form }) => (
       fieldName="password"
       form={form}
       required
-      requiredMessage="Please enter your password."
+      requiredMessage="Please enter your password"
     >
       <PasswordInput placeholder="Password" />
     </FormItem>

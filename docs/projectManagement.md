@@ -69,6 +69,7 @@ This document is used to outline current project management priorities.
     * handle redirect when logged in successfully - this should be a graceful ui transition
     * handle error when username or password is incorrect
   * make spinner fade in and fade out
+  * Have a button not spin until a certain time
 
 ### D. Low
 
