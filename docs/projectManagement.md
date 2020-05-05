@@ -13,11 +13,9 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
-  * make video url input required // use set fields?
   * fix routing when going from landing to app
   * fix double spinner when loading app
   * add logout functionality and page transition back to landing
-
   * add subscription to videos
   * have session be remembered by user 
   * fix youtube card
