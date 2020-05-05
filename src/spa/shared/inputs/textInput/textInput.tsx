@@ -9,6 +9,7 @@ interface Props {
   onPressEnter?: () => void;
   placeholder?: string;
   type?: string;
+  value?: string;
 }
 
 const TextInput: React.FC<Props> = ({
@@ -18,6 +19,7 @@ const TextInput: React.FC<Props> = ({
   onPressEnter,
   placeholder = null,
   type = 'text',
+  value,
 }) => (
   <Input
     defaultValue={defaultValue}
@@ -26,6 +28,7 @@ const TextInput: React.FC<Props> = ({
     onPressEnter={onPressEnter}
     placeholder={placeholder}
     type={type}
+    value={value}
   />
 );
 
