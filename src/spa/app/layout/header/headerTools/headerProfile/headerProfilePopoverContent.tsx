@@ -7,11 +7,11 @@ import * as styles from './headerProfile.module.less';
 
 const HeaderProfilePopoverContent: React.FC = () => {
   const [LogoutUserQuery] = useLazyQuery(LOGOUT_USER);
-  const { unAuthenticateUser } = useAuthenticationContext();
+  const { logOutUser } = useAuthenticationContext();
 
   const handleClick = async (): Promise<void> => {
     await LogoutUserQuery();
-    unAuthenticateUser();
+    logOutUser();
   };
 
   return (

@@ -1,27 +1,39 @@
 import * as React from 'react';
 
 interface AuthenticationState {
-  authenticateUser: () => void;
-  isAuthenticated: boolean;
-  unAuthenticateUser: () => void;
+  hasLoggedIn: boolean;
+  hasLoggedOut: boolean;
+  logInUser: () => void;
+  logOutUser: () => void;
+  resetLogOutStatus: () => void;
 }
 
 const initialAuthenticationState: AuthenticationState = {
-  isAuthenticated: false,
-  authenticateUser: () => {},
-  unAuthenticateUser: () => {},
+  hasLoggedIn: false,
+  hasLoggedOut: false,
+  logInUser: () => {},
+  logOutUser: () => {},
+  resetLogOutStatus: () => {},
 };
 
 const AuthenticationContext = React.createContext<AuthenticationState>(initialAuthenticationState);
 
 export const AuthenticationContextProvider = (props: object): React.ReactElement => {
-  const [isAuthenticated, setisAuthenticated] = React.useState(false);
-  const authenticateUser = (): void => setisAuthenticated(true);
-  const unAuthenticateUser = (): void => setisAuthenticated(false);
+  const [hasLoggedIn, setHasLoggedIn] = React.useState(false);
+  const [hasLoggedOut, setHasLoggedOut] = React.useState(false);
+  const logInUser = (): void => setHasLoggedIn(true);
+  const logOutUser = (): void => setHasLoggedOut(true);
+  const resetLogOutStatus = (): void => setHasLoggedOut(false);
 
   return (
     <AuthenticationContext.Provider
-      value={{ authenticateUser, isAuthenticated, unAuthenticateUser }}
+      value={{
+        hasLoggedIn,
+        hasLoggedOut,
+        logInUser,
+        logOutUser,
+        resetLogOutStatus,
+      }}
       {...props}
     />
   );

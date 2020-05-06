@@ -20,6 +20,7 @@ This document is used to outline current project management priorities.
   * add subscription to videos
   * have session be remembered by user 
   * fix youtube card
+  * prevent forking
 
 ### B. High - MVP
 
@@ -69,6 +70,7 @@ This document is used to outline current project management priorities.
     * handle error when username or password is incorrect
   * make spinner fade in and fade out
   * Have a button not spin until a certain time
+  * create animation when logging out of app where modal pops up and a lock gets locked
 
 ### D. Low
 

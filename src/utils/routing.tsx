@@ -9,6 +9,7 @@ import {
   RouteProps,
 } from 'react-router-dom';
 import Spinner from 'fallbacks/spinner/spinner';
+import { routingVariants } from 'framerMotion/animationVariants';
 import * as styles from './routing.module.less';
 
 // ----- MOTION REDIRECT ----- //
@@ -21,20 +22,6 @@ export const MotionRedirect: React.FC<RedirectProps> = (props) => (
 
 // ----- MOTION ROUTE ----- //
 
-const animationVariants = {
-  initial: {
-    opacity: 0,
-  },
-  enter: {
-    opacity: 1,
-    transition: { duration: 0.25 },
-  },
-  exit: {
-    opacity: 0,
-    transition: { duration: 0.25 },
-  },
-};
-
 export const MotionRoute: React.FC<RouteProps> = ({ children, ...props }) => (
   <Route {...props}>
     <React.Suspense fallback={<Spinner />}>
@@ -43,7 +30,7 @@ export const MotionRoute: React.FC<RouteProps> = ({ children, ...props }) => (
         className={styles.section}
         exit="exit"
         initial="initial"
-        variants={animationVariants}
+        variants={routingVariants}
       >
         {children}
       </motion.section>

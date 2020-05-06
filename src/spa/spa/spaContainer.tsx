@@ -4,14 +4,19 @@ import App from 'app/app';
 import Landing from 'landing/landing';
 import { getTwoChildOpacityTransition } from 'framerMotion/animationVariants';
 import { useAuthenticationContext } from 'context/authenticationContext';
+import initializeSpaWrapper from './initializeSpaWrapper';
 import * as styles from './spa.module.less';
 
-// This component renders when a user has not already been authenticated / they do not have an
-// existing session with our application. When this occurs, we render the application with a
-// landing page that requires the user to sign in, and then, if they sign / are authenticated,
-// are directed to our 'app' via a nice FramerMotion transition.
-const SpaWithLogin: React.FC = () => {
-  const { isAuthenticated } = useAuthenticationContext();
+interface Props {
+  isAlreadyAuthenticated: boolean;
+}
+
+// This component renders the application with a landing page or the actual application based
+// on the users authentication status.
+const SpaContainer: React.FC<Props> = ({ isAlreadyAuthenticated }) => {
+  const { hasLoggedIn, hasLoggedOut } = useAuthenticationContext();
+
+  const isAuthenticated = (hasLoggedIn || isAlreadyAuthenticated) && !hasLoggedOut;
 
   const animationVariants = getTwoChildOpacityTransition(1.0);
 
@@ -37,4 +42,4 @@ const SpaWithLogin: React.FC = () => {
   );
 };
 
-export default SpaWithLogin;
+export default initializeSpaWrapper(SpaContainer);
