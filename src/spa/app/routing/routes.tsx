@@ -17,7 +17,7 @@ import InboxPage from 'pages/inboxPage/inboxPage';
 import PlaylistPage from 'pages/playlistPage/playlistPage';
 import Spinner from 'fallbacks/spinner/spinner';
 import TrendingPage from 'pages/trendingPage/trendingPage';
-import { MotionRedirect } from 'utils/routing';
+import { MotionRedirect, MotionRoute } from 'utils/routing';
 import * as styles from './routes.module.less';
 
 const variants = {
