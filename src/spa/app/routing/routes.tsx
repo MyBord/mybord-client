@@ -17,6 +17,7 @@ import InboxPage from 'pages/inboxPage/inboxPage';
 import PlaylistPage from 'pages/playlistPage/playlistPage';
 import Spinner from 'fallbacks/spinner/spinner';
 import TrendingPage from 'pages/trendingPage/trendingPage';
+import { MotionRedirect } from 'utils/routing';
 import * as styles from './routes.module.less';
 
 const variants = {
@@ -49,12 +50,6 @@ const RouteWrapper: React.FC<Props> = ({ children }) => (
       {children}
     </motion.section>
   </React.Suspense>
-);
-
-const MotionRedirect: React.FC<RedirectProps> = (props) => (
-  <motion.div exit="undefined">
-    <Redirect {...props} />
-  </motion.div>
 );
 
 const Routes: React.FC = () => {
