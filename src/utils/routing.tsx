@@ -1,11 +1,12 @@
 // This file creates common routing tooling that is used for our app.
 
 import * as React from 'react';
-import { Variants, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import {
   Redirect,
   RedirectProps,
   Route,
+  RouteProps,
 } from 'react-router-dom';
 import Spinner from 'fallbacks/spinner/spinner';
 import * as styles from './routing.module.less';
@@ -34,7 +35,7 @@ const animationVariants = {
   },
 };
 
-export const MotionRoute: React.FC<RedirectProps> = ({ children, ...props }) => (
+export const MotionRoute: React.FC<RouteProps> = ({ children, ...props }) => (
   <Route {...props}>
     <React.Suspense fallback={<Spinner />}>
       <motion.section
