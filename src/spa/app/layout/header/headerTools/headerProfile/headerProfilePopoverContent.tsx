@@ -9,8 +9,8 @@ const HeaderProfilePopoverContent: React.FC = () => {
   const [LogoutUserQuery] = useLazyQuery(LOGOUT_USER);
   const { unAuthenticateUser } = useAuthenticationContext();
 
-  const handleClick = (): void => {
-    LogoutUserQuery();
+  const handleClick = async (): Promise<void> => {
+    await LogoutUserQuery();
     unAuthenticateUser();
   };
 
