@@ -13,6 +13,7 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
+  * rename routes file , fix redirect for landing routes
   * fix routing when going from landing to app
   * fix double spinner when loading app
   * add logout functionality and page transition back to landing

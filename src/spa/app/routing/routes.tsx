@@ -1,7 +1,11 @@
 import * as React from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import {
-  Switch, Redirect, Route, useLocation,
+  Redirect,
+  RedirectProps,
+  Route,
+  Switch,
+  useLocation,
 } from 'react-router-dom';
 import CantPage from 'pages/cantPage/cantPage';
 import DashboardPage from 'pages/dashboardPage/dashboardPage';
@@ -47,24 +51,28 @@ const RouteWrapper: React.FC<Props> = ({ children }) => (
   </React.Suspense>
 );
 
+const MotionRedirect: React.FC<RedirectProps> = (props) => (
+  <motion.div exit="undefined">
+    <Redirect {...props} />
+  </motion.div>
+);
+
 const Routes: React.FC = () => {
   const location = useLocation();
   return (
     <AnimatePresence exitBeforeEnter>
       <Switch location={location} key={location.key}>
-        <Route
-          exact
-          path="/"
-          render={() => <Redirect to="/myBord" />}
-        />
-        <Route
-          exact
-          path="/login"
-          render={() => <Redirect to="/myBord" />}
-        />
-        <Route exact path="/myBord">
+        {/* ----- REDIRECTS ----- */}
+        <Route exact path="/">
+          <MotionRedirect to="/myBord" />
+        </Route>
+        <Route exact path="/login">
+          <MotionRedirect to="/myBord" />
+        </Route>
+        {/* ----- PAGES ----- */}
+        <Route exact path="/404">
           <RouteWrapper>
-            <DashboardPage />
+            <CantPage />
           </RouteWrapper>
         </Route>
         <Route exact path="/error">
@@ -92,6 +100,11 @@ const Routes: React.FC = () => {
             <InboxPage />
           </RouteWrapper>
         </Route>
+        <Route exact path="/myBord">
+          <RouteWrapper>
+            <DashboardPage />
+          </RouteWrapper>
+        </Route>
         <Route exact path="/playlist">
           <RouteWrapper>
             <PlaylistPage />
@@ -102,10 +115,9 @@ const Routes: React.FC = () => {
             <TrendingPage />
           </RouteWrapper>
         </Route>
+        {/* ----- CATCH ALL ----- */}
         <Route path="/*">
-          <RouteWrapper>
-            <CantPage />
-          </RouteWrapper>
+          <MotionRedirect to="/404" />
         </Route>
       </Switch>
     </AnimatePresence>
