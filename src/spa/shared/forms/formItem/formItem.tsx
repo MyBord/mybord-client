@@ -4,6 +4,7 @@ import { GetFieldDecoratorOptionsType, FormProp } from 'types/formTypes';
 
 interface Props {
   children: React.ReactNode;
+  errorMessage?: string;
   fieldName: string;
   form: FormProp;
   required?: boolean;
@@ -14,6 +15,7 @@ interface Props {
 
 const FormItem: React.FC<Props> = ({
   children,
+  errorMessage = null,
   fieldName,
   form,
   required = false,
@@ -32,6 +34,19 @@ const FormItem: React.FC<Props> = ({
   const options: GetFieldDecoratorOptionsType = {
     rules,
   };
+
+  if (errorMessage) {
+    return (
+      <Form.Item
+        help={errorMessage}
+        validateStatus="error"
+      >
+        {
+          form.getFieldDecorator(fieldName)(children)
+        }
+      </Form.Item>
+    );
+  }
 
   return (
     <Form.Item>

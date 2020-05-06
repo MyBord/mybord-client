@@ -16,16 +16,7 @@ interface Props {
 const DashboardHeaderFilterForm: React.FC = () => {
   const [createYoutubeCard] = useMutation(CREATE_YOUTUBE_CARD);
   const [isSubmitWaiting, setIsSubmitWaiting] = React.useState(false);
-
-  const foo = (form: FormProp): void => {
-    console.log('foo bar');
-    form.setFields({
-      'add-youtube-video-input': {
-        errors: [new Error('hello world')],
-      },
-    });
-    console.log(form.getFieldsValue());
-  };
+  const [inputErrorMessage, setInputErrorMessage] = React.useState(null);
 
   const handleSubmit = async (form: FormProp): Promise<void> => {
     try {
@@ -40,8 +31,7 @@ const DashboardHeaderFilterForm: React.FC = () => {
       setIsSubmitWaiting(false);
       const { message, status } = handleError(error);
       if (status === 400) {
-        console.log(message);
-        foo(form);
+        setInputErrorMessage(message);
       }
     }
   };
@@ -49,8 +39,8 @@ const DashboardHeaderFilterForm: React.FC = () => {
 
   const FormContent: React.FC<Props> = ({ form }) => (
     <div className={styles.div}>
-      <button onClick={() => foo(form)} type="button">Click Me</button>
       <FormItem
+        errorMessage={inputErrorMessage}
         fieldName="add-youtube-video-input"
         form={form}
         required
