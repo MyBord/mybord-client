@@ -17,7 +17,7 @@ This document is used to outline current project management priorities.
   * fix spasaming when logging in
   * fix routing when going from landing to app
   * fix double spinner when loading app
-  * add logout functionality and page transition back to landing
+  * when logging out, show graceful transition back to landing
   * add subscription to videos
   * have session be remembered by user 
   * fix youtube card
