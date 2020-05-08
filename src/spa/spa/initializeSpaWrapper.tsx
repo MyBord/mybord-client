@@ -17,15 +17,15 @@ const initializeSpaWrapper = (WrappedComponent: React.FC): React.FC => {
   const WrappedSpa: React.FC = () => {
     const { called, data, loading } = useQuery(IS_AUTHENTICATED);
     const [isInitializationComplete, setIsInitializationComplete] = React.useState(false);
-    const { setAuthenticationStatus } = useAuthenticationContext();
+    const { isAuthenticated, setAuthenticationStatus } = useAuthenticationContext();
 
     if (called && !loading && !isInitializationComplete) {
-      setIsInitializationComplete(true);
       if (data.isAuthenticated) {
         setAuthenticationStatus(true);
       } else {
         setAuthenticationStatus(false);
       }
+      setIsInitializationComplete(true);
     }
 
     const animationVariants = getTwoChildOpacityTransition(1.0);
@@ -44,7 +44,7 @@ const initializeSpaWrapper = (WrappedComponent: React.FC): React.FC => {
         >
           <div className={styles.spaDivChild}>
             {
-              isInitializationComplete
+              (isInitializationComplete && isAuthenticated !== null)
                 ? <WrappedComponent />
                 : <PageFallback />
             }
