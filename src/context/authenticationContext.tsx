@@ -6,14 +6,14 @@ interface AuthenticationState {
 }
 
 const initialAuthenticationState: AuthenticationState = {
-  isAuthenticated: false,
+  isAuthenticated: null,
   setAuthenticationStatus: () => {},
 };
 
 const AuthenticationContext = React.createContext<AuthenticationState>(initialAuthenticationState);
 
 export const AuthenticationContextProvider = (props: object): React.ReactElement => {
-  const [isAuthenticated, setAuthenticationStatus] = React.useState(false);
+  const [isAuthenticated, setAuthenticationStatus] = React.useState(null);
 
   return (
     <AuthenticationContext.Provider
