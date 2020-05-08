@@ -22,7 +22,7 @@ const LoginFormContainer: React.FC = () => {
     IS_AUTHENTICATED, { fetchPolicy: 'no-cache' },
   );
   const [loginUser] = useMutation(LOGIN_USER);
-  const { logInUser } = useAuthenticationContext();
+  const { setAuthenticationStatus } = useAuthenticationContext();
 
   // Function that gets invoked when the user clicks on the 'login' button
   const handleLogin = async (form: FormProp): Promise<void> => {
@@ -107,7 +107,7 @@ const LoginFormContainer: React.FC = () => {
   if (called && !loading) {
     const { isAuthenticated } = data;
     if (isAuthenticated) {
-      logInUser();
+      setAuthenticationStatus(true);
     }
 
     // Note: the else block should never be reached because when attempting to login the user, the

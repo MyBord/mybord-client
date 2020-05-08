@@ -7,16 +7,10 @@ import { useAuthenticationContext } from 'context/authenticationContext';
 import initializeSpaWrapper from './initializeSpaWrapper';
 import * as styles from './spa.module.less';
 
-interface Props {
-  isAlreadyAuthenticated: boolean;
-}
-
 // This component renders the application with a landing page or the actual application based
 // on the users authentication status.
-const SpaContainer: React.FC<Props> = ({ isAlreadyAuthenticated }) => {
-  const { hasLoggedIn, hasLoggedOut } = useAuthenticationContext();
-
-  const isAuthenticated = (hasLoggedIn || isAlreadyAuthenticated) && !hasLoggedOut;
+const SpaContainer: React.FC = () => {
+  const { isAuthenticated } = useAuthenticationContext();
 
   const animationVariants = getTwoChildOpacityTransition(1.0);
 

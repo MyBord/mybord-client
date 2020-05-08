@@ -13,6 +13,7 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
+  * fix when already authenticated, there is a flash of the landing page.
   * fix spasaming when logging in
   * fix routing when going from landing to app
   * fix double spinner when loading app
