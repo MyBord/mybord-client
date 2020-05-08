@@ -24,7 +24,7 @@ export const MotionRedirect: React.FC<RedirectProps> = (props) => (
 
 export const MotionRoute: React.FC<RouteProps> = ({ children, ...props }) => (
   <Route {...props}>
-    <React.Suspense fallback={<Spinner />}>
+    <React.Suspense fallback={<h1>hello world</h1>}>
       <motion.section
         animate="enter"
         className={styles.section}

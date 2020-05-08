@@ -17,11 +17,16 @@ const initializeSpaWrapper = (WrappedComponent: React.FC): React.FC => {
   const WrappedSpa: React.FC = () => {
     const { called, data, loading } = useQuery(IS_AUTHENTICATED);
     const [isInitializationComplete, setIsInitializationComplete] = React.useState(false);
-    const { isAuthenticated, setAuthenticationStatus } = useAuthenticationContext();
+    const {
+      isAuthenticated,
+      setAlreadyAuthenticatedStatus,
+      setAuthenticationStatus,
+    } = useAuthenticationContext();
 
     if (called && !loading && !isInitializationComplete) {
       if (data.isAuthenticated) {
         setAuthenticationStatus(true);
+        setAlreadyAuthenticatedStatus(true);
       } else {
         setAuthenticationStatus(false);
       }
@@ -46,7 +51,7 @@ const initializeSpaWrapper = (WrappedComponent: React.FC): React.FC => {
             {
               (isInitializationComplete && isAuthenticated !== null)
                 ? <WrappedComponent />
-                : <PageFallback />
+                : <h1>------------ INITIALIZING ------------</h1>
             }
           </div>
         </motion.div>
