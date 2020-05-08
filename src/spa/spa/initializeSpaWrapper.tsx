@@ -4,11 +4,8 @@ import { useQuery } from '@apollo/react-hooks';
 import PageFallback from 'fallbacks/pageFallback/pageFallback';
 import { IS_AUTHENTICATED } from 'schema/user';
 import { getTwoChildOpacityTransition } from 'framerMotion/animationVariants';
+import { useAuthenticationContext } from 'context/authenticationContext';
 import * as styles from './spa.module.less';
-
-interface Props {
-  isAlreadyAuthenticated: boolean;
-}
 
 // This wrapper is responsible for initializing our SPA. Once all fetches, actions, etc have
 // been performed, then the actual SPA can be rendered. In the meantime, we will load a spinner
@@ -16,13 +13,19 @@ interface Props {
 //   * Performs a backend query to determine if the current user has already been authenticated
 //     / has an existing session or not.
 // Note: We are not using Suspense here because we cannot have transitions between fallbacks.
-const initializeSpaWrapper = (WrappedComponent: React.FC<Props>): React.FC => {
+const initializeSpaWrapper = (WrappedComponent: React.FC): React.FC => {
   const WrappedSpa: React.FC = () => {
     const { called, data, loading } = useQuery(IS_AUTHENTICATED);
-    const [initializationComplete, setInitializationComplete] = React.useState(false);
+    const [isInitializationComplete, setIsInitializationComplete] = React.useState(false);
+    const { setAuthenticationStatus } = useAuthenticationContext();
 
-    if (called && !loading && !initializationComplete) {
-      setInitializationComplete(true);
+    if (called && !loading && !isInitializationComplete) {
+      setIsInitializationComplete(true);
+      if (data.isAuthenticated) {
+        setAuthenticationStatus(true);
+      } else {
+        setAuthenticationStatus(false);
+      }
     }
 
     const animationVariants = getTwoChildOpacityTransition(1.0);
@@ -34,15 +37,15 @@ const initializeSpaWrapper = (WrappedComponent: React.FC<Props>): React.FC => {
           className={styles.spaDiv}
           exit="exit"
           initial="initial"
-          key={initializationComplete ? 'initialized' : 'initializing'}
+          key={isInitializationComplete ? 'initialized' : 'initializing'}
           variants={
-            initializationComplete ? animationVariants.lastChild : animationVariants.firstChild
+            isInitializationComplete ? animationVariants.lastChild : animationVariants.firstChild
           }
         >
           <div className={styles.spaDivChild}>
             {
-              initializationComplete
-                ? <WrappedComponent isAlreadyAuthenticated={data.isAuthenticated} />
+              isInitializationComplete
+                ? <WrappedComponent />
                 : <PageFallback />
             }
           </div>
