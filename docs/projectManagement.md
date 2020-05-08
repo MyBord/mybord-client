@@ -13,6 +13,7 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
+  * have initialization spinner be logo with ., .., ... and rounded white border
   * fix spasaming when logging in
   * fix double spinner when loading app
   * when logging out, show graceful transition back to landing

@@ -11,7 +11,11 @@ const variants = {
   },
   enter: {
     height: sizes.headerHeight,
-    transition: { ease: 'easeOut', duration: 1 },
+    transition: {
+      ease: 'easeOut',
+      duration: 0.45,
+      delay: 0.75,
+    },
   },
 };
 
