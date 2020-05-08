@@ -5,9 +5,11 @@ import * as styles from './spaFallback.module.less';
 // This component is used to render a fallback for the entire spa when the spa is loading /
 // initializing.
 const SpaFallback: React.FC = () => (
-  <div className={styles.div}>
-    <Spinner />
-  </div>
+  <main className={styles.main}>
+    <div className={styles.div}>
+      <Spinner />
+    </div>
+  </main>
 );
 
 export default SpaFallback;
