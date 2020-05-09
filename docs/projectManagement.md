@@ -91,6 +91,7 @@ This document is used to outline current project management priorities.
     * add tooltips for long titles
   * create skeletons for login page, etc for slow network
   * create skeletons for all pages
+  * if you click on a lottie player, it will pause the animation
   
 ## II. Long Term  
 

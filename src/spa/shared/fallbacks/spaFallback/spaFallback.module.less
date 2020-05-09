@@ -2,11 +2,23 @@
 @import '~styles/_shadows';
 
 .div {
+  align-items: center;
   background: @white;
   border-radius: 2rem;
   box-shadow: @spaFallbackShadow;
-  height: 15rem;
-  width: 15rem;
+  display: flex;
+  height: 12rem;
+  justify-content: center;
+  position: relative;
+  width: 12rem;
+  > img {
+    width: 5rem;
+  }
+}
+
+.lottieDiv {
+  bottom: -1.25rem;
+  position: absolute;
 }
 
 .main {
