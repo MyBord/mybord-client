@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useQuery } from '@apollo/react-hooks';
-import PageFallback from 'fallbacks/pageFallback/pageFallback';
+import SpaFallback from 'fallbacks/spaFallback/spaFallback';
 import { IS_AUTHENTICATED } from 'schema/user';
 import { getTwoChildOpacityTransition } from 'framerMotion/animationVariants';
 import { useAuthenticationContext } from 'context/authenticationContext';
@@ -46,7 +46,7 @@ const initializeSpaWrapper = (WrappedComponent: React.FC): React.FC => {
             {
               (isInitializationComplete && isAuthenticated !== null)
                 ? <WrappedComponent />
-                : <PageFallback />
+                : <SpaFallback />
             }
           </div>
         </motion.div>
