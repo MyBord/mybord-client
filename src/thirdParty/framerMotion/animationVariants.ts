@@ -1,4 +1,5 @@
 import { Variants } from 'types/framerMotion';
+import * as sizes from 'styles/_sizes.less';
 
 // transitions the opacity from one child to the next
 export const getTwoChildOpacityTransition = (duration: number): Variants => ({
@@ -34,5 +35,31 @@ export const routingVariants = {
   exit: {
     opacity: 0,
     transition: { duration: 0.25 },
+  },
+};
+
+// animation variants for the navigation header
+export const navigationHeaderVariants = {
+  initial: {
+    height: 0,
+  },
+  enter: {
+    height: sizes.headerHeight,
+    transition: {
+      ease: 'easeOut',
+      duration: 0.45,
+      delay: 0.75,
+    },
+  },
+};
+
+// animation variants for the navigation left pane
+export const navigationLeftPaneVariants = {
+  initial: {
+    width: 0,
+  },
+  enter: {
+    width: sizes.navWidth,
+    transition: { ease: 'easeOut', duration: 0.4 },
   },
 };
