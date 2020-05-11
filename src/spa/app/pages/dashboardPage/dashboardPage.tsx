@@ -29,7 +29,10 @@ const DashboardPageContent: React.FC<Props> = ({ setHydrationStatus }) => {
   React.useEffect(() => setHydrationStatus(true), []);
 
   return (
-    <section className={styles.section} />
+    <section className={styles.section}>
+      <DashboardHeader />
+      <DashboardCards userCards={userCards.userCards} />
+    </section>
   );
 };
 
