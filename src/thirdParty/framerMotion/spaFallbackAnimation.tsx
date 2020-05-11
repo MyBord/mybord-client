@@ -24,7 +24,7 @@ const SpaFallbackAnimation: React.FC<Props> = ({ children }) => {
             initial="initial"
             key={shouldRender ? 'hydrated' : 'hydrating'}
             variants={
-              shouldRender ? animationVariants.lastChild : animationVariants.firstChild
+              !shouldRender ? animationVariants.lastChild : animationVariants.firstChild
             }
           >
             {children}
