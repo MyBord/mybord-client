@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { YoutubeVideoData } from 'types/youtubeTypes';
+import YoutubePlayerAnimation from 'framerMotion/youtubePlayerAnimation';
 import YoutubeCardThumbnailComponent from './youtubeCardThumbnailComponent';
 import YoutubePlayer from '../youtubePlayer/youtubePlayer';
 import * as styles from './youtubeCardThumbnail.module.less';
@@ -15,23 +15,13 @@ const YoutubeCardThumbnailContainer: React.FC<Props> = ({ youtubeVideoData }) =>
 
   return (
     <div className={styles.container}>
-      <AnimatePresence>
-        {!isYoutubePlayerLoaded && (
-          <motion.div
-            animate={{ opacity: 1 }}
-            className={styles.overlayDiv}
-            exit={{ opacity: 0 }}
-            initial={{ opacity: 1 }}
-            transition={{ duration: 1 }}
-          >
-            <YoutubeCardThumbnailComponent
-              isYoutubePlayerLoaded={isYoutubePlayerLoaded}
-              setShowYoutubePlayer={setShowYoutubePlayer}
-              youtubeVideoData={youtubeVideoData}
-            />
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <YoutubePlayerAnimation isYoutubePlayerLoaded={isYoutubePlayerLoaded}>
+        <YoutubeCardThumbnailComponent
+          isYoutubePlayerLoaded={isYoutubePlayerLoaded}
+          setShowYoutubePlayer={setShowYoutubePlayer}
+          youtubeVideoData={youtubeVideoData}
+        />
+      </YoutubePlayerAnimation>
       {
         showYoutubePlayer
         && (
