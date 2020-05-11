@@ -1,5 +1,22 @@
-import { Variants } from 'types/framerMotion';
-import * as sizes from 'styles/_sizes.less';
+type Variants = {
+  [key in string]: {
+    initial: {
+      opacity: number;
+    };
+    enter?: {
+      opacity: number;
+      transition: {
+        duration: number;
+      };
+    };
+    exit?: {
+      opacity: number;
+      transition: {
+        duration: number;
+      };
+    };
+  };
+};
 
 // transitions the opacity from one child to the next
 export const getTwoChildOpacityTransition = (duration: number): Variants => ({

@@ -1,9 +1,7 @@
 import * as React from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
 import { useQuery } from '@apollo/react-hooks';
 import SpaFallback from 'fallbacks/spaFallback/spaFallback';
 import { IS_AUTHENTICATED } from 'schema/user';
-import { getTwoChildOpacityTransition } from 'framerMotion/commonVariants';
 import { useAuthenticationContext } from 'context/authenticationContext';
 import * as styles from './spa.module.less';
 
@@ -29,28 +27,15 @@ const initializeSpaWrapper = (WrappedComponent: React.FC): React.FC => {
       setIsInitializationComplete(true);
     }
 
-    const animationVariants = getTwoChildOpacityTransition(1.0);
-
     return (
-      <AnimatePresence>
-        <motion.div
-          animate="enter"
-          className={styles.spaDiv}
-          exit="exit"
-          initial="initial"
-          key={isInitializationComplete ? 'initialized' : 'initializing'}
-          variants={
-            isInitializationComplete ? animationVariants.lastChild : animationVariants.firstChild
+      <div className={styles.spaDiv}>
+        <div className={styles.spaDivChild}>
+          {
+            (isInitializationComplete && isAuthenticated !== null) && <WrappedComponent />
           }
-        >
-          <div className={styles.spaDivChild}>
-            {
-              (isInitializationComplete && isAuthenticated !== null) && <WrappedComponent />
-            }
-            <SpaFallback />
-          </div>
-        </motion.div>
-      </AnimatePresence>
+          <SpaFallback />
+        </div>
+      </div>
     );
   };
 
