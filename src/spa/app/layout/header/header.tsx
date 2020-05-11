@@ -1,20 +1,13 @@
 import * as React from 'react';
-import { motion } from 'framer-motion';
-import { navigationHeaderVariants } from 'framerMotion/commonVariants';
+import HeaderAnimation from 'framerMotion/headerAnimation';
 import HeaderTitles from './headerTitles/headerTitles';
 import HeaderTools from './headerTools/headerTools';
-import * as styles from './header.module.less';
 
 const Header: React.FC = () => (
-  <motion.header
-    animate="enter"
-    className={styles.header}
-    initial="initial"
-    variants={navigationHeaderVariants}
-  >
+  <HeaderAnimation>
     <HeaderTitles />
     <HeaderTools />
-  </motion.header>
+  </HeaderAnimation>
 );
 
 export default Header;

@@ -39,6 +39,7 @@ This document is used to outline current project management priorities.
   * replace coffee login image
   * handle loading of landing page background image
   * add error boundary to login app
+  * fix how spa fallback fades a little at the beginning
 
 ### C. Medium
 

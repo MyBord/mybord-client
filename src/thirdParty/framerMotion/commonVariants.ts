@@ -38,21 +38,6 @@ export const routingVariants = {
   },
 };
 
-// animation variants for the navigation header
-export const navigationHeaderVariants = {
-  initial: {
-    height: 0,
-  },
-  enter: {
-    height: sizes.headerHeight,
-    transition: {
-      ease: 'easeOut',
-      duration: 0.45,
-      delay: 0.75,
-    },
-  },
-};
-
 // animation variants for the navigation left pane
 export const navigationLeftPaneVariants = {
   initial: {

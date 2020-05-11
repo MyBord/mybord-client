@@ -2,7 +2,7 @@ import * as React from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useHydrationContext } from 'context/hydrationContext';
 import { getTwoChildOpacityTransition } from './commonVariants';
-import * as styles from './spaFallbackAnimation.module.less';
+import * as styles from './animations.module.less';
 
 interface Props {
   children: React.ReactNode;
@@ -15,7 +15,7 @@ const SpaFallbackAnimation: React.FC<Props> = ({ children }) => {
     <AnimatePresence>
       <motion.div
         animate="enter"
-        className={styles.div}
+        className={styles.spaFallbackDiv}
         exit="exit"
         initial="initial"
         key={isHydrated ? 'hydrated' : 'hydrating'}
