@@ -5,6 +5,7 @@ import SpaFallback from 'fallbacks/spaFallback/spaFallback';
 import { IS_AUTHENTICATED } from 'schema/user';
 import { getTwoChildOpacityTransition } from 'framerMotion/animationVariants';
 import { useAuthenticationContext } from 'context/authenticationContext';
+import { useHydrationContext } from 'context/hydrationContext';
 import * as styles from './spa.module.less';
 
 // This wrapper is responsible for initializing our SPA. Once all fetches, actions, etc have
@@ -13,11 +14,13 @@ import * as styles from './spa.module.less';
 //   * Performs a backend query to determine if the current user has already been authenticated
 //     / has an existing session or not.
 // Note: We are not using Suspense here because we cannot have transitions between fallbacks.
+
 const initializeSpaWrapper = (WrappedComponent: React.FC): React.FC => {
   const WrappedSpa: React.FC = () => {
     const { called, data, loading } = useQuery(IS_AUTHENTICATED);
     const [isInitializationComplete, setIsInitializationComplete] = React.useState(false);
     const { isAuthenticated, setAuthenticationStatus } = useAuthenticationContext();
+    const { isHydrated } = useHydrationContext();
 
     if (called && !loading && !isInitializationComplete) {
       if (data.isAuthenticated) {
@@ -44,9 +47,10 @@ const initializeSpaWrapper = (WrappedComponent: React.FC): React.FC => {
         >
           <div className={styles.spaDivChild}>
             {
-              (isInitializationComplete && isAuthenticated !== null)
-                ? <WrappedComponent />
-                : <SpaFallback />
+              (isInitializationComplete && isAuthenticated !== null) && <WrappedComponent />
+            }
+            {
+              !isHydrated && <SpaFallback />
             }
           </div>
         </motion.div>
