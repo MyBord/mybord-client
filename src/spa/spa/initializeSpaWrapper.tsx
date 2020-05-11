@@ -49,7 +49,7 @@ const initializeSpaWrapper = (WrappedComponent: React.FC): React.FC => {
             {
               (isInitializationComplete && isAuthenticated !== null) && <WrappedComponent />
             }
-            <SpaFallbackAnimation isHydrated={isHydrated} />
+            <SpaFallbackAnimation />
           </div>
         </motion.div>
       </AnimatePresence>
