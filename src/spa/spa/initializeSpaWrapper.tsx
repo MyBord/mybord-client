@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { useQuery } from '@apollo/react-hooks';
 import SpaFallback from 'fallbacks/spaFallback/spaFallback';
 import { IS_AUTHENTICATED } from 'schema/user';
-import { getTwoChildOpacityTransition } from 'framerMotion/animationVariants';
+import { getTwoChildOpacityTransition } from 'framerMotion/commonVariants';
 import { useAuthenticationContext } from 'context/authenticationContext';
 import { useHydrationContext } from 'context/hydrationContext';
 import * as styles from './spa.module.less';
