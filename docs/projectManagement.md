@@ -13,6 +13,7 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
+  * create files to deal with animations exclusively
   * add transition from spa fallback to app (e.g. dashboard page) and transition into dashboard page
   * Make sure page is not fully rendered until after our frame has animated
   * fix fakeapi

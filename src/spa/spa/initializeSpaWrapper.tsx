@@ -15,6 +15,32 @@ import * as styles from './spa.module.less';
 //     / has an existing session or not.
 // Note: We are not using Suspense here because we cannot have transitions between fallbacks.
 
+interface Props {
+  isHydrated: boolean;
+}
+
+const SpaFallbackContainer: React.FC<Props> = ({ isHydrated }) => {
+  const animationVariants = getTwoChildOpacityTransition(1.0);
+  return (
+    <AnimatePresence>
+      <motion.div
+        animate="enter"
+        className={styles.fallbackDiv}
+        exit="exit"
+        initial="initial"
+        key={isHydrated ? 'hydrated' : 'hydrating'}
+        variants={
+          isHydrated ? animationVariants.lastChild : animationVariants.firstChild
+        }
+      >
+        {
+          !isHydrated && <SpaFallback />
+        }
+      </motion.div>
+    </AnimatePresence>
+  );
+};
+
 const initializeSpaWrapper = (WrappedComponent: React.FC): React.FC => {
   const WrappedSpa: React.FC = () => {
     const { called, data, loading } = useQuery(IS_AUTHENTICATED);
@@ -49,9 +75,7 @@ const initializeSpaWrapper = (WrappedComponent: React.FC): React.FC => {
             {
               (isInitializationComplete && isAuthenticated !== null) && <WrappedComponent />
             }
-            {
-              !isHydrated && <SpaFallback />
-            }
+            <SpaFallbackContainer isHydrated={isHydrated} />
           </div>
         </motion.div>
       </AnimatePresence>
