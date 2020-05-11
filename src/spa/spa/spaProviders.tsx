@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { AuthenticationContextProvider } from 'context/authenticationContext';
+import { HydrationContextProvider } from 'context/hydrationContext';
 
 interface Props {
   children: React.ReactNode;
@@ -7,7 +8,9 @@ interface Props {
 
 const SpaProviders: React.FC<Props> = ({ children }) => (
   <AuthenticationContextProvider>
-    {children}
+    <HydrationContextProvider>
+      {children}
+    </HydrationContextProvider>
   </AuthenticationContextProvider>
 );
 

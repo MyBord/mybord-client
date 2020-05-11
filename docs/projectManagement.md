@@ -13,10 +13,14 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
-  * have initialization spinner be logo with ., .., ... and rounded white border
+  * add transition from spa fallback to app (e.g. dashboard page) and transition into dashboard page
+  * Make sure page is not fully rendered until after our frame has animated
+  * fix fakeapi
+  * create a wrapper for the dashboard page
   * fix spasaming when logging in
   * fix double spinner when loading app
-  * when logging out, show graceful transition back to landing
+  * show graceful transition when logging out and going back to landing page
+  * figure out graceful transition from initialization spa fallback to landing page
   * add subscription to videos
   * have session be remembered by user 
   * fix youtube card

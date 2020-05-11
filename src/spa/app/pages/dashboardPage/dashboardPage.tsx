@@ -1,31 +1,32 @@
 import * as React from 'react';
+import Spinner from 'fallbacks/spinner/spinner';
 import { fetchData } from 'api/fakeApi';
+import { useHydrationContext } from 'context/hydrationContext';
 import DashboardCards from './dashboardCards/dashboardCards';
 import DashboardHeader from './dashboardHeader/dashboardHeader';
 import * as styles from './dashboardPage.module.less';
 
+interface Props {
+  setHydrationStatus: (status: boolean) => void;
+}
+
 const resource = fetchData();
 
 const DashboardPage: React.FC = () => {
-  const [isLoaded, setIsLoaded] = React.useState(false);
+  const { isHydrated, setHydrationStatus } = useHydrationContext();
+  // See notes in `hydrationContext.tsx` about why our fallback `Spinner` may not render unless
+  // our app has been hydrated.
   return (
-    <>
-      <h1 style={{ margin: '3rem' }}>{isLoaded ? 'LOADED' : 'NOT LOADED'}</h1>
-      <React.Suspense fallback={<h1>...LOADING...</h1>}>
-        <AppDetails setIsLoaded={setIsLoaded} />
-      </React.Suspense>
-    </>
+    <React.Suspense fallback={isHydrated && <Spinner />}>
+      <DashboardPageContent setHydrationStatus={setHydrationStatus} />
+    </React.Suspense>
   );
 };
 
-interface Props {
-  setIsLoaded: (status: boolean) => void;
-}
-
-const AppDetails: React.FC<Props> = ({ setIsLoaded }) => {
+const DashboardPageContent: React.FC<Props> = ({ setHydrationStatus }) => {
   const userCards = resource.userCards.read();
 
-  React.useEffect(() => setIsLoaded(true), []);
+  React.useEffect(() => setHydrationStatus(true), []);
 
   return (
     <section className={styles.section}>
