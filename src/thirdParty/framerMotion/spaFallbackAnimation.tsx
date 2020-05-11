@@ -8,7 +8,7 @@ interface Props {
   children: React.ReactNode;
 }
 
-// ToDo: add notes
+// See *1 and *2 in `hydrationContext.tsx`
 const SpaFallbackAnimation: React.FC<Props> = ({ children }) => {
   const animationVariants = getTwoChildOpacityTransition(0.5);
   const { isAnimationComplete, isHydrated } = useHydrationContext();

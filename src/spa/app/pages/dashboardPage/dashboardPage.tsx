@@ -15,7 +15,7 @@ const resource = fetchData();
 
 const DashboardPage: React.FC = () => {
   const { isAnimationComplete, isHydrated, setHydrationStatus } = useHydrationContext();
-  // See notes in `hydrationContext.tsx` about why our fallback `Spinner` may not render unless
+  // See *1 notes in `hydrationContext.tsx` about why our fallback `Spinner` may not render unless
   // our app has been hydrated.
   return (
     <React.Suspense fallback={isHydrated && <Spinner />}>
@@ -28,57 +28,18 @@ const DashboardPage: React.FC = () => {
 };
 
 const DashboardPageContent: React.FC<Props> = ({ isAnimationComplete, setHydrationStatus }) => {
-  // const userCards = resource.userCards.read();
-  const userCards = resource.user.read();
+  const userCards = resource.userCards.read();
 
+  // See *1 in `hydrationContext.tsx`
   React.useEffect(() => setHydrationStatus(true), []);
 
+  // See *2 in `hydrationContext.tsx`
   if (isAnimationComplete) {
     return (
-      <div>
-        <h1>{userCards.name}</h1>
-        <h1>{userCards.name}</h1>
-        <h1>{userCards.name}</h1>
-        <h1>{userCards.name}</h1>
-        <h1>{userCards.name}</h1>
-        <h1>{userCards.name}</h1>
-        <h1>{userCards.name}</h1>
-        <h1>{userCards.name}</h1>
-        <h1>{userCards.name}</h1>
-        <h1>{userCards.name}</h1>
-        <h1>{userCards.name}</h1>
-        <h1>{userCards.name}</h1>
-        <h1>{userCards.name}</h1>
-        <h1>{userCards.name}</h1>
-        <h1>{userCards.name}</h1>
-        <h1>{userCards.name}</h1>
-        <h1>{userCards.name}</h1>
-        <h1>{userCards.name}</h1>
-        <h1>{userCards.name}</h1>
-        <h1>{userCards.name}</h1>
-        <h1>{userCards.name}</h1>
-        <h1>{userCards.name}</h1>
-        <h1>{userCards.name}</h1>
-        <h1>{userCards.name}</h1>
-        <h1>{userCards.name}</h1>
-        <h1>{userCards.name}</h1>
-        <h1>{userCards.name}</h1>
-        <h1>{userCards.name}</h1>
-        <h1>{userCards.name}</h1>
-        <h1>{userCards.name}</h1>
-        <h1>{userCards.name}</h1>
-        <h1>{userCards.name}</h1>
-        <h1>{userCards.name}</h1>
-        <h1>{userCards.name}</h1>
-        <h1>{userCards.name}</h1>
-        <h1>{userCards.name}</h1>
-        <h1>{userCards.name}</h1>
-        <h1>{userCards.name}</h1>
-        <h1>{userCards.name}</h1>
-        <h1>{userCards.name}</h1>
-        <h1>{userCards.name}</h1>
-        <h1>{userCards.name}</h1>
-      </div>
+      <section className={styles.section}>
+        <DashboardHeader />
+        <DashboardCards userCards={userCards.userCards} />
+      </section>
     );
   }
   return null;

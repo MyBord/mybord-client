@@ -8,11 +8,11 @@ interface Props {
   children: React.ReactNode;
 }
 
-// ToDo: add notes
 const Layout: React.FC<Props> = ({ children }) => {
   const { setAnimationStatus } = useHydrationContext();
 
   React.useEffect(() => {
+    // See *2 in `hydrationContext.tsx`
     setTimeout(() => setAnimationStatus(true), 1700);
   }, []);
 
