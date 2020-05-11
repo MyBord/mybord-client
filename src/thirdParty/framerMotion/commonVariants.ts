@@ -39,18 +39,3 @@ export const getTwoChildOpacityTransition = (duration: number): Variants => ({
     },
   },
 });
-
-// animation variants for our routing between pages
-export const routingVariants = {
-  initial: {
-    opacity: 0,
-  },
-  enter: {
-    opacity: 1,
-    transition: { duration: 0.25 },
-  },
-  exit: {
-    opacity: 0,
-    transition: { duration: 0.25 },
-  },
-};
