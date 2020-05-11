@@ -17,7 +17,7 @@ const SpaFallbackAnimation: React.FC<Props> = ({ children }) => {
         !isHydrated && (
           <motion.div
             animate="enter"
-            className={styles.spaFallbackDiv}
+            className={styles.spaFallback}
             exit="exit"
             initial="initial"
             key={isHydrated ? 'hydrated' : 'hydrating'}

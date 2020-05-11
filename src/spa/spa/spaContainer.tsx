@@ -1,8 +1,7 @@
 import * as React from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
 import App from 'app/app';
 import Landing from 'landing/landing';
-import { getTwoChildOpacityTransition } from 'framerMotion/commonVariants';
+import SpaAnimation from 'framerMotion/spaAnimation';
 import { useAuthenticationContext } from 'context/authenticationContext';
 import initializeSpaWrapper from './initializeSpaWrapper';
 import * as styles from './spa.module.less';
@@ -11,28 +10,16 @@ import * as styles from './spa.module.less';
 // on the users authentication status.
 const SpaContainer: React.FC = () => {
   const { isAuthenticated } = useAuthenticationContext();
-
-  const animationVariants = getTwoChildOpacityTransition(1.0);
-
   return (
-    <AnimatePresence>
-      <motion.div
-        animate="enter"
-        className={styles.spaDiv}
-        exit="exit"
-        initial="initial"
-        key={isAuthenticated ? 'isAuthenticated' : 'notAuthenticated'}
-        variants={isAuthenticated ? animationVariants.lastChild : animationVariants.firstChild}
-      >
-        <div className={styles.spaDivChild}>
-          {
-            isAuthenticated
-              ? <App />
-              : <Landing />
-          }
-        </div>
-      </motion.div>
-    </AnimatePresence>
+    <SpaAnimation isAuthenticated={isAuthenticated}>
+      <div className={styles.div}>
+        {
+          isAuthenticated
+            ? <App />
+            : <Landing />
+        }
+      </div>
+    </SpaAnimation>
   );
 };
 
