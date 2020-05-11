@@ -1,7 +1,10 @@
 import * as React from 'react';
-import { fetchProfileData } from 'api/fakeApi';
+import { fetchData } from 'api/fakeApi';
+import DashboardCards from './dashboardCards/dashboardCards';
+import DashboardHeader from './dashboardHeader/dashboardHeader';
+import * as styles from './dashboardPage.module.less';
 
-const resource = fetchProfileData();
+const resource = fetchData();
 
 const DashboardPage: React.FC = () => {
   const [isLoaded, setIsLoaded] = React.useState(false);
@@ -20,13 +23,16 @@ interface Props {
 }
 
 const AppDetails: React.FC<Props> = ({ setIsLoaded }) => {
-  const todo = resource.cards.read();
-  console.log('**********');
-  console.log(todo);
+  const userCards = resource.userCards.read();
 
   React.useEffect(() => setIsLoaded(true), []);
 
-  return <h1>hello world</h1>;
+  return (
+    <section className={styles.section}>
+      <DashboardHeader />
+      <DashboardCards userCards={userCards.userCards} />
+    </section>
+  );
 };
 
 export default DashboardPage;

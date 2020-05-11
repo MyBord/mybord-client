@@ -29,7 +29,7 @@ const wrapPromise = (promise) => {
   };
 };
 
-const fetchCards = () => new Promise((resolve) => {
+const fetchUserCards = () => new Promise((resolve) => {
   setTimeout(() => {
     const body = JSON.stringify({ query: GET_USER_CARDS.loc.source.body });
     const config = {
@@ -41,9 +41,9 @@ const fetchCards = () => new Promise((resolve) => {
 });
 
 // eslint-disable-next-line import/prefer-default-export
-export function fetchProfileData() {
-  const cardsPromise = fetchCards();
+export function fetchData() {
+  const userCardsPromise = fetchUserCards();
   return {
-    cards: wrapPromise(cardsPromise),
+    userCards: wrapPromise(userCardsPromise),
   };
 }
