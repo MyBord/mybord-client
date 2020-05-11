@@ -3,9 +3,8 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { useQuery } from '@apollo/react-hooks';
 import SpaFallback from 'fallbacks/spaFallback/spaFallback';
 import { IS_AUTHENTICATED } from 'schema/user';
-import { getTwoChildOpacityTransition } from 'framerMotion/animationVariants';
+import { getTwoChildOpacityTransition } from 'framerMotion/commonVariants';
 import { useAuthenticationContext } from 'context/authenticationContext';
-import { useHydrationContext } from 'context/hydrationContext';
 import * as styles from './spa.module.less';
 
 // This wrapper is responsible for initializing our SPA. Once all fetches, actions, etc have
@@ -20,7 +19,6 @@ const initializeSpaWrapper = (WrappedComponent: React.FC): React.FC => {
     const { called, data, loading } = useQuery(IS_AUTHENTICATED);
     const [isInitializationComplete, setIsInitializationComplete] = React.useState(false);
     const { isAuthenticated, setAuthenticationStatus } = useAuthenticationContext();
-    const { isHydrated } = useHydrationContext();
 
     if (called && !loading && !isInitializationComplete) {
       if (data.isAuthenticated) {
@@ -49,9 +47,7 @@ const initializeSpaWrapper = (WrappedComponent: React.FC): React.FC => {
             {
               (isInitializationComplete && isAuthenticated !== null) && <WrappedComponent />
             }
-            {
-              !isHydrated && <SpaFallback />
-            }
+            <SpaFallback />
           </div>
         </motion.div>
       </AnimatePresence>

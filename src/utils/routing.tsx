@@ -9,7 +9,7 @@ import {
   RouteProps,
 } from 'react-router-dom';
 import Spinner from 'fallbacks/spinner/spinner';
-import { routingVariants } from 'framerMotion/animationVariants';
+import { routingVariants } from 'framerMotion/commonVariants';
 import * as styles from './routing.module.less';
 
 // ----- MOTION REDIRECT ----- //

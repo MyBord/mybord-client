@@ -2,7 +2,7 @@ import * as React from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import App from 'app/app';
 import Landing from 'landing/landing';
-import { getTwoChildOpacityTransition } from 'framerMotion/animationVariants';
+import { getTwoChildOpacityTransition } from 'framerMotion/commonVariants';
 import { useAuthenticationContext } from 'context/authenticationContext';
 import initializeSpaWrapper from './initializeSpaWrapper';
 import * as styles from './spa.module.less';

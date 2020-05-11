@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { motion } from 'framer-motion';
-import { navigationLeftPaneVariants } from 'framerMotion/animationVariants';
+import { navigationLeftPaneVariants } from 'framerMotion/commonVariants';
 import NavigationButtons from './navigationButtons/navigationButtons';
 import NavigationLogo from './navigationLogo/navigationLogo';
 import * as styles from './navigation.module.less';
