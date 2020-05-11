@@ -40,10 +40,24 @@ const fetchUserCards = () => new Promise((resolve) => {
   }, 2000);
 });
 
+function fetchUser() {
+  console.log("fetch user...");
+  return new Promise(resolve => {
+    setTimeout(() => {
+      console.log("fetched user");
+      resolve({
+        name: "Ringo Starr"
+      });
+    }, 10);
+  });
+}
+
 // eslint-disable-next-line import/prefer-default-export
 export function fetchData() {
-  const userCardsPromise = fetchUserCards();
+  // const userCardsPromise = fetchUserCards();
+  const userPromise = fetchUser();
   return {
-    userCards: wrapPromise(userCardsPromise),
+    // userCards: wrapPromise(userCardsPromise),
+    user: wrapPromise(userPromise),
   };
 }

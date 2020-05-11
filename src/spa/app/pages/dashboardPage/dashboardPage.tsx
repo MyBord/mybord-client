@@ -24,15 +24,13 @@ const DashboardPage: React.FC = () => {
 };
 
 const DashboardPageContent: React.FC<Props> = ({ setHydrationStatus }) => {
-  const userCards = resource.userCards.read();
+  // const userCards = resource.userCards.read();
+  const userCards = resource.user.read();
 
   React.useEffect(() => setHydrationStatus(true), []);
 
   return (
-    <section className={styles.section}>
-      <DashboardHeader />
-      <DashboardCards userCards={userCards.userCards} />
-    </section>
+    <h1>{userCards.name}</h1>
   );
 };
 

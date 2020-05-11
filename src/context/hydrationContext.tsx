@@ -10,24 +10,31 @@
 import * as React from 'react';
 
 interface HydrationState {
+  isAnimationComplete: boolean; // ToDo: add notes
   isHydrated: boolean;
+  setAnimationStatus: (status: boolean) => void;
   setHydrationStatus: (status: boolean) => void;
 }
 
 const initialHydrationState: HydrationState = {
+  isAnimationComplete: false,
   isHydrated: false,
+  setAnimationStatus: () => {},
   setHydrationStatus: () => {},
 };
 
 const HydrationContext = React.createContext<HydrationState>(initialHydrationState);
 
 export const HydrationContextProvider = (props: object): React.ReactElement => {
+  const [isAnimationComplete, setAnimationStatus] = React.useState(false);
   const [isHydrated, setHydrationStatus] = React.useState(false);
 
   return (
     <HydrationContext.Provider
       value={{
+        isAnimationComplete,
         isHydrated,
+        setAnimationStatus,
         setHydrationStatus,
       }}
       {...props}

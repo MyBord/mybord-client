@@ -13,13 +13,13 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
-  * look into animations when log in, log out, and log back in, how the page fallback looks
-  * fix logging in and logging out
-  * create files to deal with animations exclusively
-  * add transition from spa fallback to app (e.g. dashboard page) and transition into dashboard page
   * Make sure page is not fully rendered until after our frame has animated
   * fix fakeapi
   * create a wrapper for the dashboard page
+
+  * look into animations when log in, log out, and log back in, how the page fallback looks
+  * fix logging in and logging out
+  * add transition from spa fallback to app (e.g. dashboard page) and transition into dashboard page
   * fix spasaming when logging in
   * fix double spinner when loading app
   * show graceful transition when logging out and going back to landing page
