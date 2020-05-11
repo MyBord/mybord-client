@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useQuery } from '@apollo/react-hooks';
-import SpaFallback from 'fallbacks/spaFallback/spaFallback';
+import SpaFallbackAnimation from 'framerMotion/spaFallbackAnimation';
 import { IS_AUTHENTICATED } from 'schema/user';
 import { getTwoChildOpacityTransition } from 'framerMotion/commonVariants';
 import { useAuthenticationContext } from 'context/authenticationContext';
@@ -14,32 +14,6 @@ import * as styles from './spa.module.less';
 //   * Performs a backend query to determine if the current user has already been authenticated
 //     / has an existing session or not.
 // Note: We are not using Suspense here because we cannot have transitions between fallbacks.
-
-interface Props {
-  isHydrated: boolean;
-}
-
-const SpaFallbackContainer: React.FC<Props> = ({ isHydrated }) => {
-  const animationVariants = getTwoChildOpacityTransition(1.0);
-  return (
-    <AnimatePresence>
-      <motion.div
-        animate="enter"
-        className={styles.fallbackDiv}
-        exit="exit"
-        initial="initial"
-        key={isHydrated ? 'hydrated' : 'hydrating'}
-        variants={
-          isHydrated ? animationVariants.lastChild : animationVariants.firstChild
-        }
-      >
-        {
-          !isHydrated && <SpaFallback />
-        }
-      </motion.div>
-    </AnimatePresence>
-  );
-};
 
 const initializeSpaWrapper = (WrappedComponent: React.FC): React.FC => {
   const WrappedSpa: React.FC = () => {
@@ -75,7 +49,7 @@ const initializeSpaWrapper = (WrappedComponent: React.FC): React.FC => {
             {
               (isInitializationComplete && isAuthenticated !== null) && <WrappedComponent />
             }
-            <SpaFallbackContainer isHydrated={isHydrated} />
+            <SpaFallbackAnimation isHydrated={isHydrated} />
           </div>
         </motion.div>
       </AnimatePresence>
