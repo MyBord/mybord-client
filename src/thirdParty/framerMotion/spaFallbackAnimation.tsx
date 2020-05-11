@@ -13,18 +13,22 @@ const SpaFallbackAnimation: React.FC<Props> = ({ children }) => {
   const { isHydrated } = useHydrationContext();
   return (
     <AnimatePresence>
-      <motion.div
-        animate="enter"
-        className={styles.div}
-        exit="exit"
-        initial="initial"
-        key={isHydrated ? 'hydrated' : 'hydrating'}
-        variants={
-          isHydrated ? animationVariants.lastChild : animationVariants.firstChild
-        }
-      >
-        { !isHydrated && children }
-      </motion.div>
+      {
+        !isHydrated && (
+          <motion.div
+            animate="enter"
+            className={styles.div}
+            exit="exit"
+            initial="initial"
+            key={isHydrated ? 'hydrated' : 'hydrating'}
+            variants={
+              isHydrated ? animationVariants.lastChild : animationVariants.firstChild
+            }
+          >
+            {children}
+          </motion.div>
+        )
+      }
     </AnimatePresence>
   );
 };
