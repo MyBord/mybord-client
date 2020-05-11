@@ -3,10 +3,6 @@ import { motion } from 'framer-motion';
 import * as sizes from 'styles/_sizes.less';
 import * as styles from './animations.module.less';
 
-interface Props {
-  children: React.ReactNode;
-}
-
 export const variants = {
   initial: {
     width: 0,
@@ -16,6 +12,10 @@ export const variants = {
     transition: { ease: 'easeOut', duration: 0.4 },
   },
 };
+
+interface Props {
+  children: React.ReactNode;
+}
 
 const NavigationAnimation: React.FC<Props> = ({ children }) => (
   <motion.nav
