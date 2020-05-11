@@ -37,14 +37,3 @@ export const routingVariants = {
     transition: { duration: 0.25 },
   },
 };
-
-// animation variants for the navigation left pane
-export const navigationLeftPaneVariants = {
-  initial: {
-    width: 0,
-  },
-  enter: {
-    width: sizes.navWidth,
-    transition: { ease: 'easeOut', duration: 0.4 },
-  },
-};
