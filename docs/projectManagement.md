@@ -13,6 +13,7 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
+  * fix transition of spa fallback, when it unmounts there should be a transition
   * Make sure page is not fully rendered until after our frame has animated
   * fix fakeapi
   * create a wrapper for the dashboard page
