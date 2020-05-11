@@ -1,11 +1,14 @@
 import * as React from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import SpaFallback from 'fallbacks/spaFallback/spaFallback';
 import { useHydrationContext } from 'context/hydrationContext';
 import { getTwoChildOpacityTransition } from './commonVariants';
 import * as styles from './spaFallbackAnimation.module.less';
 
-const SpaFallbackAnimation: React.FC = () => {
+interface Props {
+  children: React.ReactNode;
+}
+
+const SpaFallbackAnimation: React.FC<Props> = ({ children }) => {
   const animationVariants = getTwoChildOpacityTransition(0.5);
   const { isHydrated } = useHydrationContext();
   return (
@@ -20,9 +23,7 @@ const SpaFallbackAnimation: React.FC = () => {
           isHydrated ? animationVariants.lastChild : animationVariants.firstChild
         }
       >
-        {
-          !isHydrated && <SpaFallback />
-        }
+        { !isHydrated && children }
       </motion.div>
     </AnimatePresence>
   );
