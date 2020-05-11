@@ -8,21 +8,23 @@ interface Props {
   children: React.ReactNode;
 }
 
+// See *1 and *2 in `hydrationContext.tsx`
 const SpaFallbackAnimation: React.FC<Props> = ({ children }) => {
   const animationVariants = getTwoChildOpacityTransition(0.5);
-  const { isHydrated } = useHydrationContext();
+  const { isAnimationComplete, isHydrated } = useHydrationContext();
+  const shouldRender = !isAnimationComplete || !isHydrated;
   return (
     <AnimatePresence>
       {
-        !isHydrated && (
+        shouldRender && (
           <motion.div
             animate="enter"
             className={styles.spaFallback}
             exit="exit"
             initial="initial"
-            key={isHydrated ? 'hydrated' : 'hydrating'}
+            key={shouldRender ? 'hydrated' : 'hydrating'}
             variants={
-              isHydrated ? animationVariants.lastChild : animationVariants.firstChild
+              shouldRender ? animationVariants.lastChild : animationVariants.firstChild
             }
           >
             {children}

@@ -7,33 +7,42 @@ import DashboardHeader from './dashboardHeader/dashboardHeader';
 import * as styles from './dashboardPage.module.less';
 
 interface Props {
+  isAnimationComplete: boolean;
   setHydrationStatus: (status: boolean) => void;
 }
 
 const resource = fetchData();
 
 const DashboardPage: React.FC = () => {
-  const { isHydrated, setHydrationStatus } = useHydrationContext();
-  // See notes in `hydrationContext.tsx` about why our fallback `Spinner` may not render unless
+  const { isAnimationComplete, isHydrated, setHydrationStatus } = useHydrationContext();
+  // See *1 notes in `hydrationContext.tsx` about why our fallback `Spinner` may not render unless
   // our app has been hydrated.
   return (
     <React.Suspense fallback={isHydrated && <Spinner />}>
-      <DashboardPageContent setHydrationStatus={setHydrationStatus} />
+      <DashboardPageContent
+        isAnimationComplete={isAnimationComplete}
+        setHydrationStatus={setHydrationStatus}
+      />
     </React.Suspense>
   );
 };
 
-const DashboardPageContent: React.FC<Props> = ({ setHydrationStatus }) => {
+const DashboardPageContent: React.FC<Props> = ({ isAnimationComplete, setHydrationStatus }) => {
   const userCards = resource.userCards.read();
 
+  // See *1 in `hydrationContext.tsx`
   React.useEffect(() => setHydrationStatus(true), []);
 
-  return (
-    <section className={styles.section}>
-      <DashboardHeader />
-      <DashboardCards userCards={userCards.userCards} />
-    </section>
-  );
+  // See *2 in `hydrationContext.tsx`
+  if (isAnimationComplete) {
+    return (
+      <section className={styles.section}>
+        <DashboardHeader />
+        <DashboardCards userCards={userCards.userCards} />
+      </section>
+    );
+  }
+  return null;
 };
 
 export default DashboardPage;
