@@ -37,7 +37,8 @@ const DashboardPageContent: React.FC<Props> = ({ isAnimationComplete, setHydrati
   if (isAnimationComplete) {
     return (
       <section className={styles.section}>
-        <h1>This is the dashboard</h1>
+        <DashboardHeader />
+        <DashboardCards userCards={userCards.userCards} />
       </section>
     );
   }
