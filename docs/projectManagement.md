@@ -21,7 +21,7 @@ This document is used to outline current project management priorities.
   * add transition from spa fallback to app (e.g. dashboard page) and transition into dashboard
    page - and make sure it doesn't mess up transitions between pages
   * fix spasaming when logging in and logging out
-  * figure out graceful transition from initialization spa fallback to landing page
+  * fix loading of image on landing page
   * add subscription to videos
   * have session be remembered by user 
   * fix youtube card
