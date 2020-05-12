@@ -28,7 +28,6 @@ const LoginFormComponent: React.FC<Props> = ({
         showAlert={hasIncorrectCreds}
       />
     </FormItem>
-    <LoginFormInputs form={form} formStatus={formStatus} />
     <LoginFormButtons
       form={form}
       formStatus={formStatus}
