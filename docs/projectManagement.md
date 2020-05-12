@@ -18,12 +18,9 @@ This document is used to outline current project management priorities.
   * fix fakeapi
   * create a wrapper for the dashboard page
 
-  * look into animations when log in, log out, and log back in, how the page fallback looks
-  * fix logging in and logging out
-  * add transition from spa fallback to app (e.g. dashboard page) and transition into dashboard page
-  * fix spasaming when logging in
-  * fix double spinner when loading app
-  * show graceful transition when logging out and going back to landing page
+  * add transition from spa fallback to app (e.g. dashboard page) and transition into dashboard
+   page - and make sure it doesn't mess up transitions between pages
+  * fix spasaming when logging in and logging out
   * figure out graceful transition from initialization spa fallback to landing page
   * add subscription to videos
   * have session be remembered by user 
