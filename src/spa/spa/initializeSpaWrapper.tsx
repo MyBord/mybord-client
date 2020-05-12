@@ -3,7 +3,6 @@ import { useQuery } from '@apollo/react-hooks';
 import SpaFallback from 'fallbacks/spaFallback/spaFallback';
 import { IS_AUTHENTICATED } from 'schema/user';
 import { useAuthenticationContext } from 'context/authenticationContext';
-import * as styles from './spa.module.less';
 
 // This wrapper is responsible for initializing our SPA. Once all fetches, actions, etc have
 // been performed, then the actual SPA can be rendered. In the meantime, we will load a spinner
@@ -28,14 +27,12 @@ const initializeSpaWrapper = (WrappedComponent: React.FC): React.FC => {
     }
 
     return (
-      <div className={styles.spaDiv}>
-        <div className={styles.spaDivChild}>
-          {
-            (isInitializationComplete && isAuthenticated !== null) && <WrappedComponent />
-          }
-          <SpaFallback />
-        </div>
-      </div>
+      <>
+        {
+          (isInitializationComplete && isAuthenticated !== null) && <WrappedComponent />
+        }
+        <SpaFallback />
+      </>
     );
   };
 
