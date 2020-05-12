@@ -7,29 +7,58 @@ import { useAuthenticationContext } from 'context/authenticationContext';
 import initializeSpaWrapper from './initializeSpaWrapper';
 import * as styles from './spa.module.less';
 
+const variants = {
+  initial: {
+    opacity: 0,
+  },
+  enter: {
+    opacity: 1,
+    transition: { duration: 1.0 },
+  },
+  exit: {
+    opacity: 0,
+    transition: { duration: 1.0 },
+  },
+};
+
 // This component renders the application with a landing page or the actual application based
 // on the users authentication status.
 const SpaContainer: React.FC = () => {
   const { isAuthenticated } = useAuthenticationContext();
-  const animationVariants = getTwoChildOpacityTransition(1.0);
   return (
     <AnimatePresence>
-      <motion.div
-        animate="enter"
-        className={styles.spa}
-        exit="exit"
-        initial="initial"
-        key={isAuthenticated ? 'isAuthenticated' : 'notAuthenticated'}
-        variants={isAuthenticated ? animationVariants.lastChild : animationVariants.firstChild}
-      >
-        <div className={styles.div}>
-          {
-            isAuthenticated
-              ? <App />
-              : <Landing />
-          }
-        </div>
-      </motion.div>
+      {
+        isAuthenticated && (
+          <motion.div
+            animate="enter"
+            className={styles.spa}
+            exit="exit"
+            initial="initial"
+            key="isAuthenticated"
+            variants={variants}
+          >
+            <div className={styles.div}>
+              <App />
+            </div>
+          </motion.div>
+        )
+      }
+      {
+        !isAuthenticated && (
+          <motion.div
+            animate="enter"
+            className={styles.spa}
+            exit="exit"
+            initial="initial"
+            key="isNotAuthenticated"
+            variants={variants}
+          >
+            <div className={styles.div}>
+              <Landing />
+            </div>
+          </motion.div>
+        )
+      }
     </AnimatePresence>
   );
 };
