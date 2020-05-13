@@ -18,7 +18,7 @@ commands:
             - ~/.cache/yarn
 jobs:
   tests:
-    working_directory: ~/bei-bei
+    working_directory: ~/myBord
     docker:
       - image: circleci/node:10
     steps:
@@ -27,7 +27,7 @@ jobs:
           name: Run Tests
           command: yarn test --maxWorkers=1
   build:
-    working_directory: ~/bei-bei
+    working_directory: ~/myBord
     docker:
       - image: circleci/node:10
     steps:
