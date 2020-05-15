@@ -39,3 +39,6 @@ This document is used to outline product details.
   * https://dribbble.com/shots/3521031-Inner-page-YouTube/attachments/780412
   * https://cdn.dribbble.com/users/408943/screenshots/2601870/drible_2.png
   * https://dribbble.com/shots/6291562-Video-Templates/attachments
+* Lottie Files  
+  * https://lottiefiles.com/marketplace/404-error-animations
+  * https://lottiefiles.com/marketplace/simple-shape-loaders

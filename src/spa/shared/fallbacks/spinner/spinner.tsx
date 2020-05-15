@@ -9,7 +9,7 @@ const Spinner: React.FC = () => (
       animationData={spinnerAnimation}
       autoplay
       loop
-      size={400}
+      size={250}
     />
   </div>
 );
