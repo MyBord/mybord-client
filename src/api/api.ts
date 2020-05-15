@@ -1,8 +1,12 @@
-/* eslint-disable */
 import axios from 'axios';
-import promiseWrapper from 'api/promiseWrapper';
+import promiseWrapper, { PromiseWrapper } from 'api/promiseWrapper';
+import { GqlString } from 'types/gqlTypes';
 
-const get = (gqlString) => new Promise((resolve) => {
+export interface Resource<T> {
+  data: PromiseWrapper<T>;
+}
+
+const get = (gqlString: GqlString): Promise<any> => new Promise((resolve) => {
   setTimeout(() => {
     const body = JSON.stringify({ query: gqlString.loc.source.body });
     const config = {
@@ -13,13 +17,13 @@ const get = (gqlString) => new Promise((resolve) => {
   }, 2000);
 });
 
-const query  = (gqlString) => {
+const query = (gqlString: GqlString): Resource<any> => {
   const promise = get(gqlString);
   return {
     data: promiseWrapper(promise),
   };
-}
+};
 
 export default {
   query,
-}
+};
