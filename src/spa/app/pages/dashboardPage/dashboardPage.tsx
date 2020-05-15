@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Spinner from 'fallbacks/spinner/spinner';
+import { GET_USER_CARDS } from 'schema/card';
 import { fetchData } from 'api/fakeApi';
 import { useHydrationContext } from 'context/hydrationContext';
 import DashboardCards from './dashboardCards/dashboardCards';
@@ -11,7 +12,7 @@ interface Props {
   setHydrationStatus: (status: boolean) => void;
 }
 
-const resource = fetchData();
+const resource = fetchData(GET_USER_CARDS);
 
 const DashboardPage: React.FC = () => {
   const { isAnimationComplete, isHydrated, setHydrationStatus } = useHydrationContext();
