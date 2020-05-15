@@ -1,33 +1,7 @@
 /* eslint-disable */
 import axios from 'axios';
 import { GET_USER_CARDS } from 'schema/card';
-
-const wrapPromise = (promise) => {
-  let status = 'pending';
-  let result;
-  const suspender = promise.then(
-    (r) => {
-      status = 'success';
-      result = r;
-    },
-    (e) => {
-      status = 'error';
-      result = e;
-    },
-  );
-  return {
-    // eslint-disable-next-line consistent-return
-    read() {
-      if (status === 'pending') {
-        throw suspender;
-      } else if (status === 'error') {
-        throw result;
-      } else if (status === 'success') {
-        return result;
-      }
-    },
-  };
-};
+import promiseWrapper from 'api/promiseWrapperTwo';
 
 const fetchUserCards = () => new Promise((resolve) => {
   setTimeout(() => {
@@ -44,6 +18,6 @@ const fetchUserCards = () => new Promise((resolve) => {
 export function fetchData() {
   const userCardsPromise = fetchUserCards();
   return {
-    userCards: wrapPromise(userCardsPromise),
+    userCards: promiseWrapper(userCardsPromise),
   };
 }
