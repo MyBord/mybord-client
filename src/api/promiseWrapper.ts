@@ -1,8 +1,14 @@
+// Source:
+// https://reactjs.org/docs/concurrent-mode-suspense.html#what-is-suspense-exactly
+// https://codesandbox.io/s/frosty-hermann-bztrp
+
+/* eslint-disable consistent-return */
+
 export interface PromiseWrapper<T> {
   read(): T;
 }
 
-export const promiseWrapper = <T>(promise: Promise<T>): PromiseWrapper<T> => {
+export default <T>(promise: Promise<T>): PromiseWrapper<T> => {
   let status = 'pending';
   let result: T;
   const suspender = promise.then(
@@ -16,8 +22,6 @@ export const promiseWrapper = <T>(promise: Promise<T>): PromiseWrapper<T> => {
     },
   );
   return {
-    // @ts-ignore
-    // eslint-disable-next-line consistent-return
     read() {
       if (status === 'pending') {
         throw suspender;

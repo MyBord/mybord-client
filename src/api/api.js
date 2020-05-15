@@ -1,6 +1,6 @@
 /* eslint-disable */
 import axios from 'axios';
-import promiseWrapper from 'api/promiseWrapperTwo';
+import promiseWrapper from 'api/promiseWrapper';
 
 const get = (gqlString) => new Promise((resolve) => {
   setTimeout(() => {
