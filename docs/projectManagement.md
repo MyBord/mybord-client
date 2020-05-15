@@ -13,33 +13,25 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
-  * fix transition of spa fallback, when it unmounts there should be a transition
-  * Make sure page is not fully rendered until after our frame has animated
+  * create env var for uri variable / endpoint
+  * get different spinner
+  * document root index html
+
   * fix fakeapi
   * create a wrapper for the dashboard page
-
-  * add transition from spa fallback to app (e.g. dashboard page) and transition into dashboard
-   page - and make sure it doesn't mess up transitions between pages
-  * fix spasaming when logging in and logging out
-  * fix loading of image on landing page
+  * when you first login; dashboard and cards load before animation is complete.
   * add subscription to videos
   * have session be remembered by user 
   * fix youtube card
-  * prevent forking
-
-### B. High - MVP
-
   * Have youtube cards be restricted per user - if there are no cards, then provide instructions,
     display that list is empty, etc
-  * get different spinner
   * handle password validation from the backend
-  * create env var for uri variable / endpoint
+  * fix loading of image on landing page
   * add about page - for app and landing
-  * document root index html
   * replace coffee login image
-  * handle loading of landing page background image
   * add error boundary to login app
-  * fix how spa fallback fades a little at the beginning
+
+### B. High - MVP
 
 ### C. Medium
 
