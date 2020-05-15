@@ -1,4 +1,4 @@
-<img align="right" width="320" height="225" src="https://github.com/jimmy-e/mybord/blob/master/etc/assets/react.png">
+<img align="right" width="200" height="200" src="https://github.com/jimmy-e/mybord/blob/master/etc/assets/html.png">
 
 # HTML
 
