@@ -299,15 +299,21 @@ logged in / authenticated, and is organized in the following manner:
 src/
   |- spa/
     |- landing/ 
+      |- errorBoundary/ 
       |- pages/ 
       |- routing/ 
-      |- app.tsx
+      |- landing.module.less
+      |- landing.tsx
 ```
 
+* **errorBoundary/:**
+  * The react error boundary used for our landing application.
 * **pages/:**
   * The page components per each route.
 * **routing/:**
   * Outlines the routing of the application.
+* **`landing.module.less`:**
+  * The main styling for our root landing component.
 * **`landing.tsx`:**
   * The root landing component.
 
