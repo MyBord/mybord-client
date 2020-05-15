@@ -7,4 +7,4 @@ export interface GqlString {
       body: string;
     };
   };
-};
+}
