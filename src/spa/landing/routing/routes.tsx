@@ -5,13 +5,13 @@ import LoginPage from 'landing/pages/loginPage/loginPage';
 
 const Routes: React.FC = () => (
   <Switch>
-    <Route exact path="/login">
+    <Route exact path="/">
       <LoginPage />
     </Route>
     <Route exact path="/error">
       <ErrorPage />
     </Route>
-    <Redirect to="/login" />
+    <Redirect to="/" />
   </Switch>
 );
 
