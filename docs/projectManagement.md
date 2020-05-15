@@ -13,9 +13,8 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
-  * create env var for uri variable / endpoint
   * get different spinner
-  * document root index html
+  * document root index html - add image to doc
 
   * fix fakeapi
   * create a wrapper for the dashboard page
@@ -35,6 +34,7 @@ This document is used to outline current project management priorities.
 
 ### C. Medium
 
+  * prevent duplicates
   * add profile management screen
   * add header with filters and 'add card button'
   * Each card should be marked as:
