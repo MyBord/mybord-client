@@ -2,6 +2,7 @@ import * as React from 'react';
 import LottiePlayer from 'lotty/lottiePlayer';
 import Typography from 'typography/typography';
 import constructionAnimation from 'lotty/lotties/construction.json';
+import pageWrapper from 'pages/pageWrapper/pageWrapper';
 import * as styles from './errorPage.module.less';
 
 const ErrorPage: React.FC = () => (
@@ -19,4 +20,4 @@ const ErrorPage: React.FC = () => (
   </div>
 );
 
-export default ErrorPage;
+export default pageWrapper(ErrorPage);

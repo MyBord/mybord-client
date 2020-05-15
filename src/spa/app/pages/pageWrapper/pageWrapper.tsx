@@ -1,9 +1,11 @@
-// ToDo: write comments / notes
-// ToDo: make query a param
+// This objective of this wrapper is to create a general api that takes a page of our app
+// along with the GQL query that derives all necessary data for said page and runs that query.
+// The data is then provided to the page to render its necessary components.
+
 import * as React from 'react';
 import Spinner from 'fallbacks/spinner/spinner';
 import api from 'api/api';
-import { GET_USER_CARDS } from 'schema/card';
+import { GqlString } from 'types/gqlTypes';
 import { useHydrationContext } from 'context/hydrationContext';
 
 interface PageContentProps {
@@ -12,11 +14,29 @@ interface PageContentProps {
 }
 
 interface WrappedComponentProps {
-  data: any;
+  data?: any;
 }
 
-const pageWrapper = (WrappedComponent: React.FC<WrappedComponentProps>): React.FC => {
-  const resource = api.query(GET_USER_CARDS);
+const pageWrapper = (
+  WrappedComponent: React.FC<WrappedComponentProps>,
+  gqlString?: GqlString,
+): React.FC => {
+  // ----- NO DATA IS NEEDED ----- //
+  if (!gqlString) {
+    const NoDataPage: React.FC = () => {
+      const { isAnimationComplete } = useHydrationContext();
+      // See *2 in `hydrationContext.tsx`
+      if (isAnimationComplete) {
+        return <WrappedComponent />;
+      }
+      return null;
+    };
+
+    return NoDataPage;
+  }
+
+  // ----- DATA IS NEEDED ----- //
+  const resource = api.query(gqlString);
 
   const Page: React.FC = () => {
     const { isAnimationComplete, isHydrated, setHydrationStatus } = useHydrationContext();
