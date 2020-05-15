@@ -24,7 +24,11 @@ const pageWrapper = (
   // ----- NO DATA IS NEEDED ----- //
   if (!gqlString) {
     const NoDataPage: React.FC = () => {
-      const { isAnimationComplete } = useHydrationContext();
+      const { isAnimationComplete, setHydrationStatus } = useHydrationContext();
+
+      // See *1 in `hydrationContext.tsx`
+      React.useEffect(() => setHydrationStatus(true), []);
+
       // See *2 in `hydrationContext.tsx`
       if (isAnimationComplete) {
         return <WrappedComponent />;
