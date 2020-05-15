@@ -1,5 +1,6 @@
 import * as React from 'react';
 import LottiePlayer from 'lotty/lottiePlayer';
+import pageWrapper from 'pages/pageWrapper/pageWrapper';
 import playlistAnimation from 'lotty/lotties/playlist.json';
 
 const PlaylistPage: React.FC = () => (
@@ -11,4 +12,4 @@ const PlaylistPage: React.FC = () => (
   />
 );
 
-export default PlaylistPage;
+export default pageWrapper(PlaylistPage);

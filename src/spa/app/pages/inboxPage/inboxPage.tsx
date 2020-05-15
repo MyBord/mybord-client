@@ -1,6 +1,7 @@
 import * as React from 'react';
 import LottiePlayer from 'lotty/lottiePlayer';
 import inboxAnimation from 'lotty/lotties/inbox.json';
+import pageWrapper from 'pages/pageWrapper/pageWrapper';
 
 const InboxPage: React.FC = () => (
   <LottiePlayer
@@ -11,4 +12,4 @@ const InboxPage: React.FC = () => (
   />
 );
 
-export default InboxPage;
+export default pageWrapper(InboxPage);
