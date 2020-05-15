@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Spinner from 'fallbacks/spinner/spinner';
-import { GET_USER_CARDS } from 'schema/card';
 import api from 'api/fakeApi';
+import { GET_USER_CARDS } from 'schema/card';
 import { useHydrationContext } from 'context/hydrationContext';
 import DashboardCards from './dashboardCards/dashboardCards';
 import DashboardHeader from './dashboardHeader/dashboardHeader';
