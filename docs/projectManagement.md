@@ -14,8 +14,6 @@ This document is used to outline current project management priorities.
 ### A. Highest - MVP
 
   * get different spinner
-  * document root index html - add image to doc
-
   * fix fakeapi
   * create a wrapper for the dashboard page
   * when you first login; dashboard and cards load before animation is complete.
