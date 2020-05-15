@@ -1,11 +1,10 @@
 /* eslint-disable */
 import axios from 'axios';
-import { GET_USER_CARDS } from 'schema/card';
 import promiseWrapper from 'api/promiseWrapperTwo';
 
-const fetchUserCards = () => new Promise((resolve) => {
+const get = (gqlString) => new Promise((resolve) => {
   setTimeout(() => {
-    const body = JSON.stringify({ query: GET_USER_CARDS.loc.source.body });
+    const body = JSON.stringify({ query: gqlString.loc.source.body });
     const config = {
       headers: { 'Content-Type': 'application/json' },
     };
@@ -14,10 +13,13 @@ const fetchUserCards = () => new Promise((resolve) => {
   }, 2000);
 });
 
-// eslint-disable-next-line import/prefer-default-export
-export function fetchData() {
-  const userCardsPromise = fetchUserCards();
+const query  = (gqlString) => {
+  const promise = get(gqlString);
   return {
-    userCards: promiseWrapper(userCardsPromise),
+    data: promiseWrapper(promise),
   };
+}
+
+export default {
+  query,
 }

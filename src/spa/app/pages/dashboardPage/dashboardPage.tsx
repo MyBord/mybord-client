@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Spinner from 'fallbacks/spinner/spinner';
-import { fetchData } from 'api/fakeApi';
+import api from 'api/fakeApi';
+import { GET_USER_CARDS } from 'schema/card';
 import { useHydrationContext } from 'context/hydrationContext';
 import DashboardCards from './dashboardCards/dashboardCards';
 import DashboardHeader from './dashboardHeader/dashboardHeader';
@@ -11,7 +12,7 @@ interface Props {
   setHydrationStatus: (status: boolean) => void;
 }
 
-const resource = fetchData();
+const resource = api.query(GET_USER_CARDS);
 
 const DashboardPage: React.FC = () => {
   const { isAnimationComplete, isHydrated, setHydrationStatus } = useHydrationContext();
@@ -28,7 +29,7 @@ const DashboardPage: React.FC = () => {
 };
 
 const DashboardPageContent: React.FC<Props> = ({ isAnimationComplete, setHydrationStatus }) => {
-  const userCards = resource.userCards.read();
+  const userCards = resource.data.read();
 
   // See *1 in `hydrationContext.tsx`
   React.useEffect(() => setHydrationStatus(true), []);
