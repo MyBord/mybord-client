@@ -25,6 +25,9 @@ This document is used to outline current project management priorities.
   * add about page - for app and landing
   * replace coffee login image
   * add error boundary to login app
+  * replace error lottie
+  * create transitions between login and about and error
+  * add button for about page and transition to about page
 
 ### B. High - MVP
 
