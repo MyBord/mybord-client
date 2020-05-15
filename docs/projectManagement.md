@@ -13,8 +13,7 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
-  * fix issue where spa fallback renders for trending page, etc
-  * create a wrapper for the dashboard page
+  * make sure spinner renders for dashboard page
   * when you first login; dashboard and cards load before animation is complete.
   * add subscription to videos
   * have session be remembered by user 
