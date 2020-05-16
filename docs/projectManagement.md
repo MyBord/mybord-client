@@ -13,6 +13,7 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
+  * have password validation weakness be in bullet points
   * make sure spinner renders for dashboard page
   * when you first login; dashboard and cards load before animation is complete.
   * add subscription to videos
