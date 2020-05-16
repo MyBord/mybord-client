@@ -18,6 +18,7 @@ const LoginFormContainer: React.FC = () => {
   const [formStatus, setFormStatus] = React.useState<LoginFormStatus>('login');
   const [hasIncorrectCreds, setHasIncorrectCreds] = React.useState(false);
   const [isAuthenticationWaiting, setIsAuthenticationWaiting] = React.useState(false);
+  const [passwordWeakMessage, setPasswordWeakMessage] = React.useState(null);
   const [isAuthenticatedQuery, { called, data, loading }] = useLazyQuery(
     IS_AUTHENTICATED, { fetchPolicy: 'no-cache' },
   );
@@ -74,7 +75,12 @@ const LoginFormContainer: React.FC = () => {
       setIsAuthenticationWaiting(false);
     } catch (error) {
       setIsAuthenticationWaiting(false);
-      throw new Error(error);
+
+      // If a 400 status is returned, notify the user that their password is not strong enough
+      const { message, status } = handleError(error);
+      if (status === 400) {
+        setPasswordWeakMessage(message);
+      }
     }
   };
 
@@ -126,6 +132,7 @@ const LoginFormContainer: React.FC = () => {
       formStatus={formStatus}
       hasIncorrectCreds={hasIncorrectCreds}
       isAuthenticationWaiting={isAuthenticationWaiting}
+      passwordWeakMessage={passwordWeakMessage}
       setFormStatus={setFormStatus}
     />
   );
