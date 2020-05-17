@@ -25,15 +25,19 @@ const FormItem: React.FC<Props> = ({
 }) => {
   const rules = [];
   if (required && requiredMessage) {
-    rules.push({ required, message: requiredMessage });
+    rules.push({ message: requiredMessage, required });
   }
   if (type && typeMessage) {
-    rules.push({ type, message: typeMessage });
+    rules.push({ message: typeMessage, type });
   }
 
   const options: GetFieldDecoratorOptionsType = {
     rules,
   };
+
+  if (type && typeMessage) {
+    options.validateTrigger = 'onBlur';
+  }
 
   if (errorMessage) {
     return (
