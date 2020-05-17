@@ -6,10 +6,10 @@ import { FormProp } from 'types/formTypes';
 
 interface Props {
   form: FormProp;
-  passwordWeakMessage: string;
+  isPasswordWeak: boolean;
 }
 
-const LoginFormSignUpInputs: React.FC<Props> = ({ form, passwordWeakMessage }) => (
+const LoginFormSignUpInputs: React.FC<Props> = ({ form, isPasswordWeak }) => (
   <>
     <FormItem
       fieldName="email"
@@ -22,7 +22,7 @@ const LoginFormSignUpInputs: React.FC<Props> = ({ form, passwordWeakMessage }) =
       <TextInput placeholder="Email" />
     </FormItem>
     <FormItem
-      errorMessage={passwordWeakMessage}
+      errorMessage={isPasswordWeak && 'this is bad'}
       fieldName="password"
       form={form}
       required

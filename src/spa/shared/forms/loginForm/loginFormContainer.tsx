@@ -1,3 +1,6 @@
+// NOTE: This container is definitely doing WAY TOO MUCH in one single script / component. A
+// refactor could definitely be used to make this more readable / digestible.
+
 import * as React from 'react';
 import { useLazyQuery, useMutation } from '@apollo/react-hooks';
 import formWrapper from 'forms/formWrapper/formWrapper';
@@ -18,7 +21,7 @@ const LoginFormContainer: React.FC = () => {
   const [formStatus, setFormStatus] = React.useState<LoginFormStatus>('login');
   const [hasIncorrectCreds, setHasIncorrectCreds] = React.useState(false);
   const [isAuthenticationWaiting, setIsAuthenticationWaiting] = React.useState(false);
-  const [passwordWeakMessage, setPasswordWeakMessage] = React.useState(null);
+  const [isPasswordWeak, setIsPasswordWeak] = React.useState(false);
   const [isAuthenticatedQuery, { called, data, loading }] = useLazyQuery(
     IS_AUTHENTICATED, { fetchPolicy: 'no-cache' },
   );
@@ -77,9 +80,9 @@ const LoginFormContainer: React.FC = () => {
       setIsAuthenticationWaiting(false);
 
       // If a 400 status is returned, notify the user that their password is not strong enough
-      const { message, status } = handleError(error);
+      const { status } = handleError(error);
       if (status === 400) {
-        setPasswordWeakMessage(message);
+        setIsPasswordWeak(true);
       }
     }
   };
@@ -132,7 +135,7 @@ const LoginFormContainer: React.FC = () => {
       formStatus={formStatus}
       hasIncorrectCreds={hasIncorrectCreds}
       isAuthenticationWaiting={isAuthenticationWaiting}
-      passwordWeakMessage={passwordWeakMessage}
+      isPasswordWeak={isPasswordWeak}
       setFormStatus={setFormStatus}
     />
   );
