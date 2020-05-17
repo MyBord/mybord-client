@@ -140,7 +140,7 @@ const LoginFormContainer: React.FC = () => {
     />
   );
 
-  const Form = formWrapper(FormContent, handleSubmit, 'login');
+  const Form = formWrapper({ Component: FormContent, onSubmit: handleSubmit, type: 'login' });
 
   return <Form />;
 };
