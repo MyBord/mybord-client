@@ -58,7 +58,7 @@ const DashboardHeaderFilterForm: React.FC = () => {
     </div>
   );
 
-  const Form = formWrapper(FormContent, handleSubmit);
+  const Form = formWrapper({ Component: FormContent, onSubmit: handleSubmit });
 
   return <Form />;
 };
