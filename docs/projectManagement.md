@@ -13,7 +13,9 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
-  * have password validation weakness be in bullet points
+  * don't have login form immediately complain when signing up and typing in email address that
+   isn't yet an email address
+  * When you submit a weak password, the email address gets cleared - fix this
   * make sure spinner renders for dashboard page
   * when you first login; dashboard and cards load before animation is complete.
   * add subscription to videos
@@ -21,15 +23,11 @@ This document is used to outline current project management priorities.
   * fix youtube card
   * Have youtube cards be restricted per user - if there are no cards, then provide instructions,
     display that list is empty, etc
-  * handle password validation from the backend
   * fix loading of image on landing page
   * add about page - for app and landing
   * replace coffee login image
   * replace error lottie
   * create transitions between login and about and error
-  * add button for about page and transition to about page
-  * don't have login form immediately complain when signing up and typing in email address that
-   isn't yet an email address
 
 ### B. High - MVP
 
