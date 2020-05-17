@@ -11,10 +11,6 @@ interface Props {
   isPasswordWeak: boolean;
 }
 
-// const errorMessage = 'A password must be at least 8 characters long, have at least one upper'
-//   + ' case letter, have at least one number,'
-//   + ` and contain at least one special character (${specialCharacters.join('')}).`;
-
 const PasswordReactMessage = (
   <>
     <Typography
