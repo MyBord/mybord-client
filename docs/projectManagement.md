@@ -13,8 +13,7 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
-  * don't have login form immediately complain when signing up and typing in email address that
-   isn't yet an email address
+  * prevent duplicate users from signing up
   * When you submit a weak password, the email address gets cleared - fix this
   * make sure spinner renders for dashboard page
   * when you first login; dashboard and cards load before animation is complete.
