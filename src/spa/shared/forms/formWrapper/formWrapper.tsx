@@ -13,7 +13,11 @@ interface FormWrapperProps {
   type?: 'login';
 }
 
-const formWrapper = ({ Component, onSubmit, type = null }: FormWrapperProps): React.FC => {
+const formWrapper = ({
+  Component,
+  onSubmit,
+  type = null,
+}: FormWrapperProps): React.FC => {
   const Form: React.FC<ComponentProps> = ({ form }) => {
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
       event.preventDefault();
