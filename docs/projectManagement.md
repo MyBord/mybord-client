@@ -27,6 +27,8 @@ This document is used to outline current project management priorities.
   * replace coffee login image
   * replace error lottie
   * create transitions between login and about and error
+  * should display empty notification if user has no cards / when first
+    registers
 
 ### B. High - MVP
 
