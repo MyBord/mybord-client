@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { FormComponentProps } from 'antd/lib/form/Form';
-import { Divider } from 'antd';
-import EnhancedForm from 'forms/formWrapper/formWrapperTwo';
+import { Button, Input, Divider } from 'antd';
+import Form, { FormComponentProps } from 'antd/lib/form/Form';
+import formWrapper from 'forms/formWrapper/formWrapperTwo';
 import 'antd/dist/antd.css';
 
 const Spa: React.FC = () => {
@@ -13,6 +13,23 @@ const Spa: React.FC = () => {
     setInputValue(formRef.current.form.getFieldValue('name'));
   };
 
+  // const FormConent = () => (
+  //   <>
+  //     <Form.Item label="name">
+  //       {form.getFieldDecorator('name')(<Input />)}
+  //     </Form.Item>
+  //     <Button htmlType="submit">submit</Button>
+  //   </>
+  // );
+
+  const FormContent: React.FC = () => (
+    <>
+      <Button htmlType="submit">submit</Button>
+    </>
+  );
+
+  const FinalForm = formWrapper(FormContent);
+
   return (
     <div>
       <button type="button" onClick={() => set((i) => !i)}>
@@ -21,7 +38,7 @@ const Spa: React.FC = () => {
       <h3>{state ? 'TRUE' : 'FALSE'}</h3>
       <div>{`I'm the value from form: ${inputValue}`}</div>
       <Divider />
-      <EnhancedForm onSubmit={handleSubmit} wrappedComponentRef={formRef} />
+      <FinalForm onSubmit={() => console.log('foo')} />
     </div>
   );
 };

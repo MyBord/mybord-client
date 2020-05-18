@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Form, { FormComponentProps } from 'antd/lib/form/Form';
+import Form, { FormComponentProps } from 'antd/lib/form/Form'; // use antd import?
 import { Button, Input } from 'antd';
 import 'antd/dist/antd.css';
 
@@ -9,28 +9,28 @@ interface TestFormProps extends FormComponentProps {
 
 type Ref = FormComponentProps;
 
-const TestForm = React.forwardRef<Ref, TestFormProps>(
-  ({ form, onSubmit }: TestFormProps, ref) => {
-    React.useImperativeHandle(ref, () => ({
-      form,
-    }));
+const formWrapper = (WrappedComponent: React.FC) => {
+  const TestForm = React.forwardRef<Ref, TestFormProps>(
+    ({ form, onSubmit }: TestFormProps, ref) => {
+      React.useImperativeHandle(ref, () => ({
+        form,
+      }));
 
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
-      e.preventDefault();
-      onSubmit();
-    };
+      const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
+        e.preventDefault();
+        onSubmit();
+      };
 
-    return (
-      <Form onSubmit={handleSubmit}>
-        <Form.Item label="name">
-          {form.getFieldDecorator('name')(<Input />)}
-        </Form.Item>
-        <Button htmlType="submit">submit</Button>
-      </Form>
-    );
-  },
-);
+      return (
+        <Form onSubmit={handleSubmit}>
+          <WrappedComponent />
+        </Form>
+      );
+    },
+  );
 
-const EnhancedForm = Form.create<TestFormProps>()(TestForm);
+  return Form.create<TestFormProps>()(TestForm);
+};
 
-export default EnhancedForm;
+
+export default formWrapper;
