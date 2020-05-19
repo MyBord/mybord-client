@@ -34,23 +34,21 @@ const DashboardHeaderFilterForm: React.FC = () => {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <div className={styles.div}>
-        <FormItem
-          errorMessage={inputErrorMessage}
-          fieldName="add-youtube-video-input"
-          required
-          requiredMessage="A url is required"
-        >
-          <TextInput placeholder="youtube url" />
-        </FormItem>
-        <FormItem fieldName="add-youtube-video-submit">
-          <Button
-            htmlType="submit"
-            isWaiting={isSubmitWaiting}
-            label="Add Video"
-          />
-        </FormItem>
-      </div>
+      <FormItem
+        errorMessage={inputErrorMessage}
+        fieldName="add-youtube-video-input"
+        required
+        requiredMessage="A url is required"
+      >
+        <TextInput placeholder="youtube url" />
+      </FormItem>
+      <FormItem fieldName="add-youtube-video-submit">
+        <Button
+          htmlType="submit"
+          isWaiting={isSubmitWaiting}
+          label="Add Video"
+        />
+      </FormItem>
     </Form>
   );
 };

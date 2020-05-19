@@ -1,9 +1,14 @@
 import * as React from 'react';
 import Button from 'buttons/button/button';
 import FormItem from 'forms/formItem/formItem';
+import { FormProp } from 'types/formTypes';
 import * as styles from './loginFormButtons.module.less';
 
-const LoginFormForgotButtons: React.FC = () => {
+interface Props {
+  form: FormProp;
+}
+
+const LoginFormForgotButtons: React.FC<Props> = ({ form }) => {
   const handleReset = (): void => {
     console.log('resetting password');
   };
@@ -11,7 +16,10 @@ const LoginFormForgotButtons: React.FC = () => {
   return (
     <div className={[styles.buttonDiv, styles.forgotButtonDiv].join(' ')}>
       <div className={styles.forgotDiv} />
-      <FormItem fieldName="reset-password">
+      <FormItem
+        fieldName="reset-password"
+        form={form}
+      >
         <Button
           htmlType="submit"
           label="Reset Password"

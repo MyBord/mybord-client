@@ -11,10 +11,6 @@ import { useAuthenticationContext } from 'context/authenticationContext';
 import LoginFormComponent from './loginFormComponent';
 import './loginForm.less';
 
-interface Props {
-  form: FormProp;
-}
-
 /* eslint-disable brace-style */
 const LoginFormContainer: React.FC = () => {
   const [createUser] = useMutation(CREATE_USER);
