@@ -5,25 +5,22 @@ import LoginFormLoginButtons from './loginFormLoginButtons';
 import LoginFormSignUpButtons from './loginFormSignUpButtons';
 
 interface Props {
-  form: FormProp;
   formStatus: LoginFormStatus;
   isAuthenticationWaiting: boolean;
   setFormStatus: (status: LoginFormStatus) => void;
 }
 
 const LoginFormButtons: React.FC<Props> = ({
-  form,
   formStatus,
   isAuthenticationWaiting,
   setFormStatus,
 }) => {
   switch (formStatus) {
     case 'forgot':
-      return <LoginFormForgotButtons form={form} />;
+      return <LoginFormForgotButtons />;
     case 'login':
       return (
         <LoginFormLoginButtons
-          form={form}
           isAuthenticationWaiting={isAuthenticationWaiting}
           setFormStatus={setFormStatus}
         />
@@ -31,7 +28,6 @@ const LoginFormButtons: React.FC<Props> = ({
     case 'signUp':
       return (
         <LoginFormSignUpButtons
-          form={form}
           isAuthenticationWaiting={isAuthenticationWaiting}
           setFormStatus={setFormStatus}
         />

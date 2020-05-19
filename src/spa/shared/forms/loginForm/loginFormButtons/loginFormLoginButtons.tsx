@@ -3,17 +3,15 @@ import Anchor from 'inputs/anchor/anchor';
 import Button from 'buttons/button/button';
 import Checkbox from 'inputs/checkbox/checkbox';
 import FormItem from 'forms/formItem/formItem';
-import { FormProp, LoginFormStatus } from 'types/formTypes';
+import { LoginFormStatus } from 'types/formTypes';
 import * as styles from './loginFormButtons.module.less';
 
 interface Props {
-  form: FormProp;
   isAuthenticationWaiting: boolean;
   setFormStatus: (status: LoginFormStatus) => void;
 }
 
 const LoginFormLoginButtons: React.FC<Props> = ({
-  form,
   isAuthenticationWaiting,
   setFormStatus,
 }) => {
@@ -30,10 +28,7 @@ const LoginFormLoginButtons: React.FC<Props> = ({
   return (
     <>
       <div className={styles.rememberForgotDiv}>
-        <FormItem
-          fieldName="remember-me"
-          form={form}
-        >
+        <FormItem fieldName="remember-me">
           <Checkbox label="Remember Me" />
         </FormItem>
         {/* <FormItem */}
@@ -44,10 +39,7 @@ const LoginFormLoginButtons: React.FC<Props> = ({
         {/* </FormItem> */}
       </div>
       <div className={[styles.buttonDiv, styles.loginDiv].join(' ')}>
-        <FormItem
-          fieldName="login"
-          form={form}
-        >
+        <FormItem fieldName="login">
           <Button
             htmlType="submit"
             isWaiting={isAuthenticationWaiting}
@@ -55,10 +47,7 @@ const LoginFormLoginButtons: React.FC<Props> = ({
             onClick={handleLogin}
           />
         </FormItem>
-        <FormItem
-          fieldName="sign-up"
-          form={form}
-        >
+        <FormItem fieldName="sign-up">
           <Button
             htmlType="button"
             label="Sign Up"

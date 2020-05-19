@@ -1,16 +1,10 @@
 import * as React from 'react';
 import FormItem from 'forms/formItem/formItem';
 import TextInput from 'inputs/textInput/textInput';
-import { FormProp } from 'types/formTypes';
 
-interface Props {
-  form: FormProp;
-}
-
-const LoginFormForgotInputs: React.FC<Props> = ({ form }) => (
+const LoginFormForgotInputs: React.FC = () => (
   <FormItem
     fieldName="email"
-    form={form}
     required
     requiredMessage="Your email address is required."
   >

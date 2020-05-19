@@ -6,7 +6,7 @@ interface Props {
   children: React.ReactNode;
   errorMessage?: string | React.ReactNode;
   fieldName: string;
-  form: FormProp;
+  form?: FormProp;
   required?: boolean;
   requiredMessage?: string;
   type?: string;

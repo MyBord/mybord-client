@@ -3,11 +3,9 @@ import FormItem from 'forms/formItem/formItem';
 import PasswordInput from 'inputs/passwordInput/passwordInput';
 import TextInput from 'inputs/textInput/textInput';
 import Typography from 'typography/typography';
-import { FormProp } from 'types/formTypes';
 import * as styles from './loginFormInputs.module.less';
 
 interface Props {
-  form: FormProp;
   isPasswordWeak: boolean;
 }
 
@@ -38,11 +36,10 @@ const PasswordReactMessage = (
   </>
 );
 
-const LoginFormSignUpInputs: React.FC<Props> = ({ form, isPasswordWeak }) => (
+const LoginFormSignUpInputs: React.FC<Props> = ({ isPasswordWeak }) => (
   <>
     <FormItem
       fieldName="email"
-      form={form}
       required
       requiredMessage="Please enter your email address"
       type="email"
@@ -53,7 +50,6 @@ const LoginFormSignUpInputs: React.FC<Props> = ({ form, isPasswordWeak }) => (
     <FormItem
       errorMessage={isPasswordWeak && PasswordReactMessage}
       fieldName="password"
-      form={form}
       required
       requiredMessage="Please enter a password"
     >
@@ -61,7 +57,6 @@ const LoginFormSignUpInputs: React.FC<Props> = ({ form, isPasswordWeak }) => (
     </FormItem>
     {/* <FormItem */}
     {/*  fieldName="password-confirm" */}
-    {/*  form={form} */}
     {/* > */}
     {/*  <PasswordInput placeholder="Confirm Password" /> */}
     {/* </FormItem> */}
