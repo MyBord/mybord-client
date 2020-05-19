@@ -1,24 +1,25 @@
 import * as React from 'react';
 import { Form as AntForm } from 'antd';
-import { FormProp } from 'types/formTypes';
-import * as styles from './formWrapper.module.less';
+import { FormProp, FormProps } from 'types/formTypes';
 
-interface ComponentProps {
-  form: FormProp;
-}
+// todo: change name of file & folder
 
-interface FormWrapperProps {
-  Component: React.FC<ComponentProps>;
+interface FormContentProps extends FormProps {
+  children: React.ReactElement | React.ReactElement[];
   onSubmit: (form: FormProp) => void;
-  type?: 'login';
 }
 
-const formWrapper = ({
-  Component,
-  onSubmit,
-  type = null,
-}: FormWrapperProps): React.FC => {
-  const Form: React.FC<ComponentProps> = ({ form }) => {
+interface Props {
+  children: React.ReactElement | React.ReactElement[];
+  onSubmit: (form: FormProp) => void;
+}
+
+const FormContent = React.forwardRef<FormProps, FormContentProps>(
+  ({ children, form, onSubmit }: FormContentProps, ref) => {
+    React.useImperativeHandle(ref, () => ({
+      form,
+    }));
+
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
       event.preventDefault();
       form.validateFields((error) => {
@@ -29,18 +30,23 @@ const formWrapper = ({
     };
 
     return (
-      <AntForm
-        className={type ? styles[type] : undefined}
-        hideRequiredMark
-        onSubmit={handleSubmit}
-      >
-        <Component form={form} />
+      <AntForm onSubmit={handleSubmit}>
+        {
+          React.Children.map(children, (child) => React.cloneElement(child, { form }))
+        }
       </AntForm>
     );
-  };
+  },
+);
 
-  // @ts-ignore; unclear from docs how to document this return type via TS
-  return AntForm.create()(Form);
-};
+const FormInstance = AntForm.create<FormContentProps>()(FormContent);
 
-export default formWrapper;
+const Form = React.forwardRef<FormProps, Props>(
+  ({ children, onSubmit }: Props, ref) => (
+    <FormInstance onSubmit={onSubmit} wrappedComponentRef={ref}>
+      {children}
+    </FormInstance>
+  ),
+);
+
+export default Form;
