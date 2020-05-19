@@ -3,6 +3,7 @@ import { useMutation } from '@apollo/react-hooks';
 import Button from 'buttons/button/button';
 import Form from 'forms/form/form';
 import FormItem from 'forms/formItem/formItem';
+import Tag from 'utils/tag';
 import TextInput from 'inputs/textInput/textInput';
 import handleError from 'server/errors/handleError';
 import { CREATE_YOUTUBE_CARD } from 'schema/card';
@@ -39,7 +40,7 @@ const DashboardHeaderFilterForm: React.FC = () => {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <div className={styles.div}>
+      <Tag className={styles.div}>
         <FormItem
           errorMessage={inputErrorMessage}
           fieldName="add-youtube-video-input"
@@ -55,7 +56,7 @@ const DashboardHeaderFilterForm: React.FC = () => {
             label="Add Video"
           />
         </FormItem>
-      </div>
+      </Tag>
     </Form>
   );
 };
