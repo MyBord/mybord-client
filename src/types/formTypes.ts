@@ -6,4 +6,4 @@ export type FormProp = FormComponentProps['form'];
 
 export type GetFieldDecoratorOptionsType = GetFieldDecoratorOptions;
 
-export type LoginFormStatus = 'forgot' | 'login' | 'signUp';
+export type LoginFormStatus = 'forgot' | 'login' | 'signUp'; // todo: remove

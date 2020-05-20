@@ -9,12 +9,12 @@ import { CREATE_USER, IS_AUTHENTICATED, LOGIN_USER } from 'schema/user';
 import { FormProp, LoginFormStatus } from 'types/formTypes';
 import { useAuthenticationContext } from 'context/authenticationContext';
 import LoginFormComponent from './loginFormComponent';
+import { useLoginContext } from './loginFormContext/loginFormContext';
 import './loginForm.less';
 
 /* eslint-disable brace-style */
 const LoginFormContainer: React.FC = () => {
   const [createUser] = useMutation(CREATE_USER);
-  const [formStatus, setFormStatus] = React.useState<LoginFormStatus>('login');
   const [hasIncorrectCreds, setHasIncorrectCreds] = React.useState(false);
   const [isAuthenticationWaiting, setIsAuthenticationWaiting] = React.useState(false);
   const [isPasswordWeak, setIsPasswordWeak] = React.useState(false);
@@ -23,6 +23,7 @@ const LoginFormContainer: React.FC = () => {
   );
   const [loginUser] = useMutation(LOGIN_USER);
   const { setAuthenticationStatus } = useAuthenticationContext();
+  const { formStatus } = useLoginContext();
 
   // Function that gets invoked when the user clicks on the 'login' button
   const handleLogin = async (form: FormProp): Promise<void> => {
