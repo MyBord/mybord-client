@@ -9,21 +9,16 @@ import LoginFormSocial from './loginFormSocial/loginFormSocial';
 
 interface Props {
   form?: FormProp;
-  hasIncorrectCreds: boolean;
   isAuthenticationWaiting: boolean;
 }
 
 const LoginFormComponent: React.FC<Props> = ({
   form,
-  hasIncorrectCreds,
   isAuthenticationWaiting,
 }) => (
   <>
     <FormItem fieldName="alert" form={form}>
-      <Alert
-        message="email or password is incorrect"
-        showAlert={hasIncorrectCreds}
-      />
+      <Alert message="email or password is incorrect" />
     </FormItem>
     <LoginFormInputs form={form} />
     <LoginFormButtons

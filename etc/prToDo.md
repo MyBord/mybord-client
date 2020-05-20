@@ -3,3 +3,5 @@ Make sure to remove all notes before merging (except for this one, of course).
 ----------------------------------------------------------------------------------------------------
 set context for login form
 reduce code in login form container
+
+change name of file from login form context to login context

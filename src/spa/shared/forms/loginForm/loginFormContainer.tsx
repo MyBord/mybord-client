@@ -15,14 +15,17 @@ import './loginForm.less';
 /* eslint-disable brace-style */
 const LoginFormContainer: React.FC = () => {
   const [createUser] = useMutation(CREATE_USER);
-  const [hasIncorrectCreds, setHasIncorrectCreds] = React.useState(false);
   const [isAuthenticationWaiting, setIsAuthenticationWaiting] = React.useState(false);
   const [isAuthenticatedQuery, { called, data, loading }] = useLazyQuery(
     IS_AUTHENTICATED, { fetchPolicy: 'no-cache' },
   );
   const [loginUser] = useMutation(LOGIN_USER);
   const { setAuthenticationStatus } = useAuthenticationContext();
-  const { formStatus, setIsPasswordWeak } = useLoginContext();
+  const {
+    formStatus,
+    setHasIncorrectCreds,
+    setIsPasswordWeak,
+  } = useLoginContext();
 
   // Function that gets invoked when the user clicks on the 'login' button
   const handleLogin = async (form: FormProp): Promise<void> => {
@@ -128,7 +131,6 @@ const LoginFormContainer: React.FC = () => {
   return (
     <Form onSubmit={handleSubmit} type="login">
       <LoginFormComponent
-        hasIncorrectCreds={hasIncorrectCreds}
         isAuthenticationWaiting={isAuthenticationWaiting}
       />
     </Form>
