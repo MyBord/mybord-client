@@ -9,7 +9,7 @@ interface LoginState {
   isPasswordWeak: boolean;
   setAlertMessage: (alertMessage: string) => void;
   setFormStatus: (formStatus: FormStatus) => void;
-  setIsAuthenticationWaiting: (isAuthenticationWaiting: boolean) => void
+  setIsAuthenticationWaiting: (isAuthenticationWaiting: boolean) => void;
   setIsPasswordWeak: (isPasswordWeak: boolean) => void;
 }
 
