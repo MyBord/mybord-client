@@ -13,7 +13,8 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
-  * move login form from shared folder to page folder
+  * move login form from shared folder to page folder; change name from loginFormContext to
+   loginContext
   * prevent duplicate users from signing up
   * make sure spinner renders for dashboard page
   * when you first login; dashboard and cards load before animation is complete.

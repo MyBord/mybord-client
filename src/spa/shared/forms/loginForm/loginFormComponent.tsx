@@ -11,14 +11,12 @@ interface Props {
   form?: FormProp;
   hasIncorrectCreds: boolean;
   isAuthenticationWaiting: boolean;
-  isPasswordWeak: boolean;
 }
 
 const LoginFormComponent: React.FC<Props> = ({
   form,
   hasIncorrectCreds,
   isAuthenticationWaiting,
-  isPasswordWeak,
 }) => (
   <>
     <FormItem fieldName="alert" form={form}>
@@ -27,10 +25,7 @@ const LoginFormComponent: React.FC<Props> = ({
         showAlert={hasIncorrectCreds}
       />
     </FormItem>
-    <LoginFormInputs
-      form={form}
-      isPasswordWeak={isPasswordWeak}
-    />
+    <LoginFormInputs form={form} />
     <LoginFormButtons
       form={form}
       isAuthenticationWaiting={isAuthenticationWaiting}

@@ -7,10 +7,9 @@ import LoginFormSignUpInputs from './loginFormSignUpInputs';
 
 interface Props {
   form: FormProp;
-  isPasswordWeak: boolean;
 }
 
-const LoginFormInputs: React.FC<Props> = ({ form, isPasswordWeak }) => {
+const LoginFormInputs: React.FC<Props> = ({ form }) => {
   const { formStatus } = useLoginContext();
 
   switch (formStatus) {
@@ -19,7 +18,7 @@ const LoginFormInputs: React.FC<Props> = ({ form, isPasswordWeak }) => {
     case 'login':
       return <LoginFormLoginInputs form={form} />;
     case 'signUp':
-      return <LoginFormSignUpInputs form={form} isPasswordWeak={isPasswordWeak} />;
+      return <LoginFormSignUpInputs form={form} />;
     default:
       throw new Error('Unexpected form status');
   }
