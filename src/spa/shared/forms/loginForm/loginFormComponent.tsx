@@ -13,7 +13,6 @@ interface Props {
   hasIncorrectCreds: boolean;
   isAuthenticationWaiting: boolean;
   isPasswordWeak: boolean;
-  setFormStatus: (status: LoginFormStatus) => void;
 }
 
 const LoginFormComponent: React.FC<Props> = ({
@@ -22,7 +21,6 @@ const LoginFormComponent: React.FC<Props> = ({
   hasIncorrectCreds,
   isAuthenticationWaiting,
   isPasswordWeak,
-  setFormStatus,
 }) => (
   <>
     <FormItem fieldName="alert" form={form}>
@@ -40,7 +38,6 @@ const LoginFormComponent: React.FC<Props> = ({
       form={form}
       formStatus={formStatus}
       isAuthenticationWaiting={isAuthenticationWaiting}
-      setFormStatus={setFormStatus}
     />
     {/* <LoginFormSocial formStatus={formStatus} /> */}
     <Typography text="About MyBord" link="/about" />

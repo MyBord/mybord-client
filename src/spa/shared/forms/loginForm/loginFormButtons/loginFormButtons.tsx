@@ -8,14 +8,12 @@ interface Props {
   form: FormProp;
   formStatus: LoginFormStatus;
   isAuthenticationWaiting: boolean;
-  setFormStatus: (status: LoginFormStatus) => void;
 }
 
 const LoginFormButtons: React.FC<Props> = ({
   form,
   formStatus,
   isAuthenticationWaiting,
-  setFormStatus,
 }) => {
   switch (formStatus) {
     case 'forgot':
@@ -25,7 +23,6 @@ const LoginFormButtons: React.FC<Props> = ({
         <LoginFormLoginButtons
           form={form}
           isAuthenticationWaiting={isAuthenticationWaiting}
-          setFormStatus={setFormStatus}
         />
       );
     case 'signUp':
@@ -33,7 +30,6 @@ const LoginFormButtons: React.FC<Props> = ({
         <LoginFormSignUpButtons
           form={form}
           isAuthenticationWaiting={isAuthenticationWaiting}
-          setFormStatus={setFormStatus}
         />
       );
     default:

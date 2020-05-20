@@ -6,7 +6,7 @@ import { useLazyQuery, useMutation } from '@apollo/react-hooks';
 import Form from 'forms/form/form';
 import handleError from 'server/errors/handleError';
 import { CREATE_USER, IS_AUTHENTICATED, LOGIN_USER } from 'schema/user';
-import { FormProp, LoginFormStatus } from 'types/formTypes';
+import { FormProp } from 'types/formTypes';
 import { useAuthenticationContext } from 'context/authenticationContext';
 import LoginFormComponent from './loginFormComponent';
 import { useLoginContext } from './loginFormContext/loginFormContext';
@@ -133,7 +133,6 @@ const LoginFormContainer: React.FC = () => {
         hasIncorrectCreds={hasIncorrectCreds}
         isAuthenticationWaiting={isAuthenticationWaiting}
         isPasswordWeak={isPasswordWeak}
-        setFormStatus={setFormStatus}
       />
     </Form>
   );

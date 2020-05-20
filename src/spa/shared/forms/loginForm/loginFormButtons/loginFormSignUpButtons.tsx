@@ -3,26 +3,23 @@ import Anchor from 'inputs/anchor/anchor';
 import Button from 'buttons/button/button';
 import Checkbox from 'inputs/checkbox/checkbox';
 import FormItem from 'forms/formItem/formItem';
-import { FormProp, LoginFormStatus } from 'types/formTypes';
+import { FormProp } from 'types/formTypes';
+import { useLoginContext } from 'forms/loginForm/loginFormContext/loginFormContext';
 import * as styles from './loginFormButtons.module.less';
 
 interface Props {
   form: FormProp;
   isAuthenticationWaiting: boolean;
-  setFormStatus: (status: LoginFormStatus) => void;
 }
 
 const LoginFormSignUpButtons: React.FC<Props> = ({
   form,
   isAuthenticationWaiting,
-  setFormStatus,
 }) => {
-  const handleBack = (): void => {
-    setFormStatus('login');
-  };
-  const handleSignUp = (): void => {
-    console.log('signing up user');
-  };
+  const { setFormStatus } = useLoginContext();
+
+  const handleBack = (): void => setFormStatus('login');
+  const handleSignUp = (): void => console.log('signing up user');
 
   return (
     <>
