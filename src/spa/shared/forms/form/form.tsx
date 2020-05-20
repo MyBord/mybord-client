@@ -3,8 +3,6 @@ import { Form as AntForm } from 'antd';
 import { FormProp, FormProps } from 'types/formTypes';
 import * as styles from './form.module.less';
 
-// todo: change name of file & folder
-
 interface FormContentProps extends FormProps {
   children: React.ReactElement | React.ReactElement[];
   onSubmit: (form: FormProp) => void;
