@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Alert as AntAlert } from 'antd';
 import AlertAnimation from 'framerMotion/alertAnimation';
 import Icon from 'icons/icon/icon';
-import { useLoginContext } from 'forms/loginForm/loginFormContext/loginFormContext';
+import { useLoginContext } from 'landing/pages/loginPage/loginContext/loginContext';
 import * as styles from './alert.module.less';
 import './alert.less';
 

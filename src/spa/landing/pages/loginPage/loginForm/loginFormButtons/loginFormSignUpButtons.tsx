@@ -4,19 +4,18 @@ import Button from 'buttons/button/button';
 import Checkbox from 'inputs/checkbox/checkbox';
 import FormItem from 'forms/formItem/formItem';
 import { FormProp } from 'types/formTypes';
-import { useLoginContext } from 'forms/loginForm/loginFormContext/loginFormContext';
+import { useLoginContext } from 'landing/pages/loginPage/loginContext/loginContext';
 import * as styles from './loginFormButtons.module.less';
 
 interface Props {
   form: FormProp;
 }
 
-const LoginFormLoginButtons: React.FC<Props> = ({ form }) => {
+const LoginFormSignUpButtons: React.FC<Props> = ({ form }) => {
   const { isAuthenticationWaiting, setFormStatus } = useLoginContext();
 
-  const handleForgot = (): void => setFormStatus('forgot');
-  const handleLogin = (): void => setFormStatus('login');
-  const handleSignUp = (): void => setFormStatus('signUp');
+  const handleBack = (): void => setFormStatus('login');
+  const handleSignUp = (): void => console.log('signing up user');
 
   return (
     <>
@@ -27,39 +26,29 @@ const LoginFormLoginButtons: React.FC<Props> = ({ form }) => {
         >
           <Checkbox label="Remember Me" />
         </FormItem>
-        {/* <FormItem */}
-        {/*  fieldName="forgot-password" */}
-        {/*  form={form} */}
-        {/* > */}
-        {/*  <Anchor label="Forgot Password?" onClick={handleForgot} /> */}
-        {/* </FormItem> */}
       </div>
-      <div className={[styles.buttonDiv, styles.loginDiv].join(' ')}>
-        <FormItem
-          fieldName="login"
-          form={form}
-        >
-          <Button
-            htmlType="submit"
-            isWaiting={isAuthenticationWaiting}
-            label="Login"
-            onClick={handleLogin}
-          />
-        </FormItem>
+      <div className={[styles.buttonDiv, styles.signUpDiv].join(' ')}>
         <FormItem
           fieldName="sign-up"
           form={form}
         >
           <Button
-            htmlType="button"
+            htmlType="submit"
+            isWaiting={isAuthenticationWaiting}
             label="Sign Up"
             onClick={handleSignUp}
-            type="secondary"
+            type="primary"
           />
+        </FormItem>
+        <FormItem
+          fieldName="back"
+          form={form}
+        >
+          <Anchor label="back" onClick={handleBack} />
         </FormItem>
       </div>
     </>
   );
 };
 
-export default LoginFormLoginButtons;
+export default LoginFormSignUpButtons;
