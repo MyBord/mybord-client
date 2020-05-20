@@ -8,7 +8,7 @@ interface LoginState {
   isAuthenticationWaiting: boolean;
   isPasswordWeak: boolean;
   setAlertMessage: (alertMessage: string) => void;
-  setFormStatus: (status: FormStatus) => void;
+  setFormStatus: (formStatus: FormStatus) => void;
   setIsAuthenticationWaiting: (isAuthenticationWaiting: boolean) => void
   setIsPasswordWeak: (isPasswordWeak: boolean) => void;
 }
@@ -27,10 +27,15 @@ const initialLoginState: LoginState = {
 const LoginContext = React.createContext<LoginState>(initialLoginState);
 
 export const LoginContextProvider = (props: object): React.ReactElement => {
-  const [formStatus, setFormStatus] = React.useState<FormStatus>('login');
+  const [formStatus, setFormStatusFn] = React.useState<FormStatus>('login');
   const [alertMessage, setAlertMessage] = React.useState<string>(null);
   const [isAuthenticationWaiting, setIsAuthenticationWaiting] = React.useState<boolean>(false);
   const [isPasswordWeak, setIsPasswordWeak] = React.useState<boolean>(false);
+
+  const setFormStatus = (status: FormStatus): void => {
+    setAlertMessage(null);
+    setFormStatusFn(status);
+  };
 
   return (
     <LoginContext.Provider
