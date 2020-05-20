@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useLoginContext } from 'forms/loginForm/loginFormContext/loginFormContext';
+import { useLoginContext } from 'landing/pages/loginPage/loginContext/loginContext';
 import LoginFormLoginSocial from './loginFormLoginSocial';
 import LoginFormSignUpSocial from './loginFormSignUpSocial';
 

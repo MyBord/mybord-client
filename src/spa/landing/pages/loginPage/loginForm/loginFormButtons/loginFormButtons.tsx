@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { FormProp } from 'types/formTypes';
-import { useLoginContext } from 'forms/loginForm/loginFormContext/loginFormContext';
+import { useLoginContext } from 'landing/pages/loginPage/loginContext/loginContext';
 import LoginFormForgotButtons from './loginFormForgotButtons';
 import LoginFormLoginButtons from './loginFormLoginButtons';
 import LoginFormSignUpButtons from './loginFormSignUpButtons';

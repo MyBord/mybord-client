@@ -8,8 +8,8 @@ import handleError from 'server/errors/handleError';
 import { CREATE_USER, IS_AUTHENTICATED, LOGIN_USER } from 'schema/user';
 import { FormProp } from 'types/formTypes';
 import { useAuthenticationContext } from 'context/authenticationContext';
+import { useLoginContext } from 'landing/pages/loginPage/loginContext/loginContext';
 import LoginFormComponent from './loginFormComponent';
-import { useLoginContext } from './loginFormContext/loginFormContext';
 import './loginForm.less';
 
 /* eslint-disable brace-style */

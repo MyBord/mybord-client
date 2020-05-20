@@ -4,7 +4,7 @@ import PasswordInput from 'inputs/passwordInput/passwordInput';
 import TextInput from 'inputs/textInput/textInput';
 import Typography from 'typography/typography';
 import { FormProp } from 'types/formTypes';
-import { useLoginContext } from 'forms/loginForm/loginFormContext/loginFormContext';
+import { useLoginContext } from 'landing/pages/loginPage/loginContext/loginContext';
 import * as styles from './loginFormInputs.module.less';
 
 interface Props {
