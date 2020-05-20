@@ -1,8 +1,9 @@
-import { FormProps } from 'antd/es/form';
-import { GetFieldDecoratorOptions } from 'antd/es/form/Form';
+import { FormComponentProps, GetFieldDecoratorOptions } from 'antd/es/form/Form';
+
+export type FormProps = FormComponentProps;
+
+export type FormProp = FormComponentProps['form'];
 
 export type GetFieldDecoratorOptionsType = GetFieldDecoratorOptions;
-
-export type FormProp = FormProps['form'];
 
 export type LoginFormStatus = 'forgot' | 'login' | 'signUp';

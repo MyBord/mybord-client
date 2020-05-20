@@ -3,17 +3,13 @@
 
 import * as React from 'react';
 import { useLazyQuery, useMutation } from '@apollo/react-hooks';
-import formWrapper from 'forms/formWrapper/formWrapper';
+import Form from 'forms/form/form';
 import handleError from 'server/errors/handleError';
-import { FormProp, LoginFormStatus } from 'types/formTypes';
 import { CREATE_USER, IS_AUTHENTICATED, LOGIN_USER } from 'schema/user';
+import { FormProp, LoginFormStatus } from 'types/formTypes';
 import { useAuthenticationContext } from 'context/authenticationContext';
 import LoginFormComponent from './loginFormComponent';
 import './loginForm.less';
-
-interface Props {
-  form: FormProp;
-}
 
 /* eslint-disable brace-style */
 const LoginFormContainer: React.FC = () => {
@@ -129,20 +125,17 @@ const LoginFormContainer: React.FC = () => {
     }
   }
 
-  const FormContent: React.FC<Props> = ({ form }) => (
-    <LoginFormComponent
-      form={form}
-      formStatus={formStatus}
-      hasIncorrectCreds={hasIncorrectCreds}
-      isAuthenticationWaiting={isAuthenticationWaiting}
-      isPasswordWeak={isPasswordWeak}
-      setFormStatus={setFormStatus}
-    />
+  return (
+    <Form onSubmit={handleSubmit} type="login">
+      <LoginFormComponent
+        formStatus={formStatus}
+        hasIncorrectCreds={hasIncorrectCreds}
+        isAuthenticationWaiting={isAuthenticationWaiting}
+        isPasswordWeak={isPasswordWeak}
+        setFormStatus={setFormStatus}
+      />
+    </Form>
   );
-
-  const Form = formWrapper({ Component: FormContent, onSubmit: handleSubmit, type: 'login' });
-
-  return <Form />;
 };
 
 export default LoginFormContainer;

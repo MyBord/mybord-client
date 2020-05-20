@@ -1,14 +1,14 @@
 import * as React from 'react';
 import Alert from 'shared/alert/alert';
 import FormItem from 'forms/formItem/formItem';
+import Typography from 'typography/typography';
+import { FormProp, LoginFormStatus } from 'types/formTypes';
 import LoginFormButtons from './loginFormButtons/loginFormButtons';
 import LoginFormInputs from './loginFormInputs/loginFormInputs';
 import LoginFormSocial from './loginFormSocial/loginFormSocial';
-import Typography from 'typography/typography';
-import { FormProp, LoginFormStatus } from 'types/formTypes';
 
 interface Props {
-  form: FormProp;
+  form?: FormProp;
   formStatus: LoginFormStatus;
   hasIncorrectCreds: boolean;
   isAuthenticationWaiting: boolean;
