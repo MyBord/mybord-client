@@ -1,20 +1,21 @@
 import * as React from 'react';
-import { FormProp, LoginFormStatus } from 'types/formTypes';
+import { FormProp } from 'types/formTypes';
+import { useLoginContext } from 'forms/loginForm/loginFormContext/loginFormContext';
 import LoginFormForgotButtons from './loginFormForgotButtons';
 import LoginFormLoginButtons from './loginFormLoginButtons';
 import LoginFormSignUpButtons from './loginFormSignUpButtons';
 
 interface Props {
   form: FormProp;
-  formStatus: LoginFormStatus;
   isAuthenticationWaiting: boolean;
 }
 
 const LoginFormButtons: React.FC<Props> = ({
   form,
-  formStatus,
   isAuthenticationWaiting,
 }) => {
+  const { formStatus } = useLoginContext();
+
   switch (formStatus) {
     case 'forgot':
       return <LoginFormForgotButtons form={form} />;

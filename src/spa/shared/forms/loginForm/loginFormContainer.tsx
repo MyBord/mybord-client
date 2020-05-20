@@ -129,7 +129,6 @@ const LoginFormContainer: React.FC = () => {
   return (
     <Form onSubmit={handleSubmit} type="login">
       <LoginFormComponent
-        formStatus={formStatus}
         hasIncorrectCreds={hasIncorrectCreds}
         isAuthenticationWaiting={isAuthenticationWaiting}
         isPasswordWeak={isPasswordWeak}

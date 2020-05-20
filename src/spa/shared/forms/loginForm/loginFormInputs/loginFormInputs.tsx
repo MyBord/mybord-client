@@ -1,16 +1,18 @@
 import * as React from 'react';
-import { FormProp, LoginFormStatus } from 'types/formTypes';
+import { FormProp } from 'types/formTypes';
+import { useLoginContext } from 'forms/loginForm/loginFormContext/loginFormContext';
 import LoginFormForgotInputs from './loginFormForgotInputs';
 import LoginFormLoginInputs from './loginFormLoginInputs';
 import LoginFormSignUpInputs from './loginFormSignUpInputs';
 
 interface Props {
   form: FormProp;
-  formStatus: LoginFormStatus;
   isPasswordWeak: boolean;
 }
 
-const LoginFormInputs: React.FC<Props> = ({ form, formStatus, isPasswordWeak }) => {
+const LoginFormInputs: React.FC<Props> = ({ form, isPasswordWeak }) => {
+  const { formStatus } = useLoginContext();
+
   switch (formStatus) {
     case 'forgot':
       return <LoginFormForgotInputs form={form} />;
