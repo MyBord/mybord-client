@@ -9,14 +9,10 @@ import * as styles from './loginFormButtons.module.less';
 
 interface Props {
   form: FormProp;
-  isAuthenticationWaiting: boolean;
 }
 
-const LoginFormSignUpButtons: React.FC<Props> = ({
-  form,
-  isAuthenticationWaiting,
-}) => {
-  const { setFormStatus } = useLoginContext();
+const LoginFormSignUpButtons: React.FC<Props> = ({ form }) => {
+  const { isAuthenticationWaiting, setFormStatus } = useLoginContext();
 
   const handleBack = (): void => setFormStatus('login');
   const handleSignUp = (): void => console.log('signing up user');

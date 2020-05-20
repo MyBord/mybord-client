@@ -9,22 +9,17 @@ import LoginFormSocial from './loginFormSocial/loginFormSocial';
 
 interface Props {
   form?: FormProp;
-  isAuthenticationWaiting: boolean;
 }
 
 const LoginFormComponent: React.FC<Props> = ({
   form,
-  isAuthenticationWaiting,
 }) => (
   <>
     <FormItem fieldName="alert" form={form}>
       <Alert message="email or password is incorrect" />
     </FormItem>
     <LoginFormInputs form={form} />
-    <LoginFormButtons
-      form={form}
-      isAuthenticationWaiting={isAuthenticationWaiting}
-    />
+    <LoginFormButtons form={form} />
     {/* <LoginFormSocial formStatus={formStatus} /> */}
     <Typography text="About MyBord" link="/about" />
   </>

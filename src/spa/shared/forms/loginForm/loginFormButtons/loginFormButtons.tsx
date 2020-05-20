@@ -7,12 +7,10 @@ import LoginFormSignUpButtons from './loginFormSignUpButtons';
 
 interface Props {
   form: FormProp;
-  isAuthenticationWaiting: boolean;
 }
 
 const LoginFormButtons: React.FC<Props> = ({
   form,
-  isAuthenticationWaiting,
 }) => {
   const { formStatus } = useLoginContext();
 
@@ -21,17 +19,11 @@ const LoginFormButtons: React.FC<Props> = ({
       return <LoginFormForgotButtons form={form} />;
     case 'login':
       return (
-        <LoginFormLoginButtons
-          form={form}
-          isAuthenticationWaiting={isAuthenticationWaiting}
-        />
+        <LoginFormLoginButtons form={form} />
       );
     case 'signUp':
       return (
-        <LoginFormSignUpButtons
-          form={form}
-          isAuthenticationWaiting={isAuthenticationWaiting}
-        />
+        <LoginFormSignUpButtons form={form} />
       );
     default:
       throw new Error('Unexpected form status');
