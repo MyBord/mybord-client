@@ -20,7 +20,7 @@ const LoginFormComponent: React.FC<Props> = ({
     </FormItem>
     <LoginFormInputs form={form} />
     <LoginFormButtons form={form} />
-    {/* <LoginFormSocial formStatus={formStatus} /> */}
+    {/* <LoginFormSocial /> */}
     <Typography text="About MyBord" link="/about" />
   </>
 );
