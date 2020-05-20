@@ -14,7 +14,6 @@ This document is used to outline current project management priorities.
 ### A. Highest - MVP
 
   * prevent duplicate users from signing up
-  * When you submit a weak password, the email address gets cleared - fix this
   * make sure spinner renders for dashboard page
   * when you first login; dashboard and cards load before animation is complete.
   * add subscription to videos
@@ -29,6 +28,7 @@ This document is used to outline current project management priorities.
   * create transitions between login and about and error
   * should display empty notification if user has no cards / when first
     registers
+  * create error is server is down  
 
 ### B. High - MVP
 
