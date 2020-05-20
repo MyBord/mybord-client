@@ -27,7 +27,7 @@ const LoginFormContainer: React.FC = () => {
   const { setAuthenticationStatus } = useAuthenticationContext();
   const {
     formStatus,
-    setHasIncorrectCreds,
+    setAlertMessage,
     setIsAuthenticationWaiting,
     setIsPasswordWeak,
   } = useLoginContext();
@@ -58,7 +58,7 @@ const LoginFormContainer: React.FC = () => {
       // If a 401 status is returned, notify the user that they have provided the incorrect creds
       const { status } = handleError(error);
       if (status === 401) {
-        setHasIncorrectCreds(true);
+        setAlertMessage('email or password is incorrect');
       }
     }
   };
