@@ -86,9 +86,16 @@ const LoginFormContainer: React.FC = () => {
       setIsAuthenticationWaiting(false);
 
       // If a 400 status is returned, notify the user that their password is not strong enough
-      const { status } = handleError(error);
+      const { message, status } = handleError(error);
       if (status === 400) {
-        setIsPasswordWeak(true);
+        if (message === 'password is weak') {
+          setIsPasswordWeak(true);
+          setAlertMessage(null);
+        }
+        if (message === 'duplicate user') {
+          setIsPasswordWeak(false);
+          setAlertMessage('that user already exists');
+        }
       }
     }
   };
