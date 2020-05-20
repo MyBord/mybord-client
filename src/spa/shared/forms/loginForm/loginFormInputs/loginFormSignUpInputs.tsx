@@ -4,11 +4,11 @@ import PasswordInput from 'inputs/passwordInput/passwordInput';
 import TextInput from 'inputs/textInput/textInput';
 import Typography from 'typography/typography';
 import { FormProp } from 'types/formTypes';
+import { useLoginContext } from 'forms/loginForm/loginFormContext/loginFormContext';
 import * as styles from './loginFormInputs.module.less';
 
 interface Props {
   form: FormProp;
-  isPasswordWeak: boolean;
 }
 
 const PasswordReactMessage = (
@@ -38,34 +38,38 @@ const PasswordReactMessage = (
   </>
 );
 
-const LoginFormSignUpInputs: React.FC<Props> = ({ form, isPasswordWeak }) => (
-  <>
-    <FormItem
-      fieldName="email"
-      form={form}
-      required
-      requiredMessage="Please enter your email address"
-      type="email"
-      typeMessage="You entered an invalid email address"
-    >
-      <TextInput placeholder="Email" />
-    </FormItem>
-    <FormItem
-      errorMessage={isPasswordWeak && PasswordReactMessage}
-      fieldName="password"
-      form={form}
-      required
-      requiredMessage="Please enter a password"
-    >
-      <PasswordInput placeholder="Password" />
-    </FormItem>
-    {/* <FormItem */}
-    {/*  fieldName="password-confirm" */}
-    {/*  form={form} */}
-    {/* > */}
-    {/*  <PasswordInput placeholder="Confirm Password" /> */}
-    {/* </FormItem> */}
-  </>
-);
+const LoginFormSignUpInputs: React.FC<Props> = ({ form }) => {
+  const { isPasswordWeak } = useLoginContext();
+
+  return (
+    <>
+      <FormItem
+        fieldName="email"
+        form={form}
+        required
+        requiredMessage="Please enter your email address"
+        type="email"
+        typeMessage="You entered an invalid email address"
+      >
+        <TextInput placeholder="Email" />
+      </FormItem>
+      <FormItem
+        errorMessage={isPasswordWeak && PasswordReactMessage}
+        fieldName="password"
+        form={form}
+        required
+        requiredMessage="Please enter a password"
+      >
+        <PasswordInput placeholder="Password" />
+      </FormItem>
+      {/* <FormItem */}
+      {/*  fieldName="password-confirm" */}
+      {/*  form={form} */}
+      {/* > */}
+      {/*  <PasswordInput placeholder="Confirm Password" /> */}
+      {/* </FormItem> */}
+    </>
+  );
+};
 
 export default LoginFormSignUpInputs;

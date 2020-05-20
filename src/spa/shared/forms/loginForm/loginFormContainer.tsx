@@ -6,23 +6,33 @@ import { useLazyQuery, useMutation } from '@apollo/react-hooks';
 import Form from 'forms/form/form';
 import handleError from 'server/errors/handleError';
 import { CREATE_USER, IS_AUTHENTICATED, LOGIN_USER } from 'schema/user';
-import { FormProp, LoginFormStatus } from 'types/formTypes';
+import { FormProp } from 'types/formTypes';
 import { useAuthenticationContext } from 'context/authenticationContext';
 import LoginFormComponent from './loginFormComponent';
+import { useLoginContext } from './loginFormContext/loginFormContext';
 import './loginForm.less';
 
 /* eslint-disable brace-style */
 const LoginFormContainer: React.FC = () => {
+  // ----- QUERIES & MUTATIONS ----- //
+
   const [createUser] = useMutation(CREATE_USER);
-  const [formStatus, setFormStatus] = React.useState<LoginFormStatus>('login');
-  const [hasIncorrectCreds, setHasIncorrectCreds] = React.useState(false);
-  const [isAuthenticationWaiting, setIsAuthenticationWaiting] = React.useState(false);
-  const [isPasswordWeak, setIsPasswordWeak] = React.useState(false);
   const [isAuthenticatedQuery, { called, data, loading }] = useLazyQuery(
     IS_AUTHENTICATED, { fetchPolicy: 'no-cache' },
   );
   const [loginUser] = useMutation(LOGIN_USER);
+
+  // ----- STATE ----- //
+
   const { setAuthenticationStatus } = useAuthenticationContext();
+  const {
+    formStatus,
+    setHasIncorrectCreds,
+    setIsAuthenticationWaiting,
+    setIsPasswordWeak,
+  } = useLoginContext();
+
+  // ----- HANDLERS ----- //
 
   // Function that gets invoked when the user clicks on the 'login' button
   const handleLogin = async (form: FormProp): Promise<void> => {
@@ -107,6 +117,8 @@ const LoginFormContainer: React.FC = () => {
     }
   };
 
+  // ----- DATA HANDLING ----- //
+
   // After the user tries to login, if the back-end says they are authenticated, then update
   // their status on the front end as authenticated and push them towards the app
   if (called && !loading) {
@@ -125,15 +137,11 @@ const LoginFormContainer: React.FC = () => {
     }
   }
 
+  // ----- COMPONENT ----- //
+
   return (
     <Form onSubmit={handleSubmit} type="login">
-      <LoginFormComponent
-        formStatus={formStatus}
-        hasIncorrectCreds={hasIncorrectCreds}
-        isAuthenticationWaiting={isAuthenticationWaiting}
-        isPasswordWeak={isPasswordWeak}
-        setFormStatus={setFormStatus}
-      />
+      <LoginFormComponent />
     </Form>
   );
 };

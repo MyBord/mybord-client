@@ -1,13 +1,11 @@
 import * as React from 'react';
-import { LoginFormStatus } from 'types/formTypes';
+import { useLoginContext } from 'forms/loginForm/loginFormContext/loginFormContext';
 import LoginFormLoginSocial from './loginFormLoginSocial';
 import LoginFormSignUpSocial from './loginFormSignUpSocial';
 
-interface Props {
-  formStatus: LoginFormStatus;
-}
+const LoginFormSocial: React.FC = () => {
+  const { formStatus } = useLoginContext();
 
-const LoginFormSocial: React.FC<Props> = ({ formStatus }) => {
   switch (formStatus) {
     case 'forgot':
       return null;
