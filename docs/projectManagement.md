@@ -13,9 +13,10 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
+  * when new card is added via subscription, add spinner
+  * add subscription to videos
   * make sure spinner renders for dashboard page; when you first login, dashboard and cards load
    before animation is complete.
-  * add subscription to videos
   * have session be remembered by user
   * fix youtube card
   * Have youtube cards be restricted per user - if there are no cards, then provide instructions,
@@ -27,12 +28,13 @@ This document is used to outline current project management priorities.
   * create transitions between login and about and error
   * should display empty notification if user has no cards / when first
     registers
-  * create error is server is down  
+  * create error if server is down  
 
 ### B. High - MVP
 
 ### C. Medium
 
+  * make sure app is responsive and mobile friendly
   * Preventing Rapid-Fire Login Attempts 
   * Deal with Distributed Brute Force Attacks
     * https://stackoverflow.com/questions/549/the-definitive-guide-to-form-based-website-authentication

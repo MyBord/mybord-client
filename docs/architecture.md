@@ -200,6 +200,7 @@ src/
   |- server/ 
      |- errors/ 
      |- schema/ 
+     |- client.tsx
 ```
 
 * **errors/:**
@@ -207,6 +208,8 @@ src/
 * **schema/:**
   * This folder should mirror our backend graphql schema for all related graphql queries, mutations,
   and subscriptions.
+* **`client.tsx`:**
+  * This configures our Apollo Client to communicate with our back end.
   
 ### D. third party folder
 

@@ -12,7 +12,7 @@ const get = (gqlString: GqlString): Promise<any> => new Promise((resolve) => {
     const config = {
       headers: { 'Content-Type': 'application/json' },
     };
-    axios.post(process.env.URI, body, config)
+    axios.post(`http://${process.env.URI}`, body, config)
       .then((response) => resolve(response.data.data));
   }, 2000);
 });
