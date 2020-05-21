@@ -13,6 +13,7 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
+  * when new card is added via subscription, add spinner
   * add subscription to videos
   * make sure spinner renders for dashboard page; when you first login, dashboard and cards load
    before animation is complete.
@@ -33,6 +34,7 @@ This document is used to outline current project management priorities.
 
 ### C. Medium
 
+  * make sure app is responsive and mobile friendly
   * Preventing Rapid-Fire Login Attempts 
   * Deal with Distributed Brute Force Attacks
     * https://stackoverflow.com/questions/549/the-definitive-guide-to-form-based-website-authentication

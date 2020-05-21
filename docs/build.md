@@ -363,4 +363,6 @@ the following:
 The following are the env vars needed to run our front end application: 
 
 * **`URI`**:
-  * The uri endpoint that is used to communicate with our backend server.
+  * The uri endpoint that is used to communicate with our backend server. This should look
+   something like `localhost:1234/graphql` and should not include a `http://` prefix since we
+    want to use this for web sockets as well (`ws://`).
