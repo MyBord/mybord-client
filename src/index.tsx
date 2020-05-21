@@ -12,16 +12,13 @@ import { split } from 'apollo-link';
 import Spa from './spa/spa/spa';
 
 const wsLink = new WebSocketLink({
-  uri: 'ws://localhost:4000/graphql', // update with uri, make comment about uri that it doesn't
-  // have http or ws
-  options: {
-    reconnect: true,
-  },
+  uri: `ws://${process.env.URI}`,
+  options: { reconnect: true },
 });
 
 const httpLink = new HttpLink({
   credentials: 'include',
-  uri: process.env.URI,
+  uri: `http://${process.env.URI}`,
 });
 
 const link = split(
