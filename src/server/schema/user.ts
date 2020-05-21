@@ -29,9 +29,3 @@ export const LOGOUT_USER = gql`
     logoutUser
   }
 `;
-
-export const USER_CARDS = gql`
-  subscription userCards {
-    userCards
-  }
-`;

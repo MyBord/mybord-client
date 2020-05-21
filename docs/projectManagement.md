@@ -13,6 +13,8 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
+  * add ability to delete card
+  * make url input wider
   * when new card is added via subscription, add spinner
   * add subscription to videos
   * make sure spinner renders for dashboard page; when you first login, dashboard and cards load
