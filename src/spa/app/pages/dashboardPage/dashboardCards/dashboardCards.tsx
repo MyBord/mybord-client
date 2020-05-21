@@ -2,19 +2,18 @@ import * as React from 'react';
 import { useSubscription } from '@apollo/react-hooks';
 import PhantomCard from 'shared/cards/phantomCard/phantomCard';
 import YoutubeCard from 'shared/cards/youtubeCard/youtubeCard';
-import { GetUserCardsResponse, UserCard } from 'schema/card';
-import { USER_CARDS } from 'schema/user';
+import { UserCardsQueryResponse, UserCard, USER_CARD_SUBSCRIPTION } from 'schema/card';
 import * as styles from './dashboardCards.module.less';
 
 interface Props {
-  userCards: GetUserCardsResponse['userCards'];
+  userCards: UserCardsQueryResponse['userCards'];
 }
 
 const DashboardCards: React.FC<Props> = ({ userCards }) => {
-  const { data, loading } = useSubscription(USER_CARDS);
+  const { data, loading } = useSubscription(USER_CARD_SUBSCRIPTION);
 
   if (!loading) {
-    console.log(data);
+    userCards.push(data.userCard);
   }
 
   return (

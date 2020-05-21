@@ -7,11 +7,46 @@ export const CREATE_YOUTUBE_CARD = gql`
   mutation createYoutubeCard($videoUrl: String!) {
     createYoutubeCard(data: {videoUrl: $videoUrl}) {
       id
+      type
+      cardData{
+        youtubeCardData{
+          channelThumbnail
+          channelTitle
+          duration
+          likes
+          publishedAt
+          videoId
+          videoThumbnail
+          videoTitle
+          views
+        }
+      }
     }
   }
 `;
 
-export const GET_USER_CARDS = gql`
+export const USER_CARD_SUBSCRIPTION = gql`
+  subscription userCard {
+    userCard {
+      type
+      cardData{
+        youtubeCardData{
+          channelThumbnail
+          channelTitle
+          duration
+          likes
+          publishedAt
+          videoId
+          videoThumbnail
+          videoTitle
+          views
+        }
+      }
+    }
+  }
+`;
+
+export const USER_CARDS_QUERY = gql`
   query {
     userCards{
       type
@@ -41,6 +76,6 @@ export interface UserCard {
   };
 }
 
-export interface GetUserCardsResponse {
+export interface UserCardsQueryResponse {
   userCards: UserCard[];
 }
