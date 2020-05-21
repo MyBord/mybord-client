@@ -12,8 +12,11 @@ import { createRoot } from 'react-dom';
 import Spa from './spa/spa/spa';
 
 const wsLink = new WebSocketLink({
-  options: { reconnect: true },
-  uri: process.env.uri,
+  uri: 'ws://localhost:4000/graphql', // update with uri, make comment about uri that it doesn't
+  // have http or ws
+  options: {
+    reconnect: true,
+  },
 });
 
 const httpLink = new HttpLink({
