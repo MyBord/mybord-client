@@ -13,6 +13,8 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
+  * debug issue where user cards query is made (console foooooo) is happened where even in login
+   page
   * add ability to delete card
   * make url input wider
   * when new card is added via subscription, add spinner
