@@ -7,6 +7,7 @@ import BellIcon from './individualIcons/bellIcon';
 import CalendarIcon from './individualIcons/calendarIcon';
 import ChartIcon from './individualIcons/chartIcon';
 import DashboardIcon from './individualIcons/dashboardIcon';
+import DotMenuIcon from './individualIcons/dotMenuIcon';
 import DownArrowIcon from './individualIcons/downArrowIcon';
 import EyeIcon from './individualIcons/eyeIcon';
 import FacebookIcon from './individualIcons/facebookIcon';
@@ -29,6 +30,7 @@ export const iconNames = {
   calendar: 'foo',
   chart: 'foo',
   dashboard: 'foo',
+  dotMenu: 'foo',
   downArrow: 'foo',
   eye: 'foo',
   facebook: 'foo',
@@ -68,6 +70,8 @@ const Icon: React.FC<IconProps> = ({
       return <ChartIcon size={size} />;
     case 'dashboard':
       return <DashboardIcon size={size} />;
+    case 'dotMenu':
+      return <DotMenuIcon color={color} size={size} />;
     case 'downArrow':
       return <DownArrowIcon size={size} />;
     case 'eye':

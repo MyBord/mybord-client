@@ -1,18 +1,18 @@
 import * as React from 'react';
+import Card from 'cards/card';
 import { YoutubeVideoData } from 'types/youtubeTypes';
 import YoutubeCardDescription from './youtubeCardDescription/youtubeCardDescription';
 import YoutubeCardThumbnailContainer from './youtubeCardThumbnail/youtubeCardThumbnailContainer';
-import * as styles from './youtubeCard.module.less';
 
 interface Props {
   youtubeVideoData: YoutubeVideoData;
 }
 
 const YoutubeCard: React.FC<Props> = ({ youtubeVideoData }) => (
-  <div className={styles.container}>
+  <Card>
     <YoutubeCardThumbnailContainer youtubeVideoData={youtubeVideoData} />
     <YoutubeCardDescription youtubeVideoData={youtubeVideoData} />
-  </div>
+  </Card>
 );
 
 export default YoutubeCard;
