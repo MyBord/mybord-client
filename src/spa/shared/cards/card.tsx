@@ -10,6 +10,7 @@ interface Props {
 
 const Card: React.FC<Props> = ({ children }) => (
   <div className={styles.container}>
+    <div className={styles.overlayDiv} />
     {children}
   </div>
 );

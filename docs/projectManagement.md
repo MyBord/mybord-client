@@ -13,6 +13,7 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
+  * add ability to remove and edit tags for cards
   * debug issue where user cards query is made (console foooooo) is happened where even in login
    page
   * add ability to delete card
