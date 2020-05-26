@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useCardContext } from 'context/cardContext';
 import * as styles from './card.module.less';
 
 // This card component is the parent component that wraps every is the unique card type to make
@@ -6,13 +7,20 @@ import * as styles from './card.module.less';
 
 interface Props {
   children: React.ReactNode;
+  id: string;
 }
 
-const Card: React.FC<Props> = ({ children }) => (
-  <div className={styles.container}>
-    <div className={styles.overlayDiv} />
-    {children}
-  </div>
-);
+const Card: React.FC<Props> = ({ children, id }) => {
+  const { canEdit } = useCardContext();
+
+  return (
+    <div className={styles.container}>
+      {
+        canEdit && <div className={styles.overlayDiv} />
+      }
+      {children}
+    </div>
+  );
+};
 
 export default Card;

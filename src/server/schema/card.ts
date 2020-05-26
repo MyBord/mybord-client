@@ -49,6 +49,7 @@ export const USER_CARD_SUBSCRIPTION = gql`
 export const USER_CARDS_QUERY = gql`
   query {
     userCards{
+      id
       type
       cardData{
         youtubeCardData{
@@ -70,6 +71,7 @@ export const USER_CARDS_QUERY = gql`
 // ----- RESPONSE INTERFACES ----- //
 
 export interface UserCard {
+  id: string;
   type: string;
   cardData: {
     youtubeCardData: YoutubeVideoData;
