@@ -11,12 +11,28 @@ interface Props {
 }
 
 const Card: React.FC<Props> = ({ children, id }) => {
-  const { canEdit } = useCardContext();
+  const { canEdit, selectedCards, toggleCard } = useCardContext();
+
+  const handleClick = (): void => toggleCard(id);
+
+  const isSelected = selectedCards.includes(id);
 
   return (
     <div className={styles.container}>
       {
-        canEdit && <div className={styles.overlayDiv} />
+        canEdit && (
+          <div
+            aria-hidden="true"
+            aria-label="card-button"
+            className={[
+              styles.overlayDiv,
+              isSelected ? styles.isSelected : styles.isNotSelected,
+            ].join(' ')}
+            onClick={handleClick}
+            role="button"
+            tabIndex={0}
+          />
+        )
       }
       {children}
     </div>

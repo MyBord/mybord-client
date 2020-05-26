@@ -13,6 +13,7 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
+  * add background transition when selecting cards
   * add ability to remove and edit tags for cards
   * debug issue where user cards query is made (console foooooo) is happened where even in login
    page
