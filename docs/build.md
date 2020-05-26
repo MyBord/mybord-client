@@ -11,7 +11,7 @@ This summarizes the build process for the MyBord codebase as well as any other c
 * [III. Importing](#iii-importing)
 * [IV. Testing and Jest](#iv-testing-and-jest)
 * [V. Yarn](#v-yarn)
-* [VI. Yarn](#vi-env-vars)
+* [VI. Env Vars](#vi-env-vars)
 
 ## I. Babel
 
@@ -360,7 +360,8 @@ the following:
     
 ## VI. Env Vars
 
-The following are the env vars needed to run our front end application: 
+The following are the env vars needed to run our front end application. If you are running
+locally, you should create a file at the root of the directory called `.env`.
 
 * **`URI`**:
   * The uri endpoint that is used to communicate with our backend server. This should look
