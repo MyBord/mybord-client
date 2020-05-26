@@ -366,4 +366,4 @@ locally, you should create a file at the root of the directory called `.env`.
 * **`URI`**:
   * The uri endpoint that is used to communicate with our backend server. This should look
    something like `localhost:1234/graphql` and should not include a `http://` prefix since we
-    want to use this for web sockets as well (`ws://`).
+   want to use this for web sockets as well (`ws://`).
