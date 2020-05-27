@@ -28,10 +28,25 @@ This document is used to outline product details.
   * change size of card
  
 * individual card functionality
-  * favorite it
+  * favorite
   * edit tags
   * edit category
   * edit title
+  * edit in general
+  * delete
+  * mark as to do
+  * mark as done
+  * multi select / multi edit
+
+* individual card info  
+  * category
+  * title
+  * tags
+  * is favorite
+  * is marked as to do
+  * is marked as done
+  
+  
   
 ## III. Design Resources  
 
