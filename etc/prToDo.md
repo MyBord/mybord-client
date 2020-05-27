@@ -4,3 +4,7 @@ Make sure to remove all notes before merging (except for this one, of course).
 find icon for edit action (pencil?)
 
 instead of color, make grayscale for card selection?
+
+add transition to show and hide when hovering over dot dot dot and heart
+add animation when favoriting
+add dropdown for dot dot dot

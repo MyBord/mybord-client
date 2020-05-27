@@ -20,6 +20,41 @@
   width: @cardWidth;
 }
 
+.editDiv {
+  // todo: add shadow
+  align-items: center;
+  background: @white;
+  box-shadow: @cardBoxShadow;
+  border-radius: 0.5rem; // todo: make into variable with container radius?
+  display: flex;
+  height: 2.25rem;
+  justify-content: center;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  width: 2.25rem;
+  z-index: 1;
+}
+
+/* stylelint-disable */
+
+.editDot {
+  background: @black;
+  border-radius: 50%;
+  height: 4px;
+  width: 4px;
+  margin: 2px;
+}
+
+.favoriteDiv {
+  background: red;
+  display: flex;
+  left: 1rem;
+  position: absolute;
+  top: 1rem;
+  z-index: 1;
+}
+
 .hr {
   border-color: @navBorder;
   border-width: 0 0 0.0625rem 0;

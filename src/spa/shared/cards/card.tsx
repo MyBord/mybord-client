@@ -20,6 +20,14 @@ const Card: React.FC<Props> = ({ children, id }) => {
 
   return (
     <div className={styles.container}>
+      <div className={styles.editDiv}>
+        <div className={styles.editDot} />
+        <div className={styles.editDot} />
+        <div className={styles.editDot} />
+      </div>
+      <div className={styles.favoriteDiv}>
+        <Icon iconName="heart" size={16} />
+      </div>
       {
         canEdit && (
           <div
@@ -39,7 +47,6 @@ const Card: React.FC<Props> = ({ children, id }) => {
       <div className={styles.actionContainer}>
         <hr className={styles.hr} />
         <div>
-          <Icon iconName="heart" size={16} />
           <Icon iconName="delete" size={16} />
           <Icon iconName="pencil" size={16} />
         </div>
