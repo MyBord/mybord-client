@@ -8,3 +8,7 @@ instead of color, make grayscale for card selection?
 add transition to show and hide when hovering over dot dot dot and heart
 add animation when favoriting
 add dropdown for dot dot dot
+
+add fireworks animation to like button
+
+don't have like button animate in when first mounted

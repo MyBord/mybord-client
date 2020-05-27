@@ -177,14 +177,14 @@ files, which are used to help create the unified stories:
 ```
 src/thirdParty/storybook/
   |- codeBlock.tsx
-  |- createScratchStory.tsx
+  |- createScratchPad.tsx
   |- createStory.tsx
   |- storybook.module.less
   |- storybookHeader.tsx
 ```
 
 * `codeBlock.tsx`: React component used by `ReactMarkdown` to render highlighted syntax.
-* `createScratchStory.tsx`: Utility function used to create a temporary storybook so we can
+* `createScratchPad.tsx`: Utility function used to create a temporary storybook so we can
 evaluate a component while building it in storybook.
 * `createStory.tsx`: Utility function that creates a custom storybook with default styling and
 organization details.

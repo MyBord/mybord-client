@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Icon from 'icons/icon/icon';
+import LikeButton from 'buttons/likeButton/likeButton';
 import { useCardContext } from 'context/cardContext';
 import * as styles from './card.module.less';
 
@@ -25,8 +26,8 @@ const Card: React.FC<Props> = ({ children, id }) => {
         <div className={styles.editDot} />
         <div className={styles.editDot} />
       </div>
-      <div className={styles.favoriteDiv}>
-        <Icon iconName="heart" size={16} />
+      <div className={styles.likeButtonDiv}>
+        <LikeButton />
       </div>
       {
         canEdit && (

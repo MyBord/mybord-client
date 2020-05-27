@@ -59,6 +59,7 @@ export interface IconProps extends IndividualIconProps {
 
 const Icon: React.FC<IconProps> = ({
   color = 'black',
+  fill = null,
   iconName,
   size,
   strokeWidth = 2,
@@ -90,7 +91,7 @@ const Icon: React.FC<IconProps> = ({
     case 'google':
       return <GoogleIcon size={size} />;
     case 'heart':
-      return <HeartIcon size={size} />;
+      return <HeartIcon color={color} fill={fill} size={size} />;
     case 'logout':
       return <LogoutIcon color={color} size={size} />;
     case 'mail':
