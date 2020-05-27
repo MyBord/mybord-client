@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Icon from 'icons/icon/icon';
 import { useCardContext } from 'context/cardContext';
 import * as styles from './card.module.less';
 
@@ -18,7 +19,12 @@ const Card: React.FC<Props> = ({ children, id }) => {
   const isSelected = selectedCards.includes(id);
 
   return (
-    <div className={styles.container}>
+    <div
+      className={[
+        styles.container,
+        canEdit && isSelected ? styles.isSelected : undefined,
+      ].join(' ')}
+    >
       {
         canEdit && (
           <div
@@ -26,7 +32,6 @@ const Card: React.FC<Props> = ({ children, id }) => {
             aria-label="card-button"
             className={[
               styles.overlayDiv,
-              isSelected ? styles.isSelected : styles.isNotSelected,
             ].join(' ')}
             onClick={handleClick}
             role="button"

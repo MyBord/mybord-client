@@ -42,6 +42,7 @@ This document is used to outline current project management priorities.
 
   * make sure app is responsive and mobile friendly
   * Preventing Rapid-Fire Login Attempts 
+  * can only play one youtube video at a time
   * Deal with Distributed Brute Force Attacks
     * https://stackoverflow.com/questions/549/the-definitive-guide-to-form-based-website-authentication
     * https://stackoverflow.com/questions/48345922/reference-password-validation
