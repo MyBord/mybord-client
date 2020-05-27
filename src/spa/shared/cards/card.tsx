@@ -19,12 +19,7 @@ const Card: React.FC<Props> = ({ children, id }) => {
   const isSelected = selectedCards.includes(id);
 
   return (
-    <div
-      className={[
-        styles.container,
-        canEdit && isSelected ? styles.isSelected : undefined,
-      ].join(' ')}
-    >
+    <div className={styles.container}>
       {
         canEdit && (
           <div
@@ -32,6 +27,7 @@ const Card: React.FC<Props> = ({ children, id }) => {
             aria-label="card-button"
             className={[
               styles.overlayDiv,
+              canEdit && isSelected ? styles.isSelected : undefined,
             ].join(' ')}
             onClick={handleClick}
             role="button"
@@ -40,6 +36,15 @@ const Card: React.FC<Props> = ({ children, id }) => {
         )
       }
       {children}
+      <div className={styles.actionContainer}>
+        <hr className={styles.hr} />
+        <h1>hello world</h1>
+        <h1>hello world</h1>
+        <h1>hello world</h1>
+        <h1>hello world</h1>
+        <h1>hello world</h1>
+        <h1>hello world</h1>
+      </div>
     </div>
   );
 };
