@@ -13,6 +13,23 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
+  * cards
+    * add ability to add tags
+    * add dropdown menu action
+    * don't have heart or menu show up unless on hover, add transition
+    * add ability to edit category
+    * add ability to edit title
+    * add ability to edit in general
+    * add ability to delete, with are you sure
+    * add ability to mark as to do and mark as done
+  * dashboard header  
+    * add icon for multi edit
+    * add filter for favorites, to do, done
+    * add filtering by tags, category
+    * add sorting
+    * add searching
+    * add multi-select multi-edit process
+    * create modal for creating card
   * add background transition when selecting cards
   * add ability to remove and edit tags for cards
   * debug issue where user cards query is made (console foooooo) is happened where even in login
