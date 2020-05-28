@@ -27,7 +27,7 @@ const Card: React.FC<Props> = ({ children, id }) => {
         <div className={styles.editDot} />
       </div>
       <div className={styles.likeButtonDiv}>
-        <LikeButton />
+        <LikeButton size={40} />
       </div>
       {
         canEdit && (
