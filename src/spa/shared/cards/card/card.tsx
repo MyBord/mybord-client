@@ -1,4 +1,5 @@
 import * as React from 'react';
+import CardMenuButton from 'buttons/cardMenuButton/cardMenuButton';
 import Icon from 'icons/icon/icon';
 import LikeButton from 'buttons/likeButton/likeButton';
 import { useCardContext } from 'context/cardContext';
@@ -27,10 +28,8 @@ const Card: React.FC<Props> = ({
 
   return (
     <div className={styles.container}>
-      <div className={styles.editDiv}>
-        <div className={styles.editDot} />
-        <div className={styles.editDot} />
-        <div className={styles.editDot} />
+      <div className={styles.cardMenuButtonDiv}>
+        <CardMenuButton onClick={() => console.log('foo')} />
       </div>
       <div className={styles.likeButtonDiv}>
         <LikeButton

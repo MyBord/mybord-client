@@ -23,8 +23,7 @@ const YoutubeCard: React.FC<Props> = ({ id, youtubeVideoData }) => {
       Content={Content}
       Description={Description}
       id={id}
-    >
-    </Card>
+    />
   );
 };
 

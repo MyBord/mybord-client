@@ -7,10 +7,8 @@ when multi-select, add greyscale transparent overlay?
 
 create separate file for like button animation
 
-make like button more subtle
-
 make sure like button and card menu are centered / aligned
 
 mousing over like button or menu button hides play button
 
-make card menu more subtle?
+remove unnecessary icons
