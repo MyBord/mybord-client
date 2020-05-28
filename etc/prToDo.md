@@ -13,6 +13,4 @@ make sure like button and card menu are centered / aligned
 
 mousing over like button or menu button hides play button
 
-change color of fireworks background lottie file to mybord black
-
 make card menu more subtle?
