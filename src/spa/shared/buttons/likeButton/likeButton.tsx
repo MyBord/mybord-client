@@ -1,9 +1,13 @@
 import * as React from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import Icon from 'icons/icon/icon';
+import LottiePlayer from 'lotty/lottiePlayer';
+import animationData from 'lotty/lotties/fireworks.json';
 import * as styles from './likeButton.module.less';
 
 interface Props {
+  isLiked: boolean;
+  onClick: () => void;
   size: number;
 }
 
@@ -32,9 +36,11 @@ const variants = {
   },
 };
 
-const LikeButton: React.FC<Props> = ({ size }) => {
-  const [isLiked, setIsLiked] = React.useState<boolean>(false);
-
+const LikeButton: React.FC<Props> = ({
+  isLiked,
+  onClick,
+  size,
+}) => {
   // `hasBeenClicked` indicates if the LikeButton has been clicked. We need to know this so that
   // when we first mount the Like button, its initial opacity is set to 1, but all future
   // animations have an initial opacity set to 0.
@@ -42,7 +48,7 @@ const LikeButton: React.FC<Props> = ({ size }) => {
 
   const handleClick = (): void => {
     setHasBeenClicked(true);
-    setIsLiked((prevState) => !prevState);
+    onClick();
   };
 
   return (
@@ -53,6 +59,13 @@ const LikeButton: React.FC<Props> = ({ size }) => {
         style={{ height: `${size}px`, width: `${size}px` }}
         type="button"
       >
+        <div className={styles.lottieDiv}>
+          <LottiePlayer
+            animationData={animationData}
+            isStopped={!isLiked}
+            size={size * 2}
+          />
+        </div>
         <AnimatePresence>
           {
             isLiked ? (
@@ -65,7 +78,7 @@ const LikeButton: React.FC<Props> = ({ size }) => {
                 variants={!hasBeenClicked ? variants.firstAnimation : variants.subsequentAnimations}
               >
                 <Icon
-                  color="orange"
+                  color="transparentWhite"
                   fill="red"
                   iconName="heart"
                   size={size}
@@ -81,7 +94,7 @@ const LikeButton: React.FC<Props> = ({ size }) => {
                 variants={!hasBeenClicked ? variants.firstAnimation : variants.subsequentAnimations}
               >
                 <Icon
-                  color="orange"
+                  color="transparentWhite"
                   fill="transparentBlack"
                   iconName="heart"
                   size={size}

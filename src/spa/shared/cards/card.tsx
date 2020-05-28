@@ -14,6 +14,7 @@ interface Props {
 
 const Card: React.FC<Props> = ({ children, id }) => {
   const { canEdit, selectedCards, toggleCard } = useCardContext();
+  const [isLiked, setIsLiked] = React.useState<boolean>(false);
 
   const handleClick = (): void => toggleCard(id);
 
@@ -27,7 +28,11 @@ const Card: React.FC<Props> = ({ children, id }) => {
         <div className={styles.editDot} />
       </div>
       <div className={styles.likeButtonDiv}>
-        <LikeButton size={40} />
+        <LikeButton
+          isLiked={isLiked}
+          onClick={() => setIsLiked((prevState) => !prevState)}
+          size={25}
+        />
       </div>
       {
         canEdit && (

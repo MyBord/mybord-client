@@ -14,3 +14,11 @@ add fireworks animation to like button
 don't have like button animate in when first mounted
 
 create separate file for like button animation
+
+make like button more subtle
+
+make sure like button and card menu are centered / aligned
+
+mousing over like button or menu button hides play button
+
+change color of fireworks background lottie file to mybord black
