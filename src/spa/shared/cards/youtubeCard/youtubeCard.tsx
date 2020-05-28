@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Card from 'cards/card';
+import Card from 'cards/card/card';
 import { YoutubeVideoData } from 'types/youtubeTypes';
 import YoutubeCardDescription from './youtubeCardDescription/youtubeCardDescription';
 import YoutubeCardThumbnailContainer from './youtubeCardThumbnail/youtubeCardThumbnailContainer';
