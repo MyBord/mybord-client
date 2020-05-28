@@ -9,11 +9,23 @@ interface Props {
   youtubeVideoData: YoutubeVideoData;
 }
 
-const YoutubeCard: React.FC<Props> = ({ id, youtubeVideoData }) => (
-  <Card id={id}>
+const YoutubeCard: React.FC<Props> = ({ id, youtubeVideoData }) => {
+  const Content: React.FC = () => (
     <YoutubeCardThumbnailContainer youtubeVideoData={youtubeVideoData} />
+  );
+
+  const Description: React.FC = () => (
     <YoutubeCardDescription youtubeVideoData={youtubeVideoData} />
-  </Card>
-);
+  );
+
+  return (
+    <Card
+      Content={Content}
+      Description={Description}
+      id={id}
+    >
+    </Card>
+  );
+};
 
 export default YoutubeCard;

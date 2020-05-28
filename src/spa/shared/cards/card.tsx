@@ -8,11 +8,16 @@ import * as styles from './card.module.less';
 // sure that every card, regardless of type, has the same consistent styling and functionality.
 
 interface Props {
-  children: React.ReactNode;
+  Content: React.FC; // Main content of the card
+  Description: React.FC; // Description portion of the card
   id: string;
 }
 
-const Card: React.FC<Props> = ({ children, id }) => {
+const Card: React.FC<Props> = ({
+  Content,
+  Description,
+  id,
+}) => {
   const { canEdit, selectedCards, toggleCard } = useCardContext();
   const [isLiked, setIsLiked] = React.useState<boolean>(false);
 
@@ -49,7 +54,8 @@ const Card: React.FC<Props> = ({ children, id }) => {
           />
         )
       }
-      {children}
+      <Content />
+      <Description />
       <div className={styles.actionContainer}>
         <hr className={styles.hr} />
         <div>

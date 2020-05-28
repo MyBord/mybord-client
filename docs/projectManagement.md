@@ -22,6 +22,7 @@ This document is used to outline current project management priorities.
     * add ability to edit in general
     * add ability to delete, with are you sure
     * add ability to mark as to do and mark as done
+    * don't show heart or menu buttons when youtube player is playing
   * dashboard header  
     * add icon for multi edit
     * add filter for favorites, to do, done
