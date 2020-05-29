@@ -22,7 +22,7 @@ const DashboardCards: React.FC<Props> = ({ userCards }) => {
         userCards.map((userCard: UserCard) => (
           <YoutubeCard
             key={userCard.id}
-            id={userCard.id}
+            cardId={userCard.id}
             youtubeVideoData={userCard.cardData.youtubeCardData}
           />
         ))
