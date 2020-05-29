@@ -5,11 +5,11 @@ import YoutubeCardDescription from './youtubeCardDescription/youtubeCardDescript
 import YoutubeCardThumbnailContainer from './youtubeCardThumbnail/youtubeCardThumbnailContainer';
 
 interface Props {
-  id: string;
+  cardId: string;
   youtubeVideoData: YoutubeVideoData;
 }
 
-const YoutubeCard: React.FC<Props> = ({ id, youtubeVideoData }) => {
+const YoutubeCard: React.FC<Props> = ({ cardId, youtubeVideoData }) => {
   const Content: React.FC = () => (
     <YoutubeCardThumbnailContainer youtubeVideoData={youtubeVideoData} />
   );
@@ -22,7 +22,7 @@ const YoutubeCard: React.FC<Props> = ({ id, youtubeVideoData }) => {
     <Card
       Content={Content}
       Description={Description}
-      id={id}
+      cardId={cardId}
     />
   );
 };
