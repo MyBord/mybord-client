@@ -13,6 +13,7 @@ const YoutubePlayerAnimation: React.FC<Props> = ({ children, isYoutubePlayerLoad
     <motion.div
       animate={{ opacity: 1 }}
       className={styles.youtubePlayer}
+      id="foo" // todo change name
       exit={{ opacity: 0 }}
       initial={{ opacity: 1 }}
       transition={{ duration: 1 }}

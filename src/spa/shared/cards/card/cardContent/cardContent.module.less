@@ -1,3 +1,5 @@
+@import "~styles/_sizes";
+
 .buttonsContainer {
   align-items: center;
   display: flex;
@@ -6,4 +8,23 @@
   position: absolute;
   width: calc(100% - 2rem);
   z-index: 1;
+}
+
+.container {
+  border: 0.25rem solid #E41245;
+  height: @youtubeCardThumbnailHeight; // todo: change alias name
+  width: @cardWidth;
+  display: flex;
+  position: relative;
+  .buttonsContainer {
+    border: 0.2rem solid #F17D00;
+  }
+  #foo {
+    border: 0.8rem solid #00A6ED;
+  }
+  &:hover {
+    > .playButtonDiv {
+      opacity: 1;
+    }
+  }
 }
