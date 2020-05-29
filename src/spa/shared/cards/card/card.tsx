@@ -27,26 +27,26 @@ const Card: React.FC<Props> = ({
   const isSelected = selectedCards.includes(id);
 
   return (
-    <div className={styles.container}>
-      <div className={styles.cardMenuButtonDiv}>
-        <CardMenuButton onClick={() => console.log('foo')} />
-      </div>
-      <div className={styles.likeButtonDiv}>
+    <div
+      className={[
+        styles.container,
+        isSelected ? styles.selectedContainer : undefined,
+      ].join(' ')}
+    >
+      <div className={styles.contentButtons}>
         <LikeButton
           isLiked={isLiked}
           onClick={() => setIsLiked((prevState) => !prevState)}
           size={25}
         />
+        <CardMenuButton onClick={() => console.log('foo')} />
       </div>
       {
         canEdit && (
           <div
             aria-hidden="true"
             aria-label="card-button"
-            className={[
-              styles.overlayDiv,
-              canEdit && isSelected ? styles.isSelected : undefined,
-            ].join(' ')}
+            className={styles.overlayDiv}
             onClick={handleClick}
             role="button"
             tabIndex={0}

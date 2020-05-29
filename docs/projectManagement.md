@@ -13,6 +13,10 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
+  * when untoggling edit, remove selected state for cards
+  * when multi-select, add greyscale transparent overlay and remove content buttons?
+  * mousing over like button or menu button hides play button
+  * add transition for box shadow when selecting multi select cards?
   * cards
     * add ability to add tags
     * add dropdown menu action
