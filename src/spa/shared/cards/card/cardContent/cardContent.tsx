@@ -1,7 +1,7 @@
 import * as React from 'react';
 import CardMenuButton from 'buttons/cardMenuButton/cardMenuButton';
 import LikeButton from 'buttons/likeButton/likeButton';
-import * as styles from './card.module.less';
+import * as styles from './cardContent.module.less';
 
 interface Props {
   Content: React.FC;
@@ -15,7 +15,7 @@ const CardContent: React.FC<Props> = ({
   setIsLiked,
 }) => (
   <>
-    <div className={styles.contentButtons}>
+    <div className={styles.buttonsContainer}>
       <LikeButton
         isLiked={isLiked}
         onClick={setIsLiked}

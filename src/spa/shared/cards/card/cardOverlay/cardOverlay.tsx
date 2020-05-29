@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useCardContext } from 'context/cardContext';
-import * as styles from './card.module.less';
+import * as styles from './cardOverlay.module.less';
 
 interface Props {
   cardId: string;
@@ -16,7 +16,7 @@ const CardOverlay: React.FC<Props> = ({ cardId }) => {
       <div
         aria-hidden="true"
         aria-label="card-button"
-        className={styles.overlayDiv}
+        className={styles.div}
         onClick={handleClick}
         role="button"
         tabIndex={0}
