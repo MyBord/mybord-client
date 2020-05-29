@@ -6,9 +6,7 @@ import AvatarIcon from './individualIcons/avatarIcon';
 import BellIcon from './individualIcons/bellIcon';
 import CalendarIcon from './individualIcons/calendarIcon';
 import ChartIcon from './individualIcons/chartIcon';
-import CheckmarkIcon from './individualIcons/checkmarkIcon';
 import DashboardIcon from './individualIcons/dashboardIcon';
-import DeleteIcon from './individualIcons/deleteIcon';
 import DownArrowIcon from './individualIcons/downArrowIcon';
 import EyeIcon from './individualIcons/eyeIcon';
 import FacebookIcon from './individualIcons/facebookIcon';
@@ -16,7 +14,6 @@ import GoogleIcon from './individualIcons/googleIcon';
 import HeartIcon from './individualIcons/heartIcon';
 import LogoutIcon from './individualIcons/logoutIcon';
 import MailIcon from './individualIcons/mailIcon';
-import PencilIcon from './individualIcons/pencilIcon';
 import PlaylistIcon from './individualIcons/playlistIcon';
 import StarIcon from './individualIcons/starIcon';
 import ThumbsUpIcon from './individualIcons/thumbsUpIcon';
@@ -32,9 +29,7 @@ export const iconNames = {
   avatar: 'foo',
   calendar: 'foo',
   chart: 'foo',
-  checkmark: 'foo',
   dashboard: 'foo',
-  delete: 'foo',
   downArrow: 'foo',
   eye: 'foo',
   facebook: 'foo',
@@ -43,7 +38,6 @@ export const iconNames = {
   logout: 'foo',
   mail: 'foo',
   notification: 'foo',
-  pencil: 'foo',
   playlist: 'foo',
   star: 'foo',
   thumbsUp: 'foo',
@@ -75,13 +69,8 @@ const Icon: React.FC<IconProps> = ({
       return <CalendarIcon size={size} />;
     case 'chart':
       return <ChartIcon size={size} />;
-    case 'checkmark':
-      // remove color?
-      return <CheckmarkIcon color={color} size={size} />;
     case 'dashboard':
       return <DashboardIcon size={size} />;
-    case 'delete':
-      return <DeleteIcon size={size} />;
     case 'downArrow':
       return <DownArrowIcon size={size} />;
     case 'eye':
@@ -98,8 +87,6 @@ const Icon: React.FC<IconProps> = ({
       return <MailIcon size={size} />;
     case 'notification':
       return <BellIcon size={size} />;
-    case 'pencil':
-      return <PencilIcon size={size} />;
     case 'playlist':
       return <PlaylistIcon size={size} />;
     case 'star':

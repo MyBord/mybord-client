@@ -58,8 +58,8 @@ const Card: React.FC<Props> = ({
       <div className={styles.actionContainer}>
         <hr className={styles.hr} />
         <div>
-          <Icon iconName="delete" size={16} />
-          <Icon iconName="pencil" size={16} />
+          <Icon iconName="heart" size={16} />
+          <Icon iconName="star" size={16} />
         </div>
       </div>
     </div>
