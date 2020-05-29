@@ -132,6 +132,7 @@ const config = {
       app: path.resolve(__dirname, 'src/spa/app/'),
       assets: path.resolve(__dirname, 'src/assets/'),
       buttons: path.resolve(__dirname, 'src/spa/shared/buttons/'),
+      cards: path.resolve(__dirname, 'src/spa/shared/cards/'),
       context: path.resolve(__dirname, 'src/context/'),
       fallbacks: path.resolve(__dirname, 'src/spa/shared/fallbacks/'),
       forms: path.resolve(__dirname, 'src/spa/shared/forms/'),

@@ -19,9 +19,10 @@ const DashboardCards: React.FC<Props> = ({ userCards }) => {
   return (
     <section className={styles.section}>
       {
-        userCards.map((userCard: UserCard, index: number) => (
+        userCards.map((userCard: UserCard) => (
           <YoutubeCard
-            key={`${userCard.cardData.youtubeCardData.videoId}-${index}`}
+            key={userCard.id}
+            id={userCard.id}
             youtubeVideoData={userCard.cardData.youtubeCardData}
           />
         ))

@@ -16,6 +16,7 @@ module.exports = {
     '^app(.*)$': '<rootDir>/src/spa/app$1',
     '^assets(.*)$': '<rootDir>/src/assets$1',
     '^buttons(.*)$': '<rootDir>/src/spa/shared/buttons$1',
+    '^cards(.*)$': '<rootDir>/src/spa/shared/cards$1',
     '^context(.*)$': '<rootDir>/src/context$1',
     '^fallbacks(.*)$': '<rootDir>/src/spa/shared/fallbacks$1',
     '^forms(.*)$': '<rootDir>/src/spa/shared/forms$1',

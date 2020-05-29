@@ -11,6 +11,7 @@ import DownArrowIcon from './individualIcons/downArrowIcon';
 import EyeIcon from './individualIcons/eyeIcon';
 import FacebookIcon from './individualIcons/facebookIcon';
 import GoogleIcon from './individualIcons/googleIcon';
+import HeartIcon from './individualIcons/heartIcon';
 import LogoutIcon from './individualIcons/logoutIcon';
 import MailIcon from './individualIcons/mailIcon';
 import PlaylistIcon from './individualIcons/playlistIcon';
@@ -33,6 +34,7 @@ export const iconNames = {
   eye: 'foo',
   facebook: 'foo',
   google: 'foo',
+  heart: 'foo',
   logout: 'foo',
   mail: 'foo',
   notification: 'foo',
@@ -51,6 +53,7 @@ export interface IconProps extends IndividualIconProps {
 
 const Icon: React.FC<IconProps> = ({
   color = 'black',
+  fill = null,
   iconName,
   size,
   strokeWidth = 2,
@@ -76,6 +79,8 @@ const Icon: React.FC<IconProps> = ({
       return <FacebookIcon size={size} />;
     case 'google':
       return <GoogleIcon size={size} />;
+    case 'heart':
+      return <HeartIcon color={color} fill={fill} size={size} />;
     case 'logout':
       return <LogoutIcon color={color} size={size} />;
     case 'mail':

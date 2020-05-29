@@ -1,7 +1,9 @@
+@import "~styles/_sizes";
+
 .channelDiv {
   align-items: center;
   display: flex;
-  margin: 0.75rem;
+  margin: @cardInnerMargin 0;
 }
 
 .channelIcon {
@@ -13,10 +15,13 @@
   margin-left: 0.25rem;
 }
 
+.container {
+  margin: @cardInnerMargin;
+}
+
 .statsContainer {
   display: flex;
   justify-content: space-between;
-  margin: 0 0.75rem 0.75rem 0.75rem;
   :first-child {
     > p {
       margin-top: 0.125rem;
@@ -30,8 +35,4 @@
   > svg {
     margin-right: 0.5rem;
   }
-}
-
-.title {
-  margin: 0.75rem 0.75rem 0 0.75rem;
 }

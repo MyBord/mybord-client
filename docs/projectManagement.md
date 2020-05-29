@@ -13,6 +13,30 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
+  * when untoggling edit, remove selected state for cards
+  * when multi-select, add greyscale transparent overlay and remove content buttons?
+  * mousing over like button or menu button hides play button
+  * add transition for box shadow when selecting multi select cards?
+  * cards
+    * add ability to add tags
+    * add dropdown menu action
+    * don't have heart or menu show up unless on hover, add transition
+    * add ability to edit category
+    * add ability to edit title
+    * add ability to edit in general
+    * add ability to delete, with are you sure
+    * add ability to mark as to do and mark as done
+    * don't show heart or menu buttons when youtube player is playing
+  * dashboard header  
+    * add icon for multi edit
+    * add filter for favorites, to do, done
+    * add filtering by tags, category
+    * add sorting
+    * add searching
+    * add multi-select multi-edit process
+    * create modal for creating card
+  * add background transition when selecting cards
+  * add ability to remove and edit tags for cards
   * debug issue where user cards query is made (console foooooo) is happened where even in login
    page
   * add ability to delete card
@@ -40,6 +64,7 @@ This document is used to outline current project management priorities.
 
   * make sure app is responsive and mobile friendly
   * Preventing Rapid-Fire Login Attempts 
+  * can only play one youtube video at a time
   * Deal with Distributed Brute Force Attacks
     * https://stackoverflow.com/questions/549/the-definitive-guide-to-form-based-website-authentication
     * https://stackoverflow.com/questions/48345922/reference-password-validation

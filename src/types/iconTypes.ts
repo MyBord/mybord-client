@@ -5,6 +5,16 @@ export interface IndividualIconProps {
   | 'lightGrey'
   | 'orange'
   | 'red'
+  | 'transparentBlack'
+  | 'transparentWhite'
+  | 'white';
+  fill?:
+  'black'
+  | 'blue'
+  | 'lightGrey'
+  | 'orange'
+  | 'red'
+  | 'transparentBlack'
   | 'transparentWhite'
   | 'white';
   size: number;

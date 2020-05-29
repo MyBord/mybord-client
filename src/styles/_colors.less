@@ -1,23 +1,28 @@
-// Greyscale
+// ----- GREYSCALE ----- //
+
 @appBackground: #F3F5FA;
-@black: #565e5f;
+@black: #565E5F;
 @darkBlack: #161925;
-@gitBackground: #f8f8f8;
-@gitBorder: #dfe2e5;
+@gitBackground: #F8F8F8;
+@gitBorder: #DfE2E5;
 @lightGrey: #A4AAAF;
-@grey: #d7d8d4;
+@grey: #D7D8D4;
 @navBorder: #E6E8E9;
-@transparentBlack: #565e5fa6;
-@transparentBlackDarker: #565e5fd9;
-@transparentBlackLighter: #798486a6;
-@transparentWhite: #ffffffb8;
 @white: #FFF;
 
-// Colors
+// ----- TRANSPARENT GREYSCALE ----- //
+
+@transparentBlack: #565E5fA6; // 65% opacity
+@transparentBlackDarker: #565E5fD9; // 85% opacity
+@transparentBlackQuarterOpacity: #565E5F40;
+@transparentWhiteThreeQuarterOpacity: #FFFFFFBF;
+
+// ----- COLORS ----- //
+
 @blue: #00A6ED;
-@blueHover: #28C2fA;
-@darkBlue: #0096db;
-@darkerBlue: #0081c3;
+@blueHover: #28C2FA;
+@darkBlue: #0096DB;
+@darkerBlue: #0081C3;
 @brown: #E19470;
 @green: #7DCC93;
 @navy: #21354B;
@@ -25,7 +30,13 @@
 @purple: #31355A;
 @red: #E41245;
 @yellow: #FCC900;
-@yellowHalf: rgba(252, 201, 0, 0.5);
+
+// ----- TRANSPARENT COLORS ----- //
+
+@blueThreeQuarterOpacity: #00A6EDBF;
+@yellowHalfOpacity: #FCC90080;
+
+// ----- EXPORTED COLORS ----- //
 
 /* stylelint-disable */
 :export {
@@ -34,7 +45,8 @@
   lightGrey: @lightGrey;
   orange: @orange;
   red: @red;
-  transparentWhite: @transparentWhite;
+  transparentBlack: @transparentBlack;
+  transparentWhite: @transparentWhiteThreeQuarterOpacity;
   white: @white;
 }
 /* stylelint-enable */
