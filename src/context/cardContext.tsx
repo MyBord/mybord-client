@@ -20,7 +20,14 @@ export const CardContextProvider = (props: object): React.ReactElement => {
   const [canEdit, setEditStatus] = React.useState<boolean>(false);
   const [selectedCards, setSelectedCards] = React.useState<string[]>([]);
 
-  const toggleEditStatus = (): void => setEditStatus((prevState) => !prevState);
+  const toggleEditStatus = (): void => {
+    setEditStatus((prevState) => {
+      if (prevState) {
+        setSelectedCards([]);
+      }
+      return !prevState;
+    });
+  };
 
   const toggleCard = (cardId: string): void => {
     if (selectedCards.includes(cardId)) {

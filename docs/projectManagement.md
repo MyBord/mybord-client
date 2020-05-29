@@ -15,6 +15,7 @@ This document is used to outline current project management priorities.
 
   * when untoggling edit, remove selected state for cards
   * mousing over like button or menu button hides play button
+  * multi-select functionality should hide play button, like button, and card menu button
   * add transition for box shadow when selecting multi select cards?
   * cards
     * add ability to add tags
