@@ -15,7 +15,7 @@ const CardContent: React.FC<Props> = ({
   setIsLiked,
 }) => (
   <div className={styles.container}>
-    <div className={styles.buttonsContainer}>
+    <div className={styles.buttonsContainer} id="card-content-buttons-container">
       <LikeButton
         isLiked={isLiked}
         onClick={setIsLiked}

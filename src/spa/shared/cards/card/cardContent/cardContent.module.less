@@ -1,30 +1,28 @@
 @import "~styles/_sizes";
+@import "~styles/_transitions";
 
 .buttonsContainer {
   align-items: center;
   display: flex;
   justify-content: space-between;
   margin: 1rem;
+  opacity: 0;
   position: absolute;
+  transition: @cardContentOpacityTransition;
   width: calc(100% - 2rem);
   z-index: 1;
 }
 
 .container {
-  border: 0.25rem solid #E41245;
-  height: @youtubeCardThumbnailHeight; // todo: change alias name
+  height: @cardContentHeight;
   width: @cardWidth;
   display: flex;
   position: relative;
-  .buttonsContainer {
-    border: 0.2rem solid #F17D00;
-  }
-  #foo {
-    border: 0.8rem solid #00A6ED;
-  }
   &:hover {
-    > .playButtonDiv {
-      opacity: 1;
+    :global {
+      #card-content-buttons-container, #card-youtube-play-button {
+        opacity: 1;
+      }
     }
   }
 }
