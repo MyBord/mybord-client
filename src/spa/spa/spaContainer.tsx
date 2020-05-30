@@ -15,3 +15,5 @@ const SpaContainer: React.FC = () => {
 };
 
 export default initializeSpaWrapper(SpaContainer);
+
+// export default () => <App />;

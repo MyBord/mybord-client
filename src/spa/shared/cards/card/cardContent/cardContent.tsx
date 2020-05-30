@@ -14,8 +14,8 @@ const CardContent: React.FC<Props> = ({
   isLiked,
   setIsLiked,
 }) => (
-  <>
-    <div className={styles.buttonsContainer}>
+  <div className={styles.container}>
+    <div className={styles.buttonsContainer} id="card-content-buttons-container">
       <LikeButton
         isLiked={isLiked}
         onClick={setIsLiked}
@@ -24,7 +24,7 @@ const CardContent: React.FC<Props> = ({
       <CardMenuButton onClick={() => console.log('foo')} />
     </div>
     <Content />
-  </>
+  </div>
 );
 
 export default CardContent;

@@ -1,17 +1,5 @@
 @import "~styles/_colors";
-@import "~styles/_sizes";
-
-.container {
-  height: @youtubeCardThumbnailHeight;
-  width: @cardWidth;
-  display: flex;
-  position: relative;
-  &:hover {
-    > div > .playButtonDiv {
-      opacity: 1;
-    }
-  }
-}
+@import "~styles/_transitions";
 
 .durationDiv {
   background: @transparentBlack;
@@ -31,7 +19,7 @@
 .playButtonDiv {
   left: 50%;
   opacity: 0;
-  transition: opacity 0.4s ease;
+  transition: @cardContentOpacityTransition;
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
