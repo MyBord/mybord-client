@@ -13,6 +13,14 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
+  * card menu
+    * edit
+    * delete
+    * to do
+    * if clicked, then play button and heart don't show
+    * if hover away from card, then don't show
+    * add pop confirm if deleting
+    * make to do > done > to do
   * fix card description height
   * add transition for box shadow when selecting multi select cards?
   * cards
