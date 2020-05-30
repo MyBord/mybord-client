@@ -15,14 +15,14 @@ const HeaderProfilePopoverContent: React.FC = () => {
     setAuthenticationStatus(false);
   };
 
-  const AboutIcon: React.FC = () => <Icon color="blue" iconName="about" size={18} />;
-  const LogoutIcon: React.FC = () => <Icon color="blue" iconName="logout" size={18} />;
+  const AboutIconContent: React.FC = () => <Icon color="blue" iconName="about" size={18} />;
+  const LogoutIconContent: React.FC = () => <Icon color="blue" iconName="logout" size={18} />;
 
   return (
     <ul className={styles.ul}>
       <li>
         <Typography
-          Content={LogoutIcon}
+          Content={LogoutIconContent}
           onClick={handleClick}
           size="three"
           text="Logout"
@@ -30,7 +30,7 @@ const HeaderProfilePopoverContent: React.FC = () => {
       </li>
       <li>
         <Typography
-          Content={AboutIcon}
+          Content={AboutIconContent}
           link="trending"
           size="three"
           text="About MyBord"
