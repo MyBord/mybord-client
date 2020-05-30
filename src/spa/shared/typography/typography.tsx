@@ -11,9 +11,9 @@ import TypographyText from './typographyText';
 import * as styles from './typography.module.less';
 
 interface Props {
+  Content?: React.FC;
   color?: TypographyColor;
   font?: TypographyFont;
-  iconName?: IconNames;
   link?: string;
   maxTextLength?: number;
   onClick?: () => void;
@@ -24,9 +24,9 @@ interface Props {
 }
 
 const Typography: React.FC<Props> = ({
+  Content = null,
   color = 'black',
   font = 'poppins',
-  iconName = null,
   link = null,
   maxTextLength = null,
   onClick = null,
@@ -36,10 +36,8 @@ const Typography: React.FC<Props> = ({
 }) => {
   const renderTypographyText = (): React.ReactElement => (
     <TypographyText
-      color={link || onClick ? 'blue' : color}
-      iconName={iconName}
+      Content={Content}
       maxTextLength={maxTextLength}
-      size={size}
       text={text}
     />
   );
