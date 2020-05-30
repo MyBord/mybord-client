@@ -21,6 +21,8 @@ This document is used to outline current project management priorities.
     * if hover away from card, then don't show
     * add pop confirm if deleting
     * make to do > done > to do
+    * when hovering over card menu button content, button still shows
+    * on hover for each row, text goes blue
   * fix card description height
   * add transition for box shadow when selecting multi select cards?
   * cards

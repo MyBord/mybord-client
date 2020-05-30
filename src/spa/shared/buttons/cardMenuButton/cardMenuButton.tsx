@@ -11,6 +11,7 @@ const CardMenuButton: React.FC<Props> = ({ onClick }) => (
   <Popover
     Content={CardMenuButtonContent}
     hideTip
+    overlayClassName={styles.popover}
     placement="bottomRight"
   >
     <button className={styles.button} onClick={onClick} type="button">
