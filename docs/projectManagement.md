@@ -14,7 +14,6 @@ This document is used to outline current project management priorities.
 ### A. Highest - MVP
 
   * fix card description height
-  * multi-select functionality should hide play button, like button, and card menu button
   * add transition for box shadow when selecting multi select cards?
   * cards
     * add ability to add tags

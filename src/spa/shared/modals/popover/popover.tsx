@@ -4,7 +4,7 @@ import * as styles from './popover.module.less';
 import './popover.less';
 
 interface Props {
-  content: React.ReactNode;
+  Content: React.FC;
   children: React.ReactNode;
   hideTip?: boolean;
   overlayClassName?: string;
@@ -14,7 +14,7 @@ interface Props {
 }
 
 const Popover: React.FC<Props> = ({
-  content,
+  Content,
   children,
   hideTip = false,
   overlayClassName = null,
@@ -23,7 +23,7 @@ const Popover: React.FC<Props> = ({
   trigger = 'click',
 }) => (
   <AntPopover
-    content={content}
+    content={<Content />}
     overlayClassName={[
       hideTip ? styles.hideTip : undefined,
       overlayClassName,

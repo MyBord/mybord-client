@@ -6,7 +6,7 @@ import * as styles from './headerProfile.module.less';
 
 const HeaderProfile: React.FC = () => (
   <Popover
-    content={<HeaderProfilePopoverContent />}
+    Content={HeaderProfilePopoverContent}
     hideTip
     overlayClassName={styles.popover}
     placement="bottomLeft"
