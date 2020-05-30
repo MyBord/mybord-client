@@ -7,6 +7,7 @@ import { FormProp } from 'types/formTypes';
 import * as styles from './dashboardHeaderFilterForm.module.less';
 
 interface FormContentProps {
+  canEdit: boolean;
   errorMessage: string;
   form?: FormProp;
   isWaiting: boolean;
@@ -18,6 +19,7 @@ interface Props extends FormContentProps {
 }
 
 const FormContent: React.FC<FormContentProps> = ({
+  canEdit,
   errorMessage,
   form,
   isWaiting,
@@ -43,7 +45,7 @@ const FormContent: React.FC<FormContentProps> = ({
     <FormItem fieldName="edit-cards" form={form}>
       <Button
         htmlType="button"
-        label="Edit"
+        label={canEdit ? 'Editing' : 'Edit'}
         onClick={toggleEditStatus}
       />
     </FormItem>
@@ -51,6 +53,7 @@ const FormContent: React.FC<FormContentProps> = ({
 );
 
 const DashboardHeaderFilterFormComponent: React.FC<Props> = ({
+  canEdit,
   errorMessage,
   isWaiting,
   onSubmit,
@@ -58,6 +61,7 @@ const DashboardHeaderFilterFormComponent: React.FC<Props> = ({
 }) => (
   <Form onSubmit={onSubmit}>
     <FormContent
+      canEdit={canEdit}
       errorMessage={errorMessage}
       isWaiting={isWaiting}
       toggleEditStatus={toggleEditStatus}

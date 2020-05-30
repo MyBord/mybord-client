@@ -19,7 +19,6 @@ This document is used to outline current project management priorities.
   * cards
     * add ability to add tags
     * add dropdown menu action
-    * don't have heart or menu show up unless on hover, add transition
     * add ability to edit category
     * add ability to edit title
     * add ability to edit in general

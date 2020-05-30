@@ -1,6 +1,7 @@
 import * as React from 'react';
 import CardMenuButton from 'buttons/cardMenuButton/cardMenuButton';
 import LikeButton from 'buttons/likeButton/likeButton';
+import { useCardContext } from 'context/cardContext';
 import * as styles from './cardContent.module.less';
 
 interface Props {
@@ -13,18 +14,28 @@ const CardContent: React.FC<Props> = ({
   Content,
   isLiked,
   setIsLiked,
-}) => (
-  <div className={styles.container}>
-    <div className={styles.buttonsContainer} id="card-content-buttons-container">
-      <LikeButton
-        isLiked={isLiked}
-        onClick={setIsLiked}
-        size={25}
-      />
-      <CardMenuButton onClick={() => console.log('foo')} />
+}) => {
+  const { canEdit } = useCardContext();
+
+  return (
+    <div className={styles.container}>
+      <div className={styles.buttonsContainer} id="card-content-buttons-container">
+        {
+          !canEdit && (
+            <>
+              <LikeButton
+                isLiked={isLiked}
+                onClick={setIsLiked}
+                size={25}
+              />
+              <CardMenuButton onClick={() => console.log('foo')} />
+            </>
+          )
+        }
+      </div>
+      <Content />
     </div>
-    <Content />
-  </div>
-);
+  );
+};
 
 export default CardContent;
