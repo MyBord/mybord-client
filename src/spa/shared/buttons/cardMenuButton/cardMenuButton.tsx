@@ -1,4 +1,6 @@
 import * as React from 'react';
+import Popover from 'modals/popover/popover';
+import CardMenuButtonContent from './cardMenuButtonContent';
 import * as styles from './cardMenuButton.module.less';
 
 interface Props {
@@ -6,13 +8,20 @@ interface Props {
 }
 
 const CardMenuButton: React.FC<Props> = ({ onClick }) => (
-  <button className={styles.button} onClick={onClick} type="button">
-    <div className={styles.div}>
-      <div className={styles.dot} />
-      <div className={styles.dot} />
-      <div className={styles.dot} />
-    </div>
-  </button>
+  <Popover
+    Content={CardMenuButtonContent}
+    hideTip
+    overlayClassName={styles.popover}
+    placement="bottomRight"
+  >
+    <button className={styles.button} onClick={onClick} type="button">
+      <div className={styles.div}>
+        <div className={styles.dot} />
+        <div className={styles.dot} />
+        <div className={styles.dot} />
+      </div>
+    </button>
+  </Popover>
 );
 
 export default CardMenuButton;
