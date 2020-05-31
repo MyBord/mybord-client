@@ -3,13 +3,22 @@ import { Checkbox as AntCheckbox } from 'antd';
 import './checkbox.less';
 
 interface Props {
+  checked?: boolean;
   label?: string;
+  onChange?: () => void;
 }
 
-const Checkbox: React.FC<Props> = ({ label = null }) => {
+const Checkbox: React.FC<Props> = ({
+  checked,
+  label = null,
+  onChange,
+}) => {
   if (label) {
     return (
-      <AntCheckbox>
+      <AntCheckbox
+        checked={checked}
+        onChange={onChange}
+      >
         {label}
       </AntCheckbox>
     );

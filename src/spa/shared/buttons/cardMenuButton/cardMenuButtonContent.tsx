@@ -5,58 +5,62 @@ import Typography from 'typography/typography';
 import * as styles from './cardMenuButtonContent.module.less';
 
 const CardMenuButtonContent: React.FC = () => {
-  const CheckboxContent: React.FC = () => <Checkbox />;
+  const [isToDo, setIsToDo] = React.useState<boolean>(true);
+  const toggleToDo = (): void => setIsToDo((prevState) => !prevState);
+
+  const CheckboxContent: React.FC = () => (
+    <div className={styles.checkboxDiv}>
+      <Checkbox checked={isToDo} onChange={toggleToDo} />
+    </div>
+  );
 
   const DeleteIconContent: React.FC = () => (
-    <Icon
-      color="blue"
-      fill="blue"
-      iconName="delete"
-      size={16}
-    />
+    <div className={styles.iconDiv}>
+      <Icon
+        color="blue"
+        fill="blue"
+        iconName="delete"
+        size={16}
+      />
+    </div>
   );
 
   const PencilIconContent: React.FC = () => (
-    <Icon
-      color="blue"
-      fill="blue"
-      iconName="pencil"
-      size={16}
-    />
+    <div className={styles.iconDiv}>
+      <Icon
+        color="blue"
+        fill="blue"
+        iconName="pencil"
+        size={16}
+      />
+    </div>
   );
 
-  // todo: still need the div wrapper around the typography?
   return (
     <ul className={styles.ul}>
       <li className={styles.li}>
-        <div className={styles.typographyDiv}>
-          <Typography
-            Content={PencilIconContent}
-            onClick={() => console.log('foo')}
-            size="two"
-            text="edit"
-          />
-        </div>
+        <Typography
+          Content={PencilIconContent}
+          onClick={() => console.log('edit')}
+          size="two"
+          text="edit"
+        />
       </li>
       <li className={styles.li}>
-        <div className={styles.toDoDiv}>
-          <Typography
-            Content={CheckboxContent}
-            onClick={() => console.log('foo')}
-            size="two"
-            text="to do"
-          />
-        </div>
+        <Typography
+          Content={CheckboxContent}
+          onClick={() => console.log('to do')}
+          size="two"
+          text="to do"
+        />
       </li>
       <li className={styles.li}>
-        <div className={styles.typographyDiv}>
-          <Typography
-            Content={DeleteIconContent}
-            onClick={() => console.log('foo')}
-            size="two"
-            text="delete"
-          />
-        </div>
+        <Typography
+          Content={DeleteIconContent}
+          onClick={() => console.log('delete')}
+          size="two"
+          text="delete"
+        />
       </li>
     </ul>
   );
