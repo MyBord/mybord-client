@@ -1,4 +1,5 @@
 import * as React from 'react';
+import SampleCheckbox from './sampleCheckbox';
 import Checkbox from 'inputs/checkbox/checkbox';
 import Icon from 'icons/icon/icon';
 import Typography from 'typography/typography';
@@ -38,6 +39,7 @@ const CardMenuButtonContent: React.FC = () => {
 
   return (
     <ul className={styles.ul}>
+      <SampleCheckbox />
       <li className={styles.li}>
         <Typography
           Content={PencilIconContent}
