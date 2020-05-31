@@ -7,10 +7,8 @@ class SampleCheckbox extends React.Component {
     super({});
     this.state = {
       checked: true,
-      disabled: false,
     };
     this.toggleChecked = this.toggleChecked.bind(this);
-    this.toggleDisable = this.toggleDisable.bind(this);
     this.onChange = this.onChange.bind(this);
   }
 
@@ -23,38 +21,18 @@ class SampleCheckbox extends React.Component {
     this.setState({ checked: !this.state.checked });
   }
 
-  toggleDisable() {
-    this.setState({ disabled: !this.state.disabled });
-  }
-
   render() {
-    const label = `${this.state.checked ? 'Checked' : 'Unchecked'}-${
-      this.state.disabled ? 'Disabled' : 'Enabled'
-    }`;
     return (
       <div>
-        <p style={{ marginBottom: '20px' }}>
-          <Checkbox
-            checked={this.state.checked}
-            disabled={this.state.disabled}
-            onChange={this.onChange}
-          >
-            {label}
-          </Checkbox>
-        </p>
-        <p>
-          <Button type="primary" size="small" onClick={this.toggleChecked}>
-            {!this.state.checked ? 'Check' : 'Uncheck'}
-          </Button>
-          <Button
-            style={{ margin: '0 10px' }}
-            type="primary"
-            size="small"
-            onClick={this.toggleDisable}
-          >
-            {!this.state.disabled ? 'Disable' : 'Enable'}
-          </Button>
-        </p>
+        <Checkbox
+          checked={this.state.checked}
+          onChange={this.onChange}
+        >
+          {this.state.checked ? 'Checked' : 'Unchecked'}
+        </Checkbox>
+        <Button type="primary" size="small" onClick={this.toggleChecked}>
+          {!this.state.checked ? 'Check' : 'Uncheck'}
+        </Button>
       </div>
     );
   }
