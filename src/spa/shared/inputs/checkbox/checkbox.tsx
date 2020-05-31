@@ -24,7 +24,12 @@ const Checkbox: React.FC<Props> = ({
     );
   }
 
-  return <AntCheckbox />;
+  return (
+    <AntCheckbox
+      checked={checked}
+      onChange={onChange}
+    />
+  );
 };
 
 export default Checkbox;

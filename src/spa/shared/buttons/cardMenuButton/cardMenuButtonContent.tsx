@@ -1,5 +1,4 @@
 import * as React from 'react';
-import SampleCheckbox from './sampleCheckbox';
 import Checkbox from 'inputs/checkbox/checkbox';
 import Icon from 'icons/icon/icon';
 import Typography from 'typography/typography';
@@ -8,12 +7,6 @@ import * as styles from './cardMenuButtonContent.module.less';
 const CardMenuButtonContent: React.FC = () => {
   const [isToDo, setIsToDo] = React.useState<boolean>(true);
   const toggleToDo = (): void => setIsToDo((prevState) => !prevState);
-
-  const CheckboxContent: React.FC = () => (
-    <div className={styles.checkboxDiv}>
-      <Checkbox checked={isToDo} onChange={toggleToDo} />
-    </div>
-  );
 
   const DeleteIconContent: React.FC = () => (
     <div className={styles.iconDiv}>
@@ -39,7 +32,6 @@ const CardMenuButtonContent: React.FC = () => {
 
   return (
     <ul className={styles.ul}>
-      <SampleCheckbox />
       <li className={styles.li}>
         <Typography
           Content={PencilIconContent}
@@ -49,12 +41,14 @@ const CardMenuButtonContent: React.FC = () => {
         />
       </li>
       <li className={styles.li}>
-        <Typography
-          Content={CheckboxContent}
-          onClick={() => console.log('to do')}
-          size="two"
-          text="to do"
-        />
+        <div className={styles.toDoDiv}>
+          <Checkbox checked={isToDo} onChange={toggleToDo} />
+          <Typography
+            onClick={toggleToDo}
+            size="two"
+            text="to do"
+          />
+        </div>
       </li>
       <li className={styles.li}>
         <Typography
