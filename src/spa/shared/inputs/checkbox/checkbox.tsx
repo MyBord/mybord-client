@@ -1,15 +1,35 @@
 import * as React from 'react';
-import { Checkbox as AntCheckbox, Form } from 'antd';
+import { Checkbox as AntCheckbox } from 'antd';
 import './checkbox.less';
 
 interface Props {
-  label: string;
+  checked?: boolean;
+  label?: string;
+  onChange?: () => void;
 }
 
-const Checkbox: React.FC<Props> = ({ label }) => (
-  <AntCheckbox>
-    {label}
-  </AntCheckbox>
-);
+const Checkbox: React.FC<Props> = ({
+  checked,
+  label = null,
+  onChange,
+}) => {
+  if (label) {
+    return (
+      <AntCheckbox
+        checked={checked}
+        onChange={onChange}
+      >
+        {label}
+      </AntCheckbox>
+    );
+  }
+
+  return (
+    <AntCheckbox
+      checked={checked}
+      onChange={onChange}
+    />
+  );
+};
 
 export default Checkbox;

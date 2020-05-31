@@ -7,6 +7,7 @@ import BellIcon from './individualIcons/bellIcon';
 import CalendarIcon from './individualIcons/calendarIcon';
 import ChartIcon from './individualIcons/chartIcon';
 import DashboardIcon from './individualIcons/dashboardIcon';
+import DeleteIcon from './individualIcons/deleteIcon';
 import DownArrowIcon from './individualIcons/downArrowIcon';
 import EyeIcon from './individualIcons/eyeIcon';
 import FacebookIcon from './individualIcons/facebookIcon';
@@ -14,6 +15,7 @@ import GoogleIcon from './individualIcons/googleIcon';
 import HeartIcon from './individualIcons/heartIcon';
 import LogoutIcon from './individualIcons/logoutIcon';
 import MailIcon from './individualIcons/mailIcon';
+import PencilIcon from './individualIcons/pencilIcon';
 import PlaylistIcon from './individualIcons/playlistIcon';
 import StarIcon from './individualIcons/starIcon';
 import ThumbsUpIcon from './individualIcons/thumbsUpIcon';
@@ -30,6 +32,7 @@ export const iconNames = {
   calendar: 'foo',
   chart: 'foo',
   dashboard: 'foo',
+  delete: 'foo',
   downArrow: 'foo',
   eye: 'foo',
   facebook: 'foo',
@@ -38,6 +41,7 @@ export const iconNames = {
   logout: 'foo',
   mail: 'foo',
   notification: 'foo',
+  pencil: 'foo',
   playlist: 'foo',
   star: 'foo',
   thumbsUp: 'foo',
@@ -71,6 +75,8 @@ const Icon: React.FC<IconProps> = ({
       return <ChartIcon size={size} />;
     case 'dashboard':
       return <DashboardIcon size={size} />;
+    case 'delete':
+      return <DeleteIcon color={color} fill={fill} size={size} />;
     case 'downArrow':
       return <DownArrowIcon size={size} />;
     case 'eye':
@@ -87,6 +93,8 @@ const Icon: React.FC<IconProps> = ({
       return <MailIcon size={size} />;
     case 'notification':
       return <BellIcon size={size} />;
+    case 'pencil':
+      return <PencilIcon color={color} fill={fill} size={size} />;
     case 'playlist':
       return <PlaylistIcon size={size} />;
     case 'star':

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { useLazyQuery } from '@apollo/react-hooks';
+import Icon from 'icons/icon/icon';
 import Typography from 'typography/typography';
 import { LOGOUT_USER } from 'schema/user';
 import { useAuthenticationContext } from 'context/authenticationContext';
@@ -14,11 +15,14 @@ const HeaderProfilePopoverContent: React.FC = () => {
     setAuthenticationStatus(false);
   };
 
+  const AboutIconContent: React.FC = () => <Icon color="blue" iconName="about" size={18} />;
+  const LogoutIconContent: React.FC = () => <Icon color="blue" iconName="logout" size={18} />;
+
   return (
     <ul className={styles.ul}>
       <li>
         <Typography
-          iconName="logout"
+          Content={LogoutIconContent}
           onClick={handleClick}
           size="three"
           text="Logout"
@@ -26,7 +30,7 @@ const HeaderProfilePopoverContent: React.FC = () => {
       </li>
       <li>
         <Typography
-          iconName="about"
+          Content={AboutIconContent}
           link="trending"
           size="three"
           text="About MyBord"

@@ -1,21 +1,14 @@
 import * as React from 'react';
-import Icon from 'icons/icon/icon';
-import { IconNames } from 'types/iconNameTypes';
-import { TypographyColor, TypographySize } from 'types/typographyTypes';
 
 interface Props {
-  color?: TypographyColor;
-  iconName?: IconNames;
+  Content?: React.FC;
   maxTextLength?: number;
-  size?: TypographySize;
   text: string;
 }
 
 const TypographyText: React.FC<Props> = ({
-  color,
-  iconName,
+  Content,
   maxTextLength,
-  size,
   text,
 }) => {
   const renderText = (): string => {
@@ -27,28 +20,9 @@ const TypographyText: React.FC<Props> = ({
     return text;
   };
 
-  const getIconSize = (): number => {
-    switch (size) {
-      case 'one':
-        return 24;
-      case 'two':
-        return 24;
-      case 'three':
-        return 18;
-      case 'four':
-        return 24;
-      case 'five':
-        return 24;
-      case 'normal':
-        return 24;
-      default:
-        throw Error('incorrect size');
-    }
-  };
-
   return (
     <>
-      {iconName && <Icon color={color} iconName={iconName} size={getIconSize()} />}
+      {Content && <Content />}
       {renderText()}
     </>
   );

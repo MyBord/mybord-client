@@ -57,3 +57,5 @@ This document is used to outline product details.
 * Lottie Files  
   * https://lottiefiles.com/marketplace/404-error-animations
   * https://lottiefiles.com/marketplace/simple-shape-loaders
+  * https://lottiefiles.com/marketplace/simple-icons-pack
+  * https://lottiefiles.com/marketplace/super-normal-motion-icons
