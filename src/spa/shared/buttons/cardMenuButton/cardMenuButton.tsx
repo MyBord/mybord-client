@@ -5,17 +5,22 @@ import * as styles from './cardMenuButton.module.less';
 
 const CardMenuButton: React.FC = () => {
   const [showMenu, setShowMenu] = React.useState<boolean>(false);
+  const overlayRef = React.useRef(null);
   const toggleMenu = (): void => setShowMenu((prevState) => !prevState);
+  const handleMouseOut = (): void => setShowMenu(false);
+
+  React.useEffect(() => {
+    if (overlayRef.current) {
+      overlayRef.current.addEventListener('mouseout', handleMouseOut);
+    }
+  }, [overlayRef, showMenu]);
+
   const buttonClassName = showMenu ? 'card-menu-button-show' : 'card-menu-button';
 
   return (
-    <Popover
-      Content={CardMenuButtonContent}
-      hideTip
-      overlayClassName={styles.popover}
-      placement="bottomRight"
-      visible={showMenu}
-    >
+    <>
+      <div className={styles.overlay} ref={overlayRef} />
+      <div className={styles.popover} />
       <button
         className={[styles.button, buttonClassName].join(' ')}
         onClick={toggleMenu}
@@ -27,7 +32,7 @@ const CardMenuButton: React.FC = () => {
           <div className={styles.dot} />
         </div>
       </button>
-    </Popover>
+    </>
   );
 };
 

@@ -67,6 +67,7 @@ This document is used to outline current project management priorities.
   * should display empty notification if user has no cards / when first
     registers
   * create error if server is down  
+  * when error boundary is triggered, you get a white screen
 
 ### B. High - MVP
 
