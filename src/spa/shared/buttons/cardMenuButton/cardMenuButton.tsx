@@ -6,6 +6,7 @@ import * as styles from './cardMenuButton.module.less';
 const CardMenuButton: React.FC = () => {
   const [showMenu, setShowMenu] = React.useState<boolean>(false);
   const toggleMenu = (): void => setShowMenu((prevState) => !prevState);
+  const buttonClassName = showMenu ? 'card-menu-button-show' : 'card-menu-button';
 
   return (
     <Popover
@@ -15,7 +16,11 @@ const CardMenuButton: React.FC = () => {
       placement="bottomRight"
       visible={showMenu}
     >
-      <button className={styles.button} onClick={toggleMenu} type="button">
+      <button
+        className={[styles.button, buttonClassName].join(' ')}
+        onClick={toggleMenu}
+        type="button"
+      >
         <div className={styles.div}>
           <div className={styles.dot} />
           <div className={styles.dot} />
