@@ -27,7 +27,7 @@ const LikeButton: React.FC<Props> = ({
   };
 
   return (
-    <div>
+    <div className="like-button">
       <button
         className={styles.button}
         onClick={handleClick}

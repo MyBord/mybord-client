@@ -11,6 +11,7 @@ interface Props {
   placement?: 'bottom' | 'bottomLeft' | 'bottomRight' | 'top';
   title?: string;
   trigger?: 'hover' | 'focus' | 'click';
+  visible?: boolean;
 }
 
 const Popover: React.FC<Props> = ({
@@ -21,6 +22,7 @@ const Popover: React.FC<Props> = ({
   placement = 'top',
   title = null,
   trigger = 'click',
+  visible,
 }) => (
   <AntPopover
     content={<Content />}
@@ -31,6 +33,7 @@ const Popover: React.FC<Props> = ({
     placement={placement}
     title={title}
     trigger={trigger}
+    visible={visible}
   >
     {children}
   </AntPopover>
