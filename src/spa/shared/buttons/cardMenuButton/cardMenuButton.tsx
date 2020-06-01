@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Popover from 'modals/popover/popover';
 // import CardMenuButtonContent from './cardMenuButtonContent';
 import * as styles from './cardMenuButton.module.less';
 
@@ -17,7 +18,7 @@ const CardMenuButton: React.FC = () => {
   const buttonClassName = showMenu ? 'card-menu-button-show' : 'card-menu-button';
 
   return (
-    <>
+    <Popover>
       <div className={styles.overlay} ref={overlayRef} />
       <div className={styles.popover} />
       <button
@@ -31,7 +32,7 @@ const CardMenuButton: React.FC = () => {
           <div className={styles.dot} />
         </div>
       </button>
-    </>
+    </Popover>
   );
 };
 
