@@ -6,26 +6,38 @@ import * as styles from './cardMenuButton.module.less';
 const CardMenuButton: React.FC = () => {
   // const [showMenu, setShowMenu] = React.useState<boolean>(false);
   const [showMenu, setShowMenu] = React.useState<boolean>(true);
+  const buttonRef = React.useRef(null);
   const overlayRef = React.useRef(null);
+  const popoverRef = React.useRef(null);
   const toggleMenu = (): void => setShowMenu((prevState) => !prevState);
+  const handleButtonMouseOver = (): void => {
+    if (showMenu) {
+      setShowMenu(true);
+    }
+  };
+  const handleMouseOver = (): void => setShowMenu(true);
   const handleMouseOut = (): void => setShowMenu(false);
 
   React.useEffect(() => {
-    if (overlayRef.current) {
-      // overlayRef.current.addEventListener('mouseout', handleMouseOut);
+    if (buttonRef.current) {
+      buttonRef.current.addEventListener('mouseover', handleButtonMouseOver);
     }
-  }, [overlayRef, showMenu]);
+    if (overlayRef.current) {
+      overlayRef.current.addEventListener('mouseout', handleMouseOut);
+    }
+    if (popoverRef.current) {
+      popoverRef.current.addEventListener('mouseover', handleMouseOver);
+    }
+  }, [buttonRef, overlayRef, popoverRef, showMenu]);
 
-  // const buttonClassName = showMenu ? 'card-menu-button-show' : 'card-menu-button';
-  const buttonClassName = 'card-menu-button-show';
-
+  const buttonClassName = showMenu ? 'card-menu-button-show' : 'card-menu-button';
   return (
-    <Popover Content={CardMenuButtonContent} show={showMenu}>
-      <div className={styles.overlay} ref={overlayRef} />
-      <div className={styles.popover} />
+    <>
+      {/* <div className={styles.overlay} ref={overlayRef} /> */}
       <button
         className={[styles.button, buttonClassName].join(' ')}
         onClick={toggleMenu}
+        ref={buttonRef}
         type="button"
       >
         <div className={styles.div}>
@@ -33,8 +45,14 @@ const CardMenuButton: React.FC = () => {
           <div className={styles.dot} />
           <div className={styles.dot} />
         </div>
+        <Popover
+          Content={CardMenuButtonContent}
+          bottom={4.5}
+          show={showMenu}
+          ref={popoverRef}
+        />
       </button>
-    </Popover>
+    </>
   );
 };
 

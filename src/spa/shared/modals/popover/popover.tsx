@@ -3,23 +3,31 @@ import * as styles from './popover.module.less';
 
 interface Props {
   Content: React.FC;
-  children: React.ReactNode;
+  bottom: number;
+  placement?: 'left' | 'right';
   show: boolean;
 }
 
-const Popover: React.FC<Props> = ({
-  Content,
-  children,
-  show,
-}) => (
+const Popover = React.forwardRef<HTMLDivElement, Props>((
+  {
+    Content,
+    bottom,
+    placement = 'right',
+    show,
+  },
+  ref,
+) => (
   <>
     { show && (
-      <div className={styles.div}>
-        <Content />
-      </div>
+    <div
+      className={styles.div}
+      ref={ref}
+      style={{ bottom: `-${bottom}rem`, [placement]: 0 }}
+    >
+      <Content />
+    </div>
     )}
-    {children}
   </>
-);
+));
 
 export default Popover;
