@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Popover from 'modals/popover/popover';
+import AntPopover from 'modals/antPopover/antPopover';
 import CardMenuButtonContent from './cardMenuButtonContent';
 import * as styles from './cardMenuButton.module.less';
 
@@ -8,7 +8,7 @@ interface Props {
 }
 
 const CardMenuButton: React.FC<Props> = ({ onClick }) => (
-  <Popover
+  <AntPopover
     Content={CardMenuButtonContent}
     hideTip
     overlayClassName={styles.popover}
@@ -21,7 +21,7 @@ const CardMenuButton: React.FC<Props> = ({ onClick }) => (
         <div className={styles.dot} />
       </div>
     </button>
-  </Popover>
+  </AntPopover>
 );
 
 export default CardMenuButton;
