@@ -68,6 +68,7 @@ This document is used to outline current project management priorities.
     registers
   * create error if server is down  
   * when error boundary is triggered, you get a white screen
+  * fix import of all styles, one single import for styles at root of app
 
 ### B. High - MVP
 
