@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { Popover as AntPopover } from 'antd';
-import * as styles from './popover.module.less';
-import './popover.less';
+import { Popover } from 'antd';
+import * as styles from './antPopover.module.less';
+import './antPopover.less';
 
 interface Props {
   Content: React.FC;
@@ -14,7 +14,7 @@ interface Props {
   visible?: boolean;
 }
 
-const Popover: React.FC<Props> = ({
+const AntPopover: React.FC<Props> = ({
   Content,
   children,
   hideTip = false,
@@ -24,7 +24,7 @@ const Popover: React.FC<Props> = ({
   trigger = 'click',
   visible,
 }) => (
-  <AntPopover
+  <Popover
     content={<Content />}
     overlayClassName={[
       hideTip ? styles.hideTip : undefined,
@@ -36,7 +36,7 @@ const Popover: React.FC<Props> = ({
     visible={visible}
   >
     {children}
-  </AntPopover>
+  </Popover>
 );
 
-export default Popover;
+export default AntPopover;
