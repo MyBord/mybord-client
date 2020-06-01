@@ -1,11 +1,11 @@
 import * as React from 'react';
 import Icon from 'icons/icon/icon';
-import Popover from 'shared/modals/popover/popover';
+import AntPopover from 'modals/antPopover/antPopover';
 import HeaderProfilePopoverContent from './headerProfilePopoverContent';
 import * as styles from './headerProfile.module.less';
 
 const HeaderProfile: React.FC = () => (
-  <Popover
+  <AntPopover
     Content={HeaderProfilePopoverContent}
     hideTip
     overlayClassName={styles.popover}
@@ -18,7 +18,7 @@ const HeaderProfile: React.FC = () => (
         <Icon iconName="downArrow" size={10} />
       </div>
     </div>
-  </Popover>
+  </AntPopover>
 );
 
 export default HeaderProfile;
