@@ -19,27 +19,27 @@ const CardMenuButtonContent: React.FC = () => {
     </div>
   );
 
-  const PencilIconContent: React.FC = () => (
-    <div className={styles.iconDiv}>
-      <Icon
-        color="blue"
-        fill="blue"
-        iconName="pencil"
-        size={16}
-      />
-    </div>
-  );
+  // const PencilIconContent: React.FC = () => (
+  //   <div className={styles.iconDiv}>
+  //     <Icon
+  //       color="blue"
+  //       fill="blue"
+  //       iconName="pencil"
+  //       size={16}
+  //     />
+  //   </div>
+  // );
 
   return (
     <ul className={styles.ul}>
-      <li className={styles.li}>
-        <Typography
-          Content={PencilIconContent}
-          onClick={() => console.log('edit')}
-          size="two"
-          text="edit"
-        />
-      </li>
+      {/* <li className={styles.li}> */}
+      {/*  <Typography */}
+      {/*    Content={PencilIconContent} */}
+      {/*    onClick={() => console.log('edit')} */}
+      {/*    size="two" */}
+      {/*    text="edit" */}
+      {/*  /> */}
+      {/* </li> */}
       <li className={styles.li}>
         <div className={styles.toDoDiv}>
           <Checkbox checked={isToDo} onChange={toggleToDo} />

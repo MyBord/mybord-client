@@ -19,7 +19,7 @@ const CardContent: React.FC<Props> = ({
 
   return (
     <div className={styles.container}>
-      <div className={styles.buttonsContainer} id="card-content-buttons-container">
+      <div className={styles.buttonsContainer}>
         {
           !canEdit && (
             <>
@@ -28,7 +28,7 @@ const CardContent: React.FC<Props> = ({
                 onClick={setIsLiked}
                 size={25}
               />
-              <CardMenuButton onClick={() => console.log('foo')} />
+              <CardMenuButton />
             </>
           )
         }

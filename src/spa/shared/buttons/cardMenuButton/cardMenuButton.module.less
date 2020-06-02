@@ -29,10 +29,13 @@
   width: 0.25rem;
 }
 
-.popover {
-  :global {
-    .ant-popover-inner-content {
-      padding: 0.25rem 0.875rem 0.25rem 0.625rem;
-    }
-  }
+.overlay {
+  background: transparent;
+  cursor: pointer;
+  height: @cardContentHeight;
+  left: -1rem;
+  position: absolute;
+  top: -1rem;
+  width: @cardWidth;
+  z-index: -1;
 }
