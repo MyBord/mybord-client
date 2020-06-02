@@ -28,7 +28,7 @@ const YoutubeCardThumbnailComponent: React.FC<Props> = ({
       {
         setShowYoutubePlayer && !canEdit
         && (
-          <div className={styles.playButtonDiv} id="card-youtube-play-button">
+          <div className={[styles.playButtonDiv, 'card-youtube-play-button'].join(' ')}>
             <PlayButton
               onClick={() => setShowYoutubePlayer(true)}
               shouldSpin={!isYoutubePlayerLoaded}
