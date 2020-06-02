@@ -32,22 +32,33 @@ const Popover = React.forwardRef<HTMLDivElement, Props>((
     show,
   },
   ref,
-) => (
-  <AnimatePresence>
-    { show && (
-    <motion.div
-      animate="enter"
-      className={styles.div}
-      exit="exit"
-      initial="initial"
-      ref={ref}
-      style={{ bottom: `-${bottom}rem`, [placement]: 0 }}
-      variants={variants}
-    >
-      <Content />
-    </motion.div>
-    )}
-  </AnimatePresence>
-));
+) => {
+  const PopoverContent: React.FC = () => (
+    <AnimatePresence>
+      { show && (
+        <motion.div
+          animate="enter"
+          className={styles.div}
+          exit="exit"
+          initial="initial"
+          style={{ bottom: `-${bottom}rem`, [placement]: 0 }}
+          variants={variants}
+        >
+          <Content />
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+
+  if (ref) {
+    return (
+      <div ref={ref}>
+        <PopoverContent />
+      </div>
+    );
+  }
+
+  return <PopoverContent />;
+});
 
 export default Popover;

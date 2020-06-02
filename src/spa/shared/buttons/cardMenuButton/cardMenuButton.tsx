@@ -9,51 +9,57 @@ const CardMenuButton: React.FC = () => {
   const overlayRef = React.useRef(null);
   const popoverRef = React.useRef(null);
   const toggleMenu = (): void => setShowMenu((prevState) => !prevState);
-  const handleButtonMouseOver = (): void => {
-    if (showMenu) {
-      setShowMenu(true);
-    }
-  };
-  const handleMouseOver = (): void => setShowMenu(true);
-  const handleMouseOut = (): void => {
-    if (showMenu) {
-      setShowMenu(false);
-    }
-  };
 
   React.useEffect(() => {
-    if (buttonRef.current) {
-      buttonRef.current.addEventListener('mouseover', handleButtonMouseOver);
+    const buttonNode = buttonRef.current;
+    const overlayNode = overlayRef.current;
+    const popoverNode = popoverRef.current;
+
+    const handleMouseOver = (): void => {
+      if (showMenu) { setShowMenu(true); }
+    };
+    const handleMouseLeave = (): void => {
+      if (showMenu) { setShowMenu(false); }
+    };
+
+    if (buttonNode) {
+      buttonNode.addEventListener('mouseover', handleMouseOver);
     }
-    if (overlayRef.current) {
-      overlayRef.current.addEventListener('mouseleave', handleMouseOut);
+    if (overlayNode) {
+      overlayNode.addEventListener('mouseleave', handleMouseLeave);
     }
-    if (popoverRef.current) {
-      popoverRef.current.addEventListener('mouseover', handleMouseOver);
+    if (popoverNode) {
+      popoverNode.addEventListener('mouseover', handleMouseOver);
     }
-  }, [buttonRef, overlayRef, popoverRef, showMenu]);
+
+    return () => {
+      buttonNode.removeEventListener('mouseover', handleMouseOver);
+      overlayNode.removeEventListener('mouseleave', handleMouseLeave);
+      popoverNode.removeEventListener('mouseover', handleMouseOver);
+    };
+  }, [buttonRef, overlayRef, popoverRef, setShowMenu, showMenu]);
 
   const buttonClassName = showMenu ? 'card-menu-button-show' : 'card-menu-button';
   return (
     <>
+      <div className={styles.overlay} ref={overlayRef} />
+      <Popover
+        Content={CardMenuButtonContent}
+        bottom={4.5}
+        show={showMenu}
+        ref={popoverRef}
+      />
       <button
         className={[styles.button, buttonClassName].join(' ')}
         onClick={toggleMenu}
         ref={buttonRef}
         type="button"
       >
-        <div className={styles.overlay} ref={overlayRef} />
         <div className={styles.div}>
           <div className={styles.dot} />
           <div className={styles.dot} />
           <div className={styles.dot} />
         </div>
-        <Popover
-          Content={CardMenuButtonContent}
-          bottom={4.5}
-          show={showMenu}
-          ref={popoverRef}
-        />
       </button>
     </>
   );
