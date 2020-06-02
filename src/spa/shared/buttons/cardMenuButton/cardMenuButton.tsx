@@ -22,20 +22,20 @@ const CardMenuButton: React.FC = () => {
       if (showMenu) { setShowMenu(false); }
     };
 
-    // if (buttonNode) {
-    //   buttonNode.addEventListener('mouseover', handleMouseOver);
-    // }
-    // if (overlayNode) {
-    //   overlayNode.addEventListener('mouseleave', handleMouseLeave);
-    // }
-    // if (popoverNode) {
-    //   popoverNode.addEventListener('mouseover', handleMouseOver);
-    // }
+    if (buttonNode) {
+      buttonNode.addEventListener('mouseover', handleMouseOver);
+    }
+    if (overlayNode) {
+      overlayNode.addEventListener('mouseleave', handleMouseLeave);
+    }
+    if (popoverNode) {
+      popoverNode.addEventListener('mouseover', handleMouseOver);
+    }
 
     return () => {
       buttonNode.removeEventListener('mouseover', handleMouseOver);
       overlayNode.removeEventListener('mouseleave', handleMouseLeave);
-      // popoverNode.removeEventListener('mouseover', handleMouseOver);
+      popoverNode.removeEventListener('mouseover', handleMouseOver);
     };
   }, [buttonRef, overlayRef, popoverRef, setShowMenu, showMenu]);
 
