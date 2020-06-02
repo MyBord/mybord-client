@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
+import { PopoverProps } from 'types/modalTypes';
 import * as styles from './popoverAnimation.module.less';
 
 const variants = {
@@ -17,11 +18,8 @@ const variants = {
   },
 };
 
-interface Props {
+interface Props extends PopoverProps {
   children: React.ReactNode;
-  gap: number;
-  placement: 'left' | 'right';
-  show: boolean;
 }
 
 const PopoverAnimation = React.forwardRef<HTMLDivElement, Props>((

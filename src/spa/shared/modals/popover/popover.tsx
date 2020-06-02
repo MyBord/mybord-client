@@ -1,11 +1,9 @@
 import * as React from 'react';
 import PopoverAnimation from 'framerMotion/popoverAnimation';
+import { PopoverProps } from 'types/modalTypes';
 
-interface Props {
+interface Props extends PopoverProps {
   Content: React.FC;
-  gap: number;
-  placement?: 'left' | 'right';
-  show: boolean;
 }
 
 const Popover = React.forwardRef<HTMLDivElement, Props>((
