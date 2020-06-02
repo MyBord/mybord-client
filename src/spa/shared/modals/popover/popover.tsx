@@ -4,22 +4,25 @@ import * as styles from './popover.module.less';
 
 const variants = {
   initial: {
+    maxHeight: 0,
     opacity: 0,
-    transition: { duration: 1.0 },
+    transition: { duration: 0.5, ease: 'easeIn' },
   },
   enter: {
+    maxHeight: '64px',
     opacity: 1,
-    transition: { duration: 1.0 },
+    transition: { duration: 0.5, ease: 'easeIn' },
   },
   exit: {
+    maxHeight: 0,
     opacity: 0,
-    transition: { duration: 4.0 },
+    transition: { duration: 0.5, ease: 'easeIn' },
   },
 };
 
 interface Props {
   Content: React.FC;
-  bottom: number;
+  gap: number;
   placement?: 'left' | 'right';
   show: boolean;
 }
@@ -27,7 +30,7 @@ interface Props {
 const Popover = React.forwardRef<HTMLDivElement, Props>((
   {
     Content,
-    bottom,
+    gap,
     placement = 'right',
     show,
   },
@@ -64,14 +67,17 @@ const Popover = React.forwardRef<HTMLDivElement, Props>((
         show && (
           <motion.div
             // animate={{ maxHeight: '40px', opacity: 1 }}
-            animate={{ opacity: 1 }}
+            // animate={{ opacity: 1 }}
+            animate="enter"
             className={styles.div}
             // initial={{ maxHeight: 0, opacity: 0 }}
+            // initial={{ opacity: 0 }}
+            initial="initial"
             // exit={{ maxHeight: 0, opacity: 0 }}
-            exit={{ opacity: 0 }}
-            initial={{ opacity: 0 }}
-            style={{ bottom: `-${bottom}rem`, [placement]: 0 }}
-            transition={{ duration: 0.6 }}
+            // exit={{ opacity: 0 }}
+            exit="exit"
+            style={{ top: `${gap}rem`, [placement]: 0 }}
+            variants={variants}
           >
             <Content />
           </motion.div>
