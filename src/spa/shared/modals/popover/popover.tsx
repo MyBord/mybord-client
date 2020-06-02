@@ -1,21 +1,5 @@
 import * as React from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
-import * as styles from './popover.module.less';
-
-const variants = {
-  initial: {
-    opacity: 0,
-    transition: { duration: 0.2, ease: 'easeIn' },
-  },
-  enter: {
-    opacity: 1,
-    transition: { duration: 0.2, ease: 'easeIn' },
-  },
-  exit: {
-    opacity: 0,
-    transition: { duration: 0.2, ease: 'easeIn' },
-  },
-};
+import PopoverAnimation from 'framerMotion/popoverAnimation';
 
 interface Props {
   Content: React.FC;
@@ -32,35 +16,15 @@ const Popover = React.forwardRef<HTMLDivElement, Props>((
     show,
   },
   ref,
-) => {
-  const PopoverContent: React.FC = () => (
-    <AnimatePresence>
-      {
-        show && (
-          <motion.div
-            animate="enter"
-            className={styles.div}
-            exit="exit"
-            initial="initial"
-            style={{ top: `${gap}rem`, [placement]: 0 }}
-            variants={variants}
-          >
-            <Content />
-          </motion.div>
-        )
-      }
-    </AnimatePresence>
-  );
-
-  if (ref) {
-    return (
-      <div ref={ref}>
-        <PopoverContent />
-      </div>
-    );
-  }
-
-  return <PopoverContent />;
-});
+) => (
+  <PopoverAnimation
+    gap={gap}
+    show={show}
+    placement={placement}
+    ref={ref}
+  >
+    <Content />
+  </PopoverAnimation>
+));
 
 export default Popover;
