@@ -33,22 +33,22 @@ const Popover = React.forwardRef<HTMLDivElement, Props>((
   },
   ref,
 ) => {
-  const PopoverContent: React.FC = () => (
-    <AnimatePresence>
-      { show && (
-        <motion.div
-          animate="enter"
-          className={styles.div}
-          exit="exit"
-          initial="initial"
-          style={{ bottom: `-${bottom}rem`, [placement]: 0 }}
-          variants={variants}
-        >
-          <Content />
-        </motion.div>
-      )}
-    </AnimatePresence>
-  );
+  // const PopoverContent: React.FC = () => (
+  //   <AnimatePresence>
+  //     { show && (
+  //       <motion.div
+  //         animate="enter"
+  //         className={styles.div}
+  //         exit="exit"
+  //         initial="initial"
+  //         style={{ bottom: `-${bottom}rem`, [placement]: 0 }}
+  //         variants={variants}
+  //       >
+  //         <Content />
+  //       </motion.div>
+  //     )}
+  //   </AnimatePresence>
+  // );
 
   // if (ref) {
   //   return (
@@ -58,7 +58,27 @@ const Popover = React.forwardRef<HTMLDivElement, Props>((
   //   );
   // }
 
-  return <PopoverContent />;
+  return (
+    <AnimatePresence>
+      {
+        show && (
+          <motion.div
+            // animate={{ maxHeight: '40px', opacity: 1 }}
+            animate={{ opacity: 1 }}
+            className={styles.div}
+            // initial={{ maxHeight: 0, opacity: 0 }}
+            // exit={{ maxHeight: 0, opacity: 0 }}
+            exit={{ opacity: 0 }}
+            initial={{ opacity: 0 }}
+            style={{ bottom: `-${bottom}rem`, [placement]: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <Content />
+          </motion.div>
+        )
+      }
+    </AnimatePresence>
+  );
 });
 
 export default Popover;
