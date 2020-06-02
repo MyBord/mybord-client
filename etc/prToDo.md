@@ -6,6 +6,3 @@ make css for animations for framer motion into separate files
 
 rename common variants?
 height animation to popover?
-
---- 
-have height and opacitity transitions be separate
