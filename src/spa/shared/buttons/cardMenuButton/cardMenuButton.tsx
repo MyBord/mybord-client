@@ -35,7 +35,7 @@ const CardMenuButton: React.FC = () => {
     return () => {
       buttonNode.removeEventListener('mouseover', handleMouseOver);
       overlayNode.removeEventListener('mouseleave', handleMouseLeave);
-      // popoverNode.removeEventListener('mouseover', handleMouseOver);
+      popoverNode.removeEventListener('mouseover', handleMouseOver);
     };
   }, [buttonRef, overlayRef, popoverRef, setShowMenu, showMenu]);
 
@@ -45,7 +45,7 @@ const CardMenuButton: React.FC = () => {
       <div className={styles.overlay} ref={overlayRef} />
       <Popover
         Content={CardMenuButtonContent}
-        bottom={4.5}
+        gap={2.5}
         show={showMenu}
         ref={popoverRef}
       />

@@ -5,21 +5,21 @@ import * as styles from './popover.module.less';
 const variants = {
   initial: {
     opacity: 0,
-    transition: { duration: 1.0 },
+    transition: { duration: 0.2, ease: 'easeIn' },
   },
   enter: {
     opacity: 1,
-    transition: { duration: 1.0 },
+    transition: { duration: 0.2, ease: 'easeIn' },
   },
   exit: {
     opacity: 0,
-    transition: { duration: 4.0 },
+    transition: { duration: 0.2, ease: 'easeIn' },
   },
 };
 
 interface Props {
   Content: React.FC;
-  bottom: number;
+  gap: number;
   placement?: 'left' | 'right';
   show: boolean;
 }
@@ -27,7 +27,7 @@ interface Props {
 const Popover = React.forwardRef<HTMLDivElement, Props>((
   {
     Content,
-    bottom,
+    gap,
     placement = 'right',
     show,
   },
@@ -35,28 +35,30 @@ const Popover = React.forwardRef<HTMLDivElement, Props>((
 ) => {
   const PopoverContent: React.FC = () => (
     <AnimatePresence>
-      { show && (
-        <motion.div
-          animate="enter"
-          className={styles.div}
-          exit="exit"
-          initial="initial"
-          style={{ bottom: `-${bottom}rem`, [placement]: 0 }}
-          variants={variants}
-        >
-          <Content />
-        </motion.div>
-      )}
+      {
+        show && (
+          <motion.div
+            animate="enter"
+            className={styles.div}
+            exit="exit"
+            initial="initial"
+            style={{ top: `${gap}rem`, [placement]: 0 }}
+            variants={variants}
+          >
+            <Content />
+          </motion.div>
+        )
+      }
     </AnimatePresence>
   );
 
-  // if (ref) {
-  //   return (
-  //     <div ref={ref}>
-  //       <PopoverContent />
-  //     </div>
-  //   );
-  // }
+  if (ref) {
+    return (
+      <div ref={ref}>
+        <PopoverContent />
+      </div>
+    );
+  }
 
   return <PopoverContent />;
 });

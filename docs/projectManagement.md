@@ -74,6 +74,7 @@ This document is used to outline current project management priorities.
 
 ### C. Medium
 
+  * handle front end if server is down for both app and landing
   * make sure app is responsive and mobile friendly
   * Preventing Rapid-Fire Login Attempts 
   * can only play one youtube video at a time
