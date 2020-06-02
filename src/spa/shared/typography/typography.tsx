@@ -1,8 +1,7 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
-import { IconNames } from 'types/iconNameTypes';
+import { ExportedColors } from 'types/colorTypes';
 import {
-  TypographyColor,
   TypographyFont,
   TypographySize,
   TypographyWeight,
@@ -12,7 +11,7 @@ import * as styles from './typography.module.less';
 
 interface Props {
   Content?: React.FC;
-  color?: TypographyColor;
+  color?: ExportedColors;
   font?: TypographyFont;
   link?: string;
   maxTextLength?: number;

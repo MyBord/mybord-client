@@ -1,22 +1,8 @@
+import { ExportedColors } from 'types/colorTypes';
+
 export interface IndividualIconProps {
-  color?:
-  'black'
-  | 'blue'
-  | 'lightGrey'
-  | 'orange'
-  | 'red'
-  | 'transparentBlack'
-  | 'transparentWhite'
-  | 'white';
-  fill?:
-  'black'
-  | 'blue'
-  | 'lightGrey'
-  | 'orange'
-  | 'red'
-  | 'transparentBlack'
-  | 'transparentWhite'
-  | 'white';
+  color?: ExportedColors;
+  fill?: ExportedColors;
   size: number;
   strokeWidth?: number;
 }
