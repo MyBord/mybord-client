@@ -35,7 +35,7 @@ const CardMenuButton: React.FC = () => {
     return () => {
       buttonNode.removeEventListener('mouseover', handleMouseOver);
       overlayNode.removeEventListener('mouseleave', handleMouseLeave);
-      popoverNode.removeEventListener('mouseover', handleMouseOver);
+      // popoverNode.removeEventListener('mouseover', handleMouseOver);
     };
   }, [buttonRef, overlayRef, popoverRef, setShowMenu, showMenu]);
 

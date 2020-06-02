@@ -4,16 +4,16 @@ import * as styles from './popover.module.less';
 
 const variants = {
   initial: {
-    opacity: 1,
-    transition: { duration: 0.1 },
+    opacity: 0,
+    transition: { duration: 1.0 },
   },
   enter: {
     opacity: 1,
-    transition: { duration: 0.1 },
+    transition: { duration: 1.0 },
   },
   exit: {
     opacity: 0,
-    transition: { duration: 0.1 },
+    transition: { duration: 4.0 },
   },
 };
 
@@ -50,13 +50,13 @@ const Popover = React.forwardRef<HTMLDivElement, Props>((
     </AnimatePresence>
   );
 
-  if (ref) {
-    return (
-      <div ref={ref}>
-        <PopoverContent />
-      </div>
-    );
-  }
+  // if (ref) {
+  //   return (
+  //     <div ref={ref}>
+  //       <PopoverContent />
+  //     </div>
+  //   );
+  // }
 
   return <PopoverContent />;
 });
