@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import * as styles from './animations.module.less';
+import * as styles from './alertAnimation.module.less';
 
 interface Props {
   children: React.ReactNode;
@@ -12,7 +12,7 @@ const AlertAnimation: React.FC<Props> = ({ children, showAlert }) => (
     {
       showAlert && (
         <motion.div
-          className={styles.alert}
+          className={styles.div}
           initial={{ maxHeight: 0, opacity: 0 }}
           animate={{ maxHeight: '40px', opacity: 1 }}
           transition={{ duration: 0.6 }}
