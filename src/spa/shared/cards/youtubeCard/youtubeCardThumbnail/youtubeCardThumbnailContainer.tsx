@@ -11,17 +11,22 @@ interface Props {
 }
 
 const YoutubeCardThumbnailContainer: React.FC<Props> = ({ cardId, youtubeVideoData }) => {
-  const [showYoutubePlayer, setShowYoutubePlayer] = React.useState(false);
+  const [hasPlayBeenClicked, setHasPlayBeenClicked] = React.useState(false);
   const [isYoutubePlayerLoaded, setIsYoutubePlayerLoaded] = React.useState(false);
-  const { activeCardId } = useCardContext();
+  const { canEdit, setActiveCardId } = useCardContext();
 
+  const handlePlay = (): void => {
+    setActiveCardId(cardId);
+    setHasPlayBeenClicked(true);
+  };
+
+  const showYoutubePlayer = hasPlayBeenClicked && !canEdit;
   return (
     <>
       <YoutubePlayerAnimation isYoutubePlayerLoaded={isYoutubePlayerLoaded}>
         <YoutubeCardThumbnailComponent
-          cardId={cardId}
           isYoutubePlayerLoaded={isYoutubePlayerLoaded}
-          setShowYoutubePlayer={setShowYoutubePlayer}
+          onPlay={handlePlay}
           youtubeVideoData={youtubeVideoData}
         />
       </YoutubePlayerAnimation>
