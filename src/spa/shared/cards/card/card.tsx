@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useCardContext } from 'context/cardContext';
 import CardContent from './cardContent/cardContent';
 import CardDescription from './cardDescription/cardDescription';
-import CardFooter from './cardFooter/cardFooter';
+// import CardFooter from './cardFooter/cardFooter';
 import CardOverlay from './cardOverlay/cardOverlay';
 import * as styles from './card.module.less';
 
@@ -39,7 +39,7 @@ const Card: React.FC<Props> = ({
         setIsLiked={() => setIsLiked((prevState) => !prevState)}
       />
       <CardDescription Description={Description} />
-      <CardFooter />
+      {/* <CardFooter /> */}
     </div>
   );
 };
