@@ -13,50 +13,20 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
-  * card menu
-    * edit
-    * delete
-    * to do
-    * if clicked, then play button and heart don't show
-    * if hover away from card, then don't show
-    * add pop confirm if deleting
-    * make to do > done > to do
-    * when hovering over card menu button content, button still shows
-      * if menu button is clicked, menu button still shows
-      * if mouse navigates away from menu button or menu button content, then menu button content
-       hides
-    * bring menu closer to button
+  * fix profile popover
+  * add more code splitting
   * fix card description height
   * add transition for box shadow when selecting multi select cards?
-  * cards
-    * add ability to add tags
-    * add dropdown menu action
-    * add ability to edit category
-    * add ability to edit title
-    * add ability to edit in general
-    * add ability to delete, with are you sure
-    * add ability to mark as to do and mark as done
-    * don't show heart or menu buttons when youtube player is playing
-  * dashboard header  
-    * add icon for multi edit
-    * add filter for favorites, to do, done
-    * add filtering by tags, category
-    * add sorting
-    * add searching
-    * add multi-select multi-edit process
-    * create modal for creating card
-  * add background transition when selecting cards
-  * add ability to remove and edit tags for cards
-  * debug issue where user cards query is made (console foooooo) is happened where even in login
-   page
+  * play button isn't working
+  * don't show heart or menu buttons when youtube player is playing
+  * when deleting a card, add a pop confirm / 'are you sure'
+  * add background transition when multi-selecting cards
   * add ability to delete card
   * make url input wider
   * when new card is added via subscription, add spinner
   * add subscription to videos
-  * make sure spinner renders for dashboard page; when you first login, dashboard and cards load
-   before animation is complete.
   * have session be remembered by user
-  * fix youtube card
+  * fix youtube card height issues
   * Have youtube cards be restricted per user - if there are no cards, then provide instructions,
     display that list is empty, etc
   * fix loading of image on landing page
@@ -68,16 +38,13 @@ This document is used to outline current project management priorities.
     registers
   * create error if server is down  
   * when error boundary is triggered, you get a white screen
-  * fix import of all styles, one single import for styles at root of app
-  * fix profile popover
-  * add more code splitting
   * when refreshing the dashboard, the spa fallback seems to be persisting for too long
-  * refactor list in this pm
 
 ### B. High - MVP
 
 ### C. Medium
 
+  * fix import of all styles, one single import for styles at root of app
   * handle front end if server is down for both app and landing
   * make sure app is responsive and mobile friendly
   * Preventing Rapid-Fire Login Attempts 

@@ -18,35 +18,32 @@ This document is used to outline product details.
   
 ## II. Functionality
 
-* Dashboard Page Functionality:
-  * filter by category or tag
+### A. Dashboard
+
+* Card Management
+  * filter by category
+  * filter by tag
+  * filter my favorites
+  * filter to do's
+  * filter done's
   * general / all purpose search
   * grid vs row
-  * add card
-  * my favorites
-  * sort by category, date uploaded, etc
+  * add card; create a modal for creating a card?
+  * multi-edit
+  * sort by category, date uploaded, tag, etc
   * change size of card
- 
-* individual card functionality
+  * create new tags, edit existing tags
+
+* Individual card functionality
   * favorite
-  * edit tags
+  * add tags, remove tags, edit tags
   * edit category
   * edit title
   * edit in general
-  * delete
-  * mark as to do
+  * delete; add pop confirm / 'are you sure' if deleting
+  * mark as to do and mark as done
   * mark as done
   * multi select / multi edit
-
-* individual card info  
-  * category
-  * title
-  * tags
-  * is favorite
-  * is marked as to do
-  * is marked as done
-  
-  
   
 ## III. Design Resources  
 
