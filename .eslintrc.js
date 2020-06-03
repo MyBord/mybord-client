@@ -28,6 +28,8 @@ module.exports = {
   },
   plugins: ['@typescript-eslint', 'jest'],
   rules: {
+    'import/first': 0,
+    'import/newline-after-import': 0,
     'import/no-extraneous-dependencies': [
       'error',
       {
