@@ -13,12 +13,10 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
+  * don't show heart or menu buttons when youtube player is playing
   * fix profile popover
   * fix card description height
-  * play button isn't working
-  * don't show heart or menu buttons when youtube player is playing
   * when deleting a card, add a pop confirm / 'are you sure'
-  * add background transition when multi-selecting cards
   * add ability to delete card
   * make url input wider
   * when new card is added via subscription, add spinner

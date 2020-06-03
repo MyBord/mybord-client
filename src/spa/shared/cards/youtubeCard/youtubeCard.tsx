@@ -11,7 +11,7 @@ interface Props {
 
 const YoutubeCard: React.FC<Props> = ({ cardId, youtubeVideoData }) => {
   const Content: React.FC = () => (
-    <YoutubeCardThumbnailContainer youtubeVideoData={youtubeVideoData} />
+    <YoutubeCardThumbnailContainer cardId={cardId} youtubeVideoData={youtubeVideoData} />
   );
 
   const Description: React.FC = () => (

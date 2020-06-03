@@ -20,10 +20,10 @@ const Card: React.FC<Props> = ({
   Description,
   cardId,
 }) => {
-  const { selectedCards } = useCardContext();
+  const { selectedCardIds } = useCardContext();
   const [isLiked, setIsLiked] = React.useState<boolean>(false);
 
-  const isSelected = selectedCards.includes(cardId);
+  const isSelected = selectedCardIds.includes(cardId);
 
   return (
     <div

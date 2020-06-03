@@ -6,17 +6,28 @@ import { useCardContext } from 'context/cardContext';
 import * as styles from './youtubeCardThumbnail.module.less';
 
 interface Props {
+  cardId: string;
   isYoutubePlayerLoaded: boolean;
   setShowYoutubePlayer?: (showYoutubePlayer: boolean) => void;
   youtubeVideoData: YoutubeVideoData;
 }
 
 const YoutubeCardThumbnailComponent: React.FC<Props> = ({
+  cardId,
   isYoutubePlayerLoaded,
   setShowYoutubePlayer,
   youtubeVideoData,
 }) => {
-  const { canEdit } = useCardContext();
+  const { activeCardId, canEdit, setActiveCardId } = useCardContext();
+
+  console.log('************');
+  console.log(activeCardId);
+  console.log('************');
+
+  const handleClick = (): void => {
+    setActiveCardId(cardId);
+    setShowYoutubePlayer(true);
+  };
 
   return (
     <>
@@ -26,11 +37,11 @@ const YoutubeCardThumbnailComponent: React.FC<Props> = ({
         src={youtubeVideoData.videoThumbnail}
       />
       {
-        setShowYoutubePlayer && !canEdit
+        setShowYoutubePlayer && !canEdit && activeCardId !== cardId
         && (
           <div className={[styles.playButtonDiv, 'card-youtube-play-button'].join(' ')}>
             <PlayButton
-              onClick={() => setShowYoutubePlayer(true)}
+              onClick={handleClick}
               shouldSpin={!isYoutubePlayerLoaded}
             />
           </div>

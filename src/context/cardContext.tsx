@@ -1,15 +1,20 @@
 import * as React from 'react';
 
 interface CardState {
-  canEdit: boolean;
-  selectedCards: string[];
+  activeCardId: string; // which card is currently 'active', e.g. video is playing, article is
+  // open, note is open, music is playing, etc.
+  canEdit: boolean; // can you multi-edit cards
+  selectedCardIds: string[]; // which cards have been selected for multi-edit
+  setActiveCardId: (cardId: string) => void;
   toggleEditStatus: () => void;
   toggleCard: (cardId: string) => void;
 }
 
 const initialCardState: CardState = {
+  activeCardId: null,
   canEdit: false,
-  selectedCards: [],
+  selectedCardIds: [],
+  setActiveCardId: () => {},
   toggleEditStatus: () => {},
   toggleCard: () => {},
 };
@@ -17,35 +22,38 @@ const initialCardState: CardState = {
 const CardContext = React.createContext<CardState>(initialCardState);
 
 export const CardContextProvider = (props: object): React.ReactElement => {
+  const [activeCardId, setActiveCardId] = React.useState<string>(null);
   const [canEdit, setEditStatus] = React.useState<boolean>(false);
-  const [selectedCards, setSelectedCards] = React.useState<string[]>([]);
+  const [selectedCardIds, setSelectedCardIds] = React.useState<string[]>([]);
 
   const toggleEditStatus = (): void => {
     setEditStatus((prevState) => {
       if (prevState) {
-        setSelectedCards([]);
+        setSelectedCardIds([]);
       }
       return !prevState;
     });
   };
 
   const toggleCard = (cardId: string): void => {
-    if (selectedCards.includes(cardId)) {
-      setSelectedCards((prevState) => {
+    if (selectedCardIds.includes(cardId)) {
+      setSelectedCardIds((prevState) => {
         const newState = [...prevState];
         newState.splice(prevState.indexOf(cardId), 1);
         return newState;
       });
     } else {
-      setSelectedCards((prevState) => prevState.concat(cardId));
+      setSelectedCardIds((prevState) => prevState.concat(cardId));
     }
   };
 
   return (
     <CardContext.Provider
       value={{
+        activeCardId,
         canEdit,
-        selectedCards,
+        selectedCardIds,
+        setActiveCardId,
         toggleCard,
         toggleEditStatus,
       }}
