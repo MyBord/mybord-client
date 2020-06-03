@@ -14,7 +14,6 @@ This document is used to outline current project management priorities.
 ### A. Highest - MVP
 
   * fix profile popover
-  * add more code splitting
   * fix card description height
   * add transition for box shadow when selecting multi select cards?
   * play button isn't working
