@@ -154,6 +154,7 @@ const config = {
       shared: path.resolve(__dirname, 'src/spa/shared/'),
       storybook: path.resolve(__dirname, 'src/thirdParty/storybook/'),
       styles: path.resolve(__dirname, 'src/styles/'),
+      tags: path.resolve(__dirname, 'src/spa/shared/tags/'),
       typography: path.resolve(__dirname, 'src/spa/shared/typography/'),
       types: path.resolve(__dirname, 'src/types/'),
       utils: path.resolve(__dirname, 'src/utils/'),

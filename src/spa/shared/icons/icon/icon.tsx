@@ -6,6 +6,7 @@ import AvatarIcon from './individualIcons/avatarIcon';
 import BellIcon from './individualIcons/bellIcon';
 import CalendarIcon from './individualIcons/calendarIcon';
 import ChartIcon from './individualIcons/chartIcon';
+import CloseIcon from './individualIcons/closeIcon';
 import DashboardIcon from './individualIcons/dashboardIcon';
 import DeleteIcon from './individualIcons/deleteIcon';
 import DownArrowIcon from './individualIcons/downArrowIcon';
@@ -31,6 +32,7 @@ export const iconNames = {
   avatar: 'foo',
   calendar: 'foo',
   chart: 'foo',
+  close: 'foo',
   dashboard: 'foo',
   delete: 'foo',
   downArrow: 'foo',
@@ -73,6 +75,8 @@ const Icon: React.FC<IconProps> = ({
       return <CalendarIcon size={size} />;
     case 'chart':
       return <ChartIcon size={size} />;
+    case 'close':
+      return <CloseIcon color={color} size={size} />;
     case 'dashboard':
       return <DashboardIcon size={size} />;
     case 'delete':

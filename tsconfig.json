@@ -38,6 +38,7 @@
       "shared/*": ["src/spa/shared/*"],
       "storybook/*": ["src/thirdParty/storybook/*"],
       "styles/*": ["src/styles/*"],
+      "tags/*": ["src/spa/shared/tags/*"],
       "typography/*": ["src/spa/shared/typography/*"],
       "types/*": ["src/types/*"],
       "utils/*": ["src/utils/*"]

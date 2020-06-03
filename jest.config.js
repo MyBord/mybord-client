@@ -38,6 +38,7 @@ module.exports = {
     '^shared(.*)$': '<rootDir>/src/spa/shared$1',
     '^storybook(.*)$': '<rootDir>/src/thirdParty/storybook$1',
     '^styles(.*)$': '<rootDir>/src/styles$1',
+    '^tags(.*)$': '<rootDir>/src/spa/shared/tags$1',
     '^typography(.*)$': '<rootDir>/src/spa/shared/typography$1',
     '^types(.*)$': '<rootDir>/src/types$1',
     '^utils(.*)$': '<rootDir>/src/utils$1',

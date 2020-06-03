@@ -1,12 +1,3 @@
-export type TypographyColor =
-  'black'
-  | 'blue'
-  | 'lightGrey'
-  | 'orange'
-  | 'red'
-  | 'transparentWhite'
-  | 'white';
-
 export type TypographyFont = 'poppins' | 'roboto';
 
 export type TypographySize =
