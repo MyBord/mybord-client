@@ -29,7 +29,11 @@ const initializeSpaWrapper = (WrappedComponent: React.FC): React.FC => {
     return (
       <>
         {
-          (isInitializationComplete && isAuthenticated !== null) && <WrappedComponent />
+          (isInitializationComplete && isAuthenticated !== null) && (
+            <React.Suspense fallback={<div />}>
+              <WrappedComponent />
+            </React.Suspense>
+          )
         }
         <SpaFallback />
       </>

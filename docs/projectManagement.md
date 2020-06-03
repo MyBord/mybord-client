@@ -69,6 +69,10 @@ This document is used to outline current project management priorities.
   * create error if server is down  
   * when error boundary is triggered, you get a white screen
   * fix import of all styles, one single import for styles at root of app
+  * fix profile popover
+  * add more code splitting
+  * when refreshing the dashboard, the spa fallback seems to be persisting for too long
+  * refactor list in this pm
 
 ### B. High - MVP
 
