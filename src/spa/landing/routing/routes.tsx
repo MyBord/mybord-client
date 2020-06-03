@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
-import AboutPage from 'landing/pages/aboutPage/aboutPage';
-import ErrorPage from 'landing/pages/errorPage/errorPage';
-import LoginPage from 'landing/pages/loginPage/loginPage';
+const AboutPage = React.lazy(() => import('landing/pages/aboutPage/aboutPage'));
+const ErrorPage = React.lazy(() => import('landing/pages/errorPage/errorPage'));
+const LoginPage = React.lazy(() => import('landing/pages/loginPage/loginPage'));
 
 const Routes: React.FC = () => (
   <Switch>

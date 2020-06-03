@@ -1,15 +1,15 @@
 import * as React from 'react';
 import { AnimatePresence } from 'framer-motion';
 import { Switch, useLocation } from 'react-router-dom';
-import CantPage from 'pages/cantPage/cantPage';
-import DashboardPage from 'pages/dashboardPage/dashboardPage';
-import ErrorPage from 'pages/errorPage/errorPage';
-import FavoritesPage from 'pages/favoritesPage/favoritesPage';
-import FollowingPage from 'pages/followingPage/followingPage';
-import HistoryPage from 'pages/historyPage/historyPage';
-import InboxPage from 'pages/inboxPage/inboxPage';
-import PlaylistPage from 'pages/playlistPage/playlistPage';
-import TrendingPage from 'pages/trendingPage/trendingPage';
+const CantPage = React.lazy(() => import('pages/cantPage/cantPage'));
+const DashboardPage = React.lazy(() => import('pages/dashboardPage/dashboardPage'));
+const ErrorPage = React.lazy(() => import('pages/errorPage/errorPage'));
+const FavoritesPage = React.lazy(() => import('pages/favoritesPage/favoritesPage'));
+const FollowingPage = React.lazy(() => import('pages/followingPage/followingPage'));
+const HistoryPage = React.lazy(() => import('pages/historyPage/historyPage'));
+const InboxPage = React.lazy(() => import('pages/inboxPage/inboxPage'));
+const PlaylistPage = React.lazy(() => import('pages/playlistPage/playlistPage'));
+const TrendingPage = React.lazy(() => import('pages/trendingPage/trendingPage'));
 import { MotionRedirect, MotionRoute } from 'utils/routing';
 
 const Routes: React.FC = () => {
