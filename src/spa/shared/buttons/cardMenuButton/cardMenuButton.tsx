@@ -3,16 +3,19 @@ import Popover from 'modals/popover/popover';
 import CardMenuButtonContent from './cardMenuButtonContent';
 import * as styles from './cardMenuButton.module.less';
 
-const CardMenuButton: React.FC = () => {
+interface Props {
+  containerRef: React.MutableRefObject<HTMLDivElement>;
+}
+
+const CardMenuButton: React.FC<Props> = ({ containerRef }) => {
   const [showMenu, setShowMenu] = React.useState<boolean>(false);
   const buttonRef = React.useRef(null);
-  const overlayRef = React.useRef(null);
   const popoverRef = React.useRef(null);
   const toggleMenu = (): void => setShowMenu((prevState) => !prevState);
 
   React.useEffect(() => {
     const buttonNode = buttonRef.current;
-    const overlayNode = overlayRef.current;
+    const containerNode = containerRef.current;
     const popoverNode = popoverRef.current;
 
     const handleMouseOver = (): void => {
@@ -25,8 +28,8 @@ const CardMenuButton: React.FC = () => {
     if (buttonNode) {
       buttonNode.addEventListener('mouseover', handleMouseOver);
     }
-    if (overlayNode) {
-      overlayNode.addEventListener('mouseleave', handleMouseLeave);
+    if (containerNode) {
+      containerNode.addEventListener('mouseleave', handleMouseLeave);
     }
     if (popoverNode) {
       popoverNode.addEventListener('mouseover', handleMouseOver);
@@ -34,15 +37,14 @@ const CardMenuButton: React.FC = () => {
 
     return () => {
       buttonNode.removeEventListener('mouseover', handleMouseOver);
-      overlayNode.removeEventListener('mouseleave', handleMouseLeave);
+      containerNode.removeEventListener('mouseleave', handleMouseLeave);
       popoverNode.removeEventListener('mouseover', handleMouseOver);
     };
-  }, [buttonRef, overlayRef, popoverRef, showMenu]);
+  }, [buttonRef, containerRef, popoverRef, showMenu]);
 
   const buttonClassName = showMenu ? 'card-menu-button-show' : 'card-menu-button';
   return (
     <>
-      <div className={styles.overlay} ref={overlayRef} />
       <Popover
         Content={CardMenuButtonContent}
         gap={2.5}

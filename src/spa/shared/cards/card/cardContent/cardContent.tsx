@@ -15,10 +15,11 @@ const CardContent: React.FC<Props> = ({
   isLiked,
   setIsLiked,
 }) => {
+  const containerRef = React.useRef(null);
   const { canEdit } = useCardContext();
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} ref={containerRef}>
       <div className={styles.buttonsContainer}>
         {
           !canEdit && (
@@ -28,7 +29,7 @@ const CardContent: React.FC<Props> = ({
                 onClick={setIsLiked}
                 size={25}
               />
-              <CardMenuButton />
+              <CardMenuButton containerRef={containerRef} />
             </>
           )
         }
