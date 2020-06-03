@@ -8,3 +8,11 @@ export type ExportedColors =
   | 'transparentBlack'
   | 'transparentWhite'
   | 'white';
+
+export type TagColors =
+  | 'blue'
+  | 'green'
+  | 'orange'
+  | 'purple'
+  | 'red'
+  | 'yellow';
