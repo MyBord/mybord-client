@@ -15,7 +15,6 @@ This document is used to outline current project management priorities.
 
   * fix profile popover
   * fix card description height
-  * add transition for box shadow when selecting multi select cards?
   * play button isn't working
   * don't show heart or menu buttons when youtube player is playing
   * when deleting a card, add a pop confirm / 'are you sure'
