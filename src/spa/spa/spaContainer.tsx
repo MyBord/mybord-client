@@ -14,13 +14,6 @@ const SpaContainer: React.FC = () => {
   return <Landing />;
 };
 
-const FinalSpaContainer: React.FC = () => (
-  <React.Suspense fallback={<h1>LOADING</h1>}>
-    <SpaContainer />
-  </React.Suspense>
-);
-
-// export default initializeSpaWrapper(SpaContainer);
-export default initializeSpaWrapper(FinalSpaContainer);
+export default initializeSpaWrapper(SpaContainer);
 
 // export default () => <App />;
