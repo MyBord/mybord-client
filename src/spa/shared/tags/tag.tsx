@@ -1,4 +1,5 @@
 import * as React from 'react';
+import IconButton from 'icons/iconButton/iconButton';
 import Typography from 'typography/typography';
 import * as styles from './tag.module.less';
 
@@ -13,6 +14,11 @@ const Tag: React.FC<Props> = ({ label }) => (
       size="one"
       text={label}
       weight="light"
+    />
+    <IconButton
+      iconName="close"
+      onClick={() => console.log('delete tag')}
+      size={16}
     />
   </div>
 );
