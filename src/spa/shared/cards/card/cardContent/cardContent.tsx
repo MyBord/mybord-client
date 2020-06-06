@@ -16,13 +16,13 @@ const CardContent: React.FC<Props> = ({
   setIsLiked,
 }) => {
   const containerRef = React.useRef(null);
-  const { canEdit } = useCardContext();
+  const { canMultiEdit } = useCardContext();
 
   return (
     <div className={styles.container} ref={containerRef}>
       <div className={styles.buttonsContainer}>
         {
-          !canEdit && (
+          !canMultiEdit && (
             <>
               <LikeButton
                 isLiked={isLiked}

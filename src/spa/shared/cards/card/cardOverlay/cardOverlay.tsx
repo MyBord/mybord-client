@@ -7,11 +7,11 @@ interface Props {
 }
 
 const CardOverlay: React.FC<Props> = ({ cardId }) => {
-  const { canEdit, toggleCard } = useCardContext();
+  const { canMultiEdit, toggleCard } = useCardContext();
 
   const handleClick = (): void => toggleCard(cardId);
 
-  if (canEdit) {
+  if (canMultiEdit) {
     return (
       <div
         aria-hidden="true"

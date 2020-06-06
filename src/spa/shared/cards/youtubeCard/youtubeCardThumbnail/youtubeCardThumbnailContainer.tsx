@@ -13,7 +13,7 @@ interface Props {
 const YoutubeCardThumbnailContainer: React.FC<Props> = ({ cardId, youtubeVideoData }) => {
   const [hasPlayButtonBeenClicked, setHasPlayButtonBeenClicked] = React.useState<boolean>(false);
   const [isYoutubePlayerLoaded, setIsYoutubePlayerLoaded] = React.useState<boolean>(false);
-  const { activeCardId, canEdit, setActiveCardId } = useCardContext();
+  const { activeCardId, canMultiEdit, setActiveCardId } = useCardContext();
 
   const handlePlay = (): void => {
     setActiveCardId(cardId);
@@ -24,7 +24,7 @@ const YoutubeCardThumbnailContainer: React.FC<Props> = ({ cardId, youtubeVideoDa
   // mode, and the user is not playing a different video.
   const showYoutubePlayer =
     hasPlayButtonBeenClicked
-    && !canEdit
+    && !canMultiEdit
     && cardId === activeCardId;
 
   // Show the youtube thumbnail if the youtube player has not yet been loaded OR another video
@@ -32,7 +32,7 @@ const YoutubeCardThumbnailContainer: React.FC<Props> = ({ cardId, youtubeVideoDa
   const showYoutubeThumbnail =
     !isYoutubePlayerLoaded
     || cardId !== activeCardId
-    || canEdit;
+    || canMultiEdit;
 
   return (
     <>
