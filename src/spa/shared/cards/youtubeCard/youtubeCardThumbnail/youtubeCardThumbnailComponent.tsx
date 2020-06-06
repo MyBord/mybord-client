@@ -20,10 +20,6 @@ const YoutubeCardThumbnailComponent: React.FC<Props> = ({
 }) => {
   const { activeCardId, canEdit, setActiveCardId } = useCardContext();
 
-  console.log('************');
-  console.log(activeCardId);
-  console.log('************');
-
   const handleClick = (): void => {
     setActiveCardId(cardId);
     setShowYoutubePlayer(true);

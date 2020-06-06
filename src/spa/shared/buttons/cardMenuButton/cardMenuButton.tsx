@@ -9,8 +9,8 @@ interface Props {
 
 const CardMenuButton: React.FC<Props> = ({ containerRef }) => {
   const [showMenu, setShowMenu] = React.useState<boolean>(false);
-  const buttonRef = React.useRef(null);
-  const popoverRef = React.useRef(null);
+  const buttonRef = React.useRef<HTMLButtonElement>(null);
+  const popoverRef = React.useRef<HTMLDivElement>(null);
   const toggleMenu = (): void => setShowMenu((prevState) => !prevState);
 
   React.useEffect(() => {
