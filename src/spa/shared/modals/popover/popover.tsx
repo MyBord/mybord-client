@@ -9,17 +9,17 @@ interface Props extends PopoverProps {
 const Popover = React.forwardRef<HTMLDivElement, Props>((
   {
     Content,
-    gap,
     placement = 'right',
+    position = { x: 0, y: 0 },
     show,
   },
   ref,
 ) => (
   <PopoverAnimation
-    gap={gap}
-    show={show}
     placement={placement}
+    position={position}
     ref={ref}
+    show={show}
   >
     <Content />
   </PopoverAnimation>

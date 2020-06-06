@@ -15,6 +15,7 @@ This document is used to outline current project management priorities.
 
   * fix transition when you play another video, and current playing video shows thumbnail again,
   have there be a transition instead of directly mounting.
+  * update popover so it listens for clicks outside of the content and the button
   * don't show heart or menu buttons when youtube player is playing
   * fix profile popover
   * fix card description height
