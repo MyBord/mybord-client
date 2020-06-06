@@ -1,21 +1,22 @@
 import * as React from 'react';
-import Icon from 'icons/icon/icon';
-import AntPopover from 'modals/antPopover/antPopover';
+import Popover from 'modals/popover/popover';
+import NotificationsButton from 'buttons/notificationsButton/notificationsButton';
 import HeaderNotificationsPopoverContent from './headerNotificationsPopoverContent';
-import * as styles from './headerNotifications.module.less';
 
-const HeaderNotifications: React.FC = () => (
-  <AntPopover
-    Content={HeaderNotificationsPopoverContent}
-    hideTip
-    overlayClassName={styles.popover}
-    placement="bottomLeft"
-    title="Notifications"
-  >
-    <div className={styles.iconDiv}>
-      <Icon iconName="notification" size={30} />
-    </div>
-  </AntPopover>
-);
+const HeaderNotifications: React.FC = () => {
+  const [showPopover, setShowPopover] = React.useState<boolean>(false);
+
+  return (
+    <>
+      <NotificationsButton onClick={() => setShowPopover((prevState) => !prevState)} />
+      <Popover
+        Content={HeaderNotificationsPopoverContent}
+        placement="right"
+        position={{ x: 6.4375, y: 5.625 }}
+        show={showPopover}
+      />
+    </>
+  )
+};
 
 export default HeaderNotifications;
