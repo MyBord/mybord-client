@@ -47,7 +47,7 @@ const CardMenuButton: React.FC<Props> = ({ containerRef }) => {
     <>
       <Popover
         Content={CardMenuButtonContent}
-        gap={2.5}
+        position={{ x: 0, y: 2.5 }}
         show={showMenu}
         ref={popoverRef}
       />

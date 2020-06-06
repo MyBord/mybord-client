@@ -13,6 +13,7 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
+  * update popover so it listens for clicks outside of the content and the button
   * don't show heart or menu buttons when youtube player is playing
   * fix profile popover
   * fix card description height

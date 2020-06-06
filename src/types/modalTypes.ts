@@ -1,5 +1,8 @@
 export interface PopoverProps {
-  gap: number;
   placement?: 'left' | 'right';
+  position?: {
+    x: number;
+    y: number;
+  };
   show: boolean;
 }
