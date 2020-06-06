@@ -7,11 +7,11 @@ import { FormProp } from 'types/formTypes';
 import * as styles from './dashboardHeaderFilterForm.module.less';
 
 interface FormContentProps {
-  canEdit: boolean;
+  canMultiEdit: boolean;
   errorMessage: string;
   form?: FormProp;
   isWaiting: boolean;
-  toggleEditStatus: () => void;
+  toggleMultiEditStatus: () => void;
 }
 
 interface Props extends FormContentProps {
@@ -19,11 +19,11 @@ interface Props extends FormContentProps {
 }
 
 const FormContent: React.FC<FormContentProps> = ({
-  canEdit,
+  canMultiEdit,
   errorMessage,
   form,
   isWaiting,
-  toggleEditStatus,
+  toggleMultiEditStatus,
 }) => (
   <div className={styles.div}>
     <FormItem
@@ -45,26 +45,26 @@ const FormContent: React.FC<FormContentProps> = ({
     <FormItem fieldName="edit-cards" form={form}>
       <Button
         htmlType="button"
-        label={canEdit ? 'Editing' : 'Edit'}
-        onClick={toggleEditStatus}
+        label={canMultiEdit ? 'Editing' : 'Edit'}
+        onClick={toggleMultiEditStatus}
       />
     </FormItem>
   </div>
 );
 
 const DashboardHeaderFilterFormComponent: React.FC<Props> = ({
-  canEdit,
+  canMultiEdit,
   errorMessage,
   isWaiting,
   onSubmit,
-  toggleEditStatus,
+  toggleMultiEditStatus,
 }) => (
   <Form onSubmit={onSubmit}>
     <FormContent
-      canEdit={canEdit}
+      canMultiEdit={canMultiEdit}
       errorMessage={errorMessage}
       isWaiting={isWaiting}
-      toggleEditStatus={toggleEditStatus}
+      toggleMultiEditStatus={toggleMultiEditStatus}
     />
   </Form>
 );

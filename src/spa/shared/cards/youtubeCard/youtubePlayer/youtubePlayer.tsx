@@ -49,7 +49,9 @@ const YoutubePlayer: React.FC<Props> = ({ setIsYoutubePlayerLoaded, youtubeVideo
   }, []);
 
   return (
-    <div className={styles.div} id={videoFrameId} />
+    <div>
+      <div className={styles.div} id={videoFrameId} />
+    </div>
   );
 };
 

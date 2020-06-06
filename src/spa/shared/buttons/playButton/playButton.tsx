@@ -4,14 +4,14 @@ import animationData from 'lotty/lotties/backgroundSpinner.json';
 import * as styles from './playButton.module.less';
 
 interface Props {
-  onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  onPlay: (event: React.MouseEvent<HTMLButtonElement>) => void;
   shouldSpin: boolean;
 }
 
-const PlayButton: React.FC<Props> = ({ onClick, shouldSpin }) => {
+const PlayButton: React.FC<Props> = ({ onPlay, shouldSpin }) => {
   const [showSpinning, setShowSpinning] = React.useState(false);
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>): void => {
-    onClick(event);
+    onPlay(event);
     setShowSpinning(true);
   };
 
