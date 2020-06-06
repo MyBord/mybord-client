@@ -25,8 +25,8 @@ interface Props extends PopoverProps {
 const PopoverAnimation = React.forwardRef<HTMLDivElement, Props>((
   {
     children,
-    gap,
     placement = 'right',
+    position,
     show,
   },
   ref,
@@ -40,7 +40,7 @@ const PopoverAnimation = React.forwardRef<HTMLDivElement, Props>((
             className={styles.div}
             exit="exit"
             initial="initial"
-            style={{ top: `${gap}rem`, [placement]: 0 }}
+            style={{ top: `${position.y}rem`, [placement]: `${position.x}rem` }}
             variants={variants}
           >
             {children}

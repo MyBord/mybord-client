@@ -12,7 +12,7 @@ const HeaderProfile: React.FC = () => {
       <ProfileButton onClick={() => setShowPopover((prevState) => !prevState)} />
       <Popover
         Content={HeaderProfilePopoverContent}
-        gap={9.0}
+        position={{ x: 1.375, y: 5.625 }}
         show={showPopover}
       />
     </>

@@ -3,4 +3,3 @@ Make sure to remove all notes before merging (except for this one, of course).
 ----------------------------------------------------------------------------------------------------
 remove ant popover component
 
-update popover so it listens for clicks outside of the content and the button
