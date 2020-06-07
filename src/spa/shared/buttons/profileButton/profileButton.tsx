@@ -6,10 +6,11 @@ interface Props {
   onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
-const ProfileButton: React.FC<Props> = ({ onClick }) => (
+const ProfileButton = React.forwardRef<HTMLButtonElement, Props>(({ onClick }, ref) => (
   <button
     className={styles.button}
     onClick={onClick}
+    ref={ref}
     type="button"
   >
     <Icon iconName="avatar" size={40} />
@@ -17,6 +18,6 @@ const ProfileButton: React.FC<Props> = ({ onClick }) => (
       <Icon iconName="downArrow" size={10} />
     </div>
   </button>
-);
+));
 
 export default ProfileButton;

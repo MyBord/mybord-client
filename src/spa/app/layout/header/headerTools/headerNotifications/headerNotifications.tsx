@@ -5,12 +5,18 @@ import HeaderNotificationsPopoverContent from './headerNotificationsPopoverConte
 
 const HeaderNotifications: React.FC = () => {
   const [showPopover, setShowPopover] = React.useState<boolean>(false);
+  const buttonRef = React.useRef<HTMLButtonElement>(null);
 
   return (
     <>
-      <NotificationsButton onClick={() => setShowPopover((prevState) => !prevState)} />
+      <NotificationsButton
+        onClick={() => setShowPopover((prevState) => !prevState)}
+        ref={buttonRef}
+      />
       <Popover
         Content={HeaderNotificationsPopoverContent}
+        node={buttonRef}
+        onHide={() => setShowPopover(false)}
         placement="right"
         position={{ x: 6.4375, y: 5.625 }}
         show={showPopover}
