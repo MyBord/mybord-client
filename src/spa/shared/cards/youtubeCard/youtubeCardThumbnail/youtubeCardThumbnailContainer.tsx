@@ -22,15 +22,13 @@ const YoutubeCardThumbnailContainer: React.FC<Props> = ({ cardId, youtubeVideoDa
 
   // Show the youtube video if the user has clicked the play button, the user is not in multi-edit
   // mode, and the user is not playing a different video.
-  const showYoutubePlayer =
-    hasPlayButtonBeenClicked
+  const showYoutubePlayer = hasPlayButtonBeenClicked
     && !canMultiEdit
     && cardId === activeCardId;
 
   // Show the youtube thumbnail if the youtube player has not yet been loaded OR another video
   // is playing OR the user is in multi-edit mode.
-  const showYoutubeThumbnail =
-    !isYoutubePlayerLoaded
+  const showYoutubeThumbnail = !isYoutubePlayerLoaded
     || cardId !== activeCardId
     || canMultiEdit;
 
@@ -44,8 +42,7 @@ const YoutubeCardThumbnailContainer: React.FC<Props> = ({ cardId, youtubeVideoDa
         />
       </YoutubePlayerAnimation>
       {
-        showYoutubePlayer
-        && (
+        showYoutubePlayer && (
           <YoutubePlayer
             setIsYoutubePlayerLoaded={setIsYoutubePlayerLoaded}
             youtubeVideoData={youtubeVideoData}
