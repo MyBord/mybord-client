@@ -6,12 +6,7 @@ interface Props {
   onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
-const ProfileButton = React.forwardRef<HTMLButtonElement, Props>((
-  {
-    onClick,
-  },
-  ref,
-) => (
+const ProfileButton = React.forwardRef<HTMLButtonElement, Props>(({ onClick }, ref) => (
   <button
     className={styles.button}
     onClick={onClick}
