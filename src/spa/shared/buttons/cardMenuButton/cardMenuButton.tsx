@@ -10,13 +10,11 @@ interface Props {
 const CardMenuButton: React.FC<Props> = ({ containerRef }) => {
   const [showMenu, setShowMenu] = React.useState<boolean>(false);
   const buttonRef = React.useRef<HTMLButtonElement>(null);
-  const popoverRef = React.useRef<HTMLDivElement>(null);
   const toggleMenu = (): void => setShowMenu((prevState) => !prevState);
 
   React.useEffect(() => {
     const buttonNode = buttonRef.current;
     const containerNode = containerRef.current;
-    const popoverNode = popoverRef.current;
 
     const handleMouseOver = (): void => {
       if (showMenu) { setShowMenu(true); }
@@ -31,25 +29,22 @@ const CardMenuButton: React.FC<Props> = ({ containerRef }) => {
     if (containerNode) {
       containerNode.addEventListener('mouseleave', handleMouseLeave);
     }
-    if (popoverNode) {
-      popoverNode.addEventListener('mouseover', handleMouseOver);
-    }
 
     return () => {
       buttonNode.removeEventListener('mouseover', handleMouseOver);
       containerNode.removeEventListener('mouseleave', handleMouseLeave);
-      popoverNode.removeEventListener('mouseover', handleMouseOver);
     };
-  }, [buttonRef, containerRef, popoverRef, showMenu]);
+  }, [buttonRef, containerRef, showMenu]);
 
   const buttonClassName = showMenu ? 'card-menu-button-show' : 'card-menu-button';
   return (
     <>
       <Popover
         Content={CardMenuButtonContent}
+        node={buttonRef}
+        onHide={() => setShowMenu(false)}
         position={{ x: 0, y: 2.5 }}
         show={showMenu}
-        ref={popoverRef}
       />
       <button
         className={[styles.button, buttonClassName].join(' ')}

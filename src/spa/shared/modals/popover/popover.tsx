@@ -4,36 +4,42 @@ import { PopoverProps } from 'types/modalTypes';
 
 interface Props extends PopoverProps {
   Content: React.FC;
-  // todo: make node required prop
-  node?: React.RefObject<HTMLElement>; // This is the node of the button that triggers the popover
+  node: React.RefObject<HTMLElement>;
+  onHide: () => void;
 }
 
-const Popover = React.forwardRef<HTMLDivElement, Props>((
-  {
-    Content,
-    node,
-    placement = 'right',
-    position = { x: 0, y: 0 },
-    show,
-  },
-  ref,
-) => {
-  const popoverRef = ref || React.useRef<HTMLDivElement>(null);
+const Popover: React.FC<Props> = ({
+  Content,
+  node,
+  onHide,
+  placement = 'right',
+  position = { x: 0, y: 0 },
+  show,
+}) => {
+  const popoverRef = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
     const buttonNode = node && node.current;
     const popoverNode = popoverRef.current;
 
-    const handleClick = (): void => console.log('parent button or popover was clicked.');
+    const handleClickOutside = (event: Event): void => {
+      if (
+        show
+        && popoverNode
+        && !popoverNode.contains(event.target as Node)
+        && buttonNode
+        && !buttonNode.contains(event.target as Node)
+      ) {
+        onHide();
+      }
+    }
 
-    // todo: add event listener that is not in button node and not in popover node
-    if (buttonNode) {
-      buttonNode.addEventListener('click', handleClick);
+    document.addEventListener('mousedown', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
     }
-    if (popoverNode) {
-      popoverNode.addEventListener('click', handleClick);
-    }
-  }, [node]);
+  }, [node, onHide, popoverRef, show]);
 
   return (
     <PopoverAnimation
@@ -45,6 +51,6 @@ const Popover = React.forwardRef<HTMLDivElement, Props>((
       <Content />
     </PopoverAnimation>
   );
-});
+};
 
 export default Popover;
