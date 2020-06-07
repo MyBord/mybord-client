@@ -10,7 +10,7 @@ const DashboardHeaderFilterFormContainer: React.FC = () => {
   const [createYoutubeCard] = useMutation(CREATE_YOUTUBE_CARD);
   const [inputErrorMessage, setInputErrorMessage] = React.useState(null);
   const [isSubmitWaiting, setIsSubmitWaiting] = React.useState(false);
-  const { canEdit, toggleEditStatus } = useCardContext();
+  const { canMultiEdit, toggleMultiEditStatus } = useCardContext();
 
   const handleSubmit = async (form: FormProp): Promise<void> => {
     try {
@@ -32,11 +32,11 @@ const DashboardHeaderFilterFormContainer: React.FC = () => {
 
   return (
     <DashboardHeaderFilterFormComponent
-      canEdit={canEdit}
+      canMultiEdit={canMultiEdit}
       errorMessage={inputErrorMessage}
       isWaiting={isSubmitWaiting}
       onSubmit={handleSubmit}
-      toggleEditStatus={toggleEditStatus}
+      toggleMultiEditStatus={toggleMultiEditStatus}
     />
   );
 };

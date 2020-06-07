@@ -11,17 +11,35 @@ interface Props {
 }
 
 const YoutubeCardThumbnailContainer: React.FC<Props> = ({ cardId, youtubeVideoData }) => {
-  const [showYoutubePlayer, setShowYoutubePlayer] = React.useState(false);
-  const [isYoutubePlayerLoaded, setIsYoutubePlayerLoaded] = React.useState(false);
-  const { activeCardId } = useCardContext();
+  const [hasPlayButtonBeenClicked, setHasPlayButtonBeenClicked] = React.useState<boolean>(false);
+  const [isYoutubePlayerLoaded, setIsYoutubePlayerLoaded] = React.useState<boolean>(false);
+  const { activeCardId, canMultiEdit, setActiveCardId } = useCardContext();
+
+  const handlePlay = (): void => {
+    setActiveCardId(cardId);
+    setHasPlayButtonBeenClicked(true);
+  };
+
+  // Show the youtube video if the user has clicked the play button, the user is not in multi-edit
+  // mode, and the user is not playing a different video.
+  const showYoutubePlayer =
+    hasPlayButtonBeenClicked
+    && !canMultiEdit
+    && cardId === activeCardId;
+
+  // Show the youtube thumbnail if the youtube player has not yet been loaded OR another video
+  // is playing OR the user is in multi-edit mode.
+  const showYoutubeThumbnail =
+    !isYoutubePlayerLoaded
+    || cardId !== activeCardId
+    || canMultiEdit;
 
   return (
     <>
-      <YoutubePlayerAnimation isYoutubePlayerLoaded={isYoutubePlayerLoaded}>
+      <YoutubePlayerAnimation showYoutubeThumbnail={showYoutubeThumbnail}>
         <YoutubeCardThumbnailComponent
-          cardId={cardId}
           isYoutubePlayerLoaded={isYoutubePlayerLoaded}
-          setShowYoutubePlayer={setShowYoutubePlayer}
+          onPlay={handlePlay}
           youtubeVideoData={youtubeVideoData}
         />
       </YoutubePlayerAnimation>

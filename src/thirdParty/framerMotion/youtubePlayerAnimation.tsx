@@ -4,12 +4,12 @@ import * as styles from './youtubePlayerAnimation.module.less';
 
 interface Props {
   children: React.ReactNode;
-  isYoutubePlayerLoaded: boolean;
+  showYoutubeThumbnail: boolean;
 }
 
-const YoutubePlayerAnimation: React.FC<Props> = ({ children, isYoutubePlayerLoaded }) => (
+const YoutubePlayerAnimation: React.FC<Props> = ({ children, showYoutubeThumbnail }) => (
   <AnimatePresence>
-    {!isYoutubePlayerLoaded && (
+    {showYoutubeThumbnail && (
     <motion.div
       animate={{ opacity: 1 }}
       className={styles.div}
