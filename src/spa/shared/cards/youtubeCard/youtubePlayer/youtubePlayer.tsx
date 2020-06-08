@@ -1,3 +1,5 @@
+// Source: https://developers.google.com/youtube/iframe_api_reference
+
 import * as React from 'react';
 import { YoutubeVideoData } from 'types/youtubeTypes';
 import * as styles from './youtubePlayer.module.less';
@@ -14,25 +16,30 @@ interface Props {
   youtubeVideoData: YoutubeVideoData;
 }
 
-const YoutubePlayer: React.FC<Props> = ({ setIsYoutubePlayerLoaded, youtubeVideoData }) => {
+const YoutubePlayer: React.FC<Props> = ({
+  setIsYoutubePlayerLoaded,
+  youtubeVideoData,
+}) => {
+  const [youtubePlayer, setYoutubePlayer] = React.useState<any>(null);
   const videoFrameId = `youtube-player-${youtubeVideoData.videoId}`;
 
-  const onPlayerReady = (event: { [key: string]: any }): void => {
-    setIsYoutubePlayerLoaded(true);
-    event.target.playVideo();
-  };
-
-  const loadVideo = (): void => {
-    // the Player object is created uniquely based on the videoId
-    const player = new window.YT.Player(videoFrameId, {
-      videoId: youtubeVideoData.videoId,
-      events: {
-        onReady: onPlayerReady,
-      },
-    });
-  };
-
   React.useEffect(() => {
+    const onPlayerReady = (event: { [key: string]: any }): void => {
+      setIsYoutubePlayerLoaded(true);
+      event.target.playVideo();
+    };
+
+    const loadVideo = (): void => {
+      // the Player object is created uniquely based on the videoId
+      const player = new window.YT.Player(videoFrameId, {
+        videoId: youtubeVideoData.videoId,
+        events: {
+          onReady: onPlayerReady,
+        },
+      });
+      setYoutubePlayer(player);
+    };
+
     // If not, load the script asynchronously
     if (!window.YT) {
       const tag = document.createElement('script');
@@ -46,7 +53,7 @@ const YoutubePlayer: React.FC<Props> = ({ setIsYoutubePlayerLoaded, youtubeVideo
     } else { // If script is already there, load the video directly
       loadVideo();
     }
-  }, []);
+  }, [setIsYoutubePlayerLoaded, videoFrameId, youtubeVideoData.videoId]);
 
   return (
     <div>
