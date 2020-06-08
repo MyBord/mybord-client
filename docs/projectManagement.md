@@ -13,6 +13,9 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
+  * when another video is clicked, pause the current video (youtubePlayer.pauseVide()), and then
+   timeout the unmounting of the player component
+  * turn on warnings for react hooks eslint
   * fix transition when you play another video, and current playing video shows thumbnail again,
   have there be a transition instead of directly mounting.
   * update popover so it listens for clicks outside of the content and the button
