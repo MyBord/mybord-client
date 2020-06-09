@@ -1,7 +1,6 @@
 // Source: https://developers.google.com/youtube/iframe_api_reference
 
 import * as React from 'react';
-import usePrevious from 'hooks/usePrevious';
 import { YoutubeVideoData } from 'types/youtubeTypes';
 import * as styles from './youtubePlayer.module.less';
 
@@ -12,19 +11,13 @@ declare global {
   }
 }
 
-interface ContainerProps {
-  showYoutubePlayer: boolean;
-  setIsYoutubePlayerLoaded: (isYoutubePlayerLoaded: boolean) => void;
-  youtubeVideoData: YoutubeVideoData;
-}
-
-interface ComponentProps {
+interface Props {
   setIsYoutubePlayerLoaded: (isYoutubePlayerLoaded: boolean) => void;
   shouldPauseYoutubeVideo: boolean;
   youtubeVideoData: YoutubeVideoData;
 }
 
-const YoutubePlayerComponent: React.FC<ComponentProps> = ({
+const YoutubePlayerComponent: React.FC<Props> = ({
   setIsYoutubePlayerLoaded,
   shouldPauseYoutubeVideo,
   youtubeVideoData,
@@ -81,38 +74,4 @@ const YoutubePlayerComponent: React.FC<ComponentProps> = ({
   );
 };
 
-const YoutubePlayerContainer: React.FC<ContainerProps> = ({
-  setIsYoutubePlayerLoaded,
-  showYoutubePlayer,
-  youtubeVideoData,
-}) => {
-  const [hasMounted, setHasMounted] = React.useState<boolean>(false);
-  const [shouldPauseYoutubeVideo, setShouldPauseYoutubeVideo] = React.useState<boolean>(false);
-  const [shouldRenderYoutubePlayer, setShouldRenderYoutubePlayer] = React.useState<boolean>(false);
-  const prevShowYoutubePlayer = usePrevious(showYoutubePlayer);
-
-  React.useEffect(() => {
-    if (showYoutubePlayer) {
-      setHasMounted(true);
-      setShouldPauseYoutubeVideo(false);
-      setShouldRenderYoutubePlayer(true);
-    }
-  }, [showYoutubePlayer]);
-
-  React.useEffect(() => {
-    if (prevShowYoutubePlayer !== showYoutubePlayer && !showYoutubePlayer && hasMounted) {
-      setShouldPauseYoutubeVideo(true);
-      setTimeout(() => setShouldRenderYoutubePlayer(false), 1000);
-    }
-  }, [hasMounted, prevShowYoutubePlayer, showYoutubePlayer]);
-
-  return shouldRenderYoutubePlayer && (
-    <YoutubePlayerComponent
-      setIsYoutubePlayerLoaded={setIsYoutubePlayerLoaded}
-      shouldPauseYoutubeVideo={shouldPauseYoutubeVideo}
-      youtubeVideoData={youtubeVideoData}
-    />
-  );
-};
-
-export default YoutubePlayerContainer;
+export default YoutubePlayerComponent;

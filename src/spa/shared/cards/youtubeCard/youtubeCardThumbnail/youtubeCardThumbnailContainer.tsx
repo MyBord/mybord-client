@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { YoutubeVideoData } from 'types/youtubeTypes';
 import YoutubePlayerAnimation from 'framerMotion/youtubePlayerAnimation';
+import YoutubePlayerContainer from 'cards/youtubeCard/youtubePlayer/youtubePlayerContainer';
 import { useCardContext } from 'context/cardContext';
 import YoutubeCardThumbnailComponent from './youtubeCardThumbnailComponent';
-import YoutubePlayer from '../youtubePlayer/youtubePlayer';
 
 interface Props {
   cardId: string;
@@ -41,7 +41,7 @@ const YoutubeCardThumbnailContainer: React.FC<Props> = ({ cardId, youtubeVideoDa
           youtubeVideoData={youtubeVideoData}
         />
       </YoutubePlayerAnimation>
-      <YoutubePlayer
+      <YoutubePlayerContainer
         setIsYoutubePlayerLoaded={setIsYoutubePlayerLoaded}
         showYoutubePlayer={showYoutubePlayer}
         youtubeVideoData={youtubeVideoData}
