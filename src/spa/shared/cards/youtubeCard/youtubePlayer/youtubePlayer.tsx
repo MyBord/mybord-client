@@ -11,13 +11,21 @@ declare global {
   }
 }
 
-interface Props {
+interface ContainerProps {
+  showYoutubePlayer: boolean;
   setIsYoutubePlayerLoaded: (isYoutubePlayerLoaded: boolean) => void;
   youtubeVideoData: YoutubeVideoData;
 }
 
-const YoutubePlayer: React.FC<Props> = ({
+interface ComponentProps {
+  setIsYoutubePlayerLoaded: (isYoutubePlayerLoaded: boolean) => void;
+  shouldPauseYoutubeVideo: boolean;
+  youtubeVideoData: YoutubeVideoData;
+}
+
+const YoutubePlayerComponent: React.FC<ComponentProps> = ({
   setIsYoutubePlayerLoaded,
+  shouldPauseYoutubeVideo,
   youtubeVideoData,
 }) => {
   const [youtubePlayer, setYoutubePlayer] = React.useState<any>(null);
@@ -53,7 +61,17 @@ const YoutubePlayer: React.FC<Props> = ({
     } else { // If script is already there, load the video directly
       loadVideo();
     }
-  }, [setIsYoutubePlayerLoaded, videoFrameId, youtubeVideoData.videoId]);
+  }, [
+    setIsYoutubePlayerLoaded,
+    videoFrameId,
+    youtubeVideoData.videoId,
+  ]);
+
+  React.useEffect(() => {
+    if (shouldPauseYoutubeVideo && youtubePlayer) {
+      youtubePlayer.pauseVideo();
+    }
+  }, [shouldPauseYoutubeVideo, youtubePlayer]);
 
   return (
     <div>
@@ -62,4 +80,27 @@ const YoutubePlayer: React.FC<Props> = ({
   );
 };
 
-export default YoutubePlayer;
+const YoutubePlayerContainer: React.FC<ContainerProps> = ({
+  setIsYoutubePlayerLoaded,
+  showYoutubePlayer,
+  youtubeVideoData,
+}) => {
+  const [shouldPauseYoutubeVideo, setShouldPauseYoutubeVideo] = React.useState<boolean>(false);
+
+  return (
+    <>
+      <button type="button" onClick={() => setShouldPauseYoutubeVideo(true)}>Pause</button>
+      {
+        showYoutubePlayer && (
+          <YoutubePlayerComponent
+            setIsYoutubePlayerLoaded={setIsYoutubePlayerLoaded}
+            shouldPauseYoutubeVideo={shouldPauseYoutubeVideo}
+            youtubeVideoData={youtubeVideoData}
+          />
+        )
+      }
+    </>
+  );
+};
+
+export default YoutubePlayerContainer;
