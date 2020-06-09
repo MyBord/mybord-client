@@ -1,6 +1,7 @@
 // Source: https://developers.google.com/youtube/iframe_api_reference
 
 import * as React from 'react';
+import usePrevious from 'hooks/usePrevious';
 import { YoutubeVideoData } from 'types/youtubeTypes';
 import * as styles from './youtubePlayer.module.less';
 
@@ -85,21 +86,32 @@ const YoutubePlayerContainer: React.FC<ContainerProps> = ({
   showYoutubePlayer,
   youtubeVideoData,
 }) => {
+  const [hasMounted, setHasMounted] = React.useState<boolean>(false);
   const [shouldPauseYoutubeVideo, setShouldPauseYoutubeVideo] = React.useState<boolean>(false);
+  const [shouldRenderYoutubePlayer, setShouldRenderYoutubePlayer] = React.useState<boolean>(false);
+  const prevShowYoutubePlayer = usePrevious(showYoutubePlayer);
 
-  return (
-    <>
-      <button type="button" onClick={() => setShouldPauseYoutubeVideo(true)}>Pause</button>
-      {
-        showYoutubePlayer && (
-          <YoutubePlayerComponent
-            setIsYoutubePlayerLoaded={setIsYoutubePlayerLoaded}
-            shouldPauseYoutubeVideo={shouldPauseYoutubeVideo}
-            youtubeVideoData={youtubeVideoData}
-          />
-        )
-      }
-    </>
+  React.useEffect(() => {
+    if (showYoutubePlayer) {
+      setHasMounted(true);
+      setShouldPauseYoutubeVideo(false);
+      setShouldRenderYoutubePlayer(true);
+    }
+  }, [showYoutubePlayer]);
+
+  React.useEffect(() => {
+    if (prevShowYoutubePlayer !== showYoutubePlayer && !showYoutubePlayer && hasMounted) {
+      setShouldPauseYoutubeVideo(true);
+      setTimeout(() => setShouldRenderYoutubePlayer(false), 1000);
+    }
+  }, [hasMounted, prevShowYoutubePlayer, showYoutubePlayer]);
+
+  return shouldRenderYoutubePlayer && (
+    <YoutubePlayerComponent
+      setIsYoutubePlayerLoaded={setIsYoutubePlayerLoaded}
+      shouldPauseYoutubeVideo={shouldPauseYoutubeVideo}
+      youtubeVideoData={youtubeVideoData}
+    />
   );
 };
 

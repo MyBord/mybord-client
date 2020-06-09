@@ -2,3 +2,5 @@
 Make sure to remove all notes before merging (except for this one, of course).
 ----------------------------------------------------------------------------------------------------
 split up youtube player components
+
+add comments explaining youtube player

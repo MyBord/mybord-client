@@ -34,14 +34,13 @@ const YoutubeCardThumbnailContainer: React.FC<Props> = ({ cardId, youtubeVideoDa
 
   return (
     <>
-      <button type="button" onClick={handlePlay}>Play Video</button>
-      {/* <YoutubePlayerAnimation showYoutubeThumbnail={showYoutubeThumbnail}> */}
-      {/*  <YoutubeCardThumbnailComponent */}
-      {/*    isYoutubePlayerLoaded={isYoutubePlayerLoaded} */}
-      {/*    onPlay={handlePlay} */}
-      {/*    youtubeVideoData={youtubeVideoData} */}
-      {/*  /> */}
-      {/* </YoutubePlayerAnimation> */}
+      <YoutubePlayerAnimation showYoutubeThumbnail={showYoutubeThumbnail}>
+        <YoutubeCardThumbnailComponent
+          isYoutubePlayerLoaded={isYoutubePlayerLoaded}
+          onPlay={handlePlay}
+          youtubeVideoData={youtubeVideoData}
+        />
+      </YoutubePlayerAnimation>
       <YoutubePlayer
         setIsYoutubePlayerLoaded={setIsYoutubePlayerLoaded}
         showYoutubePlayer={showYoutubePlayer}
