@@ -13,22 +13,27 @@ declare global {
 
 interface Props {
   setIsYoutubePlayerLoaded: (isYoutubePlayerLoaded: boolean) => void;
+  shouldPauseYoutubeVideo: boolean;
   youtubeVideoData: YoutubeVideoData;
 }
 
-const YoutubePlayer: React.FC<Props> = ({
+const YoutubePlayerComponent: React.FC<Props> = ({
   setIsYoutubePlayerLoaded,
+  shouldPauseYoutubeVideo,
   youtubeVideoData,
 }) => {
   const [youtubePlayer, setYoutubePlayer] = React.useState<any>(null);
   const videoFrameId = `youtube-player-${youtubeVideoData.videoId}`;
 
   React.useEffect(() => {
+    // When the player is ready, tell the thumbnail that the player is ready and that it can
+    // umnount, and begin playing the video.
     const onPlayerReady = (event: { [key: string]: any }): void => {
       setIsYoutubePlayerLoaded(true);
       event.target.playVideo();
     };
 
+    // Load the video to our window, and when ready, play it.
     const loadVideo = (): void => {
       // the Player object is created uniquely based on the videoId
       const player = new window.YT.Player(videoFrameId, {
@@ -40,7 +45,7 @@ const YoutubePlayer: React.FC<Props> = ({
       setYoutubePlayer(player);
     };
 
-    // If not, load the script asynchronously
+    // Load the youtube script if it doesn't exist
     if (!window.YT) {
       const tag = document.createElement('script');
       tag.src = 'https://www.youtube.com/iframe_api';
@@ -50,10 +55,22 @@ const YoutubePlayer: React.FC<Props> = ({
 
       const firstScriptTag = document.getElementsByTagName('script')[0];
       firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-    } else { // If script is already there, load the video directly
+    } else {
+      // If the youtube script is already there, load the video directly
       loadVideo();
     }
-  }, [setIsYoutubePlayerLoaded, videoFrameId, youtubeVideoData.videoId]);
+  }, [
+    setIsYoutubePlayerLoaded,
+    videoFrameId,
+    youtubeVideoData.videoId,
+  ]);
+
+  React.useEffect(() => {
+    // Pause the video if told to do so.
+    if (shouldPauseYoutubeVideo && youtubePlayer) {
+      youtubePlayer.pauseVideo();
+    }
+  }, [shouldPauseYoutubeVideo, youtubePlayer]);
 
   return (
     <div>
@@ -62,4 +79,4 @@ const YoutubePlayer: React.FC<Props> = ({
   );
 };
 
-export default YoutubePlayer;
+export default YoutubePlayerComponent;

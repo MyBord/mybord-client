@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import usePrevious from 'hooks/usePrevious';
-import * as styles from './youtubePlayerAnimation.module.less';
+import * as styles from './youtubeThumbnailAnimation.module.less';
 
 const variants = {
   firstAnimation: {
@@ -29,7 +29,7 @@ interface Props {
   showYoutubeThumbnail: boolean;
 }
 
-const YoutubePlayerAnimation: React.FC<Props> = ({ children, showYoutubeThumbnail }) => {
+const YoutubeThumbnailAnimation: React.FC<Props> = ({ children, showYoutubeThumbnail }) => {
   const [hasBeenAnimated, setHasBeenAnimated] = React.useState(false);
   const prevShow = usePrevious(showYoutubeThumbnail);
 
@@ -57,4 +57,4 @@ const YoutubePlayerAnimation: React.FC<Props> = ({ children, showYoutubeThumbnai
   );
 };
 
-export default YoutubePlayerAnimation;
+export default YoutubeThumbnailAnimation;
