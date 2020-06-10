@@ -1,4 +1,5 @@
 import * as React from 'react';
+import CardContentButtonsAnimation from 'framerMotion/cardContentButtonsAnimation';
 import CardMenuButton from 'buttons/cardMenuButton/cardMenuButton';
 import LikeButton from 'buttons/likeButton/likeButton';
 import { useCardContext } from 'context/cardContext';
@@ -24,18 +25,14 @@ const CardContent: React.FC<Props> = ({
 
   return (
     <div className={styles.container} ref={containerRef}>
-      {
-        showButtons && (
-          <div className={styles.buttonsContainer}>
-            <LikeButton
-              isLiked={isLiked}
-              onClick={setIsLiked}
-              size={25}
-            />
-            <CardMenuButton containerRef={containerRef} />
-          </div>
-        )
-      }
+      <CardContentButtonsAnimation showButtons={showButtons}>
+        <LikeButton
+          isLiked={isLiked}
+          onClick={setIsLiked}
+          size={25}
+        />
+        <CardMenuButton containerRef={containerRef} />
+      </CardContentButtonsAnimation>
       <Content />
     </div>
   );
