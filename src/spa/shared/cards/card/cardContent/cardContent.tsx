@@ -24,20 +24,18 @@ const CardContent: React.FC<Props> = ({
 
   return (
     <div className={styles.container} ref={containerRef}>
-      <div className={styles.buttonsContainer}>
-        {
-          showButtons && (
-            <>
-              <LikeButton
-                isLiked={isLiked}
-                onClick={setIsLiked}
-                size={25}
-              />
-              <CardMenuButton containerRef={containerRef} />
-            </>
-          )
-        }
-      </div>
+      {
+        showButtons && (
+          <div className={styles.buttonsContainer}>
+            <LikeButton
+              isLiked={isLiked}
+              onClick={setIsLiked}
+              size={25}
+            />
+            <CardMenuButton containerRef={containerRef} />
+          </div>
+        )
+      }
       <Content />
     </div>
   );
