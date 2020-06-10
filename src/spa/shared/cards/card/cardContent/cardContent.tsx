@@ -18,9 +18,9 @@ const CardContent: React.FC<Props> = ({
   setIsLiked,
 }) => {
   const containerRef = React.useRef(null);
-  const { activeCardId, canMultiEdit } = useCardContext();
+  const { activeCard, canMultiEdit } = useCardContext();
 
-  const showButtons = !canMultiEdit && activeCardId !== cardId;
+  const showButtons = !canMultiEdit && activeCard.id !== cardId;
 
   return (
     <div className={styles.container} ref={containerRef}>

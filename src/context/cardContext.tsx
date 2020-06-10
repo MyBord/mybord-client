@@ -1,8 +1,12 @@
 import * as React from 'react';
 
 interface CardState {
-  activeCardId: string; // which card is currently 'active', e.g. video is playing, article is
-  // open, note is open, music is playing, etc.
+  // which card is currently 'active', e.g. video is playing, article is open, note is open, music
+  // is playing, etc.
+  activeCard: {
+    id: string;
+    youtubePlayerIsLoaded: boolean;
+  };
   canMultiEdit: boolean; // can you edit multiple cards
   selectedCardIds: string[]; // which cards have been selected for multi-edit
   setActiveCardId: (cardId: string) => void;
@@ -11,7 +15,10 @@ interface CardState {
 }
 
 const initialCardState: CardState = {
-  activeCardId: null,
+  activeCard: {
+    id: null,
+    youtubePlayerIsLoaded: false,
+  },
   canMultiEdit: false,
   selectedCardIds: [],
   setActiveCardId: () => {},
@@ -22,9 +29,24 @@ const initialCardState: CardState = {
 const CardContext = React.createContext<CardState>(initialCardState);
 
 export const CardContextProvider = (props: object): React.ReactElement => {
-  const [activeCardId, setActiveCardId] = React.useState<string>(null);
-  const [canMultiEdit, setMultiEditStatus] = React.useState<boolean>(false);
-  const [selectedCardIds, setSelectedCardIds] = React.useState<string[]>([]);
+  const [
+    activeCard,
+    setActiveCard,
+  ] = React.useState<CardState['activeCard']>(initialCardState.activeCard);
+
+  const [
+    canMultiEdit,
+    setMultiEditStatus,
+  ] = React.useState<boolean>(initialCardState.canMultiEdit);
+
+  const [
+    selectedCardIds,
+    setSelectedCardIds,
+  ] = React.useState<string[]>(initialCardState.selectedCardIds);
+
+  const setActiveCardId = (cardId: string): void => {
+    setActiveCard((prevState) => ({ ...prevState, id: cardId }));
+  };
 
   const toggleMultiEditStatus = (): void => {
     setMultiEditStatus((prevState) => {
@@ -51,7 +73,7 @@ export const CardContextProvider = (props: object): React.ReactElement => {
   return (
     <CardContext.Provider
       value={{
-        activeCardId,
+        activeCard,
         canMultiEdit,
         selectedCardIds,
         setActiveCardId,
