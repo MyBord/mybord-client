@@ -35,6 +35,7 @@ const Card: React.FC<Props> = ({
       <CardOverlay cardId={cardId} />
       <CardContent
         Content={Content}
+        cardId={cardId}
         isLiked={isLiked}
         setIsLiked={() => setIsLiked((prevState) => !prevState)}
       />

@@ -6,23 +6,27 @@ import * as styles from './cardContent.module.less';
 
 interface Props {
   Content: React.FC;
+  cardId: string;
   isLiked: boolean;
   setIsLiked: () => void;
 }
 
 const CardContent: React.FC<Props> = ({
   Content,
+  cardId,
   isLiked,
   setIsLiked,
 }) => {
   const containerRef = React.useRef(null);
-  const { canMultiEdit } = useCardContext();
+  const { activeCardId, canMultiEdit } = useCardContext();
+
+  const showButtons = !canMultiEdit && activeCardId !== cardId;
 
   return (
     <div className={styles.container} ref={containerRef}>
       <div className={styles.buttonsContainer}>
         {
-          !canMultiEdit && (
+          showButtons && (
             <>
               <LikeButton
                 isLiked={isLiked}
