@@ -5,7 +5,6 @@ interface CardState {
   // is playing, etc.
   activeCard: {
     id: string;
-    youtubePlayerIsLoaded: boolean;
   };
   canMultiEdit: boolean; // can you edit multiple cards
   selectedCardIds: string[]; // which cards have been selected for multi-edit
@@ -17,7 +16,6 @@ interface CardState {
 const initialCardState: CardState = {
   activeCard: {
     id: null,
-    youtubePlayerIsLoaded: false,
   },
   canMultiEdit: false,
   selectedCardIds: [],
