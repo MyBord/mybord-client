@@ -33,7 +33,7 @@ const FormContent: React.FC<FormContentProps> = ({
       required
       requiredMessage="A url is required"
     >
-      <TextInput placeholder="youtube url" />
+      <TextInput overlayClassName={styles.input} placeholder="youtube url" />
     </FormItem>
     <FormItem fieldName="add-youtube-video-submit" form={form}>
       <Button

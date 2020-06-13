@@ -16,7 +16,6 @@ This document is used to outline current project management priorities.
   * fix card description height
   * when deleting a card, add a pop confirm / 'are you sure'
   * add ability to delete card
-  * make url input wider
   * when new card is added via subscription, add spinner
   * add subscription to videos
   * have session be remembered by user

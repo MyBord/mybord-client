@@ -7,6 +7,7 @@ interface Props {
   disabled?: boolean;
   onChange?: () => void;
   onPressEnter?: () => void;
+  overlayClassName?: string;
   placeholder?: string;
   type?: string;
   value?: string;
@@ -17,11 +18,13 @@ const TextInput: React.FC<Props> = ({
   disabled = false,
   onChange,
   onPressEnter,
+  overlayClassName = undefined,
   placeholder = null,
   type = 'text',
   value,
 }) => (
   <Input
+    className={overlayClassName}
     defaultValue={defaultValue}
     disabled={disabled}
     onChange={onChange}
