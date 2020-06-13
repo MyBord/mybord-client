@@ -13,23 +13,22 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
-  * fix card description height
-  * when deleting a card, add a pop confirm / 'are you sure'
-  * add ability to delete card
-  * when new card is added via subscription, add spinner
+  * Have youtube cards be restricted per user
+  * if a user has no cards:
+    * provide instructions on how to add a new card
+    * display that list is empty
   * add subscription to videos
+  * when new card is added via subscription, add spinner
+  * fix card height issues
+  * add ability to delete card
+  * when deleting a card, add a pop confirm / 'are you sure'
   * have session be remembered by user
-  * fix youtube card height issues
-  * Have youtube cards be restricted per user - if there are no cards, then provide instructions,
-    display that list is empty, etc
   * fix loading of image on landing page
   * add about page - for app and landing
   * replace coffee login image
   * replace error lottie
   * create transitions between login and about and error
-  * should display empty notification if user has no cards / when first
-    registers
-  * create error if server is down  
+  * create error page if server is down  
   * when error boundary is triggered, you get a white screen
   * when refreshing the dashboard, the spa fallback seems to be persisting for too long
 
