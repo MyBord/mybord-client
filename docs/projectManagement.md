@@ -13,8 +13,6 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
-  * turn on warnings for react hooks eslint
-  * don't show heart or menu buttons when youtube player is playing
   * fix card description height
   * when deleting a card, add a pop confirm / 'are you sure'
   * add ability to delete card

@@ -42,13 +42,13 @@ const FormContent: React.FC<FormContentProps> = ({
         label="Add Video"
       />
     </FormItem>
-    <FormItem fieldName="edit-cards" form={form}>
-      <Button
-        htmlType="button"
-        label={canMultiEdit ? 'Editing' : 'Edit'}
-        onClick={toggleMultiEditStatus}
-      />
-    </FormItem>
+    {/* <FormItem fieldName="edit-cards" form={form}> */}
+    {/*  <Button */}
+    {/*    htmlType="button" */}
+    {/*    label={canMultiEdit ? 'Editing' : 'Edit'} */}
+    {/*    onClick={toggleMultiEditStatus} */}
+    {/*  /> */}
+    {/* </FormItem> */}
   </div>
 );
 
