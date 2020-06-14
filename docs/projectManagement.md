@@ -13,6 +13,7 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
+  * why does api.ts have a timeout?
   * Have youtube cards be restricted per user
   * if a user has no cards:
     * provide instructions on how to add a new card
