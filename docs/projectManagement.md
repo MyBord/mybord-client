@@ -14,7 +14,6 @@ This document is used to outline current project management priorities.
 ### A. Highest - MVP
 
   * work on transition from no cards to card added
-  * add subscription to videos
   * when new card is added via subscription, add spinner
   * fix card height issues
   * add ability to delete card
