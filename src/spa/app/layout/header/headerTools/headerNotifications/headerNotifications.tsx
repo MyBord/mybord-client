@@ -14,7 +14,7 @@ const HeaderNotifications: React.FC = () => {
         ref={buttonRef}
       />
       <Popover
-        Content={HeaderNotificationsPopoverContent}
+        Content={<HeaderNotificationsPopoverContent />}
         node={buttonRef}
         onHide={() => setShowPopover(false)}
         placement="right"
@@ -22,7 +22,7 @@ const HeaderNotifications: React.FC = () => {
         show={showPopover}
       />
     </>
-  )
+  );
 };
 
 export default HeaderNotifications;

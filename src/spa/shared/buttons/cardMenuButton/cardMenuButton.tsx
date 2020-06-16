@@ -41,7 +41,7 @@ const CardMenuButton: React.FC<Props> = ({ cardId, containerRef }) => {
   return (
     <>
       <Popover
-        Content={CardMenuButtonContent}
+        Content={<CardMenuButtonContent />}
         node={buttonRef}
         onHide={() => setShowMenu(false)}
         position={{ x: 0, y: 2.5 }}

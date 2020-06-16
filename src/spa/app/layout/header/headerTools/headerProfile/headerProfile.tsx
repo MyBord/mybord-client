@@ -14,7 +14,7 @@ const HeaderProfile: React.FC = () => {
         ref={profileButtonRef}
       />
       <Popover
-        Content={HeaderProfilePopoverContent}
+        Content={<HeaderProfilePopoverContent />}
         node={profileButtonRef}
         onHide={() => setShowPopover(false)}
         position={{ x: 1.375, y: 5.625 }}

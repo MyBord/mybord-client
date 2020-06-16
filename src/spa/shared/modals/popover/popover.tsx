@@ -3,7 +3,7 @@ import PopoverAnimation from 'framerMotion/popoverAnimation';
 import { PopoverProps } from 'types/modalTypes';
 
 interface Props extends PopoverProps {
-  Content: React.FC;
+  Content: React.ReactNode;
   node: React.RefObject<HTMLElement>;
   onHide: () => void;
 }
@@ -32,13 +32,13 @@ const Popover: React.FC<Props> = ({
       ) {
         onHide();
       }
-    }
+    };
 
     document.addEventListener('mousedown', handleClickOutside);
 
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
-    }
+    };
   }, [node, onHide, popoverRef, show]);
 
   return (
@@ -48,7 +48,7 @@ const Popover: React.FC<Props> = ({
       ref={popoverRef}
       show={show}
     >
-      <Content />
+      {Content}
     </PopoverAnimation>
   );
 };
