@@ -25,8 +25,9 @@ const DashboardCards: React.FC<Props> = ({ userCards }) => {
     !deletedUserCardSubscription.loading
     && userCardsIds.includes(deletedUserCardSubscription.data.deletedUserCard.id)
   ) {
-    const index = userCards.indexOf(deletedUserCardSubscription.data.deletedUserCard.id);
+    const index = userCardsIds.indexOf(deletedUserCardSubscription.data.deletedUserCard.id);
     userCards.splice(index, 1);
+    // userCardsIds.splice(index, 1);
   }
 
   if (
@@ -34,6 +35,7 @@ const DashboardCards: React.FC<Props> = ({ userCards }) => {
     && !userCardsIds.includes(userCardSubscription.data.userCard.id)
   ) {
     userCards.push(userCardSubscription.data.userCard);
+    // userCardsIds.push(userCardSubscription.data.userCard.id);
   }
 
   if (userCards.length > 0) {
