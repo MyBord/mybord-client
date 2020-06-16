@@ -13,6 +13,7 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
+  * trying to delete card that was just added doesn't work
   * work on transition from no cards to card added
   * when new card is added via subscription, add spinner
   * fix card height issues
