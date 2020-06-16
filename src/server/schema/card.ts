@@ -28,6 +28,7 @@ export const CREATE_YOUTUBE_CARD = gql`
 export const USER_CARD_SUBSCRIPTION = gql`
   subscription userCard {
     userCard {
+      id
       type
       cardData{
         youtubeCardData{

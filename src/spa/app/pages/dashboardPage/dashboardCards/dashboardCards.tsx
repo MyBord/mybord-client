@@ -13,8 +13,9 @@ interface Props {
 
 const DashboardCards: React.FC<Props> = ({ userCards }) => {
   const { data, loading } = useSubscription(USER_CARD_SUBSCRIPTION);
+  const userCardsIds = userCards.map((userCard: UserCard) => userCard.id);
 
-  if (!loading) {
+  if (!loading && !userCardsIds.includes(data.userCard.id)) {
     userCards.push(data.userCard);
   }
 
