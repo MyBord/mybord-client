@@ -4,10 +4,11 @@ import CardMenuButtonContent from './cardMenuButtonContent';
 import * as styles from './cardMenuButton.module.less';
 
 interface Props {
+  cardId: string;
   containerRef: React.MutableRefObject<HTMLDivElement>;
 }
 
-const CardMenuButton: React.FC<Props> = ({ containerRef }) => {
+const CardMenuButton: React.FC<Props> = ({ cardId, containerRef }) => {
   const [showMenu, setShowMenu] = React.useState<boolean>(false);
   const buttonRef = React.useRef<HTMLButtonElement>(null);
   const toggleMenu = (): void => setShowMenu((prevState) => !prevState);

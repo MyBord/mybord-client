@@ -31,7 +31,7 @@ const CardContent: React.FC<Props> = ({
           onClick={setIsLiked}
           size={25}
         />
-        <CardMenuButton containerRef={containerRef} />
+        <CardMenuButton cardId={cardId} containerRef={containerRef} />
       </CardContentButtonsAnimation>
       <Content />
     </div>
