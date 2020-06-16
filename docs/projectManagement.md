@@ -14,10 +14,6 @@ This document is used to outline current project management priorities.
 ### A. Highest - MVP
 
   * work on transition from no cards to card added
-  * Have youtube cards be restricted per user
-  * if a user has no cards:
-    * provide instructions on how to add a new card
-    * display that list is empty
   * add subscription to videos
   * when new card is added via subscription, add spinner
   * fix card height issues
