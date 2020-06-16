@@ -1,12 +1,25 @@
 import * as React from 'react';
+import { useMutation } from '@apollo/react-hooks';
 import Checkbox from 'inputs/checkbox/checkbox';
 import Icon from 'icons/icon/icon';
 import Typography from 'typography/typography';
+import { DELETE_USER_CARD } from 'schema/card';
 import * as styles from './cardMenuButtonContent.module.less';
 
-const CardMenuButtonContent: React.FC = () => {
+interface Props {
+  cardId: string;
+}
+
+const CardMenuButtonContent: React.FC<Props> = ({ cardId }) => {
   const [isToDo, setIsToDo] = React.useState<boolean>(true);
+  const [deleteYoutubeCard] = useMutation(DELETE_USER_CARD);
   const toggleToDo = (): void => setIsToDo((prevState) => !prevState);
+
+  const handleDelete = async (): Promise<void> => {
+    await deleteYoutubeCard({
+      variables: { cardId },
+    });
+  };
 
   const DeleteIconContent: React.FC = () => (
     <div className={styles.iconDiv}>
@@ -53,7 +66,7 @@ const CardMenuButtonContent: React.FC = () => {
       <li className={styles.li}>
         <Typography
           Content={DeleteIconContent}
-          onClick={() => console.log('delete')}
+          onClick={handleDelete}
           size="two"
           text="delete"
         />
