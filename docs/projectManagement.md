@@ -23,6 +23,7 @@ This document is used to outline current project management priorities.
   * add about page - for app and landing
   * replace coffee login image
   * replace error lottie
+  * mark card as to do, and add filter in header
   * create transitions between login and about and error
   * create error page if server is down  
   * when error boundary is triggered, you get a white screen
