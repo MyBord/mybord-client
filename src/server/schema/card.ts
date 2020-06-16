@@ -25,6 +25,14 @@ export const CREATE_YOUTUBE_CARD = gql`
   }
 `;
 
+export const DELETED_USER_CARD_SUBSCRIPTION = gql`
+  subscription deletedUserCard {
+    deletedUserCard {
+      id
+    }
+  }
+`;
+
 export const DELETE_USER_CARD = gql`
   mutation deleteUserCard($cardId: String!) {
     deleteUserCard(data: {cardId: $cardId}) {
