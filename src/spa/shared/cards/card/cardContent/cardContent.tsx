@@ -1,6 +1,6 @@
 import * as React from 'react';
 import CardContentButtonsAnimation from 'framerMotion/cardContentButtonsAnimation';
-import CardMenuButton from 'buttons/cardMenuButton/cardMenuButton';
+import CardMenuButtonContainer from 'buttons/cardMenuButton/cardMenuButtonContainer';
 import LikeButton from 'buttons/likeButton/likeButton';
 import { useCardContext } from 'context/cardContext';
 import * as styles from './cardContent.module.less';
@@ -31,7 +31,7 @@ const CardContent: React.FC<Props> = ({
           onClick={setIsLiked}
           size={25}
         />
-        <CardMenuButton cardId={cardId} containerRef={containerRef} />
+        <CardMenuButtonContainer cardId={cardId} containerRef={containerRef} />
       </CardContentButtonsAnimation>
       <Content />
     </div>
