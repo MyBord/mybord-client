@@ -1,5 +1,4 @@
 import * as React from 'react';
-import PopConfirm from 'modals/popConfirm/popConfirm';
 import PopOver from 'modals/popOver/popOver';
 import CardMenuButtonContent from './cardMenuButtonContent';
 import * as styles from './cardMenuButton.module.less';
