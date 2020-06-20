@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { PopoverProps } from 'types/modalTypes';
-import * as styles from './popoverAnimation.module.less';
+import { PopOverProps } from 'types/modalTypes';
+import * as styles from './popOverAnimation.module.less';
 
 const variants = {
   initial: {
@@ -18,11 +18,11 @@ const variants = {
   },
 };
 
-interface Props extends PopoverProps {
+interface Props extends PopOverProps {
   children: React.ReactNode;
 }
 
-const PopoverAnimation = React.forwardRef<HTMLDivElement, Props>((
+const PopOverAnimation = React.forwardRef<HTMLDivElement, Props>((
   {
     children,
     placement = 'right',
@@ -31,7 +31,7 @@ const PopoverAnimation = React.forwardRef<HTMLDivElement, Props>((
   },
   ref,
 ) => {
-  const PopoverContent: React.FC = () => (
+  const PopOverContent: React.FC = () => (
     <AnimatePresence>
       {
         show && (
@@ -53,12 +53,12 @@ const PopoverAnimation = React.forwardRef<HTMLDivElement, Props>((
   if (ref) {
     return (
       <div ref={ref}>
-        <PopoverContent />
+        <PopOverContent />
       </div>
     );
   }
 
-  return <PopoverContent />;
+  return <PopOverContent />;
 });
 
-export default PopoverAnimation;
+export default PopOverAnimation;

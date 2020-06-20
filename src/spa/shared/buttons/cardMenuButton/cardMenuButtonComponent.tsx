@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Popover from 'modals/popover/popover';
+import PopOver from 'modals/popOver/popOver';
 import CardMenuButtonContent from './cardMenuButtonContent';
 import * as styles from './cardMenuButton.module.less';
 
@@ -19,7 +19,7 @@ const CardMenuButtonComponent: React.FC<Props> = ({
   const buttonClassName = showMenu ? 'card-menu-button-show' : 'card-menu-button';
   return (
     <>
-      <Popover
+      <PopOver
         Content={<CardMenuButtonContent cardId={cardId} />}
         node={buttonRef}
         onHide={() => setShowMenu(false)}
