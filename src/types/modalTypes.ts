@@ -1,4 +1,4 @@
-export interface PopoverProps {
+export interface PopOverProps {
   placement?: 'left' | 'right';
   position?: {
     x: number;

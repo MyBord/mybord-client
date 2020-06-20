@@ -1,24 +1,24 @@
 import * as React from 'react';
-import Popover from 'modals/popover/popover';
+import PopOver from 'modals/popOver/popOver';
 import ProfileButton from 'buttons/profileButton/profileButton';
-import HeaderProfilePopoverContent from './headerProfilePopoverContent';
+import HeaderProfilePopOverContent from './headerProfilePopOverContent';
 
 const HeaderProfile: React.FC = () => {
-  const [showPopover, setShowPopover] = React.useState<boolean>(false);
+  const [showPopOver, setShowPopOver] = React.useState<boolean>(false);
   const profileButtonRef = React.useRef<HTMLButtonElement>(null);
 
   return (
     <>
       <ProfileButton
-        onClick={() => setShowPopover((prevState) => !prevState)}
+        onClick={() => setShowPopOver((prevState) => !prevState)}
         ref={profileButtonRef}
       />
-      <Popover
-        Content={<HeaderProfilePopoverContent />}
+      <PopOver
+        Content={<HeaderProfilePopOverContent />}
         node={profileButtonRef}
-        onHide={() => setShowPopover(false)}
+        onHide={() => setShowPopOver(false)}
         position={{ x: 1.375, y: 5.625 }}
-        show={showPopover}
+        show={showPopOver}
       />
     </>
   );

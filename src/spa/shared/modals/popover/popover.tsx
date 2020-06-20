@@ -1,14 +1,14 @@
 import * as React from 'react';
-import PopoverAnimation from 'framerMotion/popoverAnimation';
-import { PopoverProps } from 'types/modalTypes';
+import PopOverAnimation from 'framerMotion/popOverAnimation';
+import { PopOverProps } from 'types/modalTypes';
 
-interface Props extends PopoverProps {
+interface Props extends PopOverProps {
   Content: React.ReactNode;
   node: React.RefObject<HTMLElement>;
   onHide: () => void;
 }
 
-const Popover: React.FC<Props> = ({
+const PopOver: React.FC<Props> = ({
   Content,
   node,
   onHide,
@@ -16,17 +16,17 @@ const Popover: React.FC<Props> = ({
   position = { x: 0, y: 0 },
   show,
 }) => {
-  const popoverRef = React.useRef<HTMLDivElement>(null);
+  const popOverRef = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
     const buttonNode = node && node.current;
-    const popoverNode = popoverRef.current;
+    const popOverNode = popOverRef.current;
 
     const handleClickOutside = (event: Event): void => {
       if (
         show
-        && popoverNode
-        && !popoverNode.contains(event.target as Node)
+        && popOverNode
+        && !popOverNode.contains(event.target as Node)
         && buttonNode
         && !buttonNode.contains(event.target as Node)
       ) {
@@ -39,18 +39,18 @@ const Popover: React.FC<Props> = ({
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [node, onHide, popoverRef, show]);
+  }, [node, onHide, popOverRef, show]);
 
   return (
-    <PopoverAnimation
+    <PopOverAnimation
       placement={placement}
       position={position}
-      ref={popoverRef}
+      ref={popOverRef}
       show={show}
     >
       {Content}
-    </PopoverAnimation>
+    </PopOverAnimation>
   );
 };
 
-export default Popover;
+export default PopOver;
