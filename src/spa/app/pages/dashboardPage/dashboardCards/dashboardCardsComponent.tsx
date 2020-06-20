@@ -1,43 +1,16 @@
 import * as React from 'react';
-import { useSubscription } from '@apollo/react-hooks';
 import Empty from 'icons/empty/empty';
 import PhantomCard from 'shared/cards/phantomCard/phantomCard';
 import Typography from 'typography/typography';
 import YoutubeCard from 'shared/cards/youtubeCard/youtubeCard';
-import {
-  DELETED_USER_CARD_SUBSCRIPTION,
-  USER_CARD_SUBSCRIPTION,
-  UserCard,
-  UserCardsQueryResponse,
-} from 'schema/card';
+import { UserCard, UserCardsQueryResponse } from 'schema/card';
 import * as styles from './dashboardCards.module.less';
 
 interface Props {
   userCards: UserCardsQueryResponse['userCards'];
 }
 
-const DashboardCards: React.FC<Props> = ({ userCards }) => {
-  const userCardSubscription = useSubscription(USER_CARD_SUBSCRIPTION);
-  const deletedUserCardSubscription = useSubscription(DELETED_USER_CARD_SUBSCRIPTION);
-  const userCardsIds = userCards.map((userCard: UserCard) => userCard.id);
-
-  if (
-    !deletedUserCardSubscription.loading
-    && userCardsIds.includes(deletedUserCardSubscription.data.deletedUserCard.id)
-  ) {
-    const index = userCardsIds.indexOf(deletedUserCardSubscription.data.deletedUserCard.id);
-    userCards.splice(index, 1);
-    // userCardsIds.splice(index, 1);
-  }
-
-  if (
-    !userCardSubscription.loading
-    && !userCardsIds.includes(userCardSubscription.data.userCard.id)
-  ) {
-    userCards.push(userCardSubscription.data.userCard);
-    // userCardsIds.push(userCardSubscription.data.userCard.id);
-  }
-
+const DashboardCardsComponent: React.FC<Props> = ({ userCards }) => {
   if (userCards.length > 0) {
     return (
       <section className={styles.section}>
@@ -74,4 +47,4 @@ const DashboardCards: React.FC<Props> = ({ userCards }) => {
   );
 };
 
-export default DashboardCards;
+export default DashboardCardsComponent;
