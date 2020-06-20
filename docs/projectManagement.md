@@ -13,20 +13,18 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
-  * trying to delete card that was just added doesn't work
   * clear youtube input after added
+  * alignment is off in header if there is an error message
+  * if you get an error message for the header input, and then submit, the error message does not
+   go away
+  * mark card as to do, and add filter in header
   * fix youtube cards where there is too much text
-  * work on transition from no cards to card added
-  * when new card is added via subscription, add spinner
-  * fix card height issues
-  * add ability to delete card
   * when deleting a card, add a pop confirm / 'are you sure'
   * have session be remembered by user
   * fix loading of image on landing page
   * add about page - for app and landing
   * replace coffee login image
   * replace error lottie
-  * mark card as to do, and add filter in header
   * create transitions between login and about and error
   * create error page if server is down  
   * when error boundary is triggered, you get a white screen

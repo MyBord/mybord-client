@@ -21,6 +21,7 @@ const DashboardHeaderFilterFormContainer: React.FC = () => {
         },
       });
       setIsSubmitWaiting(false);
+      form.resetFields(['add-youtube-video-input']);
     } catch (error) {
       setIsSubmitWaiting(false);
       const { message, status } = handleError(error);
