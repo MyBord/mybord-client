@@ -13,10 +13,6 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
-  * clear youtube input after added
-  * alignment is off in header if there is an error message
-  * if you get an error message for the header input, and then submit, the error message does not
-   go away
   * mark card as to do, and add filter in header
   * fix youtube cards where there is too much text
   * when deleting a card, add a pop confirm / 'are you sure'
