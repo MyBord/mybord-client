@@ -14,6 +14,7 @@ This document is used to outline current project management priorities.
 ### A. Highest - MVP
 
   * mark card as to do, and add filter in header
+  * mark card as favorite, and add filter in header
   * fix youtube cards where there is too much text
   * when deleting a card, add a pop confirm / 'are you sure'
   * have session be remembered by user
