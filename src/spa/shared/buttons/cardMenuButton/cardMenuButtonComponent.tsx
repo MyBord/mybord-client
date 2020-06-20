@@ -1,6 +1,6 @@
 import * as React from 'react';
 import PopOver from 'modals/popOver/popOver';
-import CardMenuButtonContent from './cardMenuButtonContent';
+import CardMenuButtonContent from './cardMenuButtonContent/cardMenuButtonContent';
 import * as styles from './cardMenuButton.module.less';
 
 interface Props {
