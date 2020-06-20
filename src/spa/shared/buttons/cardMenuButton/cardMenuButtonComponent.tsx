@@ -1,6 +1,6 @@
 import * as React from 'react';
 import PopOver from 'modals/popOver/popOver';
-import CardMenuButtonContent from './cardMenuButtonContent/cardMenuButtonContent';
+import CardMenuButtonContentContainer from './cardMenuButtonContent/cardMenuButtonContentContainer';
 import * as styles from './cardMenuButton.module.less';
 
 interface Props {
@@ -20,7 +20,7 @@ const CardMenuButtonComponent: React.FC<Props> = ({
   return (
     <>
       <PopOver
-        Content={<CardMenuButtonContent cardId={cardId} />}
+        Content={<CardMenuButtonContentContainer cardId={cardId} />}
         node={buttonRef}
         onHide={() => setShowMenu(false)}
         position={{ x: 0, y: 2.5 }}
