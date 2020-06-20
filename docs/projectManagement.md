@@ -75,6 +75,8 @@ This document is used to outline current project management priorities.
   * make spinner fade in and fade out
   * Have a button not spin until a certain time
   * create animation when logging out of app where modal pops up and a lock gets locked
+  * When you submit an invalid youtube url, you get an error message. If you then submit a valid
+   youtube url, that error message goes away, but not until it shows a double rendering / flash.
 
 ### D. Low
 
