@@ -9,7 +9,7 @@ interface Props {
 }
 
 const YoutubeCardDescription: React.FC<Props> = ({ youtubeVideoData }) => (
-  <div className={styles.container}>
+  <>
     <div className={styles.title}>
       <Typography
         maxTextLength={65}
@@ -55,7 +55,7 @@ const YoutubeCardDescription: React.FC<Props> = ({ youtubeVideoData }) => (
         />
       </div>
     </div>
-  </div>
+  </>
 );
 
 export default YoutubeCardDescription;

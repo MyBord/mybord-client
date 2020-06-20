@@ -15,6 +15,7 @@ This document is used to outline current project management priorities.
 
   * trying to delete card that was just added doesn't work
   * clear youtube input after added
+  * fix youtube cards where there is too much text
   * work on transition from no cards to card added
   * when new card is added via subscription, add spinner
   * fix card height issues
