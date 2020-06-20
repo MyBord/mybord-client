@@ -25,7 +25,7 @@ const FormContent: React.FC<FormContentProps> = ({
   isWaiting,
   toggleMultiEditStatus,
 }) => (
-  <div className={styles.div}>
+  <div className={styles.formContainer}>
     <FormItem
       errorMessage={errorMessage}
       fieldName="add-youtube-video-input"
@@ -35,13 +35,15 @@ const FormContent: React.FC<FormContentProps> = ({
     >
       <TextInput overlayClassName={styles.input} placeholder="youtube url" />
     </FormItem>
-    <FormItem fieldName="add-youtube-video-submit" form={form}>
-      <Button
-        htmlType="submit"
-        isWaiting={isWaiting}
-        label="Add Video"
-      />
-    </FormItem>
+    <div className={styles.buttonsContainer}>
+      <FormItem fieldName="add-youtube-video-submit" form={form}>
+        <Button
+          htmlType="submit"
+          isWaiting={isWaiting}
+          label="Add Video"
+        />
+      </FormItem>
+    </div>
     {/* <FormItem fieldName="edit-cards" form={form}> */}
     {/*  <Button */}
     {/*    htmlType="button" */}
