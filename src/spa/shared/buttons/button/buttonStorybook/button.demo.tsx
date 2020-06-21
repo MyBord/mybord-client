@@ -11,6 +11,8 @@ const ButtonDemo: React.FC = () => {
       <Button label="Primary Button" onClick={() => {}} />
       <h3 className={styles.h3}>-- Secondary Button --</h3>
       <Button label="Secondary Button" onClick={() => {}} type="secondary" />
+      <h3 className={styles.h3}>-- Small Button --</h3>
+      <Button label="OK" onClick={() => {}} size="small" />
       <h3 className={styles.h3}>-- Spinning Button --</h3>
       <Button
         isWaiting={isWaiting}

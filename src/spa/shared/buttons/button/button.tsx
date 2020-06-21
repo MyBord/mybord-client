@@ -12,6 +12,7 @@ interface Props {
   isWaiting?: boolean;
   label: string;
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  size?: 'small' | 'normal';
   type?: 'primary' | 'secondary';
 }
 
@@ -21,6 +22,7 @@ const Button: React.FC<Props> = ({
   isWaiting = false,
   label,
   onClick,
+  size = 'normal',
   type = 'primary',
 }) => (
   <AntButton
@@ -28,6 +30,7 @@ const Button: React.FC<Props> = ({
     htmlType={htmlType}
     loading={isWaiting}
     onClick={onClick}
+    size={size === 'normal' ? 'default' : size}
     type={type === 'primary' ? 'primary' : null}
   >
     {
