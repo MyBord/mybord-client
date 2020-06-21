@@ -4,18 +4,18 @@
 
 // Source: https://css-tricks.com/snippets/css/css-triangle/
 
-@caretSize: 10px;
+@caretSize: 0.625rem;
 
 .caret {
-  border-left: @caretSize solid transparent;
-  border-right: @caretSize solid transparent;
-  border-top: @caretSize solid @white;
   height: 0;
   position: absolute;
   width: 0;
 }
 
 .bottom {
+  border-left: @caretSize solid transparent;
+  border-right: @caretSize solid transparent;
+  border-top: @caretSize solid @white;
   bottom: -@caretSize;
 }
 
@@ -24,3 +24,17 @@
   transform: translateX(-50%);
 }
 
+.left {
+  left: 0.5rem;
+}
+
+.right {
+  right: 0.5rem;
+}
+
+.top {
+  border-left: @caretSize solid transparent;
+  border-right: @caretSize solid transparent;
+  border-bottom: @caretSize solid @white;
+  top: -@caretSize;
+}
