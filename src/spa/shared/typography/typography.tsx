@@ -1,13 +1,14 @@
 import * as React from 'react';
-import { Link } from 'react-router-dom';
 import { ExportedColors } from 'types/colorTypes';
 import {
   TypographyFont,
   TypographySize,
   TypographyWeight,
 } from 'types/typographyTypes';
+import TypographyButton from './typographyButton';
+import TypographyLink from './typographyLink';
+import TypographyParagraph from './typographyParagraph';
 import TypographyText from './typographyText';
-import * as styles from './typography.module.less';
 
 interface Props {
   Content?: React.FC;
@@ -43,51 +44,39 @@ const Typography: React.FC<Props> = ({
 
   if (link) {
     return (
-      <Link
-        className={[
-          styles.link,
-          styles.typography,
-          styles[font],
-          styles[size],
-          styles[weight],
-        ].join(' ')}
-        to={link}
+      <TypographyLink
+        font={font}
+        link={link}
+        size={size}
+        weight={weight}
       >
         {renderTypographyText()}
-      </Link>
+      </TypographyLink>
     );
   }
 
   if (onClick) {
     return (
-      <button
-        className={[
-          styles.button,
-          styles.typography,
-          styles[font],
-          styles[size],
-          styles[weight],
-        ].join(' ')}
-        type="button"
+      <TypographyButton
+        font={font}
         onClick={onClick}
+        size={size}
+        weight={weight}
       >
         {renderTypographyText()}
-      </button>
+      </TypographyButton>
     );
   }
 
   return (
-    <p
-      className={[
-        styles.typography,
-        styles[color],
-        styles[font],
-        styles[size],
-        styles[weight],
-      ].join(' ')}
+    <TypographyParagraph
+      color={color}
+      font={font}
+      size={size}
+      weight={weight}
     >
       {renderTypographyText()}
-    </p>
+    </TypographyParagraph>
   );
 };
 
