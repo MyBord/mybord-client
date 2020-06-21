@@ -1,18 +1,18 @@
 import * as React from 'react';
 import Icon from 'icons/icon/icon';
-import LikeButtonAnimation from 'framerMotion/likeButtonAnimation';
+import FavoriteButtonAnimation from 'framerMotion/favoriteButtonAnimation';
 import LottiePlayer from 'lotty/lottiePlayer';
 import animationData from 'lotty/lotties/fireworks.json';
-import * as styles from './likeButton.module.less';
+import * as styles from './favoriteButton.module.less';
 
 interface Props {
-  isLiked: boolean;
+  isFavorite: boolean;
   onClick: () => void;
   size: number;
 }
 
-const LikeButton: React.FC<Props> = ({
-  isLiked,
+const FavoriteButton: React.FC<Props> = ({
+  isFavorite,
   onClick,
   size,
 }) => {
@@ -37,11 +37,11 @@ const LikeButton: React.FC<Props> = ({
         <div className={styles.lottieDiv}>
           <LottiePlayer
             animationData={animationData}
-            isStopped={!isLiked}
+            isStopped={!isFavorite}
             size={size * 2}
           />
         </div>
-        <LikeButtonAnimation hasBeenClicked={hasBeenClicked} isLiked={isLiked}>
+        <FavoriteButtonAnimation hasBeenClicked={hasBeenClicked} isFavorite={isFavorite}>
           <Icon
             color="transparentWhite"
             fill="red"
@@ -54,10 +54,10 @@ const LikeButton: React.FC<Props> = ({
             iconName="heart"
             size={size}
           />
-        </LikeButtonAnimation>
+        </FavoriteButtonAnimation>
       </button>
     </div>
   );
 };
 
-export default LikeButton;
+export default FavoriteButton;

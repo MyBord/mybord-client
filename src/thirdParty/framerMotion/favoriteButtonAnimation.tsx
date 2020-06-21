@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import * as styles from './likeButtonAnimation.module.less';
+import * as styles from './favoriteButtonAnimation.module.less';
 
 interface Props {
   children: React.ReactNodeArray;
   hasBeenClicked: boolean;
-  isLiked: boolean;
+  isFavorite: boolean;
 }
 
 const variants = {
@@ -33,20 +33,20 @@ const variants = {
   },
 };
 
-const LikeButtonAnimation: React.FC<Props> = ({
+const FavoriteButtonAnimation: React.FC<Props> = ({
   children,
   hasBeenClicked,
-  isLiked,
+  isFavorite,
 }) => (
   <AnimatePresence>
     {
-      isLiked ? (
+      isFavorite ? (
         <motion.div
           animate="enter"
           className={styles.div}
           exit="exit"
           initial="initial"
-          key="liked"
+          key="favorited"
           variants={!hasBeenClicked ? variants.firstAnimation : variants.subsequentAnimations}
         >
           {children[0]}
@@ -57,7 +57,7 @@ const LikeButtonAnimation: React.FC<Props> = ({
           className={styles.div}
           exit="exit"
           initial="initial"
-          key="notLiked"
+          key="notFavorited"
           variants={!hasBeenClicked ? variants.firstAnimation : variants.subsequentAnimations}
         >
           {children[1]}
@@ -67,4 +67,4 @@ const LikeButtonAnimation: React.FC<Props> = ({
   </AnimatePresence>
 );
 
-export default LikeButtonAnimation;
+export default FavoriteButtonAnimation;

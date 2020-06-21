@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useMutation } from '@apollo/react-hooks';
 import CardContentButtonsAnimation from 'framerMotion/cardContentButtonsAnimation';
 import CardMenuButtonContainer from 'buttons/cardMenuButton/cardMenuButtonContainer';
-import LikeButton from 'buttons/likeButton/likeButton';
+import FavoriteButton from 'buttons/favoriteButton/favoriteButton';
 import { TOGGLE_FAVORITE_USER_CARD, UserCard } from 'schema/card';
 import { useCardContext } from 'context/cardContext';
 import * as styles from './cardContent.module.less';
@@ -35,8 +35,8 @@ const CardContent: React.FC<Props> = ({
   return (
     <div className={styles.container} ref={containerRef}>
       <CardContentButtonsAnimation showButtons={showButtons}>
-        <LikeButton
-          isLiked={isFavorite}
+        <FavoriteButton
+          isFavorite={isFavorite}
           onClick={handleFavorite}
           size={25}
         />
