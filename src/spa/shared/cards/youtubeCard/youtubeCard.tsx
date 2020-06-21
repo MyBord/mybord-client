@@ -1,28 +1,23 @@
 import * as React from 'react';
 import Card from 'cards/card/card';
-import { YoutubeVideoData } from 'types/youtubeTypes';
+import { UserCard } from 'schema/card';
 import YoutubeCardDescription from './youtubeCardDescription/youtubeCardDescription';
 import YoutubeCardThumbnailContainer from './youtubeCardThumbnail/youtubeCardThumbnailContainer';
 
 interface Props {
-  cardId: string;
-  youtubeVideoData: YoutubeVideoData;
+  userCard: UserCard;
 }
 
-const YoutubeCard: React.FC<Props> = ({ cardId, youtubeVideoData }) => {
-  const Content: React.FC = () => (
-    <YoutubeCardThumbnailContainer cardId={cardId} youtubeVideoData={youtubeVideoData} />
-  );
+const YoutubeCard: React.FC<Props> = ({ userCard }) => {
+  const Content: React.FC = () => <YoutubeCardThumbnailContainer userCard={userCard} />;
 
-  const Description: React.FC = () => (
-    <YoutubeCardDescription youtubeVideoData={youtubeVideoData} />
-  );
+  const Description: React.FC = () => <YoutubeCardDescription userCard={userCard} />;
 
   return (
     <Card
       Content={Content}
       Description={Description}
-      cardId={cardId}
+      userCard={userCard}
     />
   );
 };

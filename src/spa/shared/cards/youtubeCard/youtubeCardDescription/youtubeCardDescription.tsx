@@ -1,20 +1,20 @@
 import * as React from 'react';
 import Icon from 'icons/icon/icon';
 import Typography from 'typography/typography';
-import { YoutubeVideoData } from 'types/youtubeTypes';
+import { UserCard } from 'schema/card';
 import * as styles from './youtubeCardDescription.module.less';
 
 interface Props {
-  youtubeVideoData: YoutubeVideoData;
+  userCard: UserCard;
 }
 
-const YoutubeCardDescription: React.FC<Props> = ({ youtubeVideoData }) => (
+const YoutubeCardDescription: React.FC<Props> = ({ userCard }) => (
   <>
     <div className={styles.title}>
       <Typography
         maxTextLength={65}
         size="two"
-        text={youtubeVideoData.videoTitle}
+        text={userCard.cardData.youtubeCardData.videoTitle}
         weight="bold"
       />
     </div>
@@ -22,13 +22,13 @@ const YoutubeCardDescription: React.FC<Props> = ({ youtubeVideoData }) => (
       <img
         alt="channel icon"
         className={styles.channelIcon}
-        src={youtubeVideoData.channelThumbnail}
+        src={userCard.cardData.youtubeCardData.channelThumbnail}
       />
       <div className={styles.channelTitle}>
         <Typography
           maxTextLength={36}
           size="one"
-          text={youtubeVideoData.channelTitle}
+          text={userCard.cardData.youtubeCardData.channelTitle}
         />
       </div>
     </div>
@@ -37,21 +37,21 @@ const YoutubeCardDescription: React.FC<Props> = ({ youtubeVideoData }) => (
         <Icon iconName="thumbsUp" size={16} />
         <Typography
           size="one"
-          text={youtubeVideoData.likes}
+          text={userCard.cardData.youtubeCardData.likes}
         />
       </div>
       <div className={styles.statsDiv}>
         <Icon iconName="eye" size={16} />
         <Typography
           size="one"
-          text={youtubeVideoData.views}
+          text={userCard.cardData.youtubeCardData.views}
         />
       </div>
       <div className={styles.statsDiv}>
         <Icon iconName="calendar" size={16} />
         <Typography
           size="one"
-          text={youtubeVideoData.publishedAt}
+          text={userCard.cardData.youtubeCardData.publishedAt}
         />
       </div>
     </div>

@@ -1,22 +1,21 @@
 import * as React from 'react';
-import { YoutubeVideoData } from 'types/youtubeTypes';
+import { UserCard } from 'schema/card';
 import YoutubeThumbnailAnimation from 'framerMotion/youtubeThumbnailAnimation';
 import YoutubePlayerContainer from 'cards/youtubeCard/youtubePlayer/youtubePlayerContainer';
 import { useCardContext } from 'context/cardContext';
 import YoutubeCardThumbnailComponent from './youtubeCardThumbnailComponent';
 
 interface Props {
-  cardId: string;
-  youtubeVideoData: YoutubeVideoData;
+  userCard: UserCard;
 }
 
-const YoutubeCardThumbnailContainer: React.FC<Props> = ({ cardId, youtubeVideoData }) => {
+const YoutubeCardThumbnailContainer: React.FC<Props> = ({ userCard }) => {
   const [hasPlayButtonBeenClicked, setHasPlayButtonBeenClicked] = React.useState<boolean>(false);
   const [isYoutubePlayerLoaded, setIsYoutubePlayerLoaded] = React.useState<boolean>(false);
   const { activeCard, canMultiEdit, setActiveCardId } = useCardContext();
 
   const handlePlay = (): void => {
-    setActiveCardId(cardId);
+    setActiveCardId(userCard.id);
     setHasPlayButtonBeenClicked(true);
   };
 
@@ -24,12 +23,12 @@ const YoutubeCardThumbnailContainer: React.FC<Props> = ({ cardId, youtubeVideoDa
   // mode, and the user is not playing a different video.
   const showYoutubePlayer = hasPlayButtonBeenClicked
     && !canMultiEdit
-    && cardId === activeCard.id;
+    && userCard.id === activeCard.id;
 
   // Show the youtube thumbnail if the youtube player has not yet been loaded OR another video
   // is playing OR the user is in multi-edit mode.
   const showYoutubeThumbnail = !isYoutubePlayerLoaded
-    || cardId !== activeCard.id
+    || userCard.id !== activeCard.id
     || canMultiEdit;
 
   return (
@@ -38,13 +37,13 @@ const YoutubeCardThumbnailContainer: React.FC<Props> = ({ cardId, youtubeVideoDa
         <YoutubeCardThumbnailComponent
           isYoutubePlayerLoaded={isYoutubePlayerLoaded}
           onPlay={handlePlay}
-          youtubeVideoData={youtubeVideoData}
+          youtubeVideoData={userCard.cardData.youtubeCardData}
         />
       </YoutubeThumbnailAnimation>
       <YoutubePlayerContainer
         setIsYoutubePlayerLoaded={setIsYoutubePlayerLoaded}
         showYoutubePlayer={showYoutubePlayer}
-        youtubeVideoData={youtubeVideoData}
+        youtubeVideoData={userCard.cardData.youtubeCardData}
       />
     </>
   );

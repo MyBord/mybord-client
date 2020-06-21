@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { UserCard } from 'schema/card';
 import { useCardContext } from 'context/cardContext';
 import CardContent from './cardContent/cardContent';
 import CardDescription from './cardDescription/cardDescription';
@@ -12,18 +13,18 @@ import * as styles from './card.module.less';
 interface Props {
   Content: React.FC; // Main content of the card
   Description: React.FC; // Description portion of the card
-  cardId: string;
+  userCard: UserCard;
 }
 
 const Card: React.FC<Props> = ({
   Content,
   Description,
-  cardId,
+  userCard,
 }) => {
   const { selectedCardIds } = useCardContext();
   const [isLiked, setIsLiked] = React.useState<boolean>(false);
 
-  const isSelected = selectedCardIds.includes(cardId);
+  const isSelected = selectedCardIds.includes(userCard.id);
 
   return (
     <div
@@ -32,10 +33,10 @@ const Card: React.FC<Props> = ({
         isSelected ? styles.selectedContainer : undefined,
       ].join(' ')}
     >
-      <CardOverlay cardId={cardId} />
+      <CardOverlay cardId={userCard.id} />
       <CardContent
         Content={Content}
-        cardId={cardId}
+        cardId={userCard.id}
         isLiked={isLiked}
         setIsLiked={() => setIsLiked((prevState) => !prevState)}
       />

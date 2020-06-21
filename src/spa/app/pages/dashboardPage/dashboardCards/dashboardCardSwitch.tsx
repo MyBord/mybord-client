@@ -9,13 +9,7 @@ interface Props {
 const DashboardCardSwitch: React.FC<Props> = ({ userCard }) => {
   switch (userCard.type) {
     case 'Youtube':
-      return (
-        <YoutubeCard
-          key={userCard.id}
-          cardId={userCard.id}
-          youtubeVideoData={userCard.cardData.youtubeCardData}
-        />
-      );
+      return <YoutubeCard key={userCard.id} userCard={userCard} />;
     default:
       throw new Error('Invalid user card type.');
   }
