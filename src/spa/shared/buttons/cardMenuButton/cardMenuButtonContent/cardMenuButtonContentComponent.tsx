@@ -51,7 +51,9 @@ const CardMenuButtonContentComponent: React.FC<Props> = ({
           node={deleteButtonRef}
           onHide={onHidePopConfirm}
           position={{ x: 0, y: 4 }}
-          show={showPopConfirm}
+          // show={showPopConfirm}
+          show
+          text="Are you sure you want to delete?"
         />
         <Typography
           Content={DeleteIconContent}
