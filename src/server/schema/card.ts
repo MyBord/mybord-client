@@ -33,6 +33,15 @@ export const DELETE_USER_CARD = gql`
   }
 `;
 
+export const TOGGLE_FAVORITE_USER_CARD = gql`
+  mutation toggleFavoriteUserCard($cardId: String!) {
+    toggleFavoriteUserCard(data: {cardId: $cardId}) {
+      id
+      isFavorite
+    }
+  }
+`;
+
 // ----- QUERIES ----- //
 
 export const USER_CARDS_QUERY = gql`
