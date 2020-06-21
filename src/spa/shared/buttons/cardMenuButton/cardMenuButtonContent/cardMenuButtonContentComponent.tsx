@@ -6,9 +6,11 @@ import Typography from 'typography/typography';
 import * as styles from './cardMenuButtonContent.module.less';
 
 interface Props {
-  deleteButtonRef: React.RefObject<HTMLButtonElement>;
+  deleteButtonRef: React.RefObject<HTMLDivElement>;
   handleDelete: () => void;
   isToDo: boolean;
+  onHidePopConfirm: () => void;
+  showPopConfirm: boolean;
   toggleToDo: () => void;
 }
 
@@ -16,6 +18,8 @@ const CardMenuButtonContentComponent: React.FC<Props> = ({
   deleteButtonRef,
   handleDelete,
   isToDo,
+  onHidePopConfirm,
+  showPopConfirm,
   toggleToDo,
 }) => {
   const DeleteIconContent: React.FC = () => (
@@ -45,15 +49,14 @@ const CardMenuButtonContentComponent: React.FC<Props> = ({
         <PopOver
           Content={<h1>hello world</h1>}
           node={deleteButtonRef}
-          // onHide={() => setShow(false)}
-          onHide={() => {}}
+          onHide={onHidePopConfirm}
           position={{ x: 0, y: 4 }}
-          // show={show}
-          show
+          show={showPopConfirm}
         />
         <Typography
           Content={DeleteIconContent}
           onClick={handleDelete}
+          ref={deleteButtonRef}
           size="two"
           text="delete"
         />

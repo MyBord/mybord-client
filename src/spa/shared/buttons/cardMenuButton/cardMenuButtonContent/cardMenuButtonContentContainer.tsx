@@ -10,20 +10,26 @@ interface Props {
 const CardMenuButtonContentContainer: React.FC<Props> = ({ cardId }) => {
   const [deleteYoutubeCard] = useMutation(DELETE_USER_CARD);
   const [isToDo, setIsToDo] = React.useState<boolean>(true);
-  const deleteButtonRef = React.useRef<HTMLButtonElement>(null);
+  const [showPopConfirm, setShowPopConfirm] = React.useState<boolean>(false);
+  const deleteButtonRef = React.useRef<HTMLDivElement>(null);
   const toggleToDo = (): void => setIsToDo((prevState) => !prevState);
 
   const handleDelete = async (): Promise<void> => {
-    await deleteYoutubeCard({
-      variables: { cardId },
-    });
+    setShowPopConfirm(true);
+    // await deleteYoutubeCard({
+    //   variables: { cardId },
+    // });
   };
+
+  const onHidePopConfirm = (): void => setShowPopConfirm(false);
 
   return (
     <CardMenuButtonContentComponent
       deleteButtonRef={deleteButtonRef}
       handleDelete={handleDelete}
       isToDo={isToDo}
+      onHidePopConfirm={onHidePopConfirm}
+      showPopConfirm={showPopConfirm}
       toggleToDo={toggleToDo}
     />
   );
