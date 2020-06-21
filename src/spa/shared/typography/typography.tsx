@@ -1,13 +1,14 @@
 import * as React from 'react';
-import { Link } from 'react-router-dom';
 import { ExportedColors } from 'types/colorTypes';
 import {
   TypographyFont,
   TypographySize,
   TypographyWeight,
 } from 'types/typographyTypes';
+import TypographyButton from './typographyButton';
+import TypographyLink from './typographyLink';
+import TypographyParagraph from './typographyParagraph';
 import TypographyText from './typographyText';
-import * as styles from './typography.module.less';
 
 interface Props {
   Content?: React.FC;
@@ -22,7 +23,7 @@ interface Props {
   weight?: TypographyWeight;
 }
 
-const Typography: React.FC<Props> = ({
+const Typography = React.forwardRef<HTMLDivElement, Props>(({
   Content = null,
   color = 'black',
   font = 'poppins',
@@ -32,63 +33,57 @@ const Typography: React.FC<Props> = ({
   size = 'normal',
   text,
   weight = 'regular',
-}) => {
-  const renderTypographyText = (): React.ReactElement => (
-    <TypographyText
-      Content={Content}
-      maxTextLength={maxTextLength}
-      text={text}
-    />
-  );
+}, ref) => {
+  const Component: React.FC<{children: React.ReactNode}> = ({ children }) => {
+    if (link) {
+      return (
+        <TypographyLink
+          font={font}
+          link={link}
+          size={size}
+          weight={weight}
+        >
+          {children}
+        </TypographyLink>
+      );
+    }
 
-  if (link) {
-    return (
-      <Link
-        className={[
-          styles.link,
-          styles.typography,
-          styles[font],
-          styles[size],
-          styles[weight],
-        ].join(' ')}
-        to={link}
-      >
-        {renderTypographyText()}
-      </Link>
-    );
-  }
+    if (onClick) {
+      return (
+        <TypographyButton
+          font={font}
+          onClick={onClick}
+          size={size}
+          weight={weight}
+        >
+          {children}
+        </TypographyButton>
+      );
+    }
 
-  if (onClick) {
     return (
-      <button
-        className={[
-          styles.button,
-          styles.typography,
-          styles[font],
-          styles[size],
-          styles[weight],
-        ].join(' ')}
-        type="button"
-        onClick={onClick}
+      <TypographyParagraph
+        color={color}
+        font={font}
+        size={size}
+        weight={weight}
       >
-        {renderTypographyText()}
-      </button>
+        {children}
+      </TypographyParagraph>
     );
-  }
+  };
 
   return (
-    <p
-      className={[
-        styles.typography,
-        styles[color],
-        styles[font],
-        styles[size],
-        styles[weight],
-      ].join(' ')}
-    >
-      {renderTypographyText()}
-    </p>
+    <div ref={ref}>
+      <Component>
+        <TypographyText
+          Content={Content}
+          maxTextLength={maxTextLength}
+          text={text}
+        />
+      </Component>
+    </div>
   );
-};
+});
 
 export default Typography;
