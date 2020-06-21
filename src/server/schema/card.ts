@@ -1,7 +1,7 @@
 import gql from 'graphql-tag';
 import { YoutubeVideoData } from 'types/youtubeTypes';
 
-// ----- RESOLVERS ----- //
+// ----- MUTATIONS ----- //
 
 export const CREATE_YOUTUBE_CARD = gql`
   mutation createYoutubeCard($videoUrl: String!) {
@@ -25,14 +25,6 @@ export const CREATE_YOUTUBE_CARD = gql`
   }
 `;
 
-export const DELETED_USER_CARD_SUBSCRIPTION = gql`
-  subscription deletedUserCard {
-    deletedUserCard {
-      id
-    }
-  }
-`;
-
 export const DELETE_USER_CARD = gql`
   mutation deleteUserCard($cardId: String!) {
     deleteUserCard(data: {cardId: $cardId}) {
@@ -41,27 +33,7 @@ export const DELETE_USER_CARD = gql`
   }
 `;
 
-export const USER_CARD_SUBSCRIPTION = gql`
-  subscription userCard {
-    userCard {
-      id
-      type
-      cardData{
-        youtubeCardData{
-          channelThumbnail
-          channelTitle
-          duration
-          likes
-          publishedAt
-          videoId
-          videoThumbnail
-          videoTitle
-          views
-        }
-      }
-    }
-  }
-`;
+// ----- QUERIES ----- //
 
 export const USER_CARDS_QUERY = gql`
   query {
@@ -83,7 +55,40 @@ export const USER_CARDS_QUERY = gql`
           views
         }
       }
-    } 
+    }
+  }
+`;
+
+// ----- SUBSCRIPTIONS ----- //
+
+export const DELETED_USER_CARD_SUBSCRIPTION = gql`
+  subscription deletedUserCard {
+    deletedUserCard {
+      id
+    }
+  }
+`;
+
+
+export const USER_CARD_SUBSCRIPTION = gql`
+  subscription userCard {
+    userCard {
+      id
+      type
+      cardData{
+        youtubeCardData{
+          channelThumbnail
+          channelTitle
+          duration
+          likes
+          publishedAt
+          videoId
+          videoThumbnail
+          videoTitle
+          views
+        }
+      }
+    }
   }
 `;
 
