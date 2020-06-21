@@ -13,7 +13,7 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
-  * rename cards folder 'dashboardCards' and rename card 'dashboardCard'
+  * rename 'like button' to 'favorite button'
   * fix alignment with todo checkmark in card menu button content
   * when you delete a card, the pop confirm double renders - fix this
   * mark card as to do, and add filter in header

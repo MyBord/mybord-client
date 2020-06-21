@@ -22,8 +22,6 @@ const Card: React.FC<Props> = ({
   userCard,
 }) => {
   const { selectedCardIds } = useCardContext();
-  const [isLiked, setIsLiked] = React.useState<boolean>(false);
-
   const isSelected = selectedCardIds.includes(userCard.id);
 
   return (
@@ -34,12 +32,7 @@ const Card: React.FC<Props> = ({
       ].join(' ')}
     >
       <CardOverlay cardId={userCard.id} />
-      <CardContent
-        Content={Content}
-        cardId={userCard.id}
-        isLiked={isLiked}
-        setIsLiked={() => setIsLiked((prevState) => !prevState)}
-      />
+      <CardContent Content={Content} userCard={userCard} />
       <CardDescription Description={Description} />
       {/* <CardFooter /> */}
     </div>
