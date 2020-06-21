@@ -39,7 +39,8 @@ const CardMenuButtonContainer: React.FC<Props> = ({ cardId, containerRef }) => {
       buttonRef={buttonRef}
       cardId={cardId}
       setShowMenu={setShowMenu}
-      showMenu={showMenu}
+      // showMenu={showMenu}
+      showMenu
     />
   );
 };

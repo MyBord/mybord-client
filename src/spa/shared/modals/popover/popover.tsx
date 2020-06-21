@@ -48,6 +48,9 @@ const PopOver: React.FC<Props> = ({
       ref={popOverRef}
       show={show}
     >
+      <div className={styles.caret}>
+        foo bar
+      </div>
       {Content}
     </PopOverAnimation>
   );
