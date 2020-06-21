@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Checkbox from 'inputs/checkbox/checkbox';
 import Icon from 'icons/icon/icon';
+import PopConfirm from 'modals/popConfirm/popConfirm';
 import PopOver from 'modals/popOver/popOver';
 import Typography from 'typography/typography';
 import * as styles from './cardMenuButtonContent.module.less';
@@ -46,8 +47,7 @@ const CardMenuButtonContentComponent: React.FC<Props> = ({
         </div>
       </li>
       <li className={styles.li}>
-        <PopOver
-          Content={<h1>hello world</h1>}
+        <PopConfirm
           node={deleteButtonRef}
           onHide={onHidePopConfirm}
           position={{ x: 0, y: 4 }}
