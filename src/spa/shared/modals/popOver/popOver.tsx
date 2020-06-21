@@ -5,7 +5,13 @@ import * as styles from './popOver.module.less';
 
 interface Props extends PopOverProps {
   Content: React.ReactNode;
-  caretPosition?: 'bottom-center';
+  caretPosition?:
+    'bottom-center'
+    | 'bottom-left'
+    | 'bottom-right'
+    | 'top-center'
+    | 'top-left'
+    | 'top-right';
   node: React.RefObject<HTMLElement>;
   onHide: () => void;
 }
