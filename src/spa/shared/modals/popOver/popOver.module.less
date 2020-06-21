@@ -1,0 +1,26 @@
+@import "~styles/_colors";
+
+// ----- CARET STYLES ----- //
+
+// Source: https://css-tricks.com/snippets/css/css-triangle/
+
+@caretSize: 10px;
+
+.caret {
+  border-left: @caretSize solid transparent;
+  border-right: @caretSize solid transparent;
+  border-top: @caretSize solid @white;
+  height: 0;
+  position: absolute;
+  width: 0;
+}
+
+.bottom {
+  bottom: -@caretSize;
+}
+
+.center {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
