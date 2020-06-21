@@ -67,6 +67,8 @@ export const USER_CARDS_QUERY = gql`
   query {
     userCards{
       id
+      isFavorite
+      isToDo
       type
       cardData{
         youtubeCardData{
@@ -89,7 +91,9 @@ export const USER_CARDS_QUERY = gql`
 
 export interface UserCard {
   id: string;
-  type: string;
+  isFavorite: boolean;
+  isToDo: boolean;
+  type: 'Youtube';
   cardData: {
     youtubeCardData: YoutubeVideoData;
   };

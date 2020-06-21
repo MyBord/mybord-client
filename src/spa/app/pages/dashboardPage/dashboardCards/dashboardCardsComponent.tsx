@@ -2,8 +2,8 @@ import * as React from 'react';
 import Empty from 'icons/empty/empty';
 import PhantomCard from 'shared/cards/phantomCard/phantomCard';
 import Typography from 'typography/typography';
-import YoutubeCard from 'shared/cards/youtubeCard/youtubeCard';
 import { UserCard, UserCardsQueryResponse } from 'schema/card';
+import DashboardCardSwitch from './dashboardCardSwitch';
 import * as styles from './dashboardCards.module.less';
 
 interface Props {
@@ -15,13 +15,7 @@ const DashboardCardsComponent: React.FC<Props> = ({ userCards }) => {
     return (
       <section className={styles.section}>
         {
-          userCards.map((userCard: UserCard) => (
-            <YoutubeCard
-              key={userCard.id}
-              cardId={userCard.id}
-              youtubeVideoData={userCard.cardData.youtubeCardData}
-            />
-          ))
+          userCards.map((userCard: UserCard) => <DashboardCardSwitch userCard={userCard} />)
         }
         {
           // we create some phantom cards that do not appear visible but are rendered so that we can
