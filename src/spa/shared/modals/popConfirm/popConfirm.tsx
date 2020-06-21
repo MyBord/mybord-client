@@ -32,6 +32,7 @@ const PopConfirm: React.FC<Props> = ({
   return (
     <PopOver
       Content={<Content />}
+      caretPosition="bottom-center"
       node={node}
       onHide={onHide}
       placement={placement}

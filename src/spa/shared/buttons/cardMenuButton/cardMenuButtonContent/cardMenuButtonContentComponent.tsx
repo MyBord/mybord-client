@@ -50,7 +50,7 @@ const CardMenuButtonContentComponent: React.FC<Props> = ({
         <PopConfirm
           node={deleteButtonRef}
           onHide={onHidePopConfirm}
-          position={{ x: 0, y: 4 }}
+          position={{ x: -1, y: -4 }}
           // show={showPopConfirm}
           show
           text="Are you sure you want to delete?"
