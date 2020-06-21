@@ -15,20 +15,17 @@ const CardMenuButtonContentContainer: React.FC<Props> = ({ cardId }) => {
   const toggleToDo = (): void => setIsToDo((prevState) => !prevState);
 
   const handleDelete = async (): Promise<void> => {
-    setShowPopConfirm(true);
-    // await deleteYoutubeCard({
-    //   variables: { cardId },
-    // });
+    await deleteYoutubeCard({
+      variables: { cardId },
+    });
   };
-
-  const onHidePopConfirm = (): void => setShowPopConfirm(false);
 
   return (
     <CardMenuButtonContentComponent
       deleteButtonRef={deleteButtonRef}
       handleDelete={handleDelete}
       isToDo={isToDo}
-      onHidePopConfirm={onHidePopConfirm}
+      setShowPopConfirm={setShowPopConfirm}
       showPopConfirm={showPopConfirm}
       toggleToDo={toggleToDo}
     />

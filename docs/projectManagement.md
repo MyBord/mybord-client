@@ -14,6 +14,7 @@ This document is used to outline current project management priorities.
 ### A. Highest - MVP
 
   * fix alignment with todo checkmark in card menu button content
+  * when you delete a card, the pop confirm double renders - fix this
   * mark card as to do, and add filter in header
   * mark card as favorite, and add filter in header
   * fix youtube cards where there is too much text

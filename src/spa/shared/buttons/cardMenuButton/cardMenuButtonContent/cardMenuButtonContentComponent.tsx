@@ -9,7 +9,7 @@ interface Props {
   deleteButtonRef: React.RefObject<HTMLDivElement>;
   handleDelete: () => void;
   isToDo: boolean;
-  onHidePopConfirm: () => void;
+  setShowPopConfirm: (showPopConfirm: boolean) => void;
   showPopConfirm: boolean;
   toggleToDo: () => void;
 }
@@ -18,7 +18,7 @@ const CardMenuButtonContentComponent: React.FC<Props> = ({
   deleteButtonRef,
   handleDelete,
   isToDo,
-  onHidePopConfirm,
+  setShowPopConfirm,
   showPopConfirm,
   toggleToDo,
 }) => {
@@ -48,15 +48,15 @@ const CardMenuButtonContentComponent: React.FC<Props> = ({
       <li className={styles.li}>
         <PopConfirm
           node={deleteButtonRef}
-          onHide={onHidePopConfirm}
+          onConfirm={handleDelete}
+          onHide={() => setShowPopConfirm(false)}
           position={{ x: 1, y: -3.375 }}
-          // show={showPopConfirm}
-          show
+          show={showPopConfirm}
           text="Are you sure you want to delete?"
         />
         <Typography
           Content={DeleteIconContent}
-          onClick={handleDelete}
+          onClick={() => setShowPopConfirm(true)}
           ref={deleteButtonRef}
           size="two"
           text="delete"
