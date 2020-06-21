@@ -23,7 +23,7 @@ interface Props {
   weight?: TypographyWeight;
 }
 
-const Typography: React.FC<Props> = ({
+const Typography = React.forwardRef<HTMLDivElement, Props>(({
   Content = null,
   color = 'black',
   font = 'poppins',
@@ -33,51 +33,57 @@ const Typography: React.FC<Props> = ({
   size = 'normal',
   text,
   weight = 'regular',
-}) => {
-  const renderTypographyText = (): React.ReactElement => (
-    <TypographyText
-      Content={Content}
-      maxTextLength={maxTextLength}
-      text={text}
-    />
-  );
+}, ref) => {
+  const Component: React.FC<{children: React.ReactNode}> = ({ children }) => {
+    if (link) {
+      return (
+        <TypographyLink
+          font={font}
+          link={link}
+          size={size}
+          weight={weight}
+        >
+          {children}
+        </TypographyLink>
+      );
+    }
 
-  if (link) {
+    if (onClick) {
+      return (
+        <TypographyButton
+          font={font}
+          onClick={onClick}
+          size={size}
+          weight={weight}
+        >
+          {children}
+        </TypographyButton>
+      );
+    }
+
     return (
-      <TypographyLink
+      <TypographyParagraph
+        color={color}
         font={font}
-        link={link}
         size={size}
         weight={weight}
       >
-        {renderTypographyText()}
-      </TypographyLink>
+        {children}
+      </TypographyParagraph>
     );
-  }
-
-  if (onClick) {
-    return (
-      <TypographyButton
-        font={font}
-        onClick={onClick}
-        size={size}
-        weight={weight}
-      >
-        {renderTypographyText()}
-      </TypographyButton>
-    );
-  }
+  };
 
   return (
-    <TypographyParagraph
-      color={color}
-      font={font}
-      size={size}
-      weight={weight}
-    >
-      {renderTypographyText()}
-    </TypographyParagraph>
+    <div ref={ref}>
+      <Component>
+        <TypographyText
+          Content={Content}
+          maxTextLength={maxTextLength}
+          text={text}
+        />
+      </Component>
+    </div>
   );
-};
+});
 
 export default Typography;
