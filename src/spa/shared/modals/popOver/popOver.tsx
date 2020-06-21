@@ -1,15 +1,18 @@
 import * as React from 'react';
 import PopOverAnimation from 'framerMotion/popOverAnimation';
 import { PopOverProps } from 'types/modalTypes';
+import * as styles from './popOver.module.less';
 
 interface Props extends PopOverProps {
   Content: React.ReactNode;
+  caretPosition?: 'bottom-center';
   node: React.RefObject<HTMLElement>;
   onHide: () => void;
 }
 
 const PopOver: React.FC<Props> = ({
   Content,
+  caretPosition = null,
   node,
   onHide,
   placement = 'right',
@@ -48,6 +51,15 @@ const PopOver: React.FC<Props> = ({
       ref={popOverRef}
       show={show}
     >
+      {
+        caretPosition && (
+          <div className={[
+            styles.caret,
+            styles[caretPosition.split('-')[0]],
+            styles[caretPosition.split('-')[1]],
+          ].join(' ')} />
+        )
+      }
       {Content}
     </PopOverAnimation>
   );
