@@ -21,10 +21,10 @@ const PopConfirm: React.FC<Props> = ({
 }) => {
   const Content: React.FC = () => (
     <div className={styles.contentContainer}>
-      <Typography text={text} />
+      <Typography size="two" text={text} />
       <div className={styles.contentButtons}>
-        <Button label="Cancel" type="secondary" />
-        <Button label="OK" />
+        <Button label="No" size="small" type="secondary" />
+        <Button label="Yes" size="small" />
       </div>
     </div>
   );
