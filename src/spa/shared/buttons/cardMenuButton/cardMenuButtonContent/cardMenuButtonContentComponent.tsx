@@ -33,20 +33,16 @@ const CardMenuButtonContentComponent: React.FC<Props> = ({
     </div>
   );
 
-  const ToggleContent: React.FC = () => (
-    <Toggle
-      checked={isToDo}
-      onClick={() => console.log('foo')}
-      size="small"
-    />
-  );
-
   return (
     <ul className={styles.ul}>
       <li className={styles.li}>
         <div className={styles.toDoDiv}>
+          <Toggle
+            checked={isToDo}
+            onClick={toggleToDo}
+            size="small"
+          />
           <Typography
-            Content={ToggleContent}
             onClick={toggleToDo}
             size="two"
             text="to do"
