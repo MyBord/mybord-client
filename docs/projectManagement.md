@@ -13,6 +13,7 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
+  * if the favorite button starts in the favorite state, unfavoriting it still shows an animation
   * fix alignment with todo checkmark in card menu button content
   * when you delete a card, the pop confirm double renders - fix this
   * mark card as to do, and add filter in header
