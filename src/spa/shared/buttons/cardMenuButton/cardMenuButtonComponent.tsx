@@ -1,26 +1,27 @@
 import * as React from 'react';
 import PopOver from 'modals/popOver/popOver';
+import { UserCard } from 'schema/card';
 import CardMenuButtonContentContainer from './cardMenuButtonContent/cardMenuButtonContentContainer';
 import * as styles from './cardMenuButton.module.less';
 
 interface Props {
   buttonRef: React.RefObject<HTMLButtonElement>;
-  cardId: string;
   setShowMenu: (showMenu: boolean | ((prevState: boolean) => boolean)) => void;
   showMenu: boolean;
+  userCard: UserCard;
 }
 
 const CardMenuButtonComponent: React.FC<Props> = ({
   buttonRef,
-  cardId,
   setShowMenu,
   showMenu,
+  userCard,
 }) => {
   const buttonClassName = showMenu ? 'card-menu-button-show' : 'card-menu-button';
   return (
     <>
       <PopOver
-        Content={<CardMenuButtonContentContainer cardId={cardId} />}
+        Content={<CardMenuButtonContentContainer userCard={userCard} />}
         node={buttonRef}
         onHide={() => setShowMenu(false)}
         position={{ x: 0, y: 2.5 }}

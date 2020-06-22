@@ -40,7 +40,7 @@ const CardContent: React.FC<Props> = ({
           onClick={handleFavorite}
           size={25}
         />
-        <CardMenuButtonContainer cardId={userCard.id} containerRef={containerRef} />
+        <CardMenuButtonContainer containerRef={containerRef} userCard={userCard} />
       </CardContentButtonsAnimation>
       <Content />
     </div>

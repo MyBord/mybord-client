@@ -1,12 +1,13 @@
 import * as React from 'react';
+import { UserCard } from 'schema/card';
 import CardMenuButtonComponent from './cardMenuButtonComponent';
 
 interface Props {
-  cardId: string;
   containerRef: React.MutableRefObject<HTMLDivElement>;
+  userCard: UserCard;
 }
 
-const CardMenuButtonContainer: React.FC<Props> = ({ cardId, containerRef }) => {
+const CardMenuButtonContainer: React.FC<Props> = ({ containerRef, userCard }) => {
   const [showMenu, setShowMenu] = React.useState<boolean>(false);
   const buttonRef = React.useRef<HTMLButtonElement>(null);
 
@@ -37,9 +38,9 @@ const CardMenuButtonContainer: React.FC<Props> = ({ cardId, containerRef }) => {
   return (
     <CardMenuButtonComponent
       buttonRef={buttonRef}
-      cardId={cardId}
       setShowMenu={setShowMenu}
       showMenu={showMenu}
+      userCard={userCard}
     />
   );
 };

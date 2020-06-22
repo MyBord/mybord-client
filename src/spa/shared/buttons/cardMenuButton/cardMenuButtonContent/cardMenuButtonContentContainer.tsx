@@ -1,13 +1,13 @@
 import * as React from 'react';
 import { useMutation } from '@apollo/react-hooks';
-import { DELETE_USER_CARD } from 'schema/card';
+import { DELETE_USER_CARD, UserCard } from 'schema/card';
 import CardMenuButtonContentComponent from './cardMenuButtonContentComponent';
 
 interface Props {
-  cardId: string;
+  userCard: UserCard;
 }
 
-const CardMenuButtonContentContainer: React.FC<Props> = ({ cardId }) => {
+const CardMenuButtonContentContainer: React.FC<Props> = ({ userCard }) => {
   const [deleteYoutubeCard] = useMutation(DELETE_USER_CARD);
   const [isToDo, setIsToDo] = React.useState<boolean>(true);
   const [showPopConfirm, setShowPopConfirm] = React.useState<boolean>(false);
@@ -16,7 +16,7 @@ const CardMenuButtonContentContainer: React.FC<Props> = ({ cardId }) => {
 
   const handleDelete = async (): Promise<void> => {
     await deleteYoutubeCard({
-      variables: { cardId },
+      variables: { id: userCard.id },
     });
   };
 
