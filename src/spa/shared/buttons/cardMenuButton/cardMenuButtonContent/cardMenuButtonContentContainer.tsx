@@ -16,35 +16,26 @@ const CardMenuButtonContentContainer: React.FC<Props> = ({ userCard }) => {
 
   const handleDelete = async (): Promise<void> => {
     await deleteUserCard({
-      variables: { id: userCard.id },
+      variables: { cardId: userCard.id },
     });
   };
 
   const toggleToDo = async (): Promise<void> => {
     await toggleToDoUserCard({
-      variables: { id: userCard.id },
+      variables: { cardId: userCard.id },
     });
     setIsToDo((prevState) => !prevState);
   };
 
-  const handleClick = async (): Promise<void> => {
-    await toggleToDoUserCard({
-      variables: { id: userCard.id },
-    });
-  };
-
   return (
-    <>
-      <button type="button" onClick={handleClick}>Click Me</button>
-      <CardMenuButtonContentComponent
-        deleteButtonRef={deleteButtonRef}
-        handleDelete={handleDelete}
-        isToDo={isToDo}
-        setShowPopConfirm={setShowPopConfirm}
-        showPopConfirm={showPopConfirm}
-        toggleToDo={toggleToDo}
-      />
-    </>
+    <CardMenuButtonContentComponent
+      deleteButtonRef={deleteButtonRef}
+      handleDelete={handleDelete}
+      isToDo={isToDo}
+      setShowPopConfirm={setShowPopConfirm}
+      showPopConfirm={showPopConfirm}
+      toggleToDo={toggleToDo}
+    />
   );
 };
 
