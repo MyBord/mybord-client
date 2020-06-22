@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Switch } from 'antd';
-import './toggleButton.less';
+import './toggle.less';
 
 interface Props {
   checked: boolean;

@@ -1,7 +1,7 @@
 import * as React from 'react';
-import Checkbox from 'inputs/checkbox/checkbox';
 import Icon from 'icons/icon/icon';
 import PopConfirm from 'modals/popConfirm/popConfirm';
+import Toggle from 'inputs/toggle/toggle';
 import Typography from 'typography/typography';
 import * as styles from './cardMenuButtonContent.module.less';
 
@@ -33,12 +33,20 @@ const CardMenuButtonContentComponent: React.FC<Props> = ({
     </div>
   );
 
+  const ToggleContent: React.FC = () => (
+    <Toggle
+      checked={isToDo}
+      onClick={() => console.log('foo')}
+      size="small"
+    />
+  );
+
   return (
     <ul className={styles.ul}>
       <li className={styles.li}>
         <div className={styles.toDoDiv}>
-          <Checkbox checked={isToDo} onChange={toggleToDo} />
           <Typography
+            Content={ToggleContent}
             onClick={toggleToDo}
             size="two"
             text="to do"
