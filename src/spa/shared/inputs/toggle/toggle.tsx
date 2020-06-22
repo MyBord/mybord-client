@@ -8,7 +8,7 @@ interface Props {
   size?: 'large' | 'small';
 }
 
-const ToggleButton: React.FC<Props> = ({
+const Toggle: React.FC<Props> = ({
   checked,
   onClick,
   size = 'large',
@@ -20,4 +20,4 @@ const ToggleButton: React.FC<Props> = ({
   />
 );
 
-export default ToggleButton;
+export default Toggle;
