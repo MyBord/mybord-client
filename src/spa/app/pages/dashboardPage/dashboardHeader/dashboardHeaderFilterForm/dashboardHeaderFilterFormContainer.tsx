@@ -11,6 +11,7 @@ const DashboardHeaderFilterFormContainer: React.FC = () => {
   const [inputErrorMessage, setInputErrorMessage] = React.useState<string>(null);
   const [isSubmitWaiting, setIsSubmitWaiting] = React.useState<boolean>(false);
   const [showFilters, setShowFilters] = React.useState<boolean>(false);
+  const iconButtonRef = React.useRef<HTMLButtonElement>(null);
   const { canMultiEdit, toggleMultiEditStatus } = useCardContext();
 
   const handleSubmit = async (form: FormProp): Promise<void> => {
@@ -37,6 +38,7 @@ const DashboardHeaderFilterFormContainer: React.FC = () => {
     <DashboardHeaderFilterFormComponent
       canMultiEdit={canMultiEdit}
       errorMessage={inputErrorMessage}
+      iconButtonRef={iconButtonRef}
       isWaiting={isSubmitWaiting}
       onSubmit={handleSubmit}
       setShowFilters={setShowFilters}

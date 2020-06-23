@@ -12,6 +12,7 @@ interface FormContentProps {
   canMultiEdit: boolean;
   errorMessage: string;
   form?: FormProp;
+  iconButtonRef: React.RefObject<HTMLButtonElement>;
   isWaiting: boolean;
   setShowFilters: (showFilters: boolean | ((prevState: boolean) => boolean)) => void;
   showFilters: boolean;
@@ -26,6 +27,7 @@ const FormContent: React.FC<FormContentProps> = ({
   canMultiEdit,
   errorMessage,
   form,
+  iconButtonRef,
   isWaiting,
   setShowFilters,
   showFilters,
@@ -54,17 +56,17 @@ const FormContent: React.FC<FormContentProps> = ({
       <PopOver
         Content={<h1>hello world</h1>}
         caretPosition="top-center"
-        node={null}
+        node={iconButtonRef}
         onHide={() => setShowFilters(false)}
         position={{ x: 0, y: 3 }}
-        // show={showFilters}
-        show
+        show={showFilters}
       />
       <FormItem fieldName="filter" form={form}>
         <IconButton
           color="blue"
           iconName="filter"
-          onClick={() => console.log('foo')}
+          onClick={() => setShowFilters((prevState) => !prevState)}
+          ref={iconButtonRef}
           size={32}
         />
       </FormItem>
@@ -82,6 +84,7 @@ const FormContent: React.FC<FormContentProps> = ({
 const DashboardHeaderFilterFormComponent: React.FC<Props> = ({
   canMultiEdit,
   errorMessage,
+  iconButtonRef,
   isWaiting,
   onSubmit,
   setShowFilters,
@@ -92,6 +95,7 @@ const DashboardHeaderFilterFormComponent: React.FC<Props> = ({
     <FormContent
       canMultiEdit={canMultiEdit}
       errorMessage={errorMessage}
+      iconButtonRef={iconButtonRef}
       isWaiting={isWaiting}
       setShowFilters={setShowFilters}
       showFilters={showFilters}
