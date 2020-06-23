@@ -2,6 +2,7 @@ import * as React from 'react';
 import Button from 'buttons/button/button';
 import Form from 'forms/form/form';
 import FormItem from 'forms/formItem/formItem';
+import IconButton from 'icons/iconButton/iconButton';
 import TextInput from 'inputs/textInput/textInput';
 import { FormProp } from 'types/formTypes';
 import * as styles from './dashboardHeaderFilterForm.module.less';
@@ -41,6 +42,16 @@ const FormContent: React.FC<FormContentProps> = ({
           htmlType="submit"
           isWaiting={isWaiting}
           label="Add Video"
+        />
+      </FormItem>
+    </div>
+    <div className={styles.buttonsContainer}>
+      <FormItem fieldName="filter" form={form}>
+        <IconButton
+          color="blue"
+          iconName="filter"
+          onClick={() => console.log('foo')}
+          size={32}
         />
       </FormItem>
     </div>

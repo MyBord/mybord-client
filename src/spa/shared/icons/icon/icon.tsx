@@ -12,6 +12,7 @@ import DeleteIcon from './individualIcons/deleteIcon';
 import DownArrowIcon from './individualIcons/downArrowIcon';
 import EyeIcon from './individualIcons/eyeIcon';
 import FacebookIcon from './individualIcons/facebookIcon';
+import FilterIcon from './individualIcons/filterIcon';
 import GoogleIcon from './individualIcons/googleIcon';
 import HeartIcon from './individualIcons/heartIcon';
 import LogoutIcon from './individualIcons/logoutIcon';
@@ -38,6 +39,7 @@ export const iconNames = {
   downArrow: 'foo',
   eye: 'foo',
   facebook: 'foo',
+  filter: 'foo',
   google: 'foo',
   heart: 'foo',
   logout: 'foo',
@@ -87,6 +89,8 @@ const Icon: React.FC<IconProps> = ({
       return <EyeIcon size={size} />;
     case 'facebook':
       return <FacebookIcon size={size} />;
+    case 'filter':
+      return <FilterIcon color={color} size={size} />;
     case 'google':
       return <GoogleIcon size={size} />;
     case 'heart':
