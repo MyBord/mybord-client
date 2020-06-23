@@ -14,12 +14,9 @@ This document is used to outline current project management priorities.
 ### A. Highest - MVP
 
   * if the favorite button starts in the favorite state, unfavoriting it still shows an animation
-  * fix alignment with todo checkmark in card menu button content
   * when you delete a card, the pop confirm double renders - fix this
-  * mark card as to do, and add filter in header
-  * mark card as favorite, and add filter in header
+  * add filter in header for todo and favorite
   * fix youtube cards where there is too much text
-  * when deleting a card, add a pop confirm / 'are you sure'
   * have session be remembered by user
   * fix loading of image on landing page
   * add about page - for app and landing
