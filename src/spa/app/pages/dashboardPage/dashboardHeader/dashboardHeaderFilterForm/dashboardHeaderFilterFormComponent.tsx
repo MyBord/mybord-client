@@ -3,6 +3,7 @@ import Button from 'buttons/button/button';
 import Form from 'forms/form/form';
 import FormItem from 'forms/formItem/formItem';
 import IconButton from 'icons/iconButton/iconButton';
+import PopOver from 'modals/popover/popOver';
 import TextInput from 'inputs/textInput/textInput';
 import { FormProp } from 'types/formTypes';
 import * as styles from './dashboardHeaderFilterForm.module.less';
@@ -12,6 +13,8 @@ interface FormContentProps {
   errorMessage: string;
   form?: FormProp;
   isWaiting: boolean;
+  setShowFilters: (showFilters: boolean | ((prevState: boolean) => boolean)) => void;
+  showFilters: boolean;
   toggleMultiEditStatus: () => void;
 }
 
@@ -24,6 +27,8 @@ const FormContent: React.FC<FormContentProps> = ({
   errorMessage,
   form,
   isWaiting,
+  setShowFilters,
+  showFilters,
   toggleMultiEditStatus,
 }) => (
   <div className={styles.formContainer}>
@@ -46,6 +51,15 @@ const FormContent: React.FC<FormContentProps> = ({
       </FormItem>
     </div>
     <div className={styles.buttonsContainer}>
+      <PopOver
+        Content={<h1>hello world</h1>}
+        caretPosition="top-center"
+        node={null}
+        onHide={() => setShowFilters(false)}
+        position={{ x: 0, y: 3 }}
+        // show={showFilters}
+        show
+      />
       <FormItem fieldName="filter" form={form}>
         <IconButton
           color="blue"
@@ -70,6 +84,8 @@ const DashboardHeaderFilterFormComponent: React.FC<Props> = ({
   errorMessage,
   isWaiting,
   onSubmit,
+  setShowFilters,
+  showFilters,
   toggleMultiEditStatus,
 }) => (
   <Form onSubmit={onSubmit}>
@@ -77,6 +93,8 @@ const DashboardHeaderFilterFormComponent: React.FC<Props> = ({
       canMultiEdit={canMultiEdit}
       errorMessage={errorMessage}
       isWaiting={isWaiting}
+      setShowFilters={setShowFilters}
+      showFilters={showFilters}
       toggleMultiEditStatus={toggleMultiEditStatus}
     />
   </Form>

@@ -8,8 +8,9 @@ import DashboardHeaderFilterFormComponent from './dashboardHeaderFilterFormCompo
 
 const DashboardHeaderFilterFormContainer: React.FC = () => {
   const [createYoutubeCard] = useMutation(CREATE_YOUTUBE_CARD);
-  const [inputErrorMessage, setInputErrorMessage] = React.useState(null);
-  const [isSubmitWaiting, setIsSubmitWaiting] = React.useState(false);
+  const [inputErrorMessage, setInputErrorMessage] = React.useState<string>(null);
+  const [isSubmitWaiting, setIsSubmitWaiting] = React.useState<boolean>(false);
+  const [showFilters, setShowFilters] = React.useState<boolean>(false);
   const { canMultiEdit, toggleMultiEditStatus } = useCardContext();
 
   const handleSubmit = async (form: FormProp): Promise<void> => {
@@ -38,6 +39,8 @@ const DashboardHeaderFilterFormContainer: React.FC = () => {
       errorMessage={inputErrorMessage}
       isWaiting={isSubmitWaiting}
       onSubmit={handleSubmit}
+      setShowFilters={setShowFilters}
+      showFilters={showFilters}
       toggleMultiEditStatus={toggleMultiEditStatus}
     />
   );
