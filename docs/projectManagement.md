@@ -13,6 +13,7 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
+  * update toggle component to handle text
   * if the favorite button starts in the favorite state, unfavoriting it still shows an animation
   * when you delete a card, the pop confirm double renders - fix this
   * add filter in header for todo and favorite
