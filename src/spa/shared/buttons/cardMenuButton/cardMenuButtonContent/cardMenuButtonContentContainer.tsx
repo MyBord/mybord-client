@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useMutation } from '@apollo/react-hooks';
-import { DELETE_USER_CARD, TOGGLE_TO_DO_USER_CARD, TOGGLE_FAVORITE_USER_CARD, UserCard } from 'schema/card';
+import { DELETE_USER_CARD, TOGGLE_TO_DO_USER_CARD, UserCard } from 'schema/card';
 import CardMenuButtonContentComponent from './cardMenuButtonContentComponent';
 
 interface Props {
@@ -21,10 +21,15 @@ const CardMenuButtonContentContainer: React.FC<Props> = ({ userCard }) => {
   };
 
   const toggleToDo = async (): Promise<void> => {
-    await toggleToDoUserCard({
-      variables: { cardId: userCard.id },
-    });
     setIsToDo((prevState) => !prevState);
+    try {
+      await toggleToDoUserCard({
+        variables: { cardId: userCard.id },
+      });
+    } catch (error) {
+      setIsToDo((prevState) => !prevState);
+      throw new Error(error);
+    }
   };
 
   return (

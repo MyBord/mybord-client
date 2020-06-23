@@ -44,7 +44,7 @@ export const TOGGLE_FAVORITE_USER_CARD = gql`
 
 export const TOGGLE_TO_DO_USER_CARD = gql`
   mutation toggleToDoUserCard($cardId: String!) {
-    toggleToDoUserCard(data: {cardId: $foo}) {
+    toggleToDoUserCard(data: {cardId: $cardId}) {
       id
       isToDo
     }
