@@ -23,7 +23,6 @@ const IconButton: React.FC<Props> = ({
     onClick={onClick}
   >
     <Icon
-      color={color}
       fill={fill}
       iconName={iconName}
       strokeWidth={strokeWidth}

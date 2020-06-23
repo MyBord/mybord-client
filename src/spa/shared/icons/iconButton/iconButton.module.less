@@ -1,5 +1,20 @@
 @import "~styles/_colors";
 
+.blue {
+  > svg {
+    * {
+      stroke: @blue;
+    }
+  }
+  &:hover {
+    > svg {
+      * {
+        stroke: @darkBlue;
+      }
+    }
+  }
+}
+
 .button {
   background: transparent;
   border: none;
@@ -11,8 +26,10 @@
 
 .white {
   &:hover {
-    > svg > g > line {
-      stroke: @transparentWhiteThreeQuarterOpacity;
+    > svg {
+      * {
+        stroke: @transparentWhiteThreeQuarterOpacity;
+      }
     }
   }
 }
