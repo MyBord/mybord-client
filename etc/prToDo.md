@@ -2,3 +2,5 @@
 Make sure to remove all notes before merging (except for this one, of course).
 ----------------------------------------------------------------------------------------------------
 refactor state management of dashboard header filter form container and component?
+
+see note in dashboard header filter form .module .less

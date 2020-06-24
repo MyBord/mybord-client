@@ -1,6 +1,5 @@
 import * as React from 'react';
 import Toggle from 'inputs/toggle/toggle';
-import Typography from 'typography/typography';
 
 const DashboardFilterContent: React.FC = () => {
   const [isFavoriteFilter, setIsFavoriteFilter] = React.useState<boolean>(false);
@@ -15,32 +14,24 @@ const DashboardFilterContent: React.FC = () => {
   };
 
   return (
-    <div>
-      <div>
+    <ul>
+      <li>
         <Toggle
           checked={isFavoriteFilter}
           onClick={handleToggleFavoriteFilter}
           size="small"
-        />
-        <Typography
-          onClick={handleToggleFavoriteFilter}
-          size="two"
           text="Favorites"
         />
-      </div>
-      <div>
+      </li>
+      <li>
         <Toggle
           checked={isToDoFilter}
           onClick={handleToggleToDoFilter}
           size="small"
-        />
-        <Typography
-          onClick={handleToggleToDoFilter}
-          size="two"
           text="To Do"
         />
-      </div>
-    </div>
+      </li>
+    </ul>
   );
 };
 

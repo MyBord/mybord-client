@@ -6,6 +6,7 @@ import IconButton from 'icons/iconButton/iconButton';
 import PopOver from 'modals/popover/popOver';
 import TextInput from 'inputs/textInput/textInput';
 import { FormProp } from 'types/formTypes';
+import DashboardFilterContent from './dashboardFilterContent/dashboardFilterContent';
 import * as styles from './dashboardHeaderFilterForm.module.less';
 
 interface FormContentProps {
@@ -54,7 +55,7 @@ const FormContent: React.FC<FormContentProps> = ({
     </div>
     <div className={styles.buttonsContainer}>
       <PopOver
-        Content={<h1>hello world</h1>}
+        Content={<DashboardFilterContent />}
         caretPosition="top-center"
         node={iconButtonRef}
         onHide={() => setShowFilters(false)}
