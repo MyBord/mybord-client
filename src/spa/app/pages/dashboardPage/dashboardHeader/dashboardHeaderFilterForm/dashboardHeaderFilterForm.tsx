@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { useMutation } from '@apollo/react-hooks';
+import Form from 'forms/form/form';
 import handleError from 'server/errors/handleError';
 import { CREATE_YOUTUBE_CARD } from 'schema/card';
 import { FormProp } from 'types/formTypes';
@@ -31,11 +32,12 @@ const DashboardHeaderFilterForm: React.FC = () => {
   };
 
   return (
-    <DashboardHeaderFilterFormContent
-      errorMessage={inputErrorMessage}
-      isWaiting={isSubmitWaiting}
-      onSubmit={handleSubmit}
-    />
+    <Form onSubmit={handleSubmit}>
+      <DashboardHeaderFilterFormContent
+        errorMessage={inputErrorMessage}
+        isWaiting={isSubmitWaiting}
+      />
+    </Form>
   );
 };
 

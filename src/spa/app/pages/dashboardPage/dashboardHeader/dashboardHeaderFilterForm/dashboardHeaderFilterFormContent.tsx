@@ -1,6 +1,5 @@
 import * as React from 'react';
 import Button from 'buttons/button/button';
-import Form from 'forms/form/form';
 import FormItem from 'forms/formItem/formItem';
 import IconButton from 'icons/iconButton/iconButton';
 import PopOver from 'modals/popOver/popOver';
@@ -10,17 +9,13 @@ import { useCardContext } from 'context/cardContext';
 import DashboardFilterContent from './dashboardFilterContent/dashboardFilterContent';
 import * as styles from './dashboardHeaderFilterForm.module.less';
 
-interface FormContentProps {
+interface Props {
   errorMessage: string;
   form?: FormProp;
   isWaiting: boolean;
 }
 
-interface Props extends FormContentProps {
-  onSubmit: (form: FormProp) => Promise<void>;
-}
-
-const FormContent: React.FC<FormContentProps> = ({
+const DashboardHeaderFilterFormContent: React.FC<Props> = ({
   errorMessage,
   form,
   isWaiting,
@@ -80,18 +75,5 @@ const FormContent: React.FC<FormContentProps> = ({
     </div>
   );
 };
-
-const DashboardHeaderFilterFormContent: React.FC<Props> = ({
-  errorMessage,
-  isWaiting,
-  onSubmit,
-}) => (
-  <Form onSubmit={onSubmit}>
-    <FormContent
-      errorMessage={errorMessage}
-      isWaiting={isWaiting}
-    />
-  </Form>
-);
 
 export default DashboardHeaderFilterFormContent;
