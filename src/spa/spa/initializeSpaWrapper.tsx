@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useQuery } from '@apollo/react-hooks';
 import SpaFallback from 'fallbacks/spaFallback/spaFallback';
-import { IS_AUTHENTICATED } from 'schema/user';
+import { IS_AUTHENTICATED_QUERY } from 'schema/user';
 import { useAuthenticationContext } from 'context/authenticationContext';
 
 // This wrapper is responsible for initializing our SPA. Once all fetches, actions, etc have
@@ -13,7 +13,7 @@ import { useAuthenticationContext } from 'context/authenticationContext';
 
 const initializeSpaWrapper = (WrappedComponent: React.FC): React.FC => {
   const WrappedSpa: React.FC = () => {
-    const { called, data, loading } = useQuery(IS_AUTHENTICATED);
+    const { called, data, loading } = useQuery(IS_AUTHENTICATED_QUERY);
     const [isInitializationComplete, setIsInitializationComplete] = React.useState(false);
     const { isAuthenticated, setAuthenticationStatus } = useAuthenticationContext();
 

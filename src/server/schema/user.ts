@@ -1,8 +1,8 @@
 import gql from 'graphql-tag';
 
-// ----- RESOLVERS ----- //
+// ----- MUTATIONS ----- //
 
-export const CREATE_USER = gql`
+export const CREATE_USER_MUTATION = gql`
   mutation createUser($email: String!, $password: String!) {
     createUser(data: {email: $email, password: $password}) {
       id
@@ -10,13 +10,7 @@ export const CREATE_USER = gql`
   }
 `;
 
-export const IS_AUTHENTICATED = gql`
-  query isAuthenticated {
-    isAuthenticated
-  }
-`;
-
-export const LOGIN_USER = gql`
+export const LOGIN_USER_MUTATION = gql`
   mutation loginUser($email: String!, $password: String!) {
     loginUser(data: {email: $email, password: $password}) {
       id
@@ -24,7 +18,15 @@ export const LOGIN_USER = gql`
   }
 `;
 
-export const LOGOUT_USER = gql`
+// ----- QUERIES ----- //
+
+export const IS_AUTHENTICATED_QUERY = gql`
+  query isAuthenticated {
+    isAuthenticated
+  }
+`;
+
+export const LOGOUT_USER_QUERY = gql`
   query logoutUser {
     logoutUser
   }

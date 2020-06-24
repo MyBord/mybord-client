@@ -5,7 +5,7 @@ import * as React from 'react';
 import { useLazyQuery, useMutation } from '@apollo/react-hooks';
 import Form from 'forms/form/form';
 import handleError from 'server/errors/handleError';
-import { CREATE_USER, IS_AUTHENTICATED, LOGIN_USER } from 'schema/user';
+import { CREATE_USER_MUTATION, IS_AUTHENTICATED_QUERY, LOGIN_USER_MUTATION } from 'schema/user';
 import { FormProp } from 'types/formTypes';
 import { useAuthenticationContext } from 'context/authenticationContext';
 import { useLoginContext } from 'landing/pages/loginPage/loginContext/loginContext';
@@ -16,11 +16,11 @@ import './loginForm.less';
 const LoginFormContainer: React.FC = () => {
   // ----- QUERIES & MUTATIONS ----- //
 
-  const [createUser] = useMutation(CREATE_USER);
+  const [createUser] = useMutation(CREATE_USER_MUTATION);
   const [isAuthenticatedQuery, { called, data, loading }] = useLazyQuery(
-    IS_AUTHENTICATED, { fetchPolicy: 'no-cache' },
+    IS_AUTHENTICATED_QUERY, { fetchPolicy: 'no-cache' },
   );
-  const [loginUser] = useMutation(LOGIN_USER);
+  const [loginUser] = useMutation(LOGIN_USER_MUTATION);
 
   // ----- STATE ----- //
 
