@@ -3,7 +3,7 @@ import { useMutation } from '@apollo/react-hooks';
 import CardContentButtonsAnimation from 'framerMotion/cardContentButtonsAnimation';
 import CardMenuButtonContainer from 'buttons/cardMenuButton/cardMenuButtonContainer';
 import FavoriteButton from 'buttons/favoriteButton/favoriteButton';
-import { TOGGLE_FAVORITE_USER_CARD, UserCard } from 'schema/card';
+import { TOGGLE_FAVORITE_USER_CARD_MUTATION, UserCard } from 'schema/card';
 import { useCardContext } from 'context/cardContext';
 import * as styles from './cardContent.module.less';
 
@@ -19,7 +19,7 @@ const CardContent: React.FC<Props> = ({
   const containerRef = React.useRef(null);
   const [isFavorite, setIsFavorite] = React.useState<boolean>(userCard.isFavorite);
   const { activeCard, canMultiEdit } = useCardContext();
-  const [toggleFavoriteUserCard] = useMutation(TOGGLE_FAVORITE_USER_CARD);
+  const [toggleFavoriteUserCard] = useMutation(TOGGLE_FAVORITE_USER_CARD_MUTATION);
 
   const handleFavorite = async (): Promise<void> => {
     await toggleFavoriteUserCard({

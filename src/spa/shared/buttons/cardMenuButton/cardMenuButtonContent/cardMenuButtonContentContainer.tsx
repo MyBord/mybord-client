@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useMutation } from '@apollo/react-hooks';
-import { DELETE_USER_CARD, TOGGLE_TO_DO_USER_CARD, UserCard } from 'schema/card';
+import { DELETE_USER_CARD_MUTATION, TOGGLE_TO_DO_USER_CARD_MUTATION, UserCard } from 'schema/card';
 import CardMenuButtonContentComponent from './cardMenuButtonContentComponent';
 
 interface Props {
@@ -8,8 +8,8 @@ interface Props {
 }
 
 const CardMenuButtonContentContainer: React.FC<Props> = ({ userCard }) => {
-  const [deleteUserCard] = useMutation(DELETE_USER_CARD);
-  const [toggleToDoUserCard] = useMutation(TOGGLE_TO_DO_USER_CARD);
+  const [deleteUserCard] = useMutation(DELETE_USER_CARD_MUTATION);
+  const [toggleToDoUserCard] = useMutation(TOGGLE_TO_DO_USER_CARD_MUTATION);
   const [isToDo, setIsToDo] = React.useState<boolean>(userCard.isToDo);
   const [showPopConfirm, setShowPopConfirm] = React.useState<boolean>(false);
   const deleteButtonRef = React.useRef<HTMLDivElement>(null);

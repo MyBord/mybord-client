@@ -3,7 +3,7 @@ import { YoutubeVideoData } from 'types/youtubeTypes';
 
 // ----- MUTATIONS ----- //
 
-export const CREATE_YOUTUBE_CARD = gql`
+export const CREATE_YOUTUBE_CARD_MUTATION = gql`
   mutation createYoutubeCard($videoUrl: String!) {
     createYoutubeCard(data: {videoUrl: $videoUrl}) {
       id
@@ -25,7 +25,7 @@ export const CREATE_YOUTUBE_CARD = gql`
   }
 `;
 
-export const DELETE_USER_CARD = gql`
+export const DELETE_USER_CARD_MUTATION = gql`
   mutation deleteUserCard($cardId: String!) {
     deleteUserCard(data: {cardId: $cardId}) {
       id
@@ -33,7 +33,7 @@ export const DELETE_USER_CARD = gql`
   }
 `;
 
-export const TOGGLE_FAVORITE_USER_CARD = gql`
+export const TOGGLE_FAVORITE_USER_CARD_MUTATION = gql`
   mutation toggleFavoriteUserCard($cardId: String!) {
     toggleFavoriteUserCard(data: {cardId: $cardId}) {
       id
@@ -42,7 +42,7 @@ export const TOGGLE_FAVORITE_USER_CARD = gql`
   }
 `;
 
-export const TOGGLE_TO_DO_USER_CARD = gql`
+export const TOGGLE_TO_DO_USER_CARD_MUTATION = gql`
   mutation toggleToDoUserCard($cardId: String!) {
     toggleToDoUserCard(data: {cardId: $cardId}) {
       id

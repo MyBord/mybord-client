@@ -2,12 +2,12 @@ import * as React from 'react';
 import { useMutation } from '@apollo/react-hooks';
 import Form from 'forms/form/form';
 import handleError from 'server/errors/handleError';
-import { CREATE_YOUTUBE_CARD } from 'schema/card';
+import { CREATE_YOUTUBE_CARD_MUTATION } from 'schema/card';
 import { FormProp } from 'types/formTypes';
 import DashboardHeaderFilterFormContent from './dashboardHeaderFilterFormContent';
 
 const DashboardHeaderFilterForm: React.FC = () => {
-  const [createYoutubeCard] = useMutation(CREATE_YOUTUBE_CARD);
+  const [createYoutubeCard] = useMutation(CREATE_YOUTUBE_CARD_MUTATION);
   const [inputErrorMessage, setInputErrorMessage] = React.useState<string>(null);
   const [isSubmitWaiting, setIsSubmitWaiting] = React.useState<boolean>(false);
 
