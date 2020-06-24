@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Toggle from 'inputs/toggle/toggle';
+import * as styles from './dashboardFilterContent.module.less';
 
 const DashboardFilterContent: React.FC = () => {
   const [isFavoriteFilter, setIsFavoriteFilter] = React.useState<boolean>(false);
@@ -14,20 +15,18 @@ const DashboardFilterContent: React.FC = () => {
   };
 
   return (
-    <ul>
-      <li>
+    <ul className={styles.ul}>
+      <li className={styles.li}>
         <Toggle
           checked={isFavoriteFilter}
           onClick={handleToggleFavoriteFilter}
-          size="small"
           text="Favorites"
         />
       </li>
-      <li>
+      <li className={styles.li}>
         <Toggle
           checked={isToDoFilter}
           onClick={handleToggleToDoFilter}
-          size="small"
           text="To Do"
         />
       </li>

@@ -46,11 +46,13 @@ const FormContent: React.FC<FormContentProps> = ({
     </FormItem>
     <div className={styles.buttonsContainer}>
       <FormItem fieldName="add-youtube-video-submit" form={form}>
-        <Button
-          htmlType="submit"
-          isWaiting={isWaiting}
-          label="Add Video"
-        />
+        <div className={styles.buttonDiv}>
+          <Button
+            htmlType="submit"
+            isWaiting={isWaiting}
+            label="Add Video"
+          />
+        </div>
       </FormItem>
     </div>
     <div className={styles.buttonsContainer}>
@@ -59,7 +61,7 @@ const FormContent: React.FC<FormContentProps> = ({
         caretPosition="top-center"
         node={iconButtonRef}
         onHide={() => setShowFilters(false)}
-        position={{ x: 0, y: 3 }}
+        position={{ x: -3.75, y: 3 }}
         show={showFilters}
       />
       <FormItem fieldName="filter" form={form}>

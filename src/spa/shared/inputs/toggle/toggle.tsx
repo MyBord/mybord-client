@@ -20,7 +20,7 @@ const Toggle: React.FC<Props> = ({
   if (text) {
     return (
       <button
-        className={styles.button}
+        className={[styles.button, styles[size]].join(' ')}
         onClick={onClick}
         type="button"
       >
