@@ -5,26 +5,12 @@ interface Props extends RouteComponentProps {
   children: React.ReactNode;
 }
 
-interface ComponentState {
-  hasError: boolean;
-}
-
-class ErrorBoundary extends React.Component<Props, ComponentState> {
-  public constructor(props: Props) {
-    super(props);
-    this.state = {
-      hasError: false,
-    };
-  }
-
+class ErrorBoundary extends React.Component<Props> {
   public componentDidCatch(): void {
-    this.setState({ hasError: true });
+    this.props.history.push('/error');
   }
 
   public render(): React.ReactNode {
-    if (this.state.hasError) {
-      this.props.history.push('/error');
-    }
     return this.props.children;
   }
 }
