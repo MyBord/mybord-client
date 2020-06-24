@@ -3,16 +3,12 @@ import { useMutation } from '@apollo/react-hooks';
 import handleError from 'server/errors/handleError';
 import { CREATE_YOUTUBE_CARD } from 'schema/card';
 import { FormProp } from 'types/formTypes';
-import { useCardContext } from 'context/cardContext';
 import DashboardHeaderFilterFormContent from './dashboardHeaderFilterFormContent';
 
 const DashboardHeaderFilterForm: React.FC = () => {
   const [createYoutubeCard] = useMutation(CREATE_YOUTUBE_CARD);
   const [inputErrorMessage, setInputErrorMessage] = React.useState<string>(null);
   const [isSubmitWaiting, setIsSubmitWaiting] = React.useState<boolean>(false);
-  const [showFilters, setShowFilters] = React.useState<boolean>(false);
-  const iconButtonRef = React.useRef<HTMLButtonElement>(null);
-  const { canMultiEdit, toggleMultiEditStatus } = useCardContext();
 
   const handleSubmit = async (form: FormProp): Promise<void> => {
     try {
@@ -36,14 +32,9 @@ const DashboardHeaderFilterForm: React.FC = () => {
 
   return (
     <DashboardHeaderFilterFormContent
-      canMultiEdit={canMultiEdit}
       errorMessage={inputErrorMessage}
-      iconButtonRef={iconButtonRef}
       isWaiting={isSubmitWaiting}
       onSubmit={handleSubmit}
-      setShowFilters={setShowFilters}
-      showFilters={showFilters}
-      toggleMultiEditStatus={toggleMultiEditStatus}
     />
   );
 };
