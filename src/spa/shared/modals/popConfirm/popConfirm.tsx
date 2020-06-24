@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Button from 'buttons/button/button';
-import PopOver from 'modals/popOver/popover';
+import PopOver from 'modals/popOver/popOver';
 import Typography from 'typography/typography';
 import { PopOverProps } from 'types/modalTypes';
 import * as styles from './popConfirm.module.less';

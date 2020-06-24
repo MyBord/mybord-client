@@ -3,7 +3,7 @@ import Button from 'buttons/button/button';
 import Form from 'forms/form/form';
 import FormItem from 'forms/formItem/formItem';
 import IconButton from 'icons/iconButton/iconButton';
-import PopOver from 'modals/popover/popOver';
+import PopOver from 'modals/popOver/popOver';
 import TextInput from 'inputs/textInput/textInput';
 import { FormProp } from 'types/formTypes';
 import DashboardFilterContent from './dashboardFilterContent/dashboardFilterContent';
