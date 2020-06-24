@@ -13,10 +13,9 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
-  * refactor state management of dashboard header filter form container and component?
+  * make to do and favorits filters work / filter cards
   * if the favorite button starts in the favorite state, unfavoriting it still shows an animation
   * when you delete a card, the pop confirm double renders - fix this
-  * add filter in header for todo and favorite
   * fix youtube cards where there is too much text
   * have session be remembered by user
   * fix loading of image on landing page
