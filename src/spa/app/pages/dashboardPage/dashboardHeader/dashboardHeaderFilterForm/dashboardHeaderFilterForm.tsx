@@ -4,9 +4,9 @@ import handleError from 'server/errors/handleError';
 import { CREATE_YOUTUBE_CARD } from 'schema/card';
 import { FormProp } from 'types/formTypes';
 import { useCardContext } from 'context/cardContext';
-import DashboardHeaderFilterFormComponent from './dashboardHeaderFilterFormComponent';
+import DashboardHeaderFilterFormContent from './dashboardHeaderFilterFormContent';
 
-const DashboardHeaderFilterFormContainer: React.FC = () => {
+const DashboardHeaderFilterForm: React.FC = () => {
   const [createYoutubeCard] = useMutation(CREATE_YOUTUBE_CARD);
   const [inputErrorMessage, setInputErrorMessage] = React.useState<string>(null);
   const [isSubmitWaiting, setIsSubmitWaiting] = React.useState<boolean>(false);
@@ -35,7 +35,7 @@ const DashboardHeaderFilterFormContainer: React.FC = () => {
   };
 
   return (
-    <DashboardHeaderFilterFormComponent
+    <DashboardHeaderFilterFormContent
       canMultiEdit={canMultiEdit}
       errorMessage={inputErrorMessage}
       iconButtonRef={iconButtonRef}
@@ -48,4 +48,4 @@ const DashboardHeaderFilterFormContainer: React.FC = () => {
   );
 };
 
-export default DashboardHeaderFilterFormContainer;
+export default DashboardHeaderFilterForm;

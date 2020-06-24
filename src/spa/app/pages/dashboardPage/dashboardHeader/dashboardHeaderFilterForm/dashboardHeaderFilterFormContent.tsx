@@ -84,7 +84,7 @@ const FormContent: React.FC<FormContentProps> = ({
   </div>
 );
 
-const DashboardHeaderFilterFormComponent: React.FC<Props> = ({
+const DashboardHeaderFilterFormContent: React.FC<Props> = ({
   canMultiEdit,
   errorMessage,
   iconButtonRef,
@@ -107,4 +107,4 @@ const DashboardHeaderFilterFormComponent: React.FC<Props> = ({
   </Form>
 );
 
-export default DashboardHeaderFilterFormComponent;
+export default DashboardHeaderFilterFormContent;

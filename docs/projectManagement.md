@@ -31,7 +31,6 @@ This document is used to outline current project management priorities.
     - container & component
     - Content
     - form & formContent
-    
 
 ### B. High - MVP
 
