@@ -3,15 +3,20 @@ import Button from 'buttons/button/button';
 import Form from 'forms/form/form';
 import FormItem from 'forms/formItem/formItem';
 import IconButton from 'icons/iconButton/iconButton';
+import PopOver from 'modals/popover/popOver';
 import TextInput from 'inputs/textInput/textInput';
 import { FormProp } from 'types/formTypes';
+import DashboardFilterContent from './dashboardFilterContent/dashboardFilterContent';
 import * as styles from './dashboardHeaderFilterForm.module.less';
 
 interface FormContentProps {
   canMultiEdit: boolean;
   errorMessage: string;
   form?: FormProp;
+  iconButtonRef: React.RefObject<HTMLButtonElement>;
   isWaiting: boolean;
+  setShowFilters: (showFilters: boolean | ((prevState: boolean) => boolean)) => void;
+  showFilters: boolean;
   toggleMultiEditStatus: () => void;
 }
 
@@ -23,7 +28,10 @@ const FormContent: React.FC<FormContentProps> = ({
   canMultiEdit,
   errorMessage,
   form,
+  iconButtonRef,
   isWaiting,
+  setShowFilters,
+  showFilters,
   toggleMultiEditStatus,
 }) => (
   <div className={styles.formContainer}>
@@ -38,19 +46,30 @@ const FormContent: React.FC<FormContentProps> = ({
     </FormItem>
     <div className={styles.buttonsContainer}>
       <FormItem fieldName="add-youtube-video-submit" form={form}>
-        <Button
-          htmlType="submit"
-          isWaiting={isWaiting}
-          label="Add Video"
-        />
+        <div className={styles.buttonDiv}>
+          <Button
+            htmlType="submit"
+            isWaiting={isWaiting}
+            label="Add Video"
+          />
+        </div>
       </FormItem>
     </div>
     <div className={styles.buttonsContainer}>
+      <PopOver
+        Content={<DashboardFilterContent />}
+        caretPosition="top-center"
+        node={iconButtonRef}
+        onHide={() => setShowFilters(false)}
+        position={{ x: -3.75, y: 3 }}
+        show={showFilters}
+      />
       <FormItem fieldName="filter" form={form}>
         <IconButton
           color="blue"
           iconName="filter"
-          onClick={() => console.log('foo')}
+          onClick={() => setShowFilters((prevState) => !prevState)}
+          ref={iconButtonRef}
           size={32}
         />
       </FormItem>
@@ -68,15 +87,21 @@ const FormContent: React.FC<FormContentProps> = ({
 const DashboardHeaderFilterFormComponent: React.FC<Props> = ({
   canMultiEdit,
   errorMessage,
+  iconButtonRef,
   isWaiting,
   onSubmit,
+  setShowFilters,
+  showFilters,
   toggleMultiEditStatus,
 }) => (
   <Form onSubmit={onSubmit}>
     <FormContent
       canMultiEdit={canMultiEdit}
       errorMessage={errorMessage}
+      iconButtonRef={iconButtonRef}
       isWaiting={isWaiting}
+      setShowFilters={setShowFilters}
+      showFilters={showFilters}
       toggleMultiEditStatus={toggleMultiEditStatus}
     />
   </Form>

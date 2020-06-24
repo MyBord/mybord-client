@@ -1,7 +1,6 @@
 import * as React from 'react';
-import Icon from 'icons/icon/icon';
+import Icon, { IconNames } from 'icons/icon/icon';
 import { IndividualIconProps } from 'types/iconTypes';
-import { IconNames } from 'icons/icon/icon';
 import * as styles from './iconButton.module.less';
 
 interface Props extends IndividualIconProps {
@@ -9,26 +8,27 @@ interface Props extends IndividualIconProps {
   onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
-const IconButton: React.FC<Props> = ({
+const IconButton = React.forwardRef<HTMLButtonElement, Props>(({
   color = 'white',
   fill = null,
   iconName,
   onClick,
   size,
   strokeWidth = 2,
-}) => (
+}, ref) => (
   <button
     className={[styles.button, styles[color]].join(' ')}
-    type="button"
     onClick={onClick}
+    ref={ref}
+    type="button"
   >
     <Icon
       fill={fill}
       iconName={iconName}
-      strokeWidth={strokeWidth}
       size={size}
+      strokeWidth={strokeWidth}
     />
   </button>
-);
+));
 
 export default IconButton;
