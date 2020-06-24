@@ -36,18 +36,12 @@ const CardMenuButtonContentComponent: React.FC<Props> = ({
   return (
     <ul className={styles.ul}>
       <li className={styles.li}>
-        <div className={styles.toDoDiv}>
-          <Toggle
-            checked={isToDo}
-            onClick={toggleToDo}
-            size="small"
-          />
-          <Typography
-            onClick={toggleToDo}
-            size="two"
-            text="to do"
-          />
-        </div>
+        <Toggle
+          checked={isToDo}
+          onClick={toggleToDo}
+          size="small"
+          text="to do"
+        />
       </li>
       <li className={styles.li}>
         <PopConfirm
