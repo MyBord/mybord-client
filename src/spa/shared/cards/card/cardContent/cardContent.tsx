@@ -22,12 +22,12 @@ const CardContent: React.FC<Props> = ({
   const [toggleFavoriteUserCard] = useMutation(TOGGLE_FAVORITE_USER_CARD_MUTATION);
 
   const handleFavorite = async (): Promise<void> => {
+    setIsFavorite((prevState) => !prevState);
     await toggleFavoriteUserCard({
       variables: {
         cardId: userCard.id,
       },
     });
-    setIsFavorite((prevState) => !prevState);
   };
 
   const showButtons = !canMultiEdit && activeCard.id !== userCard.id;
