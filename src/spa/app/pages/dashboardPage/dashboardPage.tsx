@@ -16,4 +16,16 @@ const DashboardPage: React.FC<Props> = ({ data }) => (
   </section>
 );
 
-export default pageWrapper(DashboardPage, USER_CARDS_QUERY);
+const Foo = React.memo(DashboardPage, (prevProps, nextProps) => {
+  console.log('22222222');
+  console.log(prevProps);
+  console.log(nextProps);
+  console.log(JSON.stringify(prevProps));
+  console.log(JSON.stringify(nextProps));
+  console.log(JSON.stringify(prevProps) === JSON.stringify(nextProps));
+  console.log('22222222');
+  return false;
+  // return true;
+});
+
+export default pageWrapper(Foo, USER_CARDS_QUERY);

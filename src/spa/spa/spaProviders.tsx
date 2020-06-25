@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { AuthenticationContextProvider } from 'context/authenticationContext/authenticationContext';
 import { CardContextProvider } from 'context/cardContext/cardContext';
+import { DashboardCardsContextProvider } from 'context/dashboardCardsContext/dashboardCardsContext';
 import { HydrationContextProvider } from 'context/hydrationContext/hydrationContext';
 
 interface Props {
@@ -10,9 +11,11 @@ interface Props {
 const SpaProviders: React.FC<Props> = ({ children }) => (
   <AuthenticationContextProvider>
     <CardContextProvider>
-      <HydrationContextProvider>
-        {children}
-      </HydrationContextProvider>
+      <DashboardCardsContextProvider>
+        <HydrationContextProvider>
+          {children}
+        </HydrationContextProvider>
+      </DashboardCardsContextProvider>
     </CardContextProvider>
   </AuthenticationContextProvider>
 );
