@@ -14,7 +14,6 @@ This document is used to outline current project management priorities.
 ### A. Highest - MVP
 
   * make to do and favorits filters work / filter cards
-  * if the favorite button starts in the favorite state, unfavoriting it still shows an animation
   * when you delete a card, the pop confirm double renders - fix this
   * fix youtube cards where there is too much text
   * have session be remembered by user
