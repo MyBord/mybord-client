@@ -1,14 +1,14 @@
-import { UserCard } from 'schema/card';
 import {
+  AllIds,
+  ById,
   DashboardCardsDispatchTypes,
   SET_CARDS,
 } from './dashboardCardsReducerTypes';
+import { getAllIds, getById } from './dashboardCardsReducerUtil';
 
 export interface DashboardCardsState {
-  allIds: number[];
-  byId: {
-    [key in number]: UserCard;
-  };
+  allIds: AllIds;
+  byId: ById;
 }
 
 export const initialDashboardCardsState: DashboardCardsState = {
@@ -24,6 +24,8 @@ export const dashboardCardsReducer = (
     case SET_CARDS:
       return {
         ...state,
+        allIds: getAllIds(action.cards),
+        byId: getById(action.cards),
       };
     default:
       return state;
