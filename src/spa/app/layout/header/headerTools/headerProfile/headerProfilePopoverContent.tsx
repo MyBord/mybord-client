@@ -3,7 +3,7 @@ import { useLazyQuery } from '@apollo/react-hooks';
 import Icon from 'icons/icon/icon';
 import Typography from 'typography/typography';
 import { LOGOUT_USER_QUERY } from 'schema/user';
-import { useAuthenticationContext } from 'context/authenticationContext';
+import { useAuthenticationContext } from 'context/authenticationContext/authenticationContext';
 import * as styles from './headerProfile.module.less';
 
 const HeaderProfilePopOverContent: React.FC = () => {

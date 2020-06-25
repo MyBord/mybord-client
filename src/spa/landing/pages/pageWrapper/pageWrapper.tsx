@@ -4,7 +4,7 @@
 // `app/pages/pageWrapper/pageWrapper.tsx`.
 
 import * as React from 'react';
-import { useHydrationContext } from 'context/hydrationContext';
+import { useHydrationContext } from 'context/hydrationContext/hydrationContext';
 
 const pageWrapper = (WrappedComponent: React.FC): React.FC => {
   const Page: React.FC = () => {

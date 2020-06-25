@@ -4,7 +4,7 @@ import CardContentButtonsAnimation from 'framerMotion/cardContentButtonsAnimatio
 import CardMenuButtonContainer from 'buttons/cardMenuButton/cardMenuButtonContainer';
 import FavoriteButton from 'buttons/favoriteButton/favoriteButton';
 import { TOGGLE_FAVORITE_USER_CARD_MUTATION, UserCard } from 'schema/card';
-import { useCardContext } from 'context/cardContext';
+import { useCardContext } from 'context/cardContext/cardContext';
 import * as styles from './cardContent.module.less';
 
 interface Props {

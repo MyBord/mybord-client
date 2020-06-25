@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { UserCard } from 'schema/card';
-import { useCardContext } from 'context/cardContext';
+import { useCardContext } from 'context/cardContext/cardContext';
 import CardContent from './cardContent/cardContent';
 import CardDescription from './cardDescription/cardDescription';
 // import CardFooter from './cardFooter/cardFooter';

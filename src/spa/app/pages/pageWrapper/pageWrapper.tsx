@@ -6,7 +6,7 @@ import * as React from 'react';
 import Spinner from 'fallbacks/spinner/spinner';
 import api from 'api/api';
 import { GqlString } from 'types/gqlTypes';
-import { useHydrationContext } from 'context/hydrationContext';
+import { useHydrationContext } from 'context/hydrationContext/hydrationContext';
 
 interface PageContentProps {
   isAnimationComplete: boolean;

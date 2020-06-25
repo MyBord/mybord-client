@@ -2,7 +2,7 @@ import * as React from 'react';
 import { UserCard } from 'schema/card';
 import YoutubeThumbnailAnimation from 'framerMotion/youtubeThumbnailAnimation';
 import YoutubePlayerContainer from 'cards/youtubeCard/youtubePlayer/youtubePlayerContainer';
-import { useCardContext } from 'context/cardContext';
+import { useCardContext } from 'context/cardContext/cardContext';
 import YoutubeCardThumbnailComponent from './youtubeCardThumbnailComponent';
 
 interface Props {

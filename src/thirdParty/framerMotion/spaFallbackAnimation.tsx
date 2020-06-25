@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { useHydrationContext } from 'context/hydrationContext';
+import { useHydrationContext } from 'context/hydrationContext/hydrationContext';
 import * as styles from './spaFallbackAnimation.module.less';
 
 const variants = {

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useCardContext } from 'context/cardContext';
+import { useCardContext } from 'context/cardContext/cardContext';
 import * as styles from './cardOverlay.module.less';
 
 interface Props {

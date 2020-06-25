@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { AuthenticationContextProvider } from 'context/authenticationContext';
-import { CardContextProvider } from 'context/cardContext';
-import { HydrationContextProvider } from 'context/hydrationContext';
+import { AuthenticationContextProvider } from 'context/authenticationContext/authenticationContext';
+import { CardContextProvider } from 'context/cardContext/cardContext';
+import { HydrationContextProvider } from 'context/hydrationContext/hydrationContext';
 
 interface Props {
   children: React.ReactNode;

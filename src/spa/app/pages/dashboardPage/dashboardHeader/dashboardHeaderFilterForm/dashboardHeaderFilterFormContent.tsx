@@ -5,7 +5,7 @@ import IconButton from 'icons/iconButton/iconButton';
 import PopOver from 'modals/popOver/popOver';
 import TextInput from 'inputs/textInput/textInput';
 import { FormProp } from 'types/formTypes';
-import { useCardContext } from 'context/cardContext';
+import { useCardContext } from 'context/cardContext/cardContext';
 import DashboardFilterContent from './dashboardFilterContent/dashboardFilterContent';
 import * as styles from './dashboardHeaderFilterForm.module.less';
 

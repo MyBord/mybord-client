@@ -7,7 +7,7 @@ import Form from 'forms/form/form';
 import handleError from 'server/errors/handleError';
 import { CREATE_USER_MUTATION, IS_AUTHENTICATED_QUERY, LOGIN_USER_MUTATION } from 'schema/user';
 import { FormProp } from 'types/formTypes';
-import { useAuthenticationContext } from 'context/authenticationContext';
+import { useAuthenticationContext } from 'context/authenticationContext/authenticationContext';
 import { useLoginContext } from 'landing/pages/loginPage/loginContext/loginContext';
 import LoginFormComponent from './loginFormComponent';
 import './loginForm.less';
