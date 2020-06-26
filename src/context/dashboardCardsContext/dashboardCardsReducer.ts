@@ -1,8 +1,9 @@
 import reducerUtil from 'context/contextUtils/reducerUtil';
 import { AllIdsCards, ByIdCards } from 'types/reducerTypes';
 import {
-  DashboardCardsDispatchTypes,
+  ADD_CARD,
   DELETE_CARD,
+  DashboardCardsDispatchTypes,
   SET_CARDS,
 } from './dashboardCardsReducerTypes';
 
@@ -21,13 +22,18 @@ export const dashboardCardsReducer = (
   action: DashboardCardsDispatchTypes,
 ): DashboardCardsState => {
   switch (action.type) {
-    case DELETE_CARD: {
+    case ADD_CARD:
+      return {
+        ...state,
+        allIds: reducerUtil.addAllId(state.allIds, action.card.id),
+        byId: reducerUtil.addById(state.byId, action.card),
+      };
+    case DELETE_CARD:
       return {
         ...state,
         allIds: reducerUtil.removeAllId(state.allIds, action.id),
         byId: reducerUtil.removeById(state.byId, action.id),
       };
-    }
     case SET_CARDS:
       return {
         ...state,

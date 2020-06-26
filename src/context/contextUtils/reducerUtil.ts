@@ -1,10 +1,22 @@
 import {
+  assign,
   cloneDeep,
   omit,
   pull,
 } from 'lodash';
 import { AllIdsCards, ByIdCards } from 'types/reducerTypes';
 import { UserCard } from 'schema/card';
+
+const addAllId = (allIds: AllIdsCards, id: UserCard['id']): AllIdsCards => {
+  const clonedAllIds = cloneDeep(allIds);
+  return clonedAllIds.concat(id);
+};
+
+const addById = (byId: ByIdCards, card: UserCard): ByIdCards => {
+  const clonedById = cloneDeep(byId);
+  const newCard = { [card.id]: card };
+  return assign(clonedById, newCard);
+};
 
 const getAllIds = (userCards: UserCard[]): AllIdsCards => {
   const clonedUserCards = cloneDeep(userCards);
@@ -29,6 +41,8 @@ const removeById = (byId: ByIdCards, id: UserCard['id']): ByIdCards => {
 };
 
 export default {
+  addAllId,
+  addById,
   getAllIds,
   getById,
   removeAllId,
