@@ -13,6 +13,7 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
+  * fix issue where no cards is shown first before showing cards
   * make to do and favorits filters work / filter cards
   * when you delete a card, the pop confirm double renders - fix this
   * fix youtube cards where there is too much text

@@ -2,20 +2,20 @@ import * as React from 'react';
 import Empty from 'icons/empty/empty';
 import PhantomCard from 'shared/cards/phantomCard/phantomCard';
 import Typography from 'typography/typography';
-import { UserCard, UserCardsQueryResponse } from 'schema/card';
+import { useDashboardCardsContext } from 'context/dashboardCardsContext/dashboardCardsContext';
 import DashboardCardSwitch from './dashboardCardSwitch';
 import * as styles from './dashboardCards.module.less';
 
-interface Props {
-  userCards: UserCardsQueryResponse['userCards'];
-}
+const DashboardCardsComponent: React.FC = () => {
+  const { state } = useDashboardCardsContext();
 
-const DashboardCardsComponent: React.FC<Props> = ({ userCards }) => {
-  if (userCards.length > 0) {
+  if (state.allIds.length > 0) {
     return (
       <section className={styles.section}>
         {
-          userCards.map((userCard: UserCard) => <DashboardCardSwitch userCard={userCard} />)
+          state.allIds.map((userCardId: string) => (
+            <DashboardCardSwitch userCard={state.byId[userCardId]} />
+          ))
         }
         {
           // we create some phantom cards that do not appear visible but are rendered so that we can
