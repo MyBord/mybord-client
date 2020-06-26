@@ -2,9 +2,10 @@ import {
   AllIds,
   ById,
   DashboardCardsDispatchTypes,
+  DELETE_CARD,
   SET_CARDS,
 } from './dashboardCardsReducerTypes';
-import { getAllIds, getById } from './dashboardCardsReducerUtil';
+import reducerUtil from './dashboardCardsReducerUtil';
 
 export interface DashboardCardsState {
   allIds: AllIds;
@@ -21,11 +22,21 @@ export const dashboardCardsReducer = (
   action: DashboardCardsDispatchTypes,
 ): DashboardCardsState => {
   switch (action.type) {
+    case DELETE_CARD: {
+      console.log('rrrrrr');
+      console.log(action.id);
+      console.log('rrrrrr');
+      return {
+        ...state,
+        allIds: reducerUtil.removeAllId(state.allIds, action.id),
+        byId: reducerUtil.removeById(state.byId, action.id),
+      };
+    }
     case SET_CARDS:
       return {
         ...state,
-        allIds: getAllIds(action.cards),
-        byId: getById(action.cards),
+        allIds: reducerUtil.getAllIds(action.cards),
+        byId: reducerUtil.getById(action.cards),
       };
     default:
       return state;
