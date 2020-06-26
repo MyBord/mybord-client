@@ -6,7 +6,7 @@ import {
 } from './dashboardCardsReducer';
 import { DashboardCardsDispatchTypes } from './dashboardCardsReducerTypes';
 
-interface DashboardCardsContextState {
+export interface DashboardCardsContextState {
   dispatch: (value: DashboardCardsDispatchTypes) => void;
   state: DashboardCardsState;
 }

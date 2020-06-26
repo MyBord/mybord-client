@@ -1,34 +1,30 @@
 import * as React from 'react';
+import { UserCard } from 'schema/card';
 import {
-  UserCard,
-} from 'schema/card';
+  DashboardCardsContextState,
+  useDashboardCardsContext,
+} from 'context/dashboardCardsContext/dashboardCardsContext';
 import { SET_CARDS } from 'context/dashboardCardsContext/dashboardCardsReducerTypes';
-import { useDashboardCardsContext } from 'context/dashboardCardsContext/dashboardCardsContext';
 import DashboardCardsComponent from './dashboardCardsComponent';
 
 interface Props {
+  dispatch: DashboardCardsContextState['dispatch'];
+  state: DashboardCardsContextState['state'];
   userCards: UserCard[];
 }
 
-const DashboardCardsContainer: React.FC<Props> = ({ userCards }) => {
-  const { dispatch, state } = useDashboardCardsContext();
+// ToDo: do I need state?
 
+const DashboardCardsContainer: React.FC<Props> = ({
+  dispatch,
+  state,
+  userCards,
+}) => {
   React.useEffect(() => {
     dispatch({ type: SET_CARDS, cards: userCards });
   }, [dispatch, userCards]);
 
-  console.log('999');
-  console.log(state);
-
-  return <DashboardCardsComponent userCards={userCards} />;
+  return <DashboardCardsComponent />;
 };
 
 export default DashboardCardsContainer;
-// export default React.memo(DashboardCardsContainer, (prevProps, nextProps) => {
-//   console.log('22222222');
-//   console.log(prevProps);
-//   console.log(nextProps);
-//   console.log('22222222');
-//   return false;
-//   // return true;
-// });
