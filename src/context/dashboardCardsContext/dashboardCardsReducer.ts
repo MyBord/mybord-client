@@ -1,3 +1,4 @@
+import reducerUtil from 'context/contextUtils/reducerUtil';
 import {
   AllIds,
   ById,
@@ -5,7 +6,6 @@ import {
   DELETE_CARD,
   SET_CARDS,
 } from './dashboardCardsReducerTypes';
-import reducerUtil from './dashboardCardsReducerUtil';
 
 export interface DashboardCardsState {
   allIds: AllIds;
@@ -23,9 +23,6 @@ export const dashboardCardsReducer = (
 ): DashboardCardsState => {
   switch (action.type) {
     case DELETE_CARD: {
-      console.log('rrrrrr');
-      console.log(action.id);
-      console.log('rrrrrr');
       return {
         ...state,
         allIds: reducerUtil.removeAllId(state.allIds, action.id),
