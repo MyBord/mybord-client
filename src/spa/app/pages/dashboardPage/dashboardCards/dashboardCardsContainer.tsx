@@ -20,13 +20,15 @@ interface Props {
 const DashboardCardsContainer: React.FC<Props> = ({ userCards }) => {
   const { dispatch } = useDashboardCardsContext();
 
-  // ----- TODO: ADD NOTES ----- //
+  // ----- ADDING CARDS ----- //
+  // first adding cards to state that were initially retrieved when our page was loaded
 
   React.useEffect(() => {
     dispatch({ type: SET_CARDS, cards: userCards });
   }, [dispatch, userCards]);
 
-  // ----- TODO: ADD NOTES ----- //
+  // ----- ADDING A CARD ----- //
+  // subscribing to when a card gets added
 
   const { data: cardData, loading: cardLoading } = useSubscription(USER_CARD_SUBSCRIPTION);
 
@@ -36,7 +38,8 @@ const DashboardCardsContainer: React.FC<Props> = ({ userCards }) => {
     }
   }, [cardData, cardLoading, dispatch]);
 
-  // ----- TODO: ADD NOTES ----- //
+  // ----- DELETING A CARD ----- //
+  // subscribing to when a card gets deleted
 
   const {
     data: deleteData,
@@ -49,7 +52,7 @@ const DashboardCardsContainer: React.FC<Props> = ({ userCards }) => {
     }
   }, [dispatch, deleteData, deleteLoading]);
 
-  // ----- TODO: ADD NOTES ----- //
+  // ----- RETURNING THE CHILD COMPONENT ----- //
 
   return <DashboardCardsComponent />;
 };
