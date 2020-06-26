@@ -1,15 +1,14 @@
 import reducerUtil from 'context/contextUtils/reducerUtil';
+import { AllIdsCards, ByIdCards } from 'types/reducerTypes';
 import {
-  AllIds,
-  ById,
   DashboardCardsDispatchTypes,
   DELETE_CARD,
   SET_CARDS,
 } from './dashboardCardsReducerTypes';
 
 export interface DashboardCardsState {
-  allIds: AllIds;
-  byId: ById;
+  allIds: AllIdsCards;
+  byId: ByIdCards;
 }
 
 export const initialDashboardCardsState: DashboardCardsState = {

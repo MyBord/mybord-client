@@ -1,11 +1,5 @@
 import { UserCard } from 'schema/card';
 
-// ----- TYPES ----- //
-
-export type AllIds = string[];
-
-export type ById = { [key in string]: UserCard; };
-
 // ----- CONSTANTS ----- //
 
 export const DELETE_CARD = 'DELETE_CARD';
