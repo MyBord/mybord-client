@@ -77,6 +77,30 @@ export const USER_CARDS_QUERY = gql`
   }
 `;
 
+export const USER_CARDS_WITH_FILTERS_QUERY = gql`
+  query userCardsWithFilters($isFavorite: Boolean!, $isToDo: Boolean!){
+    userCardsWithFilters(data: {isFavorite: $isFavorite, isToDo: $isToDo}){
+      id
+      isFavorite
+      isToDo
+      type
+      cardData{
+        youtubeCardData{
+          channelThumbnail
+          channelTitle
+          duration
+          likes
+          publishedAt
+          videoId
+          videoThumbnail
+          videoTitle
+          views
+        }
+      }
+    }
+  }
+`;
+
 // ----- SUBSCRIPTIONS ----- //
 
 export const DELETED_USER_CARD_SUBSCRIPTION = gql`
@@ -87,10 +111,31 @@ export const DELETED_USER_CARD_SUBSCRIPTION = gql`
   }
 `;
 
-
 export const USER_CARD_SUBSCRIPTION = gql`
   subscription userCard {
     userCard {
+      id
+      type
+      cardData{
+        youtubeCardData{
+          channelThumbnail
+          channelTitle
+          duration
+          likes
+          publishedAt
+          videoId
+          videoThumbnail
+          videoTitle
+          views
+        }
+      }
+    }
+  }
+`;
+
+export const USER_CARDS_SUBSCRIPTION = gql`
+  subscription userCards {
+    userCards {
       id
       type
       cardData{

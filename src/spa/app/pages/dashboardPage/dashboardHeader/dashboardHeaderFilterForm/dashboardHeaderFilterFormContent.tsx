@@ -52,7 +52,7 @@ const DashboardHeaderFilterFormContent: React.FC<Props> = ({
           caretPosition="top-center"
           node={iconButtonRef}
           onHide={() => setShowFilters(false)}
-          position={{ x: -3.75, y: 3 }}
+          position={{ x: -2.625, y: 3 }}
           show={showFilters}
         />
         <FormItem fieldName="filter" form={form}>

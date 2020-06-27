@@ -3,6 +3,7 @@ import { useSubscription } from '@apollo/react-hooks';
 import {
   DELETED_USER_CARD_SUBSCRIPTION,
   USER_CARD_SUBSCRIPTION,
+  USER_CARDS_SUBSCRIPTION,
   UserCard,
 } from 'schema/card';
 import {
@@ -51,6 +52,17 @@ const DashboardCardsContainer: React.FC<Props> = ({ userCards }) => {
       dispatch({ type: DELETE_CARD, id: deleteData.deletedUserCard.id });
     }
   }, [dispatch, deleteData, deleteLoading]);
+
+  // ----- SUBSCRIBING TO FILTERS ----- //
+  // subscribing to when cards get filtered
+
+  const { data: cardsData, loading: cardsLoading } = useSubscription(USER_CARDS_SUBSCRIPTION);
+
+  React.useEffect(() => {
+    if (!cardsLoading) {
+      dispatch({ type: SET_CARDS, cards: cardsData.userCards });
+    }
+  }, [cardsData, cardsLoading, dispatch]);
 
   // ----- RETURNING THE CHILD COMPONENT ----- //
 
