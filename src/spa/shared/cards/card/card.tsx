@@ -1,5 +1,4 @@
 import * as React from 'react';
-import memo from 'utils/memo';
 import stringify from 'utils/stringify';
 import { UserCard } from 'schema/card';
 import { useCardContext } from 'context/cardContext/cardContext';
