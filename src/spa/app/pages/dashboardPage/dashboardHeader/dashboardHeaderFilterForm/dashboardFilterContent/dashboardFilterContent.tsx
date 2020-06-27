@@ -7,40 +7,35 @@ import * as styles from './dashboardFilterContent.module.less';
 const DashboardFilterContent: React.FC = () => {
   const [isFavoriteFilter, setIsFavoriteFilter] = React.useState<boolean>(false);
   const [isToDoFilter, setIsToDoFilter] = React.useState<boolean>(false);
-  const [userCardsQuery, { called, data, loading }] = useLazyQuery(
-    USER_CARDS_WITH_FILTERS_QUERY, { fetchPolicy: 'no-cache' },
-  );
+  const [userCardsQuery] = useLazyQuery(USER_CARDS_WITH_FILTERS_QUERY, { fetchPolicy: 'no-cache' });
 
-  if (called && !loading) {
-    console.log('-----------');
-    console.log(data);
-    console.log('-----------');
-  }
-
-  const handleQuery = async (): Promise<void> => {
+  const handleToggleFavoriteFilter = async (): Promise<void> => {
+    setIsFavoriteFilter((prevState) => !prevState);
     await userCardsQuery({
       variables: {
-        isFavorite: true,
-        isToDo: true,
+        isFavorite: !isFavoriteFilter,
+        isToDo: isToDoFilter,
       },
     });
   };
 
-  const handleToggleFavoriteFilter = (): void => {
-    setIsFavoriteFilter((prevState) => !prevState);
-  };
-
-  const handleToggleToDoFilter = (): void => {
+  const handleToggleToDoFilter = async (): Promise<void> => {
     setIsToDoFilter((prevState) => !prevState);
+    await userCardsQuery({
+      variables: {
+        isFavorite: isFavoriteFilter,
+        isToDo: !isToDoFilter,
+      },
+    });
   };
 
   return (
     <ul className={styles.ul}>
-      <button type="button" onClick={handleQuery}>Click Me</button>
       <li className={styles.li}>
         <Toggle
           checked={isFavoriteFilter}
           onClick={handleToggleFavoriteFilter}
+          size="small"
           text="Favorites"
         />
       </li>
@@ -48,6 +43,7 @@ const DashboardFilterContent: React.FC = () => {
         <Toggle
           checked={isToDoFilter}
           onClick={handleToggleToDoFilter}
+          size="small"
           text="To Do"
         />
       </li>
