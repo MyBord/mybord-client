@@ -53,4 +53,18 @@ const PopConfirm: React.FC<Props> = ({
   );
 };
 
-export default PopConfirm;
+export default React.memo(PopConfirm, (prevProps, nextProps) => {
+  console.log('-----');
+  console.log(prevProps);
+  console.log(nextProps);
+  console.log(prevProps.node === nextProps.node);
+  console.log(prevProps.onConfirm === nextProps.onConfirm);
+  console.log(prevProps.onHide === nextProps.onHide);
+  console.log(prevProps.position === nextProps.position);
+  console.log(prevProps.show === nextProps.show);
+  console.log(prevProps.text === nextProps.text);
+  console.log('-----');
+  return prevProps.show === nextProps.show;
+});
+
+// export default React.memo(PopConfirm);
