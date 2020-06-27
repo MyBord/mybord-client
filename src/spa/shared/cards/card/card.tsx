@@ -39,4 +39,6 @@ const Card: React.FC<Props> = ({
   );
 };
 
-export default Card;
+export default React.memo(Card, (prevProps, nextProps) => (
+  JSON.stringify(prevProps.userCard) === JSON.stringify(nextProps.userCard)
+));
