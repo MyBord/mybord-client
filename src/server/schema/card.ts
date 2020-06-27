@@ -115,6 +115,8 @@ export const USER_CARD_SUBSCRIPTION = gql`
   subscription userCard {
     userCard {
       id
+      isFavorite
+      isToDo
       type
       cardData{
         youtubeCardData{
@@ -137,6 +139,8 @@ export const USER_CARDS_SUBSCRIPTION = gql`
   subscription userCards {
     userCards {
       id
+      isFavorite
+      isToDo
       type
       cardData{
         youtubeCardData{
