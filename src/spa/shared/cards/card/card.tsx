@@ -1,4 +1,5 @@
 import * as React from 'react';
+import stringify from 'utils/stringify';
 import { UserCard } from 'schema/card';
 import { useCardContext } from 'context/cardContext/cardContext';
 import CardContent from './cardContent/cardContent';
@@ -40,5 +41,5 @@ const Card: React.FC<Props> = ({
 };
 
 export default React.memo(Card, (prevProps, nextProps) => (
-  JSON.stringify(prevProps.userCard) === JSON.stringify(nextProps.userCard)
+  stringify(prevProps.userCard) === stringify(nextProps.userCard)
 ));
