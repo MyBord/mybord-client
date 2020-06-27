@@ -13,7 +13,7 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
-  * fix double rendering of cards when changes are made to state
+  * if filters return no cards, don't show default empty card, but something else
   * gap between cards change when adding more to second row
   * fix issue where no cards is shown first before showing cards
   * make to do and favorits filters work / filter cards
