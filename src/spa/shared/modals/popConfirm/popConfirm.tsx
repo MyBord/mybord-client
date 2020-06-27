@@ -2,6 +2,7 @@ import * as React from 'react';
 import Button from 'buttons/button/button';
 import PopOver from 'modals/popOver/popOver';
 import Typography from 'typography/typography';
+import memo from 'utils/memo';
 import { PopOverProps } from 'types/modalTypes';
 import * as styles from './popConfirm.module.less';
 
@@ -53,18 +54,20 @@ const PopConfirm: React.FC<Props> = ({
   );
 };
 
-export default React.memo(PopConfirm, (prevProps, nextProps) => {
-  console.log('-----');
-  console.log(prevProps);
-  console.log(nextProps);
-  console.log(prevProps.node === nextProps.node);
-  console.log(prevProps.onConfirm === nextProps.onConfirm);
-  console.log(prevProps.onHide === nextProps.onHide);
-  console.log(prevProps.position === nextProps.position);
-  console.log(prevProps.show === nextProps.show);
-  console.log(prevProps.text === nextProps.text);
-  console.log('-----');
-  return prevProps.show === nextProps.show;
-});
+// export default React.memo(PopConfirm, (prevProps, nextProps) => {
+//   console.log('-----');
+//   console.log(prevProps);
+//   console.log(nextProps);
+//   console.log(prevProps.node === nextProps.node);
+//   console.log(prevProps.onConfirm === nextProps.onConfirm);
+//   console.log(prevProps.onHide === nextProps.onHide);
+//   console.log(prevProps.position === nextProps.position);
+//   console.log(prevProps.show === nextProps.show);
+//   console.log(prevProps.text === nextProps.text);
+//   console.log('-----');
+//   return prevProps.show === nextProps.show;
+// });
+
+export default memo(PopConfirm);
 
 // export default React.memo(PopConfirm);
