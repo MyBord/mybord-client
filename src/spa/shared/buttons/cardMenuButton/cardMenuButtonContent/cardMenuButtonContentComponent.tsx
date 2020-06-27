@@ -22,6 +22,10 @@ const CardMenuButtonContentComponent: React.FC<Props> = ({
   showPopConfirm,
   toggleToDo,
 }) => {
+  const onHide = React.useCallback(() => {
+    setShowPopConfirm(false);
+  }, [setShowPopConfirm]);
+
   const DeleteIconContent: React.FC = () => (
     <div className={styles.iconDiv}>
       <Icon
@@ -47,7 +51,7 @@ const CardMenuButtonContentComponent: React.FC<Props> = ({
         <PopConfirm
           node={deleteButtonRef}
           onConfirm={handleDelete}
-          onHide={() => setShowPopConfirm(false)}
+          onHide={onHide}
           position={{ x: 1, y: -3.375 }}
           show={showPopConfirm}
           text="Are you sure you want to delete?"

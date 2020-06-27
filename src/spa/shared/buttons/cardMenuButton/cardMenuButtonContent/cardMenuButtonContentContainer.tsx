@@ -14,11 +14,11 @@ const CardMenuButtonContentContainer: React.FC<Props> = ({ userCard }) => {
   const [showPopConfirm, setShowPopConfirm] = React.useState<boolean>(false);
   const deleteButtonRef = React.useRef<HTMLDivElement>(null);
 
-  const handleDelete = async (): Promise<void> => {
+  const handleDelete = React.useCallback(async () => {
     await deleteUserCard({
       variables: { cardId: userCard.id },
     });
-  };
+  }, [deleteUserCard, userCard.id]);
 
   const toggleToDo = async (): Promise<void> => {
     setIsToDo((prevState) => !prevState);

@@ -13,6 +13,7 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
+  * use memo util for card.tsx
   * if filters return no cards, don't show default empty card, but something else
   * gap between cards change when adding more to second row
   * fix issue where no cards is shown first before showing cards
