@@ -4,11 +4,18 @@
   background: transparent;
   border: none;
   cursor: pointer;
-  display: flex;
+  height: 100%;
   outline: none;
   padding: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.div {
+  display: flex;
+  position: relative;
   &:hover {
-    > div > p {
+    > div > button {
       color: @blueHover;
     }
   }

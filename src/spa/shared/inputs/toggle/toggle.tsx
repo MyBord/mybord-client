@@ -19,35 +19,29 @@ const Toggle: React.FC<Props> = ({
 }) => {
   if (text) {
     return (
-      <button
-        className={[styles.button, styles[size]].join(' ')}
-        onClick={onClick}
-        type="button"
-      >
+      <div className={[styles.div, styles[size]].join(' ')}>
         <Switch
           checked={checked}
+          onClick={onClick}
           size={size === 'large' ? 'default' : size}
         />
         <Typography
-          color="blue"
+          onClick={onClick}
           size={size === 'large' ? 'normal' : 'two'}
           text={text}
         />
-      </button>
+      </div>
     );
   }
 
   return (
-    <button
-      className={styles.button}
-      onClick={onClick}
-      type="button"
-    >
+    <div className={[styles.div, styles[size]].join(' ')}>
       <Switch
         checked={checked}
+        onClick={onClick}
         size={size === 'large' ? 'default' : size}
       />
-    </button>
+    </div>
   );
 };
 
