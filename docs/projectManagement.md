@@ -14,7 +14,8 @@ This document is used to outline current project management priorities.
 ### A. Highest - MVP
 
   * fix issue where no cards is shown first before showing cards
-  * dashboard header filters are not persistent
+  * dashboard header filters are not persistent - move this to context (because modal gets
+   unmounted and thus state keeps getting reset)
   * fix that card cannot be added
   * if filters return no cards, don't show default empty card, but something else
   * gap between cards change when adding more to second row
