@@ -6,12 +6,12 @@ import * as styles from './popOver.module.less';
 interface Props extends PopOverProps {
   Content: React.ReactNode;
   caretPosition?:
-    'bottom-center'
-    | 'bottom-left'
-    | 'bottom-right'
-    | 'top-center'
-    | 'top-left'
-    | 'top-right';
+  'bottom-center'
+  | 'bottom-left'
+  | 'bottom-right'
+  | 'top-center'
+  | 'top-left'
+  | 'top-right';
   node: React.RefObject<HTMLElement>;
   onHide: () => void;
 }
@@ -63,7 +63,8 @@ const PopOver: React.FC<Props> = ({
             styles.caret,
             styles[caretPosition.split('-')[0]],
             styles[caretPosition.split('-')[1]],
-          ].join(' ')} />
+          ].join(' ')}
+          />
         )
       }
       {Content}
