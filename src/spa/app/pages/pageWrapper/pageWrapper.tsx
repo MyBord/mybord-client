@@ -27,7 +27,7 @@ const pageWrapper = (
       const { isAnimationComplete, setHydrationStatus } = useHydrationContext();
 
       // See *1 in `hydrationContext.tsx`
-      React.useEffect(() => setHydrationStatus(true), []);
+      React.useEffect(() => setHydrationStatus(true), [setHydrationStatus]);
 
       // See *2 in `hydrationContext.tsx`
       if (isAnimationComplete) {
@@ -60,7 +60,7 @@ const pageWrapper = (
     const data = resource.data.read();
 
     // See *1 in `hydrationContext.tsx`
-    React.useEffect(() => setHydrationStatus(true), []);
+    React.useEffect(() => setHydrationStatus(true), [setHydrationStatus]);
 
     // See *2 in `hydrationContext.tsx`
     if (isAnimationComplete) {

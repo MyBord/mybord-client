@@ -19,7 +19,7 @@ interface Props {
 }
 
 const DashboardCardsContainer: React.FC<Props> = ({ userCards }) => {
-  const { dispatch } = useDashboardCardsContext();
+  const { state, dispatch } = useDashboardCardsContext();
 
   // ----- ADDING CARDS ----- //
   // first adding cards to state that were initially retrieved when our page was loaded
@@ -66,7 +66,11 @@ const DashboardCardsContainer: React.FC<Props> = ({ userCards }) => {
 
   // ----- RETURNING THE CHILD COMPONENT ----- //
 
-  return <DashboardCardsComponent />;
+  if (state.isHydrated) {
+    return <DashboardCardsComponent />;
+  }
+
+  return null;
 };
 
 export default DashboardCardsContainer;

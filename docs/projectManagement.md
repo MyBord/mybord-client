@@ -14,6 +14,8 @@ This document is used to outline current project management priorities.
 ### A. Highest - MVP
 
   * fix issue where no cards is shown first before showing cards
+  * dashboard header filters are not persistent
+  * fix that card cannot be added
   * if filters return no cards, don't show default empty card, but something else
   * gap between cards change when adding more to second row
   * make to do and favorits filters work / filter cards
@@ -37,6 +39,7 @@ This document is used to outline current project management priorities.
 
 ### C. Medium
 
+  * add query string for filters
   * fix import of all styles, one single import for styles at root of app
   * handle front end if server is down for both app and landing
   * make sure app is responsive and mobile friendly

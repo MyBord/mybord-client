@@ -10,11 +10,15 @@ import {
 export interface DashboardCardsState {
   allIds: AllIdsCards;
   byId: ByIdCards;
+  // indicates if the reducer has been populated with the necessary data (we don't want to
+  // evaluate allIds.length because we could possibly hydrate this reducer with empty data).
+  isHydrated: boolean;
 }
 
 export const initialDashboardCardsState: DashboardCardsState = {
   allIds: [],
   byId: {},
+  isHydrated: false,
 };
 
 export const dashboardCardsReducer = (
@@ -39,6 +43,7 @@ export const dashboardCardsReducer = (
         ...state,
         allIds: reducerUtil.getAllIds(action.cards),
         byId: reducerUtil.getById(action.cards),
+        isHydrated: true,
       };
     default:
       return state;
