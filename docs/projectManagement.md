@@ -18,8 +18,6 @@ This document is used to outline current project management priorities.
   * fix that card cannot be added
   * if filters return no cards, don't show default empty card, but something else
   * gap between cards change when adding more to second row
-  * make to do and favorits filters work / filter cards
-  * when you delete a card, the pop confirm double renders - fix this
   * fix youtube cards where there is too much text
   * have session be remembered by user
   * fix loading of image on landing page
