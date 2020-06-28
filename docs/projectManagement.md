@@ -13,10 +13,9 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
-  * use memo util for card.tsx
+  * fix issue where no cards is shown first before showing cards
   * if filters return no cards, don't show default empty card, but something else
   * gap between cards change when adding more to second row
-  * fix issue where no cards is shown first before showing cards
   * make to do and favorits filters work / filter cards
   * when you delete a card, the pop confirm double renders - fix this
   * fix youtube cards where there is too much text
