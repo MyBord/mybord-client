@@ -14,7 +14,7 @@ const DashboardCardsComponent: React.FC = () => {
       <section className={styles.section}>
         {
           state.allIds.map((userCardId: string) => (
-            <DashboardCardSwitch userCard={state.byId[userCardId]} />
+            <DashboardCardSwitch key={userCardId} userCard={state.byId[userCardId]} />
           ))
         }
         {
