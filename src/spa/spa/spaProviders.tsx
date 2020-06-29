@@ -1,8 +1,9 @@
 import * as React from 'react';
 import { AuthenticationContextProvider } from 'context/authenticationContext/authenticationContext';
-import { CardContextProvider } from 'context/cardContext/cardContext';
 import { DashboardCardsContextProvider } from 'context/dashboardCardsContext/dashboardCardsContext';
 import { HydrationContextProvider } from 'context/hydrationContext/hydrationContext';
+import { MultiSelectCardContextProvider }
+  from 'context/multiSelectCardContext/multiSelectCardContext';
 
 interface Props {
   children: React.ReactNode;
@@ -10,13 +11,13 @@ interface Props {
 
 const SpaProviders: React.FC<Props> = ({ children }) => (
   <AuthenticationContextProvider>
-    <CardContextProvider>
-      <DashboardCardsContextProvider>
-        <HydrationContextProvider>
+    <DashboardCardsContextProvider>
+      <HydrationContextProvider>
+        <MultiSelectCardContextProvider>
           {children}
-        </HydrationContextProvider>
-      </DashboardCardsContextProvider>
-    </CardContextProvider>
+        </MultiSelectCardContextProvider>
+      </HydrationContextProvider>
+    </DashboardCardsContextProvider>
   </AuthenticationContextProvider>
 );
 

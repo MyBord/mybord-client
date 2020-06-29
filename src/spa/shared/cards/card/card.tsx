@@ -1,7 +1,7 @@
 import * as React from 'react';
 import stringify from 'utils/stringify';
 import { UserCard } from 'schema/card';
-import { useCardContext } from 'context/cardContext/cardContext';
+import { useMultiSelectCardContext } from 'context/multiSelectCardContext/multiSelectCardContext';
 import CardContent from './cardContent/cardContent';
 import CardDescription from './cardDescription/cardDescription';
 // import CardFooter from './cardFooter/cardFooter';
@@ -22,7 +22,7 @@ const Card: React.FC<Props> = ({
   Description,
   userCard,
 }) => {
-  const { selectedCardIds } = useCardContext();
+  const { selectedCardIds } = useMultiSelectCardContext();
   const isSelected = selectedCardIds.includes(userCard.id);
 
   return (

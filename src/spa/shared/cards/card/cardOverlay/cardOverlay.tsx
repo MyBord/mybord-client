@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useCardContext } from 'context/cardContext/cardContext';
+import { useMultiSelectCardContext } from 'context/multiSelectCardContext/multiSelectCardContext';
 import * as styles from './cardOverlay.module.less';
 
 interface Props {
@@ -7,7 +7,7 @@ interface Props {
 }
 
 const CardOverlay: React.FC<Props> = ({ cardId }) => {
-  const { canMultiEdit, toggleCard } = useCardContext();
+  const { canMultiEdit, toggleCard } = useMultiSelectCardContext();
 
   const handleClick = (): void => toggleCard(cardId);
 

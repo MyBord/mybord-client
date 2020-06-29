@@ -5,7 +5,7 @@ import IconButton from 'icons/iconButton/iconButton';
 import PopOver from 'modals/popOver/popOver';
 import TextInput from 'inputs/textInput/textInput';
 import { FormProp } from 'types/formTypes';
-import { useCardContext } from 'context/cardContext/cardContext';
+import { useMultiSelectCardContext } from 'context/multiSelectCardContext/multiSelectCardContext';
 import DashboardFilterContent from './dashboardFilterContent/dashboardFilterContent';
 import * as styles from './dashboardHeaderFilterForm.module.less';
 
@@ -22,7 +22,7 @@ const DashboardHeaderFilterFormContent: React.FC<Props> = ({
 }) => {
   const [showFilters, setShowFilters] = React.useState<boolean>(false);
   const iconButtonRef = React.useRef<HTMLButtonElement>(null);
-  const { canMultiEdit, toggleMultiEditStatus } = useCardContext();
+  const { canMultiEdit, toggleMultiEditStatus } = useMultiSelectCardContext();
 
   return (
     <div className={styles.formContainer}>

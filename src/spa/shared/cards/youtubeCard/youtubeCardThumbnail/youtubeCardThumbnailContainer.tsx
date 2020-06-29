@@ -2,7 +2,7 @@ import * as React from 'react';
 import { UserCard } from 'schema/card';
 import YoutubeThumbnailAnimation from 'framerMotion/youtubeThumbnailAnimation';
 import YoutubePlayerContainer from 'cards/youtubeCard/youtubePlayer/youtubePlayerContainer';
-import { useCardContext } from 'context/cardContext/cardContext';
+import { useMultiSelectCardContext } from 'context/multiSelectCardContext/multiSelectCardContext';
 import YoutubeCardThumbnailComponent from './youtubeCardThumbnailComponent';
 
 interface Props {
@@ -12,7 +12,7 @@ interface Props {
 const YoutubeCardThumbnailContainer: React.FC<Props> = ({ userCard }) => {
   const [hasPlayButtonBeenClicked, setHasPlayButtonBeenClicked] = React.useState<boolean>(false);
   const [isYoutubePlayerLoaded, setIsYoutubePlayerLoaded] = React.useState<boolean>(false);
-  const { activeCard, canMultiEdit, setActiveCardId } = useCardContext();
+  const { activeCard, canMultiEdit, setActiveCardId } = useMultiSelectCardContext();
 
   const handlePlay = (): void => {
     setActiveCardId(userCard.id);

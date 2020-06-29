@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-interface CardState {
+interface MultiSelectCardState {
   // which card is currently 'active', e.g. video is playing, article is open, note is open, music
   // is playing, etc.
   activeCard: {
@@ -13,7 +13,7 @@ interface CardState {
   toggleMultiEditStatus: () => void;
 }
 
-const initialCardState: CardState = {
+const initialMultiSelectCardState: MultiSelectCardState = {
   activeCard: {
     id: null,
   },
@@ -24,23 +24,25 @@ const initialCardState: CardState = {
   toggleMultiEditStatus: () => {},
 };
 
-const CardContext = React.createContext<CardState>(initialCardState);
+const MultiSelectCardContext = React.createContext<MultiSelectCardState>(
+  initialMultiSelectCardState,
+);
 
-export const CardContextProvider = (props: object): React.ReactElement => {
+export const MultiSelectCardContextProvider = (props: object): React.ReactElement => {
   const [
     activeCard,
     setActiveCard,
-  ] = React.useState<CardState['activeCard']>(initialCardState.activeCard);
+  ] = React.useState<MultiSelectCardState['activeCard']>(initialMultiSelectCardState.activeCard);
 
   const [
     canMultiEdit,
     setMultiEditStatus,
-  ] = React.useState<boolean>(initialCardState.canMultiEdit);
+  ] = React.useState<boolean>(initialMultiSelectCardState.canMultiEdit);
 
   const [
     selectedCardIds,
     setSelectedCardIds,
-  ] = React.useState<string[]>(initialCardState.selectedCardIds);
+  ] = React.useState<string[]>(initialMultiSelectCardState.selectedCardIds);
 
   const setActiveCardId = (cardId: string): void => {
     setActiveCard((prevState) => ({ ...prevState, id: cardId }));
@@ -69,7 +71,7 @@ export const CardContextProvider = (props: object): React.ReactElement => {
   };
 
   return (
-    <CardContext.Provider
+    <MultiSelectCardContext.Provider
       value={{
         activeCard,
         canMultiEdit,
@@ -83,4 +85,6 @@ export const CardContextProvider = (props: object): React.ReactElement => {
   );
 };
 
-export const useCardContext = (): CardState => React.useContext(CardContext);
+export const useMultiSelectCardContext = (): MultiSelectCardState => (
+  React.useContext(MultiSelectCardContext)
+);

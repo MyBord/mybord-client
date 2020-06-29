@@ -4,7 +4,7 @@ import CardContentButtonsAnimation from 'framerMotion/cardContentButtonsAnimatio
 import CardMenuButtonContainer from 'buttons/cardMenuButton/cardMenuButtonContainer';
 import FavoriteButton from 'buttons/favoriteButton/favoriteButton';
 import { TOGGLE_FAVORITE_USER_CARD_MUTATION, UserCard } from 'schema/card';
-import { useCardContext } from 'context/cardContext/cardContext';
+import { useMultiSelectCardContext } from 'context/multiSelectCardContext/multiSelectCardContext';
 import * as styles from './cardContent.module.less';
 
 interface Props {
@@ -18,7 +18,7 @@ const CardContent: React.FC<Props> = ({
 }) => {
   const containerRef = React.useRef(null);
   const [isFavorite, setIsFavorite] = React.useState<boolean>(userCard.isFavorite);
-  const { activeCard, canMultiEdit } = useCardContext();
+  const { activeCard, canMultiEdit } = useMultiSelectCardContext();
   const [toggleFavoriteUserCard] = useMutation(TOGGLE_FAVORITE_USER_CARD_MUTATION);
 
   const handleFavorite = async (): Promise<void> => {
