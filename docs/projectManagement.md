@@ -13,8 +13,8 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
+  * if filtered to e.g. favorites, unfavoriting something should remove it from the result set
   * when you first login, cards show before page is done animating? 
-  * fix that card cannot be added
   * if filters return no cards, don't show default empty card, but something else
   * gap between cards change when adding more to second row
   * fix youtube cards where there is too much text
