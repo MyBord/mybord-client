@@ -15,14 +15,12 @@ This document is used to outline current project management priorities.
 
   * if filtered to e.g. favorites, unfavoriting something should remove it from the result set
   * when you first login, cards show before page is done animating? 
-  * if filters return no cards, don't show default empty card, but something else
   * gap between cards change when adding more to second row
   * fix youtube cards where there is too much text
   * have session be remembered by user
   * fix loading of image on landing page
   * add about page - for app and landing
   * replace coffee login image
-  * replace error lottie
   * create transitions between login and about and error
   * create error page if server is down  
   * when error boundary is triggered, you get a white screen
@@ -37,6 +35,7 @@ This document is used to outline current project management priorities.
 ### C. Medium
 
   * add react lazy loading to all files that use switch statements
+  * replace error lottie
   * add query string for filters
   * fix import of all styles, one single import for styles at root of app
   * handle front end if server is down for both app and landing
