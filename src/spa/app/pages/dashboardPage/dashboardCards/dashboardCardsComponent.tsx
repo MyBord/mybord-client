@@ -1,7 +1,6 @@
 import * as React from 'react';
-import Empty from 'icons/empty/empty';
+import EmptyCard from 'cards/emptyCard/emptyCard';
 import PhantomCard from 'shared/cards/phantomCard/phantomCard';
-import Typography from 'typography/typography';
 import { useDashboardCardsContext } from 'context/dashboardCardsContext/dashboardCardsContext';
 import DashboardCardSwitch from './dashboardCardSwitch';
 import * as styles from './dashboardCards.module.less';
@@ -29,14 +28,7 @@ const DashboardCardsComponent: React.FC = () => {
 
   return (
     <section className={styles.section}>
-      <div className={styles.emptyCard}>
-        <Empty />
-        <Typography
-          color="blue"
-          size="three"
-          text="You don't have any cards. You should add some."
-        />
-      </div>
+      <EmptyCard hasFilters={state.filters.hasFilters} />
     </section>
   );
 };

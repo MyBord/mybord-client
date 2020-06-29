@@ -36,6 +36,7 @@ This document is used to outline current project management priorities.
 
 ### C. Medium
 
+  * add react lazy loading to all files that use switch statements
   * add query string for filters
   * fix import of all styles, one single import for styles at root of app
   * handle front end if server is down for both app and landing
