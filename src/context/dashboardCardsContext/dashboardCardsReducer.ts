@@ -1,5 +1,5 @@
 import reducerUtil from 'context/contextUtils/reducerUtil';
-import {AllIdsCards, ByIdCards} from 'types/reducerTypes';
+import { AllIdsCards, ByIdCards } from 'types/reducerTypes';
 import {
   ADD_CARD,
   DashboardCardsDispatchTypes,
@@ -13,6 +13,9 @@ export interface DashboardCardsState {
   allIds: AllIdsCards;
   byId: ByIdCards;
   filters: {
+    // this tells us if filters have been applied, which is useful in knowing what ui to present
+    // in case an empty result set needs to be shown
+    filtersApplied: boolean;
     isFavorite: boolean;
     isToDo: boolean;
   };
@@ -25,6 +28,7 @@ export const initialDashboardCardsState: DashboardCardsState = {
   allIds: [],
   byId: {},
   filters: {
+    filtersApplied: false,
     isFavorite: false,
     isToDo: false,
   },
@@ -55,22 +59,44 @@ export const dashboardCardsReducer = (
         byId: reducerUtil.getById(action.cards),
         isHydrated: true,
       };
-    case TOGGLE_IS_FAVORITE:
+    case TOGGLE_IS_FAVORITE: {
+      // *1: we are applying said filter
+      // *2: we are turning off said filter but another filter is still turned on
+      let filtersApplied: boolean;
+      if (!state.filters.isFavorite) { // *1
+        filtersApplied = true;
+      } else if (state.filters.isToDo) { // *2
+        filtersApplied = true;
+      } else {
+        filtersApplied = false;
+      }
       return {
         ...state,
         filters: {
           ...state.filters,
+          filtersApplied,
           isFavorite: !state.filters.isFavorite,
         },
       };
-    case TOGGLE_IS_TO_DO:
+    }
+    case TOGGLE_IS_TO_DO: {
+      let filtersApplied: boolean;
+      if (!state.filters.isToDo) { // *1
+        filtersApplied = true;
+      } else if (state.filters.isFavorite) { // *2
+        filtersApplied = true;
+      } else {
+        filtersApplied = false;
+      }
       return {
         ...state,
         filters: {
           ...state.filters,
+          filtersApplied,
           isToDo: !state.filters.isToDo,
         },
       };
+    }
     default:
       return state;
   }

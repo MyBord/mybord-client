@@ -27,6 +27,10 @@ const DashboardCardsComponent: React.FC = () => {
     );
   }
 
+  if (state.filters.filtersApplied) {
+    return <h1>hello world</h1>;
+  }
+
   return (
     <section className={styles.section}>
       <div className={styles.emptyCard}>
