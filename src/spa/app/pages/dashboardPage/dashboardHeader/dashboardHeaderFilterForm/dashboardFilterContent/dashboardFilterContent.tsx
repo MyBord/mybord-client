@@ -1,35 +1,32 @@
 import * as React from 'react';
 import { useLazyQuery } from '@apollo/react-hooks';
 import Toggle from 'inputs/toggle/toggle';
+import { useDashboardCardsContext } from 'context/dashboardCardsContext/dashboardCardsContext';
+import { TOGGLE_IS_FAVORITE, TOGGLE_IS_TO_DO }
+  from 'context/dashboardCardsContext/dashboardCardsReducerTypes';
 import { USER_CARDS_WITH_FILTERS_QUERY } from 'schema/card';
-import { useDashboardFilterContext } from 'context/dashboardFilterContext/dashboardFilterContext';
 import * as styles from './dashboardFilterContent.module.less';
 
 const DashboardFilterContent: React.FC = () => {
-  const {
-    isFavorite,
-    isToDo,
-    setIsFavorite,
-    setIsToDo,
-  } = useDashboardFilterContext();
   const [userCardsQuery] = useLazyQuery(USER_CARDS_WITH_FILTERS_QUERY, { fetchPolicy: 'no-cache' });
+  const { state, dispatch } = useDashboardCardsContext();
 
   const handleToggleFavoriteFilter = async (): Promise<void> => {
-    setIsFavorite((prevState) => !prevState);
+    dispatch({ type: TOGGLE_IS_FAVORITE });
     await userCardsQuery({
       variables: {
-        isFavorite: !isFavorite,
-        isToDo,
+        isFavorite: !state.filters.isFavorite,
+        isToDo: state.filters.isToDo,
       },
     });
   };
 
   const handleToggleToDoFilter = async (): Promise<void> => {
-    setIsToDo((prevState) => !prevState);
+    dispatch({ type: TOGGLE_IS_TO_DO });
     await userCardsQuery({
       variables: {
-        isFavorite,
-        isToDo: !isToDo,
+        isFavorite: state.filters.isFavorite,
+        isToDo: !state.filters.isToDo,
       },
     });
   };
@@ -38,7 +35,7 @@ const DashboardFilterContent: React.FC = () => {
     <ul className={styles.ul}>
       <li className={styles.li}>
         <Toggle
-          checked={isFavorite}
+          checked={state.filters.isFavorite}
           onClick={handleToggleFavoriteFilter}
           size="small"
           text="Favorites"
@@ -46,7 +43,7 @@ const DashboardFilterContent: React.FC = () => {
       </li>
       <li className={styles.li}>
         <Toggle
-          checked={isToDo}
+          checked={state.filters.isToDo}
           onClick={handleToggleToDoFilter}
           size="small"
           text="To Do"

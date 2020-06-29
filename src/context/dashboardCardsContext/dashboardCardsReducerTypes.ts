@@ -5,6 +5,8 @@ import { UserCard } from 'schema/card';
 export const ADD_CARD = 'ADD_CARD';
 export const DELETE_CARD = 'DELETE_CARD';
 export const SET_CARDS = 'SET_CARDS';
+export const TOGGLE_IS_FAVORITE = 'TOGGLE_IS_FAVORITE';
+export const TOGGLE_IS_TO_DO = 'TOGGLE_IS_TO_DO';
 
 // ----- INTERFACES ----- //
 
@@ -23,6 +25,16 @@ interface SetCards {
   cards: UserCard[];
 }
 
+interface ToggleIsFavorite {
+  type: typeof TOGGLE_IS_FAVORITE;
+}
+
+interface ToggleIsToDo {
+  type: typeof TOGGLE_IS_TO_DO;
+}
+
 export type DashboardCardsDispatchTypes = AddCard
 | DeleteCard
-| SetCards;
+| SetCards
+| ToggleIsFavorite
+| ToggleIsToDo;
