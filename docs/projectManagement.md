@@ -13,8 +13,6 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
-  * dashboard header filters are not persistent - move this to context (because modal gets
-   unmounted and thus state keeps getting reset)
   * when you first login, cards show before page is done animating? 
   * fix that card cannot be added
   * if filters return no cards, don't show default empty card, but something else
