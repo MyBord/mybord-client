@@ -15,7 +15,7 @@ export interface DashboardCardsState {
   filters: {
     // this tells us if filters have been applied, which is useful in knowing what ui to present
     // in case an empty result set needs to be shown
-    filtersApplied: boolean;
+    hasFilters: boolean;
     isFavorite: boolean;
     isToDo: boolean;
   };
@@ -28,7 +28,7 @@ export const initialDashboardCardsState: DashboardCardsState = {
   allIds: [],
   byId: {},
   filters: {
-    filtersApplied: false,
+    hasFilters: false,
     isFavorite: false,
     isToDo: false,
   },
@@ -62,37 +62,37 @@ export const dashboardCardsReducer = (
     case TOGGLE_IS_FAVORITE: {
       // *1: we are applying said filter
       // *2: we are turning off said filter but another filter is still turned on
-      let filtersApplied: boolean;
+      let hasFilters: boolean;
       if (!state.filters.isFavorite) { // *1
-        filtersApplied = true;
+        hasFilters = true;
       } else if (state.filters.isToDo) { // *2
-        filtersApplied = true;
+        hasFilters = true;
       } else {
-        filtersApplied = false;
+        hasFilters = false;
       }
       return {
         ...state,
         filters: {
           ...state.filters,
-          filtersApplied,
+          hasFilters,
           isFavorite: !state.filters.isFavorite,
         },
       };
     }
     case TOGGLE_IS_TO_DO: {
-      let filtersApplied: boolean;
+      let hasFilters: boolean;
       if (!state.filters.isToDo) { // *1
-        filtersApplied = true;
+        hasFilters = true;
       } else if (state.filters.isFavorite) { // *2
-        filtersApplied = true;
+        hasFilters = true;
       } else {
-        filtersApplied = false;
+        hasFilters = false;
       }
       return {
         ...state,
         filters: {
           ...state.filters,
-          filtersApplied,
+          hasFilters,
           isToDo: !state.filters.isToDo,
         },
       };

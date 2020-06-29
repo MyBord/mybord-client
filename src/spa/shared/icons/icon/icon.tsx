@@ -17,6 +17,7 @@ import GoogleIcon from './individualIcons/googleIcon';
 import HeartIcon from './individualIcons/heartIcon';
 import LogoutIcon from './individualIcons/logoutIcon';
 import MailIcon from './individualIcons/mailIcon';
+import MonkeyIcon from './individualIcons/monkeyIcon';
 import PencilIcon from './individualIcons/pencilIcon';
 import PlaylistIcon from './individualIcons/playlistIcon';
 import StarIcon from './individualIcons/starIcon';
@@ -44,6 +45,7 @@ export const iconNames = {
   heart: 'foo',
   logout: 'foo',
   mail: 'foo',
+  monkey: 'foo',
   notification: 'foo',
   pencil: 'foo',
   playlist: 'foo',
@@ -99,6 +101,8 @@ const Icon: React.FC<IconProps> = ({
       return <LogoutIcon color={color} size={size} />;
     case 'mail':
       return <MailIcon size={size} />;
+    case 'monkey':
+      return <MonkeyIcon size={size} />;
     case 'notification':
       return <BellIcon size={size} />;
     case 'pencil':
