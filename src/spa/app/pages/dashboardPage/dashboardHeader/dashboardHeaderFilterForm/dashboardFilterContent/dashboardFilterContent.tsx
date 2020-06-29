@@ -2,29 +2,34 @@ import * as React from 'react';
 import { useLazyQuery } from '@apollo/react-hooks';
 import Toggle from 'inputs/toggle/toggle';
 import { USER_CARDS_WITH_FILTERS_QUERY } from 'schema/card';
+import { useDashboardFilterContext } from 'context/dashboardFilterContext/dashboardFilterContext';
 import * as styles from './dashboardFilterContent.module.less';
 
 const DashboardFilterContent: React.FC = () => {
-  const [isFavoriteFilter, setIsFavoriteFilter] = React.useState<boolean>(false);
-  const [isToDoFilter, setIsToDoFilter] = React.useState<boolean>(false);
+  const {
+    isFavorite,
+    isToDo,
+    setIsFavorite,
+    setIsToDo,
+  } = useDashboardFilterContext();
   const [userCardsQuery] = useLazyQuery(USER_CARDS_WITH_FILTERS_QUERY, { fetchPolicy: 'no-cache' });
 
   const handleToggleFavoriteFilter = async (): Promise<void> => {
-    setIsFavoriteFilter((prevState) => !prevState);
+    setIsFavorite((prevState) => !prevState);
     await userCardsQuery({
       variables: {
-        isFavorite: !isFavoriteFilter,
-        isToDo: isToDoFilter,
+        isFavorite: !isFavorite,
+        isToDo,
       },
     });
   };
 
   const handleToggleToDoFilter = async (): Promise<void> => {
-    setIsToDoFilter((prevState) => !prevState);
+    setIsToDo((prevState) => !prevState);
     await userCardsQuery({
       variables: {
-        isFavorite: isFavoriteFilter,
-        isToDo: !isToDoFilter,
+        isFavorite,
+        isToDo: !isToDo,
       },
     });
   };
@@ -33,7 +38,7 @@ const DashboardFilterContent: React.FC = () => {
     <ul className={styles.ul}>
       <li className={styles.li}>
         <Toggle
-          checked={isFavoriteFilter}
+          checked={isFavorite}
           onClick={handleToggleFavoriteFilter}
           size="small"
           text="Favorites"
@@ -41,7 +46,7 @@ const DashboardFilterContent: React.FC = () => {
       </li>
       <li className={styles.li}>
         <Toggle
-          checked={isToDoFilter}
+          checked={isToDo}
           onClick={handleToggleToDoFilter}
           size="small"
           text="To Do"
