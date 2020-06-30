@@ -1,9 +1,11 @@
 import * as React from 'react';
+import pageWrapper from 'pages/pageWrapper/pageWrapper';
 import { useSubscription } from '@apollo/react-hooks';
 import {
   DELETED_USER_CARD_SUBSCRIPTION,
-  USER_CARD_SUBSCRIPTION,
+  USER_CARDS_QUERY,
   USER_CARDS_SUBSCRIPTION,
+  USER_CARD_SUBSCRIPTION,
   UserCard,
 } from 'schema/card';
 import {
@@ -12,21 +14,23 @@ import {
   SET_CARDS,
 } from 'context/dashboardCardsContext/dashboardCardsReducerTypes';
 import { useDashboardCardsContext } from 'context/dashboardCardsContext/dashboardCardsContext';
-import DashboardCardsComponent from './dashboardCardsComponent';
+import DashboardPageComponent from './dashboardPageComponent';
 
 interface Props {
-  userCards: UserCard[];
+  data: {
+    userCards: UserCard[];
+  };
 }
 
-const DashboardCardsContainer: React.FC<Props> = ({ userCards }) => {
+const DashboardPageContainer: React.FC<Props> = ({ data }) => {
   const { state, dispatch } = useDashboardCardsContext();
 
   // ----- ADDING CARDS ----- //
   // first adding cards to state that were initially retrieved when our page was loaded
 
   React.useEffect(() => {
-    dispatch({ type: SET_CARDS, cards: userCards });
-  }, [dispatch, userCards]);
+    dispatch({ type: SET_CARDS, cards: data.userCards });
+  }, [dispatch, data.userCards]);
 
   // ----- ADDING A CARD ----- //
   // subscribing to when a card gets added
@@ -67,10 +71,10 @@ const DashboardCardsContainer: React.FC<Props> = ({ userCards }) => {
   // ----- RETURNING THE CHILD COMPONENT ----- //
 
   if (state.isHydrated) {
-    return <DashboardCardsComponent />;
+    return <DashboardPageComponent />;
   }
 
   return null;
 };
 
-export default DashboardCardsContainer;
+export default pageWrapper(DashboardPageContainer, USER_CARDS_QUERY);
