@@ -20,4 +20,4 @@ const CantPage: React.FC = () => (
   </div>
 );
 
-export default pageWrapper(CantPage);
+export default pageWrapper({ Component: CantPage });

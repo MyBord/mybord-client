@@ -12,4 +12,4 @@ const HistoryPage: React.FC = () => (
   />
 );
 
-export default pageWrapper(HistoryPage);
+export default pageWrapper({ Component: HistoryPage });

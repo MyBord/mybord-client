@@ -14,6 +14,7 @@ import {
   SET_CARDS,
 } from 'context/dashboardCardsContext/dashboardCardsReducerTypes';
 import { useDashboardCardsContext } from 'context/dashboardCardsContext/dashboardCardsContext';
+import { useHydrationContext } from 'context/hydrationContext/hydrationContext';
 import DashboardPageComponent from './dashboardPageComponent';
 
 interface Props {
@@ -24,6 +25,7 @@ interface Props {
 
 const DashboardPageContainer: React.FC<Props> = ({ data }) => {
   const { state, dispatch } = useDashboardCardsContext();
+  const { setHydrationStatus } = useHydrationContext();
 
   // ----- ADDING CARDS ----- //
   // first adding cards to state that were initially retrieved when our page was loaded
@@ -68,6 +70,16 @@ const DashboardPageContainer: React.FC<Props> = ({ data }) => {
     }
   }, [cardsData, cardsLoading, dispatch]);
 
+  // ----- TURNS OFF LOADING ANIMATION ----- //
+  // this turns off the loading animation / spinner for the page once our reducer has been
+  // properly hydrated
+
+  React.useEffect(() => {
+    if (state.isHydrated) {
+      setHydrationStatus(true);
+    }
+  }, [setHydrationStatus, state.isHydrated]);
+
   // ----- RETURNING THE CHILD COMPONENT ----- //
 
   if (state.isHydrated) {
@@ -77,4 +89,8 @@ const DashboardPageContainer: React.FC<Props> = ({ data }) => {
   return null;
 };
 
-export default pageWrapper(DashboardPageContainer, USER_CARDS_QUERY);
+export default pageWrapper({
+  Component: DashboardPageContainer,
+  gqlString: USER_CARDS_QUERY,
+  setHydration: false,
+});

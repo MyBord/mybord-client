@@ -12,4 +12,4 @@ const FavoritesPage: React.FC = () => (
   />
 );
 
-export default pageWrapper(FavoritesPage);
+export default pageWrapper({ Component: FavoritesPage });
