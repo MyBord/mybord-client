@@ -13,14 +13,22 @@ interface PageContentProps {
   setHydrationStatus: (status: boolean) => void;
 }
 
+// ToDo: add notes
+interface Props {
+  WrappedComponent: React.FC<WrappedComponentProps>;
+  gqlString?: GqlString;
+  setHydration?: boolean;
+}
+
 interface WrappedComponentProps {
   data?: any;
 }
 
-const pageWrapper = (
-  WrappedComponent: React.FC<WrappedComponentProps>,
-  gqlString?: GqlString,
-): React.FC => {
+const pageWrapper = ({
+  WrappedComponent,
+  gqlString,
+  setHydration,
+}: Props): React.FC => {
   // ----- NO DATA IS NEEDED ----- //
   if (!gqlString) {
     const NoDataPage: React.FC = () => {
