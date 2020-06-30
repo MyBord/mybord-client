@@ -1,38 +1,39 @@
 import * as React from 'react';
-import { ExportedColors } from 'types/colorTypes';
+import { Link } from 'react-router-dom';
 import {
   TypographyFont,
   TypographySize,
   TypographyWeight,
 } from 'types/typographyTypes';
-import * as styles from './typography.module.less';
+import * as styles from '../typography.module.less';
 
 interface Props {
   children: React.ReactNode;
-  color: ExportedColors;
   font: TypographyFont;
+  link: string;
   size: TypographySize;
   weight: TypographyWeight;
 }
 
-const TypographyParagraph: React.FC<Props> = ({
+const TypographyLink: React.FC<Props> = ({
   children,
-  color,
   font,
+  link,
   size,
   weight,
 }) => (
-  <p
+  <Link
     className={[
+      styles.link,
       styles.typography,
-      styles[color],
       styles[font],
       styles[size],
       styles[weight],
     ].join(' ')}
+    to={link}
   >
     {children}
-  </p>
+  </Link>
 );
 
-export default TypographyParagraph;
+export default TypographyLink;

@@ -4,7 +4,7 @@ import {
   TypographySize,
   TypographyWeight,
 } from 'types/typographyTypes';
-import * as styles from './typography.module.less';
+import * as styles from '../typography.module.less';
 
 interface Props {
   children: React.ReactNode;

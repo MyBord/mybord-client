@@ -5,10 +5,10 @@ import {
   TypographySize,
   TypographyWeight,
 } from 'types/typographyTypes';
-import TypographyButton from './typographyButton';
-import TypographyLink from './typographyLink';
-import TypographyParagraph from './typographyParagraph';
-import TypographyText from './typographyText';
+import TypographyButton from './typographyButton/typographyButton';
+import TypographyLink from './typographyLink/typographyLink';
+import TypographyParagraph from './typographyParagraph/typographyParagraph';
+import TypographyText from './typographyText/typographyText';
 
 interface Props {
   Content?: React.FC;
