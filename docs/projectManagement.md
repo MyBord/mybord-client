@@ -24,7 +24,6 @@ This document is used to outline current project management priorities.
   * replace coffee login image
   * create transitions between login and about and error
   * create error page if server is down  
-  * when error boundary is triggered, you get a white screen
   * when refreshing the dashboard, the spa fallback seems to be persisting for too long
   * Document react naming conventions
     - container & component
