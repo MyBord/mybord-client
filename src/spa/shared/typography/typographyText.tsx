@@ -1,4 +1,5 @@
 import * as React from 'react';
+import * as styles from './typographyText.module.less';
 
 interface Props {
   Content?: React.FC;
@@ -11,13 +12,13 @@ const TypographyText: React.FC<Props> = ({
   maxTextLength,
   text,
 }) => {
-  const renderText = (): string => {
+  const renderText = (): React.ReactElement => {
     if (maxTextLength && text.length > maxTextLength) {
       return (
-        `${text.slice(0, maxTextLength)}...`
+        <p className={styles.p}>{`${text.slice(0, maxTextLength)}...`}</p>
       );
     }
-    return text;
+    return <p className={styles.p}>{text}</p>;
   };
 
   return (
