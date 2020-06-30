@@ -35,6 +35,7 @@ This document is used to outline current project management priorities.
 
 ### C. Medium
 
+  * fix when you cannot get the channel icon
   * add react lazy loading to all files that use switch statements
   * replace error lottie
   * add query string for filters

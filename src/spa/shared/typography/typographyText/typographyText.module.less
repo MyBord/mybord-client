@@ -1,3 +1,23 @@
+@import "~styles/_colors";
+
+.dot {
+  background: @blue;
+  border-radius: 50%;
+  height: 0.25rem;
+  margin: 0.125rem;
+  width: 0.25rem;
+}
+
+.ellipsis {
+  cursor: pointer;
+  display: flex;
+  &:hover {
+    > div {
+      background: @blueHover;
+    }
+  }
+}
+
 .p {
   margin: 0;
 }
