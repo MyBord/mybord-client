@@ -2,3 +2,8 @@
 Make sure to remove all notes before merging (except for this one, of course).
 ----------------------------------------------------------------------------------------------------
 make separate container and component files for popover
+
+update popover demo
+
+console.log(containerNode.getBoundingClientRect()); ??
+

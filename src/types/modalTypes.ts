@@ -10,9 +10,9 @@ export interface PopOverProps {
   | 'top-right';
   children: React.ReactNode;
   defaultVisible?: boolean;
-  placement?: 'left' | 'right';
-  position?: {
-    x: number;
-    y: number;
-  };
+  placement?:
+  'bottom'
+  | 'left'
+  | 'right'
+  | 'top';
 }

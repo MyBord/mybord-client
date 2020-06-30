@@ -12,18 +12,34 @@ const PopOver: React.FC<Props> = ({
   caretPosition = null,
   children,
   defaultVisible = false,
-  placement = 'right',
-  position = { x: 0, y: 0 },
+  placement = 'top',
 }) => {
   const [showPopOver, setShowPopOver] = React.useState<boolean>(defaultVisible);
   const childrenRef = React.useRef<HTMLDivElement>(null);
+  const containerRef = React.useRef<HTMLDivElement>(null);
   const popOverRef = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
     const childrenNode = childrenRef.current;
     const popOverNode = popOverRef.current;
 
-    const handleClickOutside = (event: Event): void => {
+    const handleClick = (event: Event): void => {
+      if (
+        !showPopOver
+        && childrenNode
+        && childrenNode.contains(event.target as Node)
+      ) {
+        setShowPopOver(true);
+      }
+
+      if (
+        showPopOver
+        && childrenNode
+        && childrenNode.contains(event.target as Node)
+      ) {
+        setShowPopOver(false);
+      }
+
       if (
         showPopOver
         && popOverNode
@@ -35,10 +51,10 @@ const PopOver: React.FC<Props> = ({
       }
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('mousedown', handleClick);
 
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('mousedown', handleClick);
     };
   }, [
     childrenRef,
@@ -47,11 +63,18 @@ const PopOver: React.FC<Props> = ({
     setShowPopOver,
   ]);
 
+  React.useEffect(() => {
+    const containerNode = containerRef.current;
+
+    if (containerNode) {
+      console.log(containerNode.getBoundingClientRect());
+    }
+  }, [containerRef]);
+
   return (
-    <>
+    <div className={styles.container} ref={containerRef}>
       <PopOverAnimation
         placement={placement}
-        position={position}
         ref={popOverRef}
         showPopOver={showPopOver}
       >
@@ -70,7 +93,7 @@ const PopOver: React.FC<Props> = ({
       <div ref={childrenRef}>
         {children}
       </div>
-    </>
+    </div>
   );
 };
 
