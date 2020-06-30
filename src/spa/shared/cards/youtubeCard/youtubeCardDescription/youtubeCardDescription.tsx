@@ -9,7 +9,7 @@ interface Props {
 }
 
 const YoutubeCardDescription: React.FC<Props> = ({ userCard }) => (
-  <>
+  <div className={styles.container}>
     <div className={styles.title}>
       <Typography
         maxTextLength={65}
@@ -18,44 +18,46 @@ const YoutubeCardDescription: React.FC<Props> = ({ userCard }) => (
         weight="bold"
       />
     </div>
-    <div className={styles.channelDiv}>
-      <img
-        alt="channel icon"
-        className={styles.channelIcon}
-        src={userCard.cardData.youtubeCardData.channelThumbnail}
-      />
-      <div className={styles.channelTitle}>
-        <Typography
-          maxTextLength={36}
-          size="one"
-          text={userCard.cardData.youtubeCardData.channelTitle}
+    <div>
+      <div className={styles.channelDiv}>
+        <img
+          alt="channel icon"
+          className={styles.channelIcon}
+          src={userCard.cardData.youtubeCardData.channelThumbnail}
         />
+        <div className={styles.channelTitle}>
+          <Typography
+            maxTextLength={36}
+            size="one"
+            text={userCard.cardData.youtubeCardData.channelTitle}
+          />
+        </div>
+      </div>
+      <div className={styles.statsContainer}>
+        <div className={styles.statsDiv}>
+          <Icon iconName="thumbsUp" size={16} />
+          <Typography
+            size="one"
+            text={userCard.cardData.youtubeCardData.likes}
+          />
+        </div>
+        <div className={styles.statsDiv}>
+          <Icon iconName="eye" size={16} />
+          <Typography
+            size="one"
+            text={userCard.cardData.youtubeCardData.views}
+          />
+        </div>
+        <div className={styles.statsDiv}>
+          <Icon iconName="calendar" size={16} />
+          <Typography
+            size="one"
+            text={userCard.cardData.youtubeCardData.publishedAt}
+          />
+        </div>
       </div>
     </div>
-    <div className={styles.statsContainer}>
-      <div className={styles.statsDiv}>
-        <Icon iconName="thumbsUp" size={16} />
-        <Typography
-          size="one"
-          text={userCard.cardData.youtubeCardData.likes}
-        />
-      </div>
-      <div className={styles.statsDiv}>
-        <Icon iconName="eye" size={16} />
-        <Typography
-          size="one"
-          text={userCard.cardData.youtubeCardData.views}
-        />
-      </div>
-      <div className={styles.statsDiv}>
-        <Icon iconName="calendar" size={16} />
-        <Typography
-          size="one"
-          text={userCard.cardData.youtubeCardData.publishedAt}
-        />
-      </div>
-    </div>
-  </>
+  </div>
 );
 
 export default YoutubeCardDescription;
