@@ -1,11 +1,12 @@
 @import "~styles/_colors";
+@import "~styles/_sizes";
 
 .dot {
   background: @blue;
   border-radius: 50%;
-  height: 0.25rem;
-  margin: 0.125rem;
-  width: 0.25rem;
+  //height: 0.25rem;
+  //margin: 0.125rem;
+  //width: 0.25rem;
 }
 
 .ellipsis {
@@ -21,4 +22,54 @@
 
 .p {
   margin: 0;
+}
+
+// ----- ELLIPSIS DOT SIZES ----- //
+
+.one {
+  > div {
+    height: calc(@typographyOne / 3.5);
+    margin: calc(@typographyOne / 7);
+    width: calc(@typographyOne / 3.5);
+  }
+}
+
+.two {
+  > div {
+    height: calc(@typographyTwo / 3.5);
+    margin: calc(@typographyTwo / 7);
+    width: calc(@typographyTwo / 3.5);
+  }
+}
+
+.three {
+  > div {
+    height: calc(@typographyThree / 3.5);
+    margin: calc(@typographyThree / 7);
+    width: calc(@typographyThree / 3.5);
+  }
+}
+
+.four {
+  > div {
+    height: calc(@typographyFour / 3.5);
+    margin: calc(@typographyFour / 7);
+    width: calc(@typographyFour / 3.5);
+  }
+}
+
+.five {
+  > div {
+    height: calc(@typographyFive / 3.5);
+    margin: calc(@typographyFive / 7);
+    width: calc(@typographyFive / 3.5);
+  }
+}
+
+.normal {
+  > div {
+    height: calc(@typographyNormal / 3.5);
+    margin: calc(@typographyNormal / 7);
+    width: calc(@typographyNormal / 3.5);
+  }
 }
