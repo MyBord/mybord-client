@@ -12,4 +12,4 @@ const PlaylistPage: React.FC = () => (
   />
 );
 
-export default pageWrapper(PlaylistPage);
+export default pageWrapper({ Component: PlaylistPage });

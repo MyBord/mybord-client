@@ -2,3 +2,4 @@
 Make sure to remove all notes before merging (except for this one, of course).
 ----------------------------------------------------------------------------------------------------
 add notes for page wrapper props and other notes needed
+ - in dashboard page container as well

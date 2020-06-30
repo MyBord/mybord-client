@@ -2,6 +2,12 @@
 // along with the GQL query that derives all necessary data for said page and runs that query.
 // The data is then provided to the page to render its necessary components.
 
+// when `setHydration=false`, that means that once our data has been retrieved from the backend
+// and / or our wrapped component (`Component`) has mounted, we DO NOT want to stop our page's
+// spinner / loading animation. This is because there might be additional work that is *still*
+// happening in the background of the wrapped component after data has been drilled, such as a
+// context reducer being mutated.
+
 import * as React from 'react';
 import Spinner from 'fallbacks/spinner/spinner';
 import api from 'api/api';
@@ -13,9 +19,8 @@ interface PageContentProps {
   setHydrationStatus: (status: boolean) => void;
 }
 
-// ToDo: add notes
 interface Props {
-  WrappedComponent: React.FC<WrappedComponentProps>;
+  Component: React.FC<WrappedComponentProps>;
   gqlString?: GqlString;
   setHydration?: boolean;
 }
@@ -25,9 +30,9 @@ interface WrappedComponentProps {
 }
 
 const pageWrapper = ({
-  WrappedComponent,
+  Component,
   gqlString,
-  setHydration,
+  setHydration = true,
 }: Props): React.FC => {
   // ----- NO DATA IS NEEDED ----- //
   if (!gqlString) {
@@ -35,11 +40,15 @@ const pageWrapper = ({
       const { isAnimationComplete, setHydrationStatus } = useHydrationContext();
 
       // See *1 in `hydrationContext.tsx`
-      React.useEffect(() => setHydrationStatus(true), [setHydrationStatus]);
+      React.useEffect(() => {
+        if (setHydration) {
+          setHydrationStatus(true);
+        }
+      }, [setHydrationStatus]);
 
       // See *2 in `hydrationContext.tsx`
       if (isAnimationComplete) {
-        return <WrappedComponent />;
+        return <Component />;
       }
       return null;
     };
@@ -68,11 +77,15 @@ const pageWrapper = ({
     const data = resource.data.read();
 
     // See *1 in `hydrationContext.tsx`
-    React.useEffect(() => setHydrationStatus(true), [setHydrationStatus]);
+    React.useEffect(() => {
+      if (setHydration) {
+        setHydrationStatus(true);
+      }
+    }, [setHydrationStatus]);
 
     // See *2 in `hydrationContext.tsx`
     if (isAnimationComplete) {
-      return <WrappedComponent data={data} />;
+      return <Component data={data} />;
     }
     return null;
   };
