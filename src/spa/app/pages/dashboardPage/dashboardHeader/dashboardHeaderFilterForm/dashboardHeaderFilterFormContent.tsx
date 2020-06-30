@@ -47,14 +47,6 @@ const DashboardHeaderFilterFormContent: React.FC<Props> = ({
         </FormItem>
       </div>
       <div className={styles.buttonsContainer}>
-        <PopOver
-          Content={<DashboardFilterContent />}
-          caretPosition="top-center"
-          node={iconButtonRef}
-          onHide={() => setShowFilters(false)}
-          position={{ x: -2.625, y: 3 }}
-          show={showFilters}
-        />
         <FormItem fieldName="filter" form={form}>
           <IconButton
             color="blue"

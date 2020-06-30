@@ -5,41 +5,33 @@ import * as styles from './popOver.module.less';
 
 interface Props extends PopOverProps {
   Content: React.ReactNode;
-  caretPosition?:
-  'bottom-center'
-  | 'bottom-left'
-  | 'bottom-right'
-  | 'top-center'
-  | 'top-left'
-  | 'top-right';
-  node: React.RefObject<HTMLElement>;
-  onHide: () => void;
 }
 
 const PopOver: React.FC<Props> = ({
   Content,
   caretPosition = null,
-  node,
-  onHide,
+  children,
+  defaultVisible = false,
   placement = 'right',
   position = { x: 0, y: 0 },
-  show,
 }) => {
+  const [showPopOver, setShowPopOver] = React.useState<boolean>(defaultVisible);
+  const childrenRef = React.useRef<HTMLDivElement>(null);
   const popOverRef = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
-    const buttonNode = node && node.current;
+    const childrenNode = childrenRef.current;
     const popOverNode = popOverRef.current;
 
     const handleClickOutside = (event: Event): void => {
       if (
-        show
+        showPopOver
         && popOverNode
         && !popOverNode.contains(event.target as Node)
-        && buttonNode
-        && !buttonNode.contains(event.target as Node)
+        && childrenNode
+        && !childrenNode.contains(event.target as Node)
       ) {
-        onHide();
+        setShowPopOver(false);
       }
     };
 
@@ -48,27 +40,37 @@ const PopOver: React.FC<Props> = ({
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [node, onHide, popOverRef, show]);
+  }, [
+    childrenRef,
+    popOverRef,
+    showPopOver,
+    setShowPopOver,
+  ]);
 
   return (
-    <PopOverAnimation
-      placement={placement}
-      position={position}
-      ref={popOverRef}
-      show={show}
-    >
-      {
-        caretPosition && (
-          <div className={[
-            styles.caret,
-            styles[caretPosition.split('-')[0]],
-            styles[caretPosition.split('-')[1]],
-          ].join(' ')}
-          />
-        )
-      }
-      {Content}
-    </PopOverAnimation>
+    <>
+      <PopOverAnimation
+        placement={placement}
+        position={position}
+        ref={popOverRef}
+        showPopOver={showPopOver}
+      >
+        {
+          caretPosition && (
+            <div className={[
+              styles.caret,
+              styles[caretPosition.split('-')[0]],
+              styles[caretPosition.split('-')[1]],
+            ].join(' ')}
+            />
+          )
+        }
+        {Content}
+      </PopOverAnimation>
+      <div ref={childrenRef}>
+        {children}
+      </div>
+    </>
   );
 };
 

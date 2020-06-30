@@ -19,7 +19,7 @@ const variants = {
 };
 
 interface Props extends PopOverProps {
-  children: React.ReactNode;
+  showPopOver: boolean;
 }
 
 const PopOverAnimation = React.forwardRef<HTMLDivElement, Props>((
@@ -27,14 +27,14 @@ const PopOverAnimation = React.forwardRef<HTMLDivElement, Props>((
     children,
     placement = 'right',
     position,
-    show,
+    showPopOver,
   },
   ref,
 ) => {
   const PopOverContent: React.FC = () => (
     <AnimatePresence>
       {
-        show && (
+        showPopOver && (
           <motion.div
             animate="enter"
             className={styles.div}
