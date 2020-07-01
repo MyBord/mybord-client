@@ -68,9 +68,6 @@ const PopOver: React.FC<Props> = ({
 
   React.useEffect(() => {
     if (popOverRef.current) {
-      console.log(popOverRef.current.getBoundingClientRect());
-      console.log(popOverRef.current.clientHeight);
-      console.log(popOverRef.current.clientWidth);
       setPopOverPosition(popOverRef.current.getBoundingClientRect());
     }
   }, [popOverRef]);
