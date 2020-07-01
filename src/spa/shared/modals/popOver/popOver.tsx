@@ -12,7 +12,7 @@ const PopOver: React.FC<Props> = ({
   caretPosition = null,
   children,
   defaultVisible = false,
-  placement = 'top',
+  placement = 'top-center',
 }) => {
   const [showPopOver, setShowPopOver] = React.useState<boolean>(defaultVisible);
   const childrenRef = React.useRef<HTMLDivElement>(null);
@@ -63,21 +63,9 @@ const PopOver: React.FC<Props> = ({
     setShowPopOver,
   ]);
 
-  React.useEffect(() => {
-    const containerNode = containerRef.current;
-
-    if (containerNode) {
-      console.log(containerNode.getBoundingClientRect());
-    }
-  }, [containerRef]);
-
   return (
     <div className={styles.container} ref={containerRef}>
-      <PopOverAnimation
-        placement={placement}
-        ref={popOverRef}
-        showPopOver={showPopOver}
-      >
+      <PopOverAnimation ref={popOverRef} showPopOver={showPopOver}>
         {
           caretPosition && (
             <div className={[
@@ -90,9 +78,9 @@ const PopOver: React.FC<Props> = ({
         }
         {Content}
       </PopOverAnimation>
-      <div ref={childrenRef}>
+      <span ref={childrenRef}>
         {children}
-      </div>
+      </span>
     </div>
   );
 };
