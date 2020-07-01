@@ -20,12 +20,20 @@ const variants = {
 
 interface Props extends PopOverProps {
   showPopOver: boolean;
+  style: {
+    bottom?: string;
+    left?: string;
+    right?: string;
+    top?: string;
+    transform?: string;
+  };
 }
 
 const PopOverAnimation = React.forwardRef<HTMLDivElement, Props>((
   {
     children,
     showPopOver,
+    style,
   },
   ref,
 ) => {
@@ -38,22 +46,25 @@ const PopOverAnimation = React.forwardRef<HTMLDivElement, Props>((
             className={styles.div}
             exit="exit"
             initial="initial"
+            style={style}
             variants={variants}
           >
-            {children}
+            <div ref={ref}>
+              {children}
+            </div>
           </motion.div>
         )
       }
     </AnimatePresence>
   );
-
-  if (ref) {
-    return (
-      <div ref={ref}>
-        <PopOverContent />
-      </div>
-    );
-  }
+  //
+  // if (ref) {
+  //   return (
+  //     <div ref={ref}>
+  //       <PopOverContent />
+  //     </div>
+  //   );
+  // }
 
   return <PopOverContent />;
 });
