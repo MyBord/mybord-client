@@ -5,7 +5,7 @@ import * as styles from './iconButton.module.less';
 
 interface Props extends IndividualIconProps {
   iconName: IconNames;
-  onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 const IconButton = React.forwardRef<HTMLButtonElement, Props>(({
