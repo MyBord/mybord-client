@@ -112,6 +112,7 @@ const PopOverDemo: React.FC = () => {
         // @ts-ignore
         // placement={placement}
         placement="right-top"
+        trigger="hover"
       >
         <div style={{
           border: '1px solid red',

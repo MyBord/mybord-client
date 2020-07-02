@@ -15,7 +15,6 @@ This document is used to outline current project management priorities.
 
   * popover
     * add hover method
-    * re-org popover - add container and component structure
     * add tooltip
     * update caret styling
     * revert changes to index.tsx

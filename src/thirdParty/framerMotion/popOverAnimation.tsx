@@ -18,7 +18,8 @@ const variants = {
   },
 };
 
-interface Props extends PopOverProps {
+interface Props {
+  children: PopOverProps['children'];
   showPopOver: boolean;
   style?: PopOverStyle;
 }

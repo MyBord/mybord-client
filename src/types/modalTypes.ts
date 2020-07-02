@@ -22,6 +22,7 @@ export interface PopOverProps {
   | 'top-center'
   | 'top-left'
   | 'top-right';
+  trigger?: 'click' | 'hover';
 }
 
 export interface PopOverStyle {

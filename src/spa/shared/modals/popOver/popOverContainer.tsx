@@ -13,21 +13,20 @@ const PopOverContainer: React.FC<Props> = ({
   children,
   defaultVisible = false,
   placement = 'top-center',
+  trigger = 'click',
 }) => {
   const [showPopOver, setShowPopOver] = React.useState<boolean>(defaultVisible);
   const [popOverStyle, setPopOverStyle] = React.useState<PopOverStyle>(null);
   const childrenRef = React.useRef<HTMLDivElement>(null);
   const popOverRef = React.useRef<HTMLDivElement>(null);
 
-  // ----- ADDS CLICK AND HOVER EVENT LISTENERS TO CONDITIONALLY DISPLAY THE POPOVER ----- //
+  // ----- ADDS CLICK OR HOVER EVENT LISTENERS TO CONDITIONALLY DISPLAY THE POPOVER ----- //
 
   React.useEffect(() => {
     const childrenNode = childrenRef.current;
     const popOverNode = popOverRef.current;
 
-    // ----- ADDS CLICK LISTENER ----- //
-
-    const handleClick = (event: Event): void => {
+    const handleEvent = (event: Event): void => {
       if (
         !showPopOver
         && childrenNode
@@ -38,6 +37,7 @@ const PopOverContainer: React.FC<Props> = ({
 
       if (
         showPopOver
+        && trigger === 'click'
         && childrenNode
         && childrenNode.contains(event.target as Node)
       ) {
@@ -55,18 +55,29 @@ const PopOverContainer: React.FC<Props> = ({
       }
     };
 
-    document.addEventListener('mousedown', handleClick);
+    if (trigger === 'click') {
+      document.addEventListener('mousedown', handleEvent);
+    }
 
-    // ----- ADDS HOVER LISTENER ----- //
+    if (trigger === 'hover') {
+      document.addEventListener('mouseover', handleEvent);
+    }
 
     return () => {
-      document.removeEventListener('mousedown', handleClick);
+      if (trigger === 'click') {
+        document.removeEventListener('mousedown', handleEvent);
+      }
+
+      if (trigger === 'hover') {
+        document.removeEventListener('mouseover', handleEvent);
+      }
     };
   }, [
     childrenRef,
     popOverRef,
     showPopOver,
     setShowPopOver,
+    trigger,
   ]);
 
   // ----- SETS CSS OF POPOVER FOR CORRECT PLACEMENT ----- //
