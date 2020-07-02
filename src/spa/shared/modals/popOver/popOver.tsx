@@ -10,7 +10,7 @@ interface Props extends PopOverProps {
 
 const PopOver: React.FC<Props> = ({
   Content,
-  caretPosition = null,
+  caretPlacement = null,
   children,
   defaultVisible = false,
   placement = 'top-center',
@@ -79,16 +79,17 @@ const PopOver: React.FC<Props> = ({
   return (
     <div className={styles.container}>
       <PopOverAnimation
-        showPopOver={showPopOver}
+        // showPopOver={showPopOver}
+        showPopOver
         style={popOverStyle}
         ref={popOverRef}
       >
         {
-          caretPosition && (
+          caretPlacement && (
             <div className={[
               styles.caret,
-              styles[caretPosition.split('-')[0]],
-              styles[caretPosition.split('-')[1]],
+              styles.bottom,
+              styles[caretPlacement],
             ].join(' ')}
             />
           )
