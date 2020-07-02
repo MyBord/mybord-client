@@ -20,8 +20,6 @@ const DashboardHeaderFilterFormContent: React.FC<Props> = ({
   form,
   isWaiting,
 }) => {
-  const [showFilters, setShowFilters] = React.useState<boolean>(false);
-  const iconButtonRef = React.useRef<HTMLButtonElement>(null);
   const { canMultiEdit, toggleMultiEditStatus } = useMultiSelectCardContext();
 
   return (

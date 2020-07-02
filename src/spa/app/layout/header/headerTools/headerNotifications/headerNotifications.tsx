@@ -1,21 +1,18 @@
 import * as React from 'react';
+import Icon from 'icons/icon/icon';
 import PopOverContainer from 'modals/popOver/popOverContainer';
-import NotificationsButton from 'buttons/notificationsButton/notificationsButton';
 import HeaderNotificationsPopOverContent from './headerNotificationsPopOverContent';
+import * as styles from './headerNotifications.module.less';
 
-const HeaderNotifications: React.FC = () => {
-  const buttonRef = React.useRef<HTMLButtonElement>(null);
-
-  return (
-    <>
-      <PopOverContainer
-        Content={<HeaderNotificationsPopOverContent />}
-        placement="bottom-center"
-      >
-        <NotificationsButton ref={buttonRef} />
-      </PopOverContainer>
-    </>
-  );
-};
+const HeaderNotifications: React.FC = () => (
+  <PopOverContainer
+    Content={<HeaderNotificationsPopOverContent />}
+    placement="bottom-right"
+  >
+    <div className={styles.iconDiv}>
+      <Icon iconName="notification" size={30} />
+    </div>
+  </PopOverContainer>
+);
 
 export default HeaderNotifications;
