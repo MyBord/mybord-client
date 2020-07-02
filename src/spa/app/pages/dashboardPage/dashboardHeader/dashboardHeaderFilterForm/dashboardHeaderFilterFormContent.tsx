@@ -2,7 +2,7 @@ import * as React from 'react';
 import Button from 'buttons/button/button';
 import FormItem from 'forms/formItem/formItem';
 import IconButton from 'icons/iconButton/iconButton';
-import PopOver from 'modals/popOver/popOver';
+import PopOverContainer from 'modals/popOver/popOverContainer';
 import TextInput from 'inputs/textInput/textInput';
 import { FormProp } from 'types/formTypes';
 import { useMultiSelectCardContext } from 'context/multiSelectCardContext/multiSelectCardContext';
@@ -47,7 +47,7 @@ const DashboardHeaderFilterFormContent: React.FC<Props> = ({
         </FormItem>
       </div>
       <div className={styles.buttonsContainer}>
-        {/* <PopOver */}
+        {/* <PopOverContainer */}
         {/*  Content={<DashboardFilterContent />} */}
         {/*  caretPosition="top-center" */}
         {/*  node={iconButtonRef} */}
