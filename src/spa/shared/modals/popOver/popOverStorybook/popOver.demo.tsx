@@ -82,7 +82,7 @@ const PopOverDemo: React.FC = () => (
     <PopOverContainer
       Content={<div style={{ width: '2rem', margin: '1rem' }}>foo bar</div>}
       caretPlacement="center"
-      defaultVisible
+      // defaultVisible
       placement="bottom-center"
     >
       <div style={{

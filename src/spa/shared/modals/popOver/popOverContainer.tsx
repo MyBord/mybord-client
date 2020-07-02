@@ -1,7 +1,6 @@
 import * as React from 'react';
-import { PopOverProps, PopOverStyle } from 'types/modalTypes';
+import { PopOverProps } from 'types/modalTypes';
 import PopOverComponent from './popOverComponent';
-import getPopOverStyle from './getPopOverStyle';
 
 interface Props extends PopOverProps {
   Content: React.ReactNode;
@@ -16,7 +15,6 @@ const PopOverContainer: React.FC<Props> = ({
   trigger = 'click',
 }) => {
   const [showPopOver, setShowPopOver] = React.useState<boolean>(defaultVisible);
-  const [popOverStyle, setPopOverStyle] = React.useState<PopOverStyle>(null);
   const childrenRef = React.useRef<HTMLDivElement>(null);
   const popOverRef = React.useRef<HTMLDivElement>(null);
 
@@ -80,21 +78,6 @@ const PopOverContainer: React.FC<Props> = ({
     trigger,
   ]);
 
-  // ----- SETS CSS OF POPOVER FOR CORRECT PLACEMENT ----- //
-
-  React.useEffect(() => {
-    if (popOverRef.current) {
-      const style = getPopOverStyle(
-        popOverRef.current.clientHeight,
-        popOverRef.current.clientWidth,
-        placement,
-        !!caretPlacement,
-      );
-
-      setPopOverStyle(style);
-    }
-  }, [caretPlacement, placement, popOverRef]);
-
   // ----- RETURNS COMPONENT ----- //
 
   return (
@@ -104,7 +87,6 @@ const PopOverContainer: React.FC<Props> = ({
       childrenRef={childrenRef}
       placement={placement}
       popOverRef={popOverRef}
-      popOverStyle={popOverStyle}
       showPopOver={showPopOver}
     >
       {children}
