@@ -36,37 +36,24 @@ const PopOverAnimation = React.forwardRef<HTMLDivElement, Props>((
     style,
   },
   ref,
-) => {
-  const PopOverContent: React.FC = () => (
-    <AnimatePresence>
-      {
-        showPopOver && (
-          <motion.div
-            animate="enter"
-            className={styles.div}
-            exit="exit"
-            initial="initial"
-            style={style}
-            variants={variants}
-          >
-            <div ref={ref}>
-              {children}
-            </div>
-          </motion.div>
-        )
-      }
-    </AnimatePresence>
-  );
-  //
-  // if (ref) {
-  //   return (
-  //     <div ref={ref}>
-  //       <PopOverContent />
-  //     </div>
-  //   );
-  // }
-
-  return <PopOverContent />;
-});
+) => (
+  <AnimatePresence>
+    {
+      showPopOver && (
+        <motion.div
+          animate="enter"
+          className={styles.div}
+          exit="exit"
+          initial="initial"
+          ref={ref}
+          style={style}
+          variants={variants}
+        >
+          {children}
+        </motion.div>
+      )
+    }
+  </AnimatePresence>
+));
 
 export default PopOverAnimation;

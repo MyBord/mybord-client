@@ -1,7 +1,6 @@
 import * as React from 'react';
 import PopOverAnimation from 'framerMotion/popOverAnimation';
 import { PopOverProps } from 'types/modalTypes';
-import { GetBoundingClientRectProps } from 'types/htmlTypes';
 import * as styles from './popOver.module.less';
 
 interface Props extends PopOverProps {
@@ -16,10 +15,8 @@ const PopOver: React.FC<Props> = ({
   placement = 'top-center',
 }) => {
   const [showPopOver, setShowPopOver] = React.useState<boolean>(defaultVisible);
-  const [popOverPosition, setPopOverPosition] = React.useState<GetBoundingClientRectProps>(null);
   const [popOverStyle, setPopOverStyle] = React.useState<object>(null);
   const childrenRef = React.useRef<HTMLDivElement>(null);
-  const containerRef = React.useRef<HTMLDivElement>(null);
   const popOverRef = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
@@ -68,23 +65,25 @@ const PopOver: React.FC<Props> = ({
 
   React.useEffect(() => {
     if (popOverRef.current) {
-      setPopOverPosition(popOverRef.current.getBoundingClientRect());
-    }
-  }, [popOverRef]);
+      const popOverHeight = popOverRef.current.clientHeight;
+      const popOverWidth = popOverRef.current.clientWidth;
+      const popOverMargin = '-0.5rem';
 
-  React.useEffect(() => {
-    if (popOverPosition) {
+      const position = placement.split('-');
       setPopOverStyle({
         left: '50%',
+        marginTop: popOverMargin,
+        top: `-${popOverHeight}px`,
         transform: 'translateX(-50%)',
       });
     }
-  }, [placement, popOverPosition]);
+  }, [placement, popOverRef]);
 
   return (
-    <div className={styles.container} ref={containerRef}>
+    <div className={styles.container}>
       <PopOverAnimation
-        showPopOver={showPopOver}
+        // showPopOver={showPopOver}
+        showPopOver
         style={popOverStyle}
         ref={popOverRef}
       >
