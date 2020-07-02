@@ -14,10 +14,8 @@ This document is used to outline current project management priorities.
 ### A. Highest - MVP
 
   * popover
-    * add hover method
     * add tooltip
     * update caret styling
-    * revert changes to index.tsx
     * add back popovers to the following files:
       * dashboardHeaderFilterFormContent
       * headerProfile
