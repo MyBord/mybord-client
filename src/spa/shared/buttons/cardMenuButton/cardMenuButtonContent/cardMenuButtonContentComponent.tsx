@@ -48,14 +48,14 @@ const CardMenuButtonContentComponent: React.FC<Props> = ({
         />
       </li>
       <li className={styles.li}>
-        <PopConfirm
-          node={deleteButtonRef}
-          onConfirm={handleDelete}
-          onHide={onHide}
-          position={{ x: 1, y: -3.375 }}
-          show={showPopConfirm}
-          text="Are you sure you want to delete?"
-        />
+        {/* <PopConfirm */}
+        {/*  node={deleteButtonRef} */}
+        {/*  onConfirm={handleDelete} */}
+        {/*  onHide={onHide} */}
+        {/*  position={{ x: 1, y: -3.375 }} */}
+        {/*  show={showPopConfirm} */}
+        {/*  text="Are you sure you want to delete?" */}
+        {/* /> */}
         <Typography
           Content={DeleteIconContent}
           onClick={() => setShowPopConfirm(true)}

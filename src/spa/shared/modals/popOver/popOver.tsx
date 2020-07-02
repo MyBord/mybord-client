@@ -1,74 +1,101 @@
 import * as React from 'react';
 import PopOverAnimation from 'framerMotion/popOverAnimation';
-import { PopOverProps } from 'types/modalTypes';
+import { PopOverProps, PopOverStyle } from 'types/modalTypes';
+import PopOverCaret from './popOverCaret/popOverCaret';
+import getPopOverStyle from './getPopOverStyle';
 import * as styles from './popOver.module.less';
 
 interface Props extends PopOverProps {
   Content: React.ReactNode;
-  caretPosition?:
-  'bottom-center'
-  | 'bottom-left'
-  | 'bottom-right'
-  | 'top-center'
-  | 'top-left'
-  | 'top-right';
-  node: React.RefObject<HTMLElement>;
-  onHide: () => void;
 }
 
 const PopOver: React.FC<Props> = ({
   Content,
-  caretPosition = null,
-  node,
-  onHide,
-  placement = 'right',
-  position = { x: 0, y: 0 },
-  show,
+  caretPlacement = null,
+  children,
+  defaultVisible = false,
+  placement = 'top-center',
 }) => {
+  const [showPopOver, setShowPopOver] = React.useState<boolean>(defaultVisible);
+  const [popOverStyle, setPopOverStyle] = React.useState<PopOverStyle>(null);
+  const childrenRef = React.useRef<HTMLDivElement>(null);
   const popOverRef = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
-    const buttonNode = node && node.current;
+    const childrenNode = childrenRef.current;
     const popOverNode = popOverRef.current;
 
-    const handleClickOutside = (event: Event): void => {
+    const handleClick = (event: Event): void => {
       if (
-        show
+        !showPopOver
+        && childrenNode
+        && childrenNode.contains(event.target as Node)
+      ) {
+        setShowPopOver(true);
+      }
+
+      if (
+        showPopOver
+        && childrenNode
+        && childrenNode.contains(event.target as Node)
+      ) {
+        setShowPopOver(false);
+      }
+
+      if (
+        showPopOver
         && popOverNode
         && !popOverNode.contains(event.target as Node)
-        && buttonNode
-        && !buttonNode.contains(event.target as Node)
+        && childrenNode
+        && !childrenNode.contains(event.target as Node)
       ) {
-        onHide();
+        setShowPopOver(false);
       }
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('mousedown', handleClick);
 
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('mousedown', handleClick);
     };
-  }, [node, onHide, popOverRef, show]);
+  }, [
+    childrenRef,
+    popOverRef,
+    showPopOver,
+    setShowPopOver,
+  ]);
+
+  React.useEffect(() => {
+    if (popOverRef.current) {
+      const style = getPopOverStyle(
+        popOverRef.current.clientHeight,
+        popOverRef.current.clientWidth,
+        placement,
+        !!caretPlacement,
+      );
+
+      setPopOverStyle(style);
+    }
+  }, [caretPlacement, placement, popOverRef]);
 
   return (
-    <PopOverAnimation
-      placement={placement}
-      position={position}
-      ref={popOverRef}
-      show={show}
-    >
-      {
-        caretPosition && (
-          <div className={[
-            styles.caret,
-            styles[caretPosition.split('-')[0]],
-            styles[caretPosition.split('-')[1]],
-          ].join(' ')}
-          />
-        )
-      }
-      {Content}
-    </PopOverAnimation>
+    <div className={styles.container}>
+      <PopOverAnimation
+        showPopOver={showPopOver}
+        style={popOverStyle}
+        ref={popOverRef}
+      >
+        {
+          caretPlacement && (
+            <PopOverCaret caretPlacement={caretPlacement} popOverPlacement={placement} />
+          )
+        }
+        {Content}
+      </PopOverAnimation>
+      <span ref={childrenRef}>
+        {children}
+      </span>
+    </div>
   );
 };
 

@@ -1,40 +1,4 @@
-@import "~styles/_colors";
-
-// ----- CARET STYLES ----- //
-
-// Source: https://css-tricks.com/snippets/css/css-triangle/
-
-@caretSize: 0.625rem;
-
-.caret {
-  height: 0;
-  position: absolute;
-  width: 0;
-}
-
-.bottom {
-  border-left: @caretSize solid transparent;
-  border-right: @caretSize solid transparent;
-  border-top: @caretSize solid @white;
-  bottom: -@caretSize;
-}
-
-.center {
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.left {
-  left: 1rem;
-}
-
-.right {
-  right: 1rem;
-}
-
-.top {
-  border-left: @caretSize solid transparent;
-  border-right: @caretSize solid transparent;
-  border-bottom: @caretSize solid @white;
-  top: -@caretSize;
+.container {
+  display: inline-block;
+  position: relative;
 }

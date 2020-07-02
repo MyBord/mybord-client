@@ -13,6 +13,19 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
+  * popover
+    * add hover method
+    * re-org popover - add container and component structure
+    * add tooltip
+    * update caret styling
+    * revert changes to index.tsx
+    * add back popovers to the following files:
+      * dashboardHeaderFilterFormContent
+      * headerProfile
+      * headerNotifications
+      * cardMenuButtonComponent
+      * cardMenuButtonContentComponent
+      * popConfirm
   * if filtered to e.g. favorites, unfavoriting something should remove it from the result set
   * when you first login, cards show before page is done animating? 
   * gap between cards change when adding more to second row
