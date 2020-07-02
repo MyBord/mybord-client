@@ -7,3 +7,6 @@ update popover demo
 
 console.log(containerNode.getBoundingClientRect()); ??
 
+update popover positioning when it has a caret
+
+create tooltip
