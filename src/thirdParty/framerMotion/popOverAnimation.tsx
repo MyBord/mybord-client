@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { PopOverProps, PopOverStyle } from 'types/modalTypes';
+import getPopOverStyle from 'modals/popOver/getPopOverStyle';
 import * as styles from './popOverAnimation.module.less';
 
 const variants = {
@@ -19,36 +20,41 @@ const variants = {
 };
 
 interface Props {
+  caretPlacement: PopOverProps['caretPlacement'];
   children: PopOverProps['children'];
   showPopOver: boolean;
-  style?: PopOverStyle;
+  placement: PopOverProps['placement'];
+  popOverRef: React.RefObject<HTMLDivElement>;
 }
 
-const PopOverAnimation = React.forwardRef<HTMLDivElement, Props>((
-  {
-    children,
-    showPopOver,
-    style,
-  },
-  ref,
-) => (
-  <AnimatePresence>
-    {
-      showPopOver && (
-        <motion.div
-          animate="enter"
-          className={styles.div}
-          exit="exit"
-          initial="initial"
-          ref={ref}
-          style={style}
-          variants={variants}
-        >
-          {children}
-        </motion.div>
-      )
-    }
-  </AnimatePresence>
-));
+const PopOverAnimation: React.FC<Props> = ({
+  caretPlacement,
+  children,
+  placement,
+  popOverRef,
+  showPopOver,
+}) => {
+  const popOverStyle = getPopOverStyle(!!caretPlacement, placement);
+
+  return (
+    <AnimatePresence>
+      {
+        showPopOver && (
+          <motion.div
+            animate="enter"
+            className={styles.div}
+            exit="exit"
+            initial="initial"
+            ref={popOverRef}
+            style={popOverStyle}
+            variants={variants}
+          >
+            {children}
+          </motion.div>
+        )
+      }
+    </AnimatePresence>
+  );
+};
 
 export default PopOverAnimation;
