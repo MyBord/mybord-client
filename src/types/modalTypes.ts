@@ -24,3 +24,15 @@ export interface PopOverProps {
   | 'top-left'
   | 'top-right';
 }
+
+export interface PopOverStyle {
+  bottom?: string;
+  left?: string;
+  marginBottom?: string;
+  marginLeft?: string;
+  marginRight?: string;
+  marginTop?: string;
+  right?: string;
+  top?: string;
+  transform?: string;
+}

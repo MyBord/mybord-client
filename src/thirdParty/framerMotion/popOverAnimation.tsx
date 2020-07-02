@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { PopOverProps } from 'types/modalTypes';
+import { PopOverProps, PopOverStyle } from 'types/modalTypes';
 import * as styles from './popOverAnimation.module.less';
 
 const variants = {
@@ -20,13 +20,7 @@ const variants = {
 
 interface Props extends PopOverProps {
   showPopOver: boolean;
-  style: {
-    bottom?: string;
-    left?: string;
-    right?: string;
-    top?: string;
-    transform?: string;
-  };
+  style: PopOverStyle;
 }
 
 const PopOverAnimation = React.forwardRef<HTMLDivElement, Props>((
