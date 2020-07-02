@@ -8,7 +8,8 @@ export const variants = {
     height: 0,
   },
   enter: {
-    height: sizes.headerHeight,
+    // height: sizes.headerHeight,
+    height: '2.5rem',
     transition: {
       ease: 'easeOut',
       duration: 0.45,

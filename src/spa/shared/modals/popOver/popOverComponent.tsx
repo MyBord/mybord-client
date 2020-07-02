@@ -24,25 +24,27 @@ const PopOverComponent: React.FC<Props> = ({
   showPopOver,
 }) => (
   <div className={styles.container}>
-    <PopOverAnimation
-      caretPlacement={caretPlacement}
-      placement={placement}
-      showPopOver={showPopOver}
-      popOverRef={popOverRef}
-    >
-      {
-        caretPlacement && (
-          <PopOverCaret
-            caretPlacement={caretPlacement}
-            popOverPlacement={placement}
-          />
-        )
-      }
-      {Content}
-    </PopOverAnimation>
-    <span ref={childrenRef}>
-      {children}
-    </span>
+    <div style={{ overflow: 'hidden', height: '100%' }}>
+      <PopOverAnimation
+        caretPlacement={caretPlacement}
+        placement={placement}
+        showPopOver={showPopOver}
+        popOverRef={popOverRef}
+      >
+        {
+          caretPlacement && (
+            <PopOverCaret
+              caretPlacement={caretPlacement}
+              popOverPlacement={placement}
+            />
+          )
+        }
+        {Content}
+      </PopOverAnimation>
+      <div ref={childrenRef}>
+        {children}
+      </div>
+    </div>
   </div>
 );
 
