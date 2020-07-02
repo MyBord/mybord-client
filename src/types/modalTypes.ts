@@ -2,9 +2,11 @@ import * as React from 'react';
 
 export interface PopOverProps {
   caretPlacement?:
-  'center'
+  'bottom'
+  | 'center'
   | 'left'
-  | 'right';
+  | 'right'
+  | 'top';
   children: React.ReactNode;
   defaultVisible?: boolean;
   placement?:

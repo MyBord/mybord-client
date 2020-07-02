@@ -11,7 +11,7 @@ const PopOverCaret: React.FC<Props> = ({ caretPlacement, popOverPlacement }) => 
   <div className={[
     styles.div,
     styles[popOverPlacement.split('-')[0]],
-    styles[caretPlacement],
+    styles[[caretPlacement, popOverPlacement.split('-')[0]].join('-')],
   ].join(' ')}
   />
 );

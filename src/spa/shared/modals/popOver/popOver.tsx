@@ -81,8 +81,7 @@ const PopOver: React.FC<Props> = ({
   return (
     <div className={styles.container}>
       <PopOverAnimation
-        // showPopOver={showPopOver}
-        showPopOver
+        showPopOver={showPopOver}
         style={popOverStyle}
         ref={popOverRef}
       >

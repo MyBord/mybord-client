@@ -12,3 +12,7 @@ update popover positioning when it has a caret
 create tooltip
 
 update caret styling
+
+add hover
+
+re-org popover component

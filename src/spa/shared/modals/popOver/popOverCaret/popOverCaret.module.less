@@ -11,10 +11,31 @@
 
 // ----- CARET PLACEMENT ----- //
 
-//.center {
-//  left: 50%;
-//  transform: translateX(-50%);
-//}
+.bottom-left, .bottom-right {
+  bottom: @caretSize;
+}
+
+.center-bottom, .center-top {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.center-left, .center-right {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.left-bottom, .left-top {
+  left: @caretSize;
+}
+
+.right-bottom, .right-top {
+  right: @caretSize;
+}
+
+.top-left, .top-right {
+  top: @caretSize;
+}
 
 // ----- POPOVER PLACEMENT ----- //
 
