@@ -25,6 +25,7 @@ This document is used to outline current project management priorities.
       * headerNotifications
       * cardMenuButtonComponent
       * cardMenuButtonContentComponent
+      * popConfirm
   * if filtered to e.g. favorites, unfavoriting something should remove it from the result set
   * when you first login, cards show before page is done animating? 
   * gap between cards change when adding more to second row
