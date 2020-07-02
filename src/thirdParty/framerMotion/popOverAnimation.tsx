@@ -34,25 +34,7 @@ const PopOverAnimation: React.FC<Props> = ({
   popOverRef,
   showPopOver,
 }) => {
-  const [popOverStyle, setPopOverStyle] = React.useState<PopOverStyle>(null);
-
-  React.useEffect(() => {
-    if (popOverRef.current) {
-      console.log('111');
-      console.log(popOverRef.current.clientHeight);
-      console.log(popOverRef.current.clientWidth);
-      const style: PopOverStyle = getPopOverStyle(
-        popOverRef.current.clientHeight,
-        popOverRef.current.clientWidth,
-        placement,
-        !!caretPlacement,
-      );
-      setPopOverStyle(style);
-    }
-  }, [caretPlacement, placement, popOverRef]);
-
-  console.log('---');
-  console.log(popOverStyle);
+  const popOverStyle = getPopOverStyle(!!caretPlacement, placement);
 
   return (
     <AnimatePresence>
