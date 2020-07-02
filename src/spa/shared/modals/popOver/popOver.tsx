@@ -1,6 +1,7 @@
 import * as React from 'react';
 import PopOverAnimation from 'framerMotion/popOverAnimation';
 import { PopOverProps, PopOverStyle } from 'types/modalTypes';
+import PopOverCaret from './popOverCaret/popOverCaret';
 import getPopOverStyle from './getPopOverStyle';
 import * as styles from './popOver.module.less';
 
@@ -70,11 +71,12 @@ const PopOver: React.FC<Props> = ({
         popOverRef.current.clientHeight,
         popOverRef.current.clientWidth,
         placement,
+        !!caretPlacement,
       );
 
       setPopOverStyle(style);
     }
-  }, [placement, popOverRef]);
+  }, [caretPlacement, placement, popOverRef]);
 
   return (
     <div className={styles.container}>
@@ -86,12 +88,7 @@ const PopOver: React.FC<Props> = ({
       >
         {
           caretPlacement && (
-            <div className={[
-              styles.caret,
-              styles.bottom,
-              styles[caretPlacement],
-            ].join(' ')}
-            />
+            <PopOverCaret caretPlacement={caretPlacement} popOverPlacement={placement} />
           )
         }
         {Content}

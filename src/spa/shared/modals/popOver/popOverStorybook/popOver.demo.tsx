@@ -70,7 +70,7 @@ const PopOverDemo: React.FC = () => {
         ))}
       </Select>
       <PopOver
-        Content={<div style={{ width: '4rem', margin: '2rem' }}>foo bar</div>}
+        Content={<div style={{ width: '2rem', margin: '1rem' }}>foo bar</div>}
         caretPlacement="center"
         defaultVisible
         // @ts-ignore

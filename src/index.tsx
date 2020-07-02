@@ -8,7 +8,7 @@ import PopOverDemo from 'modals/popOver/popOverStorybook/popOver.demo';
 import Spa from './spa/spa/spa';
 
 createRoot(document.getElementById('app')).render(
-  <div style={{ margin: '4rem' }}>
+  <div style={{ margin: '4rem', background: 'pink', width: '24rem' }}>
     <PopOverDemo />
   </div>,
 );
