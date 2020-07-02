@@ -77,55 +77,24 @@ const selectOptions = [
   },
 ];
 
-const PopOverDemo: React.FC = () => {
-  const [placement, setPlacement] = React.useState('top-center');
-  const [caret, setCaret] = React.useState('center');
-
-  // @ts-ignore
-  const handleChange = (value) => setPlacement(value);
-
-  // @ts-ignore
-  const handleChangeCaret = (value) => setCaret(value);
-
-  return (
-    <>
-      <Select onChange={handleChange}>
-        {selectOptions.map((option) => (
-          <Select.Option key={option.value} value={option.value}>
-            {option.label}
-          </Select.Option>
-        ))}
-      </Select>
-      <Select onChange={handleChangeCaret}>
-        {caretOptions.map((option) => (
-          <Select.Option key={option.value} value={option.value}>
-            {option.label}
-          </Select.Option>
-        ))}
-      </Select>
-      <PopOverContainer
-        Content={<div style={{ width: '2rem', margin: '1rem' }}>foo bar</div>}
-        // @ts-ignore
-        // caretPlacement={caret}
-        caretPlacement="bottom"
-        defaultVisible
-        // @ts-ignore
-        // placement={placement}
-        placement="right-top"
-        trigger="hover"
+const PopOverDemo: React.FC = () => (
+  <>
+    <PopOverContainer
+      Content={<div style={{ width: '2rem', margin: '1rem' }}>foo bar</div>}
+      caretPlacement="center"
+      defaultVisible
+      placement="bottom-center"
+    >
+      <div style={{
+        border: '1px solid red',
+        width: '30px',
+        height: '30px',
+      }}
       >
-        <div style={{
-          border: '1px solid red',
-          width: '8rem',
-          height: '8rem',
-        }}
-        >
-          <h3>I am some content</h3>
-          <h3>{placement}</h3>
-        </div>
-      </PopOverContainer>
-    </>
-  );
-};
+        <h3>I am some content</h3>
+      </div>
+    </PopOverContainer>
+  </>
+);
 
 export default PopOverDemo;
