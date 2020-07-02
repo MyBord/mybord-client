@@ -1,15 +1,13 @@
 import * as React from 'react';
-import PopOverAnimation from 'framerMotion/popOverAnimation';
 import { PopOverProps, PopOverStyle } from 'types/modalTypes';
-import PopOverCaret from './popOverCaret/popOverCaret';
+import PopOverComponent from './popOverComponent';
 import getPopOverStyle from './getPopOverStyle';
-import * as styles from './popOver.module.less';
 
 interface Props extends PopOverProps {
   Content: React.ReactNode;
 }
 
-const PopOver: React.FC<Props> = ({
+const PopOverContainer: React.FC<Props> = ({
   Content,
   caretPlacement = null,
   children,
@@ -21,9 +19,13 @@ const PopOver: React.FC<Props> = ({
   const childrenRef = React.useRef<HTMLDivElement>(null);
   const popOverRef = React.useRef<HTMLDivElement>(null);
 
+  // ----- ADDS CLICK AND HOVER EVENT LISTENERS TO CONDITIONALLY DISPLAY THE POPOVER ----- //
+
   React.useEffect(() => {
     const childrenNode = childrenRef.current;
     const popOverNode = popOverRef.current;
+
+    // ----- ADDS CLICK LISTENER ----- //
 
     const handleClick = (event: Event): void => {
       if (
@@ -55,6 +57,8 @@ const PopOver: React.FC<Props> = ({
 
     document.addEventListener('mousedown', handleClick);
 
+    // ----- ADDS HOVER LISTENER ----- //
+
     return () => {
       document.removeEventListener('mousedown', handleClick);
     };
@@ -64,6 +68,8 @@ const PopOver: React.FC<Props> = ({
     showPopOver,
     setShowPopOver,
   ]);
+
+  // ----- SETS CSS OF POPOVER FOR CORRECT PLACEMENT ----- //
 
   React.useEffect(() => {
     if (popOverRef.current) {
@@ -78,25 +84,21 @@ const PopOver: React.FC<Props> = ({
     }
   }, [caretPlacement, placement, popOverRef]);
 
+  // ----- RETURNS COMPONENT ----- //
+
   return (
-    <div className={styles.container}>
-      <PopOverAnimation
-        showPopOver={showPopOver}
-        style={popOverStyle}
-        ref={popOverRef}
-      >
-        {
-          caretPlacement && (
-            <PopOverCaret caretPlacement={caretPlacement} popOverPlacement={placement} />
-          )
-        }
-        {Content}
-      </PopOverAnimation>
-      <span ref={childrenRef}>
-        {children}
-      </span>
-    </div>
+    <PopOverComponent
+      Content={Content}
+      caretPlacement={caretPlacement}
+      childrenRef={childrenRef}
+      placement={placement}
+      popOverRef={popOverRef}
+      popOverStyle={popOverStyle}
+      showPopOver={showPopOver}
+    >
+      {children}
+    </PopOverComponent>
   );
 };
 
-export default PopOver;
+export default PopOverContainer;

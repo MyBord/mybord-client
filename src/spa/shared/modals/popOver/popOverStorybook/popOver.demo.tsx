@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Select } from 'antd';
 import 'antd/lib/select/style/index.less';
-import PopOver from '../popOver';
+import PopOverContainer from '../popOverContainer';
 
 const caretOptions = [
   {
@@ -103,7 +103,7 @@ const PopOverDemo: React.FC = () => {
           </Select.Option>
         ))}
       </Select>
-      <PopOver
+      <PopOverContainer
         Content={<div style={{ width: '2rem', margin: '1rem' }}>foo bar</div>}
         // @ts-ignore
         // caretPlacement={caret}
@@ -122,7 +122,7 @@ const PopOverDemo: React.FC = () => {
           <h3>I am some content</h3>
           <h3>{placement}</h3>
         </div>
-      </PopOver>
+      </PopOverContainer>
     </>
   );
 };

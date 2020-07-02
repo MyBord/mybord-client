@@ -1,5 +1,5 @@
 import * as React from 'react';
-import PopOver from 'modals/popOver/popOver';
+import PopOverContainer from 'modals/popOver/popOverContainer';
 import ProfileButton from 'buttons/profileButton/profileButton';
 import HeaderProfilePopOverContent from './headerProfilePopOverContent';
 
@@ -13,7 +13,7 @@ const HeaderProfile: React.FC = () => {
         onClick={() => setShowPopOver((prevState) => !prevState)}
         ref={profileButtonRef}
       />
-      {/* <PopOver */}
+      {/* <PopOverContainer */}
       {/*  Content={<HeaderProfilePopOverContent />} */}
       {/*  node={profileButtonRef} */}
       {/*  onHide={() => setShowPopOver(false)} */}

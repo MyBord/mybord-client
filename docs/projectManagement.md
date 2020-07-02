@@ -49,6 +49,8 @@ This document is used to outline current project management priorities.
 
 ### C. Medium
 
+  * instead of having the default file be 'xContainer', have it be 'x' that imports the
+   'container' file
   * add react lazy loading to all files that use switch statements
   * replace error lottie
   * add query string for filters

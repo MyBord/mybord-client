@@ -20,7 +20,7 @@ const variants = {
 
 interface Props extends PopOverProps {
   showPopOver: boolean;
-  style: PopOverStyle;
+  style?: PopOverStyle;
 }
 
 const PopOverAnimation = React.forwardRef<HTMLDivElement, Props>((

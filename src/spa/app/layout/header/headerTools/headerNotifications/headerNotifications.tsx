@@ -1,5 +1,5 @@
 import * as React from 'react';
-import PopOver from 'modals/popOver/popOver';
+import PopOverContainer from 'modals/popOver/popOverContainer';
 import NotificationsButton from 'buttons/notificationsButton/notificationsButton';
 import HeaderNotificationsPopOverContent from './headerNotificationsPopOverContent';
 
@@ -13,7 +13,7 @@ const HeaderNotifications: React.FC = () => {
         onClick={() => setShowPopOver((prevState) => !prevState)}
         ref={buttonRef}
       />
-      {/* <PopOver */}
+      {/* <PopOverContainer */}
       {/*  Content={<HeaderNotificationsPopOverContent />} */}
       {/*  node={buttonRef} */}
       {/*  onHide={() => setShowPopOver(false)} */}

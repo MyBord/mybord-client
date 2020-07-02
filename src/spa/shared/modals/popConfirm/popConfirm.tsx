@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Button from 'buttons/button/button';
-import PopOver from 'modals/popOver/popOver';
+import PopOverContainer from 'modals/popOver/popOverContainer';
 import Typography from 'typography/typography';
 import memo from 'utils/memo';
 import { PopOverProps } from 'types/modalTypes';
@@ -43,7 +43,7 @@ import * as styles from './popConfirm.module.less';
 //   );
 //
 //   return (
-//     <PopOver
+//     <PopOverContainer
 //       Content={<Content />}
 //       caretPosition="bottom-right"
 //       node={node}
