@@ -36,6 +36,14 @@ const DashboardHeaderFilterFormContent: React.FC<Props> = ({
         <TextInput overlayClassName={styles.input} placeholder="youtube url" />
       </FormItem>
       <div className={styles.buttonsContainer}>
+        {/* <PopOver */}
+        {/*  Content={<DashboardFilterContent />} */}
+        {/*  caretPosition="top-center" */}
+        {/*  node={iconButtonRef} */}
+        {/*  onHide={() => setShowFilters(false)} */}
+        {/*  position={{ x: -2.625, y: 3 }} */}
+        {/*  show={showFilters} */}
+        {/* /> */}
         <FormItem fieldName="add-youtube-video-submit" form={form}>
           <div className={styles.buttonDiv}>
             <Button

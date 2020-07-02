@@ -20,6 +20,13 @@ const CardMenuButtonComponent: React.FC<Props> = ({
   const buttonClassName = showMenu ? 'card-menu-button-show' : 'card-menu-button';
   return (
     <>
+      {/* <PopOver */}
+      {/*  Content={<CardMenuButtonContentContainer userCard={userCard} />} */}
+      {/*  node={buttonRef} */}
+      {/*  onHide={() => setShowMenu(false)} */}
+      {/*  position={{ x: 0, y: 2.5 }} */}
+      {/*  show={showMenu} */}
+      {/* /> */}
       <button
         className={[styles.button, buttonClassName].join(' ')}
         onClick={() => setShowMenu((prevState) => !prevState)}

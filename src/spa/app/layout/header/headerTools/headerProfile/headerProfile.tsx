@@ -13,6 +13,13 @@ const HeaderProfile: React.FC = () => {
         onClick={() => setShowPopOver((prevState) => !prevState)}
         ref={profileButtonRef}
       />
+      {/* <PopOver */}
+      {/*  Content={<HeaderProfilePopOverContent />} */}
+      {/*  node={profileButtonRef} */}
+      {/*  onHide={() => setShowPopOver(false)} */}
+      {/*  position={{ x: 1.375, y: 5.625 }} */}
+      {/*  show={showPopOver} */}
+      {/* /> */}
     </>
   );
 };

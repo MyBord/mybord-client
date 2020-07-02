@@ -13,6 +13,14 @@ const HeaderNotifications: React.FC = () => {
         onClick={() => setShowPopOver((prevState) => !prevState)}
         ref={buttonRef}
       />
+      {/* <PopOver */}
+      {/*  Content={<HeaderNotificationsPopOverContent />} */}
+      {/*  node={buttonRef} */}
+      {/*  onHide={() => setShowPopOver(false)} */}
+      {/*  placement="right" */}
+      {/*  position={{ x: 6.4375, y: 5.625 }} */}
+      {/*  show={showPopOver} */}
+      {/* /> */}
     </>
   );
 };
