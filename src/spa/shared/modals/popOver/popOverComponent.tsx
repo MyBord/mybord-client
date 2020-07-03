@@ -1,3 +1,7 @@
+// *1: This 'prentDiv' is needed in case the popover is contained in another div that is
+// relatively positioned and needs to hide any overflow stylings.
+// Source: https://stackoverflow.com/questions/4605715/position-absolute-and-overflow-hidden/50388523#50388523
+
 import * as React from 'react';
 import PopOverAnimation from 'framerMotion/popOverAnimation';
 import { PopOverProps } from 'types/modalTypes';
@@ -24,7 +28,8 @@ const PopOverComponent: React.FC<Props> = ({
   showPopOver,
 }) => (
   <div className={styles.container}>
-    <div style={{ overflow: 'hidden', height: '100%' }}>
+    {/* *1 */}
+    <div className={styles.parentDiv}>
       <PopOverAnimation
         caretPlacement={caretPlacement}
         placement={placement}
