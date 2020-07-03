@@ -1,27 +1,18 @@
 import * as React from 'react';
+import Icon from 'icons/icon/icon';
 import PopOverContainer from 'modals/popOver/popOverContainer';
-import ProfileButton from 'buttons/profileButton/profileButton';
 import HeaderProfilePopOverContent from './headerProfilePopOverContent';
+import * as styles from './headerProfile.module.less';
 
-const HeaderProfile: React.FC = () => {
-  const [showPopOver, setShowPopOver] = React.useState<boolean>(false);
-  const profileButtonRef = React.useRef<HTMLButtonElement>(null);
-
-  return (
-    <>
-      <ProfileButton
-        onClick={() => setShowPopOver((prevState) => !prevState)}
-        ref={profileButtonRef}
-      />
-      {/* <PopOverContainer */}
-      {/*  Content={<HeaderProfilePopOverContent />} */}
-      {/*  node={profileButtonRef} */}
-      {/*  onHide={() => setShowPopOver(false)} */}
-      {/*  position={{ x: 1.375, y: 5.625 }} */}
-      {/*  show={showPopOver} */}
-      {/* /> */}
-    </>
-  );
-};
+const HeaderProfile: React.FC = () => (
+  <PopOverContainer Content={<HeaderProfilePopOverContent />} placement="bottom-right">
+    <div className={styles.div}>
+      <Icon iconName="avatar" size={40} />
+      <div className={styles.arrowDiv}>
+        <Icon iconName="downArrow" size={10} />
+      </div>
+    </div>
+  </PopOverContainer>
+);
 
 export default HeaderProfile;
