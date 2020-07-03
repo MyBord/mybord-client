@@ -16,6 +16,8 @@ This document is used to outline current project management priorities.
   * popover
     * add tooltip
     * update caret styling
+    * add ability to add additional margin (e.g. header notifications)
+    * be able to add custom margin (e.g. for profile button)
     * add back popovers to the following files:
       * dashboardHeaderFilterFormContent
       * headerProfile
