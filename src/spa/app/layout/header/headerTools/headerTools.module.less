@@ -1,21 +1,44 @@
 @import "~styles/_colors";
 @import "~styles/_sizes";
 
-.div {
-  width: 1rem;
+.arrowIconDiv {
+  margin-left: 0.5rem;
+  > svg {
+    * {
+      fill: @lightGrey;
+    }
+  }
 }
 
 .hr {
-  border-color: @navBorder;
   border-width: 0 0.0625rem 0 0;
   height: 60%;
 }
 
-.section {
+.hrDiv {
   align-items: center;
   display: flex;
   height: @headerHeight;
-  > svg {
-    margin: 1rem;
-  }
+}
+
+.hrParentDiv {
+  overflow: hidden;
+}
+
+.notificationsIconDiv {
+  align-items: center;
+  display: flex;
+  height: @headerHeight;
+  margin: 0 1rem;
+}
+
+.profileIconDiv {
+  align-items: center;
+  display: flex;
+  height: @headerHeight;
+  margin: 0 0.5rem 0 1.5rem;
+}
+
+.section {
+  display: flex;
 }
