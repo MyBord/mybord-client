@@ -1,40 +1,13 @@
-/* stylelint-disable */
-
-.box {
-  background: blue;
-  height: 20rem;
-  margin: 5rem;
-  width: 20rem;
-}
-
-.container {
-  background: pink;
-  border: 0.2rem solid #E41245;
-  height: 40rem;
-  margin: 5rem;
-  width: 70rem;
-}
-
-.content {
-  margin: 2rem;
-}
-
-.div {
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-}
+@import "~styles/_colors";
+@import "~styles/_shadows";
+@import "~styles/_sizes";
+@import "~styles/_zIndices";
 
 .popOver {
-  background: orange;
-  border-radius: 4px;
+  background: @white;
+  border-radius: @standardBorderRadius;
+  box-shadow: @cardBoxShadow;
+  display: flex;
   position: absolute;
-}
-
-.select {
-  :global {
-    .ant-select {
-      width: 20rem;
-    }
-  }
+  z-index: @zPopOver;
 }
