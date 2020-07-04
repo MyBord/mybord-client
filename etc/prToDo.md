@@ -20,3 +20,5 @@ replace all file names 'popOverTwo' to popOver - including framer motion and Pop
 fix hovering from main div to modal
 
 forward ref to popover animation
+
+remove popover demo and popover demo module.less
