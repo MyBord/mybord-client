@@ -28,18 +28,14 @@ export default (
     case 'bottom':
       style.top = `${childrenRect.bottom + popOverMargin}px`;
       break;
-    // case 'left':
-    //   style.right = '100%';
-    //   style.marginRight = popOverMargin;
-    //   break;
-    // case 'right':
-    //   style.left = '100%';
-    //   style.marginLeft = popOverMargin;
-    //   break;
+    case 'left':
+      style.left = `${childrenRect.left - popOverRect.width - popOverMargin}px`;
+      break;
+    case 'right':
+      style.left = `${childrenRect.right + popOverMargin}px`;
+      break;
     case 'top':
       style.top = `${childrenRect.top - popOverRect.height - popOverMargin}px`;
-      // style.bottom = '100%';
-      // style.marginBottom = popOverMargin;
       break;
     default:
       break;
@@ -50,24 +46,26 @@ export default (
       style.left = `${childrenRect.left + childrenRect.width / 2 - popOverRect.width / 2}px`;
     }
 
-    // if (['left', 'right'].includes(placementOne)) {
-    //   style.top = '50%';
-    //   style.transform = 'translateY(-50%)';
+    if (['left', 'right'].includes(placementOne)) {
+      style.top = `${childrenRect.top + childrenRect.height / 2 - popOverRect.height / 2}px`;
+    }
   } else {
-    // switch (placementTwo) {
-    //   case 'bottom':
-    //     break;
-    //   case 'center':
-    //     break;
-    //   case 'left':
-    //     break;
-    //   case 'right':
-    //     break;
-    //   case 'top':
-    //     break;
-    //   default:
-    //     break;
-    // }
+    switch (placementTwo) {
+      case 'bottom':
+        style.top = `${childrenRect.bottom - popOverRect.height}px`;
+        break;
+      case 'left':
+        style.left = `${childrenRect.left}px`;
+        break;
+      case 'right':
+        style.left = `${childrenRect.right - popOverRect.width}px`;
+        break;
+      case 'top':
+        style.top = `${childrenRect.top}px`;
+        break;
+      default:
+        break;
+    }
   }
 
   return style;
