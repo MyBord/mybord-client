@@ -23,6 +23,8 @@ const PopOver: React.FC<Props> = ({
     { ref: (node: HTMLElement) => setChildrenRef(node) },
   );
 
+  const [show, setShow] = React.useState<boolean>(false);
+
   React.useEffect(() => {
     const getStyle = (): void => getPopOverStyle(
       caretPlacement,
@@ -39,24 +41,29 @@ const PopOver: React.FC<Props> = ({
     return () => {
       window.removeEventListener('resize', getStyle);
     };
-  }, [caretPlacement, childrenRef, placement, popOverRef]);
+  }, [caretPlacement, childrenRef, placement, popOverRef, show]);
 
   return (
     <>
+      <button type="button" onClick={() => setShow((prevState) => !prevState)}>Click Me</button>
       {newChildren}
       <Portal>
-        <div
-          className={styles.popOver}
-          ref={popOverRef}
-          style={popOverStyle}
-        >
-          {
-            caretPlacement && (
-              <PopOverCaret caretPlacement={caretPlacement} popOverPlacement={placement} />
-            )
-          }
-          {Content}
-        </div>
+        {
+          show && (
+            <div
+              className={styles.popOver}
+              ref={popOverRef}
+              style={popOverStyle}
+            >
+              {
+                caretPlacement && (
+                  <PopOverCaret caretPlacement={caretPlacement} popOverPlacement={placement} />
+                )
+              }
+              {Content}
+            </div>
+          )
+        }
       </Portal>
     </>
   );
