@@ -123,6 +123,7 @@ const PopOverDemo: React.FC = () => {
           caretPlacement={caret}
           // @ts-ignore
           placement={placement}
+          trigger="hover"
         >
           <div className={styles.box}>hello world</div>
         </PopOver>
