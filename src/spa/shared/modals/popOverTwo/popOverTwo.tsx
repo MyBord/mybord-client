@@ -78,6 +78,7 @@ import 'antd/lib/select/style/index.less';
 import Icon from 'icons/icon/icon';
 import Portal from 'shared/portal/portal';
 import { PopOverProps, PopOverStyle } from 'types/modalTypes';
+import PopOverCaret from './popOverCaret/popOverCaret';
 import getPopOverStyle from './getPopOverStyle';
 import * as styles from './popOverTwo.module.less';
 
@@ -123,6 +124,11 @@ const PopOver: React.FC<Props> = ({
           ref={popOverRef}
           style={popOverStyle}
         >
+          {
+            caretPlacement && (
+              <PopOverCaret caretPlacement={caretPlacement} popOverPlacement={placement} />
+            )
+          }
           {Content}
         </div>
       </Portal>
