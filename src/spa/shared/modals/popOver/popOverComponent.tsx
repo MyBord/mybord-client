@@ -30,6 +30,7 @@ const PopOverComponent: React.FC<Props> = ({
   <div className={styles.container}>
     {/* *1 */}
     <div className={styles.parentDiv}>
+      // @ts-ignore
       <PopOverAnimation
         caretPlacement={caretPlacement}
         placement={placement}
