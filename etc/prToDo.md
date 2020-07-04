@@ -10,3 +10,7 @@ make portal a functional component , and make it tsx
   
 remove / update popoverstyles interface?  
 
+
+add comments to new popover and related files
+
+remove PopOverStyle interface in favor of PopOverStyleTwo

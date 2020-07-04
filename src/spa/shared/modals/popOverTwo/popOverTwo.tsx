@@ -15,22 +15,31 @@ const PopOver: React.FC<Props> = ({
   children,
   placement = 'bottom-center',
 }) => {
-  const [childRef, setChildRef] = React.useState<HTMLElement>(null);
+  const [childrenRef, setChildrenRef] = React.useState<HTMLElement>(null);
   const [popOverStyle, setPopOverStyle] = React.useState<PopOverStyle>(null);
   const popOverRef = React.useRef<HTMLDivElement>(null);
   const newChildren = React.cloneElement(
     children,
-    { ref: (node: HTMLElement) => setChildRef(node) },
+    { ref: (node: HTMLElement) => setChildrenRef(node) },
   );
 
   React.useEffect(() => {
-    if (childRef && popOverRef.current) {
-      const childRect = childRef.getBoundingClientRect();
-      const popOverRect = popOverRef.current.getBoundingClientRect();
-      const style = getPopOverStyle(childRect, popOverRect, placement, !!caretPlacement);
-      setPopOverStyle(style);
-    }
-  }, [caretPlacement, childRef, placement, popOverRef]);
+    const getStyle = (): void => getPopOverStyle(
+      caretPlacement,
+      childrenRef,
+      placement,
+      popOverRef,
+      setPopOverStyle,
+    );
+
+    getStyle();
+
+    window.addEventListener('resize', getStyle);
+
+    return () => {
+      window.removeEventListener('resize', getStyle);
+    };
+  }, [caretPlacement, childrenRef, placement, popOverRef]);
 
   return (
     <>

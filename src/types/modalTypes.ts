@@ -36,3 +36,8 @@ export interface PopOverStyle {
   top?: string;
   transform?: string;
 }
+
+export interface PopOverStyleTwo {
+  left?: string;
+  top?: string;
+}

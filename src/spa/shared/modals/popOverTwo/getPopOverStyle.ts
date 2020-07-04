@@ -1,22 +1,18 @@
+import * as React from 'react';
 import * as sizes from 'styles/_sizes.less';
-import { PopOverProps, PopOverStyle } from 'types/modalTypes';
+import { PopOverProps, PopOverStyleTwo } from 'types/modalTypes';
 import { ClientRect } from 'types/htmlTypes';
 
-export default (
+const getStyle = (
   childrenRect: ClientRect,
-  popOverRect: ClientRect,
-  placement: PopOverProps['placement'],
   hasCaret: boolean,
-): PopOverStyle => {
+  placement: PopOverProps['placement'],
+  popOverRect: ClientRect,
+): PopOverStyleTwo => {
   const p = placement.split('-');
   const placementOne = p[0];
   const placementTwo = p[1];
-  const style: PopOverStyle = {};
-
-  console.log(' --- childrenRect ---');
-  console.log(childrenRect); // todo: remove
-  console.log(' --- popOverRect ---');
-  console.log(popOverRect); // todo: remove
+  const style: PopOverStyleTwo = {};
 
   let popOverMargin = 8;
   if (hasCaret) {
@@ -69,4 +65,19 @@ export default (
   }
 
   return style;
+};
+
+export default (
+  caretPlacement: PopOverProps['caretPlacement'],
+  childrenRef: HTMLElement,
+  placement: PopOverProps['placement'],
+  popOverRef: React.RefObject<HTMLDivElement>,
+  setStyle: (style: PopOverStyleTwo) => void,
+): void => {
+  if (childrenRef && popOverRef.current) {
+    const childrenRect = childrenRef.getBoundingClientRect();
+    const popOverRect = popOverRef.current.getBoundingClientRect();
+    const style = getStyle(childrenRect, !!caretPlacement, placement, popOverRect);
+    setStyle(style);
+  }
 };
