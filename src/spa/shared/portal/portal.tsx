@@ -10,27 +10,32 @@
 import * as React from 'react';
 import ReactDOM from 'react-dom';
 
-class Portal extends React.Component {
-  constructor(props) {
-    super(props);
-    this.el = document.createElement('div');
-    this.el.style.display = 'inline-block';
-  }
+interface Props {
+  children: React.ReactNode;
+}
 
-  componentDidMount() {
-    document.body.appendChild(this.el);
-  }
+const Portal: React.FC<Props> = ({ children }) => {
+  const [element, setElement] = React.useState<HTMLDivElement>(null);
 
-  componentWillUnmount() {
-    document.body.removeChild(this.el);
-  }
+  React.useEffect(() => {
+    const div = document.createElement('div');
+    div.style.display = 'inline-block';
+    document.body.appendChild(div);
+    setElement(div);
 
-  render() {
+    return () => {
+      document.body.removeChild(div);
+    }
+  }, [])
+
+  if (element) {
     return ReactDOM.createPortal(
-      this.props.children,
-      this.el,
+      children,
+      element,
     );
   }
-}
+
+  return null;
+};
 
 export default Portal;

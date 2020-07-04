@@ -1,6 +1,6 @@
 import * as React from 'react';
 import PopOverAnimation from 'framerMotion/popOverAnimationTwo';
-import Portal from 'shared/portal/portal';
+import Portal from 'portal/portal';
 import { PopOverProps, PopOverStyleTwo } from 'types/modalTypes';
 import PopOverCaret from './popOverCaret/popOverCaret';
 import getPopOverStyle from './getPopOverStyle';
