@@ -1,3 +1,6 @@
+// This function takes the refs of the children and popOver nodes and based on their dimensions,
+// returns the absolute positioning css style that the popOver should be set to.
+
 import * as React from 'react';
 import * as sizes from 'styles/_sizes.less';
 import { PopOverProps, PopOverStyleTwo } from 'types/modalTypes';

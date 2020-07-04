@@ -1,7 +1,7 @@
 import * as React from 'react';
 import PopOverAnimation from 'framerMotion/popOverAnimationTwo';
 import Portal from 'shared/portal/portal';
-import { PopOverProps, PopOverStyle } from 'types/modalTypes';
+import { PopOverProps, PopOverStyleTwo } from 'types/modalTypes';
 import PopOverCaret from './popOverCaret/popOverCaret';
 import getPopOverStyle from './getPopOverStyle';
 
@@ -18,13 +18,16 @@ const PopOver: React.FC<Props> = ({
   trigger = 'click',
 }) => {
   const [childrenRef, setChildrenRef] = React.useState<HTMLElement>(null);
-  const [popOverStyle, setPopOverStyle] = React.useState<PopOverStyle>(null);
+  const [popOverStyle, setPopOverStyle] = React.useState<PopOverStyleTwo>(null);
   const [showPopOver, setShowPopOver] = React.useState<boolean>(defaultVisible);
   const popOverRef = React.useRef<HTMLDivElement>(null);
   const newChildren = React.cloneElement(
     children,
     { ref: (node: HTMLElement) => setChildrenRef(node) },
   );
+
+  // ----- CLICK & HOVER EVENT LISTENERS ----- //
+  // adds a click or hover event listener to conditionally display the popover
 
   React.useEffect(() => {
     const childrenNode = childrenRef;
@@ -84,6 +87,10 @@ const PopOver: React.FC<Props> = ({
     trigger,
   ]);
 
+  // ----- POPOVER STYLE  ----- //
+  // sets the style and positioning of the popover, and updates said style and positioning if
+  // the window gets resized.
+
   React.useEffect(() => {
     const getStyle = (): void => getPopOverStyle(
       caretPlacement,
@@ -102,14 +109,15 @@ const PopOver: React.FC<Props> = ({
     };
   }, [caretPlacement, childrenRef, placement, popOverRef, showPopOver]);
 
+  // ----- RETURNS COMPONENT ----- //
+
   return (
     <>
-      <button type="button" onClick={() => setShowPopOver((prevState) => !prevState)}>Click Me</button>
       {newChildren}
       <Portal>
         <PopOverAnimation
-          popOverRef={popOverRef}
           popOverStyle={popOverStyle}
+          ref={popOverRef}
           showPopOver={showPopOver}
         >
           {

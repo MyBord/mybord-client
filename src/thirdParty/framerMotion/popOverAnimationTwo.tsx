@@ -20,17 +20,15 @@ const variants = {
 
 interface Props {
   children: React.ReactNode;
-  popOverRef: React.RefObject<HTMLDivElement>;
   popOverStyle: PopOverStyleTwo;
   showPopOver: boolean;
 }
 
-const PopOverAnimation: React.FC<Props> = ({
+const PopOverAnimation = React.forwardRef<HTMLDivElement, Props>(({
   children,
-  popOverRef,
   popOverStyle,
   showPopOver,
-}) => (
+}, ref) => (
   <AnimatePresence>
     {
       showPopOver && (
@@ -39,7 +37,7 @@ const PopOverAnimation: React.FC<Props> = ({
           className={styles.div}
           exit="exit"
           initial="initial"
-          ref={popOverRef}
+          ref={ref}
           style={popOverStyle}
           variants={variants}
         >
@@ -48,6 +46,6 @@ const PopOverAnimation: React.FC<Props> = ({
       )
     }
   </AnimatePresence>
-);
+));
 
 export default PopOverAnimation;

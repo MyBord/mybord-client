@@ -7,18 +7,3 @@ add documentation about portals
  
 make portal a functional component , and make it tsx
   make portal an alias folder
-  
-remove / update popoverstyles interface?  
-
-
-add comments to new popover and related files
-
-remove PopOverStyle interface in favor of PopOverStyleTwo
-
-replace all file names 'popOverTwo' to popOver - including framer motion and PopOverStyleTwo
-
-fix hovering from main div to modal
-
-forward ref to popover animation
-
-remove popover demo and popover demo module.less
