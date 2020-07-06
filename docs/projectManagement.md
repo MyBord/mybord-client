@@ -25,7 +25,7 @@ This document is used to outline current project management priorities.
       * dashboardHeaderFilterFormContent - done
       * headerProfile - done
       * headerNotifications - done
-      * cardMenuButtonComponent
+      * cardMenuButtonComponent - done
       * cardMenuButtonContentComponent
       * popConfirm
   * if filtered to e.g. favorites, unfavoriting something should remove it from the result set
