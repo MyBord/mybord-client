@@ -8,7 +8,7 @@ interface Props {
   userCard: UserCard;
 }
 
-const CardMenuButtonComponent: React.FC<Props> = ({ userCard }) => (
+const CardMenuButton: React.FC<Props> = ({ userCard }) => (
   <PopOver Content={<CardMenuButtonContentContainer userCard={userCard} />}>
     <div className={[styles.div, 'card-menu-button'].join(' ')}>
       <div className={styles.dot} />
@@ -18,4 +18,4 @@ const CardMenuButtonComponent: React.FC<Props> = ({ userCard }) => (
   </PopOver>
 );
 
-export default CardMenuButtonComponent;
+export default CardMenuButton;

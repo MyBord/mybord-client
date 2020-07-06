@@ -21,6 +21,7 @@ This document is used to outline current project management priorities.
     * add tooltip
     * update caret styling
     * add ability to add additional margin (e.g. header notifications)
+    * fix styles of card menu button content
     * add back popovers to the following files:
       * dashboardHeaderFilterFormContent - done
       * headerProfile - done

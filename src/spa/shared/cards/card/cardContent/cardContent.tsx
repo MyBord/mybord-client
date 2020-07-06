@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useMutation } from '@apollo/react-hooks';
 import CardContentButtonsAnimation from 'framerMotion/cardContentButtonsAnimation';
-import CardMenuButtonContainer from 'buttons/cardMenuButton/cardMenuButtonContainer';
+import CardMenuButton from 'buttons/cardMenuButton/cardMenuButton';
 import FavoriteButton from 'buttons/favoriteButton/favoriteButton';
 import { TOGGLE_FAVORITE_USER_CARD_MUTATION, UserCard } from 'schema/card';
 import { useMultiSelectCardContext } from 'context/multiSelectCardContext/multiSelectCardContext';
@@ -39,7 +39,7 @@ const CardContent: React.FC<Props> = ({
           onClick={handleFavorite}
           size={25}
         />
-        <CardMenuButtonContainer userCard={userCard} />
+        <CardMenuButton userCard={userCard} />
       </CardContentButtonsAnimation>
       <Content />
     </div>
