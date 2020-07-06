@@ -23,8 +23,8 @@ This document is used to outline current project management priorities.
     * add ability to add additional margin (e.g. header notifications)
     * add back popovers to the following files:
       * dashboardHeaderFilterFormContent - done
-      * headerProfile
-      * headerNotifications
+      * headerProfile - done
+      * headerNotifications - done
       * cardMenuButtonComponent
       * cardMenuButtonContentComponent
       * popConfirm
