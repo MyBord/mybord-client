@@ -5,17 +5,9 @@ import * as styles from './headerTools.module.less';
 
 const HeaderTools: React.FC = () => (
   <section className={styles.section}>
-    <div className={styles.hrParentDiv}>
-      <div className={styles.hrDiv}>
-        <hr className={styles.hr} />
-      </div>
-    </div>
+    <hr className={styles.hr} />
     <HeaderNotifications />
-    <div className={styles.hrParentDiv}>
-      <div className={styles.hrDiv}>
-        <hr className={styles.hr} />
-      </div>
-    </div>
+    <hr className={styles.hr} />
     <HeaderProfile />
   </section>
 );
