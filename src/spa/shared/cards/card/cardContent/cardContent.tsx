@@ -16,7 +16,6 @@ const CardContent: React.FC<Props> = ({
   Content,
   userCard,
 }) => {
-  const containerRef = React.useRef(null);
   const [isFavorite, setIsFavorite] = React.useState<boolean>(userCard.isFavorite);
   const { activeCard, canMultiEdit } = useMultiSelectCardContext();
   const [toggleFavoriteUserCard] = useMutation(TOGGLE_FAVORITE_USER_CARD_MUTATION);
@@ -33,14 +32,14 @@ const CardContent: React.FC<Props> = ({
   const showButtons = !canMultiEdit && activeCard.id !== userCard.id;
 
   return (
-    <div className={styles.container} ref={containerRef}>
+    <div className={styles.container}>
       <CardContentButtonsAnimation showButtons={showButtons}>
         <FavoriteButton
           isFavorite={isFavorite}
           onClick={handleFavorite}
           size={25}
         />
-        <CardMenuButtonContainer containerRef={containerRef} userCard={userCard} />
+        <CardMenuButtonContainer userCard={userCard} />
       </CardContentButtonsAnimation>
       <Content />
     </div>
