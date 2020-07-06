@@ -14,6 +14,10 @@ This document is used to outline current project management priorities.
 ### A. Highest - MVP
 
   * popover
+    * replace all file names 'popOverTwo' to popOver - including framer motion and PopOverStyleTwo
+    * fix hovering from main div to modal
+    * remove popover demo and popover demo module.less (from v2 folder)
+    * revert changes to header
     * add tooltip
     * update caret styling
     * add ability to add additional margin (e.g. header notifications)

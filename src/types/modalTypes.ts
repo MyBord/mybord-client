@@ -7,7 +7,7 @@ export interface PopOverProps {
   | 'left'
   | 'right'
   | 'top';
-  children: React.ReactNode;
+  children: React.ReactElement;
   defaultVisible?: boolean;
   placement?:
   'bottom-center'
@@ -35,4 +35,9 @@ export interface PopOverStyle {
   right?: string;
   top?: string;
   transform?: string;
+}
+
+export interface PopOverStyleTwo {
+  left?: string;
+  top?: string;
 }

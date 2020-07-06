@@ -38,6 +38,7 @@
         "modals": "./src/spa/shared/modals/",
         "navigation": "./src/spa/app/layout/navigation/",
         "pages": "./src/spa/app/pages/",
+        "portal": "./src/spa/shared/portal/",
         "routing": "./src/spa/app/routing/",
         "schema": "./src/server/schema/",
         "server": "./src/server/",
