@@ -107,7 +107,13 @@ const PopOver: React.FC<Props> = ({
     return () => {
       window.removeEventListener('resize', getStyle);
     };
-  }, [caretPlacement, childrenRef, placement, popOverRef, showPopOver]);
+  }, [
+    caretPlacement,
+    childrenRef,
+    placement,
+    popOverRef,
+    showPopOver,
+  ]);
 
   // ----- RETURNS COMPONENT ----- //
 
