@@ -2,6 +2,7 @@ import * as React from 'react';
 import PopOver from 'modals/popOver/popOver';
 import Typography from 'typography/typography';
 import { PopOverProps } from 'types/modalTypes';
+import * as styles from './tooltipTwo.module.less';
 
 interface Props {
   caretPlacement?: PopOverProps['caretPlacement'];
@@ -19,7 +20,13 @@ const Tooltip: React.FC<Props> = ({
   trigger = 'hover',
 }) => {
   const Content: React.FC = () => (
-    <Typography size="two" text={text} />
+    <div className={styles.textDiv}>
+      <Typography
+        color="white"
+        size="normal"
+        text={text}
+      />
+    </div>
   );
 
   return (

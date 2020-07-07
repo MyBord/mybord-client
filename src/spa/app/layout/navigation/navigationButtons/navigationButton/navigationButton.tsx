@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import Icon from 'icons/icon/icon';
-import Tooltip from 'modals/tooltip/tooltip';
+// import Tooltip from 'modals/tooltip/tooltip';
+import Tooltip from 'modals/tooltipTwo/tooltipTwo';
 import { IconNames } from 'types/iconNameTypes';
 import * as styles from './navigationButton.module.less';
 
@@ -15,7 +16,7 @@ const NavigationButton: React.FC<Props> = ({ iconName, link, pageTitle }) => {
   const location = useLocation();
   const path = `/${link}`;
   return (
-    <Tooltip delay={1.0} placement="right" text={pageTitle}>
+    <Tooltip placement="right-center" text={pageTitle}>
       <Link
         className={[
           styles.link,
