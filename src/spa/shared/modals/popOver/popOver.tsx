@@ -15,6 +15,7 @@ const PopOver: React.FC<Props> = ({
   children,
   color = 'white',
   defaultVisible = false,
+  delay = null,
   placement = 'bottom-center',
   trigger = 'click',
 }) => {
@@ -33,6 +34,7 @@ const PopOver: React.FC<Props> = ({
   React.useEffect(() => {
     const childrenNode = childrenRef;
     const popOverNode = popOverRef.current;
+    let timeoutId: NodeJS.Timeout;
 
     const handleEvent = (event: Event): void => {
       if (
@@ -40,7 +42,11 @@ const PopOver: React.FC<Props> = ({
         && childrenNode
         && childrenNode.contains(event.target as Node)
       ) {
-        setShowPopOver(true);
+        if (delay) {
+          timeoutId = setTimeout(() => setShowPopOver(true), delay);
+        } else {
+          setShowPopOver(true);
+        }
       }
 
       if (
@@ -50,6 +56,9 @@ const PopOver: React.FC<Props> = ({
         && childrenNode.contains(event.target as Node)
       ) {
         setShowPopOver(false);
+        if (delay) {
+          clearTimeout(timeoutId);
+        }
       }
 
       if (
@@ -60,6 +69,9 @@ const PopOver: React.FC<Props> = ({
         && !childrenNode.contains(event.target as Node)
       ) {
         setShowPopOver(false);
+        if (delay) {
+          clearTimeout(timeoutId);
+        }
       }
     };
 

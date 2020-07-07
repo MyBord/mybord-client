@@ -10,6 +10,7 @@ export interface PopOverProps {
   children: React.ReactElement;
   color?: 'blue' | 'white';
   defaultVisible?: boolean;
+  delay?: number;
   placement?:
   'bottom-center'
   | 'bottom-left'

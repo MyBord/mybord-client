@@ -25,6 +25,7 @@ This document is used to outline current project management priorities.
     * fix the bug when deleting a card
     * hovering over card menu button content hides card menu button
   * if filtered to e.g. favorites, unfavoriting something should remove it from the result set
+  * fix console bug where cannot find target of undefined for popover event
   * when you switch from filters - no card - to no filters, you see the empty card render
   * fix styling when there are only two cards
   * when you first login, cards show before page is done animating? 

@@ -15,7 +15,7 @@ const NavigationButton: React.FC<Props> = ({ iconName, link, pageTitle }) => {
   const location = useLocation();
   const path = `/${link}`;
   return (
-    <Tooltip placement="right-center" text={pageTitle}>
+    <Tooltip delay={1000} placement="right-center" text={pageTitle}>
       <Link
         className={[
           styles.link,

@@ -7,6 +7,7 @@ import * as styles from './tooltip.module.less';
 interface Props {
   caretPlacement?: PopOverProps['caretPlacement'];
   children: PopOverProps['children'];
+  delay?: PopOverProps['delay'];
   placement?: PopOverProps['placement'];
   text: string;
   trigger?: PopOverProps['trigger'];
@@ -15,6 +16,7 @@ interface Props {
 const Tooltip: React.FC<Props> = ({
   caretPlacement = 'center',
   children,
+  delay = null,
   placement = 'top-center',
   text,
   trigger = 'hover',
@@ -34,6 +36,7 @@ const Tooltip: React.FC<Props> = ({
       Content={<Content />}
       caretPlacement={caretPlacement}
       color="blue"
+      delay={delay}
       placement={placement}
       trigger={trigger}
     >
