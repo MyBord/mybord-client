@@ -14,23 +14,14 @@ This document is used to outline current project management priorities.
 ### A. Highest - MVP
 
   * popover
-    * replace all file names 'popOverTwo' to popOver - including framer motion and PopOverStyleTwo
-    * fix hovering from main div to modal
-    * remove popover demo and popover demo module.less (from v2 folder)
     * add tooltip
+    * fix hovering from main div to modal
     * update caret styling
     * add ability to add additional margin (e.g. header notifications)
     * fix styles of card menu button content
     * add callback to popover so that clicking no in pop confirm will hide modal
     * fix the bug when deleting a card
     * hovering over card menu button content hides card menu button
-    * add back popovers to the following files:
-      * dashboardHeaderFilterFormContent - done
-      * headerProfile - done
-      * headerNotifications - done
-      * cardMenuButtonComponent - done
-      * cardMenuButtonContentComponent
-      * popConfirm
   * if filtered to e.g. favorites, unfavoriting something should remove it from the result set
   * when you switch from filters - no card - to no filters, you see the empty card render
   * fix styling when there are only two cards
