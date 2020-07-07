@@ -1,7 +1,7 @@
 import * as React from 'react';
 import PopOverAnimation from 'framerMotion/popOverAnimation';
 import Portal from 'portal/portal';
-import { PopOverProps, PopOverStyle } from 'types/modalTypes';
+import { PopOverHandle, PopOverProps, PopOverStyle } from 'types/modalTypes';
 import PopOverCaret from './popOverCaret/popOverCaret';
 import getPopOverStyle from './getPopOverStyle';
 
@@ -9,7 +9,7 @@ interface Props extends PopOverProps {
   Content: React.ReactNode;
 }
 
-const PopOver = React.forwardRef<HTMLDivElement, Props>(({
+const PopOver = React.forwardRef<PopOverHandle, Props>(({
   Content,
   caretPlacement = null,
   children,
@@ -27,7 +27,7 @@ const PopOver = React.forwardRef<HTMLDivElement, Props>(({
     { ref: (node: HTMLElement) => setChildrenRef(node) },
   );
 
-  // @ts-ignore // todo: fix
+  // Attaches the `setShowPopOver` function to the ref so it can be used by parent components
   React.useImperativeHandle(ref, () => ({
     setShowPopOver: (show: boolean) => setShowPopOver(show),
   }));
