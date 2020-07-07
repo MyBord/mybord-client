@@ -26,6 +26,7 @@ const Tooltip: React.FC<Props> = ({
     <PopOver
       Content={<Content />}
       caretPlacement={caretPlacement}
+      color="blue"
       placement={placement}
       trigger={trigger}
     >

@@ -42,27 +42,57 @@
 .bottom {
   border-left: @caretSize solid transparent;
   border-right: @caretSize solid transparent;
-  border-bottom: @caretSize solid @white;
   top: -@caretSize;
 }
 
 .left {
   border-top: @caretSize solid transparent;
   border-bottom: @caretSize solid transparent;
-  border-left: @caretSize solid @white;
   right: -@caretSize;
 }
 
 .right {
   border-top: @caretSize solid transparent;
   border-bottom: @caretSize solid transparent;
-  border-right: @caretSize solid @white;
   left: -@caretSize;
 }
 
 .top {
   border-left: @caretSize solid transparent;
   border-right: @caretSize solid transparent;
-  border-top: @caretSize solid @white;
   bottom: -@caretSize;
+}
+
+// ----- CARET COLOR ----- //
+
+.bottom-blue {
+  border-bottom: @caretSize solid @blue;
+}
+
+.bottom-white {
+  border-bottom: @caretSize solid @white;
+}
+
+.left-blue {
+  border-left: @caretSize solid @blue;
+}
+
+.left-white {
+  border-left: @caretSize solid @white;
+}
+
+.right-blue {
+  border-right: @caretSize solid @blue;
+}
+
+.right-white {
+  border-right: @caretSize solid @white;
+}
+
+.top-blue {
+  border-top: @caretSize solid @blue;
+}
+
+.top-white {
+  border-top: @caretSize solid @white;
 }

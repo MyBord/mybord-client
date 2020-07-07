@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { PopOverStyle } from 'types/modalTypes';
+import { PopOverProps, PopOverStyle } from 'types/modalTypes';
 import * as styles from './popOverAnimation.module.less';
 
 const variants = {
@@ -20,12 +20,14 @@ const variants = {
 
 interface Props {
   children: React.ReactNode;
+  color: PopOverProps['color'];
   popOverStyle: PopOverStyle;
   showPopOver: boolean;
 }
 
 const PopOverAnimation = React.forwardRef<HTMLDivElement, Props>(({
   children,
+  color,
   popOverStyle,
   showPopOver,
 }, ref) => (
@@ -34,7 +36,7 @@ const PopOverAnimation = React.forwardRef<HTMLDivElement, Props>(({
       showPopOver && (
         <motion.div
           animate="enter"
-          className={styles.div}
+          className={[styles.div, styles[color]].join(' ')}
           exit="exit"
           initial="initial"
           ref={ref}

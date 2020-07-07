@@ -8,6 +8,7 @@ export interface PopOverProps {
   | 'right'
   | 'top';
   children: React.ReactElement;
+  color?: 'blue' | 'white';
   defaultVisible?: boolean;
   placement?:
   'bottom-center'
