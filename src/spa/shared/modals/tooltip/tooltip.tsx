@@ -2,7 +2,7 @@ import * as React from 'react';
 import PopOver from 'modals/popOver/popOver';
 import Typography from 'typography/typography';
 import { PopOverProps } from 'types/modalTypes';
-import * as styles from './tooltipTwo.module.less';
+import * as styles from './tooltip.module.less';
 
 interface Props {
   caretPlacement?: PopOverProps['caretPlacement'];
