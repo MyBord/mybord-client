@@ -4,6 +4,7 @@ import FormItem from 'forms/formItem/formItem';
 import IconButton from 'icons/iconButton/iconButton';
 import PopOver from 'modals/popOver/popOver';
 import TextInput from 'inputs/textInput/textInput';
+import Tooltip from 'modals/tooltipTwo/tooltipTwo';
 import { FormProp } from 'types/formTypes';
 import { useMultiSelectCardContext } from 'context/multiSelectCardContext/multiSelectCardContext';
 import DashboardFilterContent from './dashboardFilterContent/dashboardFilterContent';
@@ -24,6 +25,9 @@ const DashboardHeaderFilterFormContent: React.FC<Props> = ({
 
   return (
     <div className={styles.formContainer}>
+      <Tooltip text="foo bar">
+        <button type="button">Hell world</button>
+      </Tooltip>
       <FormItem
         errorMessage={errorMessage}
         fieldName="add-youtube-video-input"

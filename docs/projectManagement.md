@@ -15,6 +15,7 @@ This document is used to outline current project management priorities.
 
   * popover
     * add tooltip
+    * rename tooltip two to tooltip one
     * fix hovering from main div to modal
     * update caret styling
     * add ability to add additional margin (e.g. header notifications)
