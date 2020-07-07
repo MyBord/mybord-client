@@ -1,7 +1,7 @@
 import * as React from 'react';
 import PopOverAnimation from 'framerMotion/popOverAnimation';
 import Portal from 'portal/portal';
-import { PopOverProps, PopOverStyleTwo } from 'types/modalTypes';
+import { PopOverProps, PopOverStyle } from 'types/modalTypes';
 import PopOverCaret from './popOverCaret/popOverCaret';
 import getPopOverStyle from './getPopOverStyle';
 
@@ -18,7 +18,7 @@ const PopOver: React.FC<Props> = ({
   trigger = 'click',
 }) => {
   const [childrenRef, setChildrenRef] = React.useState<HTMLElement>(null);
-  const [popOverStyle, setPopOverStyle] = React.useState<PopOverStyleTwo>(null);
+  const [popOverStyle, setPopOverStyle] = React.useState<PopOverStyle>(null);
   const [showPopOver, setShowPopOver] = React.useState<boolean>(defaultVisible);
   const popOverRef = React.useRef<HTMLDivElement>(null);
   const newChildren = React.cloneElement(

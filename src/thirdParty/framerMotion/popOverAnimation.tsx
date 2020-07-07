@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { PopOverStyleTwo } from 'types/modalTypes';
+import { PopOverStyle } from 'types/modalTypes';
 import * as styles from './popOverAnimation.module.less';
 
 const variants = {
@@ -20,7 +20,7 @@ const variants = {
 
 interface Props {
   children: React.ReactNode;
-  popOverStyle: PopOverStyleTwo;
+  popOverStyle: PopOverStyle;
   showPopOver: boolean;
 }
 

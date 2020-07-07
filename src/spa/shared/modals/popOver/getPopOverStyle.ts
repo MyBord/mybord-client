@@ -3,7 +3,7 @@
 
 import * as React from 'react';
 import * as sizes from 'styles/_sizes.less';
-import { PopOverProps, PopOverStyleTwo } from 'types/modalTypes';
+import { PopOverProps, PopOverStyle } from 'types/modalTypes';
 import { ClientRect } from 'types/htmlTypes';
 
 const getStyle = (
@@ -11,11 +11,11 @@ const getStyle = (
   hasCaret: boolean,
   placement: PopOverProps['placement'],
   popOverRect: ClientRect,
-): PopOverStyleTwo => {
+): PopOverStyle => {
   const p = placement.split('-');
   const placementOne = p[0];
   const placementTwo = p[1];
-  const style: PopOverStyleTwo = {};
+  const style: PopOverStyle = {};
 
   let popOverMargin = 8;
   if (hasCaret) {
@@ -75,7 +75,7 @@ export default (
   childrenRef: HTMLElement,
   placement: PopOverProps['placement'],
   popOverRef: React.RefObject<HTMLDivElement>,
-  setStyle: (style: PopOverStyleTwo) => void,
+  setStyle: (style: PopOverStyle) => void,
 ): void => {
   if (childrenRef && popOverRef.current) {
     const childrenRect = childrenRef.getBoundingClientRect();

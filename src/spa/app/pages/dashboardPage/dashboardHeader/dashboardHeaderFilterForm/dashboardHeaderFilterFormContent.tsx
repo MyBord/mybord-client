@@ -2,7 +2,7 @@ import * as React from 'react';
 import Button from 'buttons/button/button';
 import FormItem from 'forms/formItem/formItem';
 import IconButton from 'icons/iconButton/iconButton';
-import PopOver from 'modals/popOverTwo/popOverTwo';
+import PopOver from 'modals/popOver/popOver';
 import TextInput from 'inputs/textInput/textInput';
 import { FormProp } from 'types/formTypes';
 import { useMultiSelectCardContext } from 'context/multiSelectCardContext/multiSelectCardContext';

@@ -26,18 +26,6 @@ export interface PopOverProps {
 }
 
 export interface PopOverStyle {
-  bottom?: string;
-  left?: string;
-  marginBottom?: string;
-  marginLeft?: string;
-  marginRight?: string;
-  marginTop?: string;
-  right?: string;
-  top?: string;
-  transform?: string;
-}
-
-export interface PopOverStyleTwo {
   left?: string;
   top?: string;
 }

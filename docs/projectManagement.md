@@ -32,6 +32,7 @@ This document is used to outline current project management priorities.
       * cardMenuButtonContentComponent
       * popConfirm
   * if filtered to e.g. favorites, unfavoriting something should remove it from the result set
+  * when you switch from filters - no card - to no filters, you see the empty card render
   * fix styling when there are only two cards
   * when you first login, cards show before page is done animating? 
   * gap between cards change when adding more to second row
