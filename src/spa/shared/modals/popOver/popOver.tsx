@@ -13,6 +13,7 @@ const PopOver: React.FC<Props> = ({
   Content,
   caretPlacement = null,
   children,
+  color = 'white',
   defaultVisible = false,
   placement = 'bottom-center',
   trigger = 'click',
@@ -122,13 +123,18 @@ const PopOver: React.FC<Props> = ({
       {newChildren}
       <Portal>
         <PopOverAnimation
+          color={color}
           popOverStyle={popOverStyle}
           ref={popOverRef}
           showPopOver={showPopOver}
         >
           {
             caretPlacement && (
-              <PopOverCaret caretPlacement={caretPlacement} popOverPlacement={placement} />
+              <PopOverCaret
+                caretPlacement={caretPlacement}
+                color={color}
+                popOverPlacement={placement}
+              />
             )
           }
           {Content}
