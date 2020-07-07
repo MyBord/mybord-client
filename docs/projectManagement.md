@@ -14,11 +14,8 @@ This document is used to outline current project management priorities.
 ### A. Highest - MVP
 
   * popover
-    * add tooltip
-    * rename tooltip two to tooltip one
     * add delay for tooltip / popover
     * fix hovering from main div to modal
-    * update caret styling
     * add ability to add additional margin (e.g. header notifications)
     * fix styles of card menu button content
     * add callback to popover so that clicking no in pop confirm will hide modal
