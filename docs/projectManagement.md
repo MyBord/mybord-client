@@ -18,7 +18,6 @@ This document is used to outline current project management priorities.
     * fix hovering from main div to modal
     * add ability to add additional margin (e.g. header notifications)
     * fix styles of card menu button content
-    * add callback to popover so that clicking no in pop confirm will hide modal
     * fix the bug when deleting a card
     * hovering over card menu button content hides card menu button
   * if filtered to e.g. favorites, unfavoriting something should remove it from the result set
