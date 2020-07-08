@@ -34,7 +34,7 @@ const PopOver: React.FC<Props> = ({
   React.useEffect(() => {
     const childrenNode = childrenRef;
     const popOverNode = popOverRef.current;
-    let timeoutId: NodeJS.Timeout;
+    let timeout: NodeJS.Timeout = null;
 
     const handleEvent = (event: Event): void => {
       if (
@@ -43,7 +43,7 @@ const PopOver: React.FC<Props> = ({
         && childrenNode.contains(event.target as Node)
       ) {
         if (delay) {
-          timeoutId = setTimeout(() => setShowPopOver(true), delay);
+          timeout = setTimeout(() => setShowPopOver(true), delay);
         } else {
           setShowPopOver(true);
         }
@@ -56,9 +56,6 @@ const PopOver: React.FC<Props> = ({
         && childrenNode.contains(event.target as Node)
       ) {
         setShowPopOver(false);
-        if (delay) {
-          clearTimeout(timeoutId);
-        }
       }
 
       if (
@@ -69,10 +66,13 @@ const PopOver: React.FC<Props> = ({
         && !childrenNode.contains(event.target as Node)
       ) {
         setShowPopOver(false);
-        if (delay) {
-          clearTimeout(timeoutId);
-        }
       }
+    };
+
+    const hideModal = (): void => {
+      console.log('aaaaaaaaa');
+      clearTimeout(timeout);
+      setShowPopOver(false);
     };
 
     if (trigger === 'click') {
@@ -83,6 +83,11 @@ const PopOver: React.FC<Props> = ({
       document.addEventListener('mouseover', handleEvent);
     }
 
+    if (delay && popOverNode) {
+      console.log('bbbbbbbbbbbb');
+      popOverNode.addEventListener('mouseout', hideModal);
+    }
+
     return () => {
       if (trigger === 'click') {
         document.removeEventListener('mousedown', handleEvent);
@@ -91,9 +96,14 @@ const PopOver: React.FC<Props> = ({
       if (trigger === 'hover') {
         document.removeEventListener('mouseover', handleEvent);
       }
+
+      if (delay && popOverNode) {
+        popOverNode.removeEventListener('mouseout', hideModal);
+      }
     };
   }, [
     childrenRef,
+    delay,
     popOverRef,
     showPopOver,
     setShowPopOver,
