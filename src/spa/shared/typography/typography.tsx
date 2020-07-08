@@ -79,6 +79,7 @@ const Typography = React.forwardRef<HTMLDivElement, Props>(({
         <TypographyText
           Content={Content}
           maxTextLength={maxTextLength}
+          size={size}
           text={text}
         />
       </Component>
