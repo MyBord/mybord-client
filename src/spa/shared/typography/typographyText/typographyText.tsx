@@ -19,18 +19,16 @@ const TypographyText: React.FC<Props> = ({
   const renderText = (): React.ReactElement => {
     if (maxTextLength && text.length > maxTextLength) {
       return (
-        <>
-          <p className={styles.p}>
-            {text.slice(0, maxTextLength)}
-            <Tooltip text={text} trigger="click">
-              <div className={[styles.ellipsis, styles[size]].join(' ')}>
-                <div className={styles.dot} />
-                <div className={styles.dot} />
-                <div className={styles.dot} />
-              </div>
-            </Tooltip>
-          </p>
-        </>
+        <p className={styles.p}>
+          {text.slice(0, maxTextLength)}
+          <Tooltip text={text} trigger="click">
+            <div className={[styles.ellipsis, styles[size]].join(' ')}>
+              <div className={styles.dot} />
+              <div className={styles.dot} />
+              <div className={styles.dot} />
+            </div>
+          </Tooltip>
+        </p>
       );
     }
     return <p className={styles.p}>{text}</p>;
