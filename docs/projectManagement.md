@@ -20,7 +20,9 @@ This document is used to outline current project management priorities.
     * fix styles of card menu button content
     * fix the bug when deleting a card
     * hovering over card menu button content hides card menu button
+    * fix tooltip when card is on very right side
   * if filtered to e.g. favorites, unfavoriting something should remove it from the result set
+  * figure out why ellipsis aren't aliased
   * when you switch from filters - no card - to no filters, you see the empty card render
   * fix styling when there are only two cards
   * when you first login, cards show before page is done animating? 
@@ -45,6 +47,7 @@ This document is used to outline current project management priorities.
 
 ### C. Medium
 
+  * fix when you cannot get the channel icon
   * instead of having the default file be 'xContainer', have it be 'x' that imports the
    'container' file
   * add react lazy loading to all files that use switch statements
