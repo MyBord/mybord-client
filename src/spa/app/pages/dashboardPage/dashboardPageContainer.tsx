@@ -3,8 +3,8 @@ import pageWrapper from 'pages/pageWrapper/pageWrapper';
 import { useSubscription } from '@apollo/react-hooks';
 import {
   DELETED_USER_CARD_SUBSCRIPTION,
+  FILTERED_USER_CARDS_SUBSCRIPTION,
   USER_CARDS_QUERY,
-  USER_CARDS_SUBSCRIPTION,
   USER_CARD_SUBSCRIPTION,
   UserCard,
 } from 'schema/card';
@@ -62,13 +62,16 @@ const DashboardPageContainer: React.FC<Props> = ({ data }) => {
   // ----- SUBSCRIBING TO FILTERS ----- //
   // subscribing to when cards get filtered
 
-  const { data: cardsData, loading: cardsLoading } = useSubscription(USER_CARDS_SUBSCRIPTION);
+  const {
+    data: filteredUserCardsData,
+    loading: filteredUserCardsLoading,
+  } = useSubscription(FILTERED_USER_CARDS_SUBSCRIPTION);
 
   React.useEffect(() => {
-    if (!cardsLoading) {
-      dispatch({ type: SET_CARDS, cards: cardsData.userCards });
+    if (!filteredUserCardsLoading) {
+      dispatch({ type: SET_CARDS, cards: filteredUserCardsData.filteredUserCards });
     }
-  }, [cardsData, cardsLoading, dispatch]);
+  }, [filteredUserCardsData, filteredUserCardsLoading, dispatch]);
 
   // ----- TURNS OFF LOADING ANIMATION ----- //
   // this turns off the loading animation / spinner for the page once our reducer has been

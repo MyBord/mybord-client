@@ -135,9 +135,9 @@ export const USER_CARD_SUBSCRIPTION = gql`
   }
 `;
 
-export const USER_CARDS_SUBSCRIPTION = gql`
-  subscription userCards {
-    userCards {
+export const FILTERED_USER_CARDS_SUBSCRIPTION = gql`
+  subscription filteredUserCards {
+    filteredUserCards {
       id
       isFavorite
       isToDo
