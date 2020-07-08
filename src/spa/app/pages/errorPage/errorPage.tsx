@@ -20,4 +20,4 @@ const ErrorPage: React.FC = () => (
   </div>
 );
 
-export default pageWrapper(ErrorPage);
+export default pageWrapper({ Component: ErrorPage });

@@ -12,4 +12,4 @@ const InboxPage: React.FC = () => (
   />
 );
 
-export default pageWrapper(InboxPage);
+export default pageWrapper({ Component: InboxPage });

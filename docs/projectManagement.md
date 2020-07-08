@@ -13,9 +13,20 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
+  * popover
+    * add delay for tooltip / popover
+    * fix hovering from main div to modal
+    * add ability to add additional margin (e.g. header notifications)
+    * fix styles of card menu button content
+    * fix the bug when deleting a card
+    * hovering over card menu button content hides card menu button
   * if filtered to e.g. favorites, unfavoriting something should remove it from the result set
+  * when you switch from filters - no card - to no filters, you see the empty card render
+  * fix styling when there are only two cards
   * when you first login, cards show before page is done animating? 
   * gap between cards change when adding more to second row
+  * when you logout, the login form looks different
+  * when you login, you get a flash from the dashboard page?
   * fix youtube cards where there is too much text
   * fix justify content spacing for cards?
   * have session be remembered by user
@@ -24,7 +35,6 @@ This document is used to outline current project management priorities.
   * replace coffee login image
   * create transitions between login and about and error
   * create error page if server is down  
-  * when error boundary is triggered, you get a white screen
   * when refreshing the dashboard, the spa fallback seems to be persisting for too long
   * Document react naming conventions
     - container & component
@@ -36,6 +46,8 @@ This document is used to outline current project management priorities.
 ### C. Medium
 
   * fix when you cannot get the channel icon
+  * instead of having the default file be 'xContainer', have it be 'x' that imports the
+   'container' file
   * add react lazy loading to all files that use switch statements
   * replace error lottie
   * add query string for filters

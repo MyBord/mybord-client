@@ -14,7 +14,7 @@ const pageWrapper = (WrappedComponent: React.FC): React.FC => {
     React.useEffect(() => {
       setAnimationStatus(true);
       setHydrationStatus(true);
-    }, []);
+    }, [setAnimationStatus, setHydrationStatus]);
 
     return <WrappedComponent />;
   };

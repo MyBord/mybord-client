@@ -2,7 +2,7 @@ import * as React from 'react';
 import { AnimatePresence } from 'framer-motion';
 import { Switch, useLocation } from 'react-router-dom';
 const CantPage = React.lazy(() => import('pages/cantPage/cantPage'));
-const DashboardPage = React.lazy(() => import('pages/dashboardPage/dashboardPage'));
+const DashboardPage = React.lazy(() => import('pages/dashboardPage/dashboardPageContainer'));
 const ErrorPage = React.lazy(() => import('pages/errorPage/errorPage'));
 const FavoritesPage = React.lazy(() => import('pages/favoritesPage/favoritesPage'));
 const FollowingPage = React.lazy(() => import('pages/followingPage/followingPage'));

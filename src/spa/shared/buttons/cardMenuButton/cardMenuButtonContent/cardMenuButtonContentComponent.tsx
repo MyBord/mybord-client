@@ -1,3 +1,5 @@
+// *1: adding an `onClick` turns this into a typography button, which enforces our intended styling
+
 import * as React from 'react';
 import Icon from 'icons/icon/icon';
 import PopConfirm from 'modals/popConfirm/popConfirm';
@@ -6,26 +8,16 @@ import Typography from 'typography/typography';
 import * as styles from './cardMenuButtonContent.module.less';
 
 interface Props {
-  deleteButtonRef: React.RefObject<HTMLDivElement>;
   handleDelete: () => void;
   isToDo: boolean;
-  setShowPopConfirm: (showPopConfirm: boolean) => void;
-  showPopConfirm: boolean;
   toggleToDo: () => void;
 }
 
 const CardMenuButtonContentComponent: React.FC<Props> = ({
-  deleteButtonRef,
   handleDelete,
   isToDo,
-  setShowPopConfirm,
-  showPopConfirm,
   toggleToDo,
 }) => {
-  const onHide = React.useCallback(() => {
-    setShowPopConfirm(false);
-  }, [setShowPopConfirm]);
-
   const DeleteIconContent: React.FC = () => (
     <div className={styles.iconDiv}>
       <Icon
@@ -49,20 +41,16 @@ const CardMenuButtonContentComponent: React.FC<Props> = ({
       </li>
       <li className={styles.li}>
         <PopConfirm
-          node={deleteButtonRef}
           onConfirm={handleDelete}
-          onHide={onHide}
-          position={{ x: 1, y: -3.375 }}
-          show={showPopConfirm}
           text="Are you sure you want to delete?"
-        />
-        <Typography
-          Content={DeleteIconContent}
-          onClick={() => setShowPopConfirm(true)}
-          ref={deleteButtonRef}
-          size="two"
-          text="delete"
-        />
+        >
+          <Typography
+            Content={DeleteIconContent}
+            onClick={() => {}} // *1
+            size="two"
+            text="delete"
+          />
+        </PopConfirm>
       </li>
     </ul>
   );

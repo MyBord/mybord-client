@@ -5,7 +5,7 @@ import { useDashboardCardsContext } from 'context/dashboardCardsContext/dashboar
 import DashboardCardSwitch from './dashboardCardSwitch';
 import * as styles from './dashboardCards.module.less';
 
-const DashboardCardsComponent: React.FC = () => {
+const DashboardCards: React.FC = () => {
   const { state } = useDashboardCardsContext();
 
   if (state.allIds.length > 0) {
@@ -33,4 +33,4 @@ const DashboardCardsComponent: React.FC = () => {
   );
 };
 
-export default DashboardCardsComponent;
+export default DashboardCards;

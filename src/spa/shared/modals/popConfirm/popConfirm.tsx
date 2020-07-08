@@ -3,32 +3,39 @@ import Button from 'buttons/button/button';
 import PopOver from 'modals/popOver/popOver';
 import Typography from 'typography/typography';
 import memo from 'utils/memo';
-import { PopOverProps } from 'types/modalTypes';
+import { PopOverHandle, PopOverProps } from 'types/modalTypes';
 import * as styles from './popConfirm.module.less';
 
-interface Props extends PopOverProps {
-  node: React.RefObject<HTMLElement>;
+interface Props {
+  caretPlacement?: PopOverProps['caretPlacement'];
+  children: PopOverProps['children'];
   onConfirm: () => void;
-  onHide: () => void;
+  placement?: PopOverProps['placement'];
   text: string;
 }
 
 const PopConfirm: React.FC<Props> = ({
-  node,
+  caretPlacement = 'center',
+  children,
   onConfirm,
-  onHide,
-  placement = 'right',
-  position = { x: 0, y: 0 },
-  show,
+  placement = 'top-center',
   text,
 }) => {
+  const popOverRef = React.useRef<PopOverHandle>(null);
+
+  const handleNo = (): void => {
+    if (popOverRef.current) {
+      popOverRef.current.setShowPopOver(false);
+    }
+  };
+
   const Content: React.FC = () => (
     <div className={styles.contentContainer}>
       <Typography size="two" text={text} />
       <div className={styles.contentButtons}>
         <Button
           label="No"
-          onClick={onHide}
+          onClick={handleNo}
           size="small"
           type="secondary"
         />
@@ -44,13 +51,12 @@ const PopConfirm: React.FC<Props> = ({
   return (
     <PopOver
       Content={<Content />}
-      caretPosition="bottom-right"
-      node={node}
-      onHide={onHide}
+      caretPlacement={caretPlacement}
       placement={placement}
-      position={position}
-      show={show}
-    />
+      ref={popOverRef}
+    >
+      {children}
+    </PopOver>
   );
 };
 

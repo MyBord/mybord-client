@@ -12,4 +12,4 @@ const TrendingPage: React.FC = () => (
   />
 );
 
-export default pageWrapper(TrendingPage);
+export default pageWrapper({ Component: TrendingPage });

@@ -9,7 +9,6 @@ const HeaderTools: React.FC = () => (
     <HeaderNotifications />
     <hr className={styles.hr} />
     <HeaderProfile />
-    <div className={styles.div} />
   </section>
 );
 

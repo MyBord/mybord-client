@@ -12,4 +12,4 @@ const FollowingPage: React.FC = () => (
   />
 );
 
-export default pageWrapper(FollowingPage);
+export default pageWrapper({ Component: FollowingPage });

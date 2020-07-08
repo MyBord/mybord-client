@@ -148,6 +148,7 @@ const config = {
       modals: path.resolve(__dirname, 'src/spa/shared/modals/'),
       navigation: path.resolve(__dirname, 'src/spa/app/layout/navigation/'),
       pages: path.resolve(__dirname, 'src/spa/app/pages/'),
+      portal: path.resolve(__dirname, 'src/spa/shared/portal/'),
       routing: path.resolve(__dirname, 'src/spa/app/routing/'),
       schema: path.resolve(__dirname, 'src/server/schema/'),
       server: path.resolve(__dirname, 'src/server/'),

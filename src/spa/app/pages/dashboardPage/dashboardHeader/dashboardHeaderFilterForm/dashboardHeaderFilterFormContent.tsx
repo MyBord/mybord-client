@@ -20,8 +20,6 @@ const DashboardHeaderFilterFormContent: React.FC<Props> = ({
   form,
   isWaiting,
 }) => {
-  const [showFilters, setShowFilters] = React.useState<boolean>(false);
-  const iconButtonRef = React.useRef<HTMLButtonElement>(null);
   const { canMultiEdit, toggleMultiEditStatus } = useMultiSelectCardContext();
 
   return (
@@ -49,21 +47,15 @@ const DashboardHeaderFilterFormContent: React.FC<Props> = ({
       <div className={styles.buttonsContainer}>
         <PopOver
           Content={<DashboardFilterContent />}
-          caretPosition="top-center"
-          node={iconButtonRef}
-          onHide={() => setShowFilters(false)}
-          position={{ x: -2.625, y: 3 }}
-          show={showFilters}
-        />
-        <FormItem fieldName="filter" form={form}>
+          caretPlacement="center"
+          placement="bottom-center"
+        >
           <IconButton
             color="blue"
             iconName="filter"
-            onClick={() => setShowFilters((prevState) => !prevState)}
-            ref={iconButtonRef}
             size={32}
           />
-        </FormItem>
+        </PopOver>
       </div>
       {/* <FormItem fieldName="edit-cards" form={form}> */}
       {/*  <Button */}
