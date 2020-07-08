@@ -9,7 +9,7 @@
 .ellipsis {
   cursor: pointer;
   display: inline-flex;
-  margin: 0;
+  margin: 0 0 0 0.125rem;
   &:hover {
     > div {
       background: @blueHover;
@@ -23,50 +23,54 @@
 
 // ----- ELLIPSIS DOT SIZES ----- //
 
+/* stylelint-disable unit-blacklist, unit-whitelist */
+
 .one {
   > div {
-    height: calc(@typographyOne / 3.5);
-    margin: calc(@typographyOne / 7);
-    width: calc(@typographyOne / 3.5);
+    height: 3px;
+    margin: 1px;
+    width: 3px;
   }
 }
 
 .two {
   > div {
-    height: calc(@typographyTwo / 3.5);
-    margin: calc(@typographyTwo / 7);
-    width: calc(@typographyTwo / 3.5);
-  }
-}
-
-.three {
-  > div {
-    height: calc(@typographyThree / 3.5);
-    margin: calc(@typographyThree / 7);
-    width: calc(@typographyThree / 3.5);
-  }
-}
-
-.four {
-  > div {
-    height: calc(@typographyFour / 3.5);
-    margin: calc(@typographyFour / 7);
-    width: calc(@typographyFour / 3.5);
-  }
-}
-
-.five {
-  > div {
-    height: calc(@typographyFive / 3.5);
-    margin: calc(@typographyFive / 7);
-    width: calc(@typographyFive / 3.5);
+    height: 3.5px;
+    margin: 1px;
+    width: 3.5px;
   }
 }
 
 .normal {
   > div {
-    height: calc(@typographyNormal / 3.5);
-    margin: calc(@typographyNormal / 7);
-    width: calc(@typographyNormal / 3.5);
+    height: 4px;
+    margin: 4px;
+    width: 4px;
   }
 }
+
+.three {
+  > div {
+    height: 4.5px;
+    margin: 4.5px;
+    width: 4.5px;
+  }
+}
+
+.four {
+  > div {
+    height: 5.75px;
+    margin: 5.75px;
+    width: 5.75px;
+  }
+}
+
+.five {
+  > div {
+    height: 10px;
+    margin: 10px;
+    width: 10px;
+  }
+}
+
+/* stylelint-enable unit-blacklist, unit-whitelist */
