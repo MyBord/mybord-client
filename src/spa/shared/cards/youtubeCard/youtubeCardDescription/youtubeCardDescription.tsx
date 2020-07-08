@@ -8,16 +8,13 @@ interface Props {
   userCard: UserCard;
 }
 
-const foo = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`;
-
 const YoutubeCardDescription: React.FC<Props> = ({ userCard }) => (
   <div className={styles.container}>
     <div className={styles.title}>
       <Typography
         maxTextLength={60}
         size="two"
-        // text={userCard.cardData.youtubeCardData.videoTitle}
-        text={foo}
+        text={userCard.cardData.youtubeCardData.videoTitle}
         weight="bold"
       />
     </div>
@@ -32,8 +29,7 @@ const YoutubeCardDescription: React.FC<Props> = ({ userCard }) => (
           <Typography
             maxTextLength={60}
             size="one"
-            text={foo}
-            // text={userCard.cardData.youtubeCardData.channelTitle}
+            text={userCard.cardData.youtubeCardData.channelTitle}
           />
         </div>
       </div>
