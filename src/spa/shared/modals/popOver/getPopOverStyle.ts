@@ -15,7 +15,7 @@ const getStyle = (
   const p = placement.split('-');
   const placementOne = p[0];
   const placementTwo = p[1];
-  const style: PopOverStyle = {};
+  const style: PopOverStyle = { left: null, top: null };
 
   let popOverMargin = 8;
   if (hasCaret) {
@@ -70,17 +70,34 @@ const getStyle = (
   return style;
 };
 
+const mutateStyle = (position: PopOverProps['position'], style: PopOverStyle): PopOverStyle => {
+  const finalStyle = { ...style };
+  if (position && (position.left || position.top)) {
+    if (position.left) {
+      finalStyle.left = `${Number(finalStyle.left.split('px')[0]) + position.left}px`;
+    }
+    if (position.top) {
+      finalStyle.top = `${Number(finalStyle.top.split('px')[0]) + position.top}px`;
+    }
+    return finalStyle;
+  }
+
+  return finalStyle;
+};
+
 export default (
   caretPlacement: PopOverProps['caretPlacement'],
   childrenRef: HTMLElement,
   placement: PopOverProps['placement'],
   popOverRef: React.RefObject<HTMLDivElement>,
+  position: PopOverProps['position'],
   setStyle: (style: PopOverStyle) => void,
 ): void => {
   if (childrenRef && popOverRef.current) {
     const childrenRect = childrenRef.getBoundingClientRect();
     const popOverRect = popOverRef.current.getBoundingClientRect();
     const style = getStyle(childrenRect, !!caretPlacement, placement, popOverRect);
-    setStyle(style);
+    const mutatedStyle = mutateStyle(position, style);
+    setStyle(mutatedStyle);
   }
 };
