@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Tooltip from 'modals/tooltip/tooltip';
 import { TypographySize } from 'types/typographyTypes';
 import * as styles from './typographyText.module.less';
 
@@ -21,11 +22,13 @@ const TypographyText: React.FC<Props> = ({
         <>
           <p className={styles.p}>
             {text.slice(0, maxTextLength)}
-            <div className={[styles.ellipsis, styles[size]].join(' ')}>
-              <div className={styles.dot} />
-              <div className={styles.dot} />
-              <div className={styles.dot} />
-            </div>
+            <Tooltip text={text} trigger="click">
+              <div className={[styles.ellipsis, styles[size]].join(' ')}>
+                <div className={styles.dot} />
+                <div className={styles.dot} />
+                <div className={styles.dot} />
+              </div>
+            </Tooltip>
           </p>
         </>
       );
