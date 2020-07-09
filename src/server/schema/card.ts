@@ -138,6 +138,10 @@ export const USER_CARD_SUBSCRIPTION = gql`
 export const FILTERED_USER_CARDS_SUBSCRIPTION = gql`
   subscription filteredUserCards {
     filteredUserCards {
+      filters {
+        isFavorite
+        isToDo
+      }
       userCards {
         id
         isFavorite
