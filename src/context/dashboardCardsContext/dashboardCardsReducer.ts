@@ -4,9 +4,8 @@ import {
   ADD_CARD,
   DashboardCardsDispatchTypes,
   DELETE_CARD,
+  RECEIVE_FILTERED_CARDS,
   SET_CARDS,
-  TOGGLE_IS_FAVORITE,
-  TOGGLE_IS_TO_DO,
 } from './dashboardCardsReducerTypes';
 
 export interface DashboardCardsState {
@@ -52,6 +51,19 @@ export const dashboardCardsReducer = (
         allIds: reducerUtil.removeAllId(state.allIds, action.id),
         byId: reducerUtil.removeById(state.byId, action.id),
       };
+    case RECEIVE_FILTERED_CARDS: {
+      return {
+        ...state,
+        allIds: reducerUtil.getAllIds(action.cards),
+        byId: reducerUtil.getById(action.cards),
+        isHydrated: true,
+        filters: {
+          hasFilters: action.filters.isFavorite || action.filters.isToDo,
+          isFavorite: !!action.filters.isFavorite,
+          isToDo: !!action.filters.isToDo,
+        },
+      };
+    }
     case SET_CARDS:
       return {
         ...state,
@@ -59,44 +71,6 @@ export const dashboardCardsReducer = (
         byId: reducerUtil.getById(action.cards),
         isHydrated: true,
       };
-    case TOGGLE_IS_FAVORITE: {
-      // *1: we are applying said filter
-      // *2: we are turning off said filter but another filter is still turned on
-      let hasFilters: boolean;
-      if (!state.filters.isFavorite) { // *1
-        hasFilters = true;
-      } else if (state.filters.isToDo) { // *2
-        hasFilters = true;
-      } else {
-        hasFilters = false;
-      }
-      return {
-        ...state,
-        filters: {
-          ...state.filters,
-          hasFilters,
-          isFavorite: !state.filters.isFavorite,
-        },
-      };
-    }
-    case TOGGLE_IS_TO_DO: {
-      let hasFilters: boolean;
-      if (!state.filters.isToDo) { // *1
-        hasFilters = true;
-      } else if (state.filters.isFavorite) { // *2
-        hasFilters = true;
-      } else {
-        hasFilters = false;
-      }
-      return {
-        ...state,
-        filters: {
-          ...state.filters,
-          hasFilters,
-          isToDo: !state.filters.isToDo,
-        },
-      };
-    }
     default:
       return state;
   }

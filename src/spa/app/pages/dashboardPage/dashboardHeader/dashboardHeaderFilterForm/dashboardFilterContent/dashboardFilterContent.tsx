@@ -2,17 +2,14 @@ import * as React from 'react';
 import { useLazyQuery } from '@apollo/react-hooks';
 import Toggle from 'inputs/toggle/toggle';
 import { useDashboardCardsContext } from 'context/dashboardCardsContext/dashboardCardsContext';
-import { TOGGLE_IS_FAVORITE, TOGGLE_IS_TO_DO }
-  from 'context/dashboardCardsContext/dashboardCardsReducerTypes';
 import { USER_CARDS_WITH_FILTERS_QUERY } from 'schema/card';
 import * as styles from './dashboardFilterContent.module.less';
 
 const DashboardFilterContent: React.FC = () => {
   const [userCardsQuery] = useLazyQuery(USER_CARDS_WITH_FILTERS_QUERY, { fetchPolicy: 'no-cache' });
-  const { state, dispatch } = useDashboardCardsContext();
+  const { state } = useDashboardCardsContext();
 
   const handleToggleFavoriteFilter = async (): Promise<void> => {
-    dispatch({ type: TOGGLE_IS_FAVORITE });
     await userCardsQuery({
       variables: {
         isFavorite: !state.filters.isFavorite,
@@ -22,7 +19,6 @@ const DashboardFilterContent: React.FC = () => {
   };
 
   const handleToggleToDoFilter = async (): Promise<void> => {
-    dispatch({ type: TOGGLE_IS_TO_DO });
     await userCardsQuery({
       variables: {
         isFavorite: state.filters.isFavorite,
