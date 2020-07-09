@@ -69,7 +69,10 @@ const DashboardPageContainer: React.FC<Props> = ({ data }) => {
 
   React.useEffect(() => {
     if (!filteredUserCardsLoading) {
-      dispatch({ type: SET_CARDS, cards: filteredUserCardsData.filteredUserCards });
+      dispatch({
+        type: SET_CARDS,
+        cards: filteredUserCardsData.filteredUserCards.userCards,
+      });
     }
   }, [filteredUserCardsData, filteredUserCardsLoading, dispatch]);
 

@@ -138,21 +138,23 @@ export const USER_CARD_SUBSCRIPTION = gql`
 export const FILTERED_USER_CARDS_SUBSCRIPTION = gql`
   subscription filteredUserCards {
     filteredUserCards {
-      id
-      isFavorite
-      isToDo
-      type
-      cardData{
-        youtubeCardData{
-          channelThumbnail
-          channelTitle
-          duration
-          likes
-          publishedAt
-          videoId
-          videoThumbnail
-          videoTitle
-          views
+      userCards {
+        id
+        isFavorite
+        isToDo
+        type
+        cardData{
+          youtubeCardData{
+            channelThumbnail
+            channelTitle
+            duration
+            likes
+            publishedAt
+            videoId
+            videoThumbnail
+            videoTitle
+            views
+          }
         }
       }
     }
