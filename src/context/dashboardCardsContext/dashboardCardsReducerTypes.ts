@@ -4,9 +4,8 @@ import { UserCard } from 'schema/card';
 
 export const ADD_CARD = 'ADD_CARD';
 export const DELETE_CARD = 'DELETE_CARD';
+export const RECEIVE_FILTERED_CARDS = 'RECEIVE_FILTERED_CARDS';
 export const SET_CARDS = 'SET_CARDS';
-export const TOGGLE_IS_FAVORITE = 'TOGGLE_IS_FAVORITE';
-export const TOGGLE_IS_TO_DO = 'TOGGLE_IS_TO_DO';
 
 // ----- INTERFACES ----- //
 
@@ -20,21 +19,21 @@ interface DeleteCard {
   id: UserCard['id'];
 }
 
+interface ReceiveFilteredCards {
+  type: typeof RECEIVE_FILTERED_CARDS;
+  cards: UserCard[];
+  filters: {
+    isFavorite?: boolean;
+    isToDo?: boolean;
+  };
+}
+
 interface SetCards {
   type: typeof SET_CARDS;
   cards: UserCard[];
 }
 
-interface ToggleIsFavorite {
-  type: typeof TOGGLE_IS_FAVORITE;
-}
-
-interface ToggleIsToDo {
-  type: typeof TOGGLE_IS_TO_DO;
-}
-
 export type DashboardCardsDispatchTypes = AddCard
 | DeleteCard
-| SetCards
-| ToggleIsFavorite
-| ToggleIsToDo;
+| ReceiveFilteredCards
+| SetCards;
