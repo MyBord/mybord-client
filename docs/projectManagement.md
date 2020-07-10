@@ -20,6 +20,7 @@ This document is used to outline current project management priorities.
     * fix the bug when deleting a card
     * hovering over card menu button content hides card menu button
     * fix tooltip when card is on very right side
+    * fix tooltip / popover when on the right side of the window and doesn't have enough room
   * if filtered to e.g. favorites, unfavoriting something should remove it from the result set
   * figure out why ellipsis aren't aliased
   * when you hover away from card, the card menu button content should no longer be visible
