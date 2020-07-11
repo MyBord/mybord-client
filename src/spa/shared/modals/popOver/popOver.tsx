@@ -43,9 +43,11 @@ const PopOver = React.forwardRef<PopOverHandle, Props>(({
     let timeout: NodeJS.Timeout = null;
 
     const handleEvent = (event: Event): void => {
-      if (childrenNode) {
-        if (childrenNode.contains(event.target as Node)) {
+      if (trigger === 'hover') {
+        if (delay && childrenNode.contains(event.target as Node)) {
           timeout = setTimeout(() => setShowPopOver(true), delay);
+        } else if (childrenNode.contains(event.target as Node)) {
+          setShowPopOver(true);
         } else {
           setShowPopOver(false);
         }
@@ -53,8 +55,10 @@ const PopOver = React.forwardRef<PopOverHandle, Props>(({
     };
 
     const hideModal = (): void => {
-      clearTimeout(timeout);
-      setShowPopOver(false);
+      if (trigger === 'hover') {
+        clearTimeout(timeout);
+        setShowPopOver(false);
+      }
     };
 
     if (childrenNode) {

@@ -3,12 +3,17 @@ import PopOver from './popOver';
 
 const Content: React.FC = () => <h3>hello world</h3>;
 
-const PopOverDemo: React.FC = () => (
+interface Props {
+  delay: number;
+  trigger: 'hover' | 'click';
+}
+
+const Demo: React.FC<Props> = ({ delay, trigger }) => (
   <PopOver
     Content={<Content />}
     placement="right-center"
-    trigger="hover"
-    delay={1000}
+    trigger={trigger}
+    delay={delay}
   >
     <div
       style={{
@@ -21,9 +26,20 @@ const PopOverDemo: React.FC = () => (
         justifyContent: 'center',
       }}
     >
-      <p>this is a container</p>
+      <p>{trigger === 'click' ? 'Click Me' : 'Hover Me'}</p>
     </div>
   </PopOver>
+);
+
+const PopOverDemo: React.FC = () => (
+  <div style={{ display: 'flex', flexDirection: 'column' }}>
+    <h1>Delay</h1>
+    <Demo trigger="hover" delay={1000} />
+    <Demo trigger="click" delay={1000} />
+    <h1>No delay</h1>
+    <Demo trigger="hover" delay={null} />
+    <Demo trigger="click" delay={null} />
+  </div>
 );
 
 export default PopOverDemo;
