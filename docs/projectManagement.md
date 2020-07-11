@@ -16,7 +16,6 @@ This document is used to outline current project management priorities.
   * popover
     * add delay for tooltip / popover
     * fix hovering from main div to modal
-    * fix styles of card menu button content
     * fix the bug when deleting a card
     * hovering over card menu button content hides card menu button
     * fix tooltip when card is on very right side
