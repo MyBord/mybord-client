@@ -45,7 +45,7 @@ const PopOver = React.forwardRef<PopOverHandle, Props>(({
     const handleClick = (event: Event): void => {
       if (!showPopOver && childrenNode.contains(event.target as Node)) {
         if (delay) {
-          setTimeout(() => setShowPopOver(true), delay);
+          setTimeout(() => setShowPopOver(true), delay * 1000);
         } else {
           setShowPopOver(true);
         }
@@ -67,7 +67,7 @@ const PopOver = React.forwardRef<PopOverHandle, Props>(({
 
     const handleHover = (event: Event): void => {
       if (delay && childrenNode.contains(event.target as Node)) {
-        timeout = setTimeout(() => setShowPopOver(true), delay);
+        timeout = setTimeout(() => setShowPopOver(true), delay * 1000);
       } else if (childrenNode.contains(event.target as Node)) {
         setShowPopOver(true);
       } else {
