@@ -6,6 +6,7 @@ import {
   DELETE_CARD,
   RECEIVE_FILTERED_CARDS,
   SET_CARDS,
+  TOGGLE_FILTER,
 } from './dashboardCardsReducerTypes';
 
 export interface DashboardCardsState {
@@ -70,6 +71,11 @@ export const dashboardCardsReducer = (
         allIds: reducerUtil.getAllIds(action.cards),
         byId: reducerUtil.getById(action.cards),
         isHydrated: true,
+      };
+    case TOGGLE_FILTER:
+      return {
+        ...state,
+        byId: reducerUtil.toggleFilter(state.byId, action.filter, action.id),
       };
     default:
       return state;

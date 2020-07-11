@@ -6,6 +6,7 @@ import {
 } from 'lodash';
 import { AllIdsCards, ByIdCards } from 'types/reducerTypes';
 import { UserCard } from 'schema/card';
+import { capitalize } from 'utils/language';
 
 const addAllId = (allIds: AllIdsCards, id: UserCard['id']): AllIdsCards => {
   const clonedAllIds = cloneDeep(allIds);
@@ -40,6 +41,24 @@ const removeById = (byId: ByIdCards, id: UserCard['id']): ByIdCards => {
   return omit(clonedById, id);
 };
 
+const toggleFilter = (
+  byId: ByIdCards,
+  filter: 'favorite' | 'toDo',
+  id: UserCard['id'],
+): ByIdCards => {
+  const clonedById = cloneDeep(byId);
+  const filterKey = `is${capitalize(filter)}`;
+
+  return {
+    ...clonedById,
+    [id]: {
+      ...clonedById[id],
+      // @ts-ignore
+      [filterKey]: !clonedById[id][filterKey],
+    },
+  };
+};
+
 export default {
   addAllId,
   addById,
@@ -47,4 +66,5 @@ export default {
   getById,
   removeAllId,
   removeById,
+  toggleFilter,
 };

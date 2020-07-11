@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { useMutation } from '@apollo/react-hooks';
 import { DELETE_USER_CARD_MUTATION, TOGGLE_TO_DO_USER_CARD_MUTATION, UserCard } from 'schema/card';
+import { TOGGLE_FILTER } from 'context/dashboardCardsContext/dashboardCardsReducerTypes';
+import { useDashboardCardsContext } from 'context/dashboardCardsContext/dashboardCardsContext';
 import CardMenuButtonContentComponent from './cardMenuButtonContentComponent';
 
 interface Props {
@@ -9,8 +11,9 @@ interface Props {
 
 const CardMenuButtonContentContainer: React.FC<Props> = ({ userCard }) => {
   const [deleteUserCard] = useMutation(DELETE_USER_CARD_MUTATION);
-  const [toggleToDoUserCard] = useMutation(TOGGLE_TO_DO_USER_CARD_MUTATION);
   const [isToDo, setIsToDo] = React.useState<boolean>(userCard.isToDo);
+  const [toggleToDoUserCard] = useMutation(TOGGLE_TO_DO_USER_CARD_MUTATION);
+  const { dispatch } = useDashboardCardsContext();
 
   const handleDelete = React.useCallback(async () => {
     await deleteUserCard({
@@ -20,6 +23,7 @@ const CardMenuButtonContentContainer: React.FC<Props> = ({ userCard }) => {
 
   const toggleToDo = async (): Promise<void> => {
     setIsToDo((prevState) => !prevState);
+    dispatch({ type: TOGGLE_FILTER, filter: 'toDo', id: userCard.id });
     try {
       await toggleToDoUserCard({
         variables: { cardId: userCard.id },
