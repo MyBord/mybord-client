@@ -12,9 +12,19 @@ const DashboardCards: React.FC = () => {
     return (
       <section className={styles.section}>
         {
-          state.allIds.map((userCardId: string) => (
-            <DashboardCardSwitch key={userCardId} userCard={state.byId[userCardId]} />
-          ))
+          state.allIds.map((userCardId: string) => {
+            const userCard = state.byId[userCardId];
+
+            if (state.filters.hasFilters) {
+              console.log('-----');
+              console.log(state.filters.isFavorite);
+              console.log(state.filters.isToDo);
+              console.log(userCard.isFavorite);
+              console.log(userCard.isToDo);
+              return <DashboardCardSwitch key={userCardId} userCard={userCard} />;
+            }
+            return <DashboardCardSwitch key={userCardId} userCard={userCard} />;
+          })
         }
         {
           // we create some phantom cards that do not appear visible but are rendered so that we can
