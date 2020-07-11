@@ -1,5 +1,5 @@
-import reducerUtil from 'context/contextUtils/reducerUtil';
 import { AllIdsCards, ByIdCards } from 'types/reducerTypes';
+import reducerUtil from './dashboardCardsReducerUtil';
 import {
   ADD_CARD,
   DashboardCardsDispatchTypes,
