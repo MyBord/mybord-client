@@ -42,19 +42,42 @@ const PopOver = React.forwardRef<PopOverHandle, Props>(({
     const popOverNode = popOverRef.current;
     let timeout: NodeJS.Timeout = null;
 
-    const handleEvent = (event: Event): void => {
-      if (trigger === 'hover') {
-        if (delay && childrenNode.contains(event.target as Node)) {
-          timeout = setTimeout(() => setShowPopOver(true), delay);
-        } else if (childrenNode.contains(event.target as Node)) {
-          setShowPopOver(true);
-        } else {
-          setShowPopOver(false);
-        }
+    const handleClick = (event: Event): void => {
+      if (
+        !showPopOver
+        && childrenNode.contains(event.target as Node)
+      ) {
+        setShowPopOver(true);
+      }
+
+      if (
+        showPopOver
+        && childrenNode.contains(event.target as Node)
+      ) {
+        setShowPopOver(false);
+      }
+
+      if (
+        showPopOver
+        && popOverNode
+        && !popOverNode.contains(event.target as Node)
+        && !childrenNode.contains(event.target as Node)
+      ) {
+        setShowPopOver(false);
       }
     };
 
-    const hideModal = (): void => {
+    const handleHover = (event: Event): void => {
+      if (delay && childrenNode.contains(event.target as Node)) {
+        timeout = setTimeout(() => setShowPopOver(true), delay);
+      } else if (childrenNode.contains(event.target as Node)) {
+        setShowPopOver(true);
+      } else {
+        setShowPopOver(false);
+      }
+    };
+
+    const hideMouseOut = (): void => {
       if (trigger === 'hover') {
         clearTimeout(timeout);
         setShowPopOver(false);
@@ -62,14 +85,26 @@ const PopOver = React.forwardRef<PopOverHandle, Props>(({
     };
 
     if (childrenNode) {
-      childrenNode.addEventListener('mouseover', handleEvent);
-      childrenNode.addEventListener('mouseout', hideModal);
+      if (trigger === 'click') {
+        document.addEventListener('mousedown', handleClick);
+      }
+
+      if (trigger === 'hover') {
+        childrenNode.addEventListener('mouseover', handleHover);
+        childrenNode.addEventListener('mouseout', hideMouseOut);
+      }
     }
 
     return () => {
       if (childrenNode) {
-        childrenNode.removeEventListener('mouseover', handleEvent);
-        childrenNode.removeEventListener('mouseout', hideModal);
+        if (trigger === 'click') {
+          document.removeEventListener('mousedown', handleClick);
+        }
+
+        if (trigger === 'hover') {
+          childrenNode.removeEventListener('mouseover', handleHover);
+          childrenNode.removeEventListener('mouseout', hideMouseOut);
+        }
       }
     };
   }, [
