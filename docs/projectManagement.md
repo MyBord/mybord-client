@@ -21,6 +21,8 @@ This document is used to outline current project management priorities.
     * fix tooltip / popover when on the right side of the window and doesn't have enough room
     * when you click the pop confirm in a tooltip (any text), the card menu button no longer shows
   * if filtered to e.g. favorites, unfavoriting something should remove it from the result set
+  * when you mark a card as to do for the first time and then re-check the card menu button
+   content in the same session, the todo toggle is not properly mutated to true, etc
   * figure out why ellipsis aren't aliased
   * when you hover away from card, the card menu button content should no longer be visible
   * when you first login, cards show before page is done animating? 

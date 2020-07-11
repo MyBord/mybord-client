@@ -3,6 +3,7 @@ import EmptyCard from 'cards/emptyCard/emptyCard';
 import PhantomCard from 'shared/cards/phantomCard/phantomCard';
 import { useDashboardCardsContext } from 'context/dashboardCardsContext/dashboardCardsContext';
 import DashboardCardSwitch from './dashboardCardSwitch';
+import showDashboardCard from './showDashboardCard';
 import * as styles from './dashboardCards.module.less';
 
 const DashboardCards: React.FC = () => {
@@ -15,15 +16,11 @@ const DashboardCards: React.FC = () => {
           state.allIds.map((userCardId: string) => {
             const userCard = state.byId[userCardId];
 
-            if (state.filters.hasFilters) {
-              console.log('-----');
-              console.log(state.filters.isFavorite);
-              console.log(state.filters.isToDo);
-              console.log(userCard.isFavorite);
-              console.log(userCard.isToDo);
+            if (showDashboardCard(state.filters, userCard)) {
               return <DashboardCardSwitch key={userCardId} userCard={userCard} />;
             }
-            return <DashboardCardSwitch key={userCardId} userCard={userCard} />;
+
+            return null;
           })
         }
         {

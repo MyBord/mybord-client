@@ -1,7 +1,23 @@
 const isInFilter = (info: {
   state: { isFavorite: boolean; isToDo: boolean };
   card: { isFavorite: boolean; isToDo: boolean};
-}): boolean => true;
+}): boolean => {
+  const { state, card } = info;
+
+  if (state.isFavorite && state.isToDo) {
+    return card.isFavorite && card.isToDo;
+  }
+
+  if (state.isFavorite) {
+    return card.isFavorite;
+  }
+
+  if (state.isToDo) {
+    return card.isToDo;
+  }
+
+  return true;
+};
 
 describe('no filters', () => {
   test('card is favorite', () => {
@@ -115,6 +131,6 @@ describe('both filters', () => {
       card: { isFavorite: true, isToDo: true },
     };
 
-    expect(isInFilter(info)).toBeFalsy();
+    expect(isInFilter(info)).toBeTruthy();
   });
 });
