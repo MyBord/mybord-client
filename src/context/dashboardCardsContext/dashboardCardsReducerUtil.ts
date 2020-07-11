@@ -4,9 +4,12 @@ import {
   omit,
   pull,
 } from 'lodash';
-import { AllIdsCards, ByIdCards } from 'types/reducerTypes';
+import { DashboardCardsState } from 'context/dashboardCardsContext/dashboardCardsState';
 import { UserCard } from 'schema/card';
 import { capitalize } from 'utils/language';
+
+type AllIdsCards = DashboardCardsState['allIds'];
+type ByIdCards = DashboardCardsState['byId'];
 
 const addAllId = (allIds: AllIdsCards, id: UserCard['id']): AllIdsCards => {
   const clonedAllIds = cloneDeep(allIds);
@@ -41,22 +44,35 @@ const removeById = (byId: ByIdCards, id: UserCard['id']): ByIdCards => {
   return omit(clonedById, id);
 };
 
-const toggleFilter = (
-  byId: ByIdCards,
+const toggleCardFilter = (
   filter: 'favorite' | 'toDo',
   id: UserCard['id'],
-): ByIdCards => {
-  const clonedById = cloneDeep(byId);
-  const filterKey = `is${capitalize(filter)}`;
+  state: DashboardCardsState,
+): DashboardCardsState => {
+  const clonedState = cloneDeep(state);
+  // @ts-ignore
+  const filterKey: 'isFavorite' | 'isToDo' = `is${capitalize(filter)}`;
 
-  return {
-    ...clonedById,
-    [id]: {
-      ...clonedById[id],
-      // @ts-ignore
-      [filterKey]: !clonedById[id][filterKey],
-    },
-  };
+  // If no filters are applied to the shown data set, do not mutate the data set
+  if (!clonedState.filters.hasFilters) {
+    return {
+      ...clonedState,
+      allIds: [...clonedState.allIds],
+      byId: { ...clonedState.byId },
+    };
+  }
+
+  // if the data set is currently filtered to the same param in which the individual card
+  // is having its filter toggled off, then remove that card from the data set.
+  if (clonedState.filters[filterKey]) {
+    return {
+      ...clonedState,
+      allIds: removeAllId(clonedState.allIds, id),
+      byId: removeById(clonedState.byId, id),
+    };
+  }
+
+  return { ...clonedState };
 };
 
 export default {
@@ -66,5 +82,5 @@ export default {
   getById,
   removeAllId,
   removeById,
-  toggleFilter,
+  toggleCardFilter,
 };

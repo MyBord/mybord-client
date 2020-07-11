@@ -6,7 +6,7 @@ export const ADD_CARD = 'ADD_CARD';
 export const DELETE_CARD = 'DELETE_CARD';
 export const RECEIVE_FILTERED_CARDS = 'RECEIVE_FILTERED_CARDS';
 export const SET_CARDS = 'SET_CARDS';
-export const TOGGLE_FILTER = 'TOGGLE_FILTER';
+export const TOGGLE_CARD_FILTER = 'TOGGLE_CARD_FILTER';
 
 // ----- INTERFACES ----- //
 
@@ -34,8 +34,8 @@ interface SetCards {
   cards: UserCard[];
 }
 
-interface ToggleFilter {
-  type: typeof TOGGLE_FILTER;
+interface ToggleCardFilter {
+  type: typeof TOGGLE_CARD_FILTER;
   filter: 'favorite' | 'toDo';
   id: UserCard['id'];
 }
@@ -44,4 +44,4 @@ export type DashboardCardsDispatchTypes = AddCard
 | DeleteCard
 | ReceiveFilteredCards
 | SetCards
-| ToggleFilter;
+| ToggleCardFilter;

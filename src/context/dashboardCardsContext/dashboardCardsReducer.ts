@@ -1,4 +1,4 @@
-import { AllIdsCards, ByIdCards } from 'types/reducerTypes';
+import { DashboardCardsState } from 'context/dashboardCardsContext/dashboardCardsState';
 import reducerUtil from './dashboardCardsReducerUtil';
 import {
   ADD_CARD,
@@ -6,23 +6,8 @@ import {
   DELETE_CARD,
   RECEIVE_FILTERED_CARDS,
   SET_CARDS,
-  TOGGLE_FILTER,
+  TOGGLE_CARD_FILTER,
 } from './dashboardCardsReducerTypes';
-
-export interface DashboardCardsState {
-  allIds: AllIdsCards;
-  byId: ByIdCards;
-  filters: {
-    // this tells us if filters have been applied, which is useful in knowing what ui to present
-    // in case an empty result set needs to be shown
-    hasFilters: boolean;
-    isFavorite: boolean;
-    isToDo: boolean;
-  };
-  // indicates if the reducer has been populated with the necessary data (we don't want to
-  // evaluate allIds.length because we could possibly hydrate this reducer with empty data).
-  isHydrated: boolean;
-}
 
 export const initialDashboardCardsState: DashboardCardsState = {
   allIds: [],
@@ -72,11 +57,8 @@ export const dashboardCardsReducer = (
         byId: reducerUtil.getById(action.cards),
         isHydrated: true,
       };
-    case TOGGLE_FILTER:
-      return {
-        ...state,
-        byId: reducerUtil.toggleFilter(state.byId, action.filter, action.id),
-      };
+    case TOGGLE_CARD_FILTER:
+      return reducerUtil.toggleCardFilter(action.filter, action.id, state);
     default:
       return state;
   }

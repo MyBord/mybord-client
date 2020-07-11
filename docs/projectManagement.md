@@ -13,6 +13,8 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
+  * when you mark a card as to do for the first time and then re-check the card menu button
+   content in the same session, the todo toggle is not properly mutated to true, etc
   * popover
     * add delay for tooltip / popover
     * fix hovering from main div to modal
