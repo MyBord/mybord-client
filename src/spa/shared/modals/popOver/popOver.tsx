@@ -43,68 +43,29 @@ const PopOver = React.forwardRef<PopOverHandle, Props>(({
     let timeout: NodeJS.Timeout = null;
 
     const handleEvent = (event: Event): void => {
-      if (
-        !showPopOver
-        && childrenNode
-        && childrenNode.contains(event.target as Node)
-      ) {
-        if (delay) {
+      if (childrenNode) {
+        if (childrenNode.contains(event.target as Node)) {
           timeout = setTimeout(() => setShowPopOver(true), delay);
         } else {
-          setShowPopOver(true);
+          setShowPopOver(false);
         }
-      }
-
-      if (
-        showPopOver
-        && trigger === 'click'
-        && childrenNode
-        && childrenNode.contains(event.target as Node)
-      ) {
-        setShowPopOver(false);
-      }
-
-      if (
-        showPopOver
-        && popOverNode
-        && !popOverNode.contains(event.target as Node)
-        && childrenNode
-        && !childrenNode.contains(event.target as Node)
-      ) {
-        setShowPopOver(false);
       }
     };
 
     const hideModal = (): void => {
-      console.log('aaaaaaaaa');
       clearTimeout(timeout);
       setShowPopOver(false);
     };
 
-    if (trigger === 'click') {
-      document.addEventListener('mousedown', handleEvent);
-    }
-
-    if (trigger === 'hover') {
-      document.addEventListener('mouseover', handleEvent);
-    }
-
-    if (delay && popOverNode) {
-      console.log('bbbbbbbbbbbb');
-      popOverNode.addEventListener('mouseout', hideModal);
+    if (childrenNode) {
+      childrenNode.addEventListener('mouseover', handleEvent);
+      childrenNode.addEventListener('mouseout', hideModal);
     }
 
     return () => {
-      if (trigger === 'click') {
-        document.removeEventListener('mousedown', handleEvent);
-      }
-
-      if (trigger === 'hover') {
-        document.removeEventListener('mouseover', handleEvent);
-      }
-
-      if (delay && popOverNode) {
-        popOverNode.removeEventListener('mouseout', hideModal);
+      if (childrenNode) {
+        childrenNode.removeEventListener('mouseover', handleEvent);
+        childrenNode.removeEventListener('mouseout', hideModal);
       }
     };
   }, [
