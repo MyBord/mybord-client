@@ -40,6 +40,11 @@ const Card: React.FC<Props> = ({
   );
 };
 
-export default React.memo(Card, (prevProps, nextProps) => (
-  stringify(prevProps.userCard) === stringify(nextProps.userCard)
-));
+export default React.memo(Card, (prevProps, nextProps) => {
+  console.log('-----');
+  console.log(prevProps);
+  console.log(nextProps);
+  return (
+    stringify(prevProps.userCard) === stringify(nextProps.userCard)
+  );
+});
