@@ -1,4 +1,4 @@
-import { DashboardCardsState } from 'context/dashboardCardsContext/dashboardCardsReducer';
+import { DashboardCardsState } from 'context/dashboardCardsContext/dashboardCardsState';
 import { UserCard } from 'schema/card';
 
 export default (

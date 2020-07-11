@@ -3,7 +3,6 @@ import EmptyCard from 'cards/emptyCard/emptyCard';
 import PhantomCard from 'shared/cards/phantomCard/phantomCard';
 import { useDashboardCardsContext } from 'context/dashboardCardsContext/dashboardCardsContext';
 import DashboardCardSwitch from './dashboardCardSwitch';
-import showDashboardCard from './showDashboardCard';
 import * as styles from './dashboardCards.module.less';
 
 const DashboardCards: React.FC = () => {
@@ -13,15 +12,9 @@ const DashboardCards: React.FC = () => {
     return (
       <section className={styles.section}>
         {
-          state.allIds.map((userCardId: string) => {
-            const userCard = state.byId[userCardId];
-
-            if (showDashboardCard(state.filters, userCard)) {
-              return <DashboardCardSwitch key={userCardId} userCard={userCard} />;
-            }
-
-            return null;
-          })
+          state.allIds.map((userCardId: string) => (
+            <DashboardCardSwitch key={userCardId} userCard={state.byId[userCardId]} />
+          ))
         }
         {
           // we create some phantom cards that do not appear visible but are rendered so that we can

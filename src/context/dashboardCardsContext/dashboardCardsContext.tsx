@@ -1,10 +1,7 @@
 import * as React from 'react';
-import {
-  DashboardCardsState,
-  dashboardCardsReducer,
-  initialDashboardCardsState,
-} from './dashboardCardsReducer';
 import { DashboardCardsDispatchTypes } from './dashboardCardsReducerTypes';
+import { DashboardCardsState } from './dashboardCardsState';
+import { dashboardCardsReducer, initialDashboardCardsState } from './dashboardCardsReducer';
 
 export interface DashboardCardsContextState {
   dispatch: (value: DashboardCardsDispatchTypes) => void;
