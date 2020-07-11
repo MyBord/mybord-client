@@ -53,15 +53,6 @@ const toggleCardFilter = (
   // @ts-ignore
   const filterKey: 'isFavorite' | 'isToDo' = `is${capitalize(filter)}`;
 
-  // If no filters are applied to the shown data set, do not mutate the data set
-  if (!clonedState.filters.hasFilters) {
-    return {
-      ...clonedState,
-      allIds: [...clonedState.allIds],
-      byId: { ...clonedState.byId },
-    };
-  }
-
   // if the data set is currently filtered to the same param in which the individual card
   // is having its filter toggled off, then remove that card from the data set.
   if (clonedState.filters[filterKey]) {
@@ -72,7 +63,17 @@ const toggleCardFilter = (
     };
   }
 
-  return { ...clonedState };
+  return {
+    ...clonedState,
+    allIds: [...clonedState.allIds],
+    byId: {
+      ...clonedState.byId,
+      [id]: {
+        ...clonedState.byId[id],
+        [filterKey]: !clonedState.byId[id][filterKey],
+      },
+    },
+  };
 };
 
 export default {

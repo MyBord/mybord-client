@@ -9,7 +9,7 @@ interface Props {
 }
 
 const CardMenuButton: React.FC<Props> = ({ userCard }) => (
-  <PopOver Content={<CardMenuButtonContentContainer userCard={userCard} />}>
+  <PopOver Content={<CardMenuButtonContentContainer cardId={userCard.id} />}>
     <div className={[styles.div, 'card-menu-button'].join(' ')}>
       <div className={styles.dot} />
       <div className={styles.dot} />

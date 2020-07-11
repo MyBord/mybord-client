@@ -1,3 +1,7 @@
+// *1: Note: The entire card component `card.tsx` is memoized and will re render only when its
+// props change *except* for `isFavorite` `isToDo`. Thus, this component would normally not get
+// when `isToDo` is toggled, so instead, we rehook into the context at this component level.
+
 import * as React from 'react';
 import { useMutation } from '@apollo/react-hooks';
 import { DELETE_USER_CARD_MUTATION, TOGGLE_TO_DO_USER_CARD_MUTATION, UserCard } from 'schema/card';
@@ -6,14 +10,17 @@ import { useDashboardCardsContext } from 'context/dashboardCardsContext/dashboar
 import CardMenuButtonContentComponent from './cardMenuButtonContentComponent';
 
 interface Props {
-  userCard: UserCard;
+  cardId: UserCard['id'];
 }
 
-const CardMenuButtonContentContainer: React.FC<Props> = ({ userCard }) => {
+const CardMenuButtonContentContainer: React.FC<Props> = ({ cardId }) => {
+  const { state, dispatch } = useDashboardCardsContext();
+
+  const userCard = state.byId[cardId]; // *1
+
   const [deleteUserCard] = useMutation(DELETE_USER_CARD_MUTATION);
   const [isToDo, setIsToDo] = React.useState<boolean>(userCard.isToDo);
   const [toggleToDoUserCard] = useMutation(TOGGLE_TO_DO_USER_CARD_MUTATION);
-  const { dispatch } = useDashboardCardsContext();
 
   const handleDelete = React.useCallback(async () => {
     await deleteUserCard({
