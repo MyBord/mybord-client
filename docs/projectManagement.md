@@ -21,7 +21,9 @@ This document is used to outline current project management priorities.
     * hovering over card menu button content hides card menu button
     * fix tooltip when card is on very right side
     * fix tooltip / popover when on the right side of the window and doesn't have enough room
+    * convert popover delay unit to seconds
   * if filtered to e.g. favorites, unfavoriting something should remove it from the result set
+  * fix console bug where cannot find target of undefined for popover event
   * figure out why ellipsis aren't aliased
   * when you hover away from card, the card menu button content should no longer be visible
   * when you first login, cards show before page is done animating? 
