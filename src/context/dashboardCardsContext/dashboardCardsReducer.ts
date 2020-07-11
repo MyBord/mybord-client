@@ -75,13 +75,7 @@ export const dashboardCardsReducer = (
     case TOGGLE_FILTER:
       return {
         ...state,
-        byId: {
-          ...state.byId,
-          [action.id]: {
-            ...state.byId[action.id],
-          },
-        },
-        isHydrated: true,
+        byId: reducerUtil.toggleFilter(state.byId, action.filter, action.id),
       };
     default:
       return state;
