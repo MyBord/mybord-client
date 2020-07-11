@@ -4,13 +4,10 @@ import { ApolloProvider } from '@apollo/react-hooks';
 // @ts-ignore
 import { createRoot } from 'react-dom';
 import client from 'server/client';
-import PopOverDemo from 'modals/popOver/popOverDemo';
 import Spa from './spa/spa/spa';
 
-// createRoot(document.getElementById('app')).render(
-//   <ApolloProvider client={client}>
-//     <Spa />
-//   </ApolloProvider>,
-// );
-
-createRoot(document.getElementById('app')).render(<PopOverDemo />);
+createRoot(document.getElementById('app')).render(
+  <ApolloProvider client={client}>
+    <Spa />
+  </ApolloProvider>,
+);
