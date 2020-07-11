@@ -135,24 +135,30 @@ export const USER_CARD_SUBSCRIPTION = gql`
   }
 `;
 
-export const USER_CARDS_SUBSCRIPTION = gql`
-  subscription userCards {
-    userCards {
-      id
-      isFavorite
-      isToDo
-      type
-      cardData{
-        youtubeCardData{
-          channelThumbnail
-          channelTitle
-          duration
-          likes
-          publishedAt
-          videoId
-          videoThumbnail
-          videoTitle
-          views
+export const FILTERED_USER_CARDS_SUBSCRIPTION = gql`
+  subscription filteredUserCards {
+    filteredUserCards {
+      filters {
+        isFavorite
+        isToDo
+      }
+      userCards {
+        id
+        isFavorite
+        isToDo
+        type
+        cardData{
+          youtubeCardData{
+            channelThumbnail
+            channelTitle
+            duration
+            likes
+            publishedAt
+            videoId
+            videoThumbnail
+            videoTitle
+            views
+          }
         }
       }
     }

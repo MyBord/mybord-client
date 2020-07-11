@@ -6,8 +6,12 @@ import * as styles from './headerNotifications.module.less';
 
 const HeaderNotifications: React.FC = () => (
   <PopOver Content={<HeaderNotificationsPopOverContent />} placement="bottom-right">
-    <div className={styles.div}>
-      <Icon iconName="notification" size={30} />
+    <div className={styles.parentDiv}>
+      <hr className={styles.hr} />
+      <div className={styles.iconDiv}>
+        <Icon iconName="notification" size={30} />
+      </div>
+      <hr className={styles.hr} />
     </div>
   </PopOver>
 );

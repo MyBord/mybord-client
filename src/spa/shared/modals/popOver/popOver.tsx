@@ -17,6 +17,7 @@ const PopOver = React.forwardRef<PopOverHandle, Props>(({
   defaultVisible = false,
   delay = null,
   placement = 'bottom-center',
+  position = null,
   trigger = 'click',
 }, ref) => {
   const [childrenRef, setChildrenRef] = React.useState<HTMLElement>(null);
@@ -125,6 +126,7 @@ const PopOver = React.forwardRef<PopOverHandle, Props>(({
       childrenRef,
       placement,
       popOverRef,
+      position,
       setPopOverStyle,
     );
 
@@ -140,6 +142,7 @@ const PopOver = React.forwardRef<PopOverHandle, Props>(({
     childrenRef,
     placement,
     popOverRef,
+    position,
     showPopOver,
   ]);
 

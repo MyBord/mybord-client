@@ -3,14 +3,15 @@ import pageWrapper from 'pages/pageWrapper/pageWrapper';
 import { useSubscription } from '@apollo/react-hooks';
 import {
   DELETED_USER_CARD_SUBSCRIPTION,
-  USER_CARDS_QUERY,
-  USER_CARDS_SUBSCRIPTION,
+  FILTERED_USER_CARDS_SUBSCRIPTION,
   USER_CARD_SUBSCRIPTION,
+  USER_CARDS_QUERY,
   UserCard,
 } from 'schema/card';
 import {
   ADD_CARD,
   DELETE_CARD,
+  RECEIVE_FILTERED_CARDS,
   SET_CARDS,
 } from 'context/dashboardCardsContext/dashboardCardsReducerTypes';
 import { useDashboardCardsContext } from 'context/dashboardCardsContext/dashboardCardsContext';
@@ -62,13 +63,20 @@ const DashboardPageContainer: React.FC<Props> = ({ data }) => {
   // ----- SUBSCRIBING TO FILTERS ----- //
   // subscribing to when cards get filtered
 
-  const { data: cardsData, loading: cardsLoading } = useSubscription(USER_CARDS_SUBSCRIPTION);
+  const {
+    data: filteredUserCardsData,
+    loading: filteredUserCardsLoading,
+  } = useSubscription(FILTERED_USER_CARDS_SUBSCRIPTION);
 
   React.useEffect(() => {
-    if (!cardsLoading) {
-      dispatch({ type: SET_CARDS, cards: cardsData.userCards });
+    if (!filteredUserCardsLoading) {
+      dispatch({
+        type: RECEIVE_FILTERED_CARDS,
+        cards: filteredUserCardsData.filteredUserCards.userCards,
+        filters: filteredUserCardsData.filteredUserCards.filters,
+      });
     }
-  }, [cardsData, cardsLoading, dispatch]);
+  }, [filteredUserCardsData, filteredUserCardsLoading, dispatch]);
 
   // ----- TURNS OFF LOADING ANIMATION ----- //
   // this turns off the loading animation / spinner for the page once our reducer has been

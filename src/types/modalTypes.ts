@@ -28,10 +28,14 @@ export interface PopOverProps {
   | 'top-center'
   | 'top-left'
   | 'top-right';
+  position?: {
+    left?: number;
+    top?: number;
+  };
   trigger?: 'click' | 'hover';
 }
 
 export interface PopOverStyle {
-  left?: string;
-  top?: string;
+  left: string;
+  top: string;
 }

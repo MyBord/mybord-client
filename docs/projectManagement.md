@@ -16,22 +16,20 @@ This document is used to outline current project management priorities.
   * popover
     * add delay for tooltip / popover
     * fix hovering from main div to modal
-    * add ability to add additional margin (e.g. header notifications)
     * fix styles of card menu button content
     * fix the bug when deleting a card
     * hovering over card menu button content hides card menu button
     * fix tooltip when card is on very right side
+    * fix tooltip / popover when on the right side of the window and doesn't have enough room
   * if filtered to e.g. favorites, unfavoriting something should remove it from the result set
   * fix console bug where cannot find target of undefined for popover event
   * figure out why ellipsis aren't aliased
-  * when you switch from filters - no card - to no filters, you see the empty card render
-  * fix styling when there are only two cards
+  * when you hover away from card, the card menu button content should no longer be visible
   * when you first login, cards show before page is done animating? 
   * gap between cards change when adding more to second row
   * when you logout, the login form looks different
   * when you login, you get a flash from the dashboard page?
   * fix youtube cards where there is too much text
-  * fix justify content spacing for cards?
   * have session be remembered by user
   * fix loading of image on landing page
   * add about page - for app and landing
@@ -56,6 +54,8 @@ This document is used to outline current project management priorities.
   * add query string for filters
   * fix import of all styles, one single import for styles at root of app
   * handle front end if server is down for both app and landing
+  * when there are only two cards, changing the width of the window creates the width of the
+   cards to 'jump'
   * make sure app is responsive and mobile friendly
   * Preventing Rapid-Fire Login Attempts 
   * can only play one youtube video at a time
