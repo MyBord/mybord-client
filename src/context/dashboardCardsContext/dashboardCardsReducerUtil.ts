@@ -44,7 +44,7 @@ const removeById = (byId: ByIdCards, id: UserCard['id']): ByIdCards => {
   return omit(clonedById, id);
 };
 
-const toggleFilter = (
+const toggleCardFilter = (
   filter: 'favorite' | 'toDo',
   id: UserCard['id'],
   state: DashboardCardsState,
@@ -82,5 +82,5 @@ export default {
   getById,
   removeAllId,
   removeById,
-  toggleFilter,
+  toggleCardFilter,
 };

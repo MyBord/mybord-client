@@ -3,8 +3,8 @@ import { useMutation } from '@apollo/react-hooks';
 import CardContentButtonsAnimation from 'framerMotion/cardContentButtonsAnimation';
 import CardMenuButton from 'buttons/cardMenuButton/cardMenuButton';
 import FavoriteButton from 'buttons/favoriteButton/favoriteButton';
+import { TOGGLE_CARD_FILTER } from 'context/dashboardCardsContext/dashboardCardsReducerTypes';
 import { TOGGLE_FAVORITE_USER_CARD_MUTATION, UserCard } from 'schema/card';
-import { TOGGLE_FILTER } from 'context/dashboardCardsContext/dashboardCardsReducerTypes';
 import { useDashboardCardsContext } from 'context/dashboardCardsContext/dashboardCardsContext';
 import { useMultiSelectCardContext } from 'context/multiSelectCardContext/multiSelectCardContext';
 import * as styles from './cardContent.module.less';
@@ -25,7 +25,7 @@ const CardContent: React.FC<Props> = ({
 
   const handleFavorite = async (): Promise<void> => {
     setIsFavorite((prevState) => !prevState);
-    dispatch({ type: TOGGLE_FILTER, filter: 'favorite', id: userCard.id });
+    dispatch({ type: TOGGLE_CARD_FILTER, filter: 'favorite', id: userCard.id });
     await toggleFavoriteUserCard({
       variables: {
         cardId: userCard.id,

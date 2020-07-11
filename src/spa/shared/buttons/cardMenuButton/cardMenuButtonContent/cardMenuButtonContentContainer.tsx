@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useMutation } from '@apollo/react-hooks';
 import { DELETE_USER_CARD_MUTATION, TOGGLE_TO_DO_USER_CARD_MUTATION, UserCard } from 'schema/card';
-import { TOGGLE_FILTER } from 'context/dashboardCardsContext/dashboardCardsReducerTypes';
+import { TOGGLE_CARD_FILTER } from 'context/dashboardCardsContext/dashboardCardsReducerTypes';
 import { useDashboardCardsContext } from 'context/dashboardCardsContext/dashboardCardsContext';
 import CardMenuButtonContentComponent from './cardMenuButtonContentComponent';
 
@@ -23,7 +23,7 @@ const CardMenuButtonContentContainer: React.FC<Props> = ({ userCard }) => {
 
   const toggleToDo = async (): Promise<void> => {
     setIsToDo((prevState) => !prevState);
-    dispatch({ type: TOGGLE_FILTER, filter: 'toDo', id: userCard.id });
+    dispatch({ type: TOGGLE_CARD_FILTER, filter: 'toDo', id: userCard.id });
     try {
       await toggleToDoUserCard({
         variables: { cardId: userCard.id },
