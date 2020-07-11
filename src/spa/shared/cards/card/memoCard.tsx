@@ -5,12 +5,14 @@ import { Props } from './card';
 const memoCard = (Component: React.FC<Props>): React.FC<Props> => React.memo(
   Component,
   (prevProps: Props, nextProps: Props) => {
-    console.log('-----');
-    console.log('-----88888');
-    console.log(prevProps);
-    console.log(nextProps);
+    const finalPrevProps = { ...prevProps.userCard };
+    const finalNextProps = { ...nextProps.userCard };
+    delete finalPrevProps.isFavorite;
+    delete finalPrevProps.isToDo;
+    delete finalNextProps.isFavorite;
+    delete finalNextProps.isToDo;
     return (
-      stringify(prevProps.userCard) === stringify(nextProps.userCard)
+      stringify(finalPrevProps) === stringify(finalNextProps)
     );
   },
 );
