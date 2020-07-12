@@ -1,7 +1,7 @@
 import * as React from 'react';
 import PopOverAnimation from 'framerMotion/popOverAnimation';
 import Portal from 'portal/portal';
-import { PopOverHandle, PopOverProps, PopOverStyle } from 'types/modalTypes';
+import { PopOverProps, PopOverStyle } from 'types/modalTypes';
 import PopOverCaret from './popOverCaret/popOverCaret';
 import getPopOverStyle from './getPopOverStyle';
 
@@ -9,8 +9,9 @@ interface Props extends PopOverProps {
   Content: React.ReactNode;
 }
 
-const PopOver = React.forwardRef<PopOverHandle, Props>(({
+const PopOver = React.forwardRef<HTMLDivElement, Props>(({
   Content,
+  callback,
   caretPlacement = null,
   children,
   color = 'white',
@@ -33,10 +34,13 @@ const PopOver = React.forwardRef<PopOverHandle, Props>(({
     { ref: (node: HTMLElement) => setChildrenRef(node) },
   );
 
-  // Attaches the `setShowPopOver` function to the ref so it can be used by parent components
-  React.useImperativeHandle(ref, () => ({
-    setShowPopOver: (show: boolean) => setShowPopOver(show),
-  }));
+  // ----- CALLBACK ----- //
+  // attaches callback functionality
+  React.useEffect(() => {
+    if (callback) {
+      callback({ showPopOver });
+    }
+  }, [callback, showPopOver]);
 
   // ----- CLICK & HOVER EVENT LISTENERS ----- //
   // adds a click or hover event listener to conditionally display the popover
