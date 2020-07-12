@@ -1,5 +1,6 @@
 import * as React from 'react';
-import {PopOverProps, PopOverCaretStyle } from 'types/modalTypes';
+import { PopOverProps } from 'types/modalTypes';
+import ChildPopOverCaret from './childPopOverCaret';
 import * as styles from './popOverCaret.module.less';
 
 interface Props {
@@ -17,28 +18,30 @@ const PopOverCaret: React.FC<Props> = ({
   popOverPlacement,
   popOverRef,
 }) => {
-  const [popOverCaretStyle, setPopOverCaretStyle] = React.useState<PopOverCaretStyle>(null);
   const popOverPosition = popOverPlacement.split('-')[0]; // e.g. 'bottom', 'left', 'right', 'top',
   const caretPosition = [caretPlacement, popOverPosition].join('-'); // e.g. 'bottom-left',
   const caretColor = [popOverPosition, color].join('-'); // e.g. 'bottom-blue', 'left-white',
 
-  if (popOverRef.current && caretPlacement === 'auto' && popOverCaretStyle === null) {
-    const popOverRect = popOverRef.current.getBoundingClientRect();
-    const childrenRect = childrenRef.getBoundingClientRect();
-    const x = `${popOverRect.right - childrenRect.right}px`;
-    const foo = { right: x };
-    setPopOverCaretStyle(foo);
+  const divClassName = [
+    styles.div,
+    styles[popOverPosition],
+    styles[caretPosition],
+    styles[caretColor],
+  ].join(' ');
+
+  let childrenRectRight = 0;
+  let popOverRectRight = 0;
+  if (popOverRef.current) {
+    childrenRectRight = childrenRef.getBoundingClientRect().right;
+    popOverRectRight = popOverRef.current.getBoundingClientRect().right;
   }
 
   return (
-    <div
-      className={[
-        styles.div,
-        styles[popOverPosition],
-        styles[caretPosition],
-        styles[caretColor],
-      ].join(' ')}
-      style={popOverCaretStyle}
+    <ChildPopOverCaret
+      childrenRectRight={childrenRectRight}
+      divClassName={divClassName}
+      isAuto={caretPlacement === 'auto'}
+      popOverRectRight={popOverRectRight}
     />
   );
 };

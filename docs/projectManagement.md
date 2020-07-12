@@ -30,6 +30,7 @@ This document is used to outline current project management priorities.
   * create transitions between login and about and error
   * create error page if server is down  
   * when refreshing the dashboard, the spa fallback seems to be persisting for too long
+  * tooltip.tsx has a dependency cycle
   * Document react naming conventions
     - Content
     - form & formContent
