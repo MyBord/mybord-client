@@ -15,11 +15,8 @@ This document is used to outline current project management priorities.
 
   * popover
     * fix the caret position for a tooltip that is collided with the right side of the window
-    * add delay for tooltip / popover
     * fix hovering from main div to modal
     * hovering over card menu button content hides card menu button
-    * fix tooltip when card is on very right side
-    * fix tooltip / popover when on the right side of the window and doesn't have enough room
     * when you click the pop confirm in a tooltip (any text), the card menu button no longer shows
   * figure out why ellipsis aren't aliased
   * when you hover away from card, the card menu button content should no longer be visible
