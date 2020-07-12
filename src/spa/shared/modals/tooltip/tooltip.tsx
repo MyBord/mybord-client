@@ -2,7 +2,6 @@ import * as React from 'react';
 import PopOver from 'modals/popOver/popOver';
 import Typography from 'typography/typography';
 import { PopOverProps } from 'types/modalTypes';
-import { loremIpsum } from 'utils/loremIpsum';
 import * as styles from './tooltip.module.less';
 
 interface Props {
@@ -27,7 +26,7 @@ const Tooltip: React.FC<Props> = ({
       <Typography
         color="white"
         size="normal"
-        text={loremIpsum}
+        text={text}
       />
     </div>
   );
