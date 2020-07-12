@@ -13,6 +13,9 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
+  * instead of having the default file be 'xContainer', have it be 'x' that imports the
+   'container' file
+    - document this prop
   * popover
     * fix the caret position for a tooltip that is collided with the right side of the window
     * fix hovering from main div to modal
@@ -40,8 +43,6 @@ This document is used to outline current project management priorities.
 ### C. Medium
 
   * fix when you cannot get the channel icon
-  * instead of having the default file be 'xContainer', have it be 'x' that imports the
-   'container' file
   * add react lazy loading to all files that use switch statements
   * replace error lottie
   * add query string for filters
