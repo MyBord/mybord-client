@@ -126,6 +126,8 @@ const PopOver = React.forwardRef<PopOverHandle, Props>(({
       popOverRef,
       position,
       setPopOverStyle,
+      window.innerHeight,
+      window.innerWidth,
     );
 
     getStyle();
