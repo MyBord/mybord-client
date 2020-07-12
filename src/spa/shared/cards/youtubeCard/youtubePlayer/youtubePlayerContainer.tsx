@@ -5,7 +5,7 @@ import usePrevious from 'hooks/usePrevious';
 import { YoutubeVideoData } from 'types/youtubeTypes';
 import YoutubePlayerComponent from './youtubePlayerComponent';
 
-interface Props {
+export interface Props {
   showYoutubePlayer: boolean;
   setIsYoutubePlayerLoaded: (isYoutubePlayerLoaded: boolean) => void;
   youtubeVideoData: YoutubeVideoData;

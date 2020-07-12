@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { UserCard } from 'schema/card';
 import YoutubeThumbnailAnimation from 'framerMotion/youtubeThumbnailAnimation';
-import YoutubePlayerContainer from 'cards/youtubeCard/youtubePlayer/youtubePlayerContainer';
+import YoutubePlayer from 'cards/youtubeCard/youtubePlayer/youtubePlayer';
 import { useMultiSelectCardContext } from 'context/multiSelectCardContext/multiSelectCardContext';
 import YoutubeCardThumbnailComponent from './youtubeCardThumbnailComponent';
 
@@ -40,7 +40,7 @@ const YoutubeCardThumbnailContainer: React.FC<Props> = ({ userCard }) => {
           youtubeVideoData={userCard.cardData.youtubeCardData}
         />
       </YoutubeThumbnailAnimation>
-      <YoutubePlayerContainer
+      <YoutubePlayer
         setIsYoutubePlayerLoaded={setIsYoutubePlayerLoaded}
         showYoutubePlayer={showYoutubePlayer}
         youtubeVideoData={userCard.cardData.youtubeCardData}
