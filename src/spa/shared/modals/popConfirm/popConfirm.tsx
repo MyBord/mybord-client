@@ -3,7 +3,7 @@ import Button from 'buttons/button/button';
 import PopOver from 'modals/popOver/popOver';
 import Typography from 'typography/typography';
 import memo from 'utils/memo';
-import { PopOverHandle, PopOverProps } from 'types/modalTypes';
+import { PopOverProps } from 'types/modalTypes';
 import * as styles from './popConfirm.module.less';
 
 interface Props {
@@ -21,12 +21,8 @@ const PopConfirm: React.FC<Props> = ({
   placement = 'top-center',
   text,
 }) => {
-  const popOverRef = React.useRef<PopOverHandle>(null);
-
   const handleNo = (): void => {
-    if (popOverRef.current) {
-      popOverRef.current.setShowPopOver(false);
-    }
+    console.log('hide popover');
   };
 
   const Content: React.FC = () => (
@@ -53,7 +49,6 @@ const PopConfirm: React.FC<Props> = ({
       Content={<Content />}
       caretPlacement={caretPlacement}
       placement={placement}
-      ref={popOverRef}
     >
       {children}
     </PopOver>

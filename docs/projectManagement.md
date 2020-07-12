@@ -13,6 +13,9 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
+  * popover callback
+    * remove forward ref from popover?
+    * add callback to popconfirm
   * popover
     * fix the caret position for a tooltip that is collided with the right side of the window
     * fix hovering from main div to modal

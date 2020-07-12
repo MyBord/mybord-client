@@ -1,10 +1,11 @@
 import * as React from 'react';
 
-export interface PopOverHandle {
-  setShowPopOver: (show: boolean) => void;
+export interface PopOverCallback {
+  showPopOver: boolean;
 }
 
 export interface PopOverProps {
+  callback?: (props: PopOverCallback) => void;
   caretPlacement?:
   'auto'
   | 'bottom'
