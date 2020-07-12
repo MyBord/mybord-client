@@ -22,12 +22,15 @@ const getStyle = (
   const placementOne = p[0];
   const placementTwo = p[1];
   const style: PopOverStyle = { left: null, top: null };
-
   let popOverMargin = 8;
+
+  // Add extra margin if the popover has a caret
   if (hasCaret) {
     const caretSize = sizes.caretSize.split('rem')[0] * 16;
     popOverMargin += caretSize;
   }
+
+  // Position the popover according to its two placement properties
 
   switch (placementOne) {
     case 'bottom':
@@ -77,8 +80,10 @@ const getStyle = (
 };
 
 const mutateStyle = (
+  caretPlacement: PopOverProps['caretPlacement'],
   popOverRect: ClientRect,
   position: PopOverProps['position'],
+  setCaretPlacement: (caretPlacement: PopOverProps['caretPlacement']) => void,
   style: PopOverStyle,
   windowHeight: number,
   windowWidth: number,
@@ -97,10 +102,14 @@ const mutateStyle = (
   }
 
   // If the popOver would overflow on the right side of the window, then instead remove its
-  // left positioning and give it some right margin
+  // left positioning and give it some right margin, and set the caret position to 'right' if
+  // the popover has a caret
   if (getUnit(finalStyle.left) + popOverRect.width >= windowWidth) {
     delete finalStyle.left;
     finalStyle.right = pixelize(16);
+    if (caretPlacement) {
+      setCaretPlacement('right');
+    }
   }
 
   // If the popover is too close to the top of the window, or above it, then move it down
@@ -117,6 +126,7 @@ export default (
   placement: PopOverProps['placement'],
   popOverRef: React.RefObject<HTMLDivElement>,
   position: PopOverProps['position'],
+  setCaretPlacement: (caretPlacement: PopOverProps['caretPlacement']) => void,
   setStyle: (style: PopOverStyle) => void,
   windowHeight: number,
   windowWidth: number,
@@ -126,13 +136,15 @@ export default (
     const childrenRect = childrenRef.getBoundingClientRect();
     const popOverRect = popOverRef.current.getBoundingClientRect();
 
-    // get the style taht should be applied to the popover
+    // get the style that should be applied to the popover
     const style = getStyle(childrenRect, !!caretPlacement, placement, popOverRect);
 
     // update the style if necessary
     const mutatedStyle = mutateStyle(
+      caretPlacement,
       popOverRect,
       position,
+      setCaretPlacement,
       style,
       windowHeight,
       windowWidth,
