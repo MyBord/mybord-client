@@ -31,7 +31,6 @@ This document is used to outline current project management priorities.
   * create error page if server is down  
   * when refreshing the dashboard, the spa fallback seems to be persisting for too long
   * Document react naming conventions
-    - container & component
     - Content
     - form & formContent
 
