@@ -6,7 +6,8 @@ export interface PopOverHandle {
 
 export interface PopOverProps {
   caretPlacement?:
-  'bottom'
+  'auto'
+  | 'bottom'
   | 'center'
   | 'left'
   | 'right'
@@ -33,6 +34,10 @@ export interface PopOverProps {
     top?: number;
   };
   trigger?: 'click' | 'hover';
+}
+
+export interface PopOverCaretStyle {
+  right?: string;
 }
 
 export interface PopOverStyle {
