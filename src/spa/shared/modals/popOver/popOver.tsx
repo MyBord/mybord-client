@@ -166,9 +166,12 @@ const PopOver = React.forwardRef<PopOverHandle, Props>(({
           {
             finalCaretPlacement && (
               <PopOverCaret
-                caretPlacement={finalCaretPlacement}
+                // caretPlacement={finalCaretPlacement}
+                caretPlacement="auto"
+                childrenRef={childrenRef}
                 color={color}
                 popOverPlacement={placement}
+                popOverRef={popOverRef}
               />
             )
           }

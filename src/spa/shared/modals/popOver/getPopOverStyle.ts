@@ -102,13 +102,13 @@ const mutateStyle = (
   }
 
   // If the popOver would overflow on the right side of the window, then instead remove its
-  // left positioning and give it some right margin, and set the caret position to 'right' if
+  // left positioning and give it some right margin, and set the caret position to 'auto' if
   // the popover has a caret
   if (getUnit(finalStyle.left) + popOverRect.width >= windowWidth) {
     delete finalStyle.left;
     finalStyle.right = pixelize(16);
     if (caretPlacement) {
-      setCaretPlacement('right');
+      setCaretPlacement('auto');
     }
   }
 
