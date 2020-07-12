@@ -21,6 +21,10 @@ const PopOver = React.forwardRef<PopOverHandle, Props>(({
   trigger = 'click',
 }, ref) => {
   const [childrenRef, setChildrenRef] = React.useState<HTMLElement>(null);
+  const [
+    finalCaretPlacement,
+    setFinalCaretPlacement,
+  ] = React.useState<Props['caretPlacement']>(caretPlacement);
   const [popOverStyle, setPopOverStyle] = React.useState<PopOverStyle>(null);
   const [showPopOver, setShowPopOver] = React.useState<boolean>(defaultVisible);
   const popOverRef = React.useRef<HTMLDivElement>(null);
@@ -120,12 +124,15 @@ const PopOver = React.forwardRef<PopOverHandle, Props>(({
 
   React.useEffect(() => {
     const getStyle = (): void => getPopOverStyle(
-      caretPlacement,
+      finalCaretPlacement,
       childrenRef,
       placement,
       popOverRef,
       position,
+      setFinalCaretPlacement,
       setPopOverStyle,
+      window.innerHeight,
+      window.innerWidth,
     );
 
     getStyle();
@@ -136,7 +143,7 @@ const PopOver = React.forwardRef<PopOverHandle, Props>(({
       window.removeEventListener('resize', getStyle);
     };
   }, [
-    caretPlacement,
+    finalCaretPlacement,
     childrenRef,
     placement,
     popOverRef,
@@ -157,9 +164,9 @@ const PopOver = React.forwardRef<PopOverHandle, Props>(({
           showPopOver={showPopOver}
         >
           {
-            caretPlacement && (
+            finalCaretPlacement && (
               <PopOverCaret
-                caretPlacement={caretPlacement}
+                caretPlacement={finalCaretPlacement}
                 color={color}
                 popOverPlacement={placement}
               />
