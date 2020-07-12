@@ -36,6 +36,7 @@ export interface PopOverProps {
 }
 
 export interface PopOverStyle {
-  left: string;
+  left?: string;
+  right?: string;
   top: string;
 }

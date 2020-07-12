@@ -96,15 +96,12 @@ const mutateStyle = (
     return finalStyle;
   }
 
-  console.log(finalStyle);
-  console.log(popOverRect);
-  console.log(popOverRect.right);
-  console.log(windowWidth);
-  // // If the popOver collides with the far side of the window, then give it some margin
-  // if (popOverRect.right >= windowWidth) {
-  //   console.log('aaaaaa');
-  //   finalStyle.left = `${Number(finalStyle.left.split('px')[0]) - 8}px`;
-  // }
+  // If the popOver would overflow on the right side of the window, then instead remove its
+  // left positioning and give it some right margin
+  if (getUnit(finalStyle.left) + popOverRect.width >= windowWidth) {
+    delete finalStyle.left;
+    finalStyle.right = pixelize(16);
+  }
 
   // If the popover is too close to the top of the window, or above it, then move it down
   if (getUnit(finalStyle.top) < 16) {
