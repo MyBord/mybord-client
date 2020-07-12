@@ -9,7 +9,7 @@ import { TOGGLE_CARD_FILTER } from 'context/dashboardCardsContext/dashboardCards
 import { useDashboardCardsContext } from 'context/dashboardCardsContext/dashboardCardsContext';
 import CardMenuButtonContentComponent from './cardMenuButtonContentComponent';
 
-interface Props {
+export interface Props {
   cardId: UserCard['id'];
 }
 
