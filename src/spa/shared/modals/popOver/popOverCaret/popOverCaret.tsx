@@ -8,7 +8,11 @@ interface Props {
   popOverPlacement: PopOverProps['placement'];
 }
 
-const PopOverCaret: React.FC<Props> = ({ caretPlacement, color, popOverPlacement }) => {
+const PopOverCaret: React.FC<Props> = ({
+  caretPlacement,
+  color,
+  popOverPlacement,
+}) => {
   const popOverPosition = popOverPlacement.split('-')[0]; // e.g. 'bottom', 'left', 'right', 'top',
   const caretPosition = [caretPlacement, popOverPosition].join('-'); // e.g. 'bottom-left',
   const caretColor = [popOverPosition, color].join('-'); // e.g. 'bottom-blue', 'left-white',
