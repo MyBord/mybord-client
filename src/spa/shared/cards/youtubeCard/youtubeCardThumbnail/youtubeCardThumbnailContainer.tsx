@@ -5,7 +5,7 @@ import YoutubePlayerContainer from 'cards/youtubeCard/youtubePlayer/youtubePlaye
 import { useMultiSelectCardContext } from 'context/multiSelectCardContext/multiSelectCardContext';
 import YoutubeCardThumbnailComponent from './youtubeCardThumbnailComponent';
 
-interface Props {
+export interface Props {
   userCard: UserCard;
 }
 

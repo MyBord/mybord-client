@@ -2,14 +2,14 @@ import * as React from 'react';
 import Card from 'cards/card/card';
 import { UserCard } from 'schema/card';
 import YoutubeCardDescription from './youtubeCardDescription/youtubeCardDescription';
-import YoutubeCardThumbnailContainer from './youtubeCardThumbnail/youtubeCardThumbnailContainer';
+import YoutubeCardThumbnail from './youtubeCardThumbnail/youtubeCardThumbnail';
 
 interface Props {
   userCard: UserCard;
 }
 
 const YoutubeCard: React.FC<Props> = ({ userCard }) => {
-  const Content: React.FC = () => <YoutubeCardThumbnailContainer userCard={userCard} />;
+  const Content: React.FC = () => <YoutubeCardThumbnail userCard={userCard} />;
 
   const Description: React.FC = () => <YoutubeCardDescription userCard={userCard} />;
 
