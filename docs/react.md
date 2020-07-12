@@ -9,8 +9,9 @@ conventions, and react styling principles.
 ## Table of Contents
 
 * [I. Component Architecture](#i-component-architecture)
-* [I. Component Principles](#ii-component-principles)
-* [III. Additional Resources](#iii-additional-resources)
+* [II. Component Principles](#ii-component-principles)
+* [III. Component Naming Conventions](#iii-component-naming-conventions)
+* [IV. Additional Resources](#iv-additional-resources)
 
 ## I. Component Architecture
 
@@ -20,11 +21,6 @@ test script. Some other folders may be needed.
 
 ```
 sampleComponent/
-  |- sampleComponentContext/ *
-  |- sampleComponentReducer/ *
-     |- sampleComponentReducer.test.ts *
-     |- sampleComponentReducer.ts *
-     |- sampleComponentReducerTypes.ts *
   |- sampleComponentStorybook/
      |- sampleComponent.stories.ts
      |- sampleComponent.markup.ts
@@ -44,13 +40,6 @@ sampleComponent/
   |- sampleComponent.test.tsx
 ```
 
-* **sampleComponentContext/**
-    * If we need to use the react context api for this component tree, then the context code will
-     belong in this folder.
-* **sampleComponentReducer/**
-    * If we use the `useReducer` hook to create a single state object for the entire component tree,
-      then this folder will contain the code for the component tree's reducer, as well as the
-      reducer's types and the reducer test.
 * **sampleComponentStorybook/**
     * Most components, except for components like entire pages and a few other minor exceptions,
       should have a storybook. This is the folder where that code is contained. For more details,
@@ -102,7 +91,39 @@ That said, there still may be the odd use case for them.
   }
 ```
 
-## III. Additional Resources:
+## III. Component Naming Conventions
+
+### A. Container & Component
+
+If a react component becomes overly complex, contains a lot of logic, and becomes overall more
+difficult to manage, separating it out into presentational and container components (per 
+[Dan Abramov](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0)) makes the
+component easier to manage.
+
+When we do this we need to create three files:
+  * A container component that is concerned with how things work.
+  * A presentational component that is concerned with how things look.
+  * A final component that is used for importing in components.
+  
+The naming convention should be as follows:
+
+```
+sampleComponent/
+  |- sampleComponent.tsx
+  |- sampleComponentComponent.tsx
+  |- sampleComponentContainer.tsx
+```
+
+* **sampleComponent.tsx:**
+  * the name for our component that imports `sampleComponentContainer.tsx`. This file is used to
+   `sampleComponent` in other files; this makes it easier because we don't have to keep asking if
+    we need to import `fooComponent` or `fooComponentContainer`.
+* **sampleComponentComponent.tsx:**
+  * the name for our presentational component.
+* **sampleComponentContainer.tsx:**
+  * the name for our container component.
+
+## IV. Additional Resources:
 
 * [AirBnB React style guide](https://github.com/airbnb/javascript/blob/master/react/README.md)
 * [React/Redux style guide](https://gist.github.com/datchley/4e0d05c526d532d1b05bf9b48b174faf)
@@ -110,7 +131,6 @@ That said, there still may be the odd use case for them.
 * [Stateless Functional Components - the bad; Cory House](https://medium.freecodecamp.org/7-reasons-to-outlaw-reacts-functional-components-ff5b5ae09b7c)
 * [React.Component; React](https://reactjs.org/docs/react-component.html)
 * [Presentational and Container Components; Dan Abramov](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0)
-* [Dan Abramov: Presentational and Container Components](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0)
 * [The constructor is dead](https://hackernoon.com/the-constructor-is-dead-long-live-the-constructor-c10871bea599)
 * [7 things about React 16](https://blog.pusher.com/7-things-about-react-16/)
 * [Prop Drilling](https://blog.kentcdodds.com/prop-drilling-bb62e02cb691)
