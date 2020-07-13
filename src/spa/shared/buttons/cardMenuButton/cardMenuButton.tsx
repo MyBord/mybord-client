@@ -11,7 +11,7 @@ interface Props {
 
 const CardMenuButton: React.FC<Props> = ({ userCard }) => {
   const handleCallback = (props: PopOverCallback): void => {
-    console.log(props.showPopOver);
+    // console.log(props.showPopOver);
   };
 
   return (
