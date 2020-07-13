@@ -14,7 +14,6 @@ This document is used to outline current project management priorities.
 ### A. Highest - MVP
 
   * popover
-    * fix the caret position for a tooltip that is collided with the right side of the window
     * fix hovering from main div to modal
     * hovering over card menu button content hides card menu button
     * when you click the pop confirm in a tooltip (any text), the card menu button no longer shows
