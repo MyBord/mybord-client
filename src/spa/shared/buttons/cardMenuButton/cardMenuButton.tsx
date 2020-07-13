@@ -10,13 +10,18 @@ interface Props {
 }
 
 const CardMenuButton: React.FC<Props> = ({ userCard }) => {
+  const [showPopOver, setShowPopOver] = React.useState<boolean>(false);
+
   const handleCallback = (props: PopOverCallback): void => {
-    // console.log(props.showPopOver);
+    setShowPopOver(props.showPopOver);
   };
 
   return (
     <PopOver Content={<CardMenuButtonContent cardId={userCard.id} />} callback={handleCallback}>
-      <div className={[styles.div, 'card-menu-button'].join(' ')}>
+      <div
+        className={[styles.div, 'card-menu-button'].join(' ')}
+        style={{ opacity: showPopOver ? '1' : null }}
+      >
         <div className={styles.dot} />
         <div className={styles.dot} />
         <div className={styles.dot} />
