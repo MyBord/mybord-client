@@ -15,7 +15,6 @@ This document is used to outline current project management priorities.
 
   * popover
     * fix hovering from main div to modal
-    * hovering over card menu button content hides card menu button
     * when you click the pop confirm in a tooltip (any text), the card menu button no longer shows
   * figure out why ellipsis aren't aliased
   * when you hover away from card, the card menu button content should no longer be visible
