@@ -9,7 +9,7 @@ interface Props extends PopOverProps {
   Content: React.ReactNode;
 }
 
-const PopOver = React.forwardRef<HTMLDivElement, Props>(({
+const PopOver: React.FC<Props> = ({
   Content,
   callback,
   caretPlacement = null,
@@ -20,7 +20,7 @@ const PopOver = React.forwardRef<HTMLDivElement, Props>(({
   placement = 'bottom-center',
   position = null,
   trigger = 'click',
-}, ref) => {
+}) => {
   const [childrenRef, setChildrenRef] = React.useState<HTMLElement>(null);
   const [
     finalCaretPlacement,
@@ -183,6 +183,6 @@ const PopOver = React.forwardRef<HTMLDivElement, Props>(({
       </Portal>
     </>
   );
-});
+};
 
 export default PopOver;
