@@ -38,7 +38,10 @@ const PopOver: React.FC<Props> = ({
   // attaches callback functionality
   React.useEffect(() => {
     if (callback) {
-      callback({ showPopOver });
+      callback({
+        setShowPopOver,
+        showPopOver,
+      });
     }
   }, [callback, showPopOver]);
 
