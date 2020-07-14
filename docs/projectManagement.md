@@ -13,9 +13,6 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
-  * popover
-    * fix hovering from main div to modal
-    * when you click the pop confirm in a tooltip (any text), the card menu button no longer shows
   * figure out why ellipsis aren't aliased
   * when you hover away from card, the card menu button content should no longer be visible
   * when you first login, cards show before page is done animating? 
@@ -36,8 +33,17 @@ This document is used to outline current project management priorities.
 
 ### C. Medium
 
-  * if you click the card menu button and the card menu button content is shown, and then hover
-  outside of the card content, the card menu button content should then be hidden / no longer shown.
+  * card menu button
+    * if you click the card menu button and the card menu button content is shown, and then hover
+    outside of the card content, the card menu button content should then be hidden / no longer
+    shown.
+    * when you click delete in the card menu button and get the pop confirm, and then click 'no',
+    two issues occur that need to be fixed: 1. the card menu button content goes away (it should
+    still be shown), 2. the card menu button itself (the icon) flashes / double renders
+  * popover
+    * If the popover is of trigger type 'hover', then when you hover from the child item to the
+     popover content, the popover will hide again because there is a gap between the child and
+     the popover and there is a moment where you are not hovering over either items.
   * fix when you cannot get the channel icon
   * create error page if server is down  
   * add react lazy loading to all files that use switch statements
