@@ -13,16 +13,11 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
-  * figure out why ellipsis aren't aliased
-  * when you hover away from card, the card menu button content should no longer be visible
-  * when you first login, cards show before page is done animating? 
   * when you logout, the login form looks different
-  * when you login, you get a flash from the dashboard page?
   * have session be remembered by user
-  * fix loading of image on landing page
+  * figure out why ellipsis aren't aliased
   * add about page - for app and landing
   * replace coffee login image
-  * create transitions between login and about and error
   * when refreshing the dashboard, the spa fallback seems to be persisting for too long
   * tooltip.tsx has a dependency cycle
   * Document react naming conventions
@@ -45,6 +40,9 @@ This document is used to outline current project management priorities.
      popover content, the popover will hide again because there is a gap between the child and
      the popover and there is a moment where you are not hovering over either items.
   * fix when you cannot get the channel icon
+  * If a user goes from the landing / login page to the app, when loading the app, DO NOT animate
+   the frame. Only animate the frame when the user initializes / loads / refreshes the
+   application when the user has already been authenticated and their session is maintained.
   * create error page if server is down  
   * add react lazy loading to all files that use switch statements
   * replace error lottie
