@@ -6,8 +6,7 @@ import PopOver from 'modals/popOver/popOver';
 import TextInput from 'inputs/textInput/textInput';
 import { FormProp } from 'types/formTypes';
 import { useMultiSelectCardContext } from 'context/multiSelectCardContext/multiSelectCardContext';
-import DashboardFilterPopOverContent
-  from './dashboardFilterPopOverContent/dashboardFilterPopOverContent';
+import DashboardFilterContent from './dashboardFilterContent/dashboardFilterContent';
 import * as styles from './dashboardHeaderFilterForm.module.less';
 
 interface Props {
@@ -47,7 +46,7 @@ const DashboardHeaderFilterFormContent: React.FC<Props> = ({
       </div>
       <div className={styles.buttonsContainer}>
         <PopOver
-          Content={<DashboardFilterPopOverContent />}
+          Content={<DashboardFilterContent />}
           caretPlacement="center"
           placement="bottom-center"
         >

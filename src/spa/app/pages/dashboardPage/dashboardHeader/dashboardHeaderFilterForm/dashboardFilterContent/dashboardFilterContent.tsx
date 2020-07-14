@@ -3,9 +3,9 @@ import { useLazyQuery } from '@apollo/react-hooks';
 import Toggle from 'inputs/toggle/toggle';
 import { useDashboardCardsContext } from 'context/dashboardCardsContext/dashboardCardsContext';
 import { USER_CARDS_WITH_FILTERS_QUERY } from 'schema/card';
-import * as styles from './dashboardFilterPopOverContent.module.less';
+import * as styles from './dashboardFilterContent.module.less';
 
-const DashboardFilterPopOverContent: React.FC = () => {
+const DashboardFilterContent: React.FC = () => {
   const [userCardsQuery] = useLazyQuery(USER_CARDS_WITH_FILTERS_QUERY, { fetchPolicy: 'no-cache' });
   const { state } = useDashboardCardsContext();
 
@@ -49,4 +49,4 @@ const DashboardFilterPopOverContent: React.FC = () => {
   );
 };
 
-export default DashboardFilterPopOverContent;
+export default DashboardFilterContent;
