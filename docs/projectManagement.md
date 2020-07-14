@@ -18,7 +18,6 @@ This document is used to outline current project management priorities.
   * figure out why ellipsis aren't aliased
   * add about page - for app and landing
   * replace coffee login image
-  * when refreshing the dashboard, the spa fallback seems to be persisting for too long
   * tooltip.tsx has a dependency cycle
   * Document react naming conventions
     - Content
