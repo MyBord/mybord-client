@@ -16,8 +16,6 @@ This document is used to outline current project management priorities.
   * popover
     * fix hovering from main div to modal
     * when you click the pop confirm in a tooltip (any text), the card menu button no longer shows
-    * if you hover outside of the youtube card description, the card menu button content should
-     be hidden
   * figure out why ellipsis aren't aliased
   * when you hover away from card, the card menu button content should no longer be visible
   * when you first login, cards show before page is done animating? 
@@ -38,6 +36,8 @@ This document is used to outline current project management priorities.
 
 ### C. Medium
 
+  * if you click the card menu button and the card menu button content is shown, and then hover
+  outside of the card content, the card menu button content should then be hidden / no longer shown.
   * fix when you cannot get the channel icon
   * create error page if server is down  
   * add react lazy loading to all files that use switch statements
