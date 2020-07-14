@@ -16,6 +16,8 @@ This document is used to outline current project management priorities.
   * popover
     * fix hovering from main div to modal
     * when you click the pop confirm in a tooltip (any text), the card menu button no longer shows
+    * if you hover outside of the youtube card description, the card menu button content should
+     be hidden
   * figure out why ellipsis aren't aliased
   * when you hover away from card, the card menu button content should no longer be visible
   * when you first login, cards show before page is done animating? 
@@ -26,7 +28,6 @@ This document is used to outline current project management priorities.
   * add about page - for app and landing
   * replace coffee login image
   * create transitions between login and about and error
-  * create error page if server is down  
   * when refreshing the dashboard, the spa fallback seems to be persisting for too long
   * tooltip.tsx has a dependency cycle
   * Document react naming conventions
@@ -38,6 +39,7 @@ This document is used to outline current project management priorities.
 ### C. Medium
 
   * fix when you cannot get the channel icon
+  * create error page if server is down  
   * add react lazy loading to all files that use switch statements
   * replace error lottie
   * add query string for filters
