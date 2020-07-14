@@ -14,11 +14,10 @@ This document is used to outline current project management priorities.
 ### A. Highest - MVP
 
   * when you logout, the login form looks different
+  * profile popover needs fixing
   * have session be remembered by user
   * figure out why ellipsis aren't aliased
-  * profile popover needs fixing
   * add about page - for app and landing
-  * replace coffee login image
 
 ### B. High - MVP
 
