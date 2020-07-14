@@ -46,6 +46,7 @@ This document is used to outline current project management priorities.
   * tooltip.tsx has a dependency cycle
   * fix import of all styles, one single import for styles at root of app
   * handle front end if server is down for both app and landing
+  * have landing background rotate multiple backgrounds
   * when there are only two cards, changing the width of the window creates the width of the
    cards to 'jump'
   * make sure app is responsive and mobile friendly
