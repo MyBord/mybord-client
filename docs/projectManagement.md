@@ -18,9 +18,6 @@ This document is used to outline current project management priorities.
   * figure out why ellipsis aren't aliased
   * add about page - for app and landing
   * replace coffee login image
-  * Document react naming conventions
-    - Content
-    - form & formContent
 
 ### B. High - MVP
 
