@@ -18,7 +18,6 @@ This document is used to outline current project management priorities.
   * figure out why ellipsis aren't aliased
   * add about page - for app and landing
   * replace coffee login image
-  * tooltip.tsx has a dependency cycle
   * Document react naming conventions
     - Content
     - form & formContent
@@ -46,6 +45,7 @@ This document is used to outline current project management priorities.
   * add react lazy loading to all files that use switch statements
   * replace error lottie
   * add query string for filters
+  * tooltip.tsx has a dependency cycle
   * fix import of all styles, one single import for styles at root of app
   * handle front end if server is down for both app and landing
   * when there are only two cards, changing the width of the window creates the width of the
