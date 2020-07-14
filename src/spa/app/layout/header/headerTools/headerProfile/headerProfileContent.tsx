@@ -6,7 +6,7 @@ import { LOGOUT_USER_QUERY } from 'schema/user';
 import { useAuthenticationContext } from 'context/authenticationContext/authenticationContext';
 import * as styles from './headerProfile.module.less';
 
-const HeaderProfilePopOverContent: React.FC = () => {
+const HeaderProfileContent: React.FC = () => {
   const [LogoutUserQuery] = useLazyQuery(LOGOUT_USER_QUERY);
   const { setAuthenticationStatus } = useAuthenticationContext();
 
@@ -40,4 +40,4 @@ const HeaderProfilePopOverContent: React.FC = () => {
   );
 };
 
-export default HeaderProfilePopOverContent;
+export default HeaderProfileContent;
