@@ -349,12 +349,12 @@ the following:
     * run webpack with the dev configurations.
   * `webpack:prod`
     * run webpack with the prod configurations.
-  * `start`
-    * run a local version of the application.
   * `build:dev`
     * build a dev build of the application.
   * `build:prod`
     * build a prod build of the application.
+  * `run:dev`
+    * runs a local, dev version of the application.
     
 ## VI. Env Vars
 
