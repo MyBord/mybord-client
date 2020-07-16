@@ -123,7 +123,9 @@ const config = {
     new webpack.DefinePlugin({
       'process.env.INTERNAL': JSON.stringify(process.env.INTERNAL),
     }),
-    new Dotenv(),
+    new Dotenv({
+      path: `${__dirname}/.env`,
+    }),
   ],
   resolve: {
     extensions: ['.jsx', '.js', '.tsx', '.ts', '.less'],
