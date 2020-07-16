@@ -9,7 +9,7 @@
     "copy-index": "cp src/index.html dist/index.html",
     "webpack:dev": "webpack --config webpack.dev.js",
     "webpack:prod": "webpack --config webpack.prod.js",
-    "start": "webpack-dev-server --config webpack.dev.js",
+    "start": "NODE_ENV=development webpack-dev-server --config webpack.dev.js",
     "build:dev": "npm-run-all remove-dist webpack:dev copy-index",
     "build:prod": "npm-run-all remove-dist webpack:prod copy-index"
   },
