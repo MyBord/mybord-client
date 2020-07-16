@@ -69,11 +69,14 @@ application folder.
   .stylelintignore
   .stylelintrc
   .jest.config.js
+  dev.env
   LICENSE.md
   package.json
   postcss.config.js
+  prod.env
   README.md
   setupTests.js
+  test.env
   tsconfig.json
   typings.d.ts
   webpack.common.js
@@ -110,16 +113,25 @@ application folder.
   * configuration of stylelint rules.
 * **`.jest.config.js`:**
   * jest configs.
+* **`dev.env`:**
+  * a file containing node environment variables for your local instance when running
+   the server in 'DEV' mode.
 * **`LICENSE.md`:**
   * Contains the software license / copyright.
 * **`package.json`:**
   * MyBord's package manager and metadata.
 * **`postcss.config.js`:**
   * config file for PostCSS.
+* **`prod.env`:**
+  * a file containing node environment variables for your local instance when running
+   the server in 'PROD' mode.
 * **`README.md`:**
   * MyBord's root readme document.
 * **`setupTests.js`:**
   * sets up jest when it gets run.
+* **`test.env`:**
+  * a file containing node environment variables for your local instance when running
+   the server in 'TEST' mode.
 * **`tsconfig.json`:**
   * Specifies how TypeScript should be compiled.
 * **`typings.d.ts`:**

@@ -13,6 +13,8 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
+  * change yarn start to yarn run:dev and document in yarn commands
+  * split apart webpack common
   * have session be remembered by user
   * add about page - for app and landing
     * add transitions for landing between login and and about? or just use same parent container?
