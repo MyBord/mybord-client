@@ -3,8 +3,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const webpack = require('webpack');
 const Dotenv = require('dotenv-webpack');
 
-console.log(process.env.NODE_ENV);
-
 const DIST_DIR = path.resolve(__dirname, 'dist');
 const SRC_DIR = path.resolve(__dirname, 'src');
 
@@ -126,7 +124,7 @@ const config = {
       'process.env.INTERNAL': JSON.stringify(process.env.INTERNAL),
     }),
     new Dotenv({
-      path: './env',
+      path: `${__dirname}/.env`,
     }),
   ],
   resolve: {
