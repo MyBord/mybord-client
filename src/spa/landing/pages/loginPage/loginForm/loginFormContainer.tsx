@@ -20,7 +20,10 @@ const LoginFormContainer: React.FC = () => {
   const [isAuthenticatedQuery, { called, data, loading }] = useLazyQuery(
     IS_AUTHENTICATED_QUERY, { fetchPolicy: 'no-cache' },
   );
-  const [loginUser] = useMutation(LOGIN_USER_MUTATION);
+  const [
+    loginUser,
+    { called: loginCalled, data: loginData, loading: loginLoading },
+  ] = useMutation(LOGIN_USER_MUTATION);
 
   // ----- STATE ----- //
 
@@ -43,17 +46,17 @@ const LoginFormContainer: React.FC = () => {
       // try to login the user / auth the user to the backend
       await loginUser({
         variables: {
-          email: values.email,
-          password: values.password,
+          email: 'jimmy@gmail.com',
+          password: 'Ji$794658',
         },
       });
 
       // ask the backend if the user is now authenticated
-      isAuthenticatedQuery();
+      // isAuthenticatedQuery();
 
-      setIsAuthenticationWaiting(false);
+      // setIsAuthenticationWaiting(false);
     } catch (error) {
-      setIsAuthenticationWaiting(false);
+      // setIsAuthenticationWaiting(false);
 
       // If a 401 status is returned, notify the user that they have provided the incorrect creds
       const { status } = handleError(error);
@@ -62,6 +65,11 @@ const LoginFormContainer: React.FC = () => {
       }
     }
   };
+
+  if (loginCalled && !loginLoading) {
+    console.log(' --- Login data: --- ');
+    console.log(loginData);
+  }
 
   // Function that gets invoked when the user clicks on the 'signup' button in order to create a
   // user
@@ -129,25 +137,30 @@ const LoginFormContainer: React.FC = () => {
   // After the user tries to login, if the back-end says they are authenticated, then update
   // their status on the front end as authenticated and push them towards the app
   if (called && !loading) {
-    const { isAuthenticated } = data;
-    if (isAuthenticated) {
-      setAuthenticationStatus(true);
-    }
+    console.log(' --- is authenticated data: --- ');
+    console.log(data);
+    // const { isAuthenticated } = data;
+    // if (isAuthenticated) {
+    //   setAuthenticationStatus(true);
+    // }
 
     // Note: the else block should never be reached because when attempting to login the user, the
     // server should either 1. successfully login the user, and thus they are authenticated,
     // or 2. return a 401 error, which is already handled in `handleLogin`. Thus, this block
     // should never be reached and should probably be thrown to an error reporting tool such
     // as sentry.
-    else {
-      throw new Error('Unable to authenticate');
-    }
+    // else {
+    //   throw new Error('Unable to authenticate');
+    // }
   }
 
   // ----- COMPONENT ----- //
 
   return (
     <Form onSubmit={handleSubmit} type="login">
+      {/*
+      // @ts-ignore */}
+      <button type="button" onClick={isAuthenticatedQuery}>Is Authenticated</button>
       <LoginFormComponent />
     </Form>
   );

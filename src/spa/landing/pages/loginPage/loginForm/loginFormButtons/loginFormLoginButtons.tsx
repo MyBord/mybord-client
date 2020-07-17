@@ -41,7 +41,7 @@ const LoginFormLoginButtons: React.FC<Props> = ({ form }) => {
         >
           <Button
             htmlType="submit"
-            isWaiting={isAuthenticationWaiting}
+            // isWaiting={isAuthenticationWaiting}
             label="Login"
             onClick={handleLogin}
           />
