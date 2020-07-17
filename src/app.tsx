@@ -9,13 +9,13 @@ const IS_AUTHENTICATED = gql`
   }
 `;
 
-const LOGIN = gql`
-  mutation login($email: String!, $password: String!) {
-    login(email: $email, password: $password) {
-      user {
-        id
-        firstName
-      }
+const LOGIN_USER = gql`
+  mutation loginUser($email: String!, $password: String!) {
+    loginUser(data: {email: $email, password: $password}) {
+      id
+      firstName
+      lastName
+      email
     }
   }
 `;
@@ -28,7 +28,7 @@ const App: React.FC = () => {
   const [
     loginUser,
     { called: loginCalled, data: loginData, loading: loginLoading },
-  ] = useMutation(LOGIN);
+  ] = useMutation(LOGIN_USER);
 
   const handleLogin = async (): Promise<void> => {
     await loginUser({
@@ -38,6 +38,8 @@ const App: React.FC = () => {
       },
     });
   };
+
+  const handleAuthentication = async (): Promise<void> => await isAuthenticated();
 
   if (authCalled && !authLoading) {
     console.log(' --- Is Authenticated Response: --- ');
@@ -50,7 +52,22 @@ const App: React.FC = () => {
   }
 
   return (
-    <h1>hello world</h1>
+    <div className="container">
+      <button
+        className="button"
+        type="button"
+        onClick={handleLogin}
+      >
+        1: Login
+      </button>
+      <button
+        className="button"
+        type="button"
+        onClick={handleAuthentication}
+      >
+        2: Is Authenticated
+      </button>
+    </div>
   );
 };
 
