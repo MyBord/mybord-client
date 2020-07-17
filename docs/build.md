@@ -354,7 +354,9 @@ the following:
   * `build:prod`
     * build a prod build of the application.
   * `run:dev`
-    * runs a local, dev version of the application.
+    * runs a local version of the application that is connected to a local running back end server.
+  * `run:prod`
+    * runs a local version of the application that is connected to the production server.
     
 ## VI. Env Vars
 
