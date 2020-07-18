@@ -12,6 +12,7 @@ This summarizes the build process for the MyBord codebase as well as any other c
 * [IV. Testing and Jest](#iv-testing-and-jest)
 * [V. Yarn Commands](#v-yarn-commands)
 * [VI. Env Vars](#vi-env-vars)
+* [VII. Important Branches](#vii-important-branches)
 
 ## I. Babel
 
@@ -378,3 +379,12 @@ The following are the env vars needed to run our front end application:
   * The uri endpoint that is used to communicate with our backend server. This should look
    something like `localhost:1234/graphql` and should not include a `http://` prefix since we
    want to use this for web sockets as well (`ws://`).
+   
+## VII. Important Branches
+
+The following are important branches in regards to the `mybord` repo:
+
+* **`master:`**:
+  * This is the branch where our production code lives.
+* **`mini_app:`**:
+  * This branch contains a very simplified build of our application and is used for debugging.
