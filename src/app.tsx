@@ -39,7 +39,7 @@ const App: React.FC = () => {
     });
   };
 
-  const handleAuthentication = async (): Promise<void> => await isAuthenticated();
+  const handleAuthentication = (): void => isAuthenticated();
 
   if (authCalled && !authLoading) {
     console.log(' --- Is Authenticated Response: --- ');
