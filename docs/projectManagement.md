@@ -13,6 +13,9 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
+  * profile should not show until hydration and animation is complete
+  * reduce gap between profile and profile popover content
+  * fix dashboard filters height and styling
   * have session be remembered by user
   * add about page - for app and landing
     * add transitions for landing between login and and about? or just use same parent container?
