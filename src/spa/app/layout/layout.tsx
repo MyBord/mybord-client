@@ -12,7 +12,8 @@ const Layout: React.FC<Props> = ({ children }) => {
 
   React.useEffect(() => {
     // See *2 in `hydrationContext.tsx`
-    setTimeout(() => setAnimationStatus(true), 1700);
+    // setTimeout(() => setAnimationStatus(true), 1700);
+    setTimeout(() => setAnimationStatus(true), 100);
   }, [setAnimationStatus]);
 
   return (
