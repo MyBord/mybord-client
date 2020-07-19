@@ -13,7 +13,7 @@ const AboutPageHeader: React.FC = () => (
     </div>
     <div className={styles.devDiv}>
       <Typography
-        link="/about"
+        link="/about/dev"
         size="four"
         text="For Developers"
       />

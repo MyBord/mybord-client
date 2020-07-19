@@ -6,10 +6,11 @@ import DashboardPageHeader from './dashboardPageHeader/dashboardPageHeader';
 const PageHeader: React.FC = () => {
   const { pathname } = useLocation();
 
-  switch (pathname) {
-    case '/myBord':
+  const path = pathname.split('/')[1];
+  switch (path) {
+    case 'myBord':
       return <DashboardPageHeader />;
-    case '/about':
+    case 'about':
       return <AboutPageHeader />;
     default:
       return null;
