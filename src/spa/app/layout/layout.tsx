@@ -19,8 +19,8 @@ const Layout: React.FC<Props> = ({ children }) => {
   return (
     <>
       <Navigation />
-      <Header />
       <main className={styles.main}>
+        <Header />
         <section className={styles.section}>
           {children}
         </section>
