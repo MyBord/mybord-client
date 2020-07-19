@@ -11,7 +11,7 @@ const SpaFallback: React.FC = () => (
   <SpaFallbackAnimation>
     <main className={styles.main}>
       <div className={styles.div}>
-        {/* <img alt="MyBord logo" src={logo} /> */}
+        <img alt="MyBord logo" src={logo} />
         <div className={styles.lottieDiv}>
           <LottiePlayer
             animationData={dotLoading}
