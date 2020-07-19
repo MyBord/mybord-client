@@ -13,6 +13,8 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
+  * align logo in navigation
+  * when you click the 'about mybord' link, hide the popover
   * have session be remembered by user
   * when logging in, cards show up before loading is done ... this is if you login, logout, and
     login, all as part of the same session?
@@ -23,6 +25,7 @@ This document is used to outline current project management priorities.
 
 ### C. Medium
 
+  * clicking on a link for a page that you are already on does not re-render the page
   * fix issue where sometimes the profile badge will render after the page renders when you do a
    hard refresh
   * card menu button

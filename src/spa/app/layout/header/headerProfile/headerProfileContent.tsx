@@ -3,15 +3,10 @@ import { useLazyQuery } from '@apollo/react-hooks';
 import Icon from 'icons/icon/icon';
 import Typography from 'typography/typography';
 import { LOGOUT_USER_QUERY } from 'schema/user';
-import { PopOverCallback } from 'types/modalTypes';
 import { useAuthenticationContext } from 'context/authenticationContext/authenticationContext';
 import * as styles from './headerProfile.module.less';
 
-interface Props {
-  hidePopOver: PopOverCallback['hidePopOver'];
-}
-
-const HeaderProfileContent: React.FC<Props> = ({ hidePopOver }) => {
+const HeaderProfileContent: React.FC = () => {
   const [LogoutUserQuery] = useLazyQuery(LOGOUT_USER_QUERY);
   const { setAuthenticationStatus } = useAuthenticationContext();
 
@@ -39,7 +34,7 @@ const HeaderProfileContent: React.FC<Props> = ({ hidePopOver }) => {
           link="about"
           size="three"
           text="About MyBord"
-          onClick={hidePopOver}
+          onClick={() => console.log('hide popover')}
         />
       </li>
     </ul>
