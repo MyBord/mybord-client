@@ -5,10 +5,7 @@ import HeaderProfileContent from './headerProfileContent';
 import * as styles from './headerProfile.module.less';
 
 const HeaderProfile: React.FC = () => (
-  <PopOver
-    Content={<HeaderProfileContent />}
-    placement="bottom-right"
-  >
+  <PopOver Content={<HeaderProfileContent />} placement="bottom-right">
     <div className={styles.div}>
       <Icon iconName="avatar" size={40} />
     </div>
