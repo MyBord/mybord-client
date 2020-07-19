@@ -3,6 +3,7 @@ import { ExportedColors } from 'types/colorTypes';
 import {
   TypographyFont,
   TypographySize,
+  TypographyTextAlign,
   TypographyWeight,
 } from 'types/typographyTypes';
 import TypographyButton from './typographyButton/typographyButton';
@@ -20,6 +21,7 @@ interface Props {
   showExpandCollapseButton?: boolean;
   size?: TypographySize;
   text: string;
+  textAlign?: TypographyTextAlign;
   weight?: TypographyWeight;
 }
 
@@ -32,6 +34,7 @@ const Typography = React.forwardRef<HTMLDivElement, Props>(({
   onClick = null,
   size = 'normal',
   text,
+  textAlign = null,
   weight = 'regular',
 }, ref) => {
   const Component: React.FC<{children: React.ReactNode}> = ({ children }) => {
@@ -41,6 +44,7 @@ const Typography = React.forwardRef<HTMLDivElement, Props>(({
           font={font}
           link={link}
           size={size}
+          textAlign={textAlign}
           weight={weight}
         >
           {children}
@@ -54,6 +58,7 @@ const Typography = React.forwardRef<HTMLDivElement, Props>(({
           font={font}
           onClick={onClick}
           size={size}
+          textAlign={textAlign}
           weight={weight}
         >
           {children}
@@ -66,6 +71,7 @@ const Typography = React.forwardRef<HTMLDivElement, Props>(({
         color={color}
         font={font}
         size={size}
+        textAlign={textAlign}
         weight={weight}
       >
         {children}

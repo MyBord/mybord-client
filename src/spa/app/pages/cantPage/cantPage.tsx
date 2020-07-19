@@ -16,6 +16,7 @@ const CantPage: React.FC = () => (
     <Typography
       size="four"
       text="Sorry, page not found."
+      textAlign="center"
     />
   </div>
 );

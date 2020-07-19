@@ -3,6 +3,7 @@ import { ExportedColors } from 'types/colorTypes';
 import {
   TypographyFont,
   TypographySize,
+  TypographyTextAlign,
   TypographyWeight,
 } from 'types/typographyTypes';
 import * as styles from '../typography.module.less';
@@ -12,6 +13,7 @@ interface Props {
   color: ExportedColors;
   font: TypographyFont;
   size: TypographySize;
+  textAlign: TypographyTextAlign;
   weight: TypographyWeight;
 }
 
@@ -20,6 +22,7 @@ const TypographyParagraph: React.FC<Props> = ({
   color,
   font,
   size,
+  textAlign,
   weight,
 }) => (
   <p
@@ -28,6 +31,7 @@ const TypographyParagraph: React.FC<Props> = ({
       styles[color],
       styles[font],
       styles[size],
+      styles[textAlign],
       styles[weight],
     ].join(' ')}
   >

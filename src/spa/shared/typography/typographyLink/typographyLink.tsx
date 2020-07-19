@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import {
   TypographyFont,
   TypographySize,
+  TypographyTextAlign,
   TypographyWeight,
 } from 'types/typographyTypes';
 import * as styles from '../typography.module.less';
@@ -12,6 +13,7 @@ interface Props {
   font: TypographyFont;
   link: string;
   size: TypographySize;
+  textAlign?: TypographyTextAlign;
   weight: TypographyWeight;
 }
 
@@ -20,6 +22,7 @@ const TypographyLink: React.FC<Props> = ({
   font,
   link,
   size,
+  textAlign,
   weight,
 }) => (
   <Link
@@ -28,6 +31,7 @@ const TypographyLink: React.FC<Props> = ({
       styles.typography,
       styles[font],
       styles[size],
+      styles[textAlign],
       styles[weight],
     ].join(' ')}
     to={link}
