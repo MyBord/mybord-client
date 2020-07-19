@@ -13,8 +13,6 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
-  * update timing of spinner wait animation - layout.tsx
-  * why is there friction when using my filters?
   * fix dashboard filters height and styling
   * have session be remembered by user
   * add about page - for app and landing
