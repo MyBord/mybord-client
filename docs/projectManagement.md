@@ -13,8 +13,6 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
-  * text align text in pm
-  * fix circle ci build
   * update navigation pages, reduce to dashboard, friends, trending - and remove related pages
     * delete old lotties too
   * have session be remembered by user
