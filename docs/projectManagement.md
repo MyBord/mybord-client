@@ -13,7 +13,7 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
-  * align logo in navigation
+  * fix positioning of logo in nav
   * when you click the 'about mybord' link, hide the popover
   * have session be remembered by user
   * fix callbacks for cardMenuButton and popConfirm
