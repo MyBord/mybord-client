@@ -1,21 +1,18 @@
 import * as React from 'react';
 import Icon from 'icons/icon/icon';
 import PopOver from 'modals/popOver/popOver';
-import ProfileContent from './profileContent';
+import HeaderProfileContent from './headerProfileContent';
 import { useHydrationContext } from 'context/hydrationContext/hydrationContext';
-import * as styles from './profile.module.less';
+import * as styles from './headerProfile.module.less';
 
-const Profile: React.FC = () => {
+const HeaderProfile: React.FC = () => {
   const { isAnimationComplete, isHydrated } = useHydrationContext();
 
   if (isAnimationComplete && isHydrated) {
     return (
       <PopOver
-        Content={<ProfileContent />}
+        Content={<HeaderProfileContent />}
         placement="bottom-right"
-        position={{
-          top: -16,
-        }}
       >
         <div className={styles.div}>
           <Icon iconName="avatar" size={40} />
@@ -27,4 +24,4 @@ const Profile: React.FC = () => {
   return null;
 };
 
-export default Profile;
+export default HeaderProfile;
