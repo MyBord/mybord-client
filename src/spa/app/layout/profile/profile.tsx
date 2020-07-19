@@ -10,7 +10,13 @@ const Profile: React.FC = () => {
 
   if (isAnimationComplete && isHydrated) {
     return (
-      <PopOver Content={<ProfileContent />} placement="bottom-right">
+      <PopOver
+        Content={<ProfileContent />}
+        placement="bottom-right"
+        position={{
+          top: -16,
+        }}
+      >
         <div className={styles.div}>
           <Icon iconName="avatar" size={40} />
         </div>

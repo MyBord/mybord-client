@@ -13,7 +13,6 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
-  * reduce gap between profile and profile popover content
   * update timing of spinner wait animation - layout.tsx
   * why is there friction when using my filters?
   * fix dashboard filters height and styling
