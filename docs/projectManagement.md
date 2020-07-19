@@ -14,9 +14,7 @@ This document is used to outline current project management priorities.
 ### A. Highest - MVP
 
   * fix circle ci build
-  * make animation for header
   * update navigation pages, reduce to dashboard, friends, trending - and remove related pages
-  * fix dashboard filters height and styling
   * have session be remembered by user
   * add about page - for app and landing
     * add transitions for landing between login and and about? or just use same parent container?
