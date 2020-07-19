@@ -20,26 +20,6 @@ const NavigationButtons: React.FC = () => (
         link="friends"
         pageTitle="Friends"
       />
-      <NavigationButton
-        iconName="calendar"
-        link="history"
-        pageTitle="History"
-      />
-      <NavigationButton
-        iconName="mail"
-        link="inbox"
-        pageTitle="Mail"
-      />
-      <NavigationButton
-        iconName="playlist"
-        link="playlist"
-        pageTitle="Playlist"
-      />
-      <NavigationButton
-        iconName="star"
-        link="favorites"
-        pageTitle="Favorites"
-      />
     </section>
   </section>
 );
