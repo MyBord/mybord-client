@@ -4,9 +4,9 @@ import Icon from 'icons/icon/icon';
 import Typography from 'typography/typography';
 import { LOGOUT_USER_QUERY } from 'schema/user';
 import { useAuthenticationContext } from 'context/authenticationContext/authenticationContext';
-import * as styles from './headerProfile.module.less';
+import * as styles from './profile.module.less';
 
-const HeaderProfileContent: React.FC = () => {
+const ProfileContent: React.FC = () => {
   const [LogoutUserQuery] = useLazyQuery(LOGOUT_USER_QUERY);
   const { setAuthenticationStatus } = useAuthenticationContext();
 
@@ -40,4 +40,4 @@ const HeaderProfileContent: React.FC = () => {
   );
 };
 
-export default HeaderProfileContent;
+export default ProfileContent;

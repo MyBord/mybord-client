@@ -3,7 +3,7 @@ import NavigationButton from './navigationButton/navigationButton';
 import * as styles from './navigationButtons.module.less';
 
 const NavigationButtons: React.FC = () => (
-  <section>
+  <section className={styles.parentSection}>
     <section className={styles.section}>
       <NavigationButton
         iconName="dashboard"
