@@ -12,6 +12,7 @@ interface Props {
   children: React.ReactNode;
   font: TypographyFont;
   link: string;
+  onClick?: () => void;
   size: TypographySize;
   textAlign?: TypographyTextAlign;
   weight: TypographyWeight;
@@ -21,6 +22,7 @@ const TypographyLink: React.FC<Props> = ({
   children,
   font,
   link,
+  onClick,
   size,
   textAlign,
   weight,
@@ -35,6 +37,7 @@ const TypographyLink: React.FC<Props> = ({
       styles[weight],
     ].join(' ')}
     to={link}
+    onClick={onClick}
   >
     {children}
   </Link>

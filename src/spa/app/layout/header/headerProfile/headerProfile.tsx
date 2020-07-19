@@ -6,14 +6,15 @@ import HeaderProfileContent from './headerProfileContent';
 import * as styles from './headerProfile.module.less';
 
 const HeaderProfile: React.FC = () => {
-  const [showPopOver, setShowPopOver] = React.useState(null);
+  let hidePopOver: PopOverCallback['hidePopOver'];
+
   const handleCallback = (props: PopOverCallback): void => {
-    console.log(props.showPopOver);
+    hidePopOver = props.hidePopOver;
   };
 
   return (
     <PopOver
-      Content={<HeaderProfileContent />}
+      Content={<HeaderProfileContent hidePopOver={hidePopOver} />}
       callback={handleCallback}
       placement="bottom-right"
     >

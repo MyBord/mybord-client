@@ -43,6 +43,7 @@ const Typography = React.forwardRef<HTMLDivElement, Props>(({
         <TypographyLink
           font={font}
           link={link}
+          onClick={onClick}
           size={size}
           textAlign={textAlign}
           weight={weight}
