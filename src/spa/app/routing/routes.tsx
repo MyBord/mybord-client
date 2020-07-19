@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { AnimatePresence } from 'framer-motion';
 import { Switch, useLocation } from 'react-router-dom';
+const AboutPage = React.lazy(() => import('pages/aboutPage/aboutPage'));
 const CantPage = React.lazy(() => import('pages/cantPage/cantPage'));
 const DashboardPage = React.lazy(() => import('pages/dashboardPage/dashboardPage'));
 const ErrorPage = React.lazy(() => import('pages/errorPage/errorPage'));
@@ -23,6 +24,9 @@ const Routes: React.FC = () => {
         {/* ----- PAGES ----- */}
         <MotionRoute exact path="/404">
           <CantPage />
+        </MotionRoute>
+        <MotionRoute exact path="/about">
+          <AboutPage />
         </MotionRoute>
         <MotionRoute exact path="/error">
           <ErrorPage />

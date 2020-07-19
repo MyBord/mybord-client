@@ -31,7 +31,7 @@ const HeaderProfileContent: React.FC = () => {
       <li>
         <Typography
           Content={AboutIconContent}
-          link="trending"
+          link="about"
           size="three"
           text="About MyBord"
         />
