@@ -14,6 +14,8 @@ This document is used to outline current project management priorities.
 ### A. Highest - MVP
 
   * have session be remembered by user
+  * when logging in, cards show up before loading is done ... this is if you login, logout, and
+    login, all as part of the same session?
   * add about page - for app and landing
     * add transitions for landing between login and and about? or just use same parent container?
 
