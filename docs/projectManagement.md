@@ -14,6 +14,7 @@ This document is used to outline current project management priorities.
 ### A. Highest - MVP
 
   * make animation for header
+  * update navigation pages, reduce to dashboard, friends, trending - and remove related pages
   * fix dashboard filters height and styling
   * have session be remembered by user
   * add about page - for app and landing
