@@ -3,14 +3,9 @@
 
 import * as React from 'react';
 import * as sizes from 'styles/_sizes.less';
-import { PopOverProps, PopOverStyle } from 'types/modalTypes';
 import { ClientRect } from 'types/htmlTypes';
-
-// get the numerical pixel unit from a given string, e.g. "24px" => 24
-const getUnit = (stringUnit: string): number => Number(stringUnit.split('px')[0]);
-
-// converts numerical value to pixel string unit, e.g. 24 => "24px"
-const pixelize = (unit: number): string => `${unit}px`;
+import { PopOverProps, PopOverStyle } from 'types/modalTypes';
+import { getUnit, pixelize } from 'utils/cssUtils';
 
 const getStyle = (
   childrenRect: ClientRect,
@@ -34,16 +29,16 @@ const getStyle = (
 
   switch (placementOne) {
     case 'bottom':
-      style.top = pixelize(childrenRect.bottom + popOverMargin);
+      style.top = pixelize(childrenRect.bottom + popOverMargin, 'px');
       break;
     case 'left':
-      style.left = pixelize(childrenRect.left - popOverRect.width - popOverMargin);
+      style.left = pixelize(childrenRect.left - popOverRect.width - popOverMargin, 'px');
       break;
     case 'right':
-      style.left = pixelize(childrenRect.right + popOverMargin);
+      style.left = pixelize(childrenRect.right + popOverMargin, 'px');
       break;
     case 'top':
-      style.top = pixelize(childrenRect.top - popOverRect.height - popOverMargin);
+      style.top = pixelize(childrenRect.top - popOverRect.height - popOverMargin, 'px');
       break;
     default:
       break;
@@ -51,25 +46,31 @@ const getStyle = (
 
   if (placementTwo === 'center') {
     if (['bottom', 'top'].includes(placementOne)) {
-      style.left = pixelize(childrenRect.left + childrenRect.width / 2 - popOverRect.width / 2);
+      style.left = pixelize(
+        childrenRect.left + childrenRect.width / 2 - popOverRect.width / 2,
+        'px',
+      );
     }
 
     if (['left', 'right'].includes(placementOne)) {
-      style.top = pixelize(childrenRect.top + childrenRect.height / 2 - popOverRect.height / 2);
+      style.top = pixelize(
+        childrenRect.top + childrenRect.height / 2 - popOverRect.height / 2,
+        'px',
+      );
     }
   } else {
     switch (placementTwo) {
       case 'bottom':
-        style.top = pixelize(childrenRect.bottom - popOverRect.height);
+        style.top = pixelize(childrenRect.bottom - popOverRect.height, 'px');
         break;
       case 'left':
-        style.left = pixelize(childrenRect.left);
+        style.left = pixelize(childrenRect.left, 'px');
         break;
       case 'right':
-        style.left = pixelize(childrenRect.right - popOverRect.width);
+        style.left = pixelize(childrenRect.right - popOverRect.width, 'px');
         break;
       case 'top':
-        style.top = pixelize(childrenRect.top);
+        style.top = pixelize(childrenRect.top, 'px');
         break;
       default:
         break;
@@ -93,10 +94,10 @@ const mutateStyle = (
   // move the popover by custom x y coordinates when provided via props
   if (position && (position.left || position.top)) {
     if (position.left) {
-      finalStyle.left = pixelize(getUnit(finalStyle.left) + position.left);
+      finalStyle.left = pixelize(getUnit(finalStyle.left, 'px') + position.left, 'px');
     }
     if (position.top) {
-      finalStyle.top = pixelize(getUnit(finalStyle.top) + position.top);
+      finalStyle.top = pixelize(getUnit(finalStyle.top, 'px') + position.top, 'px');
     }
     return finalStyle;
   }
@@ -104,17 +105,17 @@ const mutateStyle = (
   // If the popOver would overflow on the right side of the window, then instead remove its
   // left positioning and give it some right margin, and set the caret position to 'auto' if
   // the popover has a caret
-  if (getUnit(finalStyle.left) + popOverRect.width >= windowWidth) {
+  if (getUnit(finalStyle.left, 'px') + popOverRect.width >= windowWidth) {
     delete finalStyle.left;
-    finalStyle.right = pixelize(16);
+    finalStyle.right = pixelize(16, 'px');
     if (caretPlacement) {
       setCaretPlacement('auto');
     }
   }
 
   // If the popover is too close to the top of the window, or above it, then move it down
-  if (getUnit(finalStyle.top) < 16) {
-    finalStyle.top = pixelize(16);
+  if (getUnit(finalStyle.top, 'px') < 16) {
+    finalStyle.top = pixelize(16, 'px');
   }
 
   return finalStyle;
