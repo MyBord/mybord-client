@@ -6,6 +6,7 @@ import HeaderProfileContent from './headerProfileContent';
 import * as styles from './headerProfile.module.less';
 
 const HeaderProfile: React.FC = () => {
+  const [showPopOver, setShowPopOver] = React.useState(null);
   const handleCallback = (props: PopOverCallback): void => {
     console.log(props.showPopOver);
   };

@@ -27,7 +27,7 @@ const PopOver: React.FC<Props> = ({
     setFinalCaretPlacement,
   ] = React.useState<Props['caretPlacement']>(caretPlacement);
   const [popOverStyle, setPopOverStyle] = React.useState<PopOverStyle>(null);
-  const [showPopOver, setShowPopOver] = React.useState<boolean>(defaultVisible);
+  const [isVisible, setIsVisible] = React.useState<boolean>(defaultVisible);
   const popOverRef = React.useRef<HTMLDivElement>(null);
   const newChildren = React.cloneElement(
     children,
@@ -39,12 +39,12 @@ const PopOver: React.FC<Props> = ({
   React.useEffect(() => {
     if (callback) {
       callback({
-        hidePopOver: () => setShowPopOver(false),
-        showPopOver: () => setShowPopOver(true),
-        popOverVisibility: showPopOver,
+        hidePopOver: () => setIsVisible(false),
+        isVisible,
+        showPopOver: () => setIsVisible(true),
       });
     }
-  }, [callback, showPopOver]);
+  }, [callback, isVisible]);
 
   // ----- CLICK & HOVER EVENT LISTENERS ----- //
   // adds a click or hover event listener to conditionally display the popover
@@ -55,42 +55,42 @@ const PopOver: React.FC<Props> = ({
     let timeout: NodeJS.Timeout = null;
 
     const handleClick = (event: Event): void => {
-      if (!showPopOver && childrenNode.contains(event.target as Node)) {
+      if (!isVisible && childrenNode.contains(event.target as Node)) {
         if (delay) {
-          setTimeout(() => setShowPopOver(true), delay * 1000);
+          setTimeout(() => setIsVisible(true), delay * 1000);
         } else {
-          setShowPopOver(true);
+          setIsVisible(true);
         }
       }
 
-      if (showPopOver && childrenNode.contains(event.target as Node)) {
-        setShowPopOver(false);
+      if (isVisible && childrenNode.contains(event.target as Node)) {
+        setIsVisible(false);
       }
 
       if (
-        showPopOver
+        isVisible
         && popOverNode
         && !popOverNode.contains(event.target as Node)
         && !childrenNode.contains(event.target as Node)
       ) {
-        setShowPopOver(false);
+        setIsVisible(false);
       }
     };
 
     const handleHover = (event: Event): void => {
       if (delay && childrenNode.contains(event.target as Node)) {
-        timeout = setTimeout(() => setShowPopOver(true), delay * 1000);
+        timeout = setTimeout(() => setIsVisible(true), delay * 1000);
       } else if (childrenNode.contains(event.target as Node)) {
-        setShowPopOver(true);
+        setIsVisible(true);
       } else {
-        setShowPopOver(false);
+        setIsVisible(false);
       }
     };
 
     const hideMouseOut = (): void => {
       if (trigger === 'hover') {
         clearTimeout(timeout);
-        setShowPopOver(false);
+        setIsVisible(false);
       }
     };
 
@@ -121,8 +121,8 @@ const PopOver: React.FC<Props> = ({
     childrenRef,
     delay,
     popOverRef,
-    showPopOver,
-    setShowPopOver,
+    isVisible,
+    setIsVisible,
     trigger,
   ]);
 
@@ -156,7 +156,7 @@ const PopOver: React.FC<Props> = ({
     placement,
     popOverRef,
     position,
-    showPopOver,
+    isVisible,
   ]);
 
   // ----- RETURNS COMPONENT ----- //
@@ -169,7 +169,7 @@ const PopOver: React.FC<Props> = ({
           color={color}
           popOverStyle={popOverStyle}
           ref={popOverRef}
-          showPopOver={showPopOver}
+          isVisible={isVisible}
         >
           {
             finalCaretPlacement && (

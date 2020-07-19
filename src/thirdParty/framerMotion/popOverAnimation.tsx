@@ -21,19 +21,19 @@ const variants = {
 interface Props {
   children: React.ReactNode;
   color: PopOverProps['color'];
+  isVisible: boolean;
   popOverStyle: PopOverStyle;
-  showPopOver: boolean;
 }
 
 const PopOverAnimation = React.forwardRef<HTMLDivElement, Props>(({
   children,
   color,
+  isVisible,
   popOverStyle,
-  showPopOver,
 }, ref) => (
   <AnimatePresence>
     {
-      showPopOver && (
+      isVisible && (
         <motion.div
           animate="enter"
           className={[styles.div, styles[color]].join(' ')}

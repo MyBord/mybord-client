@@ -2,7 +2,7 @@ import * as React from 'react';
 
 export interface PopOverCallback {
   hidePopOver: () => void;
-  popOverVisibility: boolean;
+  isVisible: boolean;
   showPopOver: () => void;
 }
 
