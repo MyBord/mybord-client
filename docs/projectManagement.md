@@ -16,6 +16,7 @@ This document is used to outline current project management priorities.
   * profile should not show until hydration and animation is complete
   * reduce gap between profile and profile popover content
   * left hand nav isn't vertically centered
+  * update timing of spinner wait animation
   * why is there friction when using my filters?
   * fix dashboard filters height and styling
   * have session be remembered by user
