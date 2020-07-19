@@ -1,6 +1,6 @@
-// *1: `isHydrated` refers to if the page being displayed has been properly hydrated and is ready
-// to be viewed by the user (when we refer to hydration, we mean if the page / application has
-// all the data / back end data necessary to render).
+// *1: `isHydrated` refers to if the page being displayed when the user begins their session has
+// been properly hydrated and is ready to be viewed by the user (when we refer to hydration, we
+// mean if the page / application has all the data / back end data necessary to render).
 //   We need to know this for the scenario of when a user starts a new browser session in our spa;
 // in that case, instead of using a React Suspense fallback, we will first show the user a
 // 'SpaFallback' component during the spa initialization period, and we want to continue to

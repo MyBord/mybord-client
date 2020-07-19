@@ -13,7 +13,6 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
-  * profile should not show until hydration and animation is complete
   * reduce gap between profile and profile popover content
   * update timing of spinner wait animation - layout.tsx
   * why is there friction when using my filters?
@@ -26,6 +25,8 @@ This document is used to outline current project management priorities.
 
 ### C. Medium
 
+  * fix issue where sometimes the profile badge will render after the page renders when you do a
+   hard refresh
   * card menu button
     * if you click the card menu button and the card menu button content is shown, and then hover
     outside of the card content, the card menu button content should then be hidden / no longer
