@@ -20,7 +20,7 @@ interface Props {
 const NavigationAnimation: React.FC<Props> = ({ children }) => (
   <motion.nav
     animate="enter"
-    className={styles.navigation}
+    className={styles.nav}
     initial="initial"
     variants={variants}
   >
