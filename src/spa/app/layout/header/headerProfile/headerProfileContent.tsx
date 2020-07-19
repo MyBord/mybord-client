@@ -34,6 +34,7 @@ const HeaderProfileContent: React.FC = () => {
           link="about"
           size="three"
           text="About MyBord"
+          onClick={() => console.log('hide popover')}
         />
       </li>
     </ul>

@@ -13,7 +13,7 @@ const CardMenuButton: React.FC<Props> = ({ userCard }) => {
   const [showPopOver, setShowPopOver] = React.useState<boolean>(false);
 
   const handleCallback = (props: PopOverCallback): void => {
-    setShowPopOver(props.showPopOver);
+    // setShowPopOver(props.showPopOver);
   };
 
   return (
