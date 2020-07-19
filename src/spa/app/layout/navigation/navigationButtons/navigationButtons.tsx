@@ -17,8 +17,8 @@ const NavigationButtons: React.FC = () => (
       />
       <NavigationButton
         iconName="addUser"
-        link="following"
-        pageTitle="Following"
+        link="friends"
+        pageTitle="Friends"
       />
       <NavigationButton
         iconName="calendar"
