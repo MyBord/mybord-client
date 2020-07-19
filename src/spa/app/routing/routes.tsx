@@ -5,7 +5,7 @@ const CantPage = React.lazy(() => import('pages/cantPage/cantPage'));
 const DashboardPage = React.lazy(() => import('pages/dashboardPage/dashboardPage'));
 const ErrorPage = React.lazy(() => import('pages/errorPage/errorPage'));
 const FavoritesPage = React.lazy(() => import('pages/favoritesPage/favoritesPage'));
-const FollowingPage = React.lazy(() => import('pages/followingPage/followingPage'));
+const FriendsPage = React.lazy(() => import('pages/friendsPage/friendsPage'));
 const HistoryPage = React.lazy(() => import('pages/historyPage/historyPage'));
 const InboxPage = React.lazy(() => import('pages/inboxPage/inboxPage'));
 const PlaylistPage = React.lazy(() => import('pages/playlistPage/playlistPage'));
@@ -34,8 +34,8 @@ const Routes: React.FC = () => {
         <MotionRoute exact path="/favorites">
           <FavoritesPage />
         </MotionRoute>
-        <MotionRoute exact path="/following">
-          <FollowingPage />
+        <MotionRoute exact path="/friends">
+          <FriendsPage />
         </MotionRoute>
         <MotionRoute exact path="/history">
           <HistoryPage />

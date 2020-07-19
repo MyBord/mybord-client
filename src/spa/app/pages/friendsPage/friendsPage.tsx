@@ -3,7 +3,7 @@ import LottiePlayer from 'lotty/lottiePlayer';
 import followingAnimation from 'lotty/lotties/following.json';
 import pageWrapper from 'pages/pageWrapper/pageWrapper';
 
-const FollowingPage: React.FC = () => (
+const FriendsPage: React.FC = () => (
   <LottiePlayer
     animationData={followingAnimation}
     autoplay
@@ -12,4 +12,4 @@ const FollowingPage: React.FC = () => (
   />
 );
 
-export default pageWrapper({ Component: FollowingPage });
+export default pageWrapper({ Component: FriendsPage });
