@@ -13,9 +13,6 @@ const HeaderProfile: React.FC = () => {
       <PopOver
         Content={<HeaderProfileContent />}
         placement="bottom-right"
-        position={{
-          top: -16,
-        }}
       >
         <div className={styles.div}>
           <Icon iconName="avatar" size={40} />
