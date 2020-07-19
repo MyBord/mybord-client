@@ -25,7 +25,7 @@ const PopConfirm: React.FC<Props> = ({
   let setShowPopOver: SetState<boolean>;
 
   const handleCallback = (props: PopOverCallback): void => {
-    setShowPopOver = props.setShowPopOver;
+    // setShowPopOver = props.setShowPopOver;
   };
 
   const handleNo = (): void => {

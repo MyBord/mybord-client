@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { SetState } from 'types/reactTypes';
 
 export interface PopOverCallback {
-  showPopOver: boolean;
-  setShowPopOver: SetState<boolean>;
+  hidePopOver: () => void;
+  popOverVisibility: boolean;
+  showPopOver: () => void;
 }
 
 export interface PopOverProps {
