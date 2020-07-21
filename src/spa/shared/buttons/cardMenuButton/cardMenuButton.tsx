@@ -13,9 +13,7 @@ const CardMenuButton: React.FC<Props> = ({ userCard }) => {
   const [isPopOverVisible, setIsPopOverVisible] = React.useState<boolean>(false);
 
   const handleCallback = (props: PopOverCallback): void => {
-    if (!isPopOverVisible) {
-      setIsPopOverVisible(props.isVisible);
-    }
+    setIsPopOverVisible(props.isVisible);
   };
 
   return (
