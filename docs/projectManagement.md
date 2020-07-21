@@ -19,6 +19,8 @@ This document is used to outline current project management priorities.
     login, all as part of the same session?
   * add about page - for app and landing
     * add transitions for landing between login and and about? or just use same parent container?
+  * If I click on one card menu button and then another and then another, they will all stay
+   visible  
 
 ### B. High - MVP
 
