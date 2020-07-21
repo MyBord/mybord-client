@@ -39,9 +39,9 @@ const PopOver: React.FC<Props> = ({
   React.useEffect(() => {
     if (callback) {
       callback({
-        hidePopOver: () => setIsVisible(false),
+        hidePopOver: () => () => setIsVisible(false),
         isVisible,
-        showPopOver: () => setIsVisible(true),
+        showPopOver: () => () => setIsVisible(true),
       });
     }
   }, [callback, isVisible]);
