@@ -27,6 +27,10 @@ This document is used to outline current project management priorities.
 ### C. Medium
 
   * clicking on a link for a page that you are already on does not re-render the page
+  * Cards show up after logging in. To replicate:
+    * Start a new, logged out session.
+    * As part of the same session: 1. Login. After the app loads, 2. log out. 3. Login again.
+    * After #3, logging in again, the cards show show up immediately. This is not desired.
   * popover
     * If the popover is of trigger type 'hover', then when you hover from the child item to the
      popover content, the popover will hide again because there is a gap between the child and
