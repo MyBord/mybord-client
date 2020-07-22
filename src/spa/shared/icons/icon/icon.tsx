@@ -9,20 +9,20 @@ const ChartIcon = React.lazy(() => import('./individualIcons/chartIcon'));
 const CloseIcon = React.lazy(() => import('./individualIcons/closeIcon'));
 const DashboardIcon = React.lazy(() => import('./individualIcons/dashboardIcon'));
 const DeleteIcon = React.lazy(() => import('./individualIcons/deleteIcon'));
-const DownArrowIcon = React.lazy(() => import('./individualIcons/deleteIcon'));
-const EyeIcon = React.lazy(() => import('./individualIcons/deleteIcon'));
-const FacebookIcon = React.lazy(() => import('./individualIcons/deleteIcon'));
-const FilterIcon = React.lazy(() => import('./individualIcons/deleteIcon'));
-const GoogleIcon = React.lazy(() => import('./individualIcons/deleteIcon'));
-const HeartIcon = React.lazy(() => import('./individualIcons/deleteIcon'));
-const LogoutIcon = React.lazy(() => import('./individualIcons/deleteIcon'));
-const MailIcon = React.lazy(() => import('./individualIcons/deleteIcon'));
-const MonkeyIcon = React.lazy(() => import('./individualIcons/deleteIcon'));
-const PencilIcon = React.lazy(() => import('./individualIcons/deleteIcon'));
-const PlaylistIcon = React.lazy(() => import('./individualIcons/deleteIcon'));
-const StarIcon = React.lazy(() => import('./individualIcons/deleteIcon'));
-const ThumbsUpIcon = React.lazy(() => import('./individualIcons/deleteIcon'));
-const WarningIcon = React.lazy(() => import('./individualIcons/deleteIcon'));
+const DownArrowIcon = React.lazy(() => import('./individualIcons/downArrowIcon'));
+const EyeIcon = React.lazy(() => import('./individualIcons/eyeIcon'));
+const FacebookIcon = React.lazy(() => import('./individualIcons/facebookIcon'));
+const FilterIcon = React.lazy(() => import('./individualIcons/filterIcon'));
+const GoogleIcon = React.lazy(() => import('./individualIcons/googleIcon'));
+const HeartIcon = React.lazy(() => import('./individualIcons/heartIcon'));
+const LogoutIcon = React.lazy(() => import('./individualIcons/logoutIcon'));
+const MailIcon = React.lazy(() => import('./individualIcons/mailIcon'));
+const MonkeyIcon = React.lazy(() => import('./individualIcons/monkeyIcon'));
+const PencilIcon = React.lazy(() => import('./individualIcons/pencilIcon'));
+const PlaylistIcon = React.lazy(() => import('./individualIcons/playlistIcon'));
+const StarIcon = React.lazy(() => import('./individualIcons/starIcon'));
+const ThumbsUpIcon = React.lazy(() => import('./individualIcons/thumbsUpIcon'));
+const WarningIcon = React.lazy(() => import('./individualIcons/warningIcon'));
 
 // declaring an iconNames from an object instead of an array
 // (e.g. ['iconName1', 'iconName2'])
