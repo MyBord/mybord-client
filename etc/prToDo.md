@@ -6,8 +6,13 @@ Make sure to remove all notes before merging (except for this one, of course).
 
 ### I. General
 
-* TypeScript
-* GraphQL
+* [TypeScript](https://www.typescriptlang.org/)
+* [GraphQL](https://graphql.org/)
+* [Webpack](https://webpack.js.org)
+* [Babel](https://babeljs.io)
+* [ESLint](https://eslint.org)
+* [CircleCI](https://circleci.com)
+* [Jest](https://jestjs.io)
 
 ### II. Front-End
 
@@ -18,13 +23,7 @@ Make sure to remove all notes before merging (except for this one, of course).
   * [GraphQL](https://graphql.org/)
   * [Apollo Client](https://www.apollographql.com/docs/react/)
   * [Axios](https://github.com/axios/axios)
-* Build  
-  * [Webpack](https://webpack.js.org)
-  * [Babel](https://babeljs.io)
-  * [ESLint](https://eslint.org)
-  * [CircleCI](https://circleci.com)
 * Testing  
-  * [Jest](https://jestjs.io)
   * [Enzyme](https://airbnb.io/enzyme/)
 * Styling
   * [Less](http://lesscss.org/)
@@ -51,10 +50,6 @@ Make sure to remove all notes before merging (except for this one, of course).
   * [Express](https://expressjs.com/)
 * ORM
   * [Prisma](https://www.prisma.io/)
-* Build  
-  * [Webpack](https://webpack.js.org)
-  * [Babel](https://babeljs.io)
-  * [ESLint](https://eslint.org)
 * Database  
   * [PostgreSQL](https://www.postgresql.org/)
 * Deployment & Hosting
