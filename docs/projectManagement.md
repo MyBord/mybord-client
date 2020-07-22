@@ -8,6 +8,7 @@ This document is used to outline current project management priorities.
 
 * [I. Priority Levels](#i-priority-levels)   
 * [II. Long Term](#ii-long-term)   
+* [III. Other](#iii-other)   
 
 ## I. Priority Levels
 
@@ -125,4 +126,15 @@ This document is used to outline current project management priorities.
 * add lazy loading and code splitting
 * lazy load user icons
 * lazy load animated icon lottie files
-* look into react-router code splitting
+
+## III. Other
+
+* Set up email account with gmail hosted via mybord.io
+* Legal
+  * Terms and Conditions
+  * GDPR
+  * General NDA; get one for Alex Tass
+  * Copyright / trademark MyBord & MyBord.io ... can I trademark mybord.com?
+  * Legal for work to be allowed to pursue financing / etc
+* how much does mybord.com cost?  
+* get social media handles for mybord
