@@ -8,6 +8,6 @@ export type TypographySize =
   | 'five'
   | 'normal';
 
-export type TypographyTextAlign = 'center' | 'left' | 'right';
+export type TypographyTextAlign = 'center' | 'justify' | 'left' | 'right';
 
 export type TypographyWeight = 'bold' | 'light' | 'regular';

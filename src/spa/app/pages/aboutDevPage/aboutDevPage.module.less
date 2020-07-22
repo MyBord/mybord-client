@@ -1,0 +1,35 @@
+@import "~styles/_sizes";
+
+.img {
+  border-radius: 2rem;
+  height: 45%;
+  width: 45%;
+}
+
+.section {
+  flex: auto;
+  height: 10rem;
+  margin-left: @pageMarginLeft;
+  overflow: auto;
+  padding-right: @pageMarginLeft;
+  :nth-of-type(2) {
+    margin-top: 5rem;
+  }
+}
+
+.paragraphDiv {
+  width: 45%;
+}
+
+.paragraphSection {
+  display: flex;
+  justify-content: space-between;
+}
+
+.parentSection {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin-top: 4rem;
+  width: 100%;
+}
