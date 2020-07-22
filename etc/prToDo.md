@@ -3,6 +3,8 @@ Make sure to remove all notes before merging (except for this one, of course).
 ----------------------------------------------------------------------------------------------------
 
 center images with text in about dev
+use illustrations instead of images in about?
+add moving lottie to split up about dev and stack?
 
 add social to main about section
 
