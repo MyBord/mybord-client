@@ -10,9 +10,15 @@ const AboutDevPage: React.FC = () => (
     <section className={styles.section}>
       <section className={styles.paragraphSection}>
         <div className={styles.paragraphDiv}>
-          <Typography text={loremIpsumLong} />
+          <Typography text={loremIpsumLong} textAlign="justify" />
         </div>
         <img alt="laptop" className={styles.img} src={laptop} />
+      </section>
+      <section className={styles.paragraphSection}>
+        <img alt="laptop" className={styles.img} src={laptop} />
+        <div className={styles.paragraphDiv}>
+          <Typography text={loremIpsumLong} textAlign="justify" />
+        </div>
       </section>
     </section>
   </section>
