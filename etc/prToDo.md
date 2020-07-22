@@ -2,6 +2,8 @@
 Make sure to remove all notes before merging (except for this one, of course).
 ----------------------------------------------------------------------------------------------------
 
+center images with text in about dev
+
 add social to main about section
 
 ## Stack
