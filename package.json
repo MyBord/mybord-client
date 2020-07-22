@@ -3,7 +3,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "storybook": "start-storybook",
+    "storybook": "NODE_ENV=DEV start-storybook",
     "build-storybook": "build-storybook -c .storybook -o .out",
     "remove-dist": "rm -rf dist",
     "copy-index": "cp src/index.html dist/index.html",
