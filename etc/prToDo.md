@@ -67,3 +67,8 @@ add social to main about section
 ### IV. Additional Credit to:
 * [Johannes Kettmann & GraphQL Passport](https://github.com/jkettmann/graphql-passport)
 * [Alex Tass for making our awesome logo](https://alextass.com/)
+
+### V. Road Map
+
+* Mobile
+* App
