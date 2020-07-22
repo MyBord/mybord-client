@@ -4,7 +4,6 @@ import PopOver from 'modals/popOver/popOver';
 import Typography from 'typography/typography';
 import memo from 'utils/memo';
 import { PopOverCallback, PopOverProps } from 'types/modalTypes';
-import { SetState } from 'types/reactTypes';
 import * as styles from './popConfirm.module.less';
 
 interface Props {
@@ -22,15 +21,15 @@ const PopConfirm: React.FC<Props> = ({
   placement = 'top-center',
   text,
 }) => {
-  let setShowPopOver: SetState<boolean>;
+  const [hidePopOver, setHidePopOver] = React.useState<PopOverCallback['hidePopOver']>(null);
 
   const handleCallback = (props: PopOverCallback): void => {
-    // setShowPopOver = props.setShowPopOver;
+    if (!hidePopOver) {
+      setHidePopOver(props.hidePopOver);
+    }
   };
 
-  const handleNo = (): void => {
-    setShowPopOver(false);
-  };
+  const handleNo = (): void => hidePopOver();
 
   const Content: React.FC = () => (
     <div className={styles.contentContainer}>
