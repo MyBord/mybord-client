@@ -1,11 +1,15 @@
 @import "~styles/_sizes";
 
 .img {
-  width: 10rem;
+  width: 40%;
 }
 
 .section {
-  margin: 0 @pageMarginLeft;
+  flex: auto;
+  height: 10rem;
+  margin-left: @pageMarginLeft;
+  overflow: auto;
+  padding-right: @pageMarginLeft;
 }
 
 .paragraphDiv {
@@ -14,5 +18,12 @@
 
 .paragraphSection {
   display: flex;
+}
+
+.parentSection {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
 }
 
