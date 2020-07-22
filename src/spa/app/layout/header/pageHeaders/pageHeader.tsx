@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useLocation } from 'react-router-dom';
-import AboutPageHeader from './aboutPageHeader/aboutPageHeader';
-import DashboardPageHeader from './dashboardPageHeader/dashboardPageHeader';
+const AboutPageHeader = React.lazy(() => import('./aboutPageHeader/aboutPageHeader'));
+const DashboardPageHeader = React.lazy(() => import('./dashboardPageHeader/dashboardPageHeader'));
 
 const PageHeader: React.FC = () => {
   const { pathname } = useLocation();

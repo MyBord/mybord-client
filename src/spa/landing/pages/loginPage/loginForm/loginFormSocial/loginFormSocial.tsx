@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useLoginContext } from 'landing/pages/loginPage/loginContext/loginContext';
-import LoginFormLoginSocial from './loginFormLoginSocial';
-import LoginFormSignUpSocial from './loginFormSignUpSocial';
+const LoginFormLoginSocial = React.lazy(() => import('./loginFormLoginSocial'));
+const LoginFormSignUpSocial = React.lazy(() => import('./loginFormSignUpSocial'));
 
 const LoginFormSocial: React.FC = () => {
   const { formStatus } = useLoginContext();

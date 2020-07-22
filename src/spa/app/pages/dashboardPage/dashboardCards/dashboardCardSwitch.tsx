@@ -1,5 +1,5 @@
 import * as React from 'react';
-import YoutubeCard from 'shared/cards/youtubeCard/youtubeCard';
+const YoutubeCard = React.lazy(() => import('shared/cards/youtubeCard/youtubeCard'));
 import { UserCard } from 'schema/card';
 
 interface Props {
