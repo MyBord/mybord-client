@@ -2,6 +2,8 @@
 Make sure to remove all notes before merging (except for this one, of course).
 ----------------------------------------------------------------------------------------------------
 
+add social to main about section
+
 ## Stack
 
 ### I. General
