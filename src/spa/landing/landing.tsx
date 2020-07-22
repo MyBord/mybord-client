@@ -1,7 +1,7 @@
 import * as React from 'react';
 import ErrorBoundary from 'landing/errorBoundary/errorBoundary';
 import Routes from 'landing/routing/routes';
-import loginBackground from 'assets/loginBackgroundRoad.jpg';
+import loginBackground from 'assets/pictures/loginBackgroundRoad.jpg';
 import * as styles from './landing.module.less';
 
 const Landing: React.FC = () => (

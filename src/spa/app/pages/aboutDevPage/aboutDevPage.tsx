@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Typography from 'typography/typography';
 import pageWrapper from 'pages/pageWrapper/pageWrapper';
-import laptop from 'assets/laptop.jpg';
+import laptop from 'assets/pictures/laptop.jpg';
 import { loremIpsumLong } from 'utils/loremIpsum';
 import * as styles from './aboutDevPage.module.less';
 
