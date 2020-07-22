@@ -10,6 +10,7 @@ interface Props {
   caretPlacement?: PopOverProps['caretPlacement'];
   children: PopOverProps['children'];
   onConfirm: () => void;
+  onMouseDown?: () => void;
   placement?: PopOverProps['placement'];
   text: string;
 }
@@ -18,6 +19,7 @@ const PopConfirm: React.FC<Props> = ({
   caretPlacement = 'center',
   children,
   onConfirm,
+  onMouseDown = null,
   placement = 'top-center',
   text,
 }) => {
@@ -32,7 +34,7 @@ const PopConfirm: React.FC<Props> = ({
   const handleNo = (): void => hidePopOver();
 
   const Content: React.FC = () => (
-    <div className={styles.contentContainer}>
+    <div className={styles.contentContainer} onMouseDown={onMouseDown}>
       <Typography size="two" text={text} />
       <div className={styles.contentButtons}>
         <Button

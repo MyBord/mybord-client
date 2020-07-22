@@ -42,6 +42,7 @@ const CardMenuButtonContentComponent: React.FC<Props> = ({
       <li className={styles.li}>
         <PopConfirm
           onConfirm={handleDelete}
+          onMouseDown={() => console.log('pop confirm has been clicked')}
           text="Are you sure you want to delete?"
         >
           <Typography

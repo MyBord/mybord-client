@@ -26,6 +26,13 @@ This document is used to outline current project management priorities.
 
 ### C. Medium
 
+  * remove dom event listeners and use react event listeners instead for popover. e.g.:
+      ```
+      const newChildren = React.cloneElement(
+        children,
+        { ref: (node: HTMLElement) => setChildrenRef(node), onMouseDown: () => ... },
+      );
+      ```
   * clicking on a link for a page that you are already on does not re-render the page
   * Cards show up after logging in. To replicate:
     * Start a new, logged out session.
