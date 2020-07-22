@@ -123,9 +123,7 @@ This document is used to outline current project management priorities.
   
 ## II. Long Term  
 
-* add lazy loading and code splitting
-* lazy load user icons
-* lazy load animated icon lottie files
+* add code splitting to webpack (https://webpack.js.org/guides/code-splitting/)
 
 ## III. Other
 
