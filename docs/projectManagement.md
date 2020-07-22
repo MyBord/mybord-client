@@ -49,7 +49,6 @@ This document is used to outline current project management priorities.
    the frame. Only animate the frame when the user initializes / loads / refreshes the
    application when the user has already been authenticated and their session is maintained.
   * create error page if server is down  
-  * add react lazy loading to all files that use switch statements
   * replace error lottie
   * add query string for filters
   * tooltip.tsx has a dependency cycle
