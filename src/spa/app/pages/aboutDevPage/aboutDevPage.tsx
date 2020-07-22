@@ -1,7 +1,8 @@
 import * as React from 'react';
+import StackCard from 'cards/stackCard/stackCard';
 import Typography from 'typography/typography';
-import pageWrapper from 'pages/pageWrapper/pageWrapper';
 import laptop from 'assets/pictures/laptop.jpg';
+import pageWrapper from 'pages/pageWrapper/pageWrapper';
 import { loremIpsumLong } from 'utils/loremIpsum';
 import * as styles from './aboutDevPage.module.less';
 
@@ -22,9 +23,16 @@ const AboutDevPage: React.FC = () => (
       </section>
       <section className={styles.stackSection}>
         <Typography color="blue" size="five" text="Stack" />
+        <StackCard />
+        <StackCard />
+        <StackCard />
+        <StackCard />
+        <StackCard />
         <Typography color="blue" size="four" text="General" />
         <Typography color="blue" size="four" text="Front End" />
         <Typography color="blue" size="four" text="Back End" />
+        <Typography color="blue" size="five" text="Additional Credit To" />
+        <Typography color="blue" size="five" text="Roadmap" />
         <div style={{ height: '30rem', width: '30rem', background: 'pink' }} />
       </section>
     </section>
