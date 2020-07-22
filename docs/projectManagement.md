@@ -43,6 +43,7 @@ This document is used to outline current project management priorities.
     * If the popover is of trigger type 'hover', then when you hover from the child item to the
      popover content, the popover will hide again because there is a gap between the child and
      the popover and there is a moment where you are not hovering over either items.
+  * add storybook build to circle ci   
   * fix when you cannot get the channel icon
   * If a user goes from the landing / login page to the app, when loading the app, DO NOT animate
    the frame. Only animate the frame when the user initializes / loads / refreshes the
@@ -120,6 +121,7 @@ This document is used to outline current project management priorities.
   * create skeletons for login page, etc for slow network
   * create skeletons for all pages
   * if you click on a lottie player, it will pause the animation
+  * lazy load json files from `animatedIcon.tsx`
   
 ## II. Long Term  
 
