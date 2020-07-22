@@ -19,23 +19,15 @@ This document is used to outline current project management priorities.
     login, all as part of the same session?
   * add about page - for app and landing
     * add transitions for landing between login and and about? or just use same parent container?
-  * If I click on one card menu button and then another and then another, they will all stay
-   visible  
+  * when you click delete in the card menu button and get the pop confirm, and then click 'no',
+  two issues occur that need to be fixed: 1. the card menu button content goes away (it should
+  still be shown), 2. the card menu button itself (the icon) flashes / double renders
 
 ### B. High - MVP
 
 ### C. Medium
 
   * clicking on a link for a page that you are already on does not re-render the page
-  * fix issue where sometimes the profile badge will render after the page renders when you do a
-   hard refresh
-  * card menu button
-    * if you click the card menu button and the card menu button content is shown, and then hover
-    outside of the card content, the card menu button content should then be hidden / no longer
-    shown.
-    * when you click delete in the card menu button and get the pop confirm, and then click 'no',
-    two issues occur that need to be fixed: 1. the card menu button content goes away (it should
-    still be shown), 2. the card menu button itself (the icon) flashes / double renders
   * popover
     * If the popover is of trigger type 'hover', then when you hover from the child item to the
      popover content, the popover will hide again because there is a gap between the child and
