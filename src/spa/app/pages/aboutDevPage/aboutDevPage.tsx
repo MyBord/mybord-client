@@ -35,13 +35,16 @@ const AboutDevPage: React.FC = () => (
         </div>
         <Typography color="blue" size="four" text="Front End" />
         <div className={styles.stackCardsDiv}>
-          <StackCard id="typescript" />
-          <StackCard id="graphql" />
-          <StackCard id="webpack" />
-          <StackCard id="babel" />
-          <StackCard id="eslint" />
-          <StackCard id="circleCi" />
-          <StackCard id="jest" />
+          <StackCard id="react" />
+          <StackCard id="apolloClient" />
+          <StackCard id="framerMotion" />
+          <StackCard id="storybook" />
+          <StackCard id="lottie" />
+          <StackCard id="nucleo" />
+          <StackCard id="less" />
+          <StackCard id="cssModules" />
+          <StackCard id="enzyme" />
+          <StackCard id="antDesign" />
         </div>
         <Typography color="blue" size="four" text="Back End" />
         <div className={styles.stackCardsDiv}>

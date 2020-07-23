@@ -4,6 +4,14 @@ add moving lottie to split up about dev and stack?
 add social to main about section
 break up aboutdevpage into multiple components
 
+What to talk about
+  * front end build
+  * back end build
+  * deployment & devops
+  * testing, storybook
+  * special thanks
+  * road map
+
 ## Stack
 
 ### I. General
@@ -56,7 +64,6 @@ break up aboutdevpage into multiple components
   * [PostgreSQL](https://www.postgresql.org/)
 * Authentication
   * [Passport](http://www.passportjs.org/)
-* Virtualization
 * Third Party APIs & Tooling  
   * [Google's Node.js Client Api](https://github.com/googleapis/google-api-nodejs-client#google-apis-nodejs-client)
   
