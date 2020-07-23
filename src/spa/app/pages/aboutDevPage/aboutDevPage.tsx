@@ -25,17 +25,65 @@ const AboutDevPage: React.FC = () => (
         <Typography color="blue" size="five" text="Stack" />
         <Typography color="blue" size="four" text="General" />
         <div className={styles.stackCardsDiv}>
-          <StackCard />
-          <StackCard />
-          <StackCard />
-          <StackCard />
-          <StackCard />
+          <StackCard id="typescript" />
+          <StackCard id="graphql" />
+          <StackCard id="webpack" />
+          <StackCard id="babel" />
+          <StackCard id="eslint" />
+          <StackCard id="circleCi" />
+          <StackCard id="jest" />
         </div>
         <Typography color="blue" size="four" text="Front End" />
+        <div className={styles.stackCardsDiv}>
+          <StackCard id="typescript" />
+          <StackCard id="graphql" />
+          <StackCard id="webpack" />
+          <StackCard id="babel" />
+          <StackCard id="eslint" />
+          <StackCard id="circleCi" />
+          <StackCard id="jest" />
+        </div>
         <Typography color="blue" size="four" text="Back End" />
+        <div className={styles.stackCardsDiv}>
+          <StackCard id="typescript" />
+          <StackCard id="graphql" />
+          <StackCard id="webpack" />
+          <StackCard id="babel" />
+          <StackCard id="eslint" />
+          <StackCard id="circleCi" />
+          <StackCard id="jest" />
+        </div>
+        <Typography color="blue" size="four" text="Deployment & Hosting" />
+        <div className={styles.stackCardsDiv}>
+          <StackCard id="typescript" />
+          <StackCard id="graphql" />
+          <StackCard id="webpack" />
+          <StackCard id="babel" />
+          <StackCard id="eslint" />
+          <StackCard id="circleCi" />
+          <StackCard id="jest" />
+        </div>
         <Typography color="blue" size="five" text="Additional Credit To" />
+        <div className={styles.stackCardsDiv}>
+          <StackCard id="typescript" />
+          <StackCard id="graphql" />
+          <StackCard id="webpack" />
+          <StackCard id="babel" />
+          <StackCard id="eslint" />
+          <StackCard id="circleCi" />
+          <StackCard id="jest" />
+        </div>
         <Typography color="blue" size="five" text="Roadmap" />
-        <div style={{ height: '30rem', width: '30rem', background: 'pink' }} />
+        <div className={styles.stackCardsDiv}>
+          <StackCard id="typescript" />
+          <StackCard id="graphql" />
+          <StackCard id="webpack" />
+          <StackCard id="babel" />
+          <StackCard id="eslint" />
+          <StackCard id="circleCi" />
+          <StackCard id="jest" />
+        </div>
+        <div style={{ height: '30rem', width: '30rem', background: 'transparent' }} />
       </section>
     </section>
   </section>

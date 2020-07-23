@@ -54,21 +54,24 @@ break up aboutdevpage into multiple components
   * [Prisma](https://www.prisma.io/)
 * Database  
   * [PostgreSQL](https://www.postgresql.org/)
-* Deployment & Hosting
-  * [Heroku](https://www.heroku.com/)
-  * [Prisma Cloud](https://www.prisma.io/cloud)
 * Authentication
   * [Passport](http://www.passportjs.org/)
 * Virtualization
-  * [Docker](https://www.docker.com/)
 * Third Party APIs & Tooling  
   * [Google's Node.js Client Api](https://github.com/googleapis/google-api-nodejs-client#google-apis-nodejs-client)
+  
+### IV. Back-End
 
-### IV. Additional Credit to:
+* Deployment & Hosting
+  * [Heroku](https://www.heroku.com/)
+  * [Prisma Cloud](https://www.prisma.io/cloud)
+  * [Docker](https://www.docker.com/)
+
+### V. Additional Credit to:
 * [Johannes Kettmann & GraphQL Passport](https://github.com/jkettmann/graphql-passport)
 * [Alex Tass for making our awesome logo](https://alextass.com/)
 
-### V. Road Map
+### VI. Road Map
 
 * Mobile
 * App
