@@ -6,13 +6,11 @@ import * as styles from './stackCardOverlayAnimation.module.less';
 export const variants = {
   initial: {
     top: sizes.stackCardSize,
+    transition: { duration: 0.5, ease: 'easeOut' },
   },
   show: {
     top: '0rem',
-    transition: {
-      ease: 'easeOut',
-      duration: 0.7,
-    },
+    transition: { duration: 0.5, ease: 'easeOut' },
   },
 };
 
