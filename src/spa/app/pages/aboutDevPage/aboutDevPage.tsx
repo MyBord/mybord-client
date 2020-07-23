@@ -24,7 +24,7 @@ const AboutDevPage: React.FC = () => (
       <section className={styles.stackSection}>
         <Typography color="blue" size="five" text="Stack" />
         <Typography color="blue" size="four" text="General" />
-        <div className={styles.stackCardsDiv}>
+        <div className={styles.stackCardsContainer}>
           <StackCard id="typescript" />
           <StackCard id="graphql" />
           <StackCard id="webpack" />
@@ -34,7 +34,7 @@ const AboutDevPage: React.FC = () => (
           <StackCard id="jest" />
         </div>
         <Typography color="blue" size="four" text="Front End" />
-        <div className={styles.stackCardsDiv}>
+        <div className={styles.stackCardsContainer}>
           <StackCard id="react" />
           <StackCard id="apolloClient" />
           <StackCard id="framerMotion" />
@@ -47,7 +47,7 @@ const AboutDevPage: React.FC = () => (
           <StackCard id="antDesign" />
         </div>
         <Typography color="blue" size="four" text="Back End" />
-        <div className={styles.stackCardsDiv}>
+        <div className={styles.stackCardsContainer}>
           <StackCard id="node" />
           <StackCard id="apolloServer" />
           <StackCard id="prisma" />
@@ -56,13 +56,13 @@ const AboutDevPage: React.FC = () => (
           <StackCard id="passport" />
         </div>
         <Typography color="blue" size="four" text="Deployment & Hosting" />
-        <div className={styles.stackCardsDiv}>
+        <div className={styles.stackCardsContainer}>
           <StackCard id="heroku" />
           <StackCard id="prismaCloud" />
           <StackCard id="docker" />
         </div>
         <Typography color="blue" size="five" text="Additional Credit To" />
-        <div className={styles.stackCardsDiv}>
+        <div className={styles.stackCardsContainer}>
           <StackCard id="typescript" />
           <StackCard id="graphql" />
           <StackCard id="webpack" />
@@ -72,7 +72,7 @@ const AboutDevPage: React.FC = () => (
           <StackCard id="jest" />
         </div>
         <Typography color="blue" size="five" text="Roadmap" />
-        <div className={styles.stackCardsDiv}>
+        <div className={styles.stackCardsContainer}>
           <StackCard id="typescript" />
           <StackCard id="graphql" />
           <StackCard id="webpack" />
