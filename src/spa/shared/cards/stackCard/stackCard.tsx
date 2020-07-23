@@ -13,7 +13,8 @@ const StackCard: React.FC<Props> = ({ id }) => {
 
   return (
     <div className={styles.stackCardDiv}>
-      <StackCardOverlayAnimation showOverlay={showOverlay} />
+      {/* <StackCardOverlayAnimation showOverlay={showOverlay} /> */}
+      <StackCardOverlayAnimation showOverlay />
       <div
         className={styles.mouseDiv}
         onMouseEnter={() => setShowOverlay(true)}
