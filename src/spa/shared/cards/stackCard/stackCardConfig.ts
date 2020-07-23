@@ -53,36 +53,37 @@ export type Id =
 
 type Config = {
   [key in Id]: {
+    fullSize?: boolean;
     png: string;
   };
 };
 
 const config: Config = {
   antDesign: { png: antDesign },
-  apolloClient: { png: apollo },
-  apolloServer: { png: apollo },
-  babel: { png: babel },
+  apolloClient: { png: apollo, fullSize: true },
+  apolloServer: { png: apollo, fullSize: true },
+  babel: { png: babel, fullSize: true },
   circleCi: { png: circleCi },
   cssModules: { png: cssModules },
-  docker: { png: docker },
+  docker: { png: docker, fullSize: true },
   enzyme: { png: enzyme },
   eslint: { png: eslint },
   express: { png: express },
-  framerMotion: { png: framerMotion },
+  framerMotion: { png: framerMotion, fullSize: true },
   graphql: { png: graphql },
-  heroku: { png: heroku },
+  heroku: { png: heroku, fullSize: true },
   jest: { png: jest },
   less: { png: less },
-  lottie: { png: lottie },
-  node: { png: node },
-  nucleo: { png: nucleo },
-  passport: { png: passport },
+  lottie: { png: lottie, fullSize: true },
+  node: { png: node, fullSize: true },
+  nucleo: { png: nucleo, fullSize: true },
+  passport: { png: passport, fullSize: true },
   postgresql: { png: postgresql },
-  prisma: { png: prisma },
-  prismaCloud: { png: prisma },
+  prisma: { png: prisma, fullSize: true },
+  prismaCloud: { png: prisma, fullSize: true },
   react: { png: react },
   storybook: { png: storybook },
-  typescript: { png: typescript },
+  typescript: { png: typescript, fullSize: true },
   webpack: { png: webpack },
 };
 

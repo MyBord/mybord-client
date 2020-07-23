@@ -1,16 +1,23 @@
 @import "~styles/_colors";
 @import "~styles/_shadows";
 
+@borderRadius: 1rem;
+
 .div {
   align-items: center;
   background: @white;
-  border-radius: 1rem;
+  border-radius: @borderRadius;
   box-shadow: @cardBoxShadow;
   display: flex;
   height: 7rem;
   justify-content: center;
   margin: 0 3rem 3rem 0;
   width: 7rem;
+}
+
+.fullSizeImg {
+  border-radius: @borderRadius;
+  width: 100%;
 }
 
 .img {

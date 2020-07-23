@@ -6,10 +6,18 @@ export interface Props {
   id: Id;
 }
 
-const StackCard: React.FC<Props> = ({ id }) => (
-  <div className={styles.div}>
-    <img alt="react" className={styles.img} src={config[id].png} />
-  </div>
-);
+const StackCard: React.FC<Props> = ({ id }) => {
+  const card = config[id];
+
+  return (
+    <div className={styles.div}>
+      <img
+        alt="react"
+        className={card.fullSize ? styles.fullSizeImg : styles.img}
+        src={card.png}
+      />
+    </div>
+  );
+};
 
 export default StackCard;
