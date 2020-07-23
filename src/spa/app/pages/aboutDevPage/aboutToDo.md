@@ -2,6 +2,15 @@ center images with text in about dev ?
 use illustrations instead of images in about?
 add moving lottie to split up about dev and stack?
 add social to main about section
+break up aboutdevpage into multiple components
+
+What to talk about
+  * front end build
+  * back end build
+  * deployment & devops
+  * testing, storybook
+  * special thanks
+  * road map
 
 ## Stack
 
@@ -47,27 +56,30 @@ add social to main about section
 ### III. Back-End
 
 * Server
+  * [Node](https://nodejs.org/en/)
   * [Apollo Server Express](https://www.apollographql.com/docs/apollo-server/v1/servers/express/)
   * [Express](https://expressjs.com/)
 * ORM
   * [Prisma](https://www.prisma.io/)
 * Database  
   * [PostgreSQL](https://www.postgresql.org/)
+* Authentication
+  * [Passport](http://www.passportjs.org/)
+* Third Party APIs & Tooling  
+  * [Google's Node.js Client Api](https://github.com/googleapis/google-api-nodejs-client#google-apis-nodejs-client)
+  
+### IV. Back-End
+
 * Deployment & Hosting
   * [Heroku](https://www.heroku.com/)
   * [Prisma Cloud](https://www.prisma.io/cloud)
-* Authentication
-  * [Passport](http://www.passportjs.org/)
-* Virtualization
   * [Docker](https://www.docker.com/)
-* Third Party APIs & Tooling  
-  * [Google's Node.js Client Api](https://github.com/googleapis/google-api-nodejs-client#google-apis-nodejs-client)
 
-### IV. Additional Credit to:
+### V. Additional Credit to:
 * [Johannes Kettmann & GraphQL Passport](https://github.com/jkettmann/graphql-passport)
 * [Alex Tass for making our awesome logo](https://alextass.com/)
 
-### V. Road Map
+### VI. Road Map
 
 * Mobile
 * App

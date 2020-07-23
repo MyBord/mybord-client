@@ -1,20 +1,17 @@
 @import "~styles/_sizes";
 
+@sectionMargin: 5rem;
+
+:global {
+  #p-2 {
+    margin-top: @sectionMargin;
+  }
+}
+
 .img {
   border-radius: 2rem;
   height: 45%;
   width: 45%;
-}
-
-.section {
-  flex: auto;
-  height: 10rem;
-  margin-left: @pageMarginLeft;
-  overflow: auto;
-  padding-right: @pageMarginLeft;
-  :nth-of-type(2) {
-    margin-top: 5rem;
-  }
 }
 
 .paragraphDiv {
@@ -32,4 +29,21 @@
   height: 100%;
   margin-top: 4rem;
   width: 100%;
+}
+
+.section {
+  flex: auto;
+  height: 10rem;
+  margin-left: @pageMarginLeft;
+  overflow: auto;
+  padding-right: @pageMarginLeft;
+}
+
+.stackCardsDiv {
+  display: flex;
+  margin: 1rem 0 1rem 2rem;
+}
+
+.stackSection {
+  margin-top: @sectionMargin;
 }
