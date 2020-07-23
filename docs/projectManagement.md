@@ -14,6 +14,7 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
+  * center the nav icons - they are a little off - make sure they are centered for all heights?
   * about page
     * delete aboutToDo.md
   * have session be remembered by user
