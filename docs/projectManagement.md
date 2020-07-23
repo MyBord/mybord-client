@@ -31,6 +31,8 @@ This document is used to outline current project management priorities.
 
 ### C. Medium
 
+  * reset store on logout?
+    * https://www.apollographql.com/docs/react/networking/authentication/#cookie
   * remove dom event listeners and use react event listeners instead for popover. e.g.:
       ```
       const newChildren = React.cloneElement(
