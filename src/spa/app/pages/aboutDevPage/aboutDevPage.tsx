@@ -23,12 +23,14 @@ const AboutDevPage: React.FC = () => (
       </section>
       <section className={styles.stackSection}>
         <Typography color="blue" size="five" text="Stack" />
-        <StackCard />
-        <StackCard />
-        <StackCard />
-        <StackCard />
-        <StackCard />
         <Typography color="blue" size="four" text="General" />
+        <div className={styles.stackCardsDiv}>
+          <StackCard />
+          <StackCard />
+          <StackCard />
+          <StackCard />
+          <StackCard />
+        </div>
         <Typography color="blue" size="four" text="Front End" />
         <Typography color="blue" size="four" text="Back End" />
         <Typography color="blue" size="five" text="Additional Credit To" />

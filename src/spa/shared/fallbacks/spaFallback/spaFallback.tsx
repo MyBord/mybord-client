@@ -1,7 +1,7 @@
 import * as React from 'react';
 import LottiePlayer from 'lotty/lottiePlayer';
 import SpaFallbackAnimation from 'framerMotion/spaFallbackAnimation';
-import logo from 'assets/logo.png';
+import logo from 'assets/logo/logo.png';
 import dotLoading from 'lotty/lotties/dotLoading.json';
 import * as styles from './spaFallback.module.less';
 

@@ -123,7 +123,7 @@ This document is used to outline current project management priorities.
   * create skeletons for login page, etc for slow network
   * create skeletons for all pages
   * if you click on a lottie player, it will pause the animation
-  * lazy load json files from `animatedIcon.tsx`
+  * lazy load json files from `animatedIcon.tsx` and images from `stackCard.tsx`
   
 ## II. Long Term  
 
