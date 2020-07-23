@@ -6,12 +6,17 @@ import circleCi from 'assets/icons/circleCi.png';
 import cssModules from 'assets/icons/cssModules.png';
 import enzyme from 'assets/icons/enzyme.png';
 import eslint from 'assets/icons/eslint.png';
+import express from 'assets/icons/express.png';
 import framerMotion from 'assets/icons/framerMotion.png';
 import graphql from 'assets/icons/graphql.png';
 import jest from 'assets/icons/jest.png';
 import less from 'assets/icons/less.png';
 import lottie from 'assets/icons/lottie.png';
+import node from 'assets/icons/node.png';
 import nucleo from 'assets/icons/nucleo.png';
+import passport from 'assets/icons/passport.png';
+import postgresql from 'assets/icons/postgresql.png';
+import prisma from 'assets/icons/prisma.png';
 import react from 'assets/icons/react.png';
 import storybook from 'assets/icons/storybook.png';
 import typescript from 'assets/icons/typescript.png';
@@ -24,6 +29,8 @@ const getImage = (id: Props['id']): string => {
       return antDesign;
     case 'apolloClient':
       return apollo;
+    case 'apolloServer':
+      return apollo;
     case 'babel':
       return babel;
     case 'circleCi':
@@ -34,6 +41,8 @@ const getImage = (id: Props['id']): string => {
       return enzyme;
     case 'eslint':
       return eslint;
+    case 'express':
+      return express;
     case 'framerMotion':
       return framerMotion;
     case 'graphql':
@@ -44,8 +53,16 @@ const getImage = (id: Props['id']): string => {
       return less;
     case 'lottie':
       return lottie;
+    case 'node':
+      return node;
     case 'nucleo':
       return nucleo;
+    case 'passport':
+      return passport;
+    case 'postgresql':
+      return postgresql;
+    case 'prisma':
+      return prisma;
     case 'react':
       return react;
     case 'storybook':
@@ -63,17 +80,23 @@ interface Props {
   id:
   'antDesign' |
   'apolloClient' |
+  'apolloServer' |
   'babel' |
   'circleCi' |
   'cssModules' |
   'enzyme' |
   'eslint' |
+  'express' |
   'framerMotion' |
   'graphql' |
   'jest' |
   'less' |
   'lottie' |
+  'node' |
   'nucleo' |
+  'passport' |
+  'postgresql' |
+  'prisma' |
   'react' |
   'storybook' |
   'typescript' |

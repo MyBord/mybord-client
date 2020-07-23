@@ -48,23 +48,21 @@ const AboutDevPage: React.FC = () => (
         </div>
         <Typography color="blue" size="four" text="Back End" />
         <div className={styles.stackCardsDiv}>
-          <StackCard id="typescript" />
-          <StackCard id="graphql" />
-          <StackCard id="webpack" />
-          <StackCard id="babel" />
-          <StackCard id="eslint" />
-          <StackCard id="circleCi" />
-          <StackCard id="jest" />
+          <StackCard id="node" />
+          <StackCard id="apolloServer" />
+          <StackCard id="prisma" />
+          <StackCard id="express" />
+          <StackCard id="postgresql" />
+          <StackCard id="passport" />
         </div>
         <Typography color="blue" size="four" text="Deployment & Hosting" />
         <div className={styles.stackCardsDiv}>
-          <StackCard id="typescript" />
-          <StackCard id="graphql" />
-          <StackCard id="webpack" />
-          <StackCard id="babel" />
-          <StackCard id="eslint" />
-          <StackCard id="circleCi" />
-          <StackCard id="jest" />
+          <StackCard id="node" />
+          <StackCard id="apolloServer" />
+          <StackCard id="prisma" />
+          <StackCard id="express" />
+          <StackCard id="postgresql" />
+          <StackCard id="passport" />
         </div>
         <Typography color="blue" size="five" text="Additional Credit To" />
         <div className={styles.stackCardsDiv}>
