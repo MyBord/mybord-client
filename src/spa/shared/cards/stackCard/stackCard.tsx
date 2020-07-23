@@ -4,11 +4,13 @@ import apollo from 'assets/icons/apollo.png';
 import babel from 'assets/icons/babel.png';
 import circleCi from 'assets/icons/circleCi.png';
 import cssModules from 'assets/icons/cssModules.png';
+import docker from 'assets/icons/docker.png';
 import enzyme from 'assets/icons/enzyme.png';
 import eslint from 'assets/icons/eslint.png';
 import express from 'assets/icons/express.png';
 import framerMotion from 'assets/icons/framerMotion.png';
 import graphql from 'assets/icons/graphql.png';
+import heroku from 'assets/icons/heroku.png';
 import jest from 'assets/icons/jest.png';
 import less from 'assets/icons/less.png';
 import lottie from 'assets/icons/lottie.png';
@@ -37,6 +39,8 @@ const getImage = (id: Props['id']): string => {
       return circleCi;
     case 'cssModules':
       return cssModules;
+    case 'docker':
+      return docker;
     case 'enzyme':
       return enzyme;
     case 'eslint':
@@ -47,6 +51,8 @@ const getImage = (id: Props['id']): string => {
       return framerMotion;
     case 'graphql':
       return graphql;
+    case 'heroku':
+      return heroku;
     case 'jest':
       return jest;
     case 'less':
@@ -62,6 +68,8 @@ const getImage = (id: Props['id']): string => {
     case 'postgresql':
       return postgresql;
     case 'prisma':
+      return prisma;
+    case 'prismaCloud':
       return prisma;
     case 'react':
       return react;
@@ -84,11 +92,13 @@ interface Props {
   'babel' |
   'circleCi' |
   'cssModules' |
+  'docker' |
   'enzyme' |
   'eslint' |
   'express' |
   'framerMotion' |
   'graphql' |
+  'heroku' |
   'jest' |
   'less' |
   'lottie' |
@@ -97,6 +107,7 @@ interface Props {
   'passport' |
   'postgresql' |
   'prisma' |
+  'prismaCloud' |
   'react' |
   'storybook' |
   'typescript' |

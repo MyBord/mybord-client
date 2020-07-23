@@ -57,12 +57,9 @@ const AboutDevPage: React.FC = () => (
         </div>
         <Typography color="blue" size="four" text="Deployment & Hosting" />
         <div className={styles.stackCardsDiv}>
-          <StackCard id="node" />
-          <StackCard id="apolloServer" />
-          <StackCard id="prisma" />
-          <StackCard id="express" />
-          <StackCard id="postgresql" />
-          <StackCard id="passport" />
+          <StackCard id="heroku" />
+          <StackCard id="prismaCloud" />
+          <StackCard id="docker" />
         </div>
         <Typography color="blue" size="five" text="Additional Credit To" />
         <div className={styles.stackCardsDiv}>
