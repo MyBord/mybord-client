@@ -1,25 +1,33 @@
 @import "~styles/_colors";
 @import "~styles/_shadows";
+@import "~styles/_sizes";
 
-@borderRadius: 1rem;
-
-.div {
+.stackCardDiv {
   align-items: center;
   background: @white;
-  border-radius: @borderRadius;
+  border-radius: @standardBorderRadius;
   box-shadow: @cardBoxShadow;
   display: flex;
-  height: 7rem;
+  height: @stackCardSize;
   justify-content: center;
   margin: 0 3rem 3rem 0;
-  width: 7rem;
+  position: relative;
+  width: @stackCardSize;
 }
 
 .fullSizeImg {
-  border-radius: @borderRadius;
+  border-radius: @standardBorderRadius;
   width: 100%;
 }
 
 .img {
   width: 75%;
+}
+
+.mouseDiv {
+  border-radius: @standardBorderRadius;
+  cursor: pointer;
+  height: 100%;
+  position: absolute;
+  width: 100%;
 }
