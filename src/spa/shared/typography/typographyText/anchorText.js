@@ -1,5 +1,3 @@
-const sampleText = ' foo bar baz [hello](google.com) [again] (foo.com)  abc  ttt [w](x) ';
-
 const getLeftBracketPositions = (text) => {
   const regex = RegExp('\\[', 'gi');
   const indices = [];
@@ -11,8 +9,10 @@ const getLeftBracketPositions = (text) => {
   return indices;
 };
 
-const fn = (text) => {
+const getAnchors = (text) => {
   const leftBracketPositions = getLeftBracketPositions(text);
+
+  const anchors = [];
 
   leftBracketPositions.forEach((leftBracket) => {
     const remainingString = text.substring(leftBracket);
@@ -26,9 +26,15 @@ const fn = (text) => {
       && leftParen < rightParen
       && rightBracket === leftParen - 1
     ) {
-      console.log(remainingString);
+      const label = remainingString.substring(0, rightBracket);
+      const link = remainingString.substring(leftParen + 1, rightParen);
+      anchors.push({ label, link });
     }
   });
+
+  return anchors;
 };
 
-fn(sampleText);
+export default {
+  getAnchors,
+}
