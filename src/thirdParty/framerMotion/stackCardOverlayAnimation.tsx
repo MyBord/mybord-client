@@ -26,6 +26,7 @@ const StackCardOverlayAnimation: React.FC<Props> = ({ showOverlay, text }) => (
     className={styles.overlayDiv}
     variants={variants}
   >
+    <div className={styles.line} />
     <div className={styles.typographyDiv}>
       <Typography
         color="white"
