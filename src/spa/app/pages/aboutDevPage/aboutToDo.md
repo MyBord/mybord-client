@@ -9,8 +9,8 @@ What to talk about
   * back end build
   * deployment & devops
   * testing, storybook
-  * special thanks
   * road map
+  * additional credit & thanks to
 
 ## Stack
 

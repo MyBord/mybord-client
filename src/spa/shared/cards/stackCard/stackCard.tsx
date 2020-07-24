@@ -12,7 +12,12 @@ const StackCard: React.FC<Props> = ({ id }) => {
   const card = config[id];
 
   return (
-    <div className={styles.stackCardDiv}>
+    <a
+      className={styles.stackCardAnchor}
+      href={card.link}
+      rel="noopener noreferrer"
+      target="_blank"
+    >
       <StackCardOverlayAnimation showOverlay={showOverlay} text={card.label} />
       <div
         className={styles.mouseDiv}
@@ -24,7 +29,7 @@ const StackCard: React.FC<Props> = ({ id }) => {
         className={card.fullSize ? styles.fullSizeImg : styles.img}
         src={card.png}
       />
-    </div>
+    </a>
   );
 };
 
