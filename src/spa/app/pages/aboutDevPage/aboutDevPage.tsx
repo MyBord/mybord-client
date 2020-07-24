@@ -22,8 +22,12 @@ const AboutDevPage: React.FC = () => (
         </div>
       </section>
       <section className={styles.stackSection}>
-        <Typography color="blue" size="five" text="Stack" />
-        <Typography color="blue" size="four" text="General" />
+        <div className={styles.stackTitleDiv}>
+          <Typography color="blue" size="five" text="Stack" />
+        </div>
+        <div className={styles.typographyDiv}>
+          <Typography color="blue" size="four" text="General" />
+        </div>
         <div className={styles.stackCardsContainer}>
           <StackCard id="typescript" />
           <StackCard id="graphql" />
@@ -33,7 +37,9 @@ const AboutDevPage: React.FC = () => (
           <StackCard id="circleCi" />
           <StackCard id="jest" />
         </div>
-        <Typography color="blue" size="four" text="Front End" />
+        <div className={styles.typographyDiv}>
+          <Typography color="blue" size="four" text="Front End" />
+        </div>
         <div className={styles.stackCardsContainer}>
           <StackCard id="react" />
           <StackCard id="apolloClient" />
@@ -46,7 +52,9 @@ const AboutDevPage: React.FC = () => (
           <StackCard id="enzyme" />
           <StackCard id="antDesign" />
         </div>
-        <Typography color="blue" size="four" text="Back End" />
+        <div className={styles.typographyDiv}>
+          <Typography color="blue" size="four" text="Back End" />
+        </div>
         <div className={styles.stackCardsContainer}>
           <StackCard id="node" />
           <StackCard id="apolloServer" />
@@ -55,33 +63,14 @@ const AboutDevPage: React.FC = () => (
           <StackCard id="postgresql" />
           <StackCard id="passport" />
         </div>
-        <Typography color="blue" size="four" text="Deployment & Hosting" />
+        <div className={styles.typographyDiv}>
+          <Typography color="blue" size="four" text="Deployment & Hosting" />
+        </div>
         <div className={styles.stackCardsContainer}>
           <StackCard id="heroku" />
           <StackCard id="prismaCloud" />
           <StackCard id="docker" />
         </div>
-        <Typography color="blue" size="five" text="Additional Credit To" />
-        <div className={styles.stackCardsContainer}>
-          <StackCard id="typescript" />
-          <StackCard id="graphql" />
-          <StackCard id="webpack" />
-          <StackCard id="babel" />
-          <StackCard id="eslint" />
-          <StackCard id="circleCi" />
-          <StackCard id="jest" />
-        </div>
-        <Typography color="blue" size="five" text="Roadmap" />
-        <div className={styles.stackCardsContainer}>
-          <StackCard id="typescript" />
-          <StackCard id="graphql" />
-          <StackCard id="webpack" />
-          <StackCard id="babel" />
-          <StackCard id="eslint" />
-          <StackCard id="circleCi" />
-          <StackCard id="jest" />
-        </div>
-        <div style={{ height: '30rem', width: '30rem', background: 'transparent' }} />
       </section>
     </section>
   </section>

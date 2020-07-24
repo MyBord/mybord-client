@@ -1,3 +1,5 @@
+* add social footer to both about pages
+
 center images with text in about dev ?
 use illustrations instead of images in about?
 add moving lottie to split up about dev and stack?
