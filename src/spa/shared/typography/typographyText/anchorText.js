@@ -28,7 +28,7 @@ const getAnchors = (text) => {
     ) {
       const label = remainingString.substring(0, rightBracket);
       const link = remainingString.substring(leftParen + 1, rightParen);
-      anchors.push({ label, link });
+      anchors.push({ label, leftBracket, link });
     }
   });
 
@@ -37,4 +37,4 @@ const getAnchors = (text) => {
 
 export default {
   getAnchors,
-}
+};

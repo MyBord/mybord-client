@@ -1,10 +1,12 @@
 import * as React from 'react';
 import Tooltip from 'modals/tooltip/tooltip';
 import { TypographySize } from 'types/typographyTypes';
+import anchorText from './anchorText';
 import * as styles from './typographyText.module.less';
 
 interface Props {
   Content?: React.FC;
+  isParagraph: boolean;
   maxTextLength?: number;
   size: TypographySize;
   text: string;
@@ -12,12 +14,24 @@ interface Props {
 
 const TypographyText: React.FC<Props> = ({
   Content,
+  isParagraph,
   maxTextLength,
   size,
   text,
 }) => {
+  let finalText: string = text;
+
+  if (isParagraph) {
+    const anchors = anchorText.getAnchors(text);
+
+    if (anchors.length > 0) {
+      console.log('fooooo');
+      console.log(text);
+    }
+  }
+
   const renderText = (): React.ReactElement => {
-    if (maxTextLength && text.length > maxTextLength) {
+    if (maxTextLength && finalText.length > maxTextLength) {
       return (
         <p className={styles.p}>
           {text.slice(0, maxTextLength)}
@@ -31,7 +45,7 @@ const TypographyText: React.FC<Props> = ({
         </p>
       );
     }
-    return <p className={styles.p}>{text}</p>;
+    return <p className={styles.p}>{finalText}</p>;
   };
 
   return (

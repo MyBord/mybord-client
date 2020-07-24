@@ -85,6 +85,7 @@ const Typography = React.forwardRef<HTMLDivElement, Props>(({
       <Component>
         <TypographyText
           Content={Content}
+          isParagraph={!link && !onClick}
           maxTextLength={maxTextLength}
           size={size}
           text={text}

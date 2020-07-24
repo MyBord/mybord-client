@@ -2,3 +2,5 @@
 Make sure to remove all notes before merging (except for this one, of course).
 ----------------------------------------------------------------------------------------------------
 convert util from js to ts
+
+fix if anchor is in tooltip
