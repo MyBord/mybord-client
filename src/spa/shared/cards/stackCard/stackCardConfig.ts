@@ -54,37 +54,160 @@ export type Id =
 type Config = {
   [key in Id]: {
     fullSize?: boolean;
+    label: string;
+    link: string;
     png: string;
   };
 };
 
 const config: Config = {
-  antDesign: { png: antDesign },
-  apolloClient: { png: apollo, fullSize: true },
-  apolloServer: { png: apollo, fullSize: true },
-  babel: { png: babel, fullSize: true },
-  circleCi: { png: circleCi, fullSize: true },
-  cssModules: { png: cssModules, fullSize: true },
-  docker: { png: docker, fullSize: true },
-  enzyme: { png: enzyme },
-  eslint: { png: eslint },
-  express: { png: express, fullSize: true },
-  framerMotion: { png: framerMotion, fullSize: true },
-  graphql: { png: graphql },
-  heroku: { png: heroku, fullSize: true },
-  jest: { png: jest },
-  less: { png: less },
-  lottie: { png: lottie, fullSize: true },
-  node: { png: node, fullSize: true },
-  nucleo: { png: nucleo, fullSize: true },
-  passport: { png: passport, fullSize: true },
-  postgresql: { png: postgresql },
-  prisma: { png: prisma, fullSize: true },
-  prismaCloud: { png: prisma, fullSize: true },
-  react: { png: react, fullSize: true },
-  storybook: { png: storybook },
-  typescript: { png: typescript, fullSize: true },
-  webpack: { png: webpack },
+  antDesign: {
+    label: 'Ant Design',
+    link: 'foo',
+    png: antDesign,
+  },
+  apolloClient: {
+    fullSize: true,
+    label: 'Apollo Client',
+    link: 'foo',
+    png: apollo,
+  },
+  apolloServer: {
+    fullSize: true,
+    label: 'Apollo Server',
+    link: 'foo',
+    png: apollo,
+  },
+  babel: {
+    fullSize: true,
+    label: 'Babel',
+    link: 'foo',
+    png: babel,
+  },
+  circleCi: {
+    fullSize: true,
+    label: 'Circle CI',
+    link: 'foo',
+    png: circleCi,
+  },
+  cssModules: {
+    fullSize: true,
+    label: 'CSS Modules',
+    link: 'foo',
+    png: cssModules,
+  },
+  docker: {
+    fullSize: true,
+    label: 'Docker',
+    link: 'foo',
+    png: docker,
+  },
+  enzyme: {
+    label: 'Enzyme',
+    link: 'foo',
+    png: enzyme,
+  },
+  eslint: {
+    label: 'ESLint',
+    link: 'foo',
+    png: eslint,
+  },
+  express: {
+    fullSize: true,
+    label: 'Express',
+    link: 'foo',
+    png: express,
+  },
+  framerMotion: {
+    fullSize: true,
+    label: 'Framer Motion',
+    link: 'foo',
+    png: framerMotion,
+  },
+  graphql: {
+    label: 'GraphQL',
+    link: 'foo',
+    png: graphql,
+  },
+  heroku: {
+    fullSize: true,
+    label: 'Heroku',
+    link: 'foo',
+    png: heroku,
+  },
+  jest: {
+    label: 'Jest',
+    link: 'foo',
+    png: jest,
+  },
+  less: {
+    label: 'Less',
+    link: 'foo',
+    png: less,
+  },
+  lottie: {
+    fullSize: true,
+    label: 'Lottie',
+    link: 'foo',
+    png: lottie,
+  },
+  node: {
+    fullSize: true,
+    label: 'Node.js',
+    link: 'foo',
+    png: node,
+  },
+  nucleo: {
+    fullSize: true,
+    label: 'Nucleo',
+    link: 'foo',
+    png: nucleo,
+  },
+  passport: {
+    fullSize: true,
+    label: 'Passport',
+    link: 'foo',
+    png: passport,
+  },
+  postgresql: {
+    label: 'PostgreSQL',
+    link: 'foo',
+    png: postgresql,
+  },
+  prisma: {
+    fullSize: true,
+    label: 'Prisma',
+    link: 'foo',
+    png: prisma,
+  },
+  prismaCloud: {
+    fullSize: true,
+    label: 'Prisma Cloud',
+    link: 'foo',
+    png: prisma,
+  },
+  react: {
+    fullSize: true,
+    label: 'React',
+    link: 'foo',
+    png: react,
+  },
+  storybook: {
+    label: 'Storybook',
+    link: 'foo',
+    png: storybook,
+  },
+  typescript: {
+    fullSize: true,
+    label: 'TypeScript',
+    link: 'foo',
+    png: typescript,
+  },
+  webpack: {
+    label: 'Webpack',
+    link: 'foo',
+    png: webpack,
+  },
 };
 
 export default config;

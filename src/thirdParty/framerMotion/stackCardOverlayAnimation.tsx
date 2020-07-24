@@ -31,6 +31,7 @@ const StackCardOverlayAnimation: React.FC<Props> = ({ showOverlay, text }) => (
         color="white"
         size="four"
         text={text}
+        textAlign="center"
         weight="bold"
       />
     </div>
