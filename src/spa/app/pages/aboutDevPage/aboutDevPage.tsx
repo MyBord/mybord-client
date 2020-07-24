@@ -6,10 +6,15 @@ import pageWrapper from 'pages/pageWrapper/pageWrapper';
 import { loremIpsumLong } from 'utils/loremIpsum';
 import * as styles from './aboutDevPage.module.less';
 
+const sampleText = ' foo bar baz [hello](google.com) [again] (foo.com)';
+
 const AboutDevPage: React.FC = () => (
   <section className={styles.parentSection}>
     <section className={styles.section}>
       <section className={styles.paragraphSection}>
+        <div className={styles.paragraphDiv} id="p-1">
+          <Typography text={sampleText} textAlign="justify" />
+        </div>
         <div className={styles.paragraphDiv} id="p-1">
           <Typography text={loremIpsumLong} textAlign="justify" />
         </div>
