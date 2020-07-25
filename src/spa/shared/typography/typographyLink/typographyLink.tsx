@@ -5,32 +5,19 @@ import * as styles from '../typography.module.less';
 
 interface Props {
   children: React.ReactNode;
-  font: TypographyProps['font'];
+  commonStyles: string;
   link: TypographyProps['link'];
   onClick?: TypographyProps['onClick'];
-  size: TypographyProps['size'];
-  textAlign?: TypographyProps['textAlign'];
-  weight: TypographyProps['weight'];
 }
 
 const TypographyLink: React.FC<Props> = ({
   children,
-  font,
+  commonStyles,
   link,
   onClick,
-  size,
-  textAlign,
-  weight,
 }) => (
   <Link
-    className={[
-      styles.link,
-      styles.typography,
-      styles[font],
-      styles[size],
-      styles[textAlign],
-      styles[weight],
-    ].join(' ')}
+    className={[styles.link, commonStyles].join(' ')}
     to={link}
     onClick={onClick}
   >

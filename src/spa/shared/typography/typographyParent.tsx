@@ -6,6 +6,7 @@ import { TypographyProps } from 'types/typographyTypes';
 const TypographyButton = React.lazy(() => import('./typographyButton/typographyButton'));
 const TypographyLink = React.lazy(() => import('./typographyLink/typographyLink'));
 const TypographyParagraph = React.lazy(() => import('./typographyParagraph/typographyParagraph'));
+import * as styles from './typography.module.less';
 
 interface Props {
   children: React.ReactNode;
@@ -28,15 +29,21 @@ const TypographyParent: React.FC<Props> = ({
   textAlign,
   weight,
 }) => {
+  // These are the common styles that should to be applied to every Typography Type's className.
+  const commonStyles = [
+    styles.typography,
+    styles[font],
+    styles[size],
+    styles[textAlign],
+    styles[weight],
+  ].join(' ');
+
   if (link) {
     return (
       <TypographyLink
-        font={font}
+        commonStyles={commonStyles}
         link={link}
         onClick={onClick}
-        size={size}
-        textAlign={textAlign}
-        weight={weight}
       >
         {children}
       </TypographyLink>
@@ -46,11 +53,8 @@ const TypographyParent: React.FC<Props> = ({
   if (onClick) {
     return (
       <TypographyButton
-        font={font}
+        commonStyles={commonStyles}
         onClick={onClick}
-        size={size}
-        textAlign={textAlign}
-        weight={weight}
       >
         {children}
       </TypographyButton>
@@ -60,10 +64,7 @@ const TypographyParent: React.FC<Props> = ({
   return (
     <TypographyParagraph
       color={color}
-      font={font}
-      size={size}
-      textAlign={textAlign}
-      weight={weight}
+      commonStyles={commonStyles}
     >
       {children}
     </TypographyParagraph>
