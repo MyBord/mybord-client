@@ -19,21 +19,25 @@ const TypographyText: React.FC<Props> = ({
   size,
   text,
 }) => {
-  let textWithAnchors: TextWithAnchors = [];
+  let textWithAnchorsArray: TextWithAnchors = [];
   if (isParagraph) {
-    textWithAnchors = getTextWithAnchors(text);
+    textWithAnchorsArray = getTextWithAnchors(text);
   }
 
-  // @ts-ignore
+  const textWithAnchors = (): React.ReactElement[] => textWithAnchorsArray.map((anchor) => {
+    if (anchor.link) {
+      return <a href={anchor.link} rel="noopener noreferrer" target="_blank">{anchor.label}</a>;
+    }
+    return <>{anchor.label}</>;
+  });
+
   const FinalText: React.FC = () => {
-    if (textWithAnchors.length > 0) {
-      // @ts-ignore
-      return textWithAnchors.map((anchor) => {
-        if (anchor.link) {
-          return <a href={anchor.link} rel="noopener noreferrer" target="_blank">{anchor.label}</a>;
-        }
-        return <>{anchor.label}</>;
-      });
+    if (textWithAnchorsArray.length > 0) {
+      return (
+        <>
+          {textWithAnchors()}
+        </>
+      );
     }
 
     return <>{text}</>;
