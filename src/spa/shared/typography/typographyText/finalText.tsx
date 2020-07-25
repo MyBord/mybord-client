@@ -15,10 +15,11 @@ const FinalText: React.FC<Props> = ({
     textWithAnchorsArray = getTextWithAnchors(text);
   }
 
-  const textWithAnchors = (): React.ReactElement[] => textWithAnchorsArray.map((anchor) => {
+  const textWithAnchors = (): React.ReactElement[] => textWithAnchorsArray.map((anchor, index) => {
     if (anchor.link) {
       return (
         <a
+          key={`${anchor.label}-${index}`}
           href={anchor.link}
           rel="noopener noreferrer"
           target="_blank"
@@ -28,7 +29,7 @@ const FinalText: React.FC<Props> = ({
       );
     }
 
-    return <>{anchor.label}</>;
+    return <React.Fragment key={`${anchor.label}-${index}`}>{anchor.label}</React.Fragment>;
   });
 
   if (textWithAnchorsArray.length > 0) {
