@@ -25,8 +25,10 @@ const TypographyText: React.FC<Props> = ({
     const anchors = anchorText.getAnchors(text);
 
     if (anchors.length > 0) {
-      console.log('fooooo');
+      const a = anchors[0];
       console.log(text);
+      console.log(anchors[0]);
+      console.log(text.substring(0, a.leftBracket - 1));
     }
   }
 
