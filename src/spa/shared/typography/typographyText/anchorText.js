@@ -26,15 +26,11 @@ const getAnchorPositions = (text) => {
       && leftParen < rightParen
       && rightBracket === leftParen - 1
     ) {
-      const label = remainingString.substring(0, rightBracket);
-      const link = remainingString.substring(leftParen + 1, rightParen);
       anchors.push({
-        label,
         leftBracket,
         rightBracket,
         leftParen,
         rightParen,
-        link,
       });
     }
   });
@@ -47,7 +43,10 @@ const getAnchors = (text, anchorPositions) => {
 
   anchorPositions.forEach((anchor, index) => {
     if (index === 0) {
-      anchors.push({ text: text.substring(0, anchor.leftBracket - 1) });
+      const beforeFirstAnchorText = text.substring(0, anchor.leftBracket - 1);
+      if (beforeFirstAnchorText.length > 0) {
+        anchors.push({ text: beforeFirstAnchorText });
+      }
     }
 
     const remainingText = text.substring(anchor.leftBracket);
@@ -55,39 +54,39 @@ const getAnchors = (text, anchorPositions) => {
     const link = remainingText.substring(anchor.leftParen + 1, anchor.rightParen);
 
     anchors.push({ text: label, link });
+
+    if (index < anchorPositions.length - 1) {
+      const nextAnchor = anchorPositions[index + 1];
+      const inBetweenAnchorsText = text.substring(
+        anchor.leftBracket + anchor.rightParen + 1,
+        nextAnchor.leftBracket - 1,
+      );
+      anchors.push({ text: inBetweenAnchorsText });
+    }
+
+    if (index === anchorPositions.length - 1) {
+      const afterLastAnchorText = text.substring(anchor.leftBracket + anchor.rightParen + 1);
+      if (afterLastAnchorText.length > 0) {
+        anchors.push({ text: afterLastAnchorText });
+      }
+    }
   });
 
-  console.log(anchors);
+  return anchors;
 };
 
 const anchorText = (text) => {
   const anchorPositions = getAnchorPositions(text);
+
   if (anchorPositions.length > 0) {
-    getAnchors(text, anchorPositions);
-  } else {
-    return false;
+    return getAnchors(text, anchorPositions);
   }
+
+  return false;
 };
 
 const sampleText = ' foo bar baz [hello](google.com) [again] (foo.com) [test](apple.com) foobb';
 // const sampleText = ' foo bar baz [hello](google.com) [again] (foo.com) [test](apple.com)';
 // const sampleText = '[hello](google.com) [again] (foo.com) [test](apple.com)';
 
-anchorText(sampleText);
-
-const y = [
-  {
-    text: ' foo bar baz ',
-  },
-  {
-    link: 'google.com',
-    text: 'hello',
-  },
-  {
-    text: ' [again] (foo.com) ',
-  },
-  {
-    link: 'apple.com',
-    text: 'test',
-  },
-];
+console.log(anchorText(sampleText));

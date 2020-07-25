@@ -6,7 +6,7 @@ import pageWrapper from 'pages/pageWrapper/pageWrapper';
 import { loremIpsumLong } from 'utils/loremIpsum';
 import * as styles from './aboutDevPage.module.less';
 
-const sampleText = ' foo bar baz [hello](google.com) [again] (foo.com)';
+const sampleText = ' foo bar baz [hello](google.com) [again] (foo.com) [test](apple.com) foobb';
 
 const AboutDevPage: React.FC = () => (
   <section className={styles.parentSection}>
