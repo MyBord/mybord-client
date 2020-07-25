@@ -16,9 +16,9 @@ const getAnchorPositions = (text) => {
 
   leftBracketPositions.forEach((leftBracket) => {
     const remainingString = text.substring(leftBracket);
-    const rightBracket = remainingString.indexOf(']');
-    const leftParen = remainingString.indexOf('(');
-    const rightParen = remainingString.indexOf(')');
+    const rightBracket = remainingString.indexOf(']') + leftBracket;
+    const leftParen = remainingString.indexOf('(') + leftBracket;
+    const rightParen = remainingString.indexOf(')') + leftBracket;
 
     if (
       rightBracket < leftParen
@@ -49,23 +49,21 @@ const getAnchors = (text, anchorPositions) => {
       }
     }
 
-    const remainingText = text.substring(anchor.leftBracket);
-    const label = remainingText.substring(0, anchor.rightBracket);
-    const link = remainingText.substring(anchor.leftParen + 1, anchor.rightParen);
-
+    const label = text.substring(anchor.leftBracket, anchor.rightBracket);
+    const link = text.substring(anchor.leftParen + 1, anchor.rightParen);
     anchors.push({ text: label, link });
 
     if (index < anchorPositions.length - 1) {
       const nextAnchor = anchorPositions[index + 1];
       const inBetweenAnchorsText = text.substring(
-        anchor.leftBracket + anchor.rightParen + 1,
+        anchor.rightParen + 1,
         nextAnchor.leftBracket - 1,
       );
       anchors.push({ text: inBetweenAnchorsText });
     }
 
     if (index === anchorPositions.length - 1) {
-      const afterLastAnchorText = text.substring(anchor.leftBracket + anchor.rightParen + 1);
+      const afterLastAnchorText = text.substring(anchor.rightParen + 1);
       if (afterLastAnchorText.length > 0) {
         anchors.push({ text: afterLastAnchorText });
       }
