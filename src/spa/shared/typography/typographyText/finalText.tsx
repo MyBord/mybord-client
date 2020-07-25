@@ -1,9 +1,10 @@
 import * as React from 'react';
+import { TypographyProps } from 'types/typographyTypes';
 import getTextWithAnchors, { TextWithAnchors } from './getTextWithAnchors';
 
 interface Props {
   isParagraph: boolean;
-  text: string;
+  text: TypographyProps['text'];
 }
 
 const FinalText: React.FC<Props> = ({

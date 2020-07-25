@@ -1,14 +1,14 @@
 import * as React from 'react';
 import Tooltip from 'modals/tooltip/tooltip';
-import { TypographySize } from 'types/typographyTypes';
+import { TypographyProps } from 'types/typographyTypes';
 import FinalText from './finalText';
 import * as styles from './typographyText.module.less';
 
 interface Props {
   isParagraph: boolean;
-  maxTextLength?: number;
-  size: TypographySize;
-  text: string;
+  maxTextLength?: TypographyProps['maxTextLength'];
+  size: TypographyProps['size'];
+  text: TypographyProps['text'];
 }
 
 const TypographyText: React.FC<Props> = ({

@@ -1,20 +1,14 @@
 import * as React from 'react';
-import { ExportedColors } from 'types/colorTypes';
-import {
-  TypographyFont,
-  TypographySize,
-  TypographyTextAlign,
-  TypographyWeight,
-} from 'types/typographyTypes';
+import { TypographyProps } from 'types/typographyTypes';
 import * as styles from '../typography.module.less';
 
 interface Props {
   children: React.ReactNode;
-  color: ExportedColors;
-  font: TypographyFont;
-  size: TypographySize;
-  textAlign: TypographyTextAlign;
-  weight: TypographyWeight;
+  color: TypographyProps['color'];
+  font: TypographyProps['font'];
+  size: TypographyProps['size'];
+  textAlign: TypographyProps['textAlign'];
+  weight: TypographyProps['weight'];
 }
 
 const TypographyParagraph: React.FC<Props> = ({

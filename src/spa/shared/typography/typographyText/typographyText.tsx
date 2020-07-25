@@ -1,13 +1,13 @@
 import * as React from 'react';
-import { TypographySize } from 'types/typographyTypes';
+import { TypographyProps } from 'types/typographyTypes';
 import RenderText from './renderText';
 
 interface Props {
-  Content?: React.FC;
+  Content?: TypographyProps['Content'];
   isParagraph: boolean;
-  maxTextLength?: number;
-  size: TypographySize;
-  text: string;
+  maxTextLength?: TypographyProps['maxTextLength'];
+  size: TypographyProps['size'];
+  text: TypographyProps['text'];
 }
 
 const TypographyText: React.FC<Props> = ({

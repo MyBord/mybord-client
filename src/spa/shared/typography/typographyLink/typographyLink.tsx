@@ -1,21 +1,16 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
-import {
-  TypographyFont,
-  TypographySize,
-  TypographyTextAlign,
-  TypographyWeight,
-} from 'types/typographyTypes';
+import { TypographyProps } from 'types/typographyTypes';
 import * as styles from '../typography.module.less';
 
 interface Props {
   children: React.ReactNode;
-  font: TypographyFont;
-  link: string;
-  onClick?: () => void;
-  size: TypographySize;
-  textAlign?: TypographyTextAlign;
-  weight: TypographyWeight;
+  font: TypographyProps['font'];
+  link: TypographyProps['link'];
+  onClick?: TypographyProps['onClick'];
+  size: TypographyProps['size'];
+  textAlign?: TypographyProps['textAlign'];
+  weight: TypographyProps['weight'];
 }
 
 const TypographyLink: React.FC<Props> = ({

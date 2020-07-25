@@ -1,6 +1,9 @@
-export type TypographyFont = 'poppins' | 'roboto';
+import * as React from 'react';
+import { ExportedColors } from 'types/colorTypes';
 
-export type TypographySize =
+type TypographyFont = 'poppins' | 'roboto';
+
+type TypographySize =
   'one'
   | 'two'
   | 'three'
@@ -8,6 +11,20 @@ export type TypographySize =
   | 'five'
   | 'normal';
 
-export type TypographyTextAlign = 'center' | 'justify' | 'left' | 'right';
+type TypographyTextAlign = 'center' | 'justify' | 'left' | 'right';
 
-export type TypographyWeight = 'bold' | 'light' | 'regular';
+type TypographyWeight = 'bold' | 'light' | 'regular';
+
+export interface TypographyProps {
+  Content?: React.FC;
+  color?: ExportedColors;
+  font?: TypographyFont;
+  link?: string;
+  maxTextLength?: number;
+  onClick?: () => void;
+  showExpandCollapseButton?: boolean;
+  size?: TypographySize;
+  text: string;
+  textAlign?: TypographyTextAlign;
+  weight?: TypographyWeight;
+}

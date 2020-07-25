@@ -1,19 +1,14 @@
 import * as React from 'react';
-import {
-  TypographyFont,
-  TypographySize,
-  TypographyTextAlign,
-  TypographyWeight,
-} from 'types/typographyTypes';
+import { TypographyProps } from 'types/typographyTypes';
 import * as styles from '../typography.module.less';
 
 interface Props {
   children: React.ReactNode;
-  font: TypographyFont;
-  onClick: () => void;
-  size: TypographySize;
-  textAlign: TypographyTextAlign;
-  weight: TypographyWeight;
+  font: TypographyProps['font'];
+  onClick: TypographyProps['onClick'];
+  size: TypographyProps['size'];
+  textAlign: TypographyProps['textAlign'];
+  weight: TypographyProps['weight'];
 }
 
 const TypographyButton: React.FC<Props> = ({
