@@ -46,11 +46,15 @@ const getAnchors = (text, anchorPositions) => {
   const anchors = [];
 
   anchorPositions.forEach((anchor, index) => {
-    const sub = text.substring(0, anchor.leftBracket - 1);
-
     if (index === 0) {
-      anchor.push({ text: sub });
+      anchors.push({ text: text.substring(0, anchor.leftBracket - 1) });
     }
+
+    const remainingText = text.substring(anchor.leftBracket);
+    const label = remainingText.substring(0, anchor.rightBracket);
+    const link = remainingText.substring(anchor.leftParen + 1, anchor.rightParen);
+
+    anchors.push({ text: label, link });
   });
 
   console.log(anchors);
@@ -65,7 +69,9 @@ const anchorText = (text) => {
   }
 };
 
-const sampleText = ' foo bar baz [hello](google.com) [again] (foo.com) [test](apple.com)';
+const sampleText = ' foo bar baz [hello](google.com) [again] (foo.com) [test](apple.com) foobb';
+// const sampleText = ' foo bar baz [hello](google.com) [again] (foo.com) [test](apple.com)';
+// const sampleText = '[hello](google.com) [again] (foo.com) [test](apple.com)';
 
 anchorText(sampleText);
 
