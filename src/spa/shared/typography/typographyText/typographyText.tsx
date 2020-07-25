@@ -19,21 +19,30 @@ const TypographyText: React.FC<Props> = ({
   size,
   text,
 }) => {
-  let finalText: string = text;
-
+  // todo: change from anchors? not all of them are anchors?
+  // @ts-ignore
+  let anchors = [];
   if (isParagraph) {
-    const anchors = anchorText.getAnchors(text);
-
-    if (anchors.length > 0) {
-      const a = anchors[0];
-      console.log(text);
-      console.log(anchors[0]);
-      console.log(text.substring(0, a.leftBracket - 1));
-    }
+    anchors = anchorText(text);
   }
 
+  // @ts-ignore
+  const FinalText: React.FC = () => {
+    if (anchors.length > 0) {
+      // @ts-ignore
+      return anchors.map((anchor) => {
+        if (anchor.link) {
+          return <a href={anchor.link} rel="noopener noreferrer" target="_blank">{anchor.text}</a>;
+        }
+        return <>{anchor.text}</>;
+      });
+    }
+
+    return <>{text}</>;
+  };
+
   const renderText = (): React.ReactElement => {
-    if (maxTextLength && finalText.length > maxTextLength) {
+    if (maxTextLength && text.length > maxTextLength) {
       return (
         <p className={styles.p}>
           {text.slice(0, maxTextLength)}
@@ -47,7 +56,12 @@ const TypographyText: React.FC<Props> = ({
         </p>
       );
     }
-    return <p className={styles.p}>{finalText}</p>;
+
+    return (
+      <p className={styles.p}>
+        <FinalText />
+      </p>
+    );
   };
 
   return (

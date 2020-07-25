@@ -6,3 +6,9 @@ convert util from js to ts
 fix if anchor is in tooltip
 
 add comments to anchorText
+
+update styling of anchor text
+
+fix p child of p
+
+fix that all three typography compenents have the same styling class name props

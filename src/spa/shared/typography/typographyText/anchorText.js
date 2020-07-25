@@ -73,18 +73,12 @@ const getAnchors = (text, anchorPositions) => {
   return anchors;
 };
 
-const anchorText = (text) => {
+export default (text) => {
   const anchorPositions = getAnchorPositions(text);
 
   if (anchorPositions.length > 0) {
     return getAnchors(text, anchorPositions);
   }
 
-  return false;
+  return [];
 };
-
-const sampleText = ' foo bar baz [hello](google.com) [again] (foo.com) [test](apple.com) foobb';
-// const sampleText = ' foo bar baz [hello](google.com) [again] (foo.com) [test](apple.com)';
-// const sampleText = '[hello](google.com) [again] (foo.com) [test](apple.com)';
-
-console.log(anchorText(sampleText));
