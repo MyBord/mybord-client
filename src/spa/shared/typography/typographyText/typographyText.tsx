@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Tooltip from 'modals/tooltip/tooltip';
 import { TypographySize } from 'types/typographyTypes';
-import anchorText from './anchorText';
+import getTextWithAnchors, { TextWithAnchors } from './getTextWithAnchors';
 import * as styles from './typographyText.module.less';
 
 interface Props {
@@ -19,29 +19,27 @@ const TypographyText: React.FC<Props> = ({
   size,
   text,
 }) => {
-  // todo: change from anchors? not all of them are anchors?
-  // @ts-ignore
-  let anchors = [];
+  let textWithAnchors: TextWithAnchors = [];
   if (isParagraph) {
-    anchors = anchorText(text);
+    textWithAnchors = getTextWithAnchors(text);
   }
 
   // @ts-ignore
   const FinalText: React.FC = () => {
-    if (anchors.length > 0) {
+    if (textWithAnchors.length > 0) {
       // @ts-ignore
-      return anchors.map((anchor) => {
+      return textWithAnchors.map((anchor) => {
         if (anchor.link) {
-          return <a href={anchor.link} rel="noopener noreferrer" target="_blank">{anchor.text}</a>;
+          return <a href={anchor.link} rel="noopener noreferrer" target="_blank">{anchor.label}</a>;
         }
-        return <>{anchor.text}</>;
+        return <>{anchor.label}</>;
       });
     }
 
     return <>{text}</>;
   };
 
-  const renderText = (): React.ReactElement => {
+  const RenderText: React.FC = () => {
     if (maxTextLength && text.length > maxTextLength) {
       return (
         <p className={styles.p}>
@@ -67,7 +65,7 @@ const TypographyText: React.FC<Props> = ({
   return (
     <>
       {Content && <Content />}
-      {renderText()}
+      <RenderText />
     </>
   );
 };
