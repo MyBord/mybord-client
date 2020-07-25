@@ -17,7 +17,6 @@ This document is used to outline current project management priorities.
   * typography
     * fix if anchor text is in tooltip
     * update styling of anchor text
-    * fix p child of p warning
     * fix that all three typography compenents have the same styling class name props
     * remove sampletext from about dev page
   * center the nav icons - they are a little off - make sure they are centered for all heights?
