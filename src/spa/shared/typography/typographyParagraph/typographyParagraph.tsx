@@ -25,7 +25,7 @@ const TypographyParagraph: React.FC<Props> = ({
   textAlign,
   weight,
 }) => (
-  <p
+  <div
     className={[
       styles.typography,
       styles[color],
@@ -36,7 +36,7 @@ const TypographyParagraph: React.FC<Props> = ({
     ].join(' ')}
   >
     {children}
-  </p>
+  </div>
 );
 
 export default TypographyParagraph;
