@@ -14,9 +14,6 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
-  * typography
-    * fix if anchor text is in tooltip
-    * remove sampletext from about dev page
   * center the nav icons - they are a little off - make sure they are centered for all heights?
   * about page
     * delete aboutToDo.md
