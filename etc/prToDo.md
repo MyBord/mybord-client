@@ -12,3 +12,5 @@ update styling of anchor text
 fix p child of p
 
 fix that all three typography compenents have the same styling class name props
+
+change name of anchor text?
