@@ -20,6 +20,7 @@ This document is used to outline current project management priorities.
     * fix p child of p warning
     * fix that all three typography compenents have the same styling class name props
     * move render text and final text into separate files
+    * remove sampletext from about dev page
   * center the nav icons - they are a little off - make sure they are centered for all heights?
   * about page
     * delete aboutToDo.md
