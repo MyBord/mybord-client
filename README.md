@@ -47,4 +47,5 @@ Further documentation can be found below:
   * [Product Outline](https://github.com/jimmy-e/mybord/tree/master/docs/productOutline.md)
   * [Project Management](https://github.com/jimmy-e/mybord/tree/master/docs/projectManagement.md)
   * [React Implementation, architecture & principles](https://github.com/jimmy-e/mybord/tree/master/docs/react.md)
+  * [Running Locally](https://github.com/jimmy-e/mybord/tree/master/docs/runningLocally.md)
   * [Storybook Configuration, build process, and implementation](https://github.com/jimmy-e/mybord/tree/master/docs/storybook.md)
