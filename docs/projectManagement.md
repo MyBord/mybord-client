@@ -14,6 +14,9 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
+  * update node_env types
+  * update yarn commands
+  * detail turning off chrome flag for running locally - add instructions for running locally
   * center the nav icons - they are a little off - make sure they are centered for all heights?
   * about page
     * delete aboutToDo.md

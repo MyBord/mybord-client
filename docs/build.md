@@ -361,25 +361,48 @@ the following:
     
 ## VI. Env Vars
 
+### A. Env Var Files
+
 When running locally, at the root of folder, you will need to create three separate env var files:
 
+* **`local.env`:**
+  * a file containing node environment variables for your local instance when running the client
+   in 'LOCAL' mode.
 * **`dev.env`:**
-  * a file containing node environment variables for your local instance when running
-   the server in 'DEV' mode.
+  * a file containing node environment variables for your deployed development instance when running
+   the client in 'DEV' mode.
 * **`prod.env`:**
-  * a file containing node environment variables for your local instance when running
-   the server in 'PROD' mode.
-* **`test.env`:**
-  * a file containing node environment variables for your local instance when running
-   the server in 'TEST' mode.
-   
+  * a file containing node environment variables for your deployed production instance when running
+   the client in 'PROD' mode.
+
+### B. List of Env Vars   
+
 The following are the env vars needed to run our front end application:
 
 * **`URI`**:
   * The uri endpoint that is used to communicate with our backend server. This should look
    something like `localhost:1234/graphql` and should not include a `http://` prefix since we
    want to use this for web sockets as well (`ws://`).
+  * Note: For the local.env file, the `URI` should be set up to `localhost:4000/graphql` since
+   that is where our local backend sever will be running.
    
+### C. Env Var File Examples  
+
+**`dev.env:`:**
+```
+URI=sample-dev-server-app.herokuapp.com/graphql
+```
+
+**`local.env:`:**
+```
+URI=localhost:4000/graphql
+```
+
+**`prod.env:`:**
+```
+URI=sample-prod-server-app.herokuapp.com/graphql
+```
+
 ## VII. Important Branches
 
 The following are important branches in regards to the `mybord` repo:
