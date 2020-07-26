@@ -11,11 +11,11 @@ switch (process.env.NODE_ENV) {
   case 'DEV':
     envFile = 'dev.env';
     break;
+  case 'LOCAL':
+    envFile = 'local.env';
+    break;
   case 'PROD':
     envFile = 'prod.env';
-    break;
-  case 'TEST':
-    envFile = 'test.env';
     break;
   default:
     throw Error('Unknown NODE_ENV flag');

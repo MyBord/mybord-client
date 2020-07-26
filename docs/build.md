@@ -350,14 +350,15 @@ the following:
     * run webpack with the dev configurations.
   * `webpack:prod`
     * run webpack with the prod configurations.
-  * `build:dev`
-    * build a dev build of the application.
+  * `build:dev-client`
+    * Builds the client with the dev webpack configuration.
   * `build:prod`
-    * build a prod build of the application.
-  * `run:dev`
-    * runs a local version of the application that is connected to a local running back end server.
-  * `run:prod`
-    * runs a local version of the application that is connected to the production server.
+    * Builds the client with the prod webpack configuration.
+  * `run-local:local-client`
+    * runs a local version of the client that is connected to a local running back end server.
+  * `run-local:dev-client`
+    * runs a local version of the client that is connected to a running development server
+     hosted at Heroku.
     
 ## VI. Env Vars
 
