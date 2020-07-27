@@ -5,6 +5,8 @@
     "test": "jest",
     "storybook": "NODE_ENV=DEV start-storybook",
     "build-storybook": "build-storybook -c .storybook -o .out",
+    "push-heroku:dev": "git push heroku-dev master",
+    "push-heroku:prod": "git push heroku-prod master",
     "remove-dist": "rm -rf dist",
     "copy-index": "cp src/index.html dist/index.html",
     "webpack:dev": "webpack --config webpack.dev.js",

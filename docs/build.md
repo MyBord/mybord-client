@@ -336,29 +336,37 @@ the following:
 
 ## V. Yarn Commands
 
-  * `test`
-    * run all tests for the application.
-  * `storybook`
-    * run a local storybook.
-  * `build-storybook`
-    * build a storybook bundle.
-  * `remove-dist`
-    * remove the `dist` folder.
-  * `copy-index`
-    * copy the source `index.html` file to the `dist` folder.
-  * `webpack:dev`
-    * run webpack with the dev configurations.
-  * `webpack:prod`
-    * run webpack with the prod configurations.
-  * `build:dev-client`
-    * Builds the client with the dev webpack configuration.
-  * `build:prod`
-    * Builds the client with the prod webpack configuration.
-  * `run-local:local-client`
-    * runs a local version of the client that is connected to a local running back end server.
-  * `run-local:dev-client`
-    * runs a local version of the client that is connected to a running development server
-     hosted at Heroku.
+* `test`
+  * run all tests for the application.
+* `storybook`
+  * run a local storybook.
+* `build-storybook`
+  * build a storybook bundle.
+* **`push-heroku:dev`:**
+  * This pushes our client application to our development heroku app
+  (e.g.`mybord-server-dev-jimmy`). See [here](https://github.com/jimmy-e/mybord/blob/master/docs/deployment.md##iii-deploying-an-instance)
+  for more information.
+* **`push-heroku:prod`:**
+  * This pushes our client application to our production heroku app (e.g.`mybord-server-prod`).
+  See [here](https://github.com/jimmy-e/mybord/blob/master/docs/deployment.md##iii-deploying-an-instance)
+  for more information.
+* `remove-dist`
+  * remove the `dist` folder.
+* `copy-index`
+  * copy the source `index.html` file to the `dist` folder.
+* `webpack:dev`
+  * run webpack with the dev configurations.
+* `webpack:prod`
+  * run webpack with the prod configurations.
+* `build:dev-client`
+  * Builds the client with the dev webpack configuration.
+* `build:prod`
+  * Builds the client with the prod webpack configuration.
+* `run-local:local-client`
+  * runs a local version of the client that is connected to a local running back end server.
+* `run-local:dev-client`
+  * runs a local version of the client that is connected to a running development server
+   hosted at Heroku.
     
 ## VI. Env Vars
 
