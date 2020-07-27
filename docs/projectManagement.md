@@ -138,6 +138,8 @@ This document is used to outline current project management priorities.
 ## III. Other
 
 * Set up email account with gmail hosted via mybord.io
+* get social media accounts
+* soc2 audit?
 * Legal
   * Terms and Conditions
   * GDPR
