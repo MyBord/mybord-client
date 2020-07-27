@@ -43,6 +43,7 @@ Further documentation can be found below:
 
   * [Architecture](https://github.com/jimmy-e/mybord/tree/master/docs/architecture.md)
   * [Build Process](https://github.com/jimmy-e/mybord/tree/master/docs/build.md)
+  * [Deployment](https://github.com/jimmy-e/mybord/tree/master/docs/deployment.md)
   * [HTML Implementation](https://github.com/jimmy-e/mybord/tree/master/docs/html.md)
   * [Product Outline](https://github.com/jimmy-e/mybord/tree/master/docs/productOutline.md)
   * [Project Management](https://github.com/jimmy-e/mybord/tree/master/docs/projectManagement.md)
