@@ -42,12 +42,13 @@ more information.
 
 In order to deploy our node.js application to Heroku, make sure you do the following:
 
-1. Make sure all of the necessary instances listed in ['managing our instances'](#i-managing-our-instances)
+1. If you haven't done so already, authenticate with heroku by running `heroku login`.
+2. Make sure all of the necessary instances listed in ['managing our instances'](#i-managing-our-instances)
 have been created.
-2. Add the production heroku client app as a git repository. Do this by going to the production
+3. Add the production heroku client app as a git repository. Do this by going to the production
 heroku app in the heroku dashboard, click on the settings tab, copying the 'Heroku git URL', and
 running the following command: `git remote add heroku-prod <heroku_git_url>`.
-3. Add the development heroku client app as a git repository. Do this by going to your heroku
+4. Add the development heroku client app as a git repository. Do this by going to your heroku
 development app in the heroku dashboard, click on the settings tab, copying the 'Heroku git URL',
 and running the following command: `git remote add heroku-dev <heroku_git_url>`.
 
