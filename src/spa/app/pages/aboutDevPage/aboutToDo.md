@@ -1,3 +1,33 @@
+## Summary:
+
+* Summary
+  * Typescript
+  * GraphQL
+  * Node
+  * React, concurrent mode
+  * Apollo Server & Apollo Client
+* Front End  
+  * enzyme
+  * css modules
+  * framer motion
+  * storybook
+  * lottie
+  * ant design
+  * nucleo
+* Backend  
+  * Express
+  * Prisma
+  * PostgreSQL
+  * Passport
+  * Google's Node.js Client Api
+* Deployment & Devops  
+  * Heroku
+  * Prisma
+  * Docker
+* Testing, storybook  
+
+--------------------------------------
+
 * add social footer to both about pages
 
 center images with text in about dev ?
