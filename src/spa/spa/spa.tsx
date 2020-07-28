@@ -1,16 +1,14 @@
 import * as React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import SpaProviders from './spaProviders';
-import SpaAuthentication from './spaAuthentication';
+const App = React.lazy(() => import('app/app'));
 
-// This is the actual final, production React code that instantiates our application. It contains:
-//   * A router
-//   * Context Providers
-//   * Our actual spa application with authentication handling
 const Spa: React.FC = () => (
   <BrowserRouter>
     <SpaProviders>
-      <SpaAuthentication />
+      <React.Suspense fallback={<div>loading</div>}>
+        <App />
+      </React.Suspense>
     </SpaProviders>
   </BrowserRouter>
 );
