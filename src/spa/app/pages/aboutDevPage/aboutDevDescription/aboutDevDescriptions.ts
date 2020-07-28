@@ -10,10 +10,13 @@ export const partOne = 'MyBord is built with TypeScript using GraphQL and'
 + ' is used for a couple common components (though more and more are getting custom built)'
 + ' and we use [Nucleo](https://nucleoapp.com/) for most of our icons. Lastly, everything gets'
 + ' styled with Less and CSS Modules and testing is done with Enzyme.';
-// + '\n\n'
-// + 'The back end is written on top of Node.js and Express and specifically uses'
-// + ' [Apollo Server](https://www.apollographql.com/docs/apollo-server/v1/servers/express/).'
-// + ' We run a PostgreSQL database with a [Prisma](https://www.prisma.io/) ORM.'
-// + ' [Passport.js](http://www.passportjs.org/) is used to manage authentication. Third party apis'
-// + ' include'
-// + ' [Google\'s Node.js Client Api](https://github.com/googleapis/google-api-nodejs-client#google-apis-nodejs-client).';
+
+export const partTwo = 'The back end is written on top of Node.js and Express and specifically uses'
++ ' [Apollo Server](https://www.apollographql.com/docs/apollo-server/v1/servers/express/).'
++ ' We run a PostgreSQL database with a [Prisma](https://www.prisma.io/) ORM.'
++ ' [Passport.js](http://www.passportjs.org/) is used to manage authentication. Third party apis'
++ ' include'
++ ' [Google\'s Node.js Client Api](https://github.com/googleapis/google-api-nodejs-client#google-apis-nodejs-client).'
++ '\n\n'
++ 'Our server is hosted via Heroku and is managed with [Prisma Cloud](https://www.prisma.io/cloud).'
++ ' Virtualization is done with Docker.';

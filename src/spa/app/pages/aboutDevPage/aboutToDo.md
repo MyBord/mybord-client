@@ -1,3 +1,5 @@
+* Change line height of about text
+
 ## Summary:
 
 * Summary
