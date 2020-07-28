@@ -15,7 +15,6 @@ import { GqlString } from 'types/gqlTypes';
 import { useHydrationContext } from 'context/hydrationContext/hydrationContext';
 
 interface PageContentProps {
-  isAnimationComplete: boolean;
   setHydrationStatus: (status: boolean) => void;
 }
 
@@ -37,7 +36,7 @@ const pageWrapper = ({
   // ----- NO DATA IS NEEDED ----- //
   if (!gqlString) {
     const NoDataPage: React.FC = () => {
-      const { isAnimationComplete, setHydrationStatus } = useHydrationContext();
+      const { setHydrationStatus } = useHydrationContext();
 
       // See *1 in `hydrationContext.tsx`
       React.useEffect(() => {
@@ -46,11 +45,7 @@ const pageWrapper = ({
         }
       }, [setHydrationStatus]);
 
-      // See *2 in `hydrationContext.tsx`
-      if (isAnimationComplete) {
-        return <Component />;
-      }
-      return null;
+      return <Component />;
     };
 
     return NoDataPage;
@@ -60,20 +55,19 @@ const pageWrapper = ({
   const resource = api.query(gqlString);
 
   const Page: React.FC = () => {
-    const { isAnimationComplete, isHydrated, setHydrationStatus } = useHydrationContext();
+    const { isHydrated, setHydrationStatus } = useHydrationContext();
     // See *1 notes in `hydrationContext.tsx` about why our fallback `Spinner` may not render unless
     // our app has been hydrated.
     return (
       <React.Suspense fallback={isHydrated && <Spinner />}>
         <PageContent
-          isAnimationComplete={isAnimationComplete}
           setHydrationStatus={setHydrationStatus}
         />
       </React.Suspense>
     );
   };
 
-  const PageContent: React.FC<PageContentProps> = ({ isAnimationComplete, setHydrationStatus }) => {
+  const PageContent: React.FC<PageContentProps> = ({ setHydrationStatus }) => {
     const data = resource.data.read();
 
     // See *1 in `hydrationContext.tsx`
@@ -83,11 +77,7 @@ const pageWrapper = ({
       }
     }, [setHydrationStatus]);
 
-    // See *2 in `hydrationContext.tsx`
-    if (isAnimationComplete) {
-      return <Component data={data} />;
-    }
-    return null;
+    return <Component data={data} />;
   };
 
   return Page;

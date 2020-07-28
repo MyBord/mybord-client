@@ -8,13 +8,12 @@ import { useHydrationContext } from 'context/hydrationContext/hydrationContext';
 
 const pageWrapper = (WrappedComponent: React.FC): React.FC => {
   const Page: React.FC = () => {
-    const { setAnimationStatus, setHydrationStatus } = useHydrationContext();
+    const { setHydrationStatus } = useHydrationContext();
 
     // See *1 and *2 in `hydrationContext.tsx`
     React.useEffect(() => {
-      setAnimationStatus(true);
       setHydrationStatus(true);
-    }, [setAnimationStatus, setHydrationStatus]);
+    }, [setHydrationStatus]);
 
     return <WrappedComponent />;
   };

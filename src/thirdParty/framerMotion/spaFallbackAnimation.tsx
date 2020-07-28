@@ -30,8 +30,8 @@ interface Props {
 
 // See *1 and *2 in `hydrationContext.tsx`
 const SpaFallbackAnimation: React.FC<Props> = ({ children }) => {
-  const { isAnimationComplete, isHydrated } = useHydrationContext();
-  const shouldRender = !isAnimationComplete || !isHydrated;
+  const { isHydrated } = useHydrationContext();
+  const shouldRender = !isHydrated;
   return (
     <AnimatePresence>
       {
