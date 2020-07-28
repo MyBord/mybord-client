@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
-import Layout from 'layout/layout';
+import Header from 'header/header';
 import Routes from './routes';
 
 const App: React.FC = () => (
@@ -9,7 +9,7 @@ const App: React.FC = () => (
     <Link to="/about">About</Link>
     <Link to="/trending">Trending</Link>
     <Routes />
-    <Layout><div>foo bar</div></Layout>
+    <Header />
   </div>
 );
 
