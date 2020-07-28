@@ -9,7 +9,7 @@ const TrendingPage: React.FC = () => (
       width: '10rem',
     }}
   >
-    Trending Page
+    <h1>Trending Page</h1>
   </div>
 );
 
