@@ -1,5 +1,5 @@
 import * as React from 'react';
-import pageWrapper from 'pages/pageWrapper/pageWrapper';
+import pageWrapper from 'pages/pageWrapper';
 import { useSubscription } from '@apollo/react-hooks';
 import {
   DELETED_USER_CARD_SUBSCRIPTION,

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import pageWrapper from 'pages/pageWrapper/pageWrapper';
+import pageWrapper from 'pages/pageWrapper';
 
 const AboutPage: React.FC = () => (
   <div
