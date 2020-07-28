@@ -18,5 +18,19 @@ export const partTwo = 'The back end is written on top of Node.js and Express an
 + ' include'
 + ' [Google\'s Node.js Client Api](https://github.com/googleapis/google-api-nodejs-client#google-apis-nodejs-client).'
 + '\n\n'
-+ 'Our server is hosted via Heroku and is managed with [Prisma Cloud](https://www.prisma.io/cloud).'
-+ ' Virtualization is done with Docker.';
++ 'Our servers are hosted via Heroku and are managed with [Prisma Cloud](https://www.prisma.io/cloud).'
++ ' Virtualization is done with Docker and Circle CI is used for CD management.';
+
+export const partThree = 'Lastly, something to mention: at first, when you build an app, you think'
++ ' "Fantastic! I\'ll build this with complete test coverage. Unit tests, integration tests,'
++ ' end to end tests and more! I\'ll prototype every component in Storybook and make sure I have'
++ ' full accessibility coverage, performance optimization and everything I can think of!" At first,'
++ ' the ambitions were high, but as all of us developers know, there are always priorities to'
++ ' deliver on for an MVP and not everything can be done if you want to make progress'
++ ' and ship. So while those priorities are important to us'
++ ' as we want Jest, Enzyme, Storybook and more to be part of the core development process for'
++ ' MyBord, we\'re a bit more lean at the moment and are trying to get new features out the door.'
++ ' Important roadmap features include building out more tools and apis for each user\'s "bord",'
++ ' social media enhancements (following friends, subscribing, copying cards, trending), possibly'
++ ' building a React Native app (and thus converting the codebase from React to React Native),'
++ ' enhanced OAuth, and possibly moving from Heroku to AWS.';

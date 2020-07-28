@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Typography from 'typography/typography';
 import programming from 'assets/illustrations/programming.png';
-import { partOne, partTwo } from './aboutDevDescriptions';
+import { partOne, partTwo, partThree } from './aboutDevDescriptions';
 import * as styles from './aboutDevDescription.module.less';
 
 const AboutDevDescription: React.FC = () => (
@@ -20,7 +20,7 @@ const AboutDevDescription: React.FC = () => (
     </section>
     <section className={[styles.paragraphSection, styles.paragraphMargin].join(' ')}>
       <div className={[styles.paragraphDiv, styles.paragraphDivNoImg].join(' ')}>
-        <Typography size="four" text={partTwo} textAlign="justify" />
+        <Typography size="four" text={partThree} textAlign="justify" />
       </div>
     </section>
   </>
