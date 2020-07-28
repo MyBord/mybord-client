@@ -78,10 +78,6 @@ module.exports = {
       '.tsx',
     ],
     'import/resolver': {
-      node: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx'],
-        moduleDirectory: ['node_modules', 'src/'],
-      },
       webpack: {
         config: 'webpack.common.js',
       }
