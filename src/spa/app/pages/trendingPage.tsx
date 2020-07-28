@@ -4,12 +4,15 @@ import pageWrapper from 'pages/pageWrapper';
 const TrendingPage: React.FC = () => (
   <div
     style={{
-      background: 'pink',
-      height: '10rem',
-      width: '10rem',
+      alignItems: 'center',
+      background: 'green',
+      display: 'flex',
+      height: '15rem',
+      justifyContent: 'center',
+      width: '15rem',
     }}
   >
-    <h1>Trending Page</h1>
+    <h1 style={{ color: 'white' }}>Trending Page</h1>
   </div>
 );
 
