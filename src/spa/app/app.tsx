@@ -8,9 +8,8 @@ const App: React.FC = () => (
     <Link to="/myBord">MyBord</Link>
     <Link to="/about">About</Link>
     <Link to="/trending">Trending</Link>
-    <Layout>
-      <Routes />
-    </Layout>
+    <Layout><div>foo bar</div></Layout>
+    <Routes />
   </div>
 );
 
