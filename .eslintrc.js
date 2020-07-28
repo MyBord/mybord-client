@@ -68,7 +68,7 @@ module.exports = {
     'react/no-array-index-key': 1,
     'react/jsx-props-no-spreading': 1,
     'react-hooks/rules-of-hooks': 'error',
-    'react-hooks/exhaustive-deps': 'error',
+    'react-hooks/exhaustive-deps': 'error'
   },
   settings: {
     'import/extensions': [
@@ -78,6 +78,10 @@ module.exports = {
       '.tsx',
     ],
     'import/resolver': {
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        moduleDirectory: ['node_modules', 'src/'],
+      },
       webpack: {
         config: 'webpack.common.js',
       }
