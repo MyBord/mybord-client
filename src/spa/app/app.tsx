@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 import Layout from 'layout/layout';
-import Routes from 'routing/routes';
+import Routes from './routes';
 
 const App: React.FC = () => (
   <div>
