@@ -5,9 +5,9 @@ import Routes from './routes';
 
 const App: React.FC = () => (
   <div>
-    <Link to="/myBord">MyBord</Link>
-    <Link to="/about">About</Link>
-    <Link to="/trending">Trending</Link>
+    <div style={{ margin: '1rem' }}><Link to="/myBord">MyBord</Link></div>
+    <div style={{ margin: '1rem' }}><Link to="/about">About</Link></div>
+    <div style={{ margin: '1rem' }}><Link to="/trending">Trending</Link></div>
     <Routes />
     <Header />
   </div>
