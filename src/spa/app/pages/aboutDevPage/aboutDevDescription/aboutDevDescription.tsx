@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Typography from 'typography/typography';
-import laptop from 'assets/pictures/laptop.jpg';
+import programming from 'assets/illustrations/programming.png';
 import { loremIpsumLong } from 'utils/loremIpsum';
 import * as styles from './aboutDevDescription.module.less';
 
@@ -8,14 +8,14 @@ const AboutDevDescription: React.FC = () => (
   <>
     <section className={styles.paragraphSection}>
       <div className={styles.paragraphDiv} id="p-1">
-        <Typography text={loremIpsumLong} textAlign="justify" />
+        <Typography size="four" text={loremIpsumLong} textAlign="justify" />
       </div>
-      <img alt="laptop" className={styles.img} src={laptop} />
+      <img alt="programming" className={styles.img} src={programming} />
     </section>
     <section className={styles.paragraphSection} id="p-2">
-      <img alt="laptop" className={styles.img} src={laptop} />
+      <img alt="programming" className={styles.img} src={programming} />
       <div className={styles.paragraphDiv}>
-        <Typography text={loremIpsumLong} textAlign="justify" />
+        <Typography size="four" text={loremIpsumLong} textAlign="justify" />
       </div>
     </section>
   </>
