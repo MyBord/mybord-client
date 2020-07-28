@@ -1,3 +1,12 @@
-export const partOne = `
-MyBord 
-`;
+export const partOne = 'MyBord is built with TypeScript using GraphQL and'
++ ' [Apollo](https://www.apollographql.com/) on'
++ ' top of Node.js and React.'
++ '\n\n'
++ 'The front end client uses'
++ ' [React\'s experimental concurrent mode](https://reactjs.org/docs/concurrent-mode-intro.html).'
++ ' Other apis include [Framer Motion](https://www.framer.com/motion/) for fluid component'
++ ' animations, [Lottie](https://airbnb.io/lottie/#/) to render animated illustrations,'
++ ' and [Storybook](https://storybook.js.org/) for prototyping. [Ant Design](https://ant.design/)'
++ ' is used for a couple common components (though more and more are getting custom built)'
++ ' and we use [Nucleo](https://nucleoapp.com/) for most of our icons. Lastly, everything gets'
++ ' styled with Less and CSS Modules and testing is done with Enzyme.';

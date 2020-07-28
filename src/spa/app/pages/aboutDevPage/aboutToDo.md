@@ -9,9 +9,9 @@
 * Front End  
   * enzyme
   * css modules
-  * framer motion
-  * storybook
-  * lottie
+  * framer motion - done
+  * storybook - done
+  * lottie - done
   * ant design
   * nucleo
 * Backend  
