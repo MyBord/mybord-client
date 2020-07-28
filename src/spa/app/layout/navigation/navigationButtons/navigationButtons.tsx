@@ -16,9 +16,9 @@ const NavigationButtons: React.FC = () => (
         pageTitle="Trending"
       />
       <NavigationButton
-        iconName="addUser"
-        link="friends"
-        pageTitle="Friends"
+        iconName="about"
+        link="about"
+        pageTitle="About"
       />
     </section>
   </section>
