@@ -37,7 +37,7 @@ const initialHydrationState: HydrationState = {
 const HydrationContext = React.createContext<HydrationState>(initialHydrationState);
 
 export const HydrationContextProvider = (props: object): React.ReactElement => {
-  const [isAnimationComplete, setAnimationStatus] = React.useState(false);
+  const [isAnimationComplete, setAnimationStatus] = React.useState(true);
   const [isHydrated, setHydrationStatus] = React.useState(false);
 
   return (
