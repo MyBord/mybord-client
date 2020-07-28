@@ -10,12 +10,8 @@ interface Props {
 
 const Layout: React.FC<Props> = ({ children }) => (
   <>
-    <main className={styles.main}>
-      <Header />
-      <section className={styles.section}>
-        {children}
-      </section>
-    </main>
+    <Header />
+    {children}
   </>
 );
 
