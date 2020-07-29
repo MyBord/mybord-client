@@ -2,7 +2,6 @@ import * as React from 'react';
 import Icon from 'icons/icon/icon';
 import PopOver from 'modals/popOver/popOver';
 import { PopOverCallback } from 'types/modalTypes';
-import HeaderProfileContent from './headerProfileContent';
 import * as styles from './headerProfile.module.less';
 
 const HeaderProfile: React.FC = () => {
@@ -16,7 +15,7 @@ const HeaderProfile: React.FC = () => {
 
   return (
     <PopOver
-      Content={<HeaderProfileContent hidePopOver={hidePopOver} />}
+      Content={<h1>hello world</h1>}
       callback={handleCallback}
       placement="bottom-right"
     >
