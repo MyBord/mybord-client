@@ -1,11 +1,33 @@
 import * as React from 'react';
+import gql from 'graphql-tag';
 import pageWrapper from './pageWrapper';
-import { USER_CARDS_QUERY, UserCard } from 'schema/card';
+
+export const USER_CARDS_QUERY = gql`
+  query {
+    userCards{
+      id
+      isFavorite
+      isToDo
+      type
+      cardData{
+        youtubeCardData{
+          channelThumbnail
+          channelTitle
+          duration
+          likes
+          publishedAt
+          videoId
+          videoThumbnail
+          videoTitle
+          views
+        }
+      }
+    }
+  }
+`;
 
 interface Props {
-  data: {
-    userCards: UserCard[];
-  };
+  data: any;
 }
 
 const PageOne: React.FC<Props> = ({ data }) => {
