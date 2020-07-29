@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { useLocation } from 'react-router-dom';
-const AboutPageHeader = React.lazy(() => import('./aboutPageHeader/aboutPageHeader'));
 import PageOneHeader from './pageOneHeader';
+import PageTwoHeader from './pageTwoHeader';
+import PageThreeHeader from './pageThreeHeader';
 
 const PageHeader: React.FC = () => {
   const { pathname } = useLocation();
@@ -11,7 +12,9 @@ const PageHeader: React.FC = () => {
     case 'pageOne':
       return <PageOneHeader />;
     case 'pageTwo':
-      return <AboutPageHeader />;
+      return <PageTwoHeader />;
+    case 'pageThree':
+      return <PageThreeHeader />;
     default:
       return null;
   }
