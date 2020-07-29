@@ -8,9 +8,9 @@ const PageHeader: React.FC = () => {
 
   const path = pathname.split('/')[1];
   switch (path) {
-    case 'myBord':
+    case 'pageOne':
       return <DashboardPageHeader />;
-    case 'about':
+    case 'pageTwo':
       return <AboutPageHeader />;
     default:
       return null;

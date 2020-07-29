@@ -8,13 +8,13 @@ const Routes: React.FC = () => {
   const location = useLocation();
   return (
     <Switch location={location} key={location.key}>
-      <Route exact path="/about">
-        <AboutPage />
-      </Route>
-      <Route exact path="/myBord">
+      <Route exact path="/pageOne">
         <DashboardPage />
       </Route>
-      <Route exact path="/trending">
+      <Route exact path="/pageTwo">
+        <AboutPage />
+      </Route>
+      <Route exact path="/pageThree">
         <TrendingPage />
       </Route>
     </Switch>
