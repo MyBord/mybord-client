@@ -1,11 +1,17 @@
 import * as React from 'react';
-import DashboardPageHeaderFilterForm
-  from './dashboardPageHeaderFilterForm/dashboardPageHeaderFilterForm';
-import * as styles from './dashboardPageHeader.module.less';
+import TextInput from 'inputs/textInput/textInput';
+import Button from 'buttons/button/button';
 
 const DashboardPageHeader: React.FC = () => (
-  <section className={styles.section}>
-    <DashboardPageHeaderFilterForm />
+  <section>
+    <div>
+      <TextInput placeholder="youtube url" />
+      <div>
+        <div>
+          <Button htmlType="submit" label="Add Video" />
+        </div>
+      </div>
+    </div>
   </section>
 );
 
