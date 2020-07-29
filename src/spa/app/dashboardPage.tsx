@@ -1,5 +1,5 @@
 import * as React from 'react';
-import pageWrapper from 'pages/pageWrapper';
+import pageWrapper from './pageWrapper';
 import { USER_CARDS_QUERY, UserCard } from 'schema/card';
 
 interface Props {

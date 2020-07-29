@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { Route, Switch, useLocation } from 'react-router-dom';
-const AboutPage = React.lazy(() => import('pages/aboutPage'));
-const DashboardPage = React.lazy(() => import('pages/dashboardPage'));
-const TrendingPage = React.lazy(() => import('pages/trendingPage'));
+const AboutPage = React.lazy(() => import('./aboutPage'));
+const DashboardPage = React.lazy(() => import('./dashboardPage'));
+const TrendingPage = React.lazy(() => import('./trendingPage'));
 
 const Routes: React.FC = () => {
   const location = useLocation();
