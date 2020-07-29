@@ -14,10 +14,6 @@ import api from 'api/api';
 import { GqlString } from 'types/gqlTypes';
 import { useHydrationContext } from 'context/hydrationContext/hydrationContext';
 
-interface PageContentProps {
-  setHydrationStatus: (status: boolean) => void;
-}
-
 interface Props {
   Component: React.FC<WrappedComponentProps>;
   gqlString?: GqlString;
@@ -54,28 +50,28 @@ const pageWrapper = ({
   // ----- DATA IS NEEDED ----- //
   const resource = api.query(gqlString);
 
-  const Page: React.FC = () => {
-    const { isHydrated, setHydrationStatus } = useHydrationContext();
-    // See *1 notes in `hydrationContext.tsx` about why our fallback `Spinner` may not render unless
-    // our app has been hydrated.
-    return (
-      <React.Suspense fallback={isHydrated && <Spinner />}>
-        <PageContent
-          setHydrationStatus={setHydrationStatus}
-        />
-      </React.Suspense>
-    );
-  };
+  const FallbackComponent: React.FC = () => (
+    <div
+      style={{
+        border: '16px solid #f3f3f3',
+        borderRadius: '50%',
+        borderTop: '16px solid #3498db',
+        width: '120px',
+        height: '120px',
+        animation: 'spin 2s linear infinite',
+        margin: '16px',
+      }}
+    />
+  );
 
-  const PageContent: React.FC<PageContentProps> = ({ setHydrationStatus }) => {
+  const Page: React.FC = () => (
+    <React.Suspense fallback={<FallbackComponent />}>
+      <PageContent />
+    </React.Suspense>
+  );
+
+  const PageContent: React.FC = () => {
     const data = resource.data.read();
-
-    // See *1 in `hydrationContext.tsx`
-    React.useEffect(() => {
-      if (setHydration) {
-        setHydrationStatus(true);
-      }
-    }, [setHydrationStatus]);
 
     return <Component data={data} />;
   };
