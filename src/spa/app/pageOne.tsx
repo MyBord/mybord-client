@@ -8,7 +8,7 @@ interface Props {
   };
 }
 
-const DashboardPage: React.FC<Props> = ({ data }) => {
+const PageOne: React.FC<Props> = ({ data }) => {
   console.log(' ----- DASHBOARD DATA ----- ');
   console.log(data);
   console.log(' ----- DASHBOARD DATA ----- ');
@@ -24,13 +24,13 @@ const DashboardPage: React.FC<Props> = ({ data }) => {
         width: '15rem',
       }}
     >
-      <h1 style={{ color: 'white' }}>Dashboard Page</h1>
+      <h1 style={{ color: 'white' }}>Page One</h1>
     </div>
   );
 };
 
 export default pageWrapper({
-  Component: DashboardPage,
+  Component: PageOne,
   gqlString: USER_CARDS_QUERY,
   setHydration: false,
 });
