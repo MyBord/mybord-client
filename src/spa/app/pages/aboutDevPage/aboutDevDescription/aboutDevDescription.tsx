@@ -9,20 +9,43 @@ const AboutDevDescription: React.FC = () => {
   return (
     <>
       <section className={styles.paragraphSection}>
-        <img alt="programming" className={[styles.img, styles.imgLeft].join(' ')} src={programming} />
+        <img
+          alt="programming"
+          className={[styles.img, styles.imgLeft].join(' ')}
+          src={programming}
+        />
         <div className={styles.paragraphDiv}>
-          <Typography size="four" text={partOne} textAlign="justify" />
+          <Typography
+            lineHeight="large"
+            size="four"
+            text={partOne}
+            textAlign="justify"
+          />
         </div>
       </section>
       <section className={[styles.paragraphSection, styles.paragraphMargin].join(' ')}>
         <div className={styles.paragraphDiv}>
-          <Typography size="four" text={partTwo} textAlign="justify" />
+          <Typography
+            lineHeight="large"
+            size="four"
+            text={partTwo}
+            textAlign="justify"
+          />
         </div>
-        <img alt="programming" className={[styles.img, styles.imgRight].join(' ')} src={forklift} />
+        <img
+          alt="programming"
+          className={[styles.img, styles.imgRight].join(' ')}
+          src={forklift}
+        />
       </section>
       <section className={[styles.paragraphSection, styles.paragraphMargin].join(' ')}>
         <div className={[styles.paragraphDiv, styles.paragraphDivNoImg].join(' ')}>
-          <Typography size="four" text={partThree} textAlign="justify" />
+          <Typography
+            lineHeight="large"
+            size="four"
+            text={partThree}
+            textAlign="justify"
+          />
         </div>
       </section>
     </>

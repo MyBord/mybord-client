@@ -19,6 +19,7 @@ export interface TypographyProps {
   Content?: React.FC;
   color?: ExportedColors;
   font?: TypographyFont;
+  lineHeight?: 'large';
   link?: string;
   maxTextLength?: number;
   onClick?: () => void;

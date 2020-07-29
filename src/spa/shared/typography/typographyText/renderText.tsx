@@ -6,6 +6,7 @@ import * as styles from './typographyText.module.less';
 
 interface Props {
   isParagraph: boolean;
+  lineHeight: TypographyProps['lineHeight'];
   maxTextLength?: TypographyProps['maxTextLength'];
   size: TypographyProps['size'];
   text: TypographyProps['text'];
@@ -13,13 +14,19 @@ interface Props {
 
 const TypographyText: React.FC<Props> = ({
   isParagraph,
+  lineHeight,
   maxTextLength,
   size,
   text,
 }) => {
+  const pClassName = [
+    styles.p,
+    lineHeight ? styles[lineHeight] : undefined,
+  ].join(' ');
+
   if (maxTextLength && text.length > maxTextLength) {
     return (
-      <p className={styles.p}>
+      <p className={pClassName}>
         {text.slice(0, maxTextLength)}
         <Tooltip text={text} trigger="click">
           <div className={[styles.ellipsis, styles[size]].join(' ')}>
@@ -33,7 +40,7 @@ const TypographyText: React.FC<Props> = ({
   }
 
   return (
-    <p className={styles.p}>
+    <p className={pClassName}>
       <FinalText isParagraph={isParagraph} text={text} />
     </p>
   );

@@ -7,6 +7,7 @@ const Typography = React.forwardRef<HTMLDivElement, TypographyProps>(({
   Content = null,
   color = 'black',
   font = 'poppins',
+  lineHeight = null,
   link = null,
   maxTextLength = null,
   onClick = null,
@@ -28,6 +29,7 @@ const Typography = React.forwardRef<HTMLDivElement, TypographyProps>(({
       <TypographyText
         Content={Content}
         isParagraph={!link && !onClick}
+        lineHeight={lineHeight}
         maxTextLength={maxTextLength}
         size={size}
         text={text}
