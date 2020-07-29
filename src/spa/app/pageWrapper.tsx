@@ -9,14 +9,12 @@
 // context reducer being mutated.
 
 import * as React from 'react';
-import Spinner from 'fallbacks/spinner/spinner';
 import api from 'api/api';
-import { GqlString } from 'types/gqlTypes';
 import { useHydrationContext } from 'context/hydrationContext/hydrationContext';
 
 interface Props {
   Component: React.FC<WrappedComponentProps>;
-  gqlString?: GqlString;
+  gqlString?: any;
   setHydration?: boolean;
 }
 
