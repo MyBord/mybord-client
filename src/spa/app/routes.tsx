@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Route, Switch, useLocation } from 'react-router-dom';
 const AboutPage = React.lazy(() => import('pages/aboutPage'));
-const DashboardPage = React.lazy(() => import('pages/dashboardPage/dashboardPage'));
+const DashboardPage = React.lazy(() => import('pages/dashboardPage'));
 const TrendingPage = React.lazy(() => import('pages/trendingPage'));
 
 const Routes: React.FC = () => {

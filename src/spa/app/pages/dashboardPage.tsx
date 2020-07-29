@@ -8,7 +8,7 @@ interface Props {
   };
 }
 
-const DashboardPageContainer: React.FC<Props> = ({ data }) => {
+const DashboardPage: React.FC<Props> = ({ data }) => {
   console.log(' ----- DASHBOARD DATA ----- ');
   console.log(data);
   console.log(' ----- DASHBOARD DATA ----- ');
@@ -30,7 +30,7 @@ const DashboardPageContainer: React.FC<Props> = ({ data }) => {
 };
 
 export default pageWrapper({
-  Component: DashboardPageContainer,
+  Component: DashboardPage,
   gqlString: USER_CARDS_QUERY,
   setHydration: false,
 });
