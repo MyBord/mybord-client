@@ -1,7 +1,7 @@
 import * as React from 'react';
 import pageWrapper from './pageWrapper';
 
-const TrendingPage: React.FC = () => (
+const PageThree: React.FC = () => (
   <div
     style={{
       alignItems: 'center',
@@ -12,8 +12,8 @@ const TrendingPage: React.FC = () => (
       width: '15rem',
     }}
   >
-    <h1 style={{ color: 'white' }}>Trending Page</h1>
+    <h1 style={{ color: 'white' }}>Page Three</h1>
   </div>
 );
 
-export default pageWrapper({ Component: TrendingPage });
+export default pageWrapper({ Component: PageThree });

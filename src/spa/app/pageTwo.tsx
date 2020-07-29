@@ -12,7 +12,7 @@ const PageTwo: React.FC = () => (
       width: '15rem',
     }}
   >
-    <h1 style={{ color: 'white' }}>About Page</h1>
+    <h1 style={{ color: 'white' }}>Page Two</h1>
   </div>
 );
 
