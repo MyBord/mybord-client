@@ -1,24 +1,11 @@
 import * as React from 'react';
-import Typography from 'typography/typography';
-import * as styles from './aboutPageHeader.module.less';
+import { Link } from 'react-router-dom';
 
 const AboutPageHeader: React.FC = () => (
-  <section className={styles.section}>
-    <div>
-      <Typography
-        link="/about"
-        size="four"
-        text="About MyBord"
-      />
-    </div>
-    <div className={styles.devDiv}>
-      <Typography
-        link="/about/dev"
-        size="four"
-        text="For Developers"
-      />
-    </div>
-  </section>
+  <div>
+    <Link to="/pageOne">Page One</Link>
+    <Link to="/pageThree">Page One</Link>
+  </div>
 
 );
 
