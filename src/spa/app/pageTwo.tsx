@@ -1,7 +1,7 @@
 import * as React from 'react';
 import pageWrapper from './pageWrapper';
 
-const AboutPage: React.FC = () => (
+const PageTwo: React.FC = () => (
   <div
     style={{
       alignItems: 'center',
@@ -16,4 +16,4 @@ const AboutPage: React.FC = () => (
   </div>
 );
 
-export default pageWrapper({ Component: AboutPage });
+export default pageWrapper({ Component: PageTwo });

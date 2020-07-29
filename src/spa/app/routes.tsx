@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Route, Switch } from 'react-router-dom';
-const AboutPage = React.lazy(() => import('./aboutPage'));
 const PageOne = React.lazy(() => import('./pageOne'));
+const PageTwo = React.lazy(() => import('./pageTwo'));
 const TrendingPage = React.lazy(() => import('./trendingPage'));
 
 const Routes: React.FC = () => (
@@ -10,7 +10,7 @@ const Routes: React.FC = () => (
       <PageOne />
     </Route>
     <Route exact path="/pageTwo">
-      <AboutPage />
+      <PageTwo />
     </Route>
     <Route exact path="/pageThree">
       <TrendingPage />
