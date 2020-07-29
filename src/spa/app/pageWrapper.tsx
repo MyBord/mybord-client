@@ -1,6 +1,5 @@
 import * as React from 'react';
 import api from 'api/api';
-import { useHydrationContext } from 'context/hydrationContext/hydrationContext';
 
 interface Props {
   Component: React.FC<WrappedComponentProps>;
@@ -15,13 +14,10 @@ interface WrappedComponentProps {
 const pageWrapper = ({
   Component,
   gqlString,
-  setHydration = true,
 }: Props): React.FC => {
   // ----- NO DATA IS NEEDED ----- //
   if (!gqlString) {
-    const NoDataPage: React.FC = () => <Component />;
-
-    return NoDataPage;
+    return Component;
   }
 
   // ----- DATA IS NEEDED ----- //
