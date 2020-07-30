@@ -1,8 +1,6 @@
 import * as React from 'react';
-import Icon from 'icons/icon/icon';
 import PopOver from 'modals/popOver/popOver';
 import { PopOverCallback } from 'types/modalTypes';
-import * as styles from './headerProfile.module.less';
 
 const HeaderProfile: React.FC = () => {
   const [hidePopOver, setHidePopOver] = React.useState<PopOverCallback['hidePopOver']>(null);
@@ -15,12 +13,23 @@ const HeaderProfile: React.FC = () => {
 
   return (
     <PopOver
-      Content={<h1>hello world</h1>}
+      Content={<h3>This is the popover content</h3>}
       callback={handleCallback}
       placement="bottom-right"
     >
-      <div className={styles.div}>
-        <Icon iconName="avatar" size={40} />
+      <div
+        style={{
+          alignItems: 'center',
+          background: 'blueViolet',
+          borderRadius: '50%',
+          color: 'white',
+          display: 'flex',
+          height: '5rem',
+          justifyContent: 'center',
+          width: '5rem',
+        }}
+      >
+        Click Me
       </div>
     </PopOver>
   );
