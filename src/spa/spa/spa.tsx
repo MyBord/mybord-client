@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import SpaProviders from './spaProviders';
-const App = React.lazy(() => import('app/app'));
+import App from '../app/app';
 
 const Fallback: React.FC = () => (
   <div
@@ -21,11 +20,9 @@ const Fallback: React.FC = () => (
 const Spa: React.FC = () => (
   <div style={{ margin: '2rem' }}>
     <BrowserRouter>
-      <SpaProviders>
-        <React.Suspense fallback={<Fallback />}>
-          <App />
-        </React.Suspense>
-      </SpaProviders>
+      <React.Suspense fallback={<Fallback />}>
+        <App />
+      </React.Suspense>
     </BrowserRouter>
   </div>
 );
