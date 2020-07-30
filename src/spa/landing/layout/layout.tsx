@@ -8,12 +8,19 @@ interface Props {
 
 const Layout: React.FC<Props> = ({ children }) => (
   <main className={styles.main}>
-    <div className={styles.imgContainer}>
+    <div className={styles.imgContainer} style={{ background: 'aqua' }}>
       <img
         alt="login-form-background"
         className={styles.img}
         src={loginBackground}
       />
+      {/* <div */}
+      {/*  style={{ */}
+      {/*    background: 'red', */}
+      {/*    height: '20rem', */}
+      {/*    width: '20rem', */}
+      {/*  }} */}
+      {/* /> */}
     </div>
     {children}
     <section className={styles.section}><h1>Section 1</h1></section>
