@@ -3,14 +3,36 @@
 .img {
   // https://css-tricks.com/perfect-full-page-background-image/
   height: auto;
-  left: 0;
-  min-height: 100%;
+  //left: 0;
+  //min-height: 100%;
   min-width: @backgroundImageWidth;
-  position: fixed;
-  top: 0;
+  //position: fixed;
+  //top: 0;
   width: 100%;
-  @media screen and (max-width: @backgroundImageWidth) {
-    left: 50%;
-    margin-left: calc((@backgroundImageWidth / 2) * -1);
-  }
+  //@media screen and (max-width: @backgroundImageWidth) {
+  //  left: 50%;
+  //  margin-left: calc((@backgroundImageWidth / 2) * -1);
+  //}
+}
+
+.imgContainer {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: auto;
+  width: 100%;
+}
+
+.section {
+  background: #7DCC93;
+  display: flex;
+  height: 20rem;
+  margin: 3rem;
+  width: 20rem;
 }
