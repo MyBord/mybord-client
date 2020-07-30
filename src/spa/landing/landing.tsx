@@ -1,20 +1,14 @@
 import * as React from 'react';
 import ErrorBoundary from 'landing/errorBoundary/errorBoundary';
 import Routes from 'landing/routing/routes';
-import loginBackground from 'assets/pictures/loginBackgroundRoad.jpg';
-import * as styles from './landing.module.less';
+import Layout from './layout/layout';
 
 const Landing: React.FC = () => (
-  <ErrorBoundary>
-    <main>
-      <img
-        alt="login-form-background"
-        className={styles.img}
-        src={loginBackground}
-      />
+  <Layout>
+    <ErrorBoundary>
       <Routes />
-    </main>
-  </ErrorBoundary>
+    </ErrorBoundary>
+  </Layout>
 );
 
 export default Landing;

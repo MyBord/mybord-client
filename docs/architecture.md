@@ -315,6 +315,7 @@ src/
   |- spa/
     |- landing/ 
       |- errorBoundary/ 
+      |- landing/ 
       |- pages/ 
       |- routing/ 
       |- landing.module.less
@@ -323,6 +324,8 @@ src/
 
 * **errorBoundary/:**
   * The react error boundary used for our landing application.
+* **layout/:**
+  * The frame and navigation of the landing application.
 * **pages/:**
   * The page components per each route.
 * **routing/:**
