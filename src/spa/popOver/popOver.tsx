@@ -1,25 +1,15 @@
 import * as React from 'react';
 import Portal from '../portal/portal';
-import { PopOverProps, PopOverStyle } from 'types/modalTypes';
-import getPopOverStyle from './getPopOverStyle';
+import { PopOverProps } from 'types/modalTypes';
 
 const PopOver: React.FC<PopOverProps> = ({
   callback,
-  caretPlacement = null,
   children,
-  color = 'white',
   defaultVisible = false,
   delay = null,
-  placement = 'bottom-center',
-  position = null,
   trigger = 'click',
 }) => {
   const [childrenRef, setChildrenRef] = React.useState<HTMLElement>(null);
-  const [
-    finalCaretPlacement,
-    setFinalCaretPlacement,
-  ] = React.useState<PopOverProps['caretPlacement']>(caretPlacement);
-  const [popOverStyle, setPopOverStyle] = React.useState<PopOverStyle>(null);
   const [isVisible, setIsVisible] = React.useState<boolean>(defaultVisible);
   const popOverRef = React.useRef<HTMLDivElement>(null);
   const newChildren = React.cloneElement(
@@ -117,39 +107,6 @@ const PopOver: React.FC<PopOverProps> = ({
     isVisible,
     setIsVisible,
     trigger,
-  ]);
-
-  // ----- POPOVER STYLE  ----- //
-  // sets the style and positioning of the popover, and updates said style and positioning if
-  // the window gets resized.
-
-  React.useEffect(() => {
-    const getStyle = (): void => getPopOverStyle(
-      finalCaretPlacement,
-      childrenRef,
-      placement,
-      popOverRef,
-      position,
-      setFinalCaretPlacement,
-      setPopOverStyle,
-      window.innerHeight,
-      window.innerWidth,
-    );
-
-    getStyle();
-
-    window.addEventListener('resize', getStyle);
-
-    return () => {
-      window.removeEventListener('resize', getStyle);
-    };
-  }, [
-    finalCaretPlacement,
-    childrenRef,
-    placement,
-    popOverRef,
-    position,
-    isVisible,
   ]);
 
   // ----- RETURNS COMPONENT ----- //
