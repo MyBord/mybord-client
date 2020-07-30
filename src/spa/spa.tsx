@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import App from '../app/app';
+import App from './app';
 
 const Fallback: React.FC = () => (
   <div
