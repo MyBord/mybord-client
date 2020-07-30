@@ -13,7 +13,6 @@ const HeaderProfile: React.FC = () => {
 
   return (
     <PopOver
-      Content={<h3>This is the popover content</h3>}
       callback={handleCallback}
       placement="bottom-right"
     >

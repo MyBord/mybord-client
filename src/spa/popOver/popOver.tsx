@@ -1,15 +1,9 @@
 import * as React from 'react';
-import PopOverAnimation from 'framerMotion/popOverAnimation';
 import Portal from '../portal/portal';
 import { PopOverProps, PopOverStyle } from 'types/modalTypes';
 import getPopOverStyle from './getPopOverStyle';
 
-interface Props extends PopOverProps {
-  Content: React.ReactNode;
-}
-
-const PopOver: React.FC<Props> = ({
-  Content,
+const PopOver: React.FC<PopOverProps> = ({
   callback,
   caretPlacement = null,
   children,
@@ -24,7 +18,7 @@ const PopOver: React.FC<Props> = ({
   const [
     finalCaretPlacement,
     setFinalCaretPlacement,
-  ] = React.useState<Props['caretPlacement']>(caretPlacement);
+  ] = React.useState<PopOverProps['caretPlacement']>(caretPlacement);
   const [popOverStyle, setPopOverStyle] = React.useState<PopOverStyle>(null);
   const [isVisible, setIsVisible] = React.useState<boolean>(defaultVisible);
   const popOverRef = React.useRef<HTMLDivElement>(null);
@@ -167,7 +161,7 @@ const PopOver: React.FC<Props> = ({
         {
           isVisible && (
             <div>
-              {Content}
+              <h3>This is the popover content</h3>
             </div>
           )
         }
