@@ -160,7 +160,15 @@ const PopOver: React.FC<PopOverProps> = ({
       <Portal>
         {
           isVisible && (
-            <div>
+            <div
+              style={{
+                background: 'pink',
+                padding: '1rem',
+                position: 'absolute',
+                right: '1rem',
+                top: '1rem',
+              }}
+            >
               <h3>This is the popover content</h3>
             </div>
           )
