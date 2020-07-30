@@ -2,7 +2,6 @@ import * as React from 'react';
 import PopOverAnimation from 'framerMotion/popOverAnimation';
 import Portal from '../portal/portal';
 import { PopOverProps, PopOverStyle } from 'types/modalTypes';
-import PopOverCaret from './popOverCaret/popOverCaret';
 import getPopOverStyle from './getPopOverStyle';
 
 interface Props extends PopOverProps {
@@ -171,17 +170,6 @@ const PopOver: React.FC<Props> = ({
           ref={popOverRef}
           isVisible={isVisible}
         >
-          {
-            finalCaretPlacement && (
-              <PopOverCaret
-                caretPlacement={finalCaretPlacement}
-                childrenRef={childrenRef}
-                color={color}
-                popOverPlacement={placement}
-                popOverRef={popOverRef}
-              />
-            )
-          }
           {Content}
         </PopOverAnimation>
       </Portal>
