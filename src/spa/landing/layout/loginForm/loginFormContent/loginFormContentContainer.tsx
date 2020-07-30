@@ -9,11 +9,11 @@ import { CREATE_USER_MUTATION, IS_AUTHENTICATED_QUERY, LOGIN_USER_MUTATION } fro
 import { FormProp } from 'types/formTypes';
 import { useAuthenticationContext } from 'context/authenticationContext/authenticationContext';
 import { useLoginContext } from 'context/loginContext/loginContext';
-import LoginFormComponent from './loginFormComponent';
-import './loginForm.less';
+import LoginFormContentComponent from './loginFormContentComponent';
+import './loginFormContent.less';
 
 /* eslint-disable brace-style */
-const LoginFormContainer: React.FC = () => {
+const LoginFormContentContainer: React.FC = () => {
   // ----- QUERIES & MUTATIONS ----- //
 
   const [createUser] = useMutation(CREATE_USER_MUTATION);
@@ -148,9 +148,9 @@ const LoginFormContainer: React.FC = () => {
 
   return (
     <Form onSubmit={handleSubmit} type="login">
-      <LoginFormComponent />
+      <LoginFormContentComponent />
     </Form>
   );
 };
 
-export default LoginFormContainer;
+export default LoginFormContentContainer;

@@ -10,7 +10,7 @@ interface Props {
   form?: FormProp;
 }
 
-const LoginFormComponent: React.FC<Props> = ({
+const LoginFormContentComponent: React.FC<Props> = ({
   form,
 }) => (
   <>
@@ -22,4 +22,4 @@ const LoginFormComponent: React.FC<Props> = ({
   </>
 );
 
-export default LoginFormComponent;
+export default LoginFormContentComponent;
