@@ -7,13 +7,16 @@ interface Props {
 }
 
 const Layout: React.FC<Props> = ({ children }) => (
-  <main>
-    <img
-      alt="login-form-background"
-      className={styles.img}
-      src={loginBackground}
-    />
+  <main className={styles.main}>
+    <div className={styles.imgContainer}>
+      <img
+        alt="login-form-background"
+        className={styles.img}
+        src={loginBackground}
+      />
+    </div>
     {children}
+    <section className={styles.section} />
   </main>
 );
 

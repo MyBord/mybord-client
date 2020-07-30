@@ -2,15 +2,23 @@
 
 .img {
   // https://css-tricks.com/perfect-full-page-background-image/
-  height: auto;
-  left: 0;
-  min-height: 100%;
   min-width: @backgroundImageWidth;
-  position: fixed;
-  top: 0;
   width: 100%;
-  @media screen and (max-width: @backgroundImageWidth) {
-    left: 50%;
-    margin-left: calc((@backgroundImageWidth / 2) * -1);
-  }
+}
+
+.imgContainer {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.main {
+  height: 100%;
+  overflow: auto;
+  width: 100%;
+}
+
+.section {
+  background: #7DCC93;
+  height: 100vh;
 }

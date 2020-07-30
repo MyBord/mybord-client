@@ -14,6 +14,8 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
+  * layout
+    * have background image always be correct ratio
   * the about page header in the landing spa should be aligned with the description content
   * when you logout, it should take you to the login page, no matter where you're coming from
   * about page
