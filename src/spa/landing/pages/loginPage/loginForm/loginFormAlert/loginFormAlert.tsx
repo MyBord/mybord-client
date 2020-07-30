@@ -2,7 +2,7 @@ import * as React from 'react';
 import Alert from 'shared/alert/alert';
 import FormItem from 'forms/formItem/formItem';
 import { FormProp } from 'types/formTypes';
-import { useLoginContext } from 'landing/pages/loginPage/loginContext/loginContext';
+import { useLoginContext } from 'context/loginContext/loginContext';
 
 interface Props {
   form: FormProp;

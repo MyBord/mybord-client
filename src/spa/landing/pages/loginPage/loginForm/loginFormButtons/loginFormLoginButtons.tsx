@@ -4,7 +4,7 @@ import Button from 'buttons/button/button';
 import Checkbox from 'inputs/checkbox/checkbox';
 import FormItem from 'forms/formItem/formItem';
 import { FormProp } from 'types/formTypes';
-import { useLoginContext } from 'landing/pages/loginPage/loginContext/loginContext';
+import { useLoginContext } from 'context/loginContext/loginContext';
 import * as styles from './loginFormButtons.module.less';
 
 interface Props {

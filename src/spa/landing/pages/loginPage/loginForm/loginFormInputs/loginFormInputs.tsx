@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { FormProp } from 'types/formTypes';
-import { useLoginContext } from 'landing/pages/loginPage/loginContext/loginContext';
+import { useLoginContext } from 'context/loginContext/loginContext';
 const LoginFormForgotInputs = React.lazy(() => import('./loginFormForgotInputs'));
 const LoginFormLoginInputs = React.lazy(() => import('./loginFormLoginInputs'));
 const LoginFormSignUpInputs = React.lazy(() => import('./loginFormSignUpInputs'));

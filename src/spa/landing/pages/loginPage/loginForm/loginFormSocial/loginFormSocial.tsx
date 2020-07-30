@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useLoginContext } from 'landing/pages/loginPage/loginContext/loginContext';
+import { useLoginContext } from 'context/loginContext/loginContext';
 const LoginFormLoginSocial = React.lazy(() => import('./loginFormLoginSocial'));
 const LoginFormSignUpSocial = React.lazy(() => import('./loginFormSignUpSocial'));
 
