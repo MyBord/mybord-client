@@ -3,12 +3,12 @@ import { Redirect, Route, Switch } from 'react-router-dom';
 const AboutDevPage = React.lazy(() => import('landing/pages/aboutDevPage/aboutDevPage'));
 const AboutPage = React.lazy(() => import('landing/pages/aboutPage/aboutPage'));
 const ErrorPage = React.lazy(() => import('landing/pages/errorPage/errorPage'));
-const LoginPage = React.lazy(() => import('landing/pages/loginPage/loginPage'));
+const RootPage = React.lazy(() => import('landing/pages/rootPage/rootPage'));
 
 const Routes: React.FC = () => (
   <Switch>
     <Route exact path="/">
-      <LoginPage />
+      <RootPage />
     </Route>
     <Route exact path="/about">
       <AboutPage />
