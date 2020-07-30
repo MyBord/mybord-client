@@ -16,7 +16,6 @@ This document is used to outline current project management priorities.
 
   * the about page header in the landing spa should be aligned with the description content
   * when you logout, it should take you to the login page, no matter where you're coming from
-  * center the nav icons - they are a little off - make sure they are centered for all heights?
   * about page
     * delete aboutToDo.md
   * have session be remembered by user
