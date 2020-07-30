@@ -13,3 +13,5 @@ remove page header?
 api/api
 popover
 popovercallback interface from types/modaltypes
+
+does page one even need to make a query? make it a fake api?
