@@ -6,3 +6,5 @@ what if I just have about page and trending page?
 what if I remove the route lazy loading?
 
 remove context and spa providers
+
+remove page header?
