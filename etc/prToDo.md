@@ -8,3 +8,8 @@ what if I remove the route lazy loading?
 remove context and spa providers
 
 remove page header?
+
+
+api/api
+popover
+popovercallback interface from types/modaltypes
