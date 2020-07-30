@@ -164,14 +164,13 @@ const PopOver: React.FC<Props> = ({
     <>
       {newChildren}
       <Portal>
-        <PopOverAnimation
-          color={color}
-          popOverStyle={popOverStyle}
-          ref={popOverRef}
-          isVisible={isVisible}
-        >
-          {Content}
-        </PopOverAnimation>
+        {
+          isVisible && (
+            <div>
+              {Content}
+            </div>
+          )
+        }
       </Portal>
     </>
   );
