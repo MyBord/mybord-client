@@ -6,7 +6,7 @@ import LoginForm from './loginForm/loginForm';
 import * as styles from './loginPage.module.less';
 
 const LoginPage: React.FC = () => (
-  <div className={styles.imgContainer}>
+  <div className={styles.div}>
     <img
       alt="login-form-background"
       className={styles.img}
