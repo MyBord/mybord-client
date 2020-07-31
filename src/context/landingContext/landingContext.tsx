@@ -1,25 +1,25 @@
 import * as React from 'react';
 
 interface LandingState {
-  showBottom: boolean;
-  setShowBottom: (showBottom: boolean) => void;
+  showPages: boolean;
+  setShowPages: (showPages: boolean) => void;
 }
 
 const initialLandingState: LandingState = {
-  showBottom: false,
-  setShowBottom: () => {},
+  showPages: false,
+  setShowPages: () => {},
 };
 
 const LandingContext = React.createContext<LandingState>(initialLandingState);
 
 export const LandingContextProvider = (props: object): React.ReactElement => {
-  const [showBottom, setShowBottom] = React.useState<boolean>(false);
+  const [showPages, setShowPages] = React.useState<boolean>(false);
 
   return (
     <LandingContext.Provider
       value={{
-        showBottom,
-        setShowBottom,
+        showPages,
+        setShowPages,
       }}
       {...props}
     />

@@ -17,8 +17,9 @@ const Layout: React.FC<Props> = ({ children }) => (
       />
       <LoginForm />
     </div>
-    {children}
-    <section className={styles.section} />
+    <section className={styles.section}>
+      {children}
+    </section>
   </main>
 );
 
