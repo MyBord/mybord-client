@@ -16,6 +16,8 @@ This document is used to outline current project management priorities.
 
   * layout
     * have background image always be correct ratio
+    * create floating button that if you click it will return you to the top of the login page
+     / form
   * the about page header in the landing spa should be aligned with the description content
   * when you logout, it should take you to the login page, no matter where you're coming from
   * about page
