@@ -3,9 +3,9 @@ import pageWrapper from 'landing/pages/pageWrapper/pageWrapper';
 import { LoginContextProvider } from 'context/loginContext/loginContext';
 import LoginFormContent from './loginFormContent/loginFormContent';
 import LoginFormHeader from './loginFormHeader/loginFormHeader';
-import * as styles from './loginPage.module.less';
+import * as styles from './loginForm.module.less';
 
-const LoginPage: React.FC = () => (
+const LoginForm: React.FC = () => (
   <LoginContextProvider>
     <div className={styles.div}>
       <LoginFormHeader />
@@ -14,4 +14,4 @@ const LoginPage: React.FC = () => (
   </LoginContextProvider>
 );
 
-export default pageWrapper(LoginPage);
+export default pageWrapper(LoginForm);

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import loginBackground from 'assets/pictures/loginBackgroundRoad.jpg';
-import LoginPage from './loginForm/loginPage';
+import LoginForm from './loginForm/loginForm';
 import * as styles from './layout.module.less';
 
 interface Props {
@@ -15,7 +15,7 @@ const Layout: React.FC<Props> = ({ children }) => (
         className={styles.img}
         src={loginBackground}
       />
-      <LoginPage />
+      <LoginForm />
     </div>
     {children}
     <section className={styles.section} />
