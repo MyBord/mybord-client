@@ -13,8 +13,8 @@
     "webpack:prod": "webpack --config webpack.prod.js",
     "build:dev-client": "NODE_ENV=DEV npm-run-all remove-dist webpack:dev copy-index",
     "build:prod-client": "NODE_ENV=PROD npm-run-all remove-dist webpack:prod copy-index",
-    "run-local:local-client": "NODE_ENV=LOCAL webpack-dev-server --config webpack.dev.js",
-    "run-local:dev-client": "NODE_ENV=DEV webpack-dev-server --config webpack.dev.js"
+    "run:local": "NODE_ENV=LOCAL webpack-dev-server --config webpack.dev.js",
+    "run:dev": "NODE_ENV=DEV webpack-dev-server --config webpack.dev.js"
   },
   "authors": [
     "Jimmy Emery"

@@ -362,9 +362,9 @@ the following:
   * Builds the client with the dev webpack configuration.
 * `build:prod`
   * Builds the client with the prod webpack configuration.
-* `run-local:local-client`
+* `run:local`
   * runs a local version of the client that is connected to a local running back end server.
-* `run-local:dev-client`
+* `run:dev`
   * runs a local version of the client that is connected to a running development server
    hosted at Heroku.
     
