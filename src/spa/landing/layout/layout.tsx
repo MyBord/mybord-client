@@ -12,7 +12,7 @@ interface Props {
 
 const Layout: React.FC<Props> = ({ children }) => {
   const { pathname } = useLocation();
-  const { showPages, setShowPages } = useLandingContext();
+  const { headerRef, showPages, setShowPages } = useLandingContext();
 
   if (pathname !== '/') {
     setShowPages(true);
@@ -26,6 +26,7 @@ const Layout: React.FC<Props> = ({ children }) => {
   return (
     <main className={mainClassName}>
       <LoginPage />
+      <div ref={headerRef} />
       <section className={styles.section}>
         <Header />
         {children}

@@ -12,7 +12,18 @@ interface Props {
 }
 
 const LoginFormContentComponent: React.FC<Props> = ({ form }) => {
-  const { setShowPages } = useLandingContext();
+  const { headerRef } = useLandingContext();
+
+  const handleClick = (): void => {
+    setTimeout(() => {
+      if (headerRef.current) {
+        headerRef.current.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+      }
+    }, 100);
+  };
 
   return (
     <>
@@ -23,7 +34,7 @@ const LoginFormContentComponent: React.FC<Props> = ({ form }) => {
       <Typography
         text="About MyBord"
         link="/about"
-        onClick={() => setShowPages(true)}
+        onClick={handleClick}
       />
     </>
   );
