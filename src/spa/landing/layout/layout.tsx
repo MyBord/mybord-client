@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { useLocation } from 'react-router-dom';
 import { useLandingContext } from 'context/landingContext/landingContext';
+import Footer from './footer/footer';
 import Header from './header/header';
 import LoginPage from './loginPage/loginPage';
 import * as styles from './layout.module.less';
@@ -28,6 +29,7 @@ const Layout: React.FC<Props> = ({ children }) => {
       <section className={styles.section}>
         <Header />
         {children}
+        <Footer />
       </section>
     </main>
   );
