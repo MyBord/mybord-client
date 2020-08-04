@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { useLocation } from 'react-router-dom';
+import AboutPageHeader from 'header/pageHeaders/aboutPageHeader/aboutPageHeader';
 import { useLandingContext } from 'context/landingContext/landingContext';
 import LoginPage from './loginPage/loginPage';
 import * as styles from './layout.module.less';
@@ -25,6 +26,9 @@ const Layout: React.FC<Props> = ({ children }) => {
     <main className={mainClassName}>
       <LoginPage />
       <section className={styles.section}>
+        <div className={styles.pageHeader}>
+          <AboutPageHeader />
+        </div>
         {children}
       </section>
     </main>
