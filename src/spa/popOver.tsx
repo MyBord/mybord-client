@@ -10,20 +10,14 @@ export interface PopOverCallback {
 export interface PopOverProps {
   callback?: (props: PopOverCallback) => void;
   children: React.ReactElement;
-  defaultVisible?: boolean;
-  delay?: number;
-  trigger?: 'click' | 'hover';
 }
 
 const PopOver: React.FC<PopOverProps> = ({
   callback,
   children,
-  defaultVisible = false,
-  delay = null,
-  trigger = 'click',
 }) => {
   const [childrenRef, setChildrenRef] = React.useState<HTMLElement>(null);
-  const [isVisible, setIsVisible] = React.useState<boolean>(defaultVisible);
+  const [isVisible, setIsVisible] = React.useState<boolean>(false);
   const popOverRef = React.useRef<HTMLDivElement>(null);
   const newChildren = React.cloneElement(
     children,
@@ -48,15 +42,10 @@ const PopOver: React.FC<PopOverProps> = ({
   React.useEffect(() => {
     const childrenNode = childrenRef;
     const popOverNode = popOverRef.current;
-    let timeout: NodeJS.Timeout = null;
 
     const handleClick = (event: Event): void => {
       if (!isVisible && childrenNode.contains(event.target as Node)) {
-        if (delay) {
-          setTimeout(() => setIsVisible(true), delay * 1000);
-        } else {
-          setIsVisible(true);
-        }
+        setIsVisible(true);
       }
 
       if (isVisible && childrenNode.contains(event.target as Node)) {
@@ -73,53 +62,20 @@ const PopOver: React.FC<PopOverProps> = ({
       }
     };
 
-    const handleHover = (event: Event): void => {
-      if (delay && childrenNode.contains(event.target as Node)) {
-        timeout = setTimeout(() => setIsVisible(true), delay * 1000);
-      } else if (childrenNode.contains(event.target as Node)) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
-    };
-
-    const hideMouseOut = (): void => {
-      if (trigger === 'hover') {
-        clearTimeout(timeout);
-        setIsVisible(false);
-      }
-    };
-
     if (childrenNode) {
-      if (trigger === 'click') {
-        document.addEventListener('mousedown', handleClick);
-      }
-
-      if (trigger === 'hover') {
-        childrenNode.addEventListener('mouseover', handleHover);
-        childrenNode.addEventListener('mouseout', hideMouseOut);
-      }
+      document.addEventListener('mousedown', handleClick);
     }
 
     return () => {
       if (childrenNode) {
-        if (trigger === 'click') {
-          document.removeEventListener('mousedown', handleClick);
-        }
-
-        if (trigger === 'hover') {
-          childrenNode.removeEventListener('mouseover', handleHover);
-          childrenNode.removeEventListener('mouseout', hideMouseOut);
-        }
+        document.removeEventListener('mousedown', handleClick);
       }
     };
   }, [
     childrenRef,
-    delay,
     popOverRef,
     isVisible,
     setIsVisible,
-    trigger,
   ]);
 
   // ----- RETURNS COMPONENT ----- //
