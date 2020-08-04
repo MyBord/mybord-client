@@ -1,9 +1,3 @@
-// Source:
-// https://reactjs.org/docs/concurrent-mode-suspense.html#what-is-suspense-exactly
-// https://codesandbox.io/s/frosty-hermann-bztrp
-
-/* eslint-disable consistent-return */
-
 export interface PromiseWrapper<T> {
   read(): T;
 }

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import api from 'api/api';
+import api from './api';
 
 interface Props {
   Component: React.FC<WrappedComponentProps>;

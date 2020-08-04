@@ -1,5 +1,5 @@
 import axios from 'axios';
-import promiseWrapper, { PromiseWrapper } from 'api/promiseWrapper';
+import promiseWrapper, { PromiseWrapper } from './promiseWrapper';
 
 export interface Resource<T> {
   data: PromiseWrapper<T>;
