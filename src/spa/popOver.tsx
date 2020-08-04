@@ -1,6 +1,19 @@
 import * as React from 'react';
 import Portal from './portal';
-import { PopOverProps } from 'types/modalTypes';
+
+export interface PopOverCallback {
+  hidePopOver: () => void;
+  isVisible: boolean;
+  showPopOver: () => void;
+}
+
+export interface PopOverProps {
+  callback?: (props: PopOverCallback) => void;
+  children: React.ReactElement;
+  defaultVisible?: boolean;
+  delay?: number;
+  trigger?: 'click' | 'hover';
+}
 
 const PopOver: React.FC<PopOverProps> = ({
   callback,

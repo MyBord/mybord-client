@@ -6,3 +6,6 @@ Make sure to remove all notes before merging (except for this one, of course).
 
 * remove aliases
 * replace with fake api
+
+hypothesis:
+* callback for popover might be causing problems

@@ -1,21 +1,17 @@
 import * as React from 'react';
 import PopOver from './popOver';
-import { PopOverCallback } from 'types/modalTypes';
 
 const HeaderProfile: React.FC = () => {
-  const [hidePopOver, setHidePopOver] = React.useState<PopOverCallback['hidePopOver']>(null);
+  const [hidePopOver, setHidePopOver] = React.useState(null);
 
-  const handleCallback = (props: PopOverCallback): void => {
+  const handleCallback = (props: any): void => {
     if (!hidePopOver) {
       setHidePopOver(props.hidePopOver);
     }
   };
 
   return (
-    <PopOver
-      callback={handleCallback}
-      placement="bottom-right"
-    >
+    <PopOver callback={handleCallback}>
       <div
         style={{
           alignItems: 'center',
