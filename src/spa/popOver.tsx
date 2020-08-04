@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Portal from '../portal/portal';
+import Portal from './portal';
 import { PopOverProps } from 'types/modalTypes';
 
 const PopOver: React.FC<PopOverProps> = ({

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import PopOver from './popOver/popOver';
+import PopOver from './popOver';
 import { PopOverCallback } from 'types/modalTypes';
 
 const HeaderProfile: React.FC = () => {
