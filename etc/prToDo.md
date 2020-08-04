@@ -4,7 +4,6 @@ Make sure to remove all notes before merging (except for this one, of course).
 * what if I just have about page and trending page?
 * what if I remove the route lazy loading?
 
-* remove aliases
 * replace with fake api
 
 hypothesis:
