@@ -21,6 +21,7 @@ const HeaderProfile: React.FC = () => {
           display: 'flex',
           height: '5rem',
           justifyContent: 'center',
+          marginLeft: '2rem',
           width: '5rem',
         }}
       >

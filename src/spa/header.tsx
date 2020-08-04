@@ -3,7 +3,7 @@ import HeaderModal from './headerModal';
 import PageHeader from './pageHeader';
 
 const Header: React.FC = () => (
-  <div>
+  <div style={{ display: 'flex', marginBottom: '3rem' }}>
     <PageHeader />
     <HeaderModal />
   </div>

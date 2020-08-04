@@ -7,16 +7,31 @@ const PageHeader: React.FC = () => {
   const path = pathname.split('/')[1];
   switch (path) {
     case 'pageOne':
-      return <h2>This is the page one header</h2>;
+      return (
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <h4>This is the page one header</h4>
+        </div>
+      );
     case 'pageTwo':
       return (
-        <div>
-          <Link to="/pageOne">Page One</Link>
-          <Link to="/pageThree">Page Three</Link>
+        <div style={{ display: 'flex' }}>
+          <div style={{ margin: '1rem', display: 'flex', alignItems: 'center' }}>
+            <Link to="/pageOne">Page One</Link>
+          </div>
+          <div style={{ margin: '1rem', display: 'flex', alignItems: 'center' }}>
+            <Link to="/pageThree">Page Three</Link>
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+            <h4>This is the page two header</h4>
+          </div>
         </div>
       );
     case 'pageThree':
-      return <h2>This is the page three header</h2>;
+      return (
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <h4>This is the page three header</h4>
+        </div>
+      );
     default:
       return null;
   }
