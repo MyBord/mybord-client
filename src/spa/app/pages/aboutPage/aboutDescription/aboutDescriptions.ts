@@ -1,36 +1,24 @@
-export const partOne = 'MyBord is built with TypeScript using GraphQL and'
-+ ' [Apollo](https://www.apollographql.com/) on'
-+ ' top of Node.js and React.'
-+ '\n\n'
-+ 'The front end client uses'
-+ ' [React\'s experimental concurrent mode](https://reactjs.org/docs/concurrent-mode-intro.html).'
-+ ' Other apis include [Framer Motion](https://www.framer.com/motion/) for fluid component'
-+ ' animations, [Lottie](https://airbnb.io/lottie/#/) to render animated illustrations,'
-+ ' and [Storybook](https://storybook.js.org/) for prototyping. [Ant Design](https://ant.design/)'
-+ ' is used for a couple common components (though more and more are getting custom built)'
-+ ' and we use [Nucleo](https://nucleoapp.com/) for most of our icons. Lastly, everything gets'
-+ ' styled with Less and CSS Modules and testing is done with Enzyme.';
+export const partOne = 'Remember the 90\'s? I know, I barely do too. But when I was growing up, I'
++ ' didn\'t have a computer, the internet, or a smart phone. So what did I do with all my music,'
++ ' movies, books, articles, encyclopedias, pictures, travel ideas, video games, notebooks, and a'
++ ' lot more? I kept them on my book shelf.';
 
-export const partTwo = 'The back end is written on top of Node.js and Express and specifically uses'
-+ ' [Apollo Server](https://www.apollographql.com/docs/apollo-server/v1/servers/express/).'
-+ ' We run a PostgreSQL database with a [Prisma](https://www.prisma.io/) ORM.'
-+ ' [Passport.js](http://www.passportjs.org/) is used to manage authentication. Third party apis'
-+ ' include'
-+ ' [Google\'s Node.js Client Api](https://github.com/googleapis/google-api-nodejs-client#google-apis-nodejs-client).'
-+ '\n\n'
-+ 'Our servers are hosted via Heroku and are managed with [Prisma Cloud](https://www.prisma.io/cloud).'
-+ ' Virtualization is done with Docker and Circle CI is used for CD management.';
+export const partTwo = 'Ok, stay with me. I know a "bookshelf" is not the most exhilarating'
++ ' idea, but what are you using now? When you come across an interesting video online that you'
++ ' want to save for later, what do you do with it? What about an article you want to read? A'
++ ' funny gif you don\'t want to forget about? Songs you like, movies you want to see, places'
++ ' you might want to travel to? If you\'re like me, you\'ll either bookmark these in your'
++ ' browser, email them to yourself (I have so many emails now 😣) or create a favorites list on'
++ ' LOTS of different websites.';
 
-export const partThree = 'Lastly, something to mention: at first, when you build an app, you think'
-+ ' "Fantastic! I\'ll build this with complete test coverage. Unit tests, integration tests,'
-+ ' end to end tests and more! I\'ll prototype every component in Storybook and make sure I have'
-+ ' full accessibility coverage, performance optimization and everything I can think of!" At first,'
-+ ' the ambitions were high, but as all of us developers know, there are always priorities to'
-+ ' deliver on for an MVP and not everything can be done if you want to make progress'
-+ ' and ship. So while those priorities are important to us'
-+ ' as we want Jest, Enzyme, Storybook and more to be part of the core development process for'
-+ ' MyBord, we\'re a bit more lean at the moment and are trying to get new features out the door.'
-+ ' Important roadmap features include building out more tools and apis for each user\'s "bord",'
-+ ' social media enhancements (following friends, subscribing, copying cards, trending), possibly'
-+ ' building a React Native app (and thus converting the codebase from React to React Native),'
-+ ' enhanced OAuth, and possibly moving from Heroku to AWS.';
+export const partThree = 'Let\'s fix this. I\'m going to give you back your bookshelf. Anything'
++ ' on the internet you see, like, want to save for later, or more, you can save it here. No'
++ ' more emails. No more bookmarks. No more to do lists on 20 different apps and websites. Just'
++ ' one app, one place, to put all your stuff.';
+
+export const partFour = 'Share with your friends. See what\'s on their bord, get inspired, and'
++ ' discover cool new stuff.';
+
+export const partFive = 'Sincerely,'
++ '\n\n'
++ '- some random guy on the internet who helped build this website';
