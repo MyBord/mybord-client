@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Footer from 'shared/footer/footer';
 import pageWrapper from 'pages/pageWrapper/pageWrapper';
 import AboutDevDescription from './aboutDevDescription/aboutDevDescription';
 import AboutDevStack from './aboutDevStack/aboutDevStack';
@@ -9,6 +10,7 @@ const AboutDevPage: React.FC = () => (
     <section className={styles.section}>
       <AboutDevDescription />
       <AboutDevStack />
+      <Footer />
     </section>
   </section>
 );
