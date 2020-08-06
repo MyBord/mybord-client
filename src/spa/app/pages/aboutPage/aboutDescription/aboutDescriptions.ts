@@ -8,7 +8,7 @@ export const partTwo = 'Ok, stay with me. I know a "bookshelf" is not the most e
 + ' want to save for later, what do you do with it? What about an article you want to read? A'
 + ' funny gif you don\'t want to forget about? Songs you like, movies you want to see, places'
 + ' you might want to travel to? If you\'re like me, you\'ll either bookmark these in your'
-+ ' browser, email them to yourself (I have so many emails now 😣) or create a favorites list on'
++ ' browser, email them to yourself (I have so many emails now 😩) or create a favorites list on'
 + ' LOTS of different websites.';
 
 export const partThree = 'Let\'s fix this. I\'m going to give you back your bookshelf. Anything'
