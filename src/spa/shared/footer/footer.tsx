@@ -4,6 +4,8 @@ import Typography from 'typography/typography';
 import * as styles from './footer.module.less';
 
 const EmailContent: React.FC = () => <Icon color="white" iconName="paperAirplane" size={24} />;
+const InstagramContent: React.FC = () => <Icon color="white" iconName="instagram" size={24} />;
+const FacebookContent: React.FC = () => <Icon color="white" iconName="facebook" size={24} />;
 
 const Footer: React.FC = () => (
   <section className={styles.section}>
@@ -66,6 +68,7 @@ const Footer: React.FC = () => (
         <ul className={styles.ul}>
           <li>
             <Typography
+              Content={InstagramContent}
               color="white"
               size="three"
               text="Instagram"
@@ -87,6 +90,7 @@ const Footer: React.FC = () => (
           </li>
           <li>
             <Typography
+              Content={FacebookContent}
               color="white"
               size="three"
               text="Facebook"

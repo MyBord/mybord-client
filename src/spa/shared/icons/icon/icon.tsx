@@ -15,6 +15,7 @@ const FacebookIcon = React.lazy(() => import('./individualIcons/facebookIcon'));
 const FilterIcon = React.lazy(() => import('./individualIcons/filterIcon'));
 const GoogleIcon = React.lazy(() => import('./individualIcons/googleIcon'));
 const HeartIcon = React.lazy(() => import('./individualIcons/heartIcon'));
+const InstagramIcon = React.lazy(() => import('./individualIcons/instagramIcon'));
 const LogoutIcon = React.lazy(() => import('./individualIcons/logoutIcon'));
 const MailIcon = React.lazy(() => import('./individualIcons/mailIcon'));
 const MonkeyIcon = React.lazy(() => import('./individualIcons/monkeyIcon'));
@@ -44,6 +45,7 @@ export const iconNames = {
   filter: 'foo',
   google: 'foo',
   heart: 'foo',
+  instagram: 'foo',
   logout: 'foo',
   mail: 'foo',
   monkey: 'foo',
@@ -92,13 +94,15 @@ const Icon: React.FC<IconProps> = ({
     case 'eye':
       return <EyeIcon size={size} />;
     case 'facebook':
-      return <FacebookIcon size={size} />;
+      return <FacebookIcon color={color} size={size} />;
     case 'filter':
       return <FilterIcon color={color} size={size} />;
     case 'google':
       return <GoogleIcon size={size} />;
     case 'heart':
       return <HeartIcon color={color} fill={fill} size={size} />;
+    case 'instagram':
+      return <InstagramIcon color={color} size={size} />;
     case 'logout':
       return <LogoutIcon color={color} size={size} />;
     case 'mail':
