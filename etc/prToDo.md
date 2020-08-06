@@ -6,3 +6,5 @@ update mail icon?
 make email link a 'mail to' clickable
 
 remove custom margin of inline styling from list in footer
+
+fix mailto link

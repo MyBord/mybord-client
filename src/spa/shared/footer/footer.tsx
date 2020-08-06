@@ -50,6 +50,7 @@ const Footer: React.FC = () => (
             <Typography
               Content={EmailContent}
               color="white"
+              link="mailto:info@mybord.io"
               size="three"
               text="info@mybord.io"
             />
@@ -69,6 +70,7 @@ const Footer: React.FC = () => (
           <li>
             <Typography
               color="white"
+              link="/terms"
               size="three"
               text="Terms & Conditions"
             />
@@ -76,6 +78,7 @@ const Footer: React.FC = () => (
           <li>
             <Typography
               color="white"
+              link="/privacy"
               size="three"
               text="Privacy Policy"
             />
@@ -96,6 +99,7 @@ const Footer: React.FC = () => (
             <Typography
               Content={InstagramContent}
               color="white"
+              link="https://www.instagram.com/"
               size="three"
               text="Instagram"
             />
@@ -104,6 +108,7 @@ const Footer: React.FC = () => (
             <Typography
               Content={LinkedinContent}
               color="white"
+              link="https://www.linkedin.com/"
               size="three"
               text="Linkedin"
             />
@@ -112,6 +117,7 @@ const Footer: React.FC = () => (
             <Typography
               Content={TwitterContent}
               color="white"
+              link="https://www.twitter.com/"
               size="three"
               text="Twitter"
             />
@@ -120,6 +126,7 @@ const Footer: React.FC = () => (
             <Typography
               Content={FacebookContent}
               color="white"
+              link="https://www.facebook.com/"
               size="three"
               text="Facebook"
             />
