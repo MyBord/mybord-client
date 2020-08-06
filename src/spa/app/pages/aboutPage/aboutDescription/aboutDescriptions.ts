@@ -20,5 +20,5 @@ export const partFour = 'Share with your friends. See what\'s on their bord, get
 + ' discover cool new stuff.';
 
 export const partFive = 'Sincerely,'
-+ '\n\n'
-+ '- some random guy on the internet who helped build this website';
++ '\n'
++ '- some random guy on the internet who helped build this site';
