@@ -5,6 +5,7 @@ import * as styles from '../typography.module.less';
 
 interface Props {
   children: React.ReactNode;
+  color: TypographyProps['color'];
   commonStyles: string;
   link: TypographyProps['link'];
   onClick?: TypographyProps['onClick'];
@@ -12,30 +13,27 @@ interface Props {
 
 const TypographyLink: React.FC<Props> = ({
   children,
+  color,
   commonStyles,
   link,
   onClick,
 }) => {
-  if (link.startsWith('https')) {
-    return (
-      <a
-        className={[styles.link, commonStyles].join(' ')}
-        href={link}
-        onClick={onClick}
-        rel="noopener noreferrer"
-        target="_blank"
-      >
-        {children}
-      </a>
-    );
-  }
+  const linkStyles = [
+    styles.link,
+    color === 'white' ? styles.whiteButtonLink : undefined,
+    commonStyles,
+  ].join(' ');
+  const isAnchor = link.startsWith('https') || link.startsWith('mailto');
+  const isMailTo = link.startsWith('mailto');
 
-  if (link.startsWith('mailto')) {
+  if (isAnchor) {
     return (
       <a
-        className={[styles.link, commonStyles].join(' ')}
+        className={linkStyles}
         href={link}
         onClick={onClick}
+        rel={isMailTo ? undefined : 'noopener noreferrer'}
+        target={isMailTo ? undefined : 'blank'}
       >
         {children}
       </a>
@@ -44,7 +42,7 @@ const TypographyLink: React.FC<Props> = ({
 
   return (
     <Link
-      className={[styles.link, commonStyles].join(' ')}
+      className={linkStyles}
       to={link}
       onClick={onClick}
     >

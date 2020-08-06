@@ -41,6 +41,7 @@ const TypographyParent: React.FC<Props> = ({
   if (link) {
     return (
       <TypographyLink
+        color={color}
         commonStyles={commonStyles}
         link={link}
         onClick={onClick}
