@@ -35,7 +35,6 @@ const initializeSpaWrapper = (WrappedComponent: React.FC): React.FC => {
             </React.Suspense>
           )
         }
-        <SpaFallback />
       </>
     );
   };
