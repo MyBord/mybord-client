@@ -118,7 +118,7 @@ const Icon: React.FC<IconProps> = ({
     case 'notification':
       return <BellIcon size={size} />;
     case 'paperAirplane':
-      return <PaperAirplaneIcon color={color} size={size} />;
+      return <PaperAirplaneIcon color={color} size={size} strokeWidth={strokeWidth} />;
     case 'pencil':
       return <PencilIcon color={color} fill={fill} size={size} />;
     case 'playlist':

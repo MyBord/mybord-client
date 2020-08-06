@@ -3,16 +3,40 @@ import Icon from 'icons/icon/icon';
 import Typography from 'typography/typography';
 import * as styles from './footer.module.less';
 
-const EmailContent: React.FC = () => <Icon color="white" iconName="paperAirplane" size={24} />;
-const FacebookContent: React.FC = () => <Icon color="white" iconName="facebook" size={24} />;
-const InstagramContent: React.FC = () => <Icon color="white" iconName="instagram" size={24} />;
-const LinkedinContent: React.FC = () => <Icon color="white" iconName="linkedin" size={24} />;
-const TwitterContent: React.FC = () => <Icon color="white" iconName="twitter" size={24} />;
+const EmailContent: React.FC = () => (
+  <div className={styles.iconDiv}>
+    <Icon color="white" iconName="paperAirplane" size={24} strokeWidth={4} />
+  </div>
+);
+
+const FacebookContent: React.FC = () => (
+  <div className={styles.iconDiv}>
+    <Icon color="white" iconName="facebook" size={24} />
+  </div>
+);
+
+const InstagramContent: React.FC = () => (
+  <div className={styles.iconDiv}>
+    <Icon color="white" iconName="instagram" size={24} />
+  </div>
+);
+
+const LinkedinContent: React.FC = () => (
+  <div className={styles.iconDiv}>
+    <Icon color="white" iconName="linkedin" size={24} />
+  </div>
+);
+
+const TwitterContent: React.FC = () => (
+  <div className={styles.iconDiv}>
+    <Icon color="white" iconName="twitter" size={24} />
+  </div>
+);
 
 const Footer: React.FC = () => (
   <section className={styles.section}>
     <div className={styles.footerContent}>
-      <div className={styles.list} style={{ margin: '2rem' }}>
+      <div className={styles.list}>
         <div className={styles.listHeader}>
           <Typography
             color="white"
@@ -32,7 +56,7 @@ const Footer: React.FC = () => (
           </li>
         </ul>
       </div>
-      <div className={styles.list} style={{ margin: '2rem' }}>
+      <div className={styles.list}>
         <div className={styles.listHeader}>
           <Typography
             color="white"
@@ -58,7 +82,7 @@ const Footer: React.FC = () => (
           </li>
         </ul>
       </div>
-      <div className={styles.list} style={{ margin: '2rem' }}>
+      <div className={styles.list}>
         <div className={styles.listHeader}>
           <Typography
             color="white"
