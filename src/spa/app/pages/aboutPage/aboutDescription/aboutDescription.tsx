@@ -1,7 +1,6 @@
 import * as React from 'react';
 import Typography from 'typography/typography';
 import bookshelf from 'assets/pictures/bookshelf.jpg';
-import snl from 'assets/gifs/snl.gif';
 import spongebog from 'assets/pictures/spongebob.png';
 import {
   partOne,
@@ -18,7 +17,7 @@ const AboutDescription: React.FC = () => (
       <img
         alt="snl"
         className={[styles.img, styles.imgLeft].join(' ')}
-        src={snl}
+        src="https://media.giphy.com/media/i4Mgat1S2f3Co/giphy.gif"
       />
       <div className={styles.paragraphDiv}>
         <Typography
