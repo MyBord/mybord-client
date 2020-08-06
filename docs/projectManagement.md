@@ -22,6 +22,9 @@ This document is used to outline current project management priorities.
   * about page
     * delete aboutToDo.md
     * delete about.md doc
+    * add footer to both about pages for main site too
+    * move about pages to shared?
+    * move footer to shared?
   * have session be remembered by user
   * when you login, refresh the page, and click about, you get a double render
   * when logging in, cards show up before loading is done ... this is if you login, logout, and
