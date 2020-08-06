@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Typography from 'typography/typography';
 import bookshelf from 'assets/pictures/bookshelf.jpg';
+import snl from 'assets/gifs/snl.gif';
 import spongebog from 'assets/pictures/spongebob.png';
 import {
   partOne,
@@ -15,9 +16,9 @@ const AboutDescription: React.FC = () => (
   <>
     <section className={styles.paragraphSection}>
       <img
-        alt="programming"
+        alt="snl"
         className={[styles.img, styles.imgLeft].join(' ')}
-        src="https://media.giphy.com/media/i4Mgat1S2f3Co/giphy.gif"
+        src={snl}
       />
       <div className={styles.paragraphDiv}>
         <Typography
@@ -38,14 +39,14 @@ const AboutDescription: React.FC = () => (
         />
       </div>
       <img
-        alt="programming"
-        className={[styles.img, styles.imgRight].join(' ')}
+        alt="bookshelf"
+        className={[styles.img, styles.imgBookshelf, styles.imgRight].join(' ')}
         src={bookshelf}
       />
     </section>
     <section className={[styles.paragraphSection, styles.paragraphMargin].join(' ')}>
       <img
-        alt="programming"
+        alt="spongebob"
         className={[styles.img, styles.imgLeft].join(' ')}
         src={spongebog}
       />
@@ -58,7 +59,7 @@ const AboutDescription: React.FC = () => (
         />
       </div>
     </section>
-    <section className={[styles.paragraphSection, styles.paragraphMargin].join(' ')}>
+    <section className={[styles.paragraphSection, styles.paragraphMarginThree].join(' ')}>
       <div className={[styles.paragraphDiv, styles.paragraphDivNoImg].join(' ')}>
         <Typography
           lineHeight="large"
@@ -68,7 +69,7 @@ const AboutDescription: React.FC = () => (
         />
       </div>
     </section>
-    <section className={[styles.paragraphSection, styles.paragraphMargin].join(' ')}>
+    <section className={[styles.paragraphSection, styles.paragraphMarginTwo].join(' ')}>
       <div className={[styles.paragraphDiv, styles.paragraphDivNoImg].join(' ')}>
         <Typography
           lineHeight="large"

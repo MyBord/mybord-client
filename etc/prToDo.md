@@ -5,3 +5,5 @@ reduce rounded corners
 download gif
 make bookshelf image larger?
 add space between third image and part four
+
+photoshop sponebob image
