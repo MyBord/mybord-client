@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Typography from 'typography/typography';
-import forklift from 'assets/illustrations/forklift.png';
-import programming from 'assets/illustrations/programming.png';
+import bookshelf from 'assets/pictures/bookshelf.jpg';
+import spongebog from 'assets/pictures/spongebob.png';
 import {
   partOne,
   partTwo,
@@ -17,7 +17,7 @@ const AboutDescription: React.FC = () => (
       <img
         alt="programming"
         className={[styles.img, styles.imgLeft].join(' ')}
-        src={programming}
+        src="https://media.giphy.com/media/i4Mgat1S2f3Co/giphy.gif"
       />
       <div className={styles.paragraphDiv}>
         <Typography
@@ -40,14 +40,14 @@ const AboutDescription: React.FC = () => (
       <img
         alt="programming"
         className={[styles.img, styles.imgRight].join(' ')}
-        src={forklift}
+        src={bookshelf}
       />
     </section>
-    <section className={styles.paragraphSection}>
+    <section className={[styles.paragraphSection, styles.paragraphMargin].join(' ')}>
       <img
         alt="programming"
         className={[styles.img, styles.imgLeft].join(' ')}
-        src={programming}
+        src={spongebog}
       />
       <div className={styles.paragraphDiv}>
         <Typography
