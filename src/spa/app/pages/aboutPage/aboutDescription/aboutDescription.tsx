@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Typography from 'typography/typography';
-import forklift from 'assets/illustrations/forklift.png';
-import programming from 'assets/illustrations/programming.png';
+import bookshelf from 'assets/pictures/bookshelf.jpg';
+import spongebog from 'assets/pictures/spongebob.png';
 import {
   partOne,
   partTwo,
@@ -15,9 +15,9 @@ const AboutDescription: React.FC = () => (
   <>
     <section className={styles.paragraphSection}>
       <img
-        alt="programming"
+        alt="snl"
         className={[styles.img, styles.imgLeft].join(' ')}
-        src={programming}
+        src="https://media.giphy.com/media/i4Mgat1S2f3Co/giphy.gif"
       />
       <div className={styles.paragraphDiv}>
         <Typography
@@ -38,16 +38,16 @@ const AboutDescription: React.FC = () => (
         />
       </div>
       <img
-        alt="programming"
-        className={[styles.img, styles.imgRight].join(' ')}
-        src={forklift}
+        alt="bookshelf"
+        className={[styles.img, styles.imgBookshelf, styles.imgRight].join(' ')}
+        src={bookshelf}
       />
     </section>
-    <section className={styles.paragraphSection}>
+    <section className={[styles.paragraphSection, styles.paragraphMargin].join(' ')}>
       <img
-        alt="programming"
+        alt="spongebob"
         className={[styles.img, styles.imgLeft].join(' ')}
-        src={programming}
+        src={spongebog}
       />
       <div className={styles.paragraphDiv}>
         <Typography
@@ -58,7 +58,7 @@ const AboutDescription: React.FC = () => (
         />
       </div>
     </section>
-    <section className={[styles.paragraphSection, styles.paragraphMargin].join(' ')}>
+    <section className={[styles.paragraphSection, styles.paragraphMarginThree].join(' ')}>
       <div className={[styles.paragraphDiv, styles.paragraphDivNoImg].join(' ')}>
         <Typography
           lineHeight="large"
@@ -68,7 +68,7 @@ const AboutDescription: React.FC = () => (
         />
       </div>
     </section>
-    <section className={[styles.paragraphSection, styles.paragraphMargin].join(' ')}>
+    <section className={[styles.paragraphSection, styles.paragraphMarginTwo].join(' ')}>
       <div className={[styles.paragraphDiv, styles.paragraphDivNoImg].join(' ')}>
         <Typography
           lineHeight="large"
