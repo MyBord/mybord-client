@@ -3,30 +3,30 @@ import Icon from 'icons/icon/icon';
 import Typography from 'typography/typography';
 import * as styles from './footer.module.less';
 
-const EmailContent: React.FC = () => <Icon color="white" iconName="mail" size={24} />;
+const EmailContent: React.FC = () => <Icon color="white" iconName="paperAirplane" size={24} />;
 
 const Footer: React.FC = () => (
   <section className={styles.section}>
     <div className={styles.footerContent}>
       <div className={styles.list} style={{ margin: '2rem' }}>
         <div className={styles.listHeader}>
-                                            <Typography
-                                            color="white"
-                                            size="four"
-                                            text="Have a question?"
-                                            weight="bold"
-                                            />
-                                            </div>
+          <Typography
+            color="white"
+            size="four"
+            text="Have a question?"
+            weight="bold"
+          />
+        </div>
         <ul className={styles.ul}>
-                                   <li>
-                                   <Typography
-                                   Content={EmailContent}
-                                   color="white"
-                                   size="three"
-                                   text="info@mybord.io"
-                                   />
-                                   </li>
-                                   </ul>
+          <li>
+            <Typography
+              Content={EmailContent}
+              color="white"
+              size="three"
+              text="info@mybord.io"
+            />
+          </li>
+        </ul>
       </div>
       <div className={styles.list} style={{ margin: '2rem' }}>
         <div className={styles.listHeader}>

@@ -18,6 +18,7 @@ const HeartIcon = React.lazy(() => import('./individualIcons/heartIcon'));
 const LogoutIcon = React.lazy(() => import('./individualIcons/logoutIcon'));
 const MailIcon = React.lazy(() => import('./individualIcons/mailIcon'));
 const MonkeyIcon = React.lazy(() => import('./individualIcons/monkeyIcon'));
+const PaperAirplaneIcon = React.lazy(() => import('./individualIcons/paperAirplaneIcon'));
 const PencilIcon = React.lazy(() => import('./individualIcons/pencilIcon'));
 const PlaylistIcon = React.lazy(() => import('./individualIcons/playlistIcon'));
 const StarIcon = React.lazy(() => import('./individualIcons/starIcon'));
@@ -47,6 +48,7 @@ export const iconNames = {
   mail: 'foo',
   monkey: 'foo',
   notification: 'foo',
+  paperAirplane: 'foo',
   pencil: 'foo',
   playlist: 'foo',
   star: 'foo',
@@ -105,6 +107,8 @@ const Icon: React.FC<IconProps> = ({
       return <MonkeyIcon size={size} />;
     case 'notification':
       return <BellIcon size={size} />;
+    case 'paperAirplane':
+      return <PaperAirplaneIcon color={color} size={size} />;
     case 'pencil':
       return <PencilIcon color={color} fill={fill} size={size} />;
     case 'playlist':
