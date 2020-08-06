@@ -15,14 +15,42 @@ const TypographyLink: React.FC<Props> = ({
   commonStyles,
   link,
   onClick,
-}) => (
-  <Link
-    className={[styles.link, commonStyles].join(' ')}
-    to={link}
-    onClick={onClick}
-  >
-    {children}
-  </Link>
-);
+}) => {
+  if (link.startsWith('https')) {
+    return (
+      <a
+        className={[styles.link, commonStyles].join(' ')}
+        href={link}
+        onClick={onClick}
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        {children}
+      </a>
+    );
+  }
+
+  if (link.startsWith('mailto')) {
+    return (
+      <a
+        className={[styles.link, commonStyles].join(' ')}
+        href={link}
+        onClick={onClick}
+      >
+        {children}
+      </a>
+    );
+  }
+
+  return (
+    <Link
+      className={[styles.link, commonStyles].join(' ')}
+      to={link}
+      onClick={onClick}
+    >
+      {children}
+    </Link>
+  );
+};
 
 export default TypographyLink;
