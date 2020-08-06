@@ -21,6 +21,7 @@ This document is used to outline current project management priorities.
   * when you logout, it should take you to the login page, no matter where you're coming from
   * about page
     * delete aboutToDo.md
+    * delete about.md doc
   * have session be remembered by user
   * when you login, refresh the page, and click about, you get a double render
   * when logging in, cards show up before loading is done ... this is if you login, logout, and
