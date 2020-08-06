@@ -16,6 +16,7 @@ const FilterIcon = React.lazy(() => import('./individualIcons/filterIcon'));
 const GoogleIcon = React.lazy(() => import('./individualIcons/googleIcon'));
 const HeartIcon = React.lazy(() => import('./individualIcons/heartIcon'));
 const InstagramIcon = React.lazy(() => import('./individualIcons/instagramIcon'));
+const LinkedinIcon = React.lazy(() => import('./individualIcons/linkedinIcon'));
 const LogoutIcon = React.lazy(() => import('./individualIcons/logoutIcon'));
 const MailIcon = React.lazy(() => import('./individualIcons/mailIcon'));
 const MonkeyIcon = React.lazy(() => import('./individualIcons/monkeyIcon'));
@@ -24,6 +25,7 @@ const PencilIcon = React.lazy(() => import('./individualIcons/pencilIcon'));
 const PlaylistIcon = React.lazy(() => import('./individualIcons/playlistIcon'));
 const StarIcon = React.lazy(() => import('./individualIcons/starIcon'));
 const ThumbsUpIcon = React.lazy(() => import('./individualIcons/thumbsUpIcon'));
+const TwitterIcon = React.lazy(() => import('./individualIcons/twitterIcon'));
 const WarningIcon = React.lazy(() => import('./individualIcons/warningIcon'));
 
 // declaring an iconNames from an object instead of an array
@@ -46,6 +48,7 @@ export const iconNames = {
   google: 'foo',
   heart: 'foo',
   instagram: 'foo',
+  linkedin: 'foo',
   logout: 'foo',
   mail: 'foo',
   monkey: 'foo',
@@ -55,6 +58,7 @@ export const iconNames = {
   playlist: 'foo',
   star: 'foo',
   thumbsUp: 'foo',
+  twitter: 'foo',
   warning: 'foo',
 };
 
@@ -103,6 +107,8 @@ const Icon: React.FC<IconProps> = ({
       return <HeartIcon color={color} fill={fill} size={size} />;
     case 'instagram':
       return <InstagramIcon color={color} size={size} />;
+    case 'linkedin':
+      return <LinkedinIcon color={color} size={size} />;
     case 'logout':
       return <LogoutIcon color={color} size={size} />;
     case 'mail':
@@ -119,6 +125,8 @@ const Icon: React.FC<IconProps> = ({
       return <PlaylistIcon size={size} />;
     case 'star':
       return <StarIcon size={size} />;
+    case 'twitter':
+      return <TwitterIcon color={color} size={size} />;
     case 'thumbsUp':
       return <ThumbsUpIcon size={size} />;
     case 'warning':
