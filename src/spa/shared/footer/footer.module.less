@@ -1,8 +1,10 @@
 @import "~styles/_colors";
 
+@marginTop: 2rem;
+
 .footerContent {
   display: flex;
-  margin-top: 2rem;
+  margin-top: @marginTop;
 }
 
 .iconDiv {
@@ -13,11 +15,19 @@
   margin: 0 3rem;
 }
 
+.logo {
+  height: 5rem;
+  width: 5rem;
+  position: absolute;
+  top: @marginTop;
+}
+
 .section {
   background: @black;
   display: flex;
   height: 25rem;
   justify-content: center;
+  position: relative;
 }
 
 .ul {

@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Icon from 'icons/icon/icon';
 import Typography from 'typography/typography';
+import logo from 'assets/logo/logo.png';
 import * as styles from './footer.module.less';
 
 const EmailContent: React.FC = () => (
@@ -35,6 +36,7 @@ const TwitterContent: React.FC = () => (
 
 const Footer: React.FC = () => (
   <section className={styles.section}>
+    <img alt="MyBord logo" className={styles.logo} src={logo} />
     <div className={styles.footerContent}>
       <div className={styles.list}>
         <div className={styles.listHeader}>
