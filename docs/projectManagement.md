@@ -25,6 +25,8 @@ This document is used to outline current project management priorities.
     * add footer to both about pages for main site too
     * move about pages to shared?
     * move footer to shared?
+    * if you are on the landing page with the about page open, e.g. /about, logging in should
+     redirect you to the home page
   * have session be remembered by user
   * when you login, refresh the page, and click about, you get a double render
   * when logging in, cards show up before loading is done ... this is if you login, logout, and
