@@ -100,7 +100,7 @@ const Icon: React.FC<IconProps> = ({
     case 'logout':
       return <LogoutIcon color={color} size={size} />;
     case 'mail':
-      return <MailIcon size={size} />;
+      return <MailIcon color={color} size={size} />;
     case 'monkey':
       return <MonkeyIcon size={size} />;
     case 'notification':
