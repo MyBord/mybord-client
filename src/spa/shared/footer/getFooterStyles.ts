@@ -3,22 +3,36 @@ import * as sizes from 'styles/_sizes.less';
 import { FooterHrStyle, FooterImgStyle } from 'types/footerTypes';
 import { convertUnit, getUnit, makeUnit } from 'utils/cssUtils';
 
-export const getHrStyles = (ref: React.RefObject<HTMLDivElement>): FooterHrStyle => {
+export const getHrStyles = (contentRef: React.RefObject<HTMLDivElement>): FooterHrStyle => {
   const listMargin = convertUnit(sizes.footerListMargin, 'rem', 'px');
   const footerMargin = getUnit(listMargin, 'px');
-  const rect = ref.current.getBoundingClientRect();
-  const width = makeUnit(rect.width - (footerMargin * 2), 'px');
+
+  const contentRect = contentRef.current.getBoundingClientRect();
+  const width = makeUnit(contentRect.width - (footerMargin * 2), 'px');
+
   return {
     width,
   };
 };
 
 // don't always be in center if it is wider
-export const getImgStyles = (ref: React.RefObject<HTMLDivElement>): FooterImgStyle => {
+export const getImgStyles = (
+  contentRef: React.RefObject<HTMLDivElement>,
+  sectionRef: React.RefObject<HTMLTableSectionElement>,
+): FooterImgStyle => {
   const logoSize = convertUnit(sizes.footerLogoSize, 'rem', 'px');
-  const logoWidthOffset = getUnit(logoSize, 'px') / 2;
-  const rect = ref.current.getBoundingClientRect();
-  const left = makeUnit(rect.left / 2 - logoWidthOffset, 'px');
+  const logoSizeValue = getUnit(logoSize, 'px');
+
+  const contentRect = contentRef.current.getBoundingClientRect();
+  const sectionRect = sectionRef.current.getBoundingClientRect();
+
+  let left: string;
+  if (sectionRect.width >= 1400) {
+    left = makeUnit(contentRect.left - logoSizeValue - 32, 'px');
+  } else {
+    left = makeUnit(contentRect.left / 2 - logoSizeValue / 2, 'px');
+  }
+
   return {
     left,
   };

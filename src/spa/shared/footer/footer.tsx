@@ -15,18 +15,25 @@ const CopyrightContent: React.FC = () => (
 
 const Footer: React.FC = () => {
   const contentRef = React.useRef<HTMLDivElement>(null);
+  const sectionRef = React.useRef<HTMLTableSectionElement>(null);
   const [hrStyles, setHrStyles] = React.useState<FooterHrStyle>(null);
   const [imgStyles, setImgStyles] = React.useState<FooterImgStyle>(null);
 
   React.useEffect(() => {
-    if (contentRef.current) {
-      setImgStyles(getImgStyles(contentRef));
-      setHrStyles(getHrStyles(contentRef));
-    }
+    const setFooterStyles = (): void => {
+      if (contentRef.current && sectionRef.current) {
+        setImgStyles(getImgStyles(contentRef, sectionRef));
+        setHrStyles(getHrStyles(contentRef));
+      }
+    };
+
+    setFooterStyles();
+
+    window.addEventListener('resize', setFooterStyles);
   }, [contentRef]);
 
   return (
-    <section className={styles.section}>
+    <section className={styles.section} ref={sectionRef}>
       <img
         alt="MyBord logo"
         className={styles.logo}
