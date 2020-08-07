@@ -7,13 +7,17 @@ import logo from 'assets/logo/logo.png';
 import { FooterHrStyle, FooterImgStyle } from 'types/footerTypes';
 import { getHrStyles, getImgStyles } from './getFooterStyles';
 
-const CopyrightContent: React.FC = () => (
+const CopyrightContent: React.FC<Props> = ({ isApp }) => (
   <div className={styles.copyrightDiv}>
-    <Icon color="white" iconName="copyright" size={20} />
+    <Icon color={isApp ? 'black' : 'white'} iconName="copyright" size={20} />
   </div>
 );
 
-const Footer: React.FC = () => {
+interface Props {
+  isApp?: boolean; // does the footer appear in the 'app' or in the 'landing'?
+}
+
+const Footer: React.FC<Props> = ({ isApp = false }) => {
   const contentRef = React.useRef<HTMLDivElement>(null);
   const sectionRef = React.useRef<HTMLTableSectionElement>(null);
   const [hrStyles, setHrStyles] = React.useState<FooterHrStyle>(null);
@@ -33,19 +37,22 @@ const Footer: React.FC = () => {
   }, [contentRef]);
 
   return (
-    <section className={styles.section} ref={sectionRef}>
+    <section
+      className={[styles.section, !isApp ? styles.landingBackground : undefined].join(' ')}
+      ref={sectionRef}
+    >
       <img
         alt="MyBord logo"
         className={styles.logo}
         src={logo}
         style={imgStyles}
       />
-      <FooterContent ref={contentRef} />
+      <FooterContent isApp={isApp} ref={contentRef} />
       <hr className={styles.hr} style={hrStyles} />
       <div className={styles.copyrightContent}>
         <Typography
-          Content={CopyrightContent}
-          color="white"
+          Content={() => <CopyrightContent isApp={isApp} />}
+          color={isApp ? 'black' : 'white'}
           size="three"
           text="Copyright 2020 by MyBord.io. All Rights Reserved."
         />
