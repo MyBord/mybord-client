@@ -10,7 +10,7 @@ const AboutDevPage: React.FC = () => (
     <section className={styles.section}>
       <AboutDevDescription />
       <AboutDevStack />
-      <Footer />
+      <Footer isApp />
     </section>
   </section>
 );

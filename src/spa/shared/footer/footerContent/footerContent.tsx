@@ -1,43 +1,14 @@
 import * as React from 'react';
-import Icon from 'icons/icon/icon';
 import Typography from 'typography/typography';
+import { FooterProps } from 'types/footerTypes';
+import footerIcons from '../footerIcons/footerIcons';
 import * as styles from './footerContent.module.less';
 
-const EmailContent: React.FC = () => (
-  <div className={styles.iconDiv}>
-    <Icon color="white" iconName="paperAirplane" size={24} strokeWidth={4} />
-  </div>
-);
-
-const FacebookContent: React.FC = () => (
-  <div className={styles.iconDiv}>
-    <Icon color="white" iconName="facebook" size={24} />
-  </div>
-);
-
-const InstagramContent: React.FC = () => (
-  <div className={styles.iconDiv}>
-    <Icon color="white" iconName="instagram" size={24} />
-  </div>
-);
-
-const LinkedinContent: React.FC = () => (
-  <div className={styles.iconDiv}>
-    <Icon color="white" iconName="linkedin" size={24} />
-  </div>
-);
-
-const TwitterContent: React.FC = () => (
-  <div className={styles.iconDiv}>
-    <Icon color="white" iconName="twitter" size={24} />
-  </div>
-);
-
-const FooterContent = React.forwardRef<HTMLDivElement>((props, ref) => (
+const FooterContent = React.forwardRef<HTMLDivElement, FooterProps>(({ isApp }, ref) => (
   <div className={styles.footerContent} ref={ref}>
     <div className={styles.list}>
       <Typography
-        color="white"
+        color={isApp ? 'black' : 'white'}
         size="four"
         text="Have a question?"
         weight="bold"
@@ -45,8 +16,8 @@ const FooterContent = React.forwardRef<HTMLDivElement>((props, ref) => (
       <ul className={styles.ul}>
         <li>
           <Typography
-            Content={EmailContent}
-            color="white"
+            Content={() => <footerIcons.EmailContent isApp={isApp} />}
+            color={isApp ? 'black' : 'white'}
             link="mailto:info@mybord.io"
             size="three"
             text="info@mybord.io"
@@ -56,7 +27,7 @@ const FooterContent = React.forwardRef<HTMLDivElement>((props, ref) => (
     </div>
     <div className={styles.list}>
       <Typography
-        color="white"
+        color={isApp ? 'black' : 'white'}
         size="four"
         text="Legal"
         weight="bold"
@@ -64,7 +35,7 @@ const FooterContent = React.forwardRef<HTMLDivElement>((props, ref) => (
       <ul className={styles.ul}>
         <li>
           <Typography
-            color="white"
+            color={isApp ? 'black' : 'white'}
             link="/terms"
             size="three"
             text="Terms & Conditions"
@@ -72,7 +43,7 @@ const FooterContent = React.forwardRef<HTMLDivElement>((props, ref) => (
         </li>
         <li>
           <Typography
-            color="white"
+            color={isApp ? 'black' : 'white'}
             link="/privacy"
             size="three"
             text="Privacy Policy"
@@ -82,7 +53,7 @@ const FooterContent = React.forwardRef<HTMLDivElement>((props, ref) => (
     </div>
     <div className={styles.list}>
       <Typography
-        color="white"
+        color={isApp ? 'black' : 'white'}
         size="four"
         text="Social"
         weight="bold"
@@ -90,8 +61,8 @@ const FooterContent = React.forwardRef<HTMLDivElement>((props, ref) => (
       <ul className={styles.ul}>
         <li>
           <Typography
-            Content={InstagramContent}
-            color="white"
+            Content={() => <footerIcons.InstagramContent isApp={isApp} />}
+            color={isApp ? 'black' : 'white'}
             link="https://www.instagram.com/"
             size="three"
             text="Instagram"
@@ -99,8 +70,8 @@ const FooterContent = React.forwardRef<HTMLDivElement>((props, ref) => (
         </li>
         <li>
           <Typography
-            Content={LinkedinContent}
-            color="white"
+            Content={() => <footerIcons.LinkedinContent isApp={isApp} />}
+            color={isApp ? 'black' : 'white'}
             link="https://www.linkedin.com/"
             size="three"
             text="Linkedin"
@@ -108,8 +79,8 @@ const FooterContent = React.forwardRef<HTMLDivElement>((props, ref) => (
         </li>
         <li>
           <Typography
-            Content={TwitterContent}
-            color="white"
+            Content={() => <footerIcons.TwitterContent isApp={isApp} />}
+            color={isApp ? 'black' : 'white'}
             link="https://www.twitter.com/"
             size="three"
             text="Twitter"
@@ -117,8 +88,8 @@ const FooterContent = React.forwardRef<HTMLDivElement>((props, ref) => (
         </li>
         <li>
           <Typography
-            Content={FacebookContent}
-            color="white"
+            Content={() => <footerIcons.FacebookContent isApp={isApp} />}
+            color={isApp ? 'black' : 'white'}
             link="https://www.facebook.com/"
             size="three"
             text="Facebook"

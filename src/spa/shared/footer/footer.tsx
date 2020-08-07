@@ -1,19 +1,13 @@
 import * as React from 'react';
-import * as styles from 'shared/footer/footer.module.less';
 import FooterContent from 'shared/footer/footerContent/footerContent';
-import Icon from 'icons/icon/icon';
 import Typography from 'typography/typography';
 import logo from 'assets/logo/logo.png';
-import { FooterHrStyle, FooterImgStyle } from 'types/footerTypes';
+import { FooterHrStyle, FooterImgStyle, FooterProps } from 'types/footerTypes';
+import footerIcons from './footerIcons/footerIcons';
 import { getHrStyles, getImgStyles } from './getFooterStyles';
+import * as styles from './footer.module.less';
 
-const CopyrightContent: React.FC = () => (
-  <div className={styles.copyrightDiv}>
-    <Icon color="white" iconName="copyright" size={20} />
-  </div>
-);
-
-const Footer: React.FC = () => {
+const Footer: React.FC<FooterProps> = ({ isApp }) => {
   const contentRef = React.useRef<HTMLDivElement>(null);
   const sectionRef = React.useRef<HTMLTableSectionElement>(null);
   const [hrStyles, setHrStyles] = React.useState<FooterHrStyle>(null);
@@ -22,7 +16,7 @@ const Footer: React.FC = () => {
   React.useEffect(() => {
     const setFooterStyles = (): void => {
       if (contentRef.current && sectionRef.current) {
-        setImgStyles(getImgStyles(contentRef, sectionRef));
+        setImgStyles(getImgStyles(contentRef, sectionRef, isApp));
         setHrStyles(getHrStyles(contentRef));
       }
     };
@@ -33,19 +27,22 @@ const Footer: React.FC = () => {
   }, [contentRef]);
 
   return (
-    <section className={styles.section} ref={sectionRef}>
+    <section
+      className={isApp ? styles.sectionApp : styles.sectionLanding}
+      ref={sectionRef}
+    >
       <img
         alt="MyBord logo"
         className={styles.logo}
         src={logo}
         style={imgStyles}
       />
-      <FooterContent ref={contentRef} />
-      <hr className={styles.hr} style={hrStyles} />
-      <div className={styles.copyrightContent}>
+      <FooterContent isApp={isApp} ref={contentRef} />
+      <hr className={isApp ? styles.hrApp : styles.hrLanding} style={hrStyles} />
+      <div className={isApp ? styles.copyrightContentApp : styles.copyrightContentLanding}>
         <Typography
-          Content={CopyrightContent}
-          color="white"
+          Content={() => <footerIcons.CopyrightContent isApp={isApp} />}
+          color={isApp ? 'black' : 'white'}
           size="three"
           text="Copyright 2020 by MyBord.io. All Rights Reserved."
         />

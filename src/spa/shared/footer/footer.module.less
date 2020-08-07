@@ -1,15 +1,21 @@
 @import "~styles/_colors";
 @import "~styles/_sizes";
 
-.copyrightContent {
+.copyrightContentApp {
+  margin: 1rem 0 4rem 0;
+}
+
+.copyrightContentLanding {
   margin: 1rem 0 2rem 0;
 }
 
-.copyrightDiv {
-  margin: 0.125rem 0.5rem 0 0;
+.hrApp {
+  border-color: @black;
+  border-width: 0 0 0.0625rem 0;
+  margin-top: 1rem;
 }
 
-.hr {
+.hrLanding {
   border-color: @white;
   border-width: 0 0 0.0625rem 0;
   margin-top: 1rem;
@@ -22,7 +28,15 @@
   top: @footerMarginTop;
 }
 
-.section {
+.sectionApp {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 4rem;
+  position: relative;
+}
+
+.sectionLanding {
   align-items: center;
   background: @black;
   display: flex;
