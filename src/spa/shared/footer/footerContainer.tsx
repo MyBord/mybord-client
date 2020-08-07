@@ -13,7 +13,7 @@ const FooterContainer: React.FC = () => {
       setImgStyles(getImgStyles(contentRef));
       setHrStyles(getHrStyles(contentRef));
     }
-  }, [contentRef, imgStyles]);
+  }, [contentRef]);
 
   return (
     <FooterComponent

@@ -5,7 +5,6 @@ import * as sizes from 'styles/_sizes.less';
 
 // make 96 an export
 export const getHrStyles = (ref: React.RefObject<HTMLDivElement>): FooterHrStyle => {
-  // console.log(sizes.footerListMargin);
   const rect = ref.current.getBoundingClientRect();
   const width = makeUnit(rect.width - 96, 'px');
   return {

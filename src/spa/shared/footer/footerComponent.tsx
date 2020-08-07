@@ -2,7 +2,6 @@ import * as React from 'react';
 import Icon from 'icons/icon/icon';
 import Typography from 'typography/typography';
 import logo from 'assets/logo/logo.png';
-import memo from 'utils/memo';
 import { FooterHrStyle, FooterImgStyle } from 'types/footerTypes';
 import FooterContent from './footerContent/footerContent';
 import * as styles from './footer.module.less';
@@ -39,4 +38,4 @@ const FooterComponent = React.forwardRef<HTMLDivElement, Props>(({ hrStyles, img
   </section>
 ));
 
-export default memo(FooterComponent);
+export default FooterComponent;
