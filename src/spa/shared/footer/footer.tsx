@@ -16,7 +16,7 @@ const Footer: React.FC<FooterProps> = ({ isApp }) => {
   React.useEffect(() => {
     const setFooterStyles = (): void => {
       if (contentRef.current && sectionRef.current) {
-        setImgStyles(getImgStyles(contentRef, sectionRef));
+        setImgStyles(getImgStyles(contentRef, sectionRef, isApp));
         setHrStyles(getHrStyles(contentRef));
       }
     };
