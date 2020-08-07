@@ -1,6 +1,46 @@
 @import "~styles/_colors";
+@import "~styles/_sizes";
 
-.section {
-  background: @black;
-  height: 10rem;
+.copyrightContentApp {
+  margin: 1rem 0 4rem 0;
 }
+
+.copyrightContentLanding {
+  margin: 1rem 0 2rem 0;
+}
+
+.hrApp {
+  border-color: @black;
+  border-width: 0 0 0.0625rem 0;
+  margin-top: 1rem;
+}
+
+.hrLanding {
+  border-color: @white;
+  border-width: 0 0 0.0625rem 0;
+  margin-top: 1rem;
+}
+
+.logo {
+  height: @footerLogoSize;
+  width: @footerLogoSize;
+  position: absolute;
+  top: @footerMarginTop;
+}
+
+.sectionApp {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 4rem;
+  position: relative;
+}
+
+.sectionLanding {
+  align-items: center;
+  background: @black;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+

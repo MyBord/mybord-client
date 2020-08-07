@@ -31,6 +31,6 @@ export const partThree = 'Lastly, something to mention: at first, when you build
 + ' as we want Jest, Enzyme, Storybook and more to be part of the core development process for'
 + ' MyBord, we\'re a bit more lean at the moment and are trying to get new features out the door.'
 + ' Important roadmap features include building out more tools and apis for each user\'s "bord",'
-+ ' social media enhancements (following friends, subscribing, copying cards, trending), possibly'
-+ ' building a React Native app (and thus converting the codebase from React to React Native),'
-+ ' enhanced OAuth, and possibly moving from Heroku to AWS.';
++ ' social media enhancements (following friends, subscribing, copying cards, trending), adding'
++ ' a browser extension, building a React Native app (and thus converting the codebase from React'
++ ' to React Native), enhanced OAuth, and possibly moving from Heroku to AWS.';

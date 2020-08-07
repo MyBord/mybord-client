@@ -8,7 +8,7 @@ const AboutPage: React.FC = () => (
   <section className={styles.parentSection}>
     <section className={styles.section}>
       <AboutDescription />
-      <Footer />
+      <Footer isApp />
     </section>
   </section>
 );

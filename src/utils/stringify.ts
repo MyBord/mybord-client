@@ -12,8 +12,12 @@ const stripProp = (object: CommonObject): void => {
   });
 };
 
-export default (object: CommonObject): string => {
+export default (object: CommonObject): CommonObject | string => {
   const clonedObject = cloneDeep(object);
-  stripProp(clonedObject);
-  return JSON.stringify(clonedObject);
+  if (clonedObject !== null) {
+    stripProp(clonedObject);
+    return JSON.stringify(clonedObject);
+  }
+
+  return clonedObject;
 };

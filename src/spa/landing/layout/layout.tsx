@@ -30,7 +30,7 @@ const Layout: React.FC<Props> = ({ children }) => {
       <section className={styles.section}>
         <Header />
         {children}
-        <Footer />
+        <Footer isApp={false} />
       </section>
     </main>
   );

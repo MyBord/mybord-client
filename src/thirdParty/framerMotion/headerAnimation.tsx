@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { motion } from 'framer-motion';
-import { getUnit, pixelize } from 'utils/cssUtils';
+import { getUnit, makeUnit } from 'utils/cssUtils';
 import * as sizes from 'styles/_sizes.less';
 import * as styles from './headerAnimation.module.less';
 
@@ -11,7 +11,7 @@ const initialTopUnit = -1 * (
 
 export const variants = {
   initial: {
-    top: pixelize(initialTopUnit, 'rem'),
+    top: makeUnit(initialTopUnit, 'rem'),
   },
   enter: {
     top: '0rem',

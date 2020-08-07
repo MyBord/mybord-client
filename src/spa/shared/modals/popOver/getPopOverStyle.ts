@@ -5,7 +5,7 @@ import * as React from 'react';
 import * as sizes from 'styles/_sizes.less';
 import { ClientRect } from 'types/htmlTypes';
 import { PopOverProps, PopOverStyle } from 'types/modalTypes';
-import { getUnit, pixelize } from 'utils/cssUtils';
+import { getUnit, makeUnit } from 'utils/cssUtils';
 
 const getStyle = (
   childrenRect: ClientRect,
@@ -29,16 +29,16 @@ const getStyle = (
 
   switch (placementOne) {
     case 'bottom':
-      style.top = pixelize(childrenRect.bottom + popOverMargin, 'px');
+      style.top = makeUnit(childrenRect.bottom + popOverMargin, 'px');
       break;
     case 'left':
-      style.left = pixelize(childrenRect.left - popOverRect.width - popOverMargin, 'px');
+      style.left = makeUnit(childrenRect.left - popOverRect.width - popOverMargin, 'px');
       break;
     case 'right':
-      style.left = pixelize(childrenRect.right + popOverMargin, 'px');
+      style.left = makeUnit(childrenRect.right + popOverMargin, 'px');
       break;
     case 'top':
-      style.top = pixelize(childrenRect.top - popOverRect.height - popOverMargin, 'px');
+      style.top = makeUnit(childrenRect.top - popOverRect.height - popOverMargin, 'px');
       break;
     default:
       break;
@@ -46,14 +46,14 @@ const getStyle = (
 
   if (placementTwo === 'center') {
     if (['bottom', 'top'].includes(placementOne)) {
-      style.left = pixelize(
+      style.left = makeUnit(
         childrenRect.left + childrenRect.width / 2 - popOverRect.width / 2,
         'px',
       );
     }
 
     if (['left', 'right'].includes(placementOne)) {
-      style.top = pixelize(
+      style.top = makeUnit(
         childrenRect.top + childrenRect.height / 2 - popOverRect.height / 2,
         'px',
       );
@@ -61,16 +61,16 @@ const getStyle = (
   } else {
     switch (placementTwo) {
       case 'bottom':
-        style.top = pixelize(childrenRect.bottom - popOverRect.height, 'px');
+        style.top = makeUnit(childrenRect.bottom - popOverRect.height, 'px');
         break;
       case 'left':
-        style.left = pixelize(childrenRect.left, 'px');
+        style.left = makeUnit(childrenRect.left, 'px');
         break;
       case 'right':
-        style.left = pixelize(childrenRect.right - popOverRect.width, 'px');
+        style.left = makeUnit(childrenRect.right - popOverRect.width, 'px');
         break;
       case 'top':
-        style.top = pixelize(childrenRect.top, 'px');
+        style.top = makeUnit(childrenRect.top, 'px');
         break;
       default:
         break;
@@ -94,10 +94,10 @@ const mutateStyle = (
   // move the popover by custom x y coordinates when provided via props
   if (position && (position.left || position.top)) {
     if (position.left) {
-      finalStyle.left = pixelize(getUnit(finalStyle.left, 'px') + position.left, 'px');
+      finalStyle.left = makeUnit(getUnit(finalStyle.left, 'px') + position.left, 'px');
     }
     if (position.top) {
-      finalStyle.top = pixelize(getUnit(finalStyle.top, 'px') + position.top, 'px');
+      finalStyle.top = makeUnit(getUnit(finalStyle.top, 'px') + position.top, 'px');
     }
     return finalStyle;
   }
@@ -107,7 +107,7 @@ const mutateStyle = (
   // the popover has a caret
   if (getUnit(finalStyle.left, 'px') + popOverRect.width >= windowWidth) {
     delete finalStyle.left;
-    finalStyle.right = pixelize(16, 'px');
+    finalStyle.right = makeUnit(16, 'px');
     if (caretPlacement) {
       setCaretPlacement('auto');
     }
@@ -115,7 +115,7 @@ const mutateStyle = (
 
   // If the popover is too close to the top of the window, or above it, then move it down
   if (getUnit(finalStyle.top, 'px') < 16) {
-    finalStyle.top = pixelize(16, 'px');
+    finalStyle.top = makeUnit(16, 'px');
   }
 
   return finalStyle;
