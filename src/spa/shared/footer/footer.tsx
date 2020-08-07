@@ -1,17 +1,11 @@
 import * as React from 'react';
-import * as styles from 'shared/footer/footer.module.less';
 import FooterContent from 'shared/footer/footerContent/footerContent';
-import Icon from 'icons/icon/icon';
 import Typography from 'typography/typography';
 import logo from 'assets/logo/logo.png';
 import { FooterHrStyle, FooterImgStyle, FooterProps } from 'types/footerTypes';
+import footerIcons from './footerIcons/footerIcons';
 import { getHrStyles, getImgStyles } from './getFooterStyles';
-
-const CopyrightContent: React.FC<FooterProps> = ({ isApp }) => (
-  <div className={styles.copyrightDiv}>
-    <Icon color={isApp ? 'black' : 'white'} iconName="copyright" size={20} />
-  </div>
-);
+import * as styles from './footer.module.less';
 
 const Footer: React.FC<FooterProps> = ({ isApp }) => {
   const contentRef = React.useRef<HTMLDivElement>(null);
@@ -47,7 +41,7 @@ const Footer: React.FC<FooterProps> = ({ isApp }) => {
       <hr className={styles.hr} style={hrStyles} />
       <div className={styles.copyrightContent}>
         <Typography
-          Content={() => <CopyrightContent isApp={isApp} />}
+          Content={() => <footerIcons.CopyrightContent isApp={isApp} />}
           color={isApp ? 'black' : 'white'}
           size="three"
           text="Copyright 2020 by MyBord.io. All Rights Reserved."
