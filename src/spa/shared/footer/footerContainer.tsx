@@ -1,19 +1,17 @@
 import * as React from 'react';
+import { FooterHrStyle, FooterImgStyle } from 'types/footerTypes';
 import FooterComponent from './footerComponent';
+import { getHrStyles, getImgStyles } from './getFooterStyles';
 
 const FooterContainer: React.FC = () => {
   const contentRef = React.useRef<HTMLDivElement>(null);
-  // todo: set type of state
-  const [imgStyles, setImgStyles] = React.useState(null);
-  // todo: set type of state
-  const [hrStyles, setHrStyles] = React.useState(null);
+  const [hrStyles, setHrStyles] = React.useState<FooterHrStyle>(null);
+  const [imgStyles, setImgStyles] = React.useState<FooterImgStyle>(null);
 
   React.useEffect(() => {
     if (contentRef.current) {
-      const contentRect = contentRef.current.getBoundingClientRect();
-      // don't always be in center if it is wider
-      setImgStyles({ left: `${(contentRect.left / 2) - 16}px` });
-      setHrStyles({ width: `${contentRect.width - 96}px` });
+      setImgStyles(getImgStyles(contentRef));
+      setHrStyles(getHrStyles(contentRef));
     }
   }, [contentRef, imgStyles]);
 
