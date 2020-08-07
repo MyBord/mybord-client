@@ -7,6 +7,7 @@ const BellIcon = React.lazy(() => import('./individualIcons/bellIcon'));
 const CalendarIcon = React.lazy(() => import('./individualIcons/calendarIcon'));
 const ChartIcon = React.lazy(() => import('./individualIcons/chartIcon'));
 const CloseIcon = React.lazy(() => import('./individualIcons/closeIcon'));
+const CopyrightIcon = React.lazy(() => import('./individualIcons/copyrightIcon'));
 const DashboardIcon = React.lazy(() => import('./individualIcons/dashboardIcon'));
 const DeleteIcon = React.lazy(() => import('./individualIcons/deleteIcon'));
 const DownArrowIcon = React.lazy(() => import('./individualIcons/downArrowIcon'));
@@ -39,6 +40,7 @@ export const iconNames = {
   calendar: 'foo',
   chart: 'foo',
   close: 'foo',
+  copyright: 'foo',
   dashboard: 'foo',
   delete: 'foo',
   downArrow: 'foo',
@@ -89,6 +91,8 @@ const Icon: React.FC<IconProps> = ({
       return <ChartIcon size={size} />;
     case 'close':
       return <CloseIcon color={color} size={size} />;
+    case 'copyright':
+      return <CopyrightIcon color={color} size={size} />;
     case 'dashboard':
       return <DashboardIcon size={size} />;
     case 'delete':
