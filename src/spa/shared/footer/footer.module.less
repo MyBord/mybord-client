@@ -1,6 +1,5 @@
 @import "~styles/_colors";
-
-@marginTop: 2rem;
+@import "~styles/_sizes";
 
 .copyrightContent {
   margin-top: 0.625rem;
@@ -10,30 +9,17 @@
   margin: 0.125rem 0.5rem 0 0;
 }
 
-.footerContent {
-  display: flex;
-  margin-top: @marginTop;
-}
-
 .hr {
   border-color: @white;
   border-width: 0 0 0.0625rem 0;
   margin-top: 1rem;
 }
 
-.iconDiv {
-  margin-right: 0.5rem;
-}
-
-.list {
-  margin: 0 3rem;
-}
-
 .logo {
   height: 5rem;
   width: 5rem;
   position: absolute;
-  top: @marginTop;
+  top: @footerMarginTop;
 }
 
 .section {
@@ -45,10 +31,3 @@
   position: relative;
 }
 
-.ul {
-  list-style: none;
-  padding: 0;
-  > li {
-    margin: 0.5rem 0;
-  }
-}
