@@ -155,6 +155,7 @@ const Footer: React.FC = () => {
           </ul>
         </div>
       </div>
+      <hr className={styles.hr} />
     </section>
   );
 };
