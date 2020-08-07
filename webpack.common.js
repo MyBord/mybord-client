@@ -137,6 +137,7 @@ const plugins = [
 const resolve = {
   extensions: ['.jsx', '.js', '.tsx', '.ts', '.less'],
   alias: {
+    about: path.resolve(__dirname, 'src/spa/shared/about/'),
     api: path.resolve(__dirname, 'src/api/'),
     app: path.resolve(__dirname, 'src/spa/app/'),
     assets: path.resolve(__dirname, 'src/assets/'),
@@ -144,6 +145,7 @@ const resolve = {
     cards: path.resolve(__dirname, 'src/spa/shared/cards/'),
     context: path.resolve(__dirname, 'src/context/'),
     fallbacks: path.resolve(__dirname, 'src/spa/shared/fallbacks/'),
+    footer: path.resolve(__dirname, 'src/spa/shared/footer/'),
     forms: path.resolve(__dirname, 'src/spa/shared/forms/'),
     framerMotion: path.resolve(__dirname, 'src/thirdParty/framerMotion/'),
     header: path.resolve(__dirname, 'src/spa/app/layout/header/'),

@@ -2,10 +2,10 @@ import * as React from 'react';
 import Typography from 'typography/typography';
 import forklift from 'assets/illustrations/forklift.png';
 import programming from 'assets/illustrations/programming.png';
-import { partOne, partTwo, partThree } from './aboutDevDescriptions';
-import * as styles from './aboutDevDescription.module.less';
+import { partOne, partTwo, partThree } from './aboutForDevsDescriptions';
+import * as styles from './aboutForDevsDescription.module.less';
 
-const AboutDevDescription: React.FC = () => (
+const AboutForDevsDescription: React.FC = () => (
   <>
     <section className={styles.paragraphSection}>
       <img
@@ -50,4 +50,4 @@ const AboutDevDescription: React.FC = () => (
   </>
 );
 
-export default AboutDevDescription;
+export default AboutForDevsDescription;

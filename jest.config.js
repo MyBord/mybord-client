@@ -12,6 +12,7 @@ module.exports = {
     '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
       '<rootDir>/__mocks__/fileMock.js',
     '\\.(css|scss|less)$': 'identity-obj-proxy',
+    '^about(.*)$': '<rootDir>/src/spa/shared/about$1',
     '^api(.*)$': '<rootDir>/src/api$1',
     '^app(.*)$': '<rootDir>/src/spa/app$1',
     '^assets(.*)$': '<rootDir>/src/assets$1',
@@ -19,6 +20,7 @@ module.exports = {
     '^cards(.*)$': '<rootDir>/src/spa/shared/cards$1',
     '^context(.*)$': '<rootDir>/src/context$1',
     '^fallbacks(.*)$': '<rootDir>/src/spa/shared/fallbacks$1',
+    '^footer(.*)$': '<rootDir>/src/spa/shared/footer$1',
     '^forms(.*)$': '<rootDir>/src/spa/shared/forms$1',
     '^framerMotion(.*)$': '<rootDir>/src/thirdParty/framerMotion$1',
     '^header(.*)$': '<rootDir>/src/spa/app/layout/header$1',
