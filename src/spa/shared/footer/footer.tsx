@@ -28,7 +28,7 @@ const Footer: React.FC<FooterProps> = ({ isApp }) => {
 
   return (
     <section
-      className={isApp ? styles.sectionApp : styles.sectionLanding}
+      className={[styles.section, !isApp ? styles.sectionLanding : undefined].join(' ')}
       ref={sectionRef}
     >
       <img
