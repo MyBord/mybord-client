@@ -8,7 +8,7 @@ export const getHrStyles = (contentRef: React.RefObject<HTMLDivElement>): Footer
   const footerMargin = getUnit(listMargin, 'px');
 
   const contentRect = contentRef.current.getBoundingClientRect();
-  const width = makeUnit(contentRect.width - (footerMargin * 2), 'px');
+  const width = makeUnit(contentRect.width - footerMargin, 'px');
 
   return {
     width,
