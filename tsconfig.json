@@ -12,6 +12,7 @@
     "sourceMap": true,
     "target": "es5",
     "paths": {
+      "about/*": ["src/spa/shared/about/*"],
       "api/*": ["src/api/*"],
       "app/*": ["src/spa/app/*"],
       "assets/*": ["src/assets/*"],
@@ -19,6 +20,7 @@
       "cards/*": ["src/spa/shared/cards/*"],
       "context/*": ["src/context/*"],
       "fallbacks/*": ["src/spa/shared/fallbacks/*"],
+      "footer/*": ["src/spa/shared/footer/*"],
       "forms/*": ["src/spa/shared/forms/*"],
       "framerMotion/*": ["src/thirdParty/framerMotion/*"],
       "header/*": ["src/spa/app/layout/header/*"],

@@ -8,10 +8,10 @@ import {
   partThree,
   partFour,
   partFive,
-} from './aboutDescriptions';
-import * as styles from './aboutDescription.module.less';
+} from './aboutForUsersText';
+import * as styles from './aboutForUsers.module.less';
 
-const AboutDescription: React.FC = () => (
+const AboutForUsers: React.FC = () => (
   <>
     <section className={styles.paragraphSection}>
       <img
@@ -81,4 +81,4 @@ const AboutDescription: React.FC = () => (
   </>
 );
 
-export default AboutDescription;
+export default AboutForUsers;
