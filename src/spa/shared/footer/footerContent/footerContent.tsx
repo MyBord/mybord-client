@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Icon from 'icons/icon/icon';
 import Typography from 'typography/typography';
+import { FooterProps } from 'types/footerTypes';
 import * as styles from './footerContent.module.less';
 
 const EmailContent: React.FC = () => (
@@ -33,11 +34,7 @@ const TwitterContent: React.FC = () => (
   </div>
 );
 
-interface Props {
-  isApp: boolean; // does the footer appear in the 'app' or in the 'landing'?
-}
-
-const FooterContent = React.forwardRef<HTMLDivElement, Props>(({ isApp }, ref) => (
+const FooterContent = React.forwardRef<HTMLDivElement, FooterProps>(({ isApp }, ref) => (
   <div className={styles.footerContent} ref={ref}>
     <div className={styles.list}>
       <Typography

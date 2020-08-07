@@ -4,20 +4,16 @@ import FooterContent from 'shared/footer/footerContent/footerContent';
 import Icon from 'icons/icon/icon';
 import Typography from 'typography/typography';
 import logo from 'assets/logo/logo.png';
-import { FooterHrStyle, FooterImgStyle } from 'types/footerTypes';
+import { FooterHrStyle, FooterImgStyle, FooterProps } from 'types/footerTypes';
 import { getHrStyles, getImgStyles } from './getFooterStyles';
 
-const CopyrightContent: React.FC<Props> = ({ isApp }) => (
+const CopyrightContent: React.FC<FooterProps> = ({ isApp }) => (
   <div className={styles.copyrightDiv}>
     <Icon color={isApp ? 'black' : 'white'} iconName="copyright" size={20} />
   </div>
 );
 
-interface Props {
-  isApp?: boolean; // does the footer appear in the 'app' or in the 'landing'?
-}
-
-const Footer: React.FC<Props> = ({ isApp = false }) => {
+const Footer: React.FC<FooterProps> = ({ isApp }) => {
   const contentRef = React.useRef<HTMLDivElement>(null);
   const sectionRef = React.useRef<HTMLTableSectionElement>(null);
   const [hrStyles, setHrStyles] = React.useState<FooterHrStyle>(null);
