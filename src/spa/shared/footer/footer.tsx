@@ -38,6 +38,8 @@ const Footer: React.FC = () => {
   const contentRef = React.useRef<HTMLDivElement>(null);
   // todo: set type of state
   const [imgStyles, setImgStyles] = React.useState(null);
+  // todo: set type of state
+  const [hrStyles, setHrStyles] = React.useState(null);
 
   // fix maximum update
   React.useEffect(() => {
@@ -45,6 +47,7 @@ const Footer: React.FC = () => {
       const contentRect = contentRef.current.getBoundingClientRect();
       // don't always be in center if it is wider
       setImgStyles({ left: `${(contentRect.left / 2) - 16}px` });
+      setHrStyles({ width: `${contentRect.width - 96}px` });
     }
   }, [contentRef, imgStyles]);
 
@@ -155,7 +158,7 @@ const Footer: React.FC = () => {
           </ul>
         </div>
       </div>
-      <hr className={styles.hr} />
+      <hr className={styles.hr} style={hrStyles} />
     </section>
   );
 };
