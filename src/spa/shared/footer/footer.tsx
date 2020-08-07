@@ -34,109 +34,129 @@ const TwitterContent: React.FC = () => (
   </div>
 );
 
-const Footer: React.FC = () => (
-  <section className={styles.section}>
-    <img alt="MyBord logo" className={styles.logo} src={logo} />
-    <div className={styles.footerContent}>
-      <div className={styles.list}>
-        <div className={styles.listHeader}>
-          <Typography
-            color="white"
-            size="four"
-            text="Have a question?"
-            weight="bold"
-          />
+const Footer: React.FC = () => {
+  const contentRef = React.useRef<HTMLDivElement>(null);
+  // todo: set type of state
+  const [imgStyles, setImgStyles] = React.useState(null);
+
+  // fix maximum update
+  React.useEffect(() => {
+    if (contentRef.current) {
+      const contentRect = contentRef.current.getBoundingClientRect();
+      // don't always be in center if it is wider
+      setImgStyles({ left: `${(contentRect.left / 2) - 16}px` });
+    }
+  }, [contentRef, imgStyles]);
+
+  return (
+    <section className={styles.section}>
+      <img
+        alt="MyBord logo"
+        className={styles.logo}
+        src={logo}
+        style={imgStyles}
+      />
+      <div className={styles.footerContent} ref={contentRef}>
+        <div className={styles.list}>
+          <div className={styles.listHeader}>
+            <Typography
+              color="white"
+              size="four"
+              text="Have a question?"
+              weight="bold"
+            />
+          </div>
+          <ul className={styles.ul}>
+            <li>
+              <Typography
+                Content={EmailContent}
+                color="white"
+                link="mailto:info@mybord.io"
+                size="three"
+                text="info@mybord.io"
+              />
+            </li>
+          </ul>
         </div>
-        <ul className={styles.ul}>
-          <li>
+        <div className={styles.list}>
+          <div className={styles.listHeader}>
             <Typography
-              Content={EmailContent}
               color="white"
-              link="mailto:info@mybord.io"
-              size="three"
-              text="info@mybord.io"
+              size="four"
+              text="Legal"
+              weight="bold"
             />
-          </li>
-        </ul>
-      </div>
-      <div className={styles.list}>
-        <div className={styles.listHeader}>
-          <Typography
-            color="white"
-            size="four"
-            text="Legal"
-            weight="bold"
-          />
+          </div>
+          <ul className={styles.ul}>
+            <li>
+              <Typography
+                color="white"
+                link="/terms"
+                size="three"
+                text="Terms & Conditions"
+              />
+            </li>
+            <li>
+              <Typography
+                color="white"
+                link="/privacy"
+                size="three"
+                text="Privacy Policy"
+              />
+            </li>
+          </ul>
         </div>
-        <ul className={styles.ul}>
-          <li>
+        <div className={styles.list}>
+          <div className={styles.listHeader}>
             <Typography
               color="white"
-              link="/terms"
-              size="three"
-              text="Terms & Conditions"
+              size="four"
+              text="Social"
+              weight="bold"
             />
-          </li>
-          <li>
-            <Typography
-              color="white"
-              link="/privacy"
-              size="three"
-              text="Privacy Policy"
-            />
-          </li>
-        </ul>
-      </div>
-      <div className={styles.list}>
-        <div className={styles.listHeader}>
-          <Typography
-            color="white"
-            size="four"
-            text="Social"
-            weight="bold"
-          />
+          </div>
+          <ul className={styles.ul}>
+            <li>
+              <Typography
+                Content={InstagramContent}
+                color="white"
+                link="https://www.instagram.com/"
+                size="three"
+                text="Instagram"
+              />
+            </li>
+            <li>
+              <Typography
+                Content={LinkedinContent}
+                color="white"
+                link="https://www.linkedin.com/"
+                size="three"
+                text="Linkedin"
+              />
+            </li>
+            <li>
+              <Typography
+                Content={TwitterContent}
+                color="white"
+                link="https://www.twitter.com/"
+                size="three"
+                text="Twitter"
+              />
+            </li>
+            <li>
+              <Typography
+                Content={FacebookContent}
+                color="white"
+                link="https://www.facebook.com/"
+                size="three"
+                text="Facebook"
+              />
+            </li>
+          </ul>
         </div>
-        <ul className={styles.ul}>
-          <li>
-            <Typography
-              Content={InstagramContent}
-              color="white"
-              link="https://www.instagram.com/"
-              size="three"
-              text="Instagram"
-            />
-          </li>
-          <li>
-            <Typography
-              Content={LinkedinContent}
-              color="white"
-              link="https://www.linkedin.com/"
-              size="three"
-              text="Linkedin"
-            />
-          </li>
-          <li>
-            <Typography
-              Content={TwitterContent}
-              color="white"
-              link="https://www.twitter.com/"
-              size="three"
-              text="Twitter"
-            />
-          </li>
-          <li>
-            <Typography
-              Content={FacebookContent}
-              color="white"
-              link="https://www.facebook.com/"
-              size="three"
-              text="Facebook"
-            />
-          </li>
-        </ul>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 export default Footer;
