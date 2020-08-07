@@ -28,7 +28,7 @@ const Footer: React.FC<FooterProps> = ({ isApp }) => {
 
   return (
     <section
-      className={[styles.section, !isApp ? styles.landingBackground : undefined].join(' ')}
+      className={isApp ? styles.sectionApp : styles.sectionLanding}
       ref={sectionRef}
     >
       <img
@@ -38,8 +38,8 @@ const Footer: React.FC<FooterProps> = ({ isApp }) => {
         style={imgStyles}
       />
       <FooterContent isApp={isApp} ref={contentRef} />
-      <hr className={styles.hr} style={hrStyles} />
-      <div className={styles.copyrightContent}>
+      <hr className={isApp ? styles.hrApp : styles.hrLanding} style={hrStyles} />
+      <div className={isApp ? styles.copyrightContentApp : styles.copyrightContentLanding}>
         <Typography
           Content={() => <footerIcons.CopyrightContent isApp={isApp} />}
           color={isApp ? 'black' : 'white'}
