@@ -358,7 +358,7 @@ the following:
   * run webpack with the dev configurations.
 * `webpack:prod`
   * run webpack with the prod configurations.
-* `build:dev-client`
+* `build:dev`
   * Builds the client with the dev webpack configuration.
 * `build:prod`
   * Builds the client with the prod webpack configuration.

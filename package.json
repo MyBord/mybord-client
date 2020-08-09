@@ -11,8 +11,8 @@
     "copy-index": "cp src/index.html dist/index.html",
     "webpack:dev": "webpack --config webpack.dev.js",
     "webpack:prod": "webpack --config webpack.prod.js",
-    "build:dev-client": "NODE_ENV=DEV npm-run-all remove-dist webpack:dev copy-index",
-    "build:prod-client": "NODE_ENV=PROD npm-run-all remove-dist webpack:prod copy-index",
+    "build:dev": "NODE_ENV=DEV npm-run-all remove-dist webpack:dev copy-index",
+    "build:prod": "NODE_ENV=PROD npm-run-all remove-dist webpack:prod copy-index",
     "run:local": "NODE_ENV=LOCAL webpack-dev-server --config webpack.dev.js",
     "run:dev": "NODE_ENV=DEV webpack-dev-server --config webpack.dev.js"
   },
