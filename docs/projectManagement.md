@@ -14,6 +14,7 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
+  * create an admin page for deployment
   * layout
     * have background image always be correct ratio
     * create floating button that if you click it will return you to the top of the login page
