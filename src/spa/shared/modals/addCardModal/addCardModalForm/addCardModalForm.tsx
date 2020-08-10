@@ -1,18 +1,6 @@
 import * as React from 'react';
-import Form from 'forms/form/form';
-import FormItem from 'forms/formItem/formItem';
-import TextInput from 'inputs/textInput/textInput';
-import * as styles from './addCardModalForm.module.less';
+import AddCardModalFormContainer from './addCardModalFormContainer';
 
-const AddCardModalForm: React.FC = () => (
-  <Form onSubmit={() => console.log('foo')}>
-    <FormItem
-      fieldName="add-card-modal-category"
-      label="Category"
-    >
-      <TextInput placeholder="foo" />
-    </FormItem>
-  </Form>
-);
+const AddCardModalForm: React.FC = () => <AddCardModalFormContainer />;
 
 export default AddCardModalForm;
