@@ -1,0 +1,16 @@
+@import "~styles/_colors";
+@import "~styles/_shadows";
+@import "~styles/_sizes";
+@import "~styles/_zIndices";
+
+.section {
+  background: @white;
+  border-radius: @standardBorderRadius;
+  box-shadow: @cardBoxShadow;
+  display: flex;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: @zModal;
+}
