@@ -44,6 +44,13 @@ This document is used to outline product details.
   * mark as to do and mark as done
   * mark as done
   * multi select / multi edit
+
+* MVP Features
+  * youtube
+  * image
+  * website
+  * text
+    * https://github.com/facebook/draft-js
   
 ## III. Design Resources  
 
