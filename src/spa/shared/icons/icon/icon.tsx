@@ -90,7 +90,7 @@ const Icon: React.FC<IconProps> = ({
     case 'chart':
       return <ChartIcon size={size} />;
     case 'close':
-      return <CloseIcon color={color} size={size} />;
+      return <CloseIcon color={color} size={size} strokeWidth={strokeWidth} />;
     case 'copyright':
       return <CopyrightIcon color={color} size={size} />;
     case 'dashboard':

@@ -1,5 +1,20 @@
 @import "~styles/_colors";
 
+.black {
+  > svg {
+    * {
+      stroke: @black;
+    }
+  }
+  &:hover {
+    > svg {
+      * {
+        stroke: @darkBlack;
+      }
+    }
+  }
+}
+
 .blue {
   > svg {
     * {
