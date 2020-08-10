@@ -12,6 +12,8 @@ const Modal: React.FC<ModalProps> = ({
 }) => {
   const [isVisible, setIsVisible] = React.useState<boolean>(defaultVisible);
 
+  const handleClose = (): void => setIsVisible(false);
+
   return (
     <>
       <button type="button" onClick={() => setIsVisible((prevState) => !prevState)}>Toggle</button>
@@ -31,6 +33,7 @@ const Modal: React.FC<ModalProps> = ({
                   <IconButton
                     color="black"
                     iconName="close"
+                    onClick={handleClose}
                     size={24}
                     strokeWidth={4}
                   />
