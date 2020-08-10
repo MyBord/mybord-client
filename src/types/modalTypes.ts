@@ -3,6 +3,7 @@ import * as React from 'react';
 export interface ModalProps {
   children: React.ReactElement;
   defaultVisible?: boolean;
+  title: string;
 }
 
 export interface PopOverCallback {
