@@ -22,8 +22,6 @@ const TextInputDemo: React.FC = () => (
     />
     <h3 className={styles.h3}>Disabled</h3>
     <TextInput disabled />
-    <h3 className={styles.h3}>With Label</h3>
-    <TextInput label="Sample Input" />
   </section>
 );
 
