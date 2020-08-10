@@ -7,7 +7,7 @@ import * as styles from './addCardModalForm.module.less';
 const AddCardModalForm: React.FC = () => (
   <Form onSubmit={() => console.log('foo')}>
     <FormItem fieldName="add-card-modal-category">
-      <TextInput placeholder="foo" />
+      <TextInput label="Category" placeholder="foo" />
     </FormItem>
   </Form>
 );
