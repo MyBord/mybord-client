@@ -14,6 +14,9 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
+  * add card modal
+    * change category to dropdown
+    * update handling value for toggle and favorite button
   * create an admin page for deployment
   * layout
     * have background image always be correct ratio

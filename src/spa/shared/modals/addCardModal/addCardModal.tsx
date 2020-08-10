@@ -4,7 +4,7 @@ import AddCardModalForm from './addCardModalForm/addCardModalForm';
 import * as styles from './addCardModal.module.less';
 
 const AddCardModal: React.FC = () => (
-  <Modal defaultVisible title="Add Card">
+  <Modal defaultVisible title="Add To My Bord">
     <div className={styles.parentDiv}>
       <div className={styles.previewDiv}>
         foo bar

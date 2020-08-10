@@ -26,20 +26,26 @@ const AddCardModalFormComponent: React.FC<Props> = ({ form }) => (
     >
       <TextInput />
     </FormItem>
-    <FormItem
-      fieldName="add-card-modal-to-do"
-      form={form}
-      label="To Do"
-    >
-      <Toggle checked={false} onClick={() => console.log('bar')} />
-    </FormItem>
-    <FormItem
-      fieldName="add-card-modal-favorite"
-      form={form}
-      label="Favorite"
-    >
-      <FavoriteButton isFavorite={false} onClick={() => console.log('bar')} size={24} />
-    </FormItem>
+    <div className={styles.rowDiv}>
+      <div className={styles.toDoDiv}>
+        <FormItem
+          fieldName="add-card-modal-to-do"
+          form={form}
+          label="To Do"
+        >
+          <Toggle checked={false} onClick={() => console.log('bar')} />
+        </FormItem>
+      </div>
+      <div className={styles.favoriteDiv}>
+        <FormItem
+          fieldName="add-card-modal-favorite"
+          form={form}
+          label="Favorite"
+        >
+          <FavoriteButton isFavorite={false} onClick={() => console.log('bar')} size={26} />
+        </FormItem>
+      </div>
+    </div>
   </>
 );
 
