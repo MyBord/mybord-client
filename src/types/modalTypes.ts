@@ -1,5 +1,10 @@
 import * as React from 'react';
 
+export interface ModalProps {
+  children: React.ReactElement;
+  defaultVisible?: boolean;
+}
+
 export interface PopOverCallback {
   hidePopOver: () => void;
   isVisible: boolean;
