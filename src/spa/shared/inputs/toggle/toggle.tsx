@@ -5,22 +5,27 @@ import * as styles from './toggle.module.less';
 import './toggle.less';
 
 interface Props {
-  checked: boolean;
-  onClick: () => void;
+  checked?: boolean;
+  onClick?: () => void;
+  onChange?: () => void;
   size?: 'large' | 'small';
   text?: string;
+  value?: any;
 }
 
 const Toggle: React.FC<Props> = ({
-  checked,
-  onClick,
+  checked = null,
+  onClick = null,
+  onChange,
   size = 'large',
   text = null,
+  value,
 }) => (
   <div className={[styles.div, styles[size]].join(' ')}>
     <Switch
-      checked={checked}
+      checked={checked || value}
       onClick={onClick}
+      onChange={onChange}
       size={size === 'large' ? 'default' : size}
     />
     {
