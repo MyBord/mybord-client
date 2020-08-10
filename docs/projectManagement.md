@@ -33,6 +33,7 @@ This document is used to outline current project management priorities.
   * when you login, refresh the page, and click about, you get a double render
   * when logging in, cards show up before loading is done ... this is if you login, logout, and
     login, all as part of the same session?
+  * fix login form when you signup ; back button is missaligned  
   * add about page - for app and landing
     * add transitions for landing between login and and about? or just use same parent container?
   * when you click delete in the card menu button and get the pop confirm, and then click 'no',
