@@ -17,7 +17,12 @@ const Modal: React.FC<ModalProps> = ({
         isVisible && (
           <Portal>
             <section className={styles.section}>
-              <IconButton color="black" iconName="close" size={100} />
+              <IconButton
+                color="black"
+                iconName="close"
+                size={100}
+                strokeWidth={8}
+              />
               {children}
             </section>
           </Portal>
