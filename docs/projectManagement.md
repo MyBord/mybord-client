@@ -152,10 +152,14 @@ This document is used to outline current project management priorities.
 * get social media accounts
 * soc2 audit?
 * Legal
+  * LLC
   * Terms and Conditions
   * GDPR
   * General NDA; get one for Alex Tass
   * Copyright / trademark MyBord & MyBord.io ... can I trademark mybord.com?
+    * does casing matter? e.g. mybord, MyBord, etc?
+    * what should I trademark? mybord? mybord.io? mybord.com?
+    * what should my llc be named? mybord llc? mybord.io llc?
   * Legal for work to be allowed to pursue financing / etc
 * how much does mybord.com cost?  
 * get social media handles for mybord
