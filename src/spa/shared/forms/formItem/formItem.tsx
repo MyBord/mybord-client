@@ -10,6 +10,7 @@ interface Props {
   fieldName: string;
   form?: FormProp;
   label?: string;
+  initialValue?: any;
   required?: boolean;
   requiredMessage?: string;
   type?: string;
@@ -21,6 +22,7 @@ const FormItem: React.FC<Props> = ({
   errorMessage = null,
   fieldName,
   form,
+  initialValue = null,
   label = null,
   required = false,
   requiredMessage = null,
@@ -36,6 +38,7 @@ const FormItem: React.FC<Props> = ({
   }
 
   const options: GetFieldDecoratorOptionsType = {
+    initialValue,
     rules,
   };
 

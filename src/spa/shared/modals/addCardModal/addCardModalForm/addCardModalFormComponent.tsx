@@ -31,9 +31,10 @@ const AddCardModalFormComponent: React.FC<Props> = ({ form }) => (
         <FormItem
           fieldName="add-card-modal-to-do"
           form={form}
+          initialValue={false}
           label="To Do"
         >
-          <Toggle checked={false} onClick={() => console.log('bar')} />
+          <Toggle />
         </FormItem>
       </div>
       <div className={styles.favoriteDiv}>
