@@ -7,6 +7,7 @@ import { ModalProps } from 'types/modalTypes';
 import * as styles from './modal.module.less';
 
 const Modal: React.FC<ModalProps> = ({
+  callback,
   children,
   defaultVisible = false,
   title,
@@ -14,6 +15,16 @@ const Modal: React.FC<ModalProps> = ({
   const [isVisible, setIsVisible] = React.useState<boolean>(defaultVisible);
 
   const handleClose = (): void => setIsVisible(false);
+
+  React.useEffect(() => {
+    if (callback) {
+      callback({
+        hideModal: () => () => setIsVisible(false),
+        isVisible,
+        showModal: () => () => setIsVisible(true),
+      });
+    }
+  }, [callback, isVisible]);
 
   return (
     <Portal>
