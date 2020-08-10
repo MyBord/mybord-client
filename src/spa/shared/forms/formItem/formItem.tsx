@@ -39,23 +39,15 @@ const FormItem: React.FC<Props> = ({
     options.validateTrigger = 'onBlur';
   }
 
-  if (errorMessage) {
-    return (
-      <Form.Item
-        help={errorMessage}
-        validateStatus="error"
-      >
-        {
-          form.getFieldDecorator(fieldName)(children)
-        }
-      </Form.Item>
-    );
-  }
+  const finalOptions = errorMessage ? undefined : options;
 
   return (
-    <Form.Item>
+    <Form.Item
+      help={errorMessage || undefined}
+      validateStatus={errorMessage ? 'error' : undefined}
+    >
       {
-        form.getFieldDecorator(fieldName, options)(children)
+        form.getFieldDecorator(fieldName, finalOptions)(children)
       }
     </Form.Item>
   );
