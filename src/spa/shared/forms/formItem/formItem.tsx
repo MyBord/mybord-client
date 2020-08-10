@@ -1,12 +1,15 @@
 import * as React from 'react';
+import Typography from 'typography/typography';
 import { Form } from 'antd';
 import { GetFieldDecoratorOptionsType, FormProp } from 'types/formTypes';
+import * as styles from './formItem.module.less';
 
 interface Props {
   children: React.ReactNode;
   errorMessage?: string | React.ReactNode;
   fieldName: string;
   form?: FormProp;
+  label?: string;
   required?: boolean;
   requiredMessage?: string;
   type?: string;
@@ -18,6 +21,7 @@ const FormItem: React.FC<Props> = ({
   errorMessage = null,
   fieldName,
   form,
+  label = null,
   required = false,
   requiredMessage = null,
   type = null,
@@ -46,6 +50,13 @@ const FormItem: React.FC<Props> = ({
       help={errorMessage || undefined}
       validateStatus={errorMessage ? 'error' : undefined}
     >
+      {
+        label && (
+          <div className={styles.typographyDiv}>
+            <Typography size="three" text={label} weight="bold" />
+          </div>
+        )
+      }
       {
         form.getFieldDecorator(fieldName, finalOptions)(children)
       }
