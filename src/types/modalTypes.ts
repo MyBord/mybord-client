@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 export interface ModalProps {
-  children: React.ReactElement;
+  children: React.ReactNode;
   defaultVisible?: boolean;
   title: string;
 }

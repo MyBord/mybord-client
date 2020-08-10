@@ -1,22 +1,8 @@
 import * as React from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { PopOverProps, PopOverStyle } from 'types/modalTypes';
+import { modalVariants } from './commonVariants';
 import * as styles from './popOverAnimation.module.less';
-
-const variants = {
-  initial: {
-    opacity: 0,
-    transition: { duration: 0.2, ease: 'easeIn' },
-  },
-  enter: {
-    opacity: 1,
-    transition: { duration: 0.2, ease: 'easeIn' },
-  },
-  exit: {
-    opacity: 0,
-    transition: { duration: 0.2, ease: 'easeIn' },
-  },
-};
 
 interface Props {
   children: React.ReactNode;
@@ -41,7 +27,7 @@ const PopOverAnimation = React.forwardRef<HTMLDivElement, Props>(({
           initial="initial"
           ref={ref}
           style={popOverStyle}
-          variants={variants}
+          variants={modalVariants}
         >
           {children}
         </motion.div>

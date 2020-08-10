@@ -1,5 +1,6 @@
 import * as React from 'react';
 import IconButton from 'icons/iconButton/iconButton';
+import ModalAnimation from 'framerMotion/modalAnimation';
 import Portal from 'portal/portal';
 import Typography from 'typography/typography';
 import { ModalProps } from 'types/modalTypes';
@@ -15,36 +16,29 @@ const Modal: React.FC<ModalProps> = ({
   const handleClose = (): void => setIsVisible(false);
 
   return (
-    <>
-      <button type="button" onClick={() => setIsVisible((prevState) => !prevState)}>Toggle</button>
-      {
-        isVisible && (
-          <Portal>
-            <section className={styles.section}>
-              <header className={styles.header}>
-                <div className={styles.typographyDiv}>
-                  <Typography
-                    size="four"
-                    text={title}
-                    weight="bold"
-                  />
-                </div>
-                <div className={styles.closeDiv}>
-                  <IconButton
-                    color="black"
-                    iconName="close"
-                    onClick={handleClose}
-                    size={24}
-                    strokeWidth={4}
-                  />
-                </div>
-              </header>
-              {children}
-            </section>
-          </Portal>
-        )
-      }
-    </>
+    <Portal>
+      <ModalAnimation isVisible={isVisible}>
+        <header className={styles.header}>
+          <div className={styles.typographyDiv}>
+            <Typography
+              size="four"
+              text={title}
+              weight="bold"
+            />
+          </div>
+          <div className={styles.closeDiv}>
+            <IconButton
+              color="black"
+              iconName="close"
+              onClick={handleClose}
+              size={24}
+              strokeWidth={4}
+            />
+          </div>
+        </header>
+        {children}
+      </ModalAnimation>
+    </Portal>
   );
 };
 
