@@ -41,9 +41,10 @@ const AddCardModalFormComponent: React.FC<Props> = ({ form }) => (
         <FormItem
           fieldName="add-card-modal-favorite"
           form={form}
+          initialValue={false}
           label="Favorite"
         >
-          <FavoriteButton isFavorite={false} onClick={() => console.log('bar')} size={26} />
+          <FavoriteButton size={26} />
         </FormItem>
       </div>
     </div>

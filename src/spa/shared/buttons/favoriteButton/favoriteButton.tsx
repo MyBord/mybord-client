@@ -6,15 +6,19 @@ import animationData from 'lotty/lotties/fireworks.json';
 import * as styles from './favoriteButton.module.less';
 
 interface Props {
-  isFavorite: boolean;
-  onClick: () => void;
+  isFavorite?: boolean;
+  onChange?: (value: boolean) => void;
+  onClick?: () => void;
   size: number;
+  value?: boolean;
 }
 
 const FavoriteButton: React.FC<Props> = ({
   isFavorite,
-  onClick,
+  onChange = null,
+  onClick = null,
   size,
+  value,
 }) => {
   // `hasBeenClicked` indicates if the LikeButton has been clicked. We need to know this so that
   // when we first mount the Like button, its initial opacity is set to 1, but all future
@@ -23,8 +27,17 @@ const FavoriteButton: React.FC<Props> = ({
 
   const handleClick = (): void => {
     setHasBeenClicked(true);
-    onClick();
+
+    if (onChange) {
+      onChange(!value);
+    }
+
+    if (onClick) {
+      onClick();
+    }
   };
+
+  const isFavoriteFinal = isFavorite || value;
 
   return (
     <div className="like-button">
@@ -37,11 +50,14 @@ const FavoriteButton: React.FC<Props> = ({
         <div className={styles.lottieDiv}>
           <LottiePlayer
             animationData={animationData}
-            isStopped={!isFavorite}
+            isStopped={!isFavoriteFinal}
             size={size * 2}
           />
         </div>
-        <FavoriteButtonAnimation hasBeenClicked={hasBeenClicked} isFavorite={isFavorite}>
+        <FavoriteButtonAnimation
+          hasBeenClicked={hasBeenClicked}
+          isFavorite={isFavoriteFinal}
+        >
           <Icon
             color="transparentWhite"
             fill="red"
