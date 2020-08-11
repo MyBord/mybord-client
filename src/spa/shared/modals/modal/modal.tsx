@@ -2,6 +2,7 @@ import * as React from 'react';
 import ModalAnimation from 'framerMotion/modalAnimation';
 import Portal from 'portal/portal';
 import { ModalProps } from 'types/modalTypes';
+import ModalFooter from './modalFooter/modalFooter';
 import ModalHeader from './modalHeader/modalHeader';
 
 const Modal: React.FC<ModalProps> = ({
@@ -29,6 +30,7 @@ const Modal: React.FC<ModalProps> = ({
       <ModalAnimation isVisible={isVisible}>
         <ModalHeader handleClose={handleClose} title={title} />
         {children}
+        <ModalFooter />
       </ModalAnimation>
     </Portal>
   );
