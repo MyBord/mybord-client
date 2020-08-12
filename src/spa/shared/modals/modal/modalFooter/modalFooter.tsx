@@ -5,8 +5,7 @@ import * as styles from './modalFooter.module.less';
 
 const ModalFooter: React.FC = () => (
   <div className={styles.div}>
-    <Button label="add" type="secondary" />
-    <Anchor label="foo" />
+    <Button label="cancel" type="tertiary" />
     <Button label="add" />
   </div>
 );
