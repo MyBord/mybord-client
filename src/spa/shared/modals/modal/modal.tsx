@@ -1,10 +1,8 @@
 import * as React from 'react';
-import IconButton from 'icons/iconButton/iconButton';
 import ModalAnimation from 'framerMotion/modalAnimation';
 import Portal from 'portal/portal';
-import Typography from 'typography/typography';
 import { ModalProps } from 'types/modalTypes';
-import * as styles from './modal.module.less';
+import ModalHeader from './modalHeader/modalHeader';
 
 const Modal: React.FC<ModalProps> = ({
   callback,
@@ -29,24 +27,7 @@ const Modal: React.FC<ModalProps> = ({
   return (
     <Portal>
       <ModalAnimation isVisible={isVisible}>
-        <header className={styles.header}>
-          <div className={styles.typographyDiv}>
-            <Typography
-              size="four"
-              text={title}
-              weight="bold"
-            />
-          </div>
-          <div className={styles.closeDiv}>
-            <IconButton
-              color="black"
-              iconName="close"
-              onClick={handleClose}
-              size={24}
-              strokeWidth={4}
-            />
-          </div>
-        </header>
+        <ModalHeader handleClose={handleClose} title={title} />
         {children}
       </ModalAnimation>
     </Portal>

@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Button from 'buttons/button/button';
 import FavoriteButton from 'buttons/favoriteButton/favoriteButton';
 import FormItem from 'forms/formItem/formItem';
 import TextInput from 'inputs/textInput/textInput';
@@ -47,6 +48,10 @@ const AddCardModalFormComponent: React.FC<Props> = ({ form }) => (
           <FavoriteButton size={26} />
         </FormItem>
       </div>
+    </div>
+    <div className={styles.buttonsDiv}>
+      <Button htmlType="submit" label="Add" />
+      <Button label="Cancel" type="tertiary" />
     </div>
   </>
 );
