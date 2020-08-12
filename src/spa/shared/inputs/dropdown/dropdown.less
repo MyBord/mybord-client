@@ -27,12 +27,23 @@
   }
 }
 
+.ant-select-arrow {
+  margin-top: inherit;
+  position: relative;
+  right: inherit;
+  top: inherit;
+}
+
 .ant-select-open {
   .ant-select-selection:hover {
     border-color: @blueHover;
   }
 }
 
-.ant-select-selection:hover {
-  border-color: @antBorderColor;
+.ant-select-selection {
+  display: flex;
+  justify-content: space-between;
+  &:hover {
+    border-color: @antBorderColor;
+  }
 }
