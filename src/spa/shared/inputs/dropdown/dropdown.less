@@ -2,6 +2,7 @@
 @import "~styles/_ant";
 @import "~styles/_colors";
 @import "~styles/_fonts";
+@import "~styles/_shadows";
 
 .ant-select {
   width: 100%;
@@ -34,9 +35,17 @@
   top: inherit;
 }
 
+.ant-select-dropdown-menu-item-selected {
+  background-color: transparent;
+}
+
 .ant-select-open {
+  .ant-select-selection {
+    border-color: @blue !important;
+    box-shadow: @antInputShadow !important;
+  }
   .ant-select-selection:hover {
-    border-color: @blueHover;
+    border-color: @blueHover !important;
   }
 }
 
@@ -45,5 +54,9 @@
   justify-content: space-between;
   &:hover {
     border-color: @antBorderColor;
+  }
+  &:active, &:focus {
+    border-color: @antBorderColor;
+    box-shadow: none;
   }
 }
