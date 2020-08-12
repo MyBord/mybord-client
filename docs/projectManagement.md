@@ -50,6 +50,7 @@ This document is used to outline current project management priorities.
 
   * add roadmap section to about dev page. Add to about mybord page as well?
   * replace clickable typography components with button components of type tertiary
+  * dropdown options for category add card modal should be received from the backend
   * Make about dev page responsive
   * reset store on logout?
     * https://www.apollographql.com/docs/react/networking/authentication/#cookie
