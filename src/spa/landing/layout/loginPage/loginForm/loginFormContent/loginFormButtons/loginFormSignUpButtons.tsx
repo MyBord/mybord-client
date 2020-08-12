@@ -1,5 +1,4 @@
 import * as React from 'react';
-import Anchor from 'inputs/anchor/anchor';
 import Button from 'buttons/button/button';
 import Checkbox from 'inputs/checkbox/checkbox';
 import FormItem from 'forms/formItem/formItem';
@@ -44,7 +43,7 @@ const LoginFormSignUpButtons: React.FC<Props> = ({ form }) => {
           fieldName="back"
           form={form}
         >
-          <Anchor label="back" onClick={handleBack} />
+          <Button label="back" onClick={handleBack} type="tertiary" />
         </FormItem>
       </div>
     </>
