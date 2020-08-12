@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Anchor from 'inputs/anchor/anchor';
+import Button from 'buttons/button/button';
 import Typography from 'typography/typography';
 import * as styles from './loginFormSocial.module.less';
 
@@ -14,8 +14,8 @@ const LoginFormSignUpSocial: React.FC = () => {
   return (
     <div className={styles.div}>
       <Typography text="or sign up with" />
-      <Anchor label="Google" onClick={handleGoogleAuth} />
-      <Anchor label="Facebook" onClick={handleFacebookAuth} />
+      <Button label="Google" onClick={handleGoogleAuth} type="tertiary" />
+      <Button label="Facebook" onClick={handleFacebookAuth} type="tertiary" />
     </div>
   );
 };
