@@ -1,0 +1,28 @@
+@import "~antd/lib/select/style/index.less";
+@import "~styles/_ant";
+@import "~styles/_colors";
+@import "~styles/_fonts";
+
+.ant-select {
+  width: 100%;
+}
+
+.ant-select-dropdown-menu {
+  margin-top: 0;
+}
+
+.ant-select-dropdown-menu-item, .ant-select-selection__rendered {
+  color: @black;
+  font-family: @poppins;
+}
+
+.ant-select-dropdown-menu-item-active {
+  background-color: transparent !important;
+}
+
+.ant-select-dropdown-menu-item {
+  &:hover {
+    background-color: transparent !important;
+    color: @blue;
+  }
+}

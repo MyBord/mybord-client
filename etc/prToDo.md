@@ -1,3 +1,6 @@
 # NOTE: This is a space to make todo's for the pr / branch that you are currently working on. 
 Make sure to remove all notes before merging (except for this one, of course).
 ----------------------------------------------------------------------------------------------------
+move mock dropdown options to other file
+
+remove styling from when hovering

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Button from 'buttons/button/button';
+import Dropdown from 'inputs/dropdown/dropdown';
 import FavoriteButton from 'buttons/favoriteButton/favoriteButton';
 import FormItem from 'forms/formItem/formItem';
 import TextInput from 'inputs/textInput/textInput';
@@ -18,7 +19,7 @@ const AddCardModalFormComponent: React.FC<Props> = ({ form }) => (
       form={form}
       label="Category"
     >
-      <TextInput />
+      <Dropdown />
     </FormItem>
     <FormItem
       fieldName="add-card-modal-title"
