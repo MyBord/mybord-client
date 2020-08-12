@@ -2,5 +2,3 @@
 Make sure to remove all notes before merging (except for this one, of course).
 ----------------------------------------------------------------------------------------------------
 move mock dropdown options to other file
-
-remove styling from when hovering
