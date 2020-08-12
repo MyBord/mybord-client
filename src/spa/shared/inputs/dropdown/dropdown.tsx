@@ -17,7 +17,7 @@ const options = [
 
 const DropdownIcon: React.FC = () => (
   <div className={styles.iconDiv}>
-    <Icon color="lightGrey" iconName="caret" size={24} />
+    <Icon color="lightGrey" iconName="caretDown" size={24} />
   </div>
 );
 

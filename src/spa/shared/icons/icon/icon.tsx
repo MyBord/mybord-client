@@ -39,7 +39,7 @@ export const iconNames = {
   addUser: 'foo',
   avatar: 'foo',
   calendar: 'foo',
-  caret: 'foo',
+  caretDown: 'foo',
   chart: 'foo',
   close: 'foo',
   copyright: 'foo',
@@ -89,7 +89,7 @@ const Icon: React.FC<IconProps> = ({
       return <AvatarIcon size={size} />;
     case 'calendar':
       return <CalendarIcon size={size} />;
-    case 'caret':
+    case 'caretDown':
       return <CaretIcon color={color} size={size} />;
     case 'chart':
       return <ChartIcon size={size} />;
