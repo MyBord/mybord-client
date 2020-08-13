@@ -1,9 +1,9 @@
 import * as React from 'react';
+import { SetState } from 'types/reactTypes';
 
 export interface ModalCallback {
-  hideModal: () => void;
   isVisible: boolean;
-  showModal: () => void;
+  setIsVisible: SetState<boolean>;
 }
 
 export interface ModalProps {

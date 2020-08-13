@@ -17,9 +17,8 @@ const Modal: React.FC<ModalProps> = ({
   React.useEffect(() => {
     if (callback) {
       callback({
-        hideModal: () => () => setIsVisible(false),
         isVisible,
-        showModal: () => () => setIsVisible(true),
+        setIsVisible: () => setIsVisible,
       });
     }
   }, [callback, isVisible]);

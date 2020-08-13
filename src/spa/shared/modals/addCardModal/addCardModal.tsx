@@ -5,17 +5,16 @@ import AddCardModalForm from './addCardModalForm/addCardModalForm';
 import * as styles from './addCardModal.module.less';
 
 const AddCardModal: React.FC = () => {
-  const [hideModal, setHideModal] = React.useState<ModalCallback['hideModal']>(null);
-  const [showModal, setShowModal] = React.useState<ModalCallback['showModal']>(null);
+  const [setIsVisible, setSetIsVisible] = React.useState<ModalCallback['setIsVisible']>(null);
 
   const callback = (props: ModalCallback): void => {
-    setHideModal(props.hideModal);
-    setShowModal(props.showModal);
+    setSetIsVisible(props.setIsVisible);
   };
 
   return (
     <>
-      <button type="button" onClick={showModal}>click me</button>
+      <button type="button" onClick={() => setIsVisible(true)}>show</button>
+      <button type="button" onClick={() => setIsVisible(false)}>hide</button>
       <Modal callback={callback} title="Add To My Bord">
         <div className={styles.parentDiv}>
           <div className={styles.previewDiv}>
