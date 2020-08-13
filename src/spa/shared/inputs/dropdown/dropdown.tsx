@@ -1,19 +1,9 @@
 import * as React from 'react';
 import { Select } from 'antd';
 import Icon from 'icons/icon/icon';
+import { DropdownProps } from 'types/inputTypes';
 import * as styles from './dropdown.module.less';
 import './dropdown.less';
-
-interface Props {
-  onChange?: () => void;
-  value?: any;
-}
-
-const options = [
-  { label: 'Option 1', value: 'Value 1' },
-  { label: 'Option 2', value: 'Value 2' },
-  { label: 'Option 3', value: 'Value 3' },
-];
 
 const DropdownIcon: React.FC = () => (
   <div className={styles.iconDiv}>
@@ -21,8 +11,9 @@ const DropdownIcon: React.FC = () => (
   </div>
 );
 
-const Dropdown: React.FC<Props> = ({
+const Dropdown: React.FC<DropdownProps> = ({
   onChange,
+  options,
   value,
 }) => (
   <Select

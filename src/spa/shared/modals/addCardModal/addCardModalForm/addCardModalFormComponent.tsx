@@ -12,6 +12,10 @@ interface Props {
   form?: FormProp;
 }
 
+const dropdownOptions = [
+  { label: 'Video', value: 'video' },
+];
+
 const AddCardModalFormComponent: React.FC<Props> = ({ form }) => (
   <>
     <FormItem
@@ -19,7 +23,7 @@ const AddCardModalFormComponent: React.FC<Props> = ({ form }) => (
       form={form}
       label="Category"
     >
-      <Dropdown />
+      <Dropdown options={dropdownOptions} />
     </FormItem>
     <FormItem
       fieldName="add-card-modal-title"
