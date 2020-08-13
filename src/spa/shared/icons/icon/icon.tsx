@@ -5,6 +5,7 @@ const AddUserIcon = React.lazy(() => import('./individualIcons/addUserIcon'));
 const AvatarIcon = React.lazy(() => import('./individualIcons/avatarIcon'));
 const BellIcon = React.lazy(() => import('./individualIcons/bellIcon'));
 const CalendarIcon = React.lazy(() => import('./individualIcons/calendarIcon'));
+const CaretIcon = React.lazy(() => import('./individualIcons/caretIcon'));
 const ChartIcon = React.lazy(() => import('./individualIcons/chartIcon'));
 const CloseIcon = React.lazy(() => import('./individualIcons/closeIcon'));
 const CopyrightIcon = React.lazy(() => import('./individualIcons/copyrightIcon'));
@@ -38,6 +39,7 @@ export const iconNames = {
   addUser: 'foo',
   avatar: 'foo',
   calendar: 'foo',
+  caretDown: 'foo',
   chart: 'foo',
   close: 'foo',
   copyright: 'foo',
@@ -87,6 +89,8 @@ const Icon: React.FC<IconProps> = ({
       return <AvatarIcon size={size} />;
     case 'calendar':
       return <CalendarIcon size={size} />;
+    case 'caretDown':
+      return <CaretIcon color={color} size={size} />;
     case 'chart':
       return <ChartIcon size={size} />;
     case 'close':
