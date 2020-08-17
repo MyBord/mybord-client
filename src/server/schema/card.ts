@@ -33,6 +33,26 @@ export const DELETE_USER_CARD_MUTATION = gql`
   }
 `;
 
+export const INITIATE_YOUTUBE_CARD_MUTATION = gql`
+  mutation initiateYoutubeCard($videoUrl: String!) {
+    initiateYoutubeCard(data: {videoUrl: $videoUrl}) {
+      title
+      type
+      youtubeCardData{
+        channelThumbnail
+        channelTitle
+        duration
+        likes
+        publishedAt
+        videoId
+        videoThumbnail
+        videoTitle
+        views
+      }
+    }
+  }
+`;
+
 export const TOGGLE_FAVORITE_USER_CARD_MUTATION = gql`
   mutation toggleFavoriteUserCard($cardId: String!) {
     toggleFavoriteUserCard(data: {cardId: $cardId}) {
