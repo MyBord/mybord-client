@@ -8,22 +8,15 @@ import { useModalContext } from 'context/modalContext/modalContext';
 import DashboardPageHeaderFilterFormContent from './dashboardPageHeaderFilterFormContent';
 
 const DashboardPageHeaderFilterForm: React.FC = () => {
-  const [
-    initiateYoutubeCard,
-    { called, data, loading },
-  ] = useMutation(INITIATE_YOUTUBE_CARD_MUTATION);
+  const [initiateYoutubeCard] = useMutation(INITIATE_YOUTUBE_CARD_MUTATION);
   const [inputErrorMessage, setInputErrorMessage] = React.useState<string>(null);
   const [isSubmitWaiting, setIsSubmitWaiting] = React.useState<boolean>(false);
   const { setModalId } = useModalContext();
 
-  console.log(called);
-  console.log(data);
-  console.log(loading);
-
   const handleSubmit = async (form: FormProp): Promise<void> => {
     try {
       setIsSubmitWaiting(true);
-      await initiateYoutubeCard({
+      const cardData = await initiateYoutubeCard({
         variables: {
           videoUrl: form.getFieldValue('add-youtube-video-input'),
         },
