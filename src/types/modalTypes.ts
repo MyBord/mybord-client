@@ -1,15 +1,9 @@
 import * as React from 'react';
-import { SetState } from 'types/reactTypes';
-
-export interface ModalCallback {
-  isVisible: boolean;
-  setIsVisible: SetState<boolean>;
-}
 
 export interface ModalProps {
-  callback?: (props: ModalCallback) => void;
   children: React.ReactNode;
   defaultVisible?: boolean;
+  id: string;
   title: string;
 }
 
