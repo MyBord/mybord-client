@@ -1,15 +1,9 @@
 import * as React from 'react';
 
-export interface ModalCallback {
-  hideModal: () => void;
-  isVisible: boolean;
-  showModal: () => void;
-}
-
 export interface ModalProps {
-  callback?: (props: ModalCallback) => void;
   children: React.ReactNode;
   defaultVisible?: boolean;
+  id: string;
   title: string;
 }
 
