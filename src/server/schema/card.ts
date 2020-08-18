@@ -36,8 +36,8 @@ export const DELETE_USER_CARD_MUTATION = gql`
 export const INITIATE_YOUTUBE_CARD_MUTATION = gql`
   mutation initiateYoutubeCard($videoUrl: String!) {
     initiateYoutubeCard(data: {videoUrl: $videoUrl}) {
+      category
       title
-      type
       youtubeCardData{
         channelThumbnail
         channelTitle

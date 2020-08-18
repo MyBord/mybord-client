@@ -1,16 +1,17 @@
 import * as React from 'react';
 import Modal from 'modals/modal/modal';
+import { AddCardModalProps } from 'types/modalTypes';
 import AddCardModalForm from './addCardModalForm/addCardModalForm';
 import * as styles from './addCardModal.module.less';
 
-const AddCardModal: React.FC = () => (
+const AddCardModal: React.FC<AddCardModalProps> = ({ cardData }) => (
   <Modal id="add-card-modal" title="Add To My Bord">
     <div className={styles.parentDiv}>
       <div className={styles.previewDiv}>
-          foo bar
+        foo bar
       </div>
       <div className={styles.formDiv}>
-        <AddCardModalForm />
+        <AddCardModalForm cardData={cardData} />
       </div>
     </div>
   </Modal>

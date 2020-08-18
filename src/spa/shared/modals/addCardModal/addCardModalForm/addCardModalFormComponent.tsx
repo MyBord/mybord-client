@@ -5,22 +5,24 @@ import FavoriteButton from 'buttons/favoriteButton/favoriteButton';
 import FormItem from 'forms/formItem/formItem';
 import TextInput from 'inputs/textInput/textInput';
 import Toggle from 'inputs/toggle/toggle';
+import { AddCardModalProps } from 'types/modalTypes';
 import { FormProp } from 'types/formTypes';
 import * as styles from './addCardModalForm.module.less';
 
-interface Props {
+interface Props extends AddCardModalProps {
   form?: FormProp;
 }
 
 const dropdownOptions = [
-  { label: 'Video', value: 'video' },
+  { label: 'Video', value: 'Video' },
 ];
 
-const AddCardModalFormComponent: React.FC<Props> = ({ form }) => (
+const AddCardModalFormComponent: React.FC<Props> = ({ cardData, form }) => (
   <>
     <FormItem
       fieldName="add-card-modal-category"
       form={form}
+      initialValue={cardData && cardData.category}
       label="Category"
     >
       <Dropdown options={dropdownOptions} />
@@ -28,6 +30,7 @@ const AddCardModalFormComponent: React.FC<Props> = ({ form }) => (
     <FormItem
       fieldName="add-card-modal-title"
       form={form}
+      initialValue={cardData && cardData.title}
       label="Title"
     >
       <TextInput />
