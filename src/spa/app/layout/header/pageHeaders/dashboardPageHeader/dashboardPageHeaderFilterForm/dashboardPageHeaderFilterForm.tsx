@@ -21,11 +21,11 @@ const DashboardPageHeaderFilterForm: React.FC = () => {
           videoUrl: form.getFieldValue('add-youtube-video-input'),
         },
       });
-      const { category, title } = cardData.data.initiateYoutubeCard;
+      const { category, title, youtubeCardData } = cardData.data.initiateYoutubeCard;
       setInputErrorMessage(null);
       setIsSubmitWaiting(false);
       form.resetFields(['add-youtube-video-input']);
-      setModalData({ category, title });
+      setModalData({ category, title, youtubeCardData });
       setModalId('add-card-modal');
     } catch (error) {
       setIsSubmitWaiting(false);

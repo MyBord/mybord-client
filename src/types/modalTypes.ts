@@ -1,9 +1,11 @@
 import * as React from 'react';
+import { YoutubeVideoData } from 'types/youtubeTypes';
 
 export interface AddCardModalProps {
   cardData: {
     category: string;
     title: string;
+    youtubeCardData: YoutubeVideoData;
   };
 }
 
