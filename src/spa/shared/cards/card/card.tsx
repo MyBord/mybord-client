@@ -32,6 +32,7 @@ const Card: React.FC<Props> = ({
       className={[
         styles.container,
         isSelected ? styles.selectedContainer : undefined,
+        isPreview ? styles.containerPreview : undefined,
       ].join(' ')}
     >
       <CardOverlay cardId={userCard.id} />
