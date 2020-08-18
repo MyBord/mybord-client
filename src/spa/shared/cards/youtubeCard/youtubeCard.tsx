@@ -5,10 +5,14 @@ import YoutubeCardDescription from './youtubeCardDescription/youtubeCardDescript
 import YoutubeCardThumbnail from './youtubeCardThumbnail/youtubeCardThumbnail';
 
 interface Props {
+  isPreview?: boolean;
   userCard: UserCard;
 }
 
-const YoutubeCard: React.FC<Props> = ({ userCard }) => {
+const YoutubeCard: React.FC<Props> = ({
+  isPreview = false,
+  userCard,
+}) => {
   const Content: React.FC = () => <YoutubeCardThumbnail userCard={userCard} />;
 
   const Description: React.FC = () => <YoutubeCardDescription userCard={userCard} />;
@@ -17,6 +21,7 @@ const YoutubeCard: React.FC<Props> = ({ userCard }) => {
     <Card
       Content={Content}
       Description={Description}
+      isPreview={isPreview}
       userCard={userCard}
     />
   );

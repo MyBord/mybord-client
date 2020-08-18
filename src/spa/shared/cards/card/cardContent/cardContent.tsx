@@ -11,11 +11,13 @@ import * as styles from './cardContent.module.less';
 
 interface Props {
   Content: React.FC;
+  isPreview: boolean;
   userCard: UserCard;
 }
 
 const CardContent: React.FC<Props> = ({
   Content,
+  isPreview,
   userCard,
 }) => {
   const [isFavorite, setIsFavorite] = React.useState<boolean>(userCard.isFavorite);
@@ -37,14 +39,18 @@ const CardContent: React.FC<Props> = ({
 
   return (
     <div className={styles.container}>
-      <CardContentButtonsAnimation showButtons={showButtons}>
-        <FavoriteButton
-          isFavorite={isFavorite}
-          onClick={handleFavorite}
-          size={25}
-        />
-        <CardMenuButton userCard={userCard} />
-      </CardContentButtonsAnimation>
+      {
+        !isPreview && (
+          <CardContentButtonsAnimation showButtons={showButtons}>
+            <FavoriteButton
+              isFavorite={isFavorite}
+              onClick={handleFavorite}
+              size={25}
+            />
+            <CardMenuButton userCard={userCard} />
+          </CardContentButtonsAnimation>
+        )
+      }
       <Content />
     </div>
   );

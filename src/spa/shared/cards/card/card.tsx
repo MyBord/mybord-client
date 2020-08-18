@@ -14,12 +14,14 @@ import * as styles from './card.module.less';
 export interface Props {
   Content: React.FC; // Main content of the card
   Description: React.FC; // Description portion of the card
+  isPreview: boolean;
   userCard: UserCard;
 }
 
 const Card: React.FC<Props> = ({
   Content,
   Description,
+  isPreview,
   userCard,
 }) => {
   const { selectedCardIds } = useMultiSelectCardContext();
@@ -33,7 +35,11 @@ const Card: React.FC<Props> = ({
       ].join(' ')}
     >
       <CardOverlay cardId={userCard.id} />
-      <CardContent Content={Content} userCard={userCard} />
+      <CardContent
+        Content={Content}
+        isPreview={isPreview}
+        userCard={userCard}
+      />
       <CardDescription Description={Description} />
       {/* <CardFooter /> */}
     </div>
