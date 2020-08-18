@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Modal from 'modals/modal/modal';
 import YoutubeCard from 'cards/youtubeCard/youtubeCard';
+import memo from 'utils/memo';
 import { AddCardModalProps } from 'types/modalTypes';
 import { UserCard } from 'schema/card';
 import AddCardModalForm from './addCardModalForm/addCardModalForm';
@@ -39,4 +40,4 @@ const AddCardModal: React.FC<AddCardModalProps> = ({ cardData }) => {
   );
 };
 
-export default AddCardModal;
+export default memo(AddCardModal);
