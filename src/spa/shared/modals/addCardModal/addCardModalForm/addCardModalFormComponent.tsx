@@ -11,13 +11,18 @@ import * as styles from './addCardModalForm.module.less';
 
 interface Props extends AddCardModalProps {
   form?: FormProp;
+  isWaiting: boolean;
 }
 
 const dropdownOptions = [
   { label: 'Video', value: 'Video' },
 ];
 
-const AddCardModalFormComponent: React.FC<Props> = ({ cardData, form }) => (
+const AddCardModalFormComponent: React.FC<Props> = ({
+  cardData,
+  form,
+  isWaiting,
+}) => (
   <>
     <FormItem
       fieldName="add-card-modal-category"
@@ -58,7 +63,7 @@ const AddCardModalFormComponent: React.FC<Props> = ({ cardData, form }) => (
       </div>
     </div>
     <div className={styles.buttonsDiv}>
-      <Button htmlType="submit" label="Add" />
+      <Button htmlType="submit" label="Add" isWaiting={isWaiting} />
       <Button label="Cancel" type="tertiary" />
     </div>
   </>

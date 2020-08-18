@@ -17,6 +17,7 @@ This document is used to outline current project management priorities.
   * add card modal
     * change category to dropdown
     * update handling value for toggle and favorite button
+    * 'clicking add' also adds the favorite, to do, category, and title mutations from modal
   * create an admin page for deployment
   * layout
     * have background image always be correct ratio
