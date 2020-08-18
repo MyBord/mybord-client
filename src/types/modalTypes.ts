@@ -2,7 +2,7 @@ import * as React from 'react';
 import { YoutubeVideoData } from 'types/youtubeTypes';
 
 export interface AddCardModalProps {
-  cardData: {
+  formData: {
     category: string;
     title: string;
     url: string;
