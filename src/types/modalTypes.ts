@@ -5,6 +5,7 @@ export interface AddCardModalProps {
   cardData: {
     category: string;
     title: string;
+    url: string;
     youtubeCardData: YoutubeVideoData;
   };
 }

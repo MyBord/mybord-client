@@ -38,6 +38,7 @@ export const INITIATE_YOUTUBE_CARD_MUTATION = gql`
     initiateYoutubeCard(data: {videoUrl: $videoUrl}) {
       category
       title
+      url
       youtubeCardData{
         channelThumbnail
         channelTitle
