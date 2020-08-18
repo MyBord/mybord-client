@@ -11,7 +11,7 @@ const DashboardPageHeaderFilterForm: React.FC = () => {
   const [initiateYoutubeCard] = useMutation(INITIATE_YOUTUBE_CARD_MUTATION);
   const [inputErrorMessage, setInputErrorMessage] = React.useState<string>(null);
   const [isSubmitWaiting, setIsSubmitWaiting] = React.useState<boolean>(false);
-  const { setModalId } = useModalContext();
+  const { setModalData, setModalId } = useModalContext();
 
   const handleSubmit = async (form: FormProp): Promise<void> => {
     try {
@@ -21,9 +21,11 @@ const DashboardPageHeaderFilterForm: React.FC = () => {
           videoUrl: form.getFieldValue('add-youtube-video-input'),
         },
       });
+      const { category, title } = cardData.data.initiateYoutubeCard;
       setInputErrorMessage(null);
       setIsSubmitWaiting(false);
       form.resetFields(['add-youtube-video-input']);
+      setModalData({ category, title });
       setModalId('add-card-modal');
     } catch (error) {
       setIsSubmitWaiting(false);

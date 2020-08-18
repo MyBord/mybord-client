@@ -1,5 +1,12 @@
 import * as React from 'react';
 
+export interface AddCardModalProps {
+  cardData: {
+    category: string;
+    title: string;
+  };
+}
+
 export interface ModalProps {
   children: React.ReactNode;
   defaultVisible?: boolean;

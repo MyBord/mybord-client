@@ -5,7 +5,9 @@ import FormItem from 'forms/formItem/formItem';
 import IconButton from 'icons/iconButton/iconButton';
 import PopOver from 'modals/popOver/popOver';
 import TextInput from 'inputs/textInput/textInput';
+import { AddCardModalProps } from 'types/modalTypes';
 import { FormProp } from 'types/formTypes';
+import { useModalContext } from 'context/modalContext/modalContext';
 import { useMultiSelectCardContext } from 'context/multiSelectCardContext/multiSelectCardContext';
 import DashboardPageHeaderFiltersContent
   from './dashboardPageHeaderFiltersContent/dashboardPageHeaderFiltersContent';
@@ -22,11 +24,19 @@ const DashboardPageHeaderFilterFormContent: React.FC<Props> = ({
   form,
   isWaiting,
 }) => {
+  const [finalModalData, setFinalModalData] = React.useState<AddCardModalProps['cardData']>(null);
   const { canMultiEdit, toggleMultiEditStatus } = useMultiSelectCardContext();
+  const { modalData, modalId } = useModalContext();
+
+  React.useEffect(() => {
+    if (modalId === 'add-card-modal') {
+      setFinalModalData(modalData);
+    }
+  }, [modalId]);
 
   return (
     <>
-      <AddCardModal />
+      <AddCardModal cardData={finalModalData} />
       <div className={styles.formContainer}>
         <FormItem
           errorMessage={errorMessage}
