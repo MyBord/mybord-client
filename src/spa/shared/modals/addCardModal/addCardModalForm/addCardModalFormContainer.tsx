@@ -6,7 +6,7 @@ import { CREATE_YOUTUBE_CARD_MUTATION } from 'schema/card';
 import { useModalContext } from 'context/modalContext/modalContext';
 import AddCardModalFormComponent from './addCardModalFormComponent';
 
-const AddCardModalFormContainer: React.FC<AddCardModalProps> = ({ cardData }) => {
+const AddCardModalFormContainer: React.FC<AddCardModalProps> = ({ formData }) => {
   const [createYoutubeCard] = useMutation(CREATE_YOUTUBE_CARD_MUTATION);
   const [isWaiting, setIsWaiting] = React.useState<boolean>(false);
   const { setModalId } = useModalContext();
@@ -15,7 +15,7 @@ const AddCardModalFormContainer: React.FC<AddCardModalProps> = ({ cardData }) =>
     setIsWaiting(true);
     await createYoutubeCard({
       variables: {
-        videoUrl: cardData && cardData.url,
+        videoUrl: formData && formData.url,
       },
     });
     setIsWaiting(false);
@@ -24,7 +24,7 @@ const AddCardModalFormContainer: React.FC<AddCardModalProps> = ({ cardData }) =>
 
   return (
     <Form onSubmit={handleSubmit}>
-      <AddCardModalFormComponent cardData={cardData} isWaiting={isWaiting} />
+      <AddCardModalFormComponent formData={formData} isWaiting={isWaiting} />
     </Form>
   );
 };
