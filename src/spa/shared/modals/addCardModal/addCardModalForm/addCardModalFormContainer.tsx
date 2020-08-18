@@ -11,6 +11,10 @@ const AddCardModalFormContainer: React.FC<AddCardModalProps> = ({ formData }) =>
   const [isWaiting, setIsWaiting] = React.useState<boolean>(false);
   const { setModalId } = useModalContext();
 
+  const handleCancel = (): void => {
+    setModalId(null);
+  };
+
   const handleSubmit = async (): Promise<void> => {
     setIsWaiting(true);
     await createYoutubeCard({
@@ -24,7 +28,11 @@ const AddCardModalFormContainer: React.FC<AddCardModalProps> = ({ formData }) =>
 
   return (
     <Form onSubmit={handleSubmit}>
-      <AddCardModalFormComponent formData={formData} isWaiting={isWaiting} />
+      <AddCardModalFormComponent
+        formData={formData}
+        handleCancel={handleCancel}
+        isWaiting={isWaiting}
+      />
     </Form>
   );
 };

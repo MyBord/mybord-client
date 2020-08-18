@@ -11,6 +11,7 @@ import * as styles from './addCardModalForm.module.less';
 
 interface Props extends AddCardModalProps {
   form?: FormProp;
+  handleCancel: () => void;
   isWaiting: boolean;
 }
 
@@ -21,6 +22,7 @@ const dropdownOptions = [
 const AddCardModalFormComponent: React.FC<Props> = ({
   form,
   formData,
+  handleCancel,
   isWaiting,
 }) => (
   <>
@@ -64,7 +66,7 @@ const AddCardModalFormComponent: React.FC<Props> = ({
     </div>
     <div className={styles.buttonsDiv}>
       <Button htmlType="submit" label="Add" isWaiting={isWaiting} />
-      <Button label="Cancel" type="tertiary" />
+      <Button label="Cancel" onClick={handleCancel} type="tertiary" />
     </div>
   </>
 );
