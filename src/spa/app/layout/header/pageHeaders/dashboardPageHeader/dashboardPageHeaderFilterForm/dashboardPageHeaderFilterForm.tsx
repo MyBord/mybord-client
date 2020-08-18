@@ -16,20 +16,24 @@ const DashboardPageHeaderFilterForm: React.FC = () => {
   const handleSubmit = async (form: FormProp): Promise<void> => {
     try {
       setIsSubmitWaiting(true);
+
       const cardData = await initiateYoutubeCard({
         variables: {
           videoUrl: form.getFieldValue('add-youtube-video-input'),
         },
       });
+
       const {
         category,
         title,
         url,
         youtubeCardData,
       } = cardData.data.initiateYoutubeCard;
+
       setInputErrorMessage(null);
       setIsSubmitWaiting(false);
       form.resetFields(['add-youtube-video-input']);
+
       setModalData({
         category,
         title,
