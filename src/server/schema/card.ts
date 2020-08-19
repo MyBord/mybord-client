@@ -3,9 +3,21 @@ import { YoutubeVideoData } from 'types/youtubeTypes';
 
 // ----- MUTATIONS ----- //
 
-export const CREATE_YOUTUBE_CARD_MUTATION = gql`
-  mutation createYoutubeCard($videoUrl: String!) {
-    createYoutubeCard(data: {videoUrl: $videoUrl}) {
+export const CREATE_USER_CARD_MUTATION = gql`
+  mutation createUserCard(
+    $category: CardCategory!
+    $isFavorite: Boolean!
+    $isToDo: Boolean!
+    $title: String!
+    $url: String!
+  ) {
+    createUserCard(data: {
+      category: $category
+      isFavorite: $isFavorite
+      isToDo: $isToDo
+      title: $title
+      url: $url
+    }) {
       id
       type
       cardData{
@@ -33,9 +45,9 @@ export const DELETE_USER_CARD_MUTATION = gql`
   }
 `;
 
-export const INITIATE_YOUTUBE_CARD_MUTATION = gql`
-  mutation initiateYoutubeCard($videoUrl: String!) {
-    initiateYoutubeCard(data: {videoUrl: $videoUrl}) {
+export const INITIATE_USER_CARD_MUTATION = gql`
+  mutation initiateUserCard($url: String!) {
+    initiateUserCard(data: {url: $url}) {
       category
       title
       url

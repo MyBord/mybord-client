@@ -2,12 +2,13 @@ import * as React from 'react';
 import { useMutation } from '@apollo/react-hooks';
 import Form from 'forms/form/form';
 import { AddCardModalProps } from 'types/modalTypes';
-import { CREATE_YOUTUBE_CARD_MUTATION } from 'schema/card';
+import { CREATE_USER_CARD_MUTATION } from 'schema/card';
+import { FormProp } from 'types/formTypes';
 import { useModalContext } from 'context/modalContext/modalContext';
 import AddCardModalFormComponent from './addCardModalFormComponent';
 
 const AddCardModalFormContainer: React.FC<AddCardModalProps> = ({ formData }) => {
-  const [createYoutubeCard] = useMutation(CREATE_YOUTUBE_CARD_MUTATION);
+  const [createUserCard] = useMutation(CREATE_USER_CARD_MUTATION);
   const [isWaiting, setIsWaiting] = React.useState<boolean>(false);
   const { setModalId } = useModalContext();
 
@@ -15,11 +16,15 @@ const AddCardModalFormContainer: React.FC<AddCardModalProps> = ({ formData }) =>
     setModalId(null);
   };
 
-  const handleSubmit = async (): Promise<void> => {
+  const handleSubmit = async (form: FormProp): Promise<void> => {
     setIsWaiting(true);
-    await createYoutubeCard({
+    await createUserCard({
       variables: {
-        videoUrl: formData && formData.url,
+        category: form.getFieldValue('add-card-modal-category'),
+        isFavorite: form.getFieldValue('add-card-modal-favorite'),
+        isToDo: form.getFieldValue('add-card-modal-to-do'),
+        title: form.getFieldValue('add-card-modal-title'),
+        url: formData.url,
       },
     });
     setIsWaiting(false);
