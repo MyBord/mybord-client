@@ -20,6 +20,7 @@ This document is used to outline current project management priorities.
     * 'clicking add' also adds the favorite, to do, category, and title mutations from modal
     * clicking cancel in add card modal should close the modal
     * youtube card should display title, not youtube card channel video title
+    * updating title updates card
   * create an admin page for deployment
   * layout
     * have background image always be correct ratio
