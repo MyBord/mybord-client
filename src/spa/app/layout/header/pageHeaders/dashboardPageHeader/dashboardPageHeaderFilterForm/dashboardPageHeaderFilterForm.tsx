@@ -8,7 +8,7 @@ import { useModalContext } from 'context/modalContext/modalContext';
 import DashboardPageHeaderFilterFormContent from './dashboardPageHeaderFilterFormContent';
 
 const DashboardPageHeaderFilterForm: React.FC = () => {
-  const [initiateUserCard, { data }] = useMutation(INITIATE_USER_CARD_MUTATION);
+  const [initiateUserCard] = useMutation(INITIATE_USER_CARD_MUTATION);
   const [inputErrorMessage, setInputErrorMessage] = React.useState<string>(null);
   const [isSubmitWaiting, setIsSubmitWaiting] = React.useState<boolean>(false);
   const { setModalData, setModalId } = useModalContext();
