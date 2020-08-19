@@ -15,7 +15,8 @@ This document is used to outline current project management priorities.
 ### A. Highest - MVP
 
   * add card modal
-    * updating title updates card
+    * title is required, even if empty
+    * fix flashing when typing in title
   * create an admin page for deployment
   * layout
     * have background image always be correct ratio
