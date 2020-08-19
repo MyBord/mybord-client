@@ -19,7 +19,11 @@ const AddCardModalFormContainer: React.FC<AddCardModalProps> = ({ formData }) =>
     setIsWaiting(true);
     await createUserCard({
       variables: {
-        url: formData && formData.url,
+        category: 'Video',
+        isFavorite: false,
+        isToDo: false,
+        title: 'foo-bar-baz',
+        url: formData.url,
       },
     });
     setIsWaiting(false);

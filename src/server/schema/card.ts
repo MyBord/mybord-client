@@ -4,8 +4,20 @@ import { YoutubeVideoData } from 'types/youtubeTypes';
 // ----- MUTATIONS ----- //
 
 export const CREATE_USER_CARD_MUTATION = gql`
-  mutation createUserCard($url: String!) {
-    createUserCard(data: {url: $url}) {
+  mutation createUserCard(
+    $category: CardCategory!
+    $isFavorite: Boolean!
+    $isToDo: Boolean!
+    $title: String!
+    $url: String!
+  ) {
+    createUserCard(data: {
+      category: $category
+      isFavorite: $isFavorite
+      isToDo: $isToDo
+      title: $title
+      url: $url
+    }) {
       id
       type
       cardData{
