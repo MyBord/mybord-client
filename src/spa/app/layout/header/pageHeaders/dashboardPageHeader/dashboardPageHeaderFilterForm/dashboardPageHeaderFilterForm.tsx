@@ -2,13 +2,13 @@ import * as React from 'react';
 import { useMutation } from '@apollo/react-hooks';
 import Form from 'forms/form/form';
 import handleError from 'server/errors/handleError';
-import { INITIATE_YOUTUBE_CARD_MUTATION } from 'schema/card';
+import { INITIATE_USER_CARD_MUTATION } from 'schema/card';
 import { FormProp } from 'types/formTypes';
 import { useModalContext } from 'context/modalContext/modalContext';
 import DashboardPageHeaderFilterFormContent from './dashboardPageHeaderFilterFormContent';
 
 const DashboardPageHeaderFilterForm: React.FC = () => {
-  const [initiateYoutubeCard] = useMutation(INITIATE_YOUTUBE_CARD_MUTATION);
+  const [initiateUserCard, { data }] = useMutation(INITIATE_USER_CARD_MUTATION);
   const [inputErrorMessage, setInputErrorMessage] = React.useState<string>(null);
   const [isSubmitWaiting, setIsSubmitWaiting] = React.useState<boolean>(false);
   const { setModalData, setModalId } = useModalContext();
@@ -17,9 +17,9 @@ const DashboardPageHeaderFilterForm: React.FC = () => {
     try {
       setIsSubmitWaiting(true);
 
-      const cardData = await initiateYoutubeCard({
+      const cardData = await initiateUserCard({
         variables: {
-          videoUrl: form.getFieldValue('add-youtube-video-input'),
+          url: form.getFieldValue('add-youtube-video-input'),
         },
       });
 
@@ -28,7 +28,7 @@ const DashboardPageHeaderFilterForm: React.FC = () => {
         title,
         url,
         youtubeCardData,
-      } = cardData.data.initiateYoutubeCard;
+      } = cardData.data.initiateUserCard;
 
       setInputErrorMessage(null);
       setIsSubmitWaiting(false);
