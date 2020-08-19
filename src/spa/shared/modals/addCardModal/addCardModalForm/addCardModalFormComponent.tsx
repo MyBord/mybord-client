@@ -29,7 +29,7 @@ const AddCardModalFormComponent: React.FC<Props> = ({
     <FormItem
       fieldName="add-card-modal-category"
       form={form}
-      initialValue={formData && formData.category}
+      initialValue={formData.category}
       label="Category"
     >
       <Dropdown options={dropdownOptions} />
@@ -37,7 +37,7 @@ const AddCardModalFormComponent: React.FC<Props> = ({
     <FormItem
       fieldName="add-card-modal-title"
       form={form}
-      initialValue={formData && formData.title}
+      initialValue={formData.title}
       label="Title"
     >
       <TextInput />
