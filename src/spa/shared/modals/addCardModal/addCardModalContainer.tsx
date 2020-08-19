@@ -20,8 +20,10 @@ const AddCardModalContainer: React.FC = () => {
 
       setUserCard({
         id: 'add-card-modal',
+        category: 'Video',
         isFavorite: false,
         isToDo: false,
+        title: youtubeCardData.videoTitle,
         type: 'Youtube',
         cardData: {
           youtubeCardData,

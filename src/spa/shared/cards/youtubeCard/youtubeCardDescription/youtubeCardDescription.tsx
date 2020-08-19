@@ -14,7 +14,7 @@ const YoutubeCardDescription: React.FC<Props> = ({ userCard }) => (
       <Typography
         maxTextLength={60}
         size="two"
-        text={userCard.cardData.youtubeCardData.videoTitle}
+        text={userCard.title}
         weight="bold"
       />
     </div>

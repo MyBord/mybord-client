@@ -90,8 +90,10 @@ export const USER_CARDS_QUERY = gql`
   query {
     userCards{
       id
+      category
       isFavorite
       isToDo
+      title
       type
       cardData{
         youtubeCardData{
@@ -114,8 +116,10 @@ export const USER_CARDS_WITH_FILTERS_QUERY = gql`
   query userCardsWithFilters($isFavorite: Boolean!, $isToDo: Boolean!){
     userCardsWithFilters(data: {isFavorite: $isFavorite, isToDo: $isToDo}){
       id
+      category
       isFavorite
       isToDo
+      title
       type
       cardData{
         youtubeCardData{
@@ -148,8 +152,10 @@ export const USER_CARD_SUBSCRIPTION = gql`
   subscription userCard {
     userCard {
       id
+      category
       isFavorite
       isToDo
+      title
       type
       cardData{
         youtubeCardData{
@@ -202,8 +208,10 @@ export const FILTERED_USER_CARDS_SUBSCRIPTION = gql`
 
 export interface UserCard {
   id: string;
+  category: 'Video';
   isFavorite: boolean;
   isToDo: boolean;
+  title: string;
   type: 'Youtube';
   cardData: {
     youtubeCardData: YoutubeVideoData;
