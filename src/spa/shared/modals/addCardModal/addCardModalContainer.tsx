@@ -49,14 +49,14 @@ const AddCardModalContainer: React.FC = () => {
           userCard={{ ...userCard, title: updatedTitle }}
         />
       );
-    } else {
-      return (
-        <AddCardModalFormComponent
-          formData={formData}
-          userCard={userCard}
-        />
-      );
     }
+
+    return (
+      <AddCardModalFormComponent
+        formData={formData}
+        userCard={userCard}
+      />
+    );
   }
 
   return null;
