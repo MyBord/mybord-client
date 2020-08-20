@@ -6,16 +6,20 @@ import { useMultiSelectCardContext } from 'context/multiSelectCardContext/multiS
 import YoutubeCardThumbnailComponent from './youtubeCardThumbnailComponent';
 
 export interface Props {
-  userCard: UserCard;
+  id: UserCard['id'];
+  youtubeCardData: UserCard['cardData']['youtubeCardData'];
 }
 
-const YoutubeCardThumbnailContainer: React.FC<Props> = ({ userCard }) => {
+const YoutubeCardThumbnailContainer: React.FC<Props> = ({
+  id,
+  youtubeCardData,
+}) => {
   const [hasPlayButtonBeenClicked, setHasPlayButtonBeenClicked] = React.useState<boolean>(false);
   const [isYoutubePlayerLoaded, setIsYoutubePlayerLoaded] = React.useState<boolean>(false);
   const { activeCard, canMultiEdit, setActiveCardId } = useMultiSelectCardContext();
 
   const handlePlay = (): void => {
-    setActiveCardId(userCard.id);
+    setActiveCardId(id);
     setHasPlayButtonBeenClicked(true);
   };
 
@@ -23,12 +27,12 @@ const YoutubeCardThumbnailContainer: React.FC<Props> = ({ userCard }) => {
   // mode, and the user is not playing a different video.
   const showYoutubePlayer = hasPlayButtonBeenClicked
     && !canMultiEdit
-    && userCard.id === activeCard.id;
+    && id === activeCard.id;
 
   // Show the youtube thumbnail if the youtube player has not yet been loaded OR another video
   // is playing OR the user is in multi-edit mode.
   const showYoutubeThumbnail = !isYoutubePlayerLoaded
-    || userCard.id !== activeCard.id
+    || id !== activeCard.id
     || canMultiEdit;
 
   return (
@@ -37,13 +41,13 @@ const YoutubeCardThumbnailContainer: React.FC<Props> = ({ userCard }) => {
         <YoutubeCardThumbnailComponent
           isYoutubePlayerLoaded={isYoutubePlayerLoaded}
           onPlay={handlePlay}
-          youtubeVideoData={userCard.cardData.youtubeCardData}
+          youtubeVideoData={youtubeCardData}
         />
       </YoutubeThumbnailAnimation>
       <YoutubePlayer
         setIsYoutubePlayerLoaded={setIsYoutubePlayerLoaded}
         showYoutubePlayer={showYoutubePlayer}
-        youtubeVideoData={userCard.cardData.youtubeCardData}
+        youtubeVideoData={youtubeCardData}
       />
     </>
   );
