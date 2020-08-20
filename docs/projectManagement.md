@@ -43,6 +43,7 @@ This document is used to outline current project management priorities.
   two issues occur that need to be fixed: 1. the card menu button content goes away (it should
   still be shown), 2. the card menu button itself (the icon) flashes / double renders
   * when getting error message in header of dashboard, input form moves up
+  * add draft.js to stack cards
 
 ### B. High - MVP
 
