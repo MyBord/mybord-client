@@ -13,7 +13,12 @@ const YoutubeCard: React.FC<Props> = ({
   isPreview = false,
   userCard,
 }) => {
-  const Content: React.FC = () => <YoutubeCardThumbnail userCard={userCard} />;
+  const Content: React.FC = () => (
+    <YoutubeCardThumbnail
+      id={userCard.id}
+      youtubeCardData={userCard.cardData.youtubeCardData}
+    />
+  );
 
   const Description: React.FC = () => <YoutubeCardDescription userCard={userCard} />;
 
