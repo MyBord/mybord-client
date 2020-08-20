@@ -44,6 +44,8 @@ const AddCardModalFormContent: React.FC<Props> = ({
         form={form}
         initialValue={formData.category}
         label="Category"
+        required
+        requiredMessage="a category is required"
       >
         <Dropdown options={dropdownOptions} />
       </FormItem>
@@ -52,6 +54,8 @@ const AddCardModalFormContent: React.FC<Props> = ({
         form={form}
         initialValue={formData.title}
         label="Title"
+        required
+        requiredMessage="a title is required"
       >
         <TextInput />
       </FormItem>
