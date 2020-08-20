@@ -14,15 +14,10 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
-  * if you login, then logout, the footer shows
-  * layout: have background image always be correct ratio
   * have session be remembered by user
   * when you login, refresh the page, and click about, you get a double render
   * when logging in, cards show up before loading is done ... this is if you login, logout, and
     login, all as part of the same session?
-  * when you click delete in the card menu button and get the pop confirm, and then click 'no',
-  two issues occur that need to be fixed: 1. the card menu button content goes away (it should
-  still be shown), 2. the card menu button itself (the icon) flashes / double renders
   * when getting error message in header of dashboard, input form moves up - and all inputs? -
   see add card modal
 
@@ -30,6 +25,11 @@ This document is used to outline current project management priorities.
 
 ### C. Medium
 
+  * in the landing spa, if you go to '/foo', the footer shows.
+  * layout: have background image always be correct ratio
+  * when you click delete in the card menu button and get the pop confirm, and then click 'no',
+  two issues occur that need to be fixed: 1. the card menu button content goes away (it should
+  still be shown), 2. the card menu button itself (the icon) flashes / double renders
   * for landing page, create floating button that if you click it will return you to the top of the
    login page when you are on the about pages
   * create an admin page for deployment
