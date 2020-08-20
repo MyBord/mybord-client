@@ -42,13 +42,21 @@ const AddCardModalContainer: React.FC = () => {
   }, [modalData, updatedTitle]);
 
   if (formData && userCard) {
-    const finalTitle = updatedTitle || 'foo bar baz';
-    return (
-      <AddCardModalFormComponent
-        formData={formData}
-        userCard={{ ...userCard, title: finalTitle }}
-      />
-    );
+    if (updatedTitle !== null) {
+      return (
+        <AddCardModalFormComponent
+          formData={formData}
+          userCard={{ ...userCard, title: updatedTitle }}
+        />
+      );
+    } else {
+      return (
+        <AddCardModalFormComponent
+          formData={formData}
+          userCard={userCard}
+        />
+      );
+    }
   }
 
   return null;
