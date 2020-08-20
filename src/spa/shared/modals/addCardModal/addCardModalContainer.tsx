@@ -39,7 +39,7 @@ const AddCardModalContainer: React.FC = () => {
         youtubeCardData,
       });
     }
-  }, [modalData, updatedTitle]);
+  }, [modalData]);
 
   if (formData && userCard) {
     if (updatedTitle !== null) {
