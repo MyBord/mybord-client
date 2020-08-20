@@ -14,6 +14,7 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
+  * if you login, then logout, the footer shows
   * layout: have background image always be correct ratio
   * when you logout, it should take you to the login page, no matter where you're coming from
   * if you are on the landing page with the about page open, e.g. /about, logging in should
