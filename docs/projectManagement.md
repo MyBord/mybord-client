@@ -20,7 +20,6 @@ This document is used to outline current project management priorities.
   * when you login, refresh the page, and click about, you get a double render
   * when logging in, cards show up before loading is done ... this is if you login, logout, and
     login, all as part of the same session?
-  * fix login form when you signup ; back button is missaligned  
   * when you click delete in the card menu button and get the pop confirm, and then click 'no',
   two issues occur that need to be fixed: 1. the card menu button content goes away (it should
   still be shown), 2. the card menu button itself (the icon) flashes / double renders
