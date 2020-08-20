@@ -21,7 +21,7 @@ const dropdownOptions = [
   { label: 'Video', value: 'Video' },
 ];
 
-const AddCardModalFormComponent: React.FC<Props> = ({
+const AddCardModalFormContent: React.FC<Props> = ({
   form,
   formData,
   handleCancel,
@@ -85,4 +85,4 @@ const AddCardModalFormComponent: React.FC<Props> = ({
   );
 };
 
-export default AddCardModalFormComponent;
+export default AddCardModalFormContent;
