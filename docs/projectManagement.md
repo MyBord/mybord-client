@@ -14,31 +14,15 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
-  * add card modal
-    * title is required, even if empty
-    * fix flashing when typing in title
-  * create an admin page for deployment
-  * layout
-    * have background image always be correct ratio
-    * create floating button that if you click it will return you to the top of the login page
-     / form
+  * layout: have background image always be correct ratio
   * when you logout, it should take you to the login page, no matter where you're coming from
-  * about page
-    * delete aboutToDo.md
-    * delete about.md doc
-    * add footer to both about pages for main site too
-    * move about pages to shared?
-    * move footer to shared?
-    * if you are on the landing page with the about page open, e.g. /about, logging in should
+  * if you are on the landing page with the about page open, e.g. /about, logging in should
      redirect you to the home page
-    * have snl gif asset load instead of url 
   * have session be remembered by user
   * when you login, refresh the page, and click about, you get a double render
   * when logging in, cards show up before loading is done ... this is if you login, logout, and
     login, all as part of the same session?
   * fix login form when you signup ; back button is missaligned  
-  * add about page - for app and landing
-    * add transitions for landing between login and and about? or just use same parent container?
   * when you click delete in the card menu button and get the pop confirm, and then click 'no',
   two issues occur that need to be fixed: 1. the card menu button content goes away (it should
   still be shown), 2. the card menu button itself (the icon) flashes / double renders
@@ -48,6 +32,11 @@ This document is used to outline current project management priorities.
 
 ### C. Medium
 
+  * for landing page, create floating button that if you click it will return you to the top of the
+   login page when you are on the about pages
+  * create an admin page for deployment
+  * for the about page, we are currently rendering the snl gif via a url; instead, load it as an
+   asset
   * deleting text in a text input that is part of a form, where that text input is required, does
    not invoke a required message
   * add roadmap section to about dev page. Add to about mybord page as well?
