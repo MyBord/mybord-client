@@ -45,6 +45,7 @@ module.exports = {
     '^typography(.*)$': '<rootDir>/src/spa/shared/typography$1',
     '^types(.*)$': '<rootDir>/src/types$1',
     '^utils(.*)$': '<rootDir>/src/utils$1',
+    '^wysi(.*)$': '<rootDir>/src/spa/shared/wysi$1',
   },
   setupFilesAfterEnv: ['<rootDir>/setupTests.js'],
   preset: 'ts-jest',

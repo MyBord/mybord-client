@@ -170,6 +170,7 @@ const resolve = {
     typography: path.resolve(__dirname, 'src/spa/shared/typography/'),
     types: path.resolve(__dirname, 'src/types/'),
     utils: path.resolve(__dirname, 'src/utils/'),
+    wysi: path.resolve(__dirname, 'src/spa/shared/wysi/'),
   },
 };
 

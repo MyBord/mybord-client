@@ -44,7 +44,8 @@
       "tags/*": ["src/spa/shared/tags/*"],
       "typography/*": ["src/spa/shared/typography/*"],
       "types/*": ["src/types/*"],
-      "utils/*": ["src/utils/*"]
+      "utils/*": ["src/utils/*"],
+      "wysi/*": ["src/spa/shared/wysi/*"]
     }
   }
 }
