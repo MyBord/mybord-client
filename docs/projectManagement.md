@@ -23,7 +23,8 @@ This document is used to outline current project management priorities.
   * when you click delete in the card menu button and get the pop confirm, and then click 'no',
   two issues occur that need to be fixed: 1. the card menu button content goes away (it should
   still be shown), 2. the card menu button itself (the icon) flashes / double renders
-  * when getting error message in header of dashboard, input form moves up
+  * when getting error message in header of dashboard, input form moves up - and all inputs? -
+  see add card modal
 
 ### B. High - MVP
 
