@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useHistory } from 'react-router';
 import { useLazyQuery } from '@apollo/react-hooks';
 import Icon from 'icons/icon/icon';
 import Typography from 'typography/typography';
@@ -12,12 +13,14 @@ interface Props {
 }
 
 const HeaderProfileContent: React.FC<Props> = ({ hidePopOver }) => {
+  const history = useHistory();
   const [LogoutUserQuery] = useLazyQuery(LOGOUT_USER_QUERY);
   const { setAuthenticationStatus } = useAuthenticationContext();
 
-  const handleClick = async (): Promise<void> => {
+  const handleLogout = async (): Promise<void> => {
     await LogoutUserQuery();
     setAuthenticationStatus(false);
+    history.push('/');
   };
 
   const AboutIconContent: React.FC = () => <Icon color="blue" iconName="about" size={18} />;
@@ -28,7 +31,7 @@ const HeaderProfileContent: React.FC<Props> = ({ hidePopOver }) => {
       <li>
         <Typography
           Content={LogoutIconContent}
-          onClick={handleClick}
+          onClick={handleLogout}
           size="three"
           text="Logout"
         />

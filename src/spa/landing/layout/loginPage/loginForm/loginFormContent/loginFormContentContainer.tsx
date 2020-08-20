@@ -2,6 +2,7 @@
 // refactor could definitely be used to make this more readable / digestible.
 
 import * as React from 'react';
+import { useHistory } from 'react-router';
 import { useLazyQuery, useMutation } from '@apollo/react-hooks';
 import Form from 'forms/form/form';
 import handleError from 'server/errors/handleError';
@@ -14,6 +15,8 @@ import './loginFormContent.less';
 
 /* eslint-disable brace-style */
 const LoginFormContentContainer: React.FC = () => {
+  const history = useHistory();
+
   // ----- QUERIES & MUTATIONS ----- //
 
   const [createUser] = useMutation(CREATE_USER_MUTATION);
@@ -52,6 +55,7 @@ const LoginFormContentContainer: React.FC = () => {
       isAuthenticatedQuery();
 
       setIsAuthenticationWaiting(false);
+      history.push('/');
     } catch (error) {
       setIsAuthenticationWaiting(false);
 
