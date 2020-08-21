@@ -15,19 +15,13 @@ const userCard: UserCard = {
   },
 };
 
-const ImageCard: React.FC = () => {
-  const Content: React.FC = () => <ImageCardThumbnail />;
-
-  const Description: React.FC = () => <h1>test test</h1>;
-
-  return (
-    <Card
-      Content={Content}
-      Description={Description}
-      isPreview={false}
-      userCard={userCard}
-    />
-  );
-};
+const ImageCard: React.FC = () => (
+  <Card
+    isPreview={false}
+    userCard={userCard}
+  >
+    <ImageCardThumbnail />
+  </Card>
+);
 
 export default ImageCard;

@@ -33,11 +33,13 @@ const ImageCardThumbnail: React.FC = () => {
         <button type="button" onClick={decrement}>-</button>
         <button type="button" onClick={increment}>+</button>
       </div>
-      <img
-        alt="mountain"
-        className={styles.img}
-        src={images[index]}
-      />
+      <div>
+        <img
+          alt="mountain"
+          className={styles.img}
+          src={images[index]}
+        />
+      </div>
     </>
   );
 };
