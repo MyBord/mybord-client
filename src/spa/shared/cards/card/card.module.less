@@ -15,6 +15,13 @@
   position: relative;
   transition: box-shadow 0.1s ease;
   width: @cardWidth;
+  &:hover {
+    :global {
+      .card-menu-button, .card-like-button {
+        opacity: 1;
+      }
+    }
+  }
 }
 
 .containerPreview {
