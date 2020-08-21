@@ -6,15 +6,21 @@
 // ----- CARDS ----- //
 
 // general card sizes
-@cardContentHeight: 8.4375rem;
-@cardDescriptionHeight: 6.5rem;
 @cardInnerMargin: 0.75rem;
 @cardMargin: 1rem;
-@cardTotalHeight: calc(@cardContentHeight + @cardDescriptionHeight + @cardMargin * 2);
+@cardTotalHeight: 17rem;
 @cardWidth: 15rem;
+
+// stack card sizes
+@stackCardBorderRadius: 1rem;
 @stackCardMargin: 3rem;
 @stackCardSize: 7rem;
-@stackCardBorderRadius: 1rem;
+
+// youtube card sizes
+@youtubeCardContentHeight: 8.4375rem;
+@youtubeCardDescriptionHeight: calc(
+  @cardTotalHeight - (@youtubeCardContentHeight + @cardMargin * 2)
+);
 
 // ----- FOOTER ----- //
 
