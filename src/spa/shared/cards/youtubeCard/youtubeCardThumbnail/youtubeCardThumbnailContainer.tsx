@@ -4,6 +4,7 @@ import YoutubeThumbnailAnimation from 'framerMotion/youtubeThumbnailAnimation';
 import YoutubePlayer from 'cards/youtubeCard/youtubePlayer/youtubePlayer';
 import { useMultiSelectCardContext } from 'context/multiSelectCardContext/multiSelectCardContext';
 import YoutubeCardThumbnailComponent from './youtubeCardThumbnailComponent';
+import * as styles from './youtubeCardThumbnail.module.less';
 
 export interface Props {
   id: UserCard['id'];
@@ -36,7 +37,7 @@ const YoutubeCardThumbnailContainer: React.FC<Props> = ({
     || canMultiEdit;
 
   return (
-    <>
+    <div className={styles.container}>
       <YoutubeThumbnailAnimation showYoutubeThumbnail={showYoutubeThumbnail}>
         <YoutubeCardThumbnailComponent
           isYoutubePlayerLoaded={isYoutubePlayerLoaded}
@@ -49,7 +50,7 @@ const YoutubeCardThumbnailContainer: React.FC<Props> = ({
         showYoutubePlayer={showYoutubePlayer}
         youtubeVideoData={youtubeCardData}
       />
-    </>
+    </div>
   );
 };
 

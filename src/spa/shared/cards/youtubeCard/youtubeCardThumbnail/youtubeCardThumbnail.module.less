@@ -1,5 +1,18 @@
 @import "~styles/_colors";
+@import "~styles/_sizes";
 @import "~styles/_transitions";
+
+.container {
+  height: @youtubeCardContentHeight;
+  position: relative;
+  &:hover {
+    :global {
+      .card-youtube-play-button {
+        opacity: 1;
+      }
+    }
+  }
+}
 
 .durationDiv {
   background: @transparentBlack;
