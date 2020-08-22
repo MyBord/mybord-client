@@ -29,17 +29,15 @@ const ImageCardThumbnail: React.FC = () => {
 
   return (
     <>
-      <div style={{ position: 'absolute', left: '6rem' }}>
+      <div style={{ position: 'absolute', left: '6rem', zIndex: 1 }}>
         <button type="button" onClick={decrement}>-</button>
         <button type="button" onClick={increment}>+</button>
       </div>
-      <div>
-        <img
-          alt="mountain"
-          className={styles.img}
-          src={images[index]}
-        />
-      </div>
+      <img
+        alt="mountain"
+        className={styles.img}
+        src={images[index]}
+      />
     </>
   );
 };

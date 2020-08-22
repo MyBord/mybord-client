@@ -12,12 +12,14 @@ import * as styles from './card.module.less';
 
 export interface Props {
   children: React.ReactNode;
+  dynamicWidth?: boolean;
   isPreview: boolean;
   userCard: UserCard;
 }
 
 const Card: React.FC<Props> = ({
   children,
+  dynamicWidth = false,
   isPreview,
   userCard,
 }) => {
@@ -28,6 +30,7 @@ const Card: React.FC<Props> = ({
     <div
       className={[
         styles.container,
+        !dynamicWidth ? styles.standardWidthContainer : undefined,
         isSelected ? styles.selectedContainer : undefined,
         isPreview ? styles.containerPreview : undefined,
       ].join(' ')}

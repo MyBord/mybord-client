@@ -17,6 +17,7 @@ const userCard: UserCard = {
 
 const ImageCard: React.FC = () => (
   <Card
+    dynamicWidth
     isPreview={false}
     userCard={userCard}
   >

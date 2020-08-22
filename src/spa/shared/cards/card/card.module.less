@@ -10,11 +10,9 @@
   flex-direction: column;
   height: @cardTotalHeight;
   margin: @cardMargin;
-  min-width: @cardWidth;
   overflow: hidden;
   position: relative;
   transition: box-shadow 0.1s ease;
-  width: @cardWidth;
   &:hover {
     :global {
       .card-menu-button, .card-like-button {
@@ -32,4 +30,9 @@
 .selectedContainer {
   box-shadow: @cardBoxShadowSelected;
   transition: box-shadow 0.1s ease;
+}
+
+.standardWidthContainer {
+  min-width: @cardWidth;
+  width: @cardWidth;
 }
