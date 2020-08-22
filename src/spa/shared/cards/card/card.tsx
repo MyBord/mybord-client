@@ -23,8 +23,19 @@ const Card: React.FC<Props> = ({
   isPreview,
   userCard,
 }) => {
+  const containerRef = React.useRef<HTMLDivElement>(null);
   const { selectedCardIds } = useMultiSelectCardContext();
   const isSelected = selectedCardIds.includes(userCard.id);
+  const bar = (): void => console.log(containerRef.current.getBoundingClientRect());
+
+  React.useEffect(() => {
+    if (containerRef.current) {
+      if (dynamicWidth) {
+        console.log('foo');
+      }
+      console.log(containerRef.current.getBoundingClientRect());
+    }
+  }, [containerRef]);
 
   return (
     <div
@@ -34,11 +45,13 @@ const Card: React.FC<Props> = ({
         isSelected ? styles.selectedContainer : undefined,
         isPreview ? styles.containerPreview : undefined,
       ].join(' ')}
+      ref={containerRef}
     >
+      <button type="button" onClick={bar} style={{ position: 'absolute', zIndex: 1 }}>foo</button>
       <CardOverlay cardId={userCard.id} />
-      {
-        !isPreview && <CardButtons userCard={userCard} />
-      }
+      {/* { */}
+      {/*  !isPreview && <CardButtons userCard={userCard} /> */}
+      {/* } */}
       {children}
       {/* <CardFooter /> */}
     </div>

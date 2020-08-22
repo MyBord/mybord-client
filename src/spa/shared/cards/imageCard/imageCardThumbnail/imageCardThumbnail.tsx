@@ -9,7 +9,7 @@ const images = [
 ];
 
 const ImageCardThumbnail: React.FC = () => {
-  const [index, set] = React.useState<number>(0);
+  const [index, set] = React.useState<number>(2);
 
   const increment = (): void => {
     if (index === images.length - 1) {
