@@ -1,9 +1,9 @@
 import * as React from 'react';
+import Card from 'cards/card/card';
 import EmptyCard from 'cards/emptyCard/emptyCard';
 import ImageCard from 'cards/imageCard/imageCard';
 import PhantomCard from 'shared/cards/phantomCard/phantomCard';
 import { useDashboardCardsContext } from 'context/dashboardCardsContext/dashboardCardsContext';
-import DashboardCardSwitch from './dashboardCardSwitch';
 import * as styles from './dashboardCards.module.less';
 
 const DashboardCards: React.FC = () => {
@@ -14,7 +14,7 @@ const DashboardCards: React.FC = () => {
       <section className={styles.section}>
         {
           state.allIds.map((userCardId: string) => (
-            <DashboardCardSwitch key={userCardId} userCard={state.byId[userCardId]} />
+            <Card key={userCardId} userCard={state.byId[userCardId]} />
           ))
         }
         <ImageCard />

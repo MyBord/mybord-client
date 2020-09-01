@@ -10,13 +10,11 @@ import { useMultiSelectCardContext } from 'context/multiSelectCardContext/multiS
 import * as styles from './cardContent.module.less';
 
 interface Props {
-  Content: React.FC;
   isPreview: boolean;
   userCard: UserCard;
 }
 
 const CardContent: React.FC<Props> = ({
-  Content,
   isPreview,
   userCard,
 }) => {
@@ -51,7 +49,6 @@ const CardContent: React.FC<Props> = ({
           </CardContentButtonsAnimation>
         )
       }
-      <Content />
     </div>
   );
 };

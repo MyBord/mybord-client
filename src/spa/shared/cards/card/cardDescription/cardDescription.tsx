@@ -1,13 +1,9 @@
 import * as React from 'react';
 import * as styles from './cardDescription.module.less';
 
-interface Props {
-  Description: React.FC;
-}
-
-const CardDescription: React.FC<Props> = ({ Description }) => (
+const CardDescription: React.FC = () => (
   <div className={styles.div}>
-    <Description />
+    <h1>hello world</h1>
   </div>
 );
 
