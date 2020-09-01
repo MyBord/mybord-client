@@ -10,9 +10,6 @@ export interface Props {
 }
 
 const YoutubeCardContent: React.FC<Props> = ({ userCard }) => {
-  // console.log('*********');
-  // console.log(userCard);
-
   const [hasPlayButtonBeenClicked, setHasPlayButtonBeenClicked] = React.useState<boolean>(false);
   const [isYoutubePlayerLoaded, setIsYoutubePlayerLoaded] = React.useState<boolean>(false);
   const { activeCard, canMultiEdit, setActiveCardId } = useMultiSelectCardContext();

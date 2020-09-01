@@ -14,33 +14,29 @@ const YoutubeCardThumbnail: React.FC<Props> = ({
   isYoutubePlayerLoaded,
   onPlay,
   youtubeVideoData,
-}) => {
-  console.log('*****');
-  console.log(youtubeVideoData);
-  return (
-    <>
-      <img
-        alt="video thumbnail"
-        className={styles.img}
-        src={youtubeVideoData.videoThumbnail}
+}) => (
+  <>
+    <img
+      alt="video thumbnail"
+      className={styles.img}
+      src={youtubeVideoData.videoThumbnail}
+    />
+    <div className={[styles.playButtonDiv, 'card-youtube-play-button'].join(' ')}>
+      <PlayButton
+        onPlay={onPlay}
+        shouldSpin={!isYoutubePlayerLoaded}
       />
-      <div className={[styles.playButtonDiv, 'card-youtube-play-button'].join(' ')}>
-        <PlayButton
-          onPlay={onPlay}
-          shouldSpin={!isYoutubePlayerLoaded}
-        />
-      </div>
-      <div className={styles.durationDiv}>
-        <Typography
-          color="white"
-          font="roboto"
-          size="one"
-          text={youtubeVideoData.duration}
-          weight="light"
-        />
-      </div>
-    </>
-  );
-};
+    </div>
+    <div className={styles.durationDiv}>
+      <Typography
+        color="white"
+        font="roboto"
+        size="one"
+        text={youtubeVideoData.duration}
+        weight="light"
+      />
+    </div>
+  </>
+);
 
 export default YoutubeCardThumbnail;

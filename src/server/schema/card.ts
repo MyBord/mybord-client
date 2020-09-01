@@ -212,7 +212,7 @@ export interface UserCard {
   isFavorite: boolean;
   isToDo: boolean;
   title: string;
-  type: 'Youtube';
+  type: 'Image' | 'Youtube';
   cardData: {
     imageCardData?: string;
     youtubeCardData?: YoutubeVideoData;
