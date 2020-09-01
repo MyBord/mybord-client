@@ -214,7 +214,8 @@ export interface UserCard {
   title: string;
   type: 'Youtube';
   cardData: {
-    youtubeCardData: YoutubeVideoData;
+    imageCardData?: string;
+    youtubeCardData?: YoutubeVideoData;
   };
 }
 

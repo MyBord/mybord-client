@@ -15,6 +15,8 @@ This document is used to outline current project management priorities.
 ### A. Highest - MVP
 
   * have session be remembered by user
+  * fix spacing of youtube description when title is minimal and there is a large gap between the
+   title and the channel title
   * when you login, refresh the page, and click about, you get a double render
   * when logging in, cards show up before loading is done ... this is if you login, logout, and
     login, all as part of the same session?
