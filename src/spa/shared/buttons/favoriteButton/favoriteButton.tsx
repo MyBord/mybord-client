@@ -40,7 +40,7 @@ const FavoriteButton: React.FC<Props> = ({
   const isFavoriteFinal = isFavorite || value;
 
   return (
-    <div className="card-like-button">
+    <div className="like-button">
       <button
         className={styles.button}
         onClick={handleClick}
