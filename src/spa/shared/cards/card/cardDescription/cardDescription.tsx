@@ -1,9 +1,15 @@
 import * as React from 'react';
+import CardDescriptionSwitch from './cardDescriptionSwitch';
+import { UserCard } from 'schema/card';
 import * as styles from './cardDescription.module.less';
 
-const CardDescription: React.FC = () => (
+interface Props {
+  userCard: UserCard;
+}
+
+const CardDescription: React.FC<Props> = ({ userCard }) => (
   <div className={styles.div}>
-    <h1>hello world</h1>
+    <CardDescriptionSwitch userCard={userCard} />
   </div>
 );
 

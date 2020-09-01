@@ -1,8 +1,8 @@
 import * as React from 'react';
-const YoutubeCardContent = React
-  .lazy(() => import('cards/youtubeCard/youtubeCardContent/youtubeCardContent'));
 const ImageCardContent = React
   .lazy(() => import('cards/imageCard/imageCardContent/imageCardContent'));
+const YoutubeCardContent = React
+  .lazy(() => import('cards/youtubeCard/youtubeCardContent/youtubeCardContent'));
 import { UserCard } from 'schema/card';
 
 interface Props {
