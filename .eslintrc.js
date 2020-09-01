@@ -68,7 +68,8 @@ module.exports = {
     'react/no-array-index-key': 1,
     'react/jsx-props-no-spreading': 1,
     'react-hooks/rules-of-hooks': 'error',
-    'react-hooks/exhaustive-deps': 'error'
+    'react-hooks/exhaustive-deps': 'error',
+    'import/no-unresolved': 0
   },
   settings: {
     'import/extensions': [
