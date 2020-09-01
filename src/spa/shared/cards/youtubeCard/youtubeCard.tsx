@@ -12,17 +12,24 @@ interface Props {
 const YoutubeCard: React.FC<Props> = ({
   isPreview = false,
   userCard,
-}) => (
-  <Card
-    isPreview={isPreview}
-    userCard={userCard}
-  >
+}) => {
+  const Content: React.FC = () => (
     <YoutubeCardThumbnail
       id={userCard.id}
       youtubeCardData={userCard.cardData.youtubeCardData}
     />
-    <YoutubeCardDescription userCard={userCard} />
-  </Card>
-);
+  );
+
+  const Description: React.FC = () => <YoutubeCardDescription userCard={userCard} />;
+
+  return (
+    <Card
+      Content={Content}
+      Description={Description}
+      isPreview={isPreview}
+      userCard={userCard}
+    />
+  );
+};
 
 export default YoutubeCard;

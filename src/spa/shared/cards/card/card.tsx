@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { UserCard } from 'schema/card';
 import { useMultiSelectCardContext } from 'context/multiSelectCardContext/multiSelectCardContext';
-import CardButtons from './cardButtons/cardButtons';
+import CardContent from './cardContent/cardContent';
+import CardDescription from './cardDescription/cardDescription';
 // import CardFooter from './cardFooter/cardFooter';
 import CardOverlay from './cardOverlay/cardOverlay';
 import memoCard from './memoCard';
@@ -11,13 +12,15 @@ import * as styles from './card.module.less';
 // sure that every card, regardless of type, has the same consistent styling and functionality.
 
 export interface Props {
-  children: React.ReactNode;
+  Content: React.FC; // Main content of the card
+  Description: React.FC; // Description portion of the card
   isPreview: boolean;
   userCard: UserCard;
 }
 
 const Card: React.FC<Props> = ({
-  children,
+  Content,
+  Description,
   isPreview,
   userCard,
 }) => {
@@ -33,10 +36,12 @@ const Card: React.FC<Props> = ({
       ].join(' ')}
     >
       <CardOverlay cardId={userCard.id} />
-      {
-        !isPreview && <CardButtons userCard={userCard} />
-      }
-      {children}
+      <CardContent
+        Content={Content}
+        isPreview={isPreview}
+        userCard={userCard}
+      />
+      <CardDescription Description={Description} />
       {/* <CardFooter /> */}
     </div>
   );
