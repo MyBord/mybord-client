@@ -2,7 +2,7 @@ import * as React from 'react';
 import PlayButton from 'buttons/playButton/playButton';
 import Typography from 'typography/typography';
 import { YoutubeVideoData } from 'types/youtubeTypes';
-import * as styles from './youtubeCardContent.module.less';
+import * as styles from './youtubeCardThumbnail.module.less';
 
 interface Props {
   isYoutubePlayerLoaded: boolean;
