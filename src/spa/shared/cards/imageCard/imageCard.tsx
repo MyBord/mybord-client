@@ -15,14 +15,17 @@ const userCard: UserCard = {
   },
 };
 
+const Content: React.FC = () => <ImageCardThumbnail />;
+
+const Description: React.FC = () => <h3>hello world</h3>;
+
 const ImageCard: React.FC = () => (
   <Card
-    dynamicWidth
+    Content={Content}
+    Description={Description}
     isPreview={false}
     userCard={userCard}
-  >
-    <ImageCardThumbnail />
-  </Card>
+  />
 );
 
 export default ImageCard;

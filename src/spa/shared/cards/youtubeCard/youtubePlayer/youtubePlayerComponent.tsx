@@ -73,7 +73,7 @@ const YoutubePlayerComponent: React.FC<Props> = ({
   }, [shouldPauseYoutubeVideo, youtubePlayer]);
 
   return (
-    <div className={styles.parentDiv}>
+    <div>
       <div className={styles.div} id={videoFrameId} />
     </div>
   );

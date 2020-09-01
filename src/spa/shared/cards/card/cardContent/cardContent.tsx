@@ -7,12 +7,19 @@ import { TOGGLE_CARD_FILTER } from 'context/dashboardCardsContext/dashboardCards
 import { TOGGLE_FAVORITE_USER_CARD_MUTATION, UserCard } from 'schema/card';
 import { useDashboardCardsContext } from 'context/dashboardCardsContext/dashboardCardsContext';
 import { useMultiSelectCardContext } from 'context/multiSelectCardContext/multiSelectCardContext';
+import * as styles from './cardContent.module.less';
 
 interface Props {
+  Content: React.FC;
+  isPreview: boolean;
   userCard: UserCard;
 }
 
-const CardButtons: React.FC<Props> = ({ userCard }) => {
+const CardContent: React.FC<Props> = ({
+  Content,
+  isPreview,
+  userCard,
+}) => {
   const [isFavorite, setIsFavorite] = React.useState<boolean>(userCard.isFavorite);
   const [toggleFavoriteUserCard] = useMutation(TOGGLE_FAVORITE_USER_CARD_MUTATION);
   const { activeCard, canMultiEdit } = useMultiSelectCardContext();
@@ -31,15 +38,22 @@ const CardButtons: React.FC<Props> = ({ userCard }) => {
   const showButtons = !canMultiEdit && activeCard.id !== userCard.id;
 
   return (
-    <CardContentButtonsAnimation showButtons={showButtons}>
-      <FavoriteButton
-        isFavorite={isFavorite}
-        onClick={handleFavorite}
-        size={25}
-      />
-      <CardMenuButton userCard={userCard} />
-    </CardContentButtonsAnimation>
+    <div className={styles.container}>
+      {
+        !isPreview && (
+          <CardContentButtonsAnimation showButtons={showButtons}>
+            <FavoriteButton
+              isFavorite={isFavorite}
+              onClick={handleFavorite}
+              size={25}
+            />
+            <CardMenuButton userCard={userCard} />
+          </CardContentButtonsAnimation>
+        )
+      }
+      <Content />
+    </div>
   );
 };
 
-export default CardButtons;
+export default CardContent;
