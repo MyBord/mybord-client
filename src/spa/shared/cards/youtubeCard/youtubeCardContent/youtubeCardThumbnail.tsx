@@ -10,7 +10,7 @@ interface Props {
   youtubeVideoData: YoutubeVideoData;
 }
 
-const YoutubeCardThumbnailComponent: React.FC<Props> = ({
+const YoutubeCardThumbnail: React.FC<Props> = ({
   isYoutubePlayerLoaded,
   onPlay,
   youtubeVideoData,
@@ -39,4 +39,4 @@ const YoutubeCardThumbnailComponent: React.FC<Props> = ({
   </>
 );
 
-export default YoutubeCardThumbnailComponent;
+export default YoutubeCardThumbnail;

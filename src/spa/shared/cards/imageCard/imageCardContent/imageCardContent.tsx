@@ -1,5 +1,5 @@
 import * as React from 'react';
-import * as styles from './imageCardThumbnail.module.less';
+import * as styles from './imageCardContent.module.less';
 
 const images = [
   'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Monasterio_Khor_Virap%2C_Armenia%2C_2016-10-01%2C_DD_25.jpg/1200px-Monasterio_Khor_Virap%2C_Armenia%2C_2016-10-01%2C_DD_25.jpg',
@@ -8,7 +8,7 @@ const images = [
   'https://willoughbyohio.com/wp-content/uploads/2019/08/animal-control-banner.jpg',
 ];
 
-const ImageCardThumbnail: React.FC = () => {
+const ImageCardContent: React.FC = () => {
   const [index, set] = React.useState<number>(2);
 
   const increment = (): void => {
@@ -42,4 +42,4 @@ const ImageCardThumbnail: React.FC = () => {
   );
 };
 
-export default ImageCardThumbnail;
+export default ImageCardContent;

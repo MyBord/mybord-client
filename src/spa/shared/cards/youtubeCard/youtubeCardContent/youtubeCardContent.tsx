@@ -1,22 +1,21 @@
 import * as React from 'react';
 import { UserCard } from 'schema/card';
-import YoutubeThumbnailAnimation from 'framerMotion/youtubeThumbnailAnimation';
+import YoutubeCardThumbnailAnimation from 'framerMotion/youtubeCardThumbnailAnimation';
 import YoutubePlayer from 'cards/youtubeCard/youtubePlayer/youtubePlayer';
 import { useMultiSelectCardContext } from 'context/multiSelectCardContext/multiSelectCardContext';
-import YoutubeCardThumbnailComponent from './youtubeCardThumbnailComponent';
+import YoutubeCardThumbnail from './youtubeCardThumbnail';
 
 export interface Props {
-  id: UserCard['id'];
-  youtubeCardData: UserCard['cardData']['youtubeCardData'];
+  userCard: UserCard;
 }
 
-const YoutubeCardThumbnailContainer: React.FC<Props> = ({
-  id,
-  youtubeCardData,
-}) => {
+const YoutubeCardContent: React.FC<Props> = ({ userCard }) => {
   const [hasPlayButtonBeenClicked, setHasPlayButtonBeenClicked] = React.useState<boolean>(false);
   const [isYoutubePlayerLoaded, setIsYoutubePlayerLoaded] = React.useState<boolean>(false);
   const { activeCard, canMultiEdit, setActiveCardId } = useMultiSelectCardContext();
+
+  const { id } = userCard;
+  const { youtubeCardData } = userCard.cardData;
 
   const handlePlay = (): void => {
     setActiveCardId(id);
@@ -37,13 +36,13 @@ const YoutubeCardThumbnailContainer: React.FC<Props> = ({
 
   return (
     <>
-      <YoutubeThumbnailAnimation showYoutubeThumbnail={showYoutubeThumbnail}>
-        <YoutubeCardThumbnailComponent
+      <YoutubeCardThumbnailAnimation showYoutubeThumbnail={showYoutubeThumbnail}>
+        <YoutubeCardThumbnail
           isYoutubePlayerLoaded={isYoutubePlayerLoaded}
           onPlay={handlePlay}
           youtubeVideoData={youtubeCardData}
         />
-      </YoutubeThumbnailAnimation>
+      </YoutubeCardThumbnailAnimation>
       <YoutubePlayer
         setIsYoutubePlayerLoaded={setIsYoutubePlayerLoaded}
         showYoutubePlayer={showYoutubePlayer}
@@ -53,4 +52,4 @@ const YoutubeCardThumbnailContainer: React.FC<Props> = ({
   );
 };
 
-export default YoutubeCardThumbnailContainer;
+export default YoutubeCardContent;

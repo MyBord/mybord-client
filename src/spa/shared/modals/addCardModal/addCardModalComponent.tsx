@@ -1,6 +1,6 @@
 import * as React from 'react';
+import Card from 'cards/card/card';
 import Modal from 'modals/modal/modal';
-import YoutubeCard from 'cards/youtubeCard/youtubeCard';
 import { AddCardModalProps } from 'types/modalTypes';
 import { UserCard } from 'schema/card';
 import AddCardModalForm from './addCardModalForm/addCardModalForm';
@@ -17,7 +17,7 @@ const AddCardModalComponent: React.FC<Props> = ({
   <Modal id="add-card-modal" title="Add To My Bord">
     <div className={styles.parentDiv}>
       <div className={styles.previewDiv}>
-        <YoutubeCard isPreview userCard={userCard} />
+        <Card isPreview userCard={userCard} />
       </div>
       <div className={styles.formDiv}>
         <AddCardModalForm formData={formData} />

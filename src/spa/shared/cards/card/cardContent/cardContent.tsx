@@ -7,16 +7,15 @@ import { TOGGLE_CARD_FILTER } from 'context/dashboardCardsContext/dashboardCards
 import { TOGGLE_FAVORITE_USER_CARD_MUTATION, UserCard } from 'schema/card';
 import { useDashboardCardsContext } from 'context/dashboardCardsContext/dashboardCardsContext';
 import { useMultiSelectCardContext } from 'context/multiSelectCardContext/multiSelectCardContext';
+import CardContentSwitch from './cardContentSwitch';
 import * as styles from './cardContent.module.less';
 
 interface Props {
-  Content: React.FC;
   isPreview: boolean;
   userCard: UserCard;
 }
 
 const CardContent: React.FC<Props> = ({
-  Content,
   isPreview,
   userCard,
 }) => {
@@ -51,7 +50,7 @@ const CardContent: React.FC<Props> = ({
           </CardContentButtonsAnimation>
         )
       }
-      <Content />
+      <CardContentSwitch userCard={userCard} />
     </div>
   );
 };
