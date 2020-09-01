@@ -1,7 +1,6 @@
 import * as React from 'react';
 import Card from 'cards/card/card';
 import EmptyCard from 'cards/emptyCard/emptyCard';
-import ImageCard from 'cards/imageCard/imageCard';
 import PhantomCard from 'shared/cards/phantomCard/phantomCard';
 import { useDashboardCardsContext } from 'context/dashboardCardsContext/dashboardCardsContext';
 import * as styles from './dashboardCards.module.less';
@@ -17,10 +16,6 @@ const DashboardCards: React.FC = () => {
             <Card key={userCardId} userCard={state.byId[userCardId]} />
           ))
         }
-        <ImageCard />
-        <ImageCard />
-        <ImageCard />
-        <ImageCard />
         {
           // we create some phantom cards that do not appear visible but are rendered so that we can
           // `justify-content: center` our flexbox card content while having our last row be
