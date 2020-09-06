@@ -15,7 +15,7 @@ import App from './app';
 const URI = 'mbh-server-dev-jimmy.herokuapp.com/graphql';
 
 const wsLink = new WebSocketLink({
-  uri: `ws://${URI}`,
+  uri: `wss://${URI}`,
   options: { reconnect: true },
 });
 
