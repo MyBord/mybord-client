@@ -8,13 +8,13 @@ import { getMainDefinition } from 'apollo-utilities';
 import { split } from 'apollo-link';
 
 const wsLink = new WebSocketLink({
-  uri: `ws://${process.env.URI}`,
+  uri: `wss://${process.env.URI}`,
   options: { reconnect: true },
 });
 
 const httpLink = new HttpLink({
   credentials: 'include',
-  uri: `http://${process.env.URI}`,
+  uri: `https://${process.env.URI}`,
 });
 
 const link = split(
