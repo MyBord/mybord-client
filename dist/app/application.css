@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  margin: 3rem;
+}
+.button {
+  background: #00A6ED;
+  color: #FFF;
+  height: 3rem;
+  margin: 1rem;
+  width: 6rem;
+}
+
+
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9zcmMvaW5kZXgubGVzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBIiwiZmlsZSI6ImFwcGxpY2F0aW9uLmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5jb250YWluZXIge1xuICBkaXNwbGF5OiBmbGV4O1xuICBtYXJnaW46IDNyZW07XG59XG4uYnV0dG9uIHtcbiAgYmFja2dyb3VuZDogIzAwQTZFRDtcbiAgY29sb3I6ICNGRkY7XG4gIGhlaWdodDogM3JlbTtcbiAgbWFyZ2luOiAxcmVtO1xuICB3aWR0aDogNnJlbTtcbn1cbiJdLCJzb3VyY2VSb290IjoiIn0=*/
