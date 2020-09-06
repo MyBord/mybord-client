@@ -14,35 +14,6 @@ import App from './app';
 // const URI = 'https://mbh-server-dev-jimmy.herokuapp.com/graphql';
 const URI = 'mbh-server-dev-jimmy.herokuapp.com/graphql';
 
-const wsLink = new WebSocketLink({
-  uri: `ws://${URI}`,
-  options: { reconnect: true },
-});
-
-const httpLink = new HttpLink({
-  credentials: 'include',
-  uri: `http://${URI}`,
-});
-
-const link = split(
-  ({ query }) => {
-    const definition = getMainDefinition(query);
-    return (
-      definition.kind === 'OperationDefinition'
-      && definition.operation === 'subscription'
-    );
-  },
-  wsLink,
-  httpLink,
-);
-
-const client = new ApolloClient({
-  link,
-  cache: new InMemoryCache(),
-});
-
 createRoot(document.getElementById('app')).render(
-  <ApolloProvider client={client}>
-    <App />
-  </ApolloProvider>,
+  <App />,
 );
