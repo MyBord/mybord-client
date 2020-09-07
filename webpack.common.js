@@ -15,7 +15,6 @@ switch (process.env.NODE_ENV) {
     envFile = 'local.env';
     break;
   case 'PROD':
-    envFile = 'prod.env';
     break;
   default:
     throw Error('Unknown NODE_ENV flag');
