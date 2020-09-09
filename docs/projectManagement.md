@@ -147,12 +147,13 @@ This document is used to outline current project management priorities.
 ## III. Other
 
 * get social media accounts
+  * namecheap
+  * heroku
+  * github
   * instagram
   * facebook
   * linkedin
-  * github
   * twitter
-  * namecheap
 * forward mybord emails  
 * should I buy namecheap premium dns
 * change namecheap phone number address etc, name, etc
