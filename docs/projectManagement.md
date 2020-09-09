@@ -148,14 +148,8 @@ This document is used to outline current project management priorities.
 
 * update all github docs and the url's / repos that they point to
 * reach out to twitter about suspended @mybord account
-* get social media accounts
-  * namecheap - done
-  * heroku - done
-  * github - done
-  * instagram
-  * facebook
-  * linkedin - done
-  * twitter
+* see if I can get @mybord account on instagram
+* update social media accounts
 * forward mybord emails  
 * should I buy namecheap premium dns
 * change namecheap phone number address etc, name, etc
