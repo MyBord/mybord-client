@@ -149,7 +149,7 @@ This document is used to outline current project management priorities.
 * get social media accounts
   * namecheap
   * heroku
-  * github - test
+  * github
   * instagram
   * facebook
   * linkedin
