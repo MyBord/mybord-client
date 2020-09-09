@@ -146,9 +146,15 @@ This document is used to outline current project management priorities.
 
 ## III. Other
 
-* Set up email account with gmail hosted via mybord.io
 * get social media accounts
-* soc2 audit?
+  * instagram
+  * facebook
+  * linkedin
+  * github
+  * twitter
+* forward mybord emails  
+* should I buy namecheap premium dns
+* change namecheap phone number address etc, name, etc
 * Legal
   * LLC
   * Terms and Conditions
@@ -159,5 +165,4 @@ This document is used to outline current project management priorities.
     * what should I trademark? mybord? mybord.io? mybord.com?
     * what should my llc be named? mybord llc? mybord.io llc?
   * Legal for work to be allowed to pursue financing / etc
-* how much does mybord.com cost?  
-* get social media handles for mybord
+* soc2 audit?
