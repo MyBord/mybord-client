@@ -147,6 +147,7 @@ This document is used to outline current project management priorities.
 ## III. Other
 
 * update all github docs and the url's / repos that they point to
+* reach out to twitter about suspended @mybord account
 * get social media accounts
   * namecheap - done
   * heroku - done
