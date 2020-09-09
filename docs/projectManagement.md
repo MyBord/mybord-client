@@ -150,10 +150,10 @@ This document is used to outline current project management priorities.
 * get social media accounts
   * namecheap
   * heroku
-  * github
+  * github - done
   * instagram
   * facebook
-  * linkedin
+  * linkedin - done
   * twitter
 * forward mybord emails  
 * should I buy namecheap premium dns
