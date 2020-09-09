@@ -146,6 +146,7 @@ This document is used to outline current project management priorities.
 
 ## III. Other
 
+* update all github docs and the url's / repos that they point to
 * get social media accounts
   * namecheap
   * heroku
