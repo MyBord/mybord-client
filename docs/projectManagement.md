@@ -22,6 +22,9 @@ This document is used to outline current project management priorities.
     login, all as part of the same session?
   * when getting error message in header of dashboard, input form moves up - and all inputs? -
   see add card modal
+  * add email verification
+  * add usernames and routing for usernames
+  * when clicking about in login page, it does not scroll down
 
 ### B. High - MVP
 
