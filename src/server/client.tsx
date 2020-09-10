@@ -7,14 +7,25 @@ import { WebSocketLink } from 'apollo-link-ws';
 import { getMainDefinition } from 'apollo-utilities';
 import { split } from 'apollo-link';
 
-const wsLink = new WebSocketLink({
-  uri: `wss://${process.env.URI}`,
-  options: { reconnect: true },
-});
+let wsUri: string;
+let httpUri: string;
+
+if (process.env.NODE_ENV === 'PROD') {
+  httpUri = `https://${process.env.URI}`;
+  wsUri = `wss://${process.env.URI}`;
+} else {
+  httpUri = `http://${process.env.URI}`;
+  wsUri = `ws://${process.env.URI}`;
+}
 
 const httpLink = new HttpLink({
   credentials: 'include',
-  uri: `https://${process.env.URI}`,
+  uri: httpUri,
+});
+
+const wsLink = new WebSocketLink({
+  uri: wsUri,
+  options: { reconnect: true },
 });
 
 const link = split(
