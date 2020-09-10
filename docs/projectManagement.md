@@ -15,21 +15,25 @@ This document is used to outline current project management priorities.
 ### A. Highest - MVP
 
   * have session be remembered by user
-  * fix spacing of youtube description when title is minimal and there is a large gap between the
-   title and the channel title
   * when you login, refresh the page, and click about, you get a double render
-  * when logging in, cards show up before loading is done ... this is if you login, logout, and
-    login, all as part of the same session?
   * when getting error message in header of dashboard, input form moves up - and all inputs? -
   see add card modal
   * add email verification
   * add usernames and routing for usernames
   * when clicking about in login page, it does not scroll down
+  * add image support
+  * add giphy support
+  * add website support
+  * add note support
 
 ### B. High - MVP
 
 ### C. Medium
 
+  * when logging in, cards show up before loading is done ... this is if you login, logout, and
+    login, all as part of the same session?
+  * fix spacing of youtube description when title is minimal and there is a large gap between the
+   title and the channel title
   * in the landing spa, if you go to '/foo', the footer shows.
   * layout: have background image always be correct ratio
   * when you click delete in the card menu button and get the pop confirm, and then click 'no',
