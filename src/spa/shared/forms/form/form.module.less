@@ -4,3 +4,12 @@
   padding: 1.25rem @formHorizontalPadding !important;
   width: 20rem;
 }
+
+.verticalLayout {
+  :global {
+    .ant-form-item-with-help {
+      margin-bottom: calc(@formItemMarginBottom + 0.5rem);
+      transition: 0.3s margin-bottom ease;
+    }
+  }
+}

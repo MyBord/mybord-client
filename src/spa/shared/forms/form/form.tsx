@@ -43,7 +43,10 @@ const FormContent = React.forwardRef<FormProps, FormContentProps>(
 
     return (
       <AntForm
-        className={type ? styles[type] : undefined}
+        className={[
+          layout === 'vertical' ? styles.verticalLayout : undefined,
+          type ? styles[type] : undefined,
+        ].join(' ')}
         hideRequiredMark
         onSubmit={handleSubmit}
       >
