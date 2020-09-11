@@ -388,6 +388,9 @@ When running locally, at the root of folder, you will need to create three separ
 
 The following are the env vars needed to run our front end application:
 
+* **`NODE_ENV`**:
+  * Declares what environment the server application is running in; can either be 'DEV', 'LOCAL',
+  or 'PROD'.
 * **`URI`**:
   * The uri endpoint that is used to communicate with our backend server. This should look
    something like `localhost:1234/graphql` and should not include a `http://` prefix since we
@@ -399,17 +402,20 @@ The following are the env vars needed to run our front end application:
 
 **`dev.env:`:**
 ```
+NODE_ENV=DEV
 URI=sample-dev-server-app.herokuapp.com/graphql
 ```
 
 **`local.env:`:**
 ```
+NODE_ENV=LOCAL
 URI=localhost:4000/graphql
 ```
 
 **`prod.env:`:**
 ```
-URI=sample-prod-server-app.herokuapp.com/graphql
+NODE_ENV=PROD
+URI=mybord.io/graphql
 ```
 
 ## VII. Important Branches

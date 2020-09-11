@@ -10,7 +10,7 @@ import { split } from 'apollo-link';
 let wsUri: string;
 let httpUri: string;
 
-if (process.env.MODE === 'PROD') {
+if (process.env.NODE_ENV === 'PROD') {
   httpUri = `https://${process.env.URI}`;
   wsUri = `wss://${process.env.URI}`;
 } else {

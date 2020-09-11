@@ -3,7 +3,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "storybook": "MODE=DEV start-storybook",
+    "storybook": "BUILD_MODE=DEV start-storybook",
     "build-storybook": "build-storybook -c .storybook -o .out",
     "push-heroku:dev": "git push heroku-dev master",
     "push-heroku:prod": "git push heroku-prod master",
@@ -11,10 +11,10 @@
     "copy-index": "cp src/index.html dist/index.html",
     "webpack:dev": "webpack --config webpack.dev.js",
     "webpack:prod": "webpack --config webpack.prod.js",
-    "build:dev": "MODE=DEV npm-run-all remove-dist webpack:dev copy-index",
-    "build:prod": "MODE=PROD npm-run-all remove-dist webpack:prod copy-index",
-    "run:local": "MODE=LOCAL webpack-dev-server --config webpack.dev.js",
-    "run:dev": "MODE=DEV webpack-dev-server --config webpack.dev.js"
+    "build:dev": "BUILD_MODE=DEV npm-run-all remove-dist webpack:dev copy-index",
+    "build:prod": "BUILD_MODE=PROD npm-run-all remove-dist webpack:prod copy-index",
+    "run:local": "BUILD_MODE=LOCAL webpack-dev-server --config webpack.dev.js",
+    "run:dev": "BUILD_MODE=DEV webpack-dev-server --config webpack.dev.js"
   },
   "authors": [
     "Jimmy Emery"
