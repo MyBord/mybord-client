@@ -16,8 +16,6 @@ This document is used to outline current project management priorities.
 
   * have session be remembered by user
   * when you login, refresh the page, and click about, you get a double render
-  * when getting error message in header of dashboard, input form moves up - and all inputs? -
-  see add card modal
   * add email verification
   * add usernames and routing for usernames
   * when clicking about in login page, it does not scroll down

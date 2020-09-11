@@ -51,7 +51,7 @@ const DashboardPageHeaderFilterForm: React.FC = () => {
   };
 
   return (
-    <Form onSubmit={handleSubmit}>
+    <Form layout='horizontal' onSubmit={handleSubmit}>
       <DashboardPageHeaderFilterFormContent
         errorMessage={inputErrorMessage}
         isWaiting={isSubmitWaiting}
