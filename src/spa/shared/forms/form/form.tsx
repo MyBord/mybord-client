@@ -5,12 +5,14 @@ import * as styles from './form.module.less';
 
 interface FormContentProps extends FormProps {
   children: React.ReactElement | React.ReactElement[];
+  layout: 'horizontal' | 'vertical';
   onSubmit: (form: FormProp) => void;
   type?: 'login';
 }
 
 interface Props {
   children: React.ReactElement | React.ReactElement[];
+  layout?: 'horizontal' | 'vertical';
   onSubmit: (form: FormProp) => void;
   type?: 'login';
 }
@@ -20,6 +22,7 @@ const FormContent = React.forwardRef<FormProps, FormContentProps>(
     {
       children,
       form,
+      layout,
       onSubmit,
       type,
     }: FormContentProps,
@@ -55,8 +58,17 @@ const FormContent = React.forwardRef<FormProps, FormContentProps>(
 const FormInstance = AntForm.create<FormContentProps>()(FormContent);
 
 const Form = React.forwardRef<FormProps, Props>(
-  ({ children, onSubmit, type = null }: Props, ref) => (
+  (
+    {
+      children,
+      layout = 'vertical',
+      onSubmit,
+      type = null,
+    }: Props,
+    ref,
+  ) => (
     <FormInstance
+      layout={layout}
       onSubmit={onSubmit}
       type={type}
       wrappedComponentRef={ref}
