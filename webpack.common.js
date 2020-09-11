@@ -7,7 +7,7 @@ const DIST_DIR = path.resolve(__dirname, 'dist');
 const SRC_DIR = path.resolve(__dirname, 'src');
 
 let envFile;
-switch (process.env.NODE_ENV) {
+switch (process.env.MODE) {
   case 'DEV':
     envFile = 'dev.env';
     break;
