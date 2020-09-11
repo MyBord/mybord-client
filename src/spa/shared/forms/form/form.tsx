@@ -44,7 +44,7 @@ const FormContent = React.forwardRef<FormProps, FormContentProps>(
     return (
       <AntForm
         className={[
-          layout === 'vertical' ? styles.verticalLayout : undefined,
+          styles[layout],
           type ? styles[type] : undefined,
         ].join(' ')}
         hideRequiredMark
