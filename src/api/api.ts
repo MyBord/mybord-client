@@ -12,7 +12,8 @@ const get = (gqlString: GqlString): Promise<any> => new Promise((resolve) => {
     headers: { 'Content-Type': 'application/json' },
     withCredentials: true,
   };
-  const url = `${process.env.NODE_ENV === 'PROD' ? 'https' : 'http'}://${process.env.URI}`;
+  // const url = `${process.env.NODE_ENV === 'PROD' ? 'https' : 'http'}://${process.env.URI}`;
+  const url = `https://${process.env.URI}`;
 
   axios.post(url, body, config).then((response) => resolve(response.data.data));
 });
