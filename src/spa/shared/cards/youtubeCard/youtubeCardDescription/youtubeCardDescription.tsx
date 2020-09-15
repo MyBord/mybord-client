@@ -10,7 +10,7 @@ interface Props {
 
 const YoutubeCardDescription: React.FC<Props> = ({ userCard }) => (
   <div className={styles.container}>
-    <div className={styles.title}>
+    <div>
       <Typography
         maxTextLength={60}
         size="two"
