@@ -1,8 +1,10 @@
 import * as React from 'react';
+import { CardData } from 'schema/card';
 import { YoutubeVideoData } from 'types/youtubeTypes';
 
 export interface AddCardModalProps {
   formData: {
+    cardData: CardData;
     category: string;
     title: string;
     url: string;

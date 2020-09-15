@@ -208,6 +208,13 @@ export const FILTERED_USER_CARDS_SUBSCRIPTION = gql`
 
 // ----- RESPONSE INTERFACES ----- //
 
+export interface CardData {
+  imageCardData?: {
+    imageUrl: string;
+  };
+  youtubeCardData?: YoutubeVideoData;
+}
+
 export interface UserCard {
   id: string;
   category: 'Video';
@@ -215,10 +222,7 @@ export interface UserCard {
   isToDo: boolean;
   title: string;
   type: 'Image' | 'Youtube';
-  cardData: {
-    imageCardData?: string;
-    youtubeCardData?: YoutubeVideoData;
-  };
+  cardData: CardData;
 }
 
 export interface UserCardsQueryResponse {

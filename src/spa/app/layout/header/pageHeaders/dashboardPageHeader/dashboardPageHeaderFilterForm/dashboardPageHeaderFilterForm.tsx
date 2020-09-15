@@ -35,10 +35,10 @@ const DashboardPageHeaderFilterForm: React.FC = () => {
       form.resetFields(['add-youtube-video-input']);
 
       setModalData({
+        cardData,
         category,
         title,
         url,
-        youtubeCardData: cardData.youtubeCardData,
       });
       setModalId('add-card-modal');
     } catch (error) {
