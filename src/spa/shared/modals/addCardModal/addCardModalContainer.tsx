@@ -12,12 +12,12 @@ const AddCardModalContainer: React.FC = () => {
   const { modalData, modalId } = useModalContext();
 
   React.useEffect(() => {
-    if (modalId === 'add-card-modal' && modalData && modalData.youtubeCardData) {
+    if (modalId === 'add-card-modal' && modalData && modalData.cardData) {
       const {
+        cardData,
         category,
         title,
         url,
-        youtubeCardData,
       } = modalData;
 
       setUserCard({
@@ -25,18 +25,16 @@ const AddCardModalContainer: React.FC = () => {
         category: 'Video',
         isFavorite: false,
         isToDo: false,
-        title: youtubeCardData.videoTitle,
+        title: cardData.youtubeCardData.videoTitle,
         type: 'Youtube',
-        cardData: {
-          youtubeCardData,
-        },
+        cardData,
       });
 
       setFormData({
+        cardData,
         category,
         title,
         url,
-        youtubeCardData,
       });
     }
   }, [modalData]);

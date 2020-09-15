@@ -1,12 +1,12 @@
 import * as React from 'react';
-import { YoutubeVideoData } from 'types/youtubeTypes';
+import { CardData } from 'schema/card';
 
 export interface AddCardModalProps {
   formData: {
+    cardData: CardData;
     category: string;
     title: string;
     url: string;
-    youtubeCardData: YoutubeVideoData;
   };
 }
 
