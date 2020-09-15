@@ -53,6 +53,9 @@ export const INITIATE_USER_CARD_MUTATION = gql`
       type
       url
       cardData {
+        imageCardData{
+          imageUrl
+        }
         youtubeCardData{
           channelThumbnail
           channelTitle
