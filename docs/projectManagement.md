@@ -14,6 +14,7 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
+  * fix bug where app crashes when you add an image card
   * have session be remembered by user
   * when you login, refresh the page, and click about, you get a double render
   * add email verification
