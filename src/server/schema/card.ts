@@ -21,6 +21,9 @@ export const CREATE_USER_CARD_MUTATION = gql`
       id
       type
       cardData{
+        imageCardData{
+          imageUrl
+        }
         youtubeCardData{
           channelThumbnail
           channelTitle
@@ -102,6 +105,9 @@ export const USER_CARDS_QUERY = gql`
       title
       type
       cardData{
+        imageCardData{
+          imageUrl
+        }
         youtubeCardData{
           channelThumbnail
           channelTitle
@@ -128,6 +134,9 @@ export const USER_CARDS_WITH_FILTERS_QUERY = gql`
       title
       type
       cardData{
+        imageCardData{
+          imageUrl
+        }
         youtubeCardData{
           channelThumbnail
           channelTitle
@@ -164,6 +173,9 @@ export const USER_CARD_SUBSCRIPTION = gql`
       title
       type
       cardData{
+        imageCardData{
+          imageUrl
+        }
         youtubeCardData{
           channelThumbnail
           channelTitle
@@ -193,6 +205,9 @@ export const FILTERED_USER_CARDS_SUBSCRIPTION = gql`
         isToDo
         type
         cardData{
+          imageCardData{
+            imageUrl
+          }
           youtubeCardData{
             channelThumbnail
             channelTitle

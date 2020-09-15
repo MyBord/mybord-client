@@ -44,4 +44,5 @@ const Card: React.FC<Props> = ({
   );
 };
 
-export default memoCard(Card);
+// export default memoCard(Card);
+export default Card;
