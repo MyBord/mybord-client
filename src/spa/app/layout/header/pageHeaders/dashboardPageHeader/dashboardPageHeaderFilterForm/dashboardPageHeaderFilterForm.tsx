@@ -27,6 +27,7 @@ const DashboardPageHeaderFilterForm: React.FC = () => {
         cardData,
         category,
         title,
+        type,
         url,
       } = initialCardData.data.initiateUserCard;
 
@@ -38,6 +39,7 @@ const DashboardPageHeaderFilterForm: React.FC = () => {
         cardData,
         category,
         title,
+        type,
         url,
       });
       setModalId('add-card-modal');

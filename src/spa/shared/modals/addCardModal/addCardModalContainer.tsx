@@ -17,16 +17,17 @@ const AddCardModalContainer: React.FC = () => {
         cardData,
         category,
         title,
+        type,
         url,
       } = modalData;
 
       setUserCard({
         id: 'add-card-modal',
-        category: 'Video',
+        category,
         isFavorite: false,
         isToDo: false,
-        title: cardData.youtubeCardData.videoTitle,
-        type: 'Youtube',
+        title,
+        type,
         cardData,
       });
 

@@ -50,6 +50,7 @@ export const INITIATE_USER_CARD_MUTATION = gql`
     initiateUserCard(data: {url: $url}) {
       category
       title
+      type
       url
       cardData {
         youtubeCardData{
@@ -206,7 +207,7 @@ export const FILTERED_USER_CARDS_SUBSCRIPTION = gql`
   }
 `;
 
-// ----- RESPONSE INTERFACES ----- //
+// ----- RESPONSE INTERFACES && TYPES ----- //
 
 export interface CardData {
   imageCardData?: {
@@ -215,13 +216,17 @@ export interface CardData {
   youtubeCardData?: YoutubeVideoData;
 }
 
+export type CardCategory = 'Image' | 'Video';
+
+export type CardType = 'Image' | 'Youtube';
+
 export interface UserCard {
   id: string;
-  category: 'Video';
+  category: CardCategory;
   isFavorite: boolean;
   isToDo: boolean;
   title: string;
-  type: 'Image' | 'Youtube';
+  type: CardType;
   cardData: CardData;
 }
 
