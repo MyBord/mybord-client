@@ -12,6 +12,7 @@ const CopyrightIcon = React.lazy(() => import('./individualIcons/copyrightIcon')
 const DashboardIcon = React.lazy(() => import('./individualIcons/dashboardIcon'));
 const DeleteIcon = React.lazy(() => import('./individualIcons/deleteIcon'));
 const DownArrowIcon = React.lazy(() => import('./individualIcons/downArrowIcon'));
+const ExpandIcon = React.lazy(() => import('./individualIcons/expandIcon'));
 const EyeIcon = React.lazy(() => import('./individualIcons/eyeIcon'));
 const FacebookIcon = React.lazy(() => import('./individualIcons/facebookIcon'));
 const FilterIcon = React.lazy(() => import('./individualIcons/filterIcon'));
@@ -47,6 +48,7 @@ export const iconNames = {
   dashboard: 'foo',
   delete: 'foo',
   downArrow: 'foo',
+  expand: 'foo',
   eye: 'foo',
   facebook: 'foo',
   filter: 'foo',
@@ -105,6 +107,8 @@ const Icon: React.FC<IconProps> = ({
       return <DeleteIcon color={color} fill={fill} size={size} />;
     case 'downArrow':
       return <DownArrowIcon size={size} />;
+    case 'expand':
+      return <ExpandIcon color={color} size={size} />;
     case 'eye':
       return <EyeIcon size={size} />;
     case 'facebook':

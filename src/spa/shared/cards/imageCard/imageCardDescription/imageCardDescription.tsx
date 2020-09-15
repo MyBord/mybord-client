@@ -8,6 +8,7 @@ interface Props {
   userCard: UserCard;
 }
 
+const ExpandIconContent: React.FC = () => <Icon color="blue" iconName="expand" size={18} />;
 const LinkIconContent: React.FC = () => <Icon color="blue" iconName="link" size={18} />;
 
 const ImageCardDescription: React.FC<Props> = ({ userCard }) => (
@@ -29,6 +30,8 @@ const ImageCardDescription: React.FC<Props> = ({ userCard }) => (
         weight="bold"
       />
       <Typography
+        Content={ExpandIconContent}
+        onClick={() => console.log('foo')}
         size="two"
         text="Expand"
         weight="bold"
