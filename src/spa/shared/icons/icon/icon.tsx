@@ -12,6 +12,7 @@ const CopyrightIcon = React.lazy(() => import('./individualIcons/copyrightIcon')
 const DashboardIcon = React.lazy(() => import('./individualIcons/dashboardIcon'));
 const DeleteIcon = React.lazy(() => import('./individualIcons/deleteIcon'));
 const DownArrowIcon = React.lazy(() => import('./individualIcons/downArrowIcon'));
+const ExpandIcon = React.lazy(() => import('./individualIcons/expandIcon'));
 const EyeIcon = React.lazy(() => import('./individualIcons/eyeIcon'));
 const FacebookIcon = React.lazy(() => import('./individualIcons/facebookIcon'));
 const FilterIcon = React.lazy(() => import('./individualIcons/filterIcon'));
@@ -19,6 +20,7 @@ const GoogleIcon = React.lazy(() => import('./individualIcons/googleIcon'));
 const HeartIcon = React.lazy(() => import('./individualIcons/heartIcon'));
 const InstagramIcon = React.lazy(() => import('./individualIcons/instagramIcon'));
 const LinkedinIcon = React.lazy(() => import('./individualIcons/linkedinIcon'));
+const LinkIcon = React.lazy(() => import('./individualIcons/linkIcon'));
 const LogoutIcon = React.lazy(() => import('./individualIcons/logoutIcon'));
 const MailIcon = React.lazy(() => import('./individualIcons/mailIcon'));
 const MonkeyIcon = React.lazy(() => import('./individualIcons/monkeyIcon'));
@@ -46,12 +48,14 @@ export const iconNames = {
   dashboard: 'foo',
   delete: 'foo',
   downArrow: 'foo',
+  expand: 'foo',
   eye: 'foo',
   facebook: 'foo',
   filter: 'foo',
   google: 'foo',
   heart: 'foo',
   instagram: 'foo',
+  link: 'foo',
   linkedin: 'foo',
   logout: 'foo',
   mail: 'foo',
@@ -103,6 +107,8 @@ const Icon: React.FC<IconProps> = ({
       return <DeleteIcon color={color} fill={fill} size={size} />;
     case 'downArrow':
       return <DownArrowIcon size={size} />;
+    case 'expand':
+      return <ExpandIcon color={color} size={size} />;
     case 'eye':
       return <EyeIcon size={size} />;
     case 'facebook':
@@ -115,6 +121,8 @@ const Icon: React.FC<IconProps> = ({
       return <HeartIcon color={color} fill={fill} size={size} />;
     case 'instagram':
       return <InstagramIcon color={color} size={size} />;
+    case 'link':
+      return <LinkIcon color={color} size={size} />;
     case 'linkedin':
       return <LinkedinIcon color={color} size={size} />;
     case 'logout':
