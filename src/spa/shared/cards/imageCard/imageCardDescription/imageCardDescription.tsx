@@ -8,7 +8,7 @@ interface Props {
   userCard: UserCard;
 }
 
-const AboutIconContent: React.FC = () => <Icon color="blue" iconName="about" size={18} />;
+const LinkIconContent: React.FC = () => <Icon color="blue" iconName="link" size={18} />;
 
 const ImageCardDescription: React.FC<Props> = ({ userCard }) => (
   <div className={styles.container}>
@@ -22,7 +22,7 @@ const ImageCardDescription: React.FC<Props> = ({ userCard }) => (
     </div>
     <div className={styles.footer}>
       <Typography
-        Content={AboutIconContent}
+        Content={LinkIconContent}
         link={userCard.cardData.imageCardData.imageUrl}
         size="two"
         text="Link"
