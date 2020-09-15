@@ -30,7 +30,6 @@ const AddCardModalContainer: React.FC = () => {
         cardData,
       });
 
-      // @ts-ignore
       setFormData({
         cardData,
         category,

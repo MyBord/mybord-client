@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { CardData } from 'schema/card';
-import { YoutubeVideoData } from 'types/youtubeTypes';
 
 export interface AddCardModalProps {
   formData: {
@@ -8,7 +7,6 @@ export interface AddCardModalProps {
     category: string;
     title: string;
     url: string;
-    youtubeCardData: YoutubeVideoData;
   };
 }
 
