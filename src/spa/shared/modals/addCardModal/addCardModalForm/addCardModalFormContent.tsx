@@ -18,6 +18,7 @@ interface Props extends AddCardModalProps {
 }
 
 const dropdownOptions = [
+  { label: 'Image', value: 'Image' },
   { label: 'Video', value: 'Video' },
 ];
 

@@ -12,7 +12,7 @@ interface Props {
 const CardDescriptionSwitch: React.FC<Props> = ({ userCard }) => {
   switch (userCard.type) {
     case 'Image':
-      return <ImageCardDescription key={userCard.id} />;
+      return <ImageCardDescription key={userCard.id} userCard={userCard} />;
     case 'Youtube':
       return <YoutubeCardDescription key={userCard.id} userCard={userCard} />;
     default:
