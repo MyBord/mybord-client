@@ -5,7 +5,6 @@ import CardContent from './cardContent/cardContent';
 import CardDescription from './cardDescription/cardDescription';
 // import CardFooter from './cardFooter/cardFooter';
 import CardOverlay from './cardOverlay/cardOverlay';
-import memoCard from './memoCard';
 import * as styles from './card.module.less';
 
 // This card component is the parent component that wraps every is the unique card type to make
@@ -44,5 +43,4 @@ const Card: React.FC<Props> = ({
   );
 };
 
-// export default memoCard(Card);
 export default Card;
