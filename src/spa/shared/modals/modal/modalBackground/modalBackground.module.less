@@ -1,0 +1,12 @@
+@import "~styles/_colors";
+@import "~styles/_zIndices";
+
+.section {
+  backdrop-filter: blur(0.0625rem);
+  background: @transparentBlackQuarterOpacity;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  z-index: calc(@zModal - 1);
+}
