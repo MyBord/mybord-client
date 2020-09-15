@@ -51,16 +51,18 @@ export const INITIATE_USER_CARD_MUTATION = gql`
       category
       title
       url
-      youtubeCardData{
-        channelThumbnail
-        channelTitle
-        duration
-        likes
-        publishedAt
-        videoId
-        videoThumbnail
-        videoTitle
-        views
+      cardData {
+        youtubeCardData{
+          channelThumbnail
+          channelTitle
+          duration
+          likes
+          publishedAt
+          videoId
+          videoThumbnail
+          videoTitle
+          views
+        }
       }
     }
   }

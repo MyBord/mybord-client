@@ -17,18 +17,18 @@ const DashboardPageHeaderFilterForm: React.FC = () => {
     try {
       setIsSubmitWaiting(true);
 
-      const cardData = await initiateUserCard({
+      const initialCardData = await initiateUserCard({
         variables: {
           url: form.getFieldValue('add-youtube-video-input'),
         },
       });
 
       const {
+        cardData,
         category,
         title,
         url,
-        youtubeCardData,
-      } = cardData.data.initiateUserCard;
+      } = initialCardData.data.initiateUserCard;
 
       setInputErrorMessage(null);
       setIsSubmitWaiting(false);
@@ -38,7 +38,7 @@ const DashboardPageHeaderFilterForm: React.FC = () => {
         category,
         title,
         url,
-        youtubeCardData,
+        youtubeCardData: cardData.youtubeCardData,
       });
       setModalId('add-card-modal');
     } catch (error) {
@@ -51,7 +51,7 @@ const DashboardPageHeaderFilterForm: React.FC = () => {
   };
 
   return (
-    <Form layout='horizontal' onSubmit={handleSubmit}>
+    <Form layout="horizontal" onSubmit={handleSubmit}>
       <DashboardPageHeaderFilterFormContent
         errorMessage={inputErrorMessage}
         isWaiting={isSubmitWaiting}
