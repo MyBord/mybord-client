@@ -20,8 +20,6 @@ const ImageCardDescription: React.FC<Props> = ({ userCard }) => {
     setModalId(userCard.id);
   };
 
-  console.log('888');
-  console.log(userCard);
   return (
     <>
       <div className={styles.container}>
