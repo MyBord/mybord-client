@@ -13,6 +13,7 @@ export interface AddCardModalProps {
 export interface ModalProps {
   children: React.ReactNode;
   defaultVisible?: boolean;
+  hasOverlay?: boolean;
   id: string;
   title: string;
 }

@@ -9,6 +9,7 @@ import ModalHeader from './modalHeader/modalHeader';
 const Modal: React.FC<ModalProps> = ({
   children,
   defaultVisible = false,
+  hasOverlay = true,
   id,
   title,
 }) => {
@@ -24,15 +25,19 @@ const Modal: React.FC<ModalProps> = ({
     }
   }, [defaultVisible]);
 
+  const isVisible = id === modalId;
+
   return (
     <>
       <Portal>
-        <ModalAnimation isVisible={id === modalId}>
+        <ModalAnimation isVisible={isVisible}>
           <ModalHeader handleClose={handleClose} title={title} />
           {children}
         </ModalAnimation>
       </Portal>
-      <ModalBackground />
+      {
+        isVisible && hasOverlay && <ModalBackground />
+      }
     </>
   );
 };
