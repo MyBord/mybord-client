@@ -27,7 +27,8 @@ const ImageCardDescription: React.FC<Props> = ({ userCard }) => {
           <Typography
             maxTextLength={60}
             size="two"
-            text={userCard.title}
+            // text={userCard.title}
+            text="foo"
             weight="bold"
           />
         </div>
@@ -48,11 +49,11 @@ const ImageCardDescription: React.FC<Props> = ({ userCard }) => {
           />
         </div>
       </div>
-      <ImageCardModal
-        id={userCard.id}
-        imageUrl={userCard.cardData.imageCardData.imageUrl}
-        title={userCard.title}
-      />
+      {/* <ImageCardModal */}
+      {/*  id={userCard.id} */}
+      {/*  imageUrl={userCard.cardData.imageCardData.imageUrl} */}
+      {/*  title={userCard.title} */}
+      {/* /> */}
     </>
   );
 };
