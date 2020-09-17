@@ -18,6 +18,7 @@ type TypographyWeight = 'bold' | 'light' | 'regular';
 export interface TypographyProps {
   Content?: React.FC;
   color?: ExportedColors;
+  disabled?: boolean;
   font?: TypographyFont;
   lineHeight?: 'large';
   link?: string;

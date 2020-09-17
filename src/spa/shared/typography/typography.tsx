@@ -6,6 +6,7 @@ import TypographyText from './typographyText/typographyText';
 const Typography = React.forwardRef<HTMLDivElement, TypographyProps>(({
   Content = null,
   color = 'black',
+  disabled = false,
   font = 'poppins',
   lineHeight = null,
   link = null,
@@ -19,6 +20,7 @@ const Typography = React.forwardRef<HTMLDivElement, TypographyProps>(({
   <div ref={ref}>
     <TypographyParent
       color={color}
+      disabled={disabled}
       font={font}
       link={link}
       onClick={onClick}

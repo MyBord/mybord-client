@@ -30,6 +30,7 @@ This document is used to outline current project management priorities.
 
 ### C. Medium
 
+  * show spinner for image until it loads
   * when logging in, cards show up before loading is done ... this is if you login, logout, and
     login, all as part of the same session?
   * fix spacing of youtube description when title is minimal and there is a large gap between the

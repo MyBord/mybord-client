@@ -7,18 +7,32 @@ import ImageCardModal from '../imageCardModal/imageCardModal';
 import * as styles from './imageCardDescription.module.less';
 
 interface Props {
+  isPreview: boolean;
   userCard: UserCard;
 }
 
-const ExpandIconContent: React.FC = () => <Icon color="blue" iconName="expand" size={18} />;
-const LinkIconContent: React.FC = () => <Icon color="blue" iconName="link" size={18} />;
-
-const ImageCardDescription: React.FC<Props> = ({ userCard }) => {
+const ImageCardDescription: React.FC<Props> = ({ isPreview, userCard }) => {
   const { setModalId } = useModalContext();
 
   const handleClick = (): void => {
     setModalId(userCard.id);
   };
+
+  const ExpandIconContent: React.FC = () => (
+    <Icon
+      color={isPreview ? 'lightGrey' : 'blue'}
+      iconName="expand"
+      size={18}
+    />
+  );
+
+  const LinkIconContent: React.FC = () => (
+    <Icon
+      color={isPreview ? 'lightGrey' : 'blue'}
+      iconName="link"
+      size={18}
+    />
+  );
 
   return (
     <>
@@ -34,6 +48,7 @@ const ImageCardDescription: React.FC<Props> = ({ userCard }) => {
         <div className={styles.footer}>
           <Typography
             Content={LinkIconContent}
+            disabled={isPreview}
             link={userCard.cardData.imageCardData.imageUrl}
             size="two"
             text="Link"
@@ -41,6 +56,7 @@ const ImageCardDescription: React.FC<Props> = ({ userCard }) => {
           />
           <Typography
             Content={ExpandIconContent}
+            disabled={isPreview}
             onClick={handleClick}
             size="two"
             text="Expand"
