@@ -24,7 +24,7 @@ const TypographyText: React.FC<Props> = ({
     lineHeight ? styles[lineHeight] : undefined,
   ].join(' ');
 
-  if (maxTextLength && text.length > maxTextLength) {
+  if (maxTextLength && text && text.length > maxTextLength) {
     return (
       <p className={pClassName}>
         {text.slice(0, maxTextLength)}

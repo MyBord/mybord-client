@@ -20,6 +20,9 @@ const ImageCardDescription: React.FC<Props> = ({ userCard }) => {
     setModalId(userCard.id);
   };
 
+  console.log('777');
+  console.log(userCard);
+
   return (
     <>
       <div className={styles.container}>
@@ -27,8 +30,7 @@ const ImageCardDescription: React.FC<Props> = ({ userCard }) => {
           <Typography
             maxTextLength={60}
             size="two"
-            // text={userCard.title}
-            text="foo"
+            text={userCard.title}
             weight="bold"
           />
         </div>
