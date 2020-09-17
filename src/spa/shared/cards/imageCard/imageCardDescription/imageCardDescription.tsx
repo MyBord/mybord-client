@@ -48,11 +48,11 @@ const ImageCardDescription: React.FC<Props> = ({ userCard }) => {
           />
         </div>
       </div>
-      {/* <ImageCardModal */}
-      {/*  id={userCard.id} */}
-      {/*  imageUrl={userCard.cardData.imageCardData.imageUrl} */}
-      {/*  title={userCard.title} */}
-      {/* /> */}
+      <ImageCardModal
+        id={userCard.id}
+        imageUrl={userCard.cardData.imageCardData.imageUrl}
+        title={userCard.title}
+      />
     </>
   );
 };
