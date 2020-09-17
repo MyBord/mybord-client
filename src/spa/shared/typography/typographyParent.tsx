@@ -11,6 +11,7 @@ import * as styles from './typography.module.less';
 interface Props {
   children: React.ReactNode;
   color: TypographyProps['color'];
+  disabled: TypographyProps['disabled'];
   font: TypographyProps['font'];
   link: TypographyProps['link'];
   onClick: TypographyProps['onClick'];
@@ -22,6 +23,7 @@ interface Props {
 const TypographyParent: React.FC<Props> = ({
   children,
   color,
+  disabled,
   font,
   link,
   onClick,
@@ -36,6 +38,7 @@ const TypographyParent: React.FC<Props> = ({
     styles[size],
     styles[textAlign],
     styles[weight],
+    disabled ? styles.isDisabled : undefined,
   ].join(' ');
 
   if (link) {

@@ -6,13 +6,20 @@ const YoutubeCardDescription = React
 import { UserCard } from 'schema/card';
 
 interface Props {
+  isPreview: boolean;
   userCard: UserCard;
 }
 
-const CardDescriptionSwitch: React.FC<Props> = ({ userCard }) => {
+const CardDescriptionSwitch: React.FC<Props> = ({ isPreview, userCard }) => {
   switch (userCard.type) {
     case 'Image':
-      return <ImageCardDescription key={userCard.id} userCard={userCard} />;
+      return (
+        <ImageCardDescription
+          key={userCard.id}
+          isPreview={isPreview}
+          userCard={userCard}
+        />
+      );
     case 'Youtube':
       return <YoutubeCardDescription key={userCard.id} userCard={userCard} />;
     default:

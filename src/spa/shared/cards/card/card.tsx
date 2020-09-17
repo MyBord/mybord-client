@@ -36,6 +36,7 @@ const Card: React.FC<Props> = ({
         userCard={userCard}
       />
       <CardDescription
+        isPreview={isPreview}
         userCard={userCard}
       />
       {/* <CardFooter /> */}
