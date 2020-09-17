@@ -11,15 +11,28 @@ interface Props {
   userCard: UserCard;
 }
 
-const ExpandIconContent: React.FC = () => <Icon color="blue" iconName="expand" size={18} />;
-const LinkIconContent: React.FC = () => <Icon color="blue" iconName="link" size={18} />;
-
 const ImageCardDescription: React.FC<Props> = ({ isPreview, userCard }) => {
   const { setModalId } = useModalContext();
 
   const handleClick = (): void => {
     setModalId(userCard.id);
   };
+
+  const ExpandIconContent: React.FC = () => (
+    <Icon
+      color={isPreview ? 'lightGrey' : 'blue'}
+      iconName="expand"
+      size={18}
+    />
+  );
+
+  const LinkIconContent: React.FC = () => (
+    <Icon
+      color={isPreview ? 'lightGrey' : 'blue'}
+      iconName="link"
+      size={18}
+    />
+  );
 
   return (
     <>

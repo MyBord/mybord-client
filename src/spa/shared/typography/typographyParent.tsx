@@ -38,7 +38,7 @@ const TypographyParent: React.FC<Props> = ({
     styles[size],
     styles[textAlign],
     styles[weight],
-    disabled ? styles.isDisabled : undefined,
+    disabled ? styles.disabled : undefined,
   ].join(' ');
 
   if (link) {
