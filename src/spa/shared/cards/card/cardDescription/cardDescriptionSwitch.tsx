@@ -1,4 +1,6 @@
 import * as React from 'react';
+const GifCardDescription = React
+  .lazy(() => import('cards/gifCard/gifCardDescription/gifCardDescription'));
 const ImageCardDescription = React
   .lazy(() => import('cards/imageCard/imageCardDescription/imageCardDescription'));
 const YoutubeCardDescription = React
@@ -12,6 +14,14 @@ interface Props {
 
 const CardDescriptionSwitch: React.FC<Props> = ({ isPreview, userCard }) => {
   switch (userCard.type) {
+    case 'Gif':
+      return (
+        <GifCardDescription
+          key={userCard.id}
+          isPreview={isPreview}
+          userCard={userCard}
+        />
+      );
     case 'Image':
       return (
         <ImageCardDescription
