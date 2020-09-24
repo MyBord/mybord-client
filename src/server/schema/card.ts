@@ -21,6 +21,9 @@ export const CREATE_USER_CARD_MUTATION = gql`
       id
       type
       cardData{
+        gifCardData{
+          gifUrl
+        }
         imageCardData{
           imageUrl
         }
@@ -56,6 +59,9 @@ export const INITIATE_USER_CARD_MUTATION = gql`
       type
       url
       cardData {
+        gifCardData{
+          gifUrl
+        }
         imageCardData{
           imageUrl
         }
@@ -105,6 +111,9 @@ export const USER_CARDS_QUERY = gql`
       title
       type
       cardData{
+        gifCardData{
+          gifUrl
+        }
         imageCardData{
           imageUrl
         }
@@ -134,6 +143,9 @@ export const USER_CARDS_WITH_FILTERS_QUERY = gql`
       title
       type
       cardData{
+        gifCardData{
+          gifUrl
+        }
         imageCardData{
           imageUrl
         }
@@ -173,6 +185,9 @@ export const USER_CARD_SUBSCRIPTION = gql`
       title
       type
       cardData{
+        gifCardData{
+          gifUrl
+        }
         imageCardData{
           imageUrl
         }
@@ -205,6 +220,9 @@ export const FILTERED_USER_CARDS_SUBSCRIPTION = gql`
         isToDo
         type
         cardData{
+          gifCardData{
+            gifUrl
+          }
           imageCardData{
             imageUrl
           }
@@ -228,15 +246,18 @@ export const FILTERED_USER_CARDS_SUBSCRIPTION = gql`
 // ----- RESPONSE INTERFACES && TYPES ----- //
 
 export interface CardData {
+  gifCardData?: {
+    gifUrl: string;
+  };
   imageCardData?: {
     imageUrl: string;
   };
   youtubeCardData?: YoutubeVideoData;
 }
 
-export type CardCategory = 'Image' | 'Video';
+export type CardCategory = 'Gif' | 'Image' | 'Video';
 
-export type CardType = 'Image' | 'Youtube';
+export type CardType = 'Gif' | 'Image' | 'Youtube';
 
 export interface UserCard {
   id: string;
