@@ -16,6 +16,7 @@ This document is used to outline current project management priorities.
 
   * for image card, make link and expand buttons be disabled when in preview mode
   * if you add a video then add an image, the title of the video is cached in the add card modal
+  * filtering by favorites, todo, will remove titles from cards
   * fix bug where app crashes when you add an image card
   * have session be remembered by user
   * when you login, refresh the page, and click about, you get a double render
