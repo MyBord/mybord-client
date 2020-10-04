@@ -14,7 +14,6 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
-  * for image card, make link and expand buttons be disabled when in preview mode
   * update blue color
     - 642CA9
     - F9EFF -> new blue
