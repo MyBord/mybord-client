@@ -17,23 +17,19 @@ This document is used to outline current project management priorities.
   * update blue color
     - 642CA9
     - 1F9EFF -> new blue
-  * if you add a video then add an image, the title of the video is cached in the add card modal
   * filtering by favorites, todo, will remove titles from cards
-  * fix bug where app crashes when you add an image card
   * have session be remembered by user
-  * when you login, refresh the page, and click about, you get a double render
   * add email verification
   * add usernames and routing for usernames
   * when clicking about in login page, it does not scroll down
-  * add image support
-  * add giphy support
-  * add website support
-  * add note support
 
 ### B. High - MVP
 
 ### C. Medium
 
+  * add website support
+  * add note support
+  * when you login, refresh the page, and click about, you get a double render
   * clicking outside the add card modal should close it
   * show spinner for image until it loads
   * when logging in, cards show up before loading is done ... this is if you login, logout, and
