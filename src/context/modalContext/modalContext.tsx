@@ -24,8 +24,8 @@ export const ModalContextProvider = (props: object): React.ReactElement => {
     <ModalContext.Provider
       value={{
         modalData,
-        setModalData,
         modalId,
+        setModalData,
         setModalId,
       }}
       {...props}
