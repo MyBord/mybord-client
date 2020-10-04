@@ -4,11 +4,13 @@ import Form from 'forms/form/form';
 import { AddCardModalProps } from 'types/modalTypes';
 import { CREATE_USER_CARD_MUTATION } from 'schema/card';
 import { FormProp } from 'types/formTypes';
+import { useAddCardModalContext } from 'context/addCardModalContext/addCardModalContext';
 import { useModalContext } from 'context/modalContext/modalContext';
 import AddCardModalFormContent from './addCardModalFormContent';
 
 const AddCardModalForm: React.FC<AddCardModalProps> = ({ formData }) => {
   const [createUserCard] = useMutation(CREATE_USER_CARD_MUTATION);
+  const { setTitle } = useAddCardModalContext();
   const [isWaiting, setIsWaiting] = React.useState<boolean>(false);
   const { setModalId } = useModalContext();
 
@@ -29,6 +31,9 @@ const AddCardModalForm: React.FC<AddCardModalProps> = ({ formData }) => {
     });
     setIsWaiting(false);
     setModalId(null);
+
+    // This prevents the title from being cached when we add a second, third, etc. card
+    setTitle(null);
   };
 
   return (

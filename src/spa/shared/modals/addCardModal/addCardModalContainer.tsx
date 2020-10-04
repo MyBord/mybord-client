@@ -38,7 +38,7 @@ const AddCardModalContainer: React.FC = () => {
         url,
       });
     }
-  }, [modalData]);
+  }, [modalData, modalId]);
 
   if (formData && userCard) {
     if (updatedTitle !== null) {
