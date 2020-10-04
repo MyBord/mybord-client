@@ -27,20 +27,20 @@ const DashboardPageHeaderFilterFormContent: React.FC<Props> = ({
     <div className={styles.formContainer}>
       <FormItem
         errorMessage={errorMessage}
-        fieldName="add-youtube-video-input"
+        fieldName="add-card-url-input"
         form={form}
         required
         requiredMessage="A url is required"
       >
-        <TextInput overlayClassName={styles.input} placeholder="youtube url" />
+        <TextInput overlayClassName={styles.input} placeholder="url" />
       </FormItem>
       <div className={styles.buttonsContainer}>
-        <FormItem fieldName="add-youtube-video-submit" form={form}>
+        <FormItem fieldName="add-card-url-submit" form={form}>
           <div className={styles.buttonDiv}>
             <Button
               htmlType="submit"
               isWaiting={isWaiting}
-              label="Add Video"
+              label="Add"
             />
           </div>
         </FormItem>

@@ -19,7 +19,7 @@ const DashboardPageHeaderFilterForm: React.FC = () => {
 
       const initialCardData = await initiateUserCard({
         variables: {
-          url: form.getFieldValue('add-youtube-video-input'),
+          url: form.getFieldValue('add-card-url-input'),
         },
       });
 
@@ -33,7 +33,7 @@ const DashboardPageHeaderFilterForm: React.FC = () => {
 
       setInputErrorMessage(null);
       setIsSubmitWaiting(false);
-      form.resetFields(['add-youtube-video-input']);
+      form.resetFields(['add-card-url-input']);
 
       setModalData({
         cardData,
