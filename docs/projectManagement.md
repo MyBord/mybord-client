@@ -15,6 +15,9 @@ This document is used to outline current project management priorities.
 ### A. Highest - MVP
 
   * for image card, make link and expand buttons be disabled when in preview mode
+  * update blue color
+    - 642CA9
+    - F9EFF -> new blue
   * if you add a video then add an image, the title of the video is cached in the add card modal
   * filtering by favorites, todo, will remove titles from cards
   * fix bug where app crashes when you add an image card
