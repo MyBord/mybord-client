@@ -22,6 +22,7 @@ This document is used to outline current project management priorities.
   * add email verification
   * add usernames and routing for usernames
   * when clicking about in login page, it does not scroll down
+  * add validation to check if username or email address is already taken
 
 ### B. High - MVP
 
