@@ -216,8 +216,10 @@ export const FILTERED_USER_CARDS_SUBSCRIPTION = gql`
       }
       userCards {
         id
+        category
         isFavorite
         isToDo
+        title
         type
         cardData{
           gifCardData{
