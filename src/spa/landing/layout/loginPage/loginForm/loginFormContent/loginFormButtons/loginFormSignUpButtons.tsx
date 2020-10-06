@@ -14,7 +14,6 @@ const LoginFormSignUpButtons: React.FC<Props> = ({ form }) => {
   const { isAuthenticationWaiting, setFormStatus } = useLoginContext();
 
   const handleBack = (): void => setFormStatus('login');
-  const handleSignUp = (): void => console.log('signing up user');
 
   return (
     <>
@@ -35,7 +34,6 @@ const LoginFormSignUpButtons: React.FC<Props> = ({ form }) => {
             htmlType="submit"
             isWaiting={isAuthenticationWaiting}
             label="Sign Up"
-            onClick={handleSignUp}
             type="primary"
           />
         </FormItem>
