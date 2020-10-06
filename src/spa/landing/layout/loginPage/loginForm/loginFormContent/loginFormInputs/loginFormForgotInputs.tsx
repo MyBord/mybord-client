@@ -9,12 +9,12 @@ interface Props {
 
 const LoginFormForgotInputs: React.FC<Props> = ({ form }) => (
   <FormItem
-    fieldName="email"
+    fieldName="emailOrUsername"
     form={form}
     required
-    requiredMessage="Your email address is required."
+    requiredMessage="Your email address or username is required."
   >
-    <TextInput placeholder="Please enter your email address" />
+    <TextInput placeholder="Please enter your email address or username" />
   </FormItem>
 );
 

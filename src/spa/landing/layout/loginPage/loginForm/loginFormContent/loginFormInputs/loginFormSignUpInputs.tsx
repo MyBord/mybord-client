@@ -44,7 +44,7 @@ const LoginFormSignUpInputs: React.FC<Props> = ({ form }) => {
   return (
     <>
       <FormItem
-        fieldName="email"
+        fieldName="loginEmail"
         form={form}
         required
         requiredMessage="Please enter your email address"
@@ -55,7 +55,7 @@ const LoginFormSignUpInputs: React.FC<Props> = ({ form }) => {
       </FormItem>
       <FormItem
         errorMessage={isPasswordWeak && PasswordReactMessage}
-        fieldName="password"
+        fieldName="loginPassword"
         form={form}
         required
         requiredMessage="Please enter a password"

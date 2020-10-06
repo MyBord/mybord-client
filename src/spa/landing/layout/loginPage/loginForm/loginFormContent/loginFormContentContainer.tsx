@@ -46,7 +46,7 @@ const LoginFormContentContainer: React.FC = () => {
       // try to login the user / auth the user to the backend
       await loginUser({
         variables: {
-          email: values.email,
+          email: values.emailOrUsername,
           password: values.password,
         },
       });
