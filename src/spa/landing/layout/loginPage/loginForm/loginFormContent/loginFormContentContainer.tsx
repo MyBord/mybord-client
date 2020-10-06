@@ -77,8 +77,9 @@ const LoginFormContentContainer: React.FC = () => {
       // try to create the new user with the backend
       await createUser({
         variables: {
-          email: values.email,
-          password: values.password,
+          email: values.loginEmail,
+          password: values.loginPassword,
+          username: values.loginUsername,
         },
       });
 

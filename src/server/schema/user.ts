@@ -3,8 +3,8 @@ import gql from 'graphql-tag';
 // ----- MUTATIONS ----- //
 
 export const CREATE_USER_MUTATION = gql`
-  mutation createUser($email: String!, $password: String!) {
-    createUser(data: {email: $email, password: $password}) {
+  mutation createUser($email: String!, $password: String!, $username: String!) {
+    createUser(data: {email: $email, password: $password, username: $username}) {
       id
     }
   }

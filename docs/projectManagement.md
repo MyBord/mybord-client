@@ -24,6 +24,7 @@ This document is used to outline current project management priorities.
   * when clicking about in login page, it does not scroll down
   * add validation to check if username or email address is already taken
   * handle when logging in with email or username for same input
+  * add confirm password
 
 ### B. High - MVP
 
