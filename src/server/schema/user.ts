@@ -20,9 +20,14 @@ export const LOGIN_USER_MUTATION = gql`
 
 // ----- QUERIES ----- //
 
-export const IS_AUTHENTICATED_QUERY = gql`
-  query isAuthenticated {
-    isAuthenticated
+export const GET_CURRENT_USER_QUERY = gql`
+  query getCurrentUser {
+    getCurrentUser {
+      id
+      email
+      isAuthenticated
+      username
+    }
   }
 `;
 
