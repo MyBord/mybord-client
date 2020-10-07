@@ -4,3 +4,5 @@ Make sure to remove all notes before merging (except for this one, of course).
 rename all other references to 'dashboard, e.g. dashboard header'
 - dashboard cards context
 - css
+
+make sure there is no 'dashboardCards'

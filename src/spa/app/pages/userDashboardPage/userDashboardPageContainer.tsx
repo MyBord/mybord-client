@@ -13,8 +13,8 @@ import {
   DELETE_CARD,
   RECEIVE_FILTERED_CARDS,
   SET_CARDS,
-} from 'context/dashboardCardsContext/dashboardCardsReducerTypes';
-import { useDashboardCardsContext } from 'context/dashboardCardsContext/dashboardCardsContext';
+} from 'context/userDashboardContext/userDashboardReducerTypes';
+import { useUserDashboardContext } from 'context/userDashboardContext/userDashboardContext';
 import { useHydrationContext } from 'context/hydrationContext/hydrationContext';
 import UserDashboardPageComponent from './userDashboardPageComponent';
 
@@ -25,7 +25,7 @@ interface Props {
 }
 
 const UserDashboardPageContainer: React.FC<Props> = ({ data }) => {
-  const { state, dispatch } = useDashboardCardsContext();
+  const { state, dispatch } = useUserDashboardContext();
   const { setHydrationStatus } = useHydrationContext();
 
   // ----- ADDING CARDS ----- //

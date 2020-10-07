@@ -5,8 +5,8 @@
 import * as React from 'react';
 import { useMutation } from '@apollo/react-hooks';
 import { DELETE_USER_CARD_MUTATION, TOGGLE_TO_DO_USER_CARD_MUTATION, UserCard } from 'schema/card';
-import { TOGGLE_CARD_FILTER } from 'context/dashboardCardsContext/dashboardCardsReducerTypes';
-import { useDashboardCardsContext } from 'context/dashboardCardsContext/dashboardCardsContext';
+import { TOGGLE_CARD_FILTER } from 'context/userDashboardContext/userDashboardReducerTypes';
+import { useUserDashboardContext } from 'context/userDashboardContext/userDashboardContext';
 import CardMenuButtonContentComponent from './cardMenuButtonContentComponent';
 
 export interface Props {
@@ -14,7 +14,7 @@ export interface Props {
 }
 
 const CardMenuButtonContentContainer: React.FC<Props> = ({ cardId }) => {
-  const { state, dispatch } = useDashboardCardsContext();
+  const { state, dispatch } = useUserDashboardContext();
 
   const userCard = state.byId[cardId]; // *1
 

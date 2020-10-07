@@ -3,7 +3,7 @@
 
 import { UserCard } from 'schema/card';
 
-export interface DashboardCardsState {
+export interface UserDashboardState {
   allIds: string[];
   byId: { [key in string]: UserCard; };
   filters: {

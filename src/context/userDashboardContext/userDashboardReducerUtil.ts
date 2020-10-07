@@ -4,12 +4,12 @@ import {
   omit,
   pull,
 } from 'lodash';
-import { DashboardCardsState } from 'context/dashboardCardsContext/dashboardCardsState';
+import { UserDashboardState } from './userDashboardState';
 import { UserCard } from 'schema/card';
 import { capitalize } from 'utils/language';
 
-type AllIdsCards = DashboardCardsState['allIds'];
-type ByIdCards = DashboardCardsState['byId'];
+type AllIdsCards = UserDashboardState['allIds'];
+type ByIdCards = UserDashboardState['byId'];
 
 const addAllId = (allIds: AllIdsCards, id: UserCard['id']): AllIdsCards => {
   const clonedAllIds = cloneDeep(allIds);
@@ -47,8 +47,8 @@ const removeById = (byId: ByIdCards, id: UserCard['id']): ByIdCards => {
 const toggleCardFilter = (
   filter: 'favorite' | 'toDo',
   id: UserCard['id'],
-  state: DashboardCardsState,
-): DashboardCardsState => {
+  state: UserDashboardState,
+): UserDashboardState => {
   const clonedState = cloneDeep(state);
   // @ts-ignore
   const filterKey: 'isFavorite' | 'isToDo' = `is${capitalize(filter)}`;

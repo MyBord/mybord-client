@@ -3,9 +3,9 @@ import { useMutation } from '@apollo/react-hooks';
 import CardContentButtonsAnimation from 'framerMotion/cardContentButtonsAnimation';
 import CardMenuButton from 'buttons/cardMenuButton/cardMenuButton';
 import FavoriteButton from 'buttons/favoriteButton/favoriteButton';
-import { TOGGLE_CARD_FILTER } from 'context/dashboardCardsContext/dashboardCardsReducerTypes';
+import { TOGGLE_CARD_FILTER } from 'context/userDashboardContext/userDashboardReducerTypes';
 import { TOGGLE_FAVORITE_USER_CARD_MUTATION, UserCard } from 'schema/card';
-import { useDashboardCardsContext } from 'context/dashboardCardsContext/dashboardCardsContext';
+import { useUserDashboardContext } from 'context/userDashboardContext/userDashboardContext';
 import { useMultiSelectCardContext } from 'context/multiSelectCardContext/multiSelectCardContext';
 import CardContentSwitch from './cardContentSwitch';
 import * as styles from './cardContent.module.less';
@@ -22,7 +22,7 @@ const CardContent: React.FC<Props> = ({
   const [isFavorite, setIsFavorite] = React.useState<boolean>(userCard.isFavorite);
   const [toggleFavoriteUserCard] = useMutation(TOGGLE_FAVORITE_USER_CARD_MUTATION);
   const { activeCard, canMultiEdit } = useMultiSelectCardContext();
-  const { dispatch } = useDashboardCardsContext();
+  const { dispatch } = useUserDashboardContext();
 
   const handleFavorite = async (): Promise<void> => {
     setIsFavorite((prevState) => !prevState);
