@@ -6,7 +6,7 @@ import { useHistory } from 'react-router';
 import { useLazyQuery, useMutation } from '@apollo/react-hooks';
 import Form from 'forms/form/form';
 import handleError from 'server/errors/handleError';
-import { CREATE_USER_MUTATION, IS_AUTHENTICATED_QUERY, LOGIN_USER_MUTATION } from 'schema/user';
+import { CREATE_USER_MUTATION, GET_CURRENT_USER_QUERY, LOGIN_USER_MUTATION } from 'schema/user';
 import { FormProp } from 'types/formTypes';
 import { useAuthenticationContext } from 'context/authenticationContext/authenticationContext';
 import { useLoginContext } from 'context/loginContext/loginContext';
@@ -20,8 +20,8 @@ const LoginFormContentContainer: React.FC = () => {
   // ----- QUERIES & MUTATIONS ----- //
 
   const [createUser] = useMutation(CREATE_USER_MUTATION);
-  const [isAuthenticatedQuery, { called, data, loading }] = useLazyQuery(
-    IS_AUTHENTICATED_QUERY, { fetchPolicy: 'no-cache' },
+  const [getCurrentUserQuery, { called, data, loading }] = useLazyQuery(
+    GET_CURRENT_USER_QUERY, { fetchPolicy: 'no-cache' },
   );
   const [loginUser] = useMutation(LOGIN_USER_MUTATION);
 
@@ -52,7 +52,7 @@ const LoginFormContentContainer: React.FC = () => {
       });
 
       // ask the backend if the user is now authenticated
-      isAuthenticatedQuery();
+      getCurrentUserQuery();
 
       setIsAuthenticationWaiting(false);
       history.push('/');
@@ -84,7 +84,7 @@ const LoginFormContentContainer: React.FC = () => {
       });
 
       // ask the backend if the user is now authenticated
-      isAuthenticatedQuery();
+      getCurrentUserQuery();
 
       setIsAuthenticationWaiting(false);
     } catch (error) {
@@ -134,7 +134,7 @@ const LoginFormContentContainer: React.FC = () => {
   // After the user tries to login, if the back-end says they are authenticated, then update
   // their status on the front end as authenticated and push them towards the app
   if (called && !loading) {
-    const { isAuthenticated } = data;
+    const { isAuthenticated } = data.getCurrentUser;
     if (isAuthenticated) {
       setAuthenticationStatus(true);
     }
