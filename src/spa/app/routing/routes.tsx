@@ -38,11 +38,11 @@ const Routes: React.FC = () => {
         <MotionRoute exact path="/friends">
           <FriendsPage />
         </MotionRoute>
-        <MotionRoute exact path="/myBord">
-          <DashboardPage />
-        </MotionRoute>
         <MotionRoute exact path="/trending">
           <TrendingPage />
+        </MotionRoute>
+        <MotionRoute exact path="/:username">
+          <DashboardPage />
         </MotionRoute>
         {/* ----- CATCH ALL ----- */}
         <MotionRoute path="/*">
