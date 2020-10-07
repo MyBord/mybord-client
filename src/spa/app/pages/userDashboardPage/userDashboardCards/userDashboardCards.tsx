@@ -3,9 +3,9 @@ import Card from 'cards/card/card';
 import EmptyCard from 'cards/emptyCard/emptyCard';
 import PhantomCard from 'shared/cards/phantomCard/phantomCard';
 import { useDashboardCardsContext } from 'context/dashboardCardsContext/dashboardCardsContext';
-import * as styles from './dashboardCards.module.less';
+import * as styles from './userDashboardCards.module.less';
 
-const DashboardCards: React.FC = () => {
+const UserDashboardCards: React.FC = () => {
   const { state } = useDashboardCardsContext();
 
   if (state.allIds.length > 0) {
@@ -33,4 +33,4 @@ const DashboardCards: React.FC = () => {
   );
 };
 
-export default DashboardCards;
+export default UserDashboardCards;

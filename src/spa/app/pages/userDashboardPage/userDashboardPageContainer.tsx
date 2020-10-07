@@ -16,7 +16,7 @@ import {
 } from 'context/dashboardCardsContext/dashboardCardsReducerTypes';
 import { useDashboardCardsContext } from 'context/dashboardCardsContext/dashboardCardsContext';
 import { useHydrationContext } from 'context/hydrationContext/hydrationContext';
-import DashboardPageComponent from './dashboardPageComponent';
+import UserDashboardPageComponent from './userDashboardPageComponent';
 
 interface Props {
   data: {
@@ -24,7 +24,7 @@ interface Props {
   };
 }
 
-const DashboardPageContainer: React.FC<Props> = ({ data }) => {
+const UserDashboardPageContainer: React.FC<Props> = ({ data }) => {
   const { state, dispatch } = useDashboardCardsContext();
   const { setHydrationStatus } = useHydrationContext();
 
@@ -91,14 +91,14 @@ const DashboardPageContainer: React.FC<Props> = ({ data }) => {
   // ----- RETURNING THE CHILD COMPONENT ----- //
 
   if (state.isHydrated) {
-    return <DashboardPageComponent />;
+    return <UserDashboardPageComponent />;
   }
 
   return null;
 };
 
 export default pageWrapper({
-  Component: DashboardPageContainer,
+  Component: UserDashboardPageContainer,
   gqlString: USER_CARDS_QUERY,
   setHydration: false,
 });
