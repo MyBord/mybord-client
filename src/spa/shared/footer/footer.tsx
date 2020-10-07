@@ -1,7 +1,7 @@
 import * as React from 'react';
 import FooterContent from 'shared/footer/footerContent/footerContent';
 import Typography from 'typography/typography';
-import logo from 'assets/logo/mb.png';
+import logo from 'assets/logo/mb2.png';
 import { FooterHrStyle, FooterImgStyle, FooterProps } from 'types/footerTypes';
 import footerIcons from './footerIcons/footerIcons';
 import { getHrStyles, getImgStyles } from './getFooterStyles';
