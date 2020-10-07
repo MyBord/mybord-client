@@ -14,7 +14,6 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
-  * change name from 'DashboardPage' and related components to 'UserDashboardPage'
   * change 'authenticationContext' to 'currentUserContext'
   * have session be remembered by user
   * add email verification
