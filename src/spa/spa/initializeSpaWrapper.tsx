@@ -20,14 +20,15 @@ const initializeSpaWrapper = (WrappedComponent: React.FC): React.FC => {
     const { isAuthenticated, setAuthenticationStatus, setCurrentUser } = useAuthenticationContext();
 
     if (called && !loading && !isInitializationComplete) {
-      const { getCurrentUser } = data;
+      const { email, isAuthenticated: isUserAlreadyAuthenticated, username } = data.getCurrentUser;
 
-      if (getCurrentUser.isAutheticated) {
-        setCurrentUser({ email: getCurrentUser.email, username: getCurrentUser.username });
+      if (isUserAlreadyAuthenticated) {
+        setCurrentUser({ email, username });
         setAuthenticationStatus(true);
       } else {
         setAuthenticationStatus(false);
       }
+
       setIsInitializationComplete(true);
     }
 
