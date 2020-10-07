@@ -10,17 +10,22 @@ const FriendsPage = React.lazy(() => import('pages/friendsPage/friendsPage'));
 const TrendingPage = React.lazy(() => import('pages/trendingPage/trendingPage'));
 import { MotionRedirect, MotionRoute } from 'utils/routing';
 
-const Routes: React.FC = () => {
+interface Props {
+  username: string;
+}
+
+const Routes: React.FC<Props> = ({ username }) => {
+  const usernamePath = `/${username}`;
   const location = useLocation();
   return (
     <AnimatePresence exitBeforeEnter>
       <Switch location={location} key={location.key}>
         {/* ----- REDIRECTS ----- */}
         <MotionRoute exact path="/">
-          <MotionRedirect to="/myBord" />
+          <MotionRedirect to={usernamePath} />
         </MotionRoute>
         <MotionRoute exact path="/login">
-          <MotionRedirect to="/myBord" />
+          <MotionRedirect to={usernamePath} />
         </MotionRoute>
         {/* ----- PAGES ----- */}
         <MotionRoute exact path="/404">
@@ -38,11 +43,11 @@ const Routes: React.FC = () => {
         <MotionRoute exact path="/friends">
           <FriendsPage />
         </MotionRoute>
-        <MotionRoute exact path="/myBord">
-          <DashboardPage />
-        </MotionRoute>
         <MotionRoute exact path="/trending">
           <TrendingPage />
+        </MotionRoute>
+        <MotionRoute exact path={usernamePath}>
+          <DashboardPage />
         </MotionRoute>
         {/* ----- CATCH ALL ----- */}
         <MotionRoute path="/*">

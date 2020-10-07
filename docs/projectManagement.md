@@ -14,6 +14,7 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
+  * change name from 'DashboardPage' and related components to 'UserDashboardPage'
   * change 'authenticationContext' to 'currentUserContext'
   * have session be remembered by user
   * add email verification
@@ -52,6 +53,7 @@ This document is used to outline current project management priorities.
   * replace clickable typography components with button components of type tertiary
   * dropdown options for category add card modal should be received from the backend
   * Make about dev page responsive
+  * clicking on logo takes you to user dashboard page
   * reset store on logout?
     * https://www.apollographql.com/docs/react/networking/authentication/#cookie
   * remove dom event listeners and use react event listeners instead for popover. e.g.:
