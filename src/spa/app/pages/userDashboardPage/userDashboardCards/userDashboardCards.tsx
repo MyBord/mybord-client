@@ -2,11 +2,11 @@ import * as React from 'react';
 import Card from 'cards/card/card';
 import EmptyCard from 'cards/emptyCard/emptyCard';
 import PhantomCard from 'shared/cards/phantomCard/phantomCard';
-import { useDashboardCardsContext } from 'context/dashboardCardsContext/dashboardCardsContext';
-import * as styles from './dashboardCards.module.less';
+import { useUserDashboardContext } from 'context/userDashboardContext/userDashboardContext';
+import * as styles from './userDashboardCards.module.less';
 
-const DashboardCards: React.FC = () => {
-  const { state } = useDashboardCardsContext();
+const UserDashboardCards: React.FC = () => {
+  const { state } = useUserDashboardContext();
 
   if (state.allIds.length > 0) {
     return (
@@ -33,4 +33,4 @@ const DashboardCards: React.FC = () => {
   );
 };
 
-export default DashboardCards;
+export default UserDashboardCards;

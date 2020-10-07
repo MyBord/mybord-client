@@ -1,13 +1,13 @@
 import * as React from 'react';
 import { useLazyQuery } from '@apollo/react-hooks';
 import Toggle from 'inputs/toggle/toggle';
-import { useDashboardCardsContext } from 'context/dashboardCardsContext/dashboardCardsContext';
+import { useUserDashboardContext } from 'context/userDashboardContext/userDashboardContext';
 import { USER_CARDS_WITH_FILTERS_QUERY } from 'schema/card';
-import * as styles from './dashboardPageHeaderFiltersContent.module.less';
+import * as styles from './userDashboardPageHeaderFiltersContent.module.less';
 
-const DashboardPageHeaderFiltersContent: React.FC = () => {
+const UserDashboardPageHeaderFiltersContent: React.FC = () => {
   const [userCardsQuery] = useLazyQuery(USER_CARDS_WITH_FILTERS_QUERY, { fetchPolicy: 'no-cache' });
-  const { state } = useDashboardCardsContext();
+  const { state } = useUserDashboardContext();
 
   const handleToggleFavoriteFilter = async (): Promise<void> => {
     await userCardsQuery({
@@ -49,4 +49,4 @@ const DashboardPageHeaderFiltersContent: React.FC = () => {
   );
 };
 
-export default DashboardPageHeaderFiltersContent;
+export default UserDashboardPageHeaderFiltersContent;

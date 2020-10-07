@@ -9,7 +9,6 @@ const CaretIcon = React.lazy(() => import('./individualIcons/caretIcon'));
 const ChartIcon = React.lazy(() => import('./individualIcons/chartIcon'));
 const CloseIcon = React.lazy(() => import('./individualIcons/closeIcon'));
 const CopyrightIcon = React.lazy(() => import('./individualIcons/copyrightIcon'));
-const DashboardIcon = React.lazy(() => import('./individualIcons/dashboardIcon'));
 const DeleteIcon = React.lazy(() => import('./individualIcons/deleteIcon'));
 const DownArrowIcon = React.lazy(() => import('./individualIcons/downArrowIcon'));
 const ExpandIcon = React.lazy(() => import('./individualIcons/expandIcon'));
@@ -30,6 +29,7 @@ const PlaylistIcon = React.lazy(() => import('./individualIcons/playlistIcon'));
 const StarIcon = React.lazy(() => import('./individualIcons/starIcon'));
 const ThumbsUpIcon = React.lazy(() => import('./individualIcons/thumbsUpIcon'));
 const TwitterIcon = React.lazy(() => import('./individualIcons/twitterIcon'));
+const UserDashboardIcon = React.lazy(() => import('./individualIcons/userDashboardIcon'));
 const WarningIcon = React.lazy(() => import('./individualIcons/warningIcon'));
 
 // declaring an iconNames from an object instead of an array
@@ -45,7 +45,6 @@ export const iconNames = {
   chart: 'foo',
   close: 'foo',
   copyright: 'foo',
-  dashboard: 'foo',
   delete: 'foo',
   downArrow: 'foo',
   expand: 'foo',
@@ -67,6 +66,7 @@ export const iconNames = {
   star: 'foo',
   thumbsUp: 'foo',
   twitter: 'foo',
+  userDashboard: 'foo',
   warning: 'foo',
 };
 
@@ -101,8 +101,6 @@ const Icon: React.FC<IconProps> = ({
       return <CloseIcon color={color} size={size} strokeWidth={strokeWidth} />;
     case 'copyright':
       return <CopyrightIcon color={color} size={size} />;
-    case 'dashboard':
-      return <DashboardIcon size={size} />;
     case 'delete':
       return <DeleteIcon color={color} fill={fill} size={size} />;
     case 'downArrow':
@@ -145,6 +143,8 @@ const Icon: React.FC<IconProps> = ({
       return <TwitterIcon color={color} size={size} />;
     case 'thumbsUp':
       return <ThumbsUpIcon size={size} />;
+    case 'userDashboard':
+      return <UserDashboardIcon size={size} />;
     case 'warning':
       return (
         <WarningIcon

@@ -40,7 +40,7 @@ interface ToggleCardFilter {
   id: UserCard['id'];
 }
 
-export type DashboardCardsDispatchTypes = AddCard
+export type UserDashboardDispatchTypes = AddCard
 | DeleteCard
 | ReceiveFilteredCards
 | SetCards

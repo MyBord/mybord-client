@@ -1,15 +1,15 @@
-import { DashboardCardsState } from 'context/dashboardCardsContext/dashboardCardsState';
-import reducerUtil from './dashboardCardsReducerUtil';
+import { UserDashboardState } from './userDashboardState';
+import reducerUtil from './userDashboardReducerUtil';
 import {
   ADD_CARD,
-  DashboardCardsDispatchTypes,
+  UserDashboardDispatchTypes,
   DELETE_CARD,
   RECEIVE_FILTERED_CARDS,
   SET_CARDS,
   TOGGLE_CARD_FILTER,
-} from './dashboardCardsReducerTypes';
+} from './userDashboardReducerTypes';
 
-export const initialDashboardCardsState: DashboardCardsState = {
+export const initialUserDashboardState: UserDashboardState = {
   allIds: [],
   byId: {},
   filters: {
@@ -20,10 +20,10 @@ export const initialDashboardCardsState: DashboardCardsState = {
   isHydrated: false,
 };
 
-export const dashboardCardsReducer = (
-  state: DashboardCardsState,
-  action: DashboardCardsDispatchTypes,
-): DashboardCardsState => {
+export const userDashboardReducer = (
+  state: UserDashboardState,
+  action: UserDashboardDispatchTypes,
+): UserDashboardState => {
   switch (action.type) {
     case ADD_CARD:
       return {

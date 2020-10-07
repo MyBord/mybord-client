@@ -13,10 +13,10 @@ import {
   DELETE_CARD,
   RECEIVE_FILTERED_CARDS,
   SET_CARDS,
-} from 'context/dashboardCardsContext/dashboardCardsReducerTypes';
-import { useDashboardCardsContext } from 'context/dashboardCardsContext/dashboardCardsContext';
+} from 'context/userDashboardContext/userDashboardReducerTypes';
+import { useUserDashboardContext } from 'context/userDashboardContext/userDashboardContext';
 import { useHydrationContext } from 'context/hydrationContext/hydrationContext';
-import DashboardPageComponent from './dashboardPageComponent';
+import UserDashboardPageComponent from './userDashboardPageComponent';
 
 interface Props {
   data: {
@@ -24,8 +24,8 @@ interface Props {
   };
 }
 
-const DashboardPageContainer: React.FC<Props> = ({ data }) => {
-  const { state, dispatch } = useDashboardCardsContext();
+const UserDashboardPageContainer: React.FC<Props> = ({ data }) => {
+  const { state, dispatch } = useUserDashboardContext();
   const { setHydrationStatus } = useHydrationContext();
 
   // ----- ADDING CARDS ----- //
@@ -91,14 +91,14 @@ const DashboardPageContainer: React.FC<Props> = ({ data }) => {
   // ----- RETURNING THE CHILD COMPONENT ----- //
 
   if (state.isHydrated) {
-    return <DashboardPageComponent />;
+    return <UserDashboardPageComponent />;
   }
 
   return null;
 };
 
 export default pageWrapper({
-  Component: DashboardPageContainer,
+  Component: UserDashboardPageContainer,
   gqlString: USER_CARDS_QUERY,
   setHydration: false,
 });
