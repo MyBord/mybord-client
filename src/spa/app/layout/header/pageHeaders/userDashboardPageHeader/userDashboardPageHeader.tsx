@@ -4,7 +4,7 @@ import UserDashboardPageHeaderFilterForm
   from './userDashboardPageHeaderFilterForm/userDashboardPageHeaderFilterForm';
 import * as styles from './userDashboardPageHeader.module.less';
 
-const DashboardPageHeader: React.FC = () => (
+const UserDashboardPageHeader: React.FC = () => (
   <>
     <AddCardModal />
     <section className={styles.section}>
@@ -13,4 +13,4 @@ const DashboardPageHeader: React.FC = () => (
   </>
 );
 
-export default DashboardPageHeader;
+export default UserDashboardPageHeader;

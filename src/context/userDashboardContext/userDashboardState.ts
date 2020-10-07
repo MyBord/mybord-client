@@ -1,5 +1,5 @@
 // Creating this interface in a separate file to avoid a dependency cycle between
-// `dashboardCardReducer.ts` and `dashboardCardReducerUtil.ts`
+// `userDashboardReducer.ts` and `userDashboardReducerUtil.ts`
 
 import { UserCard } from 'schema/card';
 

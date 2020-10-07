@@ -10,7 +10,7 @@ const NavigationButtons: React.FC = () => {
     <section className={styles.parentSection}>
       <section className={styles.section}>
         <NavigationButton
-          iconName="dashboard"
+          iconName="userDashboard"
           link={currentUser.username}
           pageTitle="My Bord"
         />
