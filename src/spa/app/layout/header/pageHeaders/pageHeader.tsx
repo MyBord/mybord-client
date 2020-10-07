@@ -1,7 +1,9 @@
 import * as React from 'react';
 import { useLocation } from 'react-router-dom';
 const AboutPageHeader = React.lazy(() => import('./aboutPageHeader/aboutPageHeader'));
-const DashboardPageHeader = React.lazy(() => import('./dashboardPageHeader/dashboardPageHeader'));
+const UserDashboardPageHeader = React.lazy(
+  () => import('./userDashboardPageHeader/userDashboardPageHeader'),
+);
 import { useAuthenticationContext } from 'context/authenticationContext/authenticationContext';
 
 const PageHeader: React.FC = () => {
@@ -11,7 +13,7 @@ const PageHeader: React.FC = () => {
   const path = pathname.split('/')[1];
   switch (path) {
     case currentUser.username:
-      return <DashboardPageHeader />;
+      return <UserDashboardPageHeader />;
     case 'about':
       return <AboutPageHeader />;
     default:
