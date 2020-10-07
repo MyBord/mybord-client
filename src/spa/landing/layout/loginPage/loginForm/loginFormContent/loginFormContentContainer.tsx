@@ -8,7 +8,7 @@ import Form from 'forms/form/form';
 import handleError from 'server/errors/handleError';
 import { CREATE_USER_MUTATION, GET_CURRENT_USER_QUERY, LOGIN_USER_MUTATION } from 'schema/user';
 import { FormProp } from 'types/formTypes';
-import { useAuthenticationContext } from 'context/authenticationContext/authenticationContext';
+import { useCurrentUserContext } from 'context/currentUserContext/currentUserContext';
 import { useLoginContext } from 'context/loginContext/loginContext';
 import LoginFormContentComponent from './loginFormContentComponent';
 import './loginFormContent.less';
@@ -27,7 +27,7 @@ const LoginFormContentContainer: React.FC = () => {
 
   // ----- STATE ----- //
 
-  const { setAuthenticationStatus, setCurrentUser } = useAuthenticationContext();
+  const { setAuthenticationStatus, setCurrentUser } = useCurrentUserContext();
 
   const {
     formStatus,

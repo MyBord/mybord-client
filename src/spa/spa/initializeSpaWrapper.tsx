@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useQuery } from '@apollo/react-hooks';
 import SpaFallback from 'fallbacks/spaFallback/spaFallback';
 import { GET_CURRENT_USER_QUERY } from 'schema/user';
-import { useAuthenticationContext } from 'context/authenticationContext/authenticationContext';
+import { useCurrentUserContext } from 'context/currentUserContext/currentUserContext';
 
 // This wrapper is responsible for initializing our SPA. Once all fetches, actions, etc have
 // been performed, then the actual SPA can be rendered. In the meantime, we will load a spinner
@@ -17,7 +17,7 @@ const initializeSpaWrapper = (WrappedComponent: React.FC): React.FC => {
 
     const [isInitializationComplete, setIsInitializationComplete] = React.useState(false);
 
-    const { isAuthenticated, setAuthenticationStatus, setCurrentUser } = useAuthenticationContext();
+    const { isAuthenticated, setAuthenticationStatus, setCurrentUser } = useCurrentUserContext();
 
     if (called && !loading && !isInitializationComplete) {
       const { email, isAuthenticated: isUserAlreadyAuthenticated, username } = data.getCurrentUser;
