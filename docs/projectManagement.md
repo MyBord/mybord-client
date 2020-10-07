@@ -15,7 +15,6 @@ This document is used to outline current project management priorities.
 ### A. Highest - MVP
 
   * change 'authenticationContext' to 'currentUserContext'
-  * refreshing the page takes you back to the loing page
   * have session be remembered by user
   * add email verification
   * add usernames and routing for usernames
