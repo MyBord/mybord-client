@@ -14,9 +14,6 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
-  * update blue color
-    - 642CA9
-    - 1F9EFF -> new blue
   * filtering by favorites, todo, will remove titles from cards
   * have session be remembered by user
   * add email verification
