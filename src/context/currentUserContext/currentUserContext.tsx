@@ -5,28 +5,28 @@ interface CurrentUser {
   username: string;
 }
 
-interface AuthenticationState {
+interface CurrentUserState {
   currentUser: CurrentUser;
   isAuthenticated: boolean;
   setAuthenticationStatus: (status: boolean) => void;
   setCurrentUser: (currentUser: CurrentUser) => void;
 }
 
-const initialAuthenticationState: AuthenticationState = {
+const initialCurrentUserState: CurrentUserState = {
   currentUser: null,
   isAuthenticated: null,
   setAuthenticationStatus: () => {},
   setCurrentUser: () => {},
 };
 
-const AuthenticationContext = React.createContext<AuthenticationState>(initialAuthenticationState);
+const CurrentUserContext = React.createContext<CurrentUserState>(initialCurrentUserState);
 
-export const AuthenticationContextProvider = (props: object): React.ReactElement => {
+export const CurrentUserContextProvider = (props: object): React.ReactElement => {
   const [currentUser, setCurrentUser] = React.useState<CurrentUser>(null);
   const [isAuthenticated, setAuthenticationStatus] = React.useState<boolean>(null);
 
   return (
-    <AuthenticationContext.Provider
+    <CurrentUserContext.Provider
       value={{
         currentUser,
         isAuthenticated,
@@ -38,6 +38,4 @@ export const AuthenticationContextProvider = (props: object): React.ReactElement
   );
 };
 
-export const useAuthenticationContext = (): AuthenticationState => (
-  React.useContext(AuthenticationContext)
-);
+export const useCurrentUserContext = (): CurrentUserState => React.useContext(CurrentUserContext);

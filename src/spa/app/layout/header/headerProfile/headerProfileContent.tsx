@@ -5,7 +5,7 @@ import Icon from 'icons/icon/icon';
 import Typography from 'typography/typography';
 import { LOGOUT_USER_QUERY } from 'schema/user';
 import { PopOverCallback } from 'types/modalTypes';
-import { useAuthenticationContext } from 'context/authenticationContext/authenticationContext';
+import { useCurrentUserContext } from 'context/currentUserContext/currentUserContext';
 import * as styles from './headerProfile.module.less';
 
 interface Props {
@@ -15,7 +15,7 @@ interface Props {
 const HeaderProfileContent: React.FC<Props> = ({ hidePopOver }) => {
   const history = useHistory();
   const [LogoutUserQuery] = useLazyQuery(LOGOUT_USER_QUERY);
-  const { setAuthenticationStatus } = useAuthenticationContext();
+  const { setAuthenticationStatus } = useCurrentUserContext();
 
   const handleLogout = async (): Promise<void> => {
     await LogoutUserQuery();

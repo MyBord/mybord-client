@@ -4,11 +4,11 @@ const AboutPageHeader = React.lazy(() => import('./aboutPageHeader/aboutPageHead
 const UserDashboardPageHeader = React.lazy(
   () => import('./userDashboardPageHeader/userDashboardPageHeader'),
 );
-import { useAuthenticationContext } from 'context/authenticationContext/authenticationContext';
+import { useCurrentUserContext } from 'context/currentUserContext/currentUserContext';
 
 const PageHeader: React.FC = () => {
   const { pathname } = useLocation();
-  const { currentUser } = useAuthenticationContext();
+  const { currentUser } = useCurrentUserContext();
 
   const path = pathname.split('/')[1];
   switch (path) {

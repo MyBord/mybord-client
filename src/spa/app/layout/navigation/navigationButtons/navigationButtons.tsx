@@ -1,10 +1,10 @@
 import * as React from 'react';
 import NavigationButton from './navigationButton/navigationButton';
-import { useAuthenticationContext } from 'context/authenticationContext/authenticationContext';
+import { useCurrentUserContext } from 'context/currentUserContext/currentUserContext';
 import * as styles from './navigationButtons.module.less';
 
 const NavigationButtons: React.FC = () => {
-  const { currentUser } = useAuthenticationContext();
+  const { currentUser } = useCurrentUserContext();
 
   return (
     <section className={styles.parentSection}>

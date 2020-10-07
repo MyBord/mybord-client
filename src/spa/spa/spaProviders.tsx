@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { AuthenticationContextProvider } from 'context/authenticationContext/authenticationContext';
+import { CurrentUserContextProvider } from 'context/currentUserContext/currentUserContext';
 import { HydrationContextProvider } from 'context/hydrationContext/hydrationContext';
 import { ModalContextProvider } from 'context/modalContext/modalContext';
 import { MultiSelectCardContextProvider }
@@ -11,7 +11,7 @@ interface Props {
 }
 
 const SpaProviders: React.FC<Props> = ({ children }) => (
-  <AuthenticationContextProvider>
+  <CurrentUserContextProvider>
     <HydrationContextProvider>
       <ModalContextProvider>
         <MultiSelectCardContextProvider>
@@ -21,7 +21,7 @@ const SpaProviders: React.FC<Props> = ({ children }) => (
         </MultiSelectCardContextProvider>
       </ModalContextProvider>
     </HydrationContextProvider>
-  </AuthenticationContextProvider>
+  </CurrentUserContextProvider>
 );
 
 export default SpaProviders;
