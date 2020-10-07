@@ -14,6 +14,7 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
+  * change 'authenticationContext' to 'currentUserContext'
   * update blue color
     - 642CA9
     - 1F9EFF -> new blue

@@ -27,7 +27,8 @@ const LoginFormContentContainer: React.FC = () => {
 
   // ----- STATE ----- //
 
-  const { setAuthenticationStatus } = useAuthenticationContext();
+  const { setAuthenticationStatus, setCurrentUser } = useAuthenticationContext();
+
   const {
     formStatus,
     setAlertMessage,
@@ -134,8 +135,9 @@ const LoginFormContentContainer: React.FC = () => {
   // After the user tries to login, if the back-end says they are authenticated, then update
   // their status on the front end as authenticated and push them towards the app
   if (called && !loading) {
-    const { isAuthenticated } = data.getCurrentUser;
+    const { email, isAuthenticated, username } = data.getCurrentUser;
     if (isAuthenticated) {
+      setCurrentUser({ email, username });
       setAuthenticationStatus(true);
     }
 

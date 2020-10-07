@@ -23,7 +23,6 @@ export const LOGIN_USER_MUTATION = gql`
 export const GET_CURRENT_USER_QUERY = gql`
   query getCurrentUser {
     getCurrentUser {
-      id
       email
       isAuthenticated
       username
