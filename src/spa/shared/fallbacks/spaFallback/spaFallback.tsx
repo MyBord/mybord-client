@@ -1,7 +1,7 @@
 import * as React from 'react';
 import LottiePlayer from 'lotty/lottiePlayer';
 import SpaFallbackAnimation from 'framerMotion/spaFallbackAnimation';
-import logo from 'assets/logo/logo.png';
+import logo from 'assets/logo/mb.png';
 import dotLoading from 'lotty/lotties/dotLoading.json';
 import * as styles from './spaFallback.module.less';
 
@@ -11,7 +11,7 @@ const SpaFallback: React.FC = () => (
   <SpaFallbackAnimation>
     <main className={styles.main}>
       <div className={styles.div}>
-        {/* <img alt="MyBord logo" src={logo} /> */}
+        <img alt="MyBord logo" src={logo} />
         <div className={styles.lottieDiv}>
           <LottiePlayer
             animationData={dotLoading}
