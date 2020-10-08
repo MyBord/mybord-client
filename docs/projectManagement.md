@@ -25,6 +25,7 @@ This document is used to outline current project management priorities.
   * add titles 'under construction' to other pages
   * register LLC
   * register trademarks
+  * get privacy policy and terms of service
 
 ### B. High - MVP
 
@@ -130,6 +131,8 @@ This document is used to outline current project management priorities.
   * create animation when logging out of app where modal pops up and a lock gets locked
   * When you submit an invalid youtube url, you get an error message. If you then submit a valid
    youtube url, that error message goes away, but not until it shows a double rendering / flash.
+  * Google API 
+    - edit app registration / app domain to provide link for privacy policy and terms of service
 
 ### D. Low
 
