@@ -26,6 +26,7 @@ This document is used to outline current project management priorities.
   * register LLC
   * register trademarks
   * get privacy policy and terms of service
+  * find a better blue
 
 ### B. High - MVP
 
