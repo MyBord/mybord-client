@@ -14,7 +14,6 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
-  * add titles 'under construction' to other pages
   * be able to delete account
 
   * signing up / signing in - deleting an input shouldn't give you an error message
