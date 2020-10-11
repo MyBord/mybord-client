@@ -7,9 +7,10 @@ import { FormProp } from 'types/formTypes';
 import { useLoginContext } from 'context/loginContext/loginContext';
 import * as styles from './loginFormInputs.module.less';
 
-interface Props {
-  form: FormProp;
-}
+const duplicateUserMessage = 'That account already exists';
+
+const invalidUsernameMessage = 'The username can only letters (a-z), numbers (0-9), dashes,'
+  + ' underscores and periods (-_.)';
 
 const PasswordReactMessage = (
   <>
@@ -38,12 +39,17 @@ const PasswordReactMessage = (
   </>
 );
 
+interface Props {
+  form: FormProp;
+}
+
 const LoginFormSignUpInputs: React.FC<Props> = ({ form }) => {
-  const { isPasswordWeak } = useLoginContext();
+  const { signUpStatus } = useLoginContext();
 
   return (
     <>
       <FormItem
+        errorMessage={signUpStatus === 'duplicate user' && duplicateUserMessage}
         fieldName="loginEmail"
         form={form}
         required
@@ -54,6 +60,7 @@ const LoginFormSignUpInputs: React.FC<Props> = ({ form }) => {
         <TextInput placeholder="Email" />
       </FormItem>
       <FormItem
+        errorMessage={signUpStatus === 'invalid username' && invalidUsernameMessage}
         fieldName="loginUsername"
         form={form}
         required
@@ -62,7 +69,7 @@ const LoginFormSignUpInputs: React.FC<Props> = ({ form }) => {
         <TextInput placeholder="Username" />
       </FormItem>
       <FormItem
-        errorMessage={isPasswordWeak && PasswordReactMessage}
+        errorMessage={signUpStatus === 'weak password' && PasswordReactMessage}
         fieldName="loginPassword"
         form={form}
         required

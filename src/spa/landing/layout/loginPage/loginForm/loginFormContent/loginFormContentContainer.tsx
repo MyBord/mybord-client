@@ -33,7 +33,7 @@ const LoginFormContentContainer: React.FC = () => {
     formStatus,
     setAlertMessage,
     setIsAuthenticationWaiting,
-    setIsPasswordWeak,
+    setSignUpStatus,
   } = useLoginContext();
 
   // ----- HANDLERS ----- //
@@ -94,13 +94,14 @@ const LoginFormContentContainer: React.FC = () => {
       // If a 400 status is returned, notify the user that their password is not strong enough
       const { message, status } = handleError(error);
       if (status === 400) {
-        if (message === 'password is weak') {
-          setIsPasswordWeak(true);
-          setAlertMessage(null);
+        if (message === 'invalid username') {
+          setSignUpStatus('invalid username');
+        }
+        if (message === 'weak password') {
+          setSignUpStatus('weak password');
         }
         if (message === 'duplicate user') {
-          setIsPasswordWeak(false);
-          setAlertMessage('that user already exists');
+          setSignUpStatus('duplicate user');
         }
       }
     }
