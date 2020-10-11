@@ -1,5 +1,5 @@
 import * as React from 'react';
-import logo from 'assets/logo/mb2.png';
+import logo from 'assets/logo/mb.png';
 import Typography from 'typography/typography';
 import * as styles from './loginFormHeader.module.less';
 

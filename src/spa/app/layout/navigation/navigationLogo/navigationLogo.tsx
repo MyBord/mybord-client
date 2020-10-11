@@ -1,5 +1,5 @@
 import * as React from 'react';
-import logo from 'assets/logo/mb2.png';
+import logo from 'assets/logo/mb.png';
 import * as styles from './navigationLogo.module.less';
 
 const NavigationLogo: React.FC = () => (
