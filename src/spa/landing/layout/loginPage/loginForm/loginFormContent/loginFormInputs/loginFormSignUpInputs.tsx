@@ -48,6 +48,11 @@ interface Props {
 const LoginFormSignUpInputs: React.FC<Props> = ({ form }) => {
   const { signUpStatus } = useLoginContext();
 
+  const { confirmPassword, loginPassword } = form.getFieldsValue(['confirmPassword', 'loginPassword']);
+  const confirmPasswordIsSuccess = confirmPassword
+    && confirmPassword.length > 0
+    && confirmPassword === loginPassword;
+
   const getUsernameErrorMessage = (): string => {
     if (signUpStatus === 'invalid username') {
       return invalidUsernameMessage;
@@ -90,12 +95,13 @@ const LoginFormSignUpInputs: React.FC<Props> = ({ form }) => {
       >
         <PasswordInput placeholder="Password" />
       </FormItem>
-      {/* <FormItem */}
-      {/*  fieldName="password-confirm" */}
-      {/*  form={form} */}
-      {/* > */}
-      {/*  <PasswordInput placeholder="Confirm Password" /> */}
-      {/* </FormItem> */}
+      <FormItem
+        fieldName="confirmPassword"
+        form={form}
+        isSuccess={confirmPasswordIsSuccess}
+      >
+        <PasswordInput placeholder="Confirm Password" />
+      </FormItem>
     </>
   );
 };

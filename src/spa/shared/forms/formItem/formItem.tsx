@@ -10,8 +10,9 @@ interface Props {
   errorMessage?: string | React.ReactNode;
   fieldName: string;
   form?: FormProp;
-  label?: string;
   initialValue?: any;
+  isSuccess?: boolean;
+  label?: string;
   required?: boolean;
   requiredMessage?: string;
   type?: string;
@@ -24,6 +25,7 @@ const FormItem: React.FC<Props> = ({
   fieldName,
   form,
   initialValue = null,
+  isSuccess = false,
   label = null,
   required = false,
   requiredMessage = null,
@@ -49,10 +51,22 @@ const FormItem: React.FC<Props> = ({
 
   const finalOptions = errorMessage ? undefined : options;
 
+  const getStatus = (): 'error' | 'success' => {
+    if (errorMessage) {
+      return 'error';
+    }
+    if (isSuccess) {
+      return 'success';
+    }
+
+    return undefined;
+  };
+
   return (
     <Form.Item
+      hasFeedback={isSuccess || undefined}
       help={errorMessage || undefined}
-      validateStatus={errorMessage ? 'error' : undefined}
+      validateStatus={getStatus()}
     >
       {
         label && (
