@@ -14,6 +14,7 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
+  * fix rendering for when we display password requirements when signing up
   * have session be remembered by user
   * add email verification
   * when clicking about in login page, it does not scroll down
