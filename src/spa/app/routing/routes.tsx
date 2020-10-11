@@ -8,6 +8,7 @@ const ErrorPage = React.lazy(() => import('pages/errorPage/errorPage'));
 const FriendsPage = React.lazy(() => import('pages/friendsPage/friendsPage'));
 const TrendingPage = React.lazy(() => import('pages/trendingPage/trendingPage'));
 const UserDashboardPage = React.lazy(() => import('pages/userDashboardPage/userDashboardPage'));
+const UserSettingsPage = React.lazy(() => import('pages/userSettingsPage/userSettingsPage'));
 import { MotionRedirect, MotionRoute } from 'utils/routing';
 
 interface Props {
@@ -42,6 +43,9 @@ const Routes: React.FC<Props> = ({ username }) => {
         </MotionRoute>
         <MotionRoute exact path="/friends">
           <FriendsPage />
+        </MotionRoute>
+        <MotionRoute exact path="/settings">
+          <UserSettingsPage />
         </MotionRoute>
         <MotionRoute exact path="/trending">
           <TrendingPage />

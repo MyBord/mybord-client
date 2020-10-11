@@ -30,10 +30,11 @@ const HeaderProfileContent: React.FC<Props> = ({ hidePopOver }) => {
     <ul className={styles.ul}>
       <li>
         <Typography
-          Content={LogoutIconContent}
-          onClick={handleLogout}
+          Content={AboutIconContent}
+          link="settings"
           size="three"
-          text="Logout"
+          text="Settings"
+          onClick={hidePopOver}
         />
       </li>
       <li>
@@ -43,6 +44,14 @@ const HeaderProfileContent: React.FC<Props> = ({ hidePopOver }) => {
           size="three"
           text="About MyBord"
           onClick={hidePopOver}
+        />
+      </li>
+      <li>
+        <Typography
+          Content={LogoutIconContent}
+          onClick={handleLogout}
+          size="three"
+          text="Logout"
         />
       </li>
     </ul>
