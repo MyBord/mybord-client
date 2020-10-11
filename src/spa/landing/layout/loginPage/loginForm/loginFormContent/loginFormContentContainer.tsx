@@ -94,14 +94,20 @@ const LoginFormContentContainer: React.FC = () => {
       // If a 400 status is returned, notify the user that their password is not strong enough
       const { message, status } = handleError(error);
       if (status === 400) {
+        console.log('*************');
+        console.log(message);
+        console.log('*************');
         if (message === 'invalid username') {
           setSignUpStatus('invalid username');
+        }
+        if (message === 'duplicate username') {
+          setSignUpStatus('duplicate username');
         }
         if (message === 'weak password') {
           setSignUpStatus('weak password');
         }
-        if (message === 'duplicate user') {
-          setSignUpStatus('duplicate user');
+        if (message === 'duplicate email') {
+          setSignUpStatus('duplicate email');
         }
       }
     }
