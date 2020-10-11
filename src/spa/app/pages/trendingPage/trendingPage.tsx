@@ -1,15 +1,24 @@
 import * as React from 'react';
 import LottiePlayer from 'lotty/lottiePlayer';
+import Typography from 'typography/typography';
 import pageWrapper from 'pages/pageWrapper/pageWrapper';
 import trendingAnimation from 'lotty/lotties/trending.json';
+import * as styles from './trendingPage.module.less';
 
 const TrendingPage: React.FC = () => (
-  <LottiePlayer
-    animationData={trendingAnimation}
-    autoplay
-    loop
-    size={600}
-  />
+  <div className={styles.div}>
+    <Typography
+      color="blue"
+      size="five"
+      text="...under construction"
+    />
+    <LottiePlayer
+      animationData={trendingAnimation}
+      autoplay
+      loop
+      size={600}
+    />
+  </div>
 );
 
 export default pageWrapper({ Component: TrendingPage });
