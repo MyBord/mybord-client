@@ -18,7 +18,6 @@ const HeaderProfile: React.FC = () => {
     <PopOver
       Content={<HeaderProfileContent hidePopOver={hidePopOver} />}
       callback={handleCallback}
-      defaultVisible
       placement="bottom-right"
     >
       <div className={styles.div}>
