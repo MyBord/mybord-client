@@ -97,11 +97,14 @@ const LoginFormContentContainer: React.FC = () => {
         if (message === 'invalid username') {
           setSignUpStatus('invalid username');
         }
+        if (message === 'duplicate username') {
+          setSignUpStatus('duplicate username');
+        }
         if (message === 'weak password') {
           setSignUpStatus('weak password');
         }
-        if (message === 'duplicate user') {
-          setSignUpStatus('duplicate user');
+        if (message === 'duplicate email') {
+          setSignUpStatus('duplicate email');
         }
       }
     }

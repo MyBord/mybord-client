@@ -7,7 +7,9 @@ import { FormProp } from 'types/formTypes';
 import { useLoginContext } from 'context/loginContext/loginContext';
 import * as styles from './loginFormInputs.module.less';
 
-const duplicateUserMessage = 'That account already exists';
+const duplicateEmailMessage = 'That account already exists';
+
+const duplicateUsernameMessage = 'That username is already taken';
 
 const invalidUsernameMessage = 'The username can only letters (a-z), numbers (0-9), dashes,'
   + ' underscores and periods (-_.)';
@@ -46,10 +48,21 @@ interface Props {
 const LoginFormSignUpInputs: React.FC<Props> = ({ form }) => {
   const { signUpStatus } = useLoginContext();
 
+  const getUsernameErrorMessage = (): string => {
+    if (signUpStatus === 'invalid username') {
+      return invalidUsernameMessage;
+    }
+    if (signUpStatus === 'duplicate username') {
+      return duplicateUsernameMessage;
+    }
+
+    return null;
+  };
+
   return (
     <>
       <FormItem
-        errorMessage={signUpStatus === 'duplicate user' && duplicateUserMessage}
+        errorMessage={signUpStatus === 'duplicate email' && duplicateEmailMessage}
         fieldName="loginEmail"
         form={form}
         required
@@ -60,7 +73,7 @@ const LoginFormSignUpInputs: React.FC<Props> = ({ form }) => {
         <TextInput placeholder="Email" />
       </FormItem>
       <FormItem
-        errorMessage={signUpStatus === 'invalid username' && invalidUsernameMessage}
+        errorMessage={getUsernameErrorMessage()}
         fieldName="loginUsername"
         form={form}
         required

@@ -1,7 +1,10 @@
 import * as React from 'react';
 
 type FormStatus = 'forgot' | 'login' | 'signUp';
-type SignUpStatus = 'duplicate user' | 'invalid username' | 'weak password';
+type SignUpStatus = 'duplicate email'
+| 'duplicate username'
+| 'invalid username'
+| 'weak password';
 
 interface LoginState {
   alertMessage: string;
