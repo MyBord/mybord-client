@@ -26,6 +26,7 @@ const MonkeyIcon = React.lazy(() => import('./individualIcons/monkeyIcon'));
 const PaperAirplaneIcon = React.lazy(() => import('./individualIcons/paperAirplaneIcon'));
 const PencilIcon = React.lazy(() => import('./individualIcons/pencilIcon'));
 const PlaylistIcon = React.lazy(() => import('./individualIcons/playlistIcon'));
+const SettingsIcon = React.lazy(() => import('./individualIcons/settingsIcon'));
 const StarIcon = React.lazy(() => import('./individualIcons/starIcon'));
 const ThumbsUpIcon = React.lazy(() => import('./individualIcons/thumbsUpIcon'));
 const TwitterIcon = React.lazy(() => import('./individualIcons/twitterIcon'));
@@ -63,6 +64,7 @@ export const iconNames = {
   paperAirplane: 'foo',
   pencil: 'foo',
   playlist: 'foo',
+  settings: 'foo',
   star: 'foo',
   thumbsUp: 'foo',
   twitter: 'foo',
@@ -137,6 +139,8 @@ const Icon: React.FC<IconProps> = ({
       return <PencilIcon color={color} fill={fill} size={size} />;
     case 'playlist':
       return <PlaylistIcon size={size} />;
+    case 'settings':
+      return <SettingsIcon color={color} size={size} />;
     case 'star':
       return <StarIcon size={size} />;
     case 'twitter':
