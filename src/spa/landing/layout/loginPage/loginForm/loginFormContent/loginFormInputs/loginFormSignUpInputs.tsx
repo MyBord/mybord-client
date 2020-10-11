@@ -48,18 +48,16 @@ interface Props {
 const LoginFormSignUpInputs: React.FC<Props> = ({ form }) => {
   const { signUpStatus } = useLoginContext();
 
-  // const foo = (): string => {
-  //   if (signUpStatus === 'invalid username') {
-  //     return invalidUsernameMessage;
-  //   }
-  //   if (signUpStatus === 'duplicate username') {
-  //     return duplicateUsernameMessage;
-  //   }
-  //
-  //   return null;
-  // };
-  //
-  // const bar = foo();
+  const getUsernameErrorMessage = (): string => {
+    if (signUpStatus === 'invalid username') {
+      return invalidUsernameMessage;
+    }
+    if (signUpStatus === 'duplicate username') {
+      return duplicateUsernameMessage;
+    }
+
+    return null;
+  };
 
   return (
     <>
@@ -75,8 +73,7 @@ const LoginFormSignUpInputs: React.FC<Props> = ({ form }) => {
         <TextInput placeholder="Email" />
       </FormItem>
       <FormItem
-        // errorMessage={bar}
-        errorMessage={signUpStatus === 'duplicate username' && duplicateUsernameMessage}
+        errorMessage={getUsernameErrorMessage()}
         fieldName="loginUsername"
         form={form}
         required
