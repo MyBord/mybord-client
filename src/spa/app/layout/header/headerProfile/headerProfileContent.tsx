@@ -24,13 +24,14 @@ const HeaderProfileContent: React.FC<Props> = ({ hidePopOver }) => {
   };
 
   const AboutIconContent: React.FC = () => <Icon color="blue" iconName="about" size={18} />;
+  const SettingsIconContent: React.FC = () => <Icon color="blue" iconName="settings" size={18} />;
   const LogoutIconContent: React.FC = () => <Icon color="blue" iconName="logout" size={18} />;
 
   return (
     <ul className={styles.ul}>
       <li>
         <Typography
-          Content={AboutIconContent}
+          Content={SettingsIconContent}
           link="settings"
           size="three"
           text="Settings"
