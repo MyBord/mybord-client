@@ -36,6 +36,8 @@ This document is used to outline current project management priorities.
 
 ### C. Medium
 
+  * align title of "my settings" page
+  * page header and page itself should share a common right margin
   * add website support
   * add note support
   * when you login, refresh the page, and click about, you get a double render

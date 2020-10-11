@@ -4,6 +4,9 @@ const AboutPageHeader = React.lazy(() => import('./aboutPageHeader/aboutPageHead
 const UserDashboardPageHeader = React.lazy(
   () => import('./userDashboardPageHeader/userDashboardPageHeader'),
 );
+const UserSettingsPageHeader = React.lazy(
+  () => import('./userSettingsPageHeader/userSettingsPageHeader'),
+);
 import { useCurrentUserContext } from 'context/currentUserContext/currentUserContext';
 
 const PageHeader: React.FC = () => {
@@ -16,6 +19,8 @@ const PageHeader: React.FC = () => {
       return <UserDashboardPageHeader />;
     case 'about':
       return <AboutPageHeader />;
+    case 'settings':
+      return <UserSettingsPageHeader />;
     default:
       return null;
   }
