@@ -14,9 +14,9 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
-  * add confirm password
-
+  * add titles 'under construction' to other pages
   * be able to delete account
+
   * signing up / signing in - deleting an input shouldn't give you an error message
   * fix rendering for when we display password requirements when signing up
   * fix rendering when we tell the user that the username is invalid and what characters they can
@@ -25,9 +25,9 @@ This document is used to outline current project management priorities.
   * add email verification
   * when clicking about in login page, it does not scroll down
   * handle when logging in with email or username for same input
-  
+  * add ability to filter by category
+
   * add gdpr
-  * add titles 'under construction' to other pages
   * register LLC
   * register trademarks
   * get privacy policy and terms of service
