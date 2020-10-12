@@ -13,6 +13,7 @@ interface Props {
   initialValue?: any;
   isSuccess?: boolean;
   label?: string;
+  layout?: 'horizontal' | 'vertical';
   required?: boolean;
   requiredMessage?: string;
   type?: string;
@@ -27,6 +28,7 @@ const FormItem: React.FC<Props> = ({
   initialValue = null,
   isSuccess = false,
   label = null,
+  layout = 'vertical',
   required = false,
   requiredMessage = null,
   type = null,
@@ -63,11 +65,7 @@ const FormItem: React.FC<Props> = ({
   };
 
   return (
-    <Form.Item
-      hasFeedback={isSuccess || undefined}
-      help={errorMessage || undefined}
-      validateStatus={getStatus()}
-    >
+    <div className={styles[layout]}>
       {
         label && (
           <div className={styles.typographyDiv}>
@@ -75,10 +73,16 @@ const FormItem: React.FC<Props> = ({
           </div>
         )
       }
-      {
-        form.getFieldDecorator(fieldName, finalOptions)(children)
-      }
-    </Form.Item>
+      <Form.Item
+        hasFeedback={isSuccess || undefined}
+        help={errorMessage || undefined}
+        validateStatus={getStatus()}
+      >
+        {
+          form.getFieldDecorator(fieldName, finalOptions)(children)
+        }
+      </Form.Item>
+    </div>
   );
 };
 
