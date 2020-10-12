@@ -10,8 +10,10 @@ interface Props {
 
 const UserSettingsPageFormContent: React.FC<Props> = ({ form }) => (
   <FormItem
+    label="Delete:"
     fieldName="add-card-url-input"
     form={form}
+    layout="horizontal"
     required
     requiredMessage="A url is required"
   >
