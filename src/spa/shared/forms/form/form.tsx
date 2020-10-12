@@ -13,7 +13,7 @@ interface FormContentProps extends FormProps {
 interface Props {
   children: React.ReactElement | React.ReactElement[];
   layout?: 'horizontal' | 'vertical';
-  onSubmit: (form: FormProp) => void;
+  onSubmit?: (form: FormProp) => void;
   type?: 'login';
 }
 
