@@ -1,24 +1,33 @@
 import * as React from 'react';
+import Button from 'buttons/button/button';
 import FormItem from 'forms/formItem/formItem';
-import TextInput from 'inputs/textInput/textInput';
 import { FormProp } from 'types/formTypes';
-import * as styles from './userSettingsPageForm.module.less';
+import { useModalContext } from 'context/modalContext/modalContext';
+import DeleteAccountModal from './deleteAccountModal/deleteAccountModal';
 
 interface Props {
   form?: FormProp;
 }
 
-const UserSettingsPageFormContent: React.FC<Props> = ({ form }) => (
-  <FormItem
-    label="Delete:"
-    fieldName="add-card-url-input"
-    form={form}
-    layout="horizontal"
-    required
-    requiredMessage="A url is required"
-  >
-    <TextInput overlayClassName={styles.input} placeholder="url" />
-  </FormItem>
-);
+const UserSettingsPageFormContent: React.FC<Props> = ({ form }) => {
+  const { setModalId } = useModalContext();
+
+  const handleClick = (): void => setModalId('user-settings-delete-account-modal');
+
+  return (
+    <>
+      <FormItem
+        fieldName="add-card-url-input"
+        form={form}
+        layout="horizontal"
+        required
+        requiredMessage="A url is required"
+      >
+        <Button label="Delete Account" onClick={handleClick} />
+      </FormItem>
+      <DeleteAccountModal />
+    </>
+  );
+};
 
 export default UserSettingsPageFormContent;

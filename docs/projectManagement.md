@@ -14,7 +14,7 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
-  * be able to delete account
+  * be able to delete account - back end too
 
   * signing up / signing in - deleting an input shouldn't give you an error message
   * fix rendering for when we display password requirements when signing up
