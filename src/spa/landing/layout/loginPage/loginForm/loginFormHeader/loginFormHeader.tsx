@@ -5,7 +5,7 @@ import * as styles from './loginFormHeader.module.less';
 
 const LoginFormHeader: React.FC = () => (
   <div className={styles.div}>
-    <img alt="MyBord logo" className={styles.img} src={logo} />
+    {/* <img alt="MyBord logo" className={styles.img} src={logo} /> */}
     <Typography size="five" text="MyBord.io" weight="bold" />
   </div>
 );

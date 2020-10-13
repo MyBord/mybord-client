@@ -31,12 +31,12 @@ const Footer: React.FC<FooterProps> = ({ isApp }) => {
       className={[styles.section, !isApp ? styles.sectionLanding : undefined].join(' ')}
       ref={sectionRef}
     >
-      <img
-        alt="MyBord logo"
-        className={styles.logo}
-        src={logo}
-        style={imgStyles}
-      />
+      {/* <img */}
+      {/*  alt="MyBord logo" */}
+      {/*  className={styles.logo} */}
+      {/*  src={logo} */}
+      {/*  style={imgStyles} */}
+      {/* /> */}
       <FooterContent isApp={isApp} ref={contentRef} />
       <hr className={isApp ? styles.hrApp : styles.hrLanding} style={hrStyles} />
       <div className={isApp ? styles.copyrightContentApp : styles.copyrightContentLanding}>
