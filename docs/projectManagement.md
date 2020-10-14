@@ -43,6 +43,7 @@ This document is used to outline current project management priorities.
   * add website support
   * add note support
   * when you login, refresh the page, and click about, you get a double render
+  * red button with a spinner has a blue border
   * clicking outside the add card modal should close it
   * show spinner for image until it loads
   * when logging in, cards show up before loading is done ... this is if you login, logout, and
