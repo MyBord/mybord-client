@@ -7,6 +7,7 @@ import * as styles from './button.module.less';
 import './button.less';
 
 interface Props {
+  color?: 'blue' | 'red';
   htmlType?: 'button' | 'reset' | 'submit';
   iconName?: IconNames;
   isWaiting?: boolean;
@@ -17,6 +18,7 @@ interface Props {
 }
 
 const Button: React.FC<Props> = ({
+  color = 'blue',
   htmlType = 'button',
   iconName = null,
   isWaiting = false,
@@ -26,7 +28,10 @@ const Button: React.FC<Props> = ({
   type = 'primary',
 }) => (
   <AntButton
-    className={[styles.button, styles[type]].join(' ')}
+    className={[
+      styles.button,
+      styles[`${type}-${color}`],
+    ].join(' ')}
     htmlType={htmlType}
     loading={isWaiting}
     onClick={onClick}

@@ -1,6 +1,8 @@
 @import "~styles/_colors";
 @import "~styles/_fonts";
 
+// ----- GENERAL STYLE ----- //
+
 .button {
   align-items: center;
   display: flex;
@@ -9,31 +11,81 @@
   }
 }
 
+// ----- COMMON TYPE STYLINGS ---- //
+
 .primary {
+  font-family: @poppins;
+}
+
+.secondary {
+  font-family: @poppins;
+}
+
+.tertiary {
+  border-color: transparent;
+  box-shadow: none;
+  font-family: @poppins;
+  &:hover {
+    border-color: transparent !important;
+  }
+}
+
+// ----- BLUE BUTTON ----- //
+
+.primary-blue {
+  .primary;
   background: @blue !important;
+  border-color: @blue;
   &:hover {
     background: @darkBlue !important;
     border-color: @darkBlue !important;
   }
 }
 
-.secondary {
+.secondary-blue {
+  .secondary;
   border-color: @blue;
   color: @blue;
-  font-family: @poppins;
   &:hover {
     border-color: @darkBlue !important;
     color: @darkBlue !important;
   }
 }
 
-.tertiary {
-  border-color: transparent;
-  box-shadow: none;
+.tertiary-blue {
+  .tertiary;
   color: @blue;
-  font-family: @poppins;
   &:hover {
-    border-color: transparent !important;
     color: @darkBlue !important;
+  }
+}
+
+// ----- RED BUTTON ----- //
+
+.primary-red {
+  .primary;
+  background: @red !important;
+  border-color: @red;
+  &:hover {
+    background: @darkRed !important;
+    border-color: @darkRed !important;
+  }
+}
+
+.secondary-red {
+  .secondary;
+  border-color: @red;
+  color: @red;
+  &:hover {
+    border-color: @darkRed !important;
+    color: @darkRed !important;
+  }
+}
+
+.tertiary-red {
+  .tertiary;
+  color: @red;
+  &:hover {
+    color: @darkRed !important;
   }
 }

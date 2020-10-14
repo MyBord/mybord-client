@@ -23,7 +23,7 @@ const UserSettingsPageFormContent: React.FC<Props> = ({ form }) => {
         required
         requiredMessage="A url is required"
       >
-        <Button label="Delete Account" onClick={handleClick} />
+        <Button color="red" label="Delete Account" onClick={handleClick} />
       </FormItem>
       <DeleteAccountModal />
     </>
