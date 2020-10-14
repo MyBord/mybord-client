@@ -8,6 +8,7 @@ import './button.less';
 
 interface Props {
   color?: 'blue' | 'red';
+  disabled?: boolean;
   htmlType?: 'button' | 'reset' | 'submit';
   iconName?: IconNames;
   isWaiting?: boolean;
@@ -19,6 +20,7 @@ interface Props {
 
 const Button: React.FC<Props> = ({
   color = 'blue',
+  disabled = false,
   htmlType = 'button',
   iconName = null,
   isWaiting = false,
@@ -26,27 +28,41 @@ const Button: React.FC<Props> = ({
   onClick,
   size = 'normal',
   type = 'primary',
-}) => (
-  <AntButton
-    className={[
+}) => {
+  const getClassNames = (): string => {
+    if (disabled) {
+      return [
+        styles.button,
+        styles[`${type}-${color}-disabled`],
+      ].join(' ');
+    }
+
+    return [
       styles.button,
       styles[`${type}-${color}`],
-    ].join(' ')}
-    htmlType={htmlType}
-    loading={isWaiting}
-    onClick={onClick}
-    size={size === 'normal' ? 'default' : size}
-    type={type === 'primary' ? 'primary' : null}
-  >
-    {
-      // @ts-ignore
-      isWaiting && <LoadingOutlined />
-    }
-    {
-      iconName && <Icon iconName={iconName} size={16} />
-    }
-    {label}
-  </AntButton>
-);
+    ].join(' ');
+  };
+
+  return (
+    <AntButton
+      className={getClassNames()}
+      disabled={disabled}
+      htmlType={htmlType}
+      loading={isWaiting}
+      onClick={onClick}
+      size={size === 'normal' ? 'default' : size}
+      type={type === 'primary' ? 'primary' : null}
+    >
+      {
+        // @ts-ignore
+        isWaiting && <LoadingOutlined />
+      }
+      {
+        iconName && <Icon iconName={iconName} size={16} />
+      }
+      {label}
+    </AntButton>
+  );
+};
 
 export default Button;
