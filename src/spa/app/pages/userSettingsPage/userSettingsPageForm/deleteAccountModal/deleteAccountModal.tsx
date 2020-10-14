@@ -1,37 +1,13 @@
 import * as React from 'react';
 import Button from 'buttons/button/button';
 import Form from 'forms/form/form';
-import FormItem from 'forms/formItem/formItem';
 import Modal from 'modals/modal/modal';
-import TextInput from 'inputs/textInput/textInput';
 import Typography from 'typography/typography';
-import { FormProp } from 'types/formTypes';
+import DeleteAccountModalFormContent from './deleteAccountModalFormContent';
 import * as styles from './deleteAccountModal.module.less';
-
-interface FormContentProps {
-  form?: FormProp;
-}
 
 const DeleteAccountModal: React.FC = () => {
   const [canDelete, setCanDelete] = React.useState<boolean>(false);
-  const FormContent: React.FC<FormContentProps> = ({ form }) => {
-    const fieldName = 'delete-account-input-confirm';
-    const fieldValue: string = form.getFieldValue(fieldName);
-
-    React.useEffect(() => {
-      if (fieldValue && fieldValue.toLowerCase() === 'delete') {
-        setCanDelete(true);
-      } else {
-        setCanDelete(false);
-      }
-    }, [fieldValue]);
-
-    return (
-      <FormItem fieldName={fieldName} form={form}>
-        <TextInput color="red" />
-      </FormItem>
-    );
-  };
 
   return (
     <Modal id="user-settings-delete-account-modal" title="Delete Account">
@@ -41,10 +17,10 @@ const DeleteAccountModal: React.FC = () => {
           <Typography color="red" text={'Please type "delete" to confirm:'} />
         </div>
         <Form>
-          <FormContent />
+          <DeleteAccountModalFormContent setCanDelete={setCanDelete} />
         </Form>
         <div className={styles.buttonDiv}>
-          <Button color="red" label="Delete My Account" />
+          <Button color="red" disabled={!canDelete} label="Delete My Account" />
         </div>
       </div>
     </Modal>
