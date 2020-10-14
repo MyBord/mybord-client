@@ -14,7 +14,6 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
-  * change 'bluehover' to 'lightblue'
   * be able to delete account - back end too
   * form LLC
   * have Joe generate NDA
