@@ -1,0 +1,18 @@
+@import "~styles/_colors";
+@import "~styles/_shadows";
+
+.blue {
+  color: @black;
+  &:focus {
+    border-color: @blue;
+    box-shadow: @antInputBlueShadow;
+  }
+}
+
+.red {
+  color: @red;
+  &:focus {
+    border-color: @red;
+    box-shadow: @antInputRedShadow;
+  }
+}

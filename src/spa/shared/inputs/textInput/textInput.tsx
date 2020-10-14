@@ -1,8 +1,10 @@
 import * as React from 'react';
 import { Input } from 'antd';
+import * as styles from './textInput.module.less';
 import './textInput.less';
 
 interface Props {
+  color?: 'blue' | 'red';
   defaultValue?: string;
   disabled?: boolean;
   onChange?: () => void;
@@ -14,6 +16,7 @@ interface Props {
 }
 
 const TextInput: React.FC<Props> = ({
+  color = 'blue',
   defaultValue = null,
   disabled = false,
   onChange,
@@ -24,7 +27,7 @@ const TextInput: React.FC<Props> = ({
   value,
 }) => (
   <Input
-    className={overlayClassName}
+    className={[overlayClassName, styles[color]].join(' ')}
     defaultValue={defaultValue}
     disabled={disabled}
     onChange={onChange}

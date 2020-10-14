@@ -18,6 +18,9 @@ const DeleteAccountModal: React.FC = () => (
         <FormItem fieldName="delete-account-input-confirm">
           <TextInput />
         </FormItem>
+        <FormItem fieldName="elete-account-input-confirm">
+          <TextInput color="red" />
+        </FormItem>
       </Form>
       <div className={styles.buttonDiv}>
         <Button color="red" label="Delete My Account" />
