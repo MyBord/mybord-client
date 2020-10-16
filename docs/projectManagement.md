@@ -15,8 +15,6 @@ This document is used to outline current project management priorities.
 ### A. Highest - MVP
 
   * be able to delete account - back end too
-  * form LLC
-  * have Joe generate NDA
 
   * signing up / signing in - deleting an input shouldn't give you an error message
   * fix rendering for when we display password requirements when signing up
@@ -27,12 +25,14 @@ This document is used to outline current project management priorities.
   * when clicking about in login page, it does not scroll down
   * handle when logging in with email or username for same input
   * add ability to filter by category
+  * find a better blue
 
   * add gdpr
   * register LLC
   * register trademarks
+  * form LLC
+  * have Joe generate NDA
   * get privacy policy and terms of service
-  * find a better blue
 
 ### B. High - MVP
 
