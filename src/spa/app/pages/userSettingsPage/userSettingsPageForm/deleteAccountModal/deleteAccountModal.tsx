@@ -10,12 +10,12 @@ import DeleteAccountModalFormContent from './deleteAccountModalFormContent';
 import * as styles from './deleteAccountModal.module.less';
 
 const DeleteAccountModal: React.FC = () => {
+  const [deleteCurrentUser] = useMutation(DELETE_CURRENT_USER_MUTATION);
+  const { setModalId } = useModalContext();
+
   const [canDelete, setCanDelete] = React.useState<boolean>(false);
   const [hasDeletingBegun, setHasDeletingBegun] = React.useState<boolean>(false);
   const [hasDeletingFinished, setHasDeletingFinished] = React.useState<boolean>(false);
-
-  const [deleteCurrentUser] = useMutation(DELETE_CURRENT_USER_MUTATION);
-  const { setModalId } = useModalContext();
 
   const handleDelete = async (): Promise<void> => {
     setHasDeletingBegun(true);
@@ -24,6 +24,8 @@ const DeleteAccountModal: React.FC = () => {
 
     setHasDeletingFinished(true);
     setModalId(null);
+
+    window.location.href = '/';
   };
 
   return (
