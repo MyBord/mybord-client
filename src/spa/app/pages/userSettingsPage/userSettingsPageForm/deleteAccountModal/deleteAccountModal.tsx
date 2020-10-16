@@ -1,8 +1,10 @@
 import * as React from 'react';
+import { useMutation } from '@apollo/react-hooks';
 import Button from 'buttons/button/button';
 import Form from 'forms/form/form';
 import Modal from 'modals/modal/modal';
 import Typography from 'typography/typography';
+import { DELETE_CURRENT_USER_MUTATION } from 'schema/user';
 import { useModalContext } from 'context/modalContext/modalContext';
 import DeleteAccountModalFormContent from './deleteAccountModalFormContent';
 import * as styles from './deleteAccountModal.module.less';
@@ -11,15 +13,17 @@ const DeleteAccountModal: React.FC = () => {
   const [canDelete, setCanDelete] = React.useState<boolean>(false);
   const [hasDeletingBegun, setHasDeletingBegun] = React.useState<boolean>(false);
   const [hasDeletingFinished, setHasDeletingFinished] = React.useState<boolean>(false);
+
+  const [deleteCurrentUser] = useMutation(DELETE_CURRENT_USER_MUTATION);
   const { setModalId } = useModalContext();
 
-  const handleDelete = (): void => {
+  const handleDelete = async (): Promise<void> => {
     setHasDeletingBegun(true);
-    console.log('deleting account ...');
-    setTimeout(() => {
-      setHasDeletingFinished(true);
-      setModalId(null);
-    }, 2000);
+
+    await deleteCurrentUser();
+
+    setHasDeletingFinished(true);
+    setModalId(null);
   };
 
   return (
