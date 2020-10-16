@@ -14,16 +14,13 @@ This document is used to outline current project management priorities.
 
 ### A. Highest - MVP
 
-  * be able to delete account - back end too
-
-  * signing up / signing in - deleting an input shouldn't give you an error message
   * fix rendering for when we display password requirements when signing up
   * fix rendering when we tell the user that the username is invalid and what characters they can
    use
-  * have session be remembered by user
   * add email verification
   * when clicking about in login page, it does not scroll down
   * handle when logging in with email or username for same input
+  * update about page copy
   * add ability to filter by category
   * find a better blue
 
@@ -38,6 +35,8 @@ This document is used to outline current project management priorities.
 
 ### C. Medium
 
+  * have session be remembered by user
+  * signing up / signing in - deleting an input shouldn't give you an error message
   * align title of "my settings" page
   * page header and page itself should share a common right margin
   * add website support
