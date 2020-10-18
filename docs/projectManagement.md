@@ -12,6 +12,12 @@ This document is used to outline current project management priorities.
 
   * add website support
   * add note support
+  
+  * Preventing Rapid-Fire Login Attempts 
+  * Deal with Distributed Brute Force Attacks
+    * https://stackoverflow.com/questions/549/the-definitive-guide-to-form-based-website-authentication
+    * https://stackoverflow.com/questions/48345922/reference-password-validation
+  
 ## I. Priority Levels
 
 ### A. Highest - MVP
@@ -19,63 +25,6 @@ This document is used to outline current project management priorities.
 ### B. High - MVP
 
 ### C. Medium
-
-  * If a user goes from the landing / login page to the app, when loading the app, DO NOT animate
-   the frame. Only animate the frame when the user initializes / loads / refreshes the
-   application when the user has already been authenticated and their session is maintained.
-  * create error page if server is down  
-  * replace error lottie
-  * add query string for filters
-  * tooltip.tsx has a dependency cycle
-  * fix import of all styles, one single import for styles at root of app
-  * handle front end if server is down for both app and landing
-  * have landing background rotate multiple backgrounds
-  * have background be rotating of videos
-  * when there are only two cards, changing the width of the window creates the width of the
-   cards to 'jump'
-  * make sure app is responsive and mobile friendly
-  * Preventing Rapid-Fire Login Attempts 
-  * can only play one youtube video at a time
-  * Deal with Distributed Brute Force Attacks
-    * https://stackoverflow.com/questions/549/the-definitive-guide-to-form-based-website-authentication
-    * https://stackoverflow.com/questions/48345922/reference-password-validation
-  * prevent duplicates
-  * add profile management screen
-  * add header with filters and 'add card button'
-  * Each card should be marked as:
-    * favorite
-    * todo
-    * done
-    * delete
-    * edit tags
-  * create custom scroll bar  
-  * work with login page
-    * user logs in, goes to app
-    * user logs in, gets denied
-    * user signs up
-    * user forgets password - add 'back' button to forgot form
-    * user signs in with facebook
-    * user signs in with google
-    * remember me is set if the user wants it - how to set session length
-    * validate email
-    * validate password
-    * I am not a robot
-    * confirm password when creating user
-  * when clicking on navigation logo, should redirect to home page
-  * make error page and 404 page for landing routes
-  * login form
-    * fix spacing
-    * handle loading state
-    * handle when we receive an error when logging in.
-    * handle redirect when logged in successfully - this should be a graceful ui transition
-    * handle error when username or password is incorrect
-  * make spinner fade in and fade out
-  * Have a button not spin until a certain time
-  * create animation when logging out of app where modal pops up and a lock gets locked
-  * When you submit an invalid youtube url, you get an error message. If you then submit a valid
-   youtube url, that error message goes away, but not until it shows a double rendering / flash.
-  * Google API 
-    - edit app registration / app domain to provide link for privacy policy and terms of service
 
 ### D. Low
 
