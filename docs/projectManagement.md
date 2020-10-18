@@ -10,82 +10,16 @@ This document is used to outline current project management priorities.
 * [II. Long Term](#ii-long-term)   
 * [III. Other](#iii-other)   
 
+  * add website support
+  * add note support
 ## I. Priority Levels
 
 ### A. Highest - MVP
-
-  * fix rendering for when we display password requirements when signing up
-  * fix rendering when we tell the user that the username is invalid and what characters they can
-   use
-  * add email verification
-  * when clicking about in login page, it does not scroll down
-  * handle when logging in with email or username for same input
-  * update about page copy
-  * add ability to filter by category
-  * find a better blue
-
-  * add gdpr
-  * register LLC
-  * register trademarks
-  * form LLC
-  * have Joe generate NDA
-  * get privacy policy and terms of service
 
 ### B. High - MVP
 
 ### C. Medium
 
-  * have session be remembered by user
-  * signing up / signing in - deleting an input shouldn't give you an error message
-  * align title of "my settings" page
-  * page header and page itself should share a common right margin
-  * add website support
-  * add note support
-  * when you login, refresh the page, and click about, you get a double render
-  * red button with a spinner has a blue border
-  * clicking outside the add card modal should close it
-  * show spinner for image until it loads
-  * when logging in, cards show up before loading is done ... this is if you login, logout, and
-    login, all as part of the same session?
-  * fix spacing of youtube description when title is minimal and there is a large gap between the
-   title and the channel title
-  * in the landing spa, if you go to '/foo', the footer shows.
-  * layout: have background image always be correct ratio
-  * when you click delete in the card menu button and get the pop confirm, and then click 'no',
-  two issues occur that need to be fixed: 1. the card menu button content goes away (it should
-  still be shown), 2. the card menu button itself (the icon) flashes / double renders
-  * for landing page, create floating button that if you click it will return you to the top of the
-   login page when you are on the about pages
-  * create an admin page for deployment
-  * for the about page, we are currently rendering the snl gif via a url; instead, load it as an
-   asset
-  * deleting text in a text input that is part of a form, where that text input is required, does
-   not invoke a required message
-  * add roadmap section to about dev page. Add to about mybord page as well?
-  * replace clickable typography components with button components of type tertiary
-  * dropdown options for category add card modal should be received from the backend
-  * Make about dev page responsive
-  * clicking on logo takes you to user dashboard page
-  * reset store on logout?
-    * https://www.apollographql.com/docs/react/networking/authentication/#cookie
-  * remove dom event listeners and use react event listeners instead for popover. e.g.:
-      ```
-      const newChildren = React.cloneElement(
-        children,
-        { ref: (node: HTMLElement) => setChildrenRef(node), onMouseDown: () => ... },
-      );
-      ```
-  * clicking on a link for a page that you are already on does not re-render the page
-  * Cards show up after logging in. To replicate:
-    * Start a new, logged out session.
-    * As part of the same session: 1. Login. After the app loads, 2. log out. 3. Login again.
-    * After #3, logging in again, the cards show show up immediately. This is not desired.
-  * popover
-    * If the popover is of trigger type 'hover', then when you hover from the child item to the
-     popover content, the popover will hide again because there is a gap between the child and
-     the popover and there is a moment where you are not hovering over either items.
-  * add storybook build to circle ci   
-  * fix when you cannot get the channel icon
   * If a user goes from the landing / login page to the app, when loading the app, DO NOT animate
    the frame. Only animate the frame when the user initializes / loads / refreshes the
    application when the user has already been authenticated and their session is maintained.
