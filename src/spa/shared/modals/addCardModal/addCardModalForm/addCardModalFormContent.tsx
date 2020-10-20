@@ -8,6 +8,7 @@ import Toggle from 'inputs/toggle/toggle';
 import usePrevious from 'hooks/usePrevious';
 import { AddCardModalProps } from 'types/modalTypes';
 import { FormProp } from 'types/formTypes';
+import { dropdownCategoryOptions } from 'mockData/inputsMockData';
 import { useAddCardModalContext } from 'context/addCardModalContext/addCardModalContext';
 import * as styles from './addCardModalForm.module.less';
 
@@ -16,12 +17,6 @@ interface Props extends AddCardModalProps {
   handleCancel: () => void;
   isWaiting: boolean;
 }
-
-const dropdownOptions = [
-  { label: 'Gif', value: 'Gif' },
-  { label: 'Image', value: 'Image' },
-  { label: 'Video', value: 'Video' },
-];
 
 const AddCardModalFormContent: React.FC<Props> = ({
   form,
@@ -49,7 +44,7 @@ const AddCardModalFormContent: React.FC<Props> = ({
         required
         requiredMessage="a category is required"
       >
-        <Dropdown options={dropdownOptions} />
+        <Dropdown options={dropdownCategoryOptions} />
       </FormItem>
       <FormItem
         fieldName="add-card-modal-title"

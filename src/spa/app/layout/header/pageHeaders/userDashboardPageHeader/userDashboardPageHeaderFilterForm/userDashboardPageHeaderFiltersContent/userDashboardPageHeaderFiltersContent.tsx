@@ -1,8 +1,10 @@
 import * as React from 'react';
 import { useLazyQuery } from '@apollo/react-hooks';
+import Dropdown from 'inputs/dropdown/dropdown';
 import Toggle from 'inputs/toggle/toggle';
 import { useUserDashboardContext } from 'context/userDashboardContext/userDashboardContext';
 import { USER_CARDS_WITH_FILTERS_QUERY } from 'schema/card';
+import { dropdownCategoryOptions } from 'mockData/inputsMockData';
 import * as styles from './userDashboardPageHeaderFiltersContent.module.less';
 
 const UserDashboardPageHeaderFiltersContent: React.FC = () => {
@@ -44,6 +46,9 @@ const UserDashboardPageHeaderFiltersContent: React.FC = () => {
           size="small"
           text="To Do"
         />
+      </li>
+      <li className={styles.li}>
+        <Dropdown options={dropdownCategoryOptions} />
       </li>
     </ul>
   );
