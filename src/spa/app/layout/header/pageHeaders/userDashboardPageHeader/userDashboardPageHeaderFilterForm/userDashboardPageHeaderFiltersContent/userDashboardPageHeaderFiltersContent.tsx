@@ -1,13 +1,20 @@
 import * as React from 'react';
 import { useLazyQuery } from '@apollo/react-hooks';
 import Dropdown from 'inputs/dropdown/dropdown';
+import Form from 'forms/form/form';
+import FormItem from 'forms/formItem/formItem';
 import Toggle from 'inputs/toggle/toggle';
-import { useUserDashboardContext } from 'context/userDashboardContext/userDashboardContext';
+import { FormProp } from 'types/formTypes';
 import { USER_CARDS_WITH_FILTERS_QUERY } from 'schema/card';
 import { dropdownCategoryOptions } from 'mockData/inputsMockData';
+import { useUserDashboardContext } from 'context/userDashboardContext/userDashboardContext';
 import * as styles from './userDashboardPageHeaderFiltersContent.module.less';
 
-const UserDashboardPageHeaderFiltersContent: React.FC = () => {
+interface Props {
+  form?: FormProp;
+}
+
+const FormContent: React.FC<Props> = ({ form }) => {
   const [userCardsQuery] = useLazyQuery(USER_CARDS_WITH_FILTERS_QUERY, { fetchPolicy: 'no-cache' });
   const { state } = useUserDashboardContext();
 
@@ -32,26 +39,51 @@ const UserDashboardPageHeaderFiltersContent: React.FC = () => {
   return (
     <ul className={styles.ul}>
       <li className={styles.li}>
-        <Toggle
-          checked={state.filters.isFavorite}
-          onClick={handleToggleFavoriteFilter}
-          size="small"
-          text="Favorites"
-        />
+        <FormItem
+          fieldName="filter-favorites"
+          form={form}
+          label="Favorites:"
+          layout="horizontal"
+        >
+          <Toggle
+            checked={state.filters.isFavorite}
+            onClick={handleToggleFavoriteFilter}
+            size="small"
+          />
+        </FormItem>
       </li>
       <li className={styles.li}>
-        <Toggle
-          checked={state.filters.isToDo}
-          onClick={handleToggleToDoFilter}
-          size="small"
-          text="To Do"
-        />
+        <FormItem
+          fieldName="filter-todo"
+          form={form}
+          label="To Do:"
+          layout="horizontal"
+        >
+          <Toggle
+            checked={state.filters.isToDo}
+            onClick={handleToggleToDoFilter}
+            size="small"
+          />
+        </FormItem>
       </li>
       <li className={styles.li}>
-        <Dropdown options={dropdownCategoryOptions} />
+        <FormItem
+          fieldName="filter-category"
+          form={form}
+          label="Category:"
+          layout="horizontal"
+        >
+          <Dropdown options={dropdownCategoryOptions} />
+        </FormItem>
       </li>
     </ul>
   );
 };
+
+const UserDashboardPageHeaderFiltersContent: React.FC = () => (
+  <Form>
+    <FormContent />
+  </Form>
+);
 
 export default UserDashboardPageHeaderFiltersContent;
