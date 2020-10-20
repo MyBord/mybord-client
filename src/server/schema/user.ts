@@ -19,8 +19,8 @@ export const DELETE_CURRENT_USER_MUTATION = gql`
 `;
 
 export const LOGIN_USER_MUTATION = gql`
-  mutation loginUser($email: String!, $password: String!) {
-    loginUser(data: {email: $email, password: $password}) {
+  mutation loginUser($emailOrUsername: String!, $password: String!) {
+    loginUser(data: {emailOrUsername: $emailOrUsername, password: $password}) {
       id
     }
   }
