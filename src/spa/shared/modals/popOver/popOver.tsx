@@ -67,14 +67,17 @@ const PopOver: React.FC<Props> = ({
         setIsVisible(false);
       }
 
-      if (
-        isVisible
-        && popOverNode
-        && !popOverNode.contains(event.target as Node)
-        && !childrenNode.contains(event.target as Node)
-      ) {
-        setIsVisible(false);
-      }
+      // ToDo: I need to turn this off dynamically based on a passed in ref that says if that
+      //  ref contains the event ; e.g. ref the dropdown component; if the ref contains the
+      //  click, then don't set visible to false
+      // if (
+      //   isVisible
+      //   && popOverNode
+      //   && !popOverNode.contains(event.target as Node)
+      //   && !childrenNode.contains(event.target as Node)
+      // ) {
+      //   setIsVisible(false);
+      // }
     };
 
     const handleHover = (event: Event): void => {
