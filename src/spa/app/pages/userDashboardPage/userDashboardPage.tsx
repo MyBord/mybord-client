@@ -1,15 +1,29 @@
 import * as React from 'react';
 import Portal from 'portal/portal';
-import UserDashboardPageContainer from './userDashboardPageContainer';
 import PopOver from 'modals/popOver/popOver';
+import { ContentPopOverProps } from 'types/modalTypes';
+import UserDashboardPageContainer from './userDashboardPageContainer';
 
-const Content: React.FC = () => {
-  console.log('lll');
+const Content: React.FC<ContentPopOverProps> = ({ setChildRefs }) => {
+  const sampleRef = React.useRef<HTMLButtonElement>(null);
+
+  React.useEffect(() => {
+    console.log('*********');
+    console.log(sampleRef);
+    console.log('*********');
+    if (sampleRef && sampleRef.current) {
+      // console.log('8888888888');
+      setChildRefs(() => [sampleRef]);
+    }
+  }, [sampleRef]);
+
   return (
     <>
       <h1>hello world</h1>
       <Portal>
-        <div
+        <button
+          type="button"
+          ref={sampleRef}
           style={{
             background: 'pink',
             width: '4rem',
@@ -19,8 +33,8 @@ const Content: React.FC = () => {
             top: 0,
           }}
         >
-          foo bar
-        </div>
+          <h1>hello world</h1>
+        </button>
       </Portal>
     </>
   );
