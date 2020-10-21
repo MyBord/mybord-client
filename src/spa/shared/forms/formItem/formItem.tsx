@@ -2,6 +2,7 @@ import * as React from 'react';
 import Typography from 'typography/typography';
 import { Form } from 'antd';
 import { GetFieldDecoratorOptionsType, FormProp } from 'types/formTypes';
+import { TypographyProps } from 'types/typographyTypes';
 import * as styles from './formItem.module.less';
 import './formItem.less';
 
@@ -13,6 +14,7 @@ interface Props {
   initialValue?: any;
   isSuccess?: boolean;
   label?: string;
+  labelType?: 'normal' | 'blue';
   layout?: 'horizontal' | 'vertical';
   required?: boolean;
   requiredMessage?: string;
@@ -28,6 +30,7 @@ const FormItem: React.FC<Props> = ({
   initialValue = null,
   isSuccess = false,
   label = null,
+  labelType = 'normal',
   layout = 'vertical',
   required = false,
   requiredMessage = null,
@@ -69,7 +72,12 @@ const FormItem: React.FC<Props> = ({
       {
         label && (
           <div className={styles.typographyDiv}>
-            <Typography size="three" text={label} weight="bold" />
+            <Typography
+              color={labelType === 'blue' ? 'blue' : 'black'}
+              size={labelType === 'blue' ? 'normal' : 'three'}
+              text={label}
+              weight={labelType === 'blue' ? 'regular' : 'bold'}
+            />
           </div>
         )
       }

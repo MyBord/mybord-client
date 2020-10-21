@@ -43,6 +43,7 @@ const FormContent: React.FC<Props> = ({ form }) => {
           fieldName="filter-favorites"
           form={form}
           label="Favorites:"
+          labelType="blue"
           layout="horizontal"
         >
           <Toggle
@@ -57,6 +58,7 @@ const FormContent: React.FC<Props> = ({ form }) => {
           fieldName="filter-todo"
           form={form}
           label="To Do:"
+          labelType="blue"
           layout="horizontal"
         >
           <Toggle
@@ -71,6 +73,7 @@ const FormContent: React.FC<Props> = ({ form }) => {
           fieldName="filter-category"
           form={form}
           label="Category:"
+          labelType="blue"
           layout="horizontal"
         >
           <Dropdown options={dropdownCategoryOptions} />
