@@ -76,7 +76,7 @@ const FormContent: React.FC<Props> = ({ form }) => {
           labelType="blue"
           layout="horizontal"
         >
-          <Dropdown options={dropdownCategoryOptions} />
+          <Dropdown multiSelect options={dropdownCategoryOptions} />
         </FormItem>
       </li>
     </ul>

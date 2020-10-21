@@ -12,11 +12,13 @@ const DropdownIcon: React.FC = () => (
 );
 
 const Dropdown: React.FC<DropdownProps> = ({
+  multiSelect = false,
   onChange,
   options,
   value,
 }) => (
   <Select
+    mode={multiSelect ? 'multiple' : 'default'}
     onChange={onChange}
     suffixIcon={<DropdownIcon />}
     value={value || undefined}
