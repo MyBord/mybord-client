@@ -68,7 +68,7 @@ const FormContent: React.FC<Props> = ({ form }) => {
           />
         </FormItem>
       </li>
-      <li className={styles.li}>
+      <li className={[styles.li, styles.dropdownLi].join(' ')}>
         <FormItem
           fieldName="filter-category"
           form={form}

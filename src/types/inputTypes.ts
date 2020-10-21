@@ -6,5 +6,5 @@ export interface DropdownOption {
 export interface DropdownProps {
   onChange?: () => void;
   options: DropdownOption[];
-  value?: any;
+  value?: string | string[] | number | number[];
 }
