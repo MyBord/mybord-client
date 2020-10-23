@@ -27,7 +27,7 @@ export interface PopOverCallback {
 }
 
 export interface ContentPopOverProps {
-  setChildRefs?: (f: () => React.MutableRefObject<HTMLElement>[]) => ChildRefs;
+  setChildRefs?: (childRefs: ChildRefs) => void;
 }
 
 export interface PopOverProps {

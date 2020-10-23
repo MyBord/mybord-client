@@ -30,6 +30,12 @@ const PopOver: React.FC<Props> = ({
   const popOverRef = React.useRef<HTMLDivElement>(null);
   const [childRefs, setChildRefs] = React.useState<ChildRefs>([]); // *1
 
+  React.useEffect(() => {
+    console.log('-------------');
+    console.log(childRefs[0]);
+    console.log('-------------');
+  }, [childRefs]);
+
   // ----- Setting additional properties ----- //
 
   const [
@@ -70,10 +76,6 @@ const PopOver: React.FC<Props> = ({
     let timeout: NodeJS.Timeout = null;
 
     const handleClick = (event: Event): void => {
-      // console.log('2222222222');
-      // console.log(childRefs);
-      // console.log('2222222222');
-
       if (!isVisible && childrenNode.contains(event.target as Node)) {
         if (delay) {
           setTimeout(() => setIsVisible(true), delay * 1000);
