@@ -30,12 +30,6 @@ const PopOver: React.FC<Props> = ({
   const popOverRef = React.useRef<HTMLDivElement>(null);
   const [childRefs, setChildRefs] = React.useState<ChildRefs>([]); // *1
 
-  React.useEffect(() => {
-    console.log('-------------');
-    console.log(childRefs[0]);
-    console.log('-------------');
-  }, [childRefs]);
-
   // ----- Setting additional properties ----- //
 
   const [
@@ -76,7 +70,26 @@ const PopOver: React.FC<Props> = ({
     let timeout: NodeJS.Timeout = null;
 
     const handleClick = (event: Event): void => {
-      if (!isVisible && childrenNode.contains(event.target as Node)) {
+      // The popover is currently closed but is then clicked, thus opening the popOver
+      const clickToOpen = !isVisible && childrenNode.contains(event.target as Node);
+
+      // The popover is currently open but is then clicked, thus closing the popOver
+      const clickToClose = isVisible && childrenNode.contains(event.target as Node);
+
+      // The popover is currently open but the user clicks anywhere besides the content of the
+      // popOver, thus closing the popOver
+      const clickOutsideToClose = isVisible
+      && popOverNode
+      && !popOverNode.contains(event.target as Node)
+      && !childrenNode.contains(event.target as Node);
+
+      // childRefs.forEach((childRef) => {
+      //   console.log('-------------');
+      //   console.log(childRef.current.contains(event.target as Node));
+      //   console.log('-------------');
+      // });
+
+      if (clickToOpen) {
         if (delay) {
           setTimeout(() => setIsVisible(true), delay * 1000);
         } else {
@@ -84,16 +97,11 @@ const PopOver: React.FC<Props> = ({
         }
       }
 
-      if (isVisible && childrenNode.contains(event.target as Node)) {
+      if (clickToClose) {
         setIsVisible(false);
       }
 
-      if (
-        isVisible
-        && popOverNode
-        && !popOverNode.contains(event.target as Node)
-        && !childrenNode.contains(event.target as Node)
-      ) {
+      if (clickOutsideToClose) {
         setIsVisible(false);
       }
     };
