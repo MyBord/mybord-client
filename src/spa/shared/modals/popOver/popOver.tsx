@@ -1,12 +1,15 @@
+// *1: `childRefs` are additional refs that are part of the `Content` component, that when
+// clicked, we don't want to close said popover.
+
 import * as React from 'react';
 import PopOverAnimation from 'framerMotion/popOverAnimation';
 import Portal from 'portal/portal';
-import { PopOverProps, PopOverStyle } from 'types/modalTypes';
+import { ChildRefs, PopOverProps, PopOverStyle } from 'types/modalTypes';
 import PopOverCaret from './popOverCaret/popOverCaret';
 import getPopOverStyle from './getPopOverStyle';
 
 interface Props extends PopOverProps {
-  Content: React.ReactNode;
+  Content: React.ReactElement;
 }
 
 const PopOver: React.FC<Props> = ({
@@ -21,21 +24,33 @@ const PopOver: React.FC<Props> = ({
   position = null,
   trigger = 'click',
 }) => {
+  // ----- Setting Refs ----- //
+
   const [childrenRef, setChildrenRef] = React.useState<HTMLElement>(null);
+  const popOverRef = React.useRef<HTMLDivElement>(null);
+  const [childRefs, setChildRefs] = React.useState<ChildRefs>([]); // *1
+
+  // ----- Setting additional properties ----- //
+
   const [
     finalCaretPlacement,
     setFinalCaretPlacement,
   ] = React.useState<Props['caretPlacement']>(caretPlacement);
   const [popOverStyle, setPopOverStyle] = React.useState<PopOverStyle>(null);
   const [isVisible, setIsVisible] = React.useState<boolean>(defaultVisible);
-  const popOverRef = React.useRef<HTMLDivElement>(null);
-  const newChildren = React.cloneElement(
+
+  // ----- Cloning Children and Content ----- //
+
+  const FinalChildren = React.cloneElement(
     children,
     { ref: (node: HTMLElement) => setChildrenRef(node) },
   );
+  const FinalContent = React.cloneElement(Content, { setChildRefs });
+
 
   // ----- CALLBACK ----- //
   // attaches callback functionality
+
   React.useEffect(() => {
     if (callback) {
       callback({
@@ -55,7 +70,26 @@ const PopOver: React.FC<Props> = ({
     let timeout: NodeJS.Timeout = null;
 
     const handleClick = (event: Event): void => {
-      if (!isVisible && childrenNode.contains(event.target as Node)) {
+      // The popover is currently closed but is then clicked, thus opening the popOver
+      const clickToOpen = !isVisible && childrenNode.contains(event.target as Node);
+
+      // The popover is currently open but is then clicked, thus closing the popOver
+      const clickToClose = isVisible && childrenNode.contains(event.target as Node);
+
+      // The popover is currently open but the user clicks anywhere besides the content of the
+      // popOver, thus closing the popOver
+      const clickOutsideToClose = isVisible
+      && popOverNode
+      && !popOverNode.contains(event.target as Node)
+      && !childrenNode.contains(event.target as Node);
+
+      // childRefs.forEach((childRef) => {
+      //   console.log('-------------');
+      //   console.log(childRef.current.contains(event.target as Node));
+      //   console.log('-------------');
+      // });
+
+      if (clickToOpen) {
         if (delay) {
           setTimeout(() => setIsVisible(true), delay * 1000);
         } else {
@@ -63,21 +97,13 @@ const PopOver: React.FC<Props> = ({
         }
       }
 
-      if (isVisible && childrenNode.contains(event.target as Node)) {
+      if (clickToClose) {
         setIsVisible(false);
       }
 
-      // ToDo: I need to turn this off dynamically based on a passed in ref that says if that
-      //  ref contains the event ; e.g. ref the dropdown component; if the ref contains the
-      //  click, then don't set visible to false
-      // if (
-      //   isVisible
-      //   && popOverNode
-      //   && !popOverNode.contains(event.target as Node)
-      //   && !childrenNode.contains(event.target as Node)
-      // ) {
-      //   setIsVisible(false);
-      // }
+      if (clickOutsideToClose) {
+        setIsVisible(false);
+      }
     };
 
     const handleHover = (event: Event): void => {
@@ -121,6 +147,7 @@ const PopOver: React.FC<Props> = ({
       }
     };
   }, [
+    childRefs,
     childrenRef,
     delay,
     popOverRef,
@@ -166,7 +193,7 @@ const PopOver: React.FC<Props> = ({
 
   return (
     <>
-      {newChildren}
+      {FinalChildren}
       <Portal>
         <PopOverAnimation
           color={color}
@@ -185,7 +212,7 @@ const PopOver: React.FC<Props> = ({
               />
             )
           }
-          {Content}
+          {FinalContent}
         </PopOverAnimation>
       </Portal>
     </>

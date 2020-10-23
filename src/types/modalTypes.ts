@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { CardData } from 'schema/card';
 
+export type ChildRefs = React.RefObject<HTMLElement>[];
+
 export interface AddCardModalProps {
   formData: {
     cardData: CardData;
@@ -22,6 +24,10 @@ export interface PopOverCallback {
   hidePopOver: () => void;
   isVisible: boolean;
   showPopOver: () => void;
+}
+
+export interface ContentPopOverProps {
+  setChildRefs?: (childRefs: ChildRefs) => void;
 }
 
 export interface PopOverProps {
