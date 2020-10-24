@@ -11,15 +11,16 @@ const DropdownIcon: React.FC = () => (
   </div>
 );
 
-const Dropdown: React.FC<DropdownProps> = ({
+const Dropdown = React.forwardRef<Select, DropdownProps>(({
   multiSelect = false,
   onChange,
   options,
   value,
-}) => (
+}, ref) => (
   <Select
     mode={multiSelect ? 'multiple' : 'default'}
     onChange={onChange}
+    ref={ref}
     suffixIcon={<DropdownIcon />}
     value={value || undefined}
   >
@@ -29,6 +30,6 @@ const Dropdown: React.FC<DropdownProps> = ({
       </Select.Option>
     ))}
   </Select>
-);
+));
 
 export default Dropdown;

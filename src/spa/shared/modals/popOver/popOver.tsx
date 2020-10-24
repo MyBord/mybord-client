@@ -83,11 +83,13 @@ const PopOver: React.FC<Props> = ({
       && !popOverNode.contains(event.target as Node)
       && !childrenNode.contains(event.target as Node);
 
-      // childRefs.forEach((childRef) => {
-      //   console.log('-------------');
-      //   console.log(childRef.current.contains(event.target as Node));
-      //   console.log('-------------');
-      // });
+      childRefs.forEach((childRef) => {
+        console.log('-------------');
+        // console.log(childRef.current.contains(event.target as Node));
+        console.log(childRef);
+        console.log(childRef.current);
+        console.log('-------------');
+      });
 
       if (clickToOpen) {
         if (delay) {

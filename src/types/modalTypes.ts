@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { CardData } from 'schema/card';
 
-export type ChildRefs = React.RefObject<HTMLElement>[];
+export type ChildRefs = React.RefObject<any>[];
 
 export interface AddCardModalProps {
   formData: {

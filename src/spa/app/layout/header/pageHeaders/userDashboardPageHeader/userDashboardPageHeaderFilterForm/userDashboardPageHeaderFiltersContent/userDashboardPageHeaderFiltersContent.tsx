@@ -4,19 +4,29 @@ import Dropdown from 'inputs/dropdown/dropdown';
 import Form from 'forms/form/form';
 import FormItem from 'forms/formItem/formItem';
 import Toggle from 'inputs/toggle/toggle';
+import { ContentPopOverProps } from 'types/modalTypes';
 import { FormProp } from 'types/formTypes';
+import { Select } from 'antd';
 import { USER_CARDS_WITH_FILTERS_QUERY } from 'schema/card';
 import { dropdownCategoryOptions } from 'mockData/inputsMockData';
 import { useUserDashboardContext } from 'context/userDashboardContext/userDashboardContext';
 import * as styles from './userDashboardPageHeaderFiltersContent.module.less';
 
-interface Props {
+interface Props extends ContentPopOverProps {
   form?: FormProp;
 }
 
-const FormContent: React.FC<Props> = ({ form }) => {
+const FormContent: React.FC<Props> = ({ form, setChildRefs }) => {
+  const dropdownRef = React.useRef<Select>(null);
   const [userCardsQuery] = useLazyQuery(USER_CARDS_WITH_FILTERS_QUERY, { fetchPolicy: 'no-cache' });
   const { state } = useUserDashboardContext();
+
+  React.useEffect(() => {
+    // console.log(dropdownRef);
+    if (dropdownRef && dropdownRef.current) {
+      setChildRefs([dropdownRef]);
+    }
+  }, [dropdownRef]);
 
   const handleToggleFavoriteFilter = async (): Promise<void> => {
     await userCardsQuery({
@@ -76,16 +86,16 @@ const FormContent: React.FC<Props> = ({ form }) => {
           labelType="blue"
           layout="horizontal"
         >
-          <Dropdown options={dropdownCategoryOptions} />
+          <Dropdown options={dropdownCategoryOptions} ref={dropdownRef} />
         </FormItem>
       </li>
     </ul>
   );
 };
 
-const UserDashboardPageHeaderFiltersContent: React.FC = () => (
+const UserDashboardPageHeaderFiltersContent: React.FC<ContentPopOverProps> = ({ setChildRefs }) => (
   <Form>
-    <FormContent />
+    <FormContent setChildRefs={setChildRefs} />
   </Form>
 );
 
