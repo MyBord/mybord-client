@@ -76,20 +76,19 @@ const PopOver: React.FC<Props> = ({
       // The popover is currently open but is then clicked, thus closing the popOver
       const clickToClose = isVisible && childrenNode.contains(event.target as Node);
 
+      const bar = childRefs.some((childRef) => {
+        const { rcSelect } = childRef.current;
+        const foo = rcSelect.getPopupDOMNode();
+        return foo.contains(event.target as Node);
+      });
+
       // The popover is currently open but the user clicks anywhere besides the content of the
       // popOver, thus closing the popOver
       const clickOutsideToClose = isVisible
       && popOverNode
+      && !bar
       && !popOverNode.contains(event.target as Node)
       && !childrenNode.contains(event.target as Node);
-
-      childRefs.forEach((childRef) => {
-        console.log('-------------');
-        // console.log(childRef.current.contains(event.target as Node));
-        console.log(childRef);
-        console.log(childRef.current);
-        console.log('-------------');
-      });
 
       if (clickToOpen) {
         if (delay) {

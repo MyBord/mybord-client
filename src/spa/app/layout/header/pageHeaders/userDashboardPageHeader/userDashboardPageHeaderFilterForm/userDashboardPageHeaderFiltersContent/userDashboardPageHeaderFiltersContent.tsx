@@ -17,7 +17,7 @@ interface Props extends ContentPopOverProps {
 }
 
 const FormContent: React.FC<Props> = ({ form, setChildRefs }) => {
-  const dropdownRef = React.useRef<Select>(null);
+  const dropdownRef = React.useRef<any>(null);
   const [userCardsQuery] = useLazyQuery(USER_CARDS_WITH_FILTERS_QUERY, { fetchPolicy: 'no-cache' });
   const { state } = useUserDashboardContext();
 
