@@ -7,6 +7,7 @@ import Portal from 'portal/portal';
 import { ExtraRefs, PopOverProps, PopOverStyle } from 'types/modalTypes';
 import PopOverCaret from './popOverCaret/popOverCaret';
 import getPopOverStyle from './getPopOverStyle';
+import popOverHandleClick from './popOverMouseActions/popOverHandleClick';
 
 interface Props extends PopOverProps {
   Content: React.ReactElement;
@@ -65,64 +66,22 @@ const PopOver: React.FC<Props> = ({
   // adds a click or hover event listener to conditionally display the popover
 
   React.useEffect(() => {
-    const childrenNode = childrenRef;
-    const popOverNode = popOverRef.current;
     let timeout: NodeJS.Timeout = null;
 
-    const handleClick = (event: Event): void => {
-      // The popover is currently closed but is then clicked, thus opening the popOver
-      const clickToOpen = !isVisible && childrenNode.contains(event.target as Node);
-
-      // The popover is currently open but is then clicked, thus closing the popOver
-      const clickToClose = isVisible && childrenNode.contains(event.target as Node);
-
-      // Is at least one of the extra refs clicked
-      const extraRefsClicked = extraRefs.some((extraRef) => {
-        if (extraRef && extraRef.current) {
-          const { current } = extraRef;
-
-          // This is how we evaluate if an extra ref is clicked if that extra ref is an rcSelect
-          // dropdown component
-          if (current.rcSelect) {
-            const popupNode = current.rcSelect.getPopupDOMNode();
-            return popupNode && popupNode.contains(event.target as Node);
-          }
-
-          return current.contains && current.contains(event.target as Node);
-        }
-
-        return false;
-      });
-
-      // The popover is currently open but the user clicks anywhere besides the content of the
-      // popOver or any child refs, thus closing the popOver
-      const clickOutsideToClose = isVisible
-      && popOverNode
-      && !extraRefsClicked
-      && !popOverNode.contains(event.target as Node)
-      && !childrenNode.contains(event.target as Node);
-
-      if (clickToOpen) {
-        if (delay) {
-          setTimeout(() => setIsVisible(true), delay * 1000);
-        } else {
-          setIsVisible(true);
-        }
-      }
-
-      if (clickToClose) {
-        setIsVisible(false);
-      }
-
-      if (clickOutsideToClose) {
-        setIsVisible(false);
-      }
-    };
+    const handleClick = (event: Event): void => popOverHandleClick({
+      childrenRef,
+      delay,
+      event,
+      extraRefs,
+      isVisible,
+      popOverRef,
+      setIsVisible,
+    });
 
     const handleHover = (event: Event): void => {
-      if (delay && childrenNode.contains(event.target as Node)) {
+      if (delay && childrenRef.contains(event.target as Node)) {
         timeout = setTimeout(() => setIsVisible(true), delay * 1000);
-      } else if (childrenNode.contains(event.target as Node)) {
+      } else if (childrenRef.contains(event.target as Node)) {
         setIsVisible(true);
       } else {
         setIsVisible(false);
@@ -136,26 +95,26 @@ const PopOver: React.FC<Props> = ({
       }
     };
 
-    if (childrenNode) {
+    if (childrenRef) {
       if (trigger === 'click') {
         document.addEventListener('mousedown', handleClick);
       }
 
       if (trigger === 'hover') {
-        childrenNode.addEventListener('mouseover', handleHover);
-        childrenNode.addEventListener('mouseout', hideMouseOut);
+        childrenRef.addEventListener('mouseover', handleHover);
+        childrenRef.addEventListener('mouseout', hideMouseOut);
       }
     }
 
     return () => {
-      if (childrenNode) {
+      if (childrenRef) {
         if (trigger === 'click') {
           document.removeEventListener('mousedown', handleClick);
         }
 
         if (trigger === 'hover') {
-          childrenNode.removeEventListener('mouseover', handleHover);
-          childrenNode.removeEventListener('mouseout', hideMouseOut);
+          childrenRef.removeEventListener('mouseover', handleHover);
+          childrenRef.removeEventListener('mouseout', hideMouseOut);
         }
       }
     };
