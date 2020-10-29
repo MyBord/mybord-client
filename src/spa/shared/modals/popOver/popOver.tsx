@@ -7,7 +7,7 @@ import Portal from 'portal/portal';
 import { ExtraRefs, PopOverProps, PopOverStyle } from 'types/modalTypes';
 import PopOverCaret from './popOverCaret/popOverCaret';
 import getPopOverStyle from './getPopOverStyle';
-import popOverHandleClick from './popOverMouseActions/popOverHandleClick';
+import popOverMouseActions from './popOverMouseActions/popOverMouseActions';
 
 interface Props extends PopOverProps {
   Content: React.ReactElement;
@@ -66,34 +66,16 @@ const PopOver: React.FC<Props> = ({
   // adds a click or hover event listener to conditionally display the popover
 
   React.useEffect(() => {
-    let timeout: NodeJS.Timeout = null;
-
-    const handleClick = (event: Event): void => popOverHandleClick({
+    const { handleClick, handleHover, handleMouseOut } = popOverMouseActions({
       childrenRef,
       delay,
-      event,
       extraRefs,
       isVisible,
       popOverRef,
       setIsVisible,
+      trigger,
     });
 
-    const handleHover = (event: Event): void => {
-      if (delay && childrenRef.contains(event.target as Node)) {
-        timeout = setTimeout(() => setIsVisible(true), delay * 1000);
-      } else if (childrenRef.contains(event.target as Node)) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
-    };
-
-    const hideMouseOut = (): void => {
-      if (trigger === 'hover') {
-        clearTimeout(timeout);
-        setIsVisible(false);
-      }
-    };
 
     if (childrenRef) {
       if (trigger === 'click') {
@@ -102,7 +84,7 @@ const PopOver: React.FC<Props> = ({
 
       if (trigger === 'hover') {
         childrenRef.addEventListener('mouseover', handleHover);
-        childrenRef.addEventListener('mouseout', hideMouseOut);
+        childrenRef.addEventListener('mouseout', handleMouseOut);
       }
     }
 
@@ -114,7 +96,7 @@ const PopOver: React.FC<Props> = ({
 
         if (trigger === 'hover') {
           childrenRef.removeEventListener('mouseover', handleHover);
-          childrenRef.removeEventListener('mouseout', hideMouseOut);
+          childrenRef.removeEventListener('mouseout', handleMouseOut);
         }
       }
     };
