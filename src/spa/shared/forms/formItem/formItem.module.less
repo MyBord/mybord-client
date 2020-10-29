@@ -1,11 +1,13 @@
 @import "~styles/_sizes";
 
 .horizontal {
+  align-items: center;
   display: flex;
-  > div:first-of-type {
-    align-items: center;
-    display: flex;
-    margin: 0 1rem @formItemMarginBottom 0;
+  justify-content: space-between;
+  :global {
+    .ant-form-item {
+      margin-bottom: 0;
+    }
   }
 }
 

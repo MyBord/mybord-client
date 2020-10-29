@@ -4,7 +4,8 @@ export interface DropdownOption {
 }
 
 export interface DropdownProps {
+  multiSelect?: boolean;
   onChange?: () => void;
   options: DropdownOption[];
-  value?: any;
+  value?: string | string[] | number | number[];
 }
