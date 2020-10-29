@@ -1,10 +1,10 @@
-// *1: `childRefs` are additional refs that are part of the `Content` component, that when
+// *1: `extraRefs` are additional refs that are part of the `Content` component, that when
 // clicked, we don't want to close said popover.
 
 import * as React from 'react';
 import PopOverAnimation from 'framerMotion/popOverAnimation';
 import Portal from 'portal/portal';
-import { ChildRefs, PopOverProps, PopOverStyle } from 'types/modalTypes';
+import { ExtraRefs, PopOverProps, PopOverStyle } from 'types/modalTypes';
 import PopOverCaret from './popOverCaret/popOverCaret';
 import getPopOverStyle from './getPopOverStyle';
 
@@ -28,7 +28,7 @@ const PopOver: React.FC<Props> = ({
 
   const [childrenRef, setChildrenRef] = React.useState<HTMLElement>(null);
   const popOverRef = React.useRef<HTMLDivElement>(null);
-  const [childRefs, setChildRefs] = React.useState<ChildRefs>([]); // *1
+  const [extraRefs, setExtraRefs] = React.useState<ExtraRefs>([]); // *1
 
   // ----- Setting additional properties ----- //
 
@@ -45,7 +45,7 @@ const PopOver: React.FC<Props> = ({
     children,
     { ref: (node: HTMLElement) => setChildrenRef(node) },
   );
-  const FinalContent = React.cloneElement(Content, { setChildRefs });
+  const FinalContent = React.cloneElement(Content, { setExtraRefs });
 
 
   // ----- CALLBACK ----- //
@@ -76,17 +76,29 @@ const PopOver: React.FC<Props> = ({
       // The popover is currently open but is then clicked, thus closing the popOver
       const clickToClose = isVisible && childrenNode.contains(event.target as Node);
 
-      const bar = childRefs.some((childRef) => {
-        const { rcSelect } = childRef.current;
-        const foo = rcSelect.getPopupDOMNode();
-        return foo.contains(event.target as Node);
+      // Is at least one of the extra refs clicked
+      const extraRefsClicked = extraRefs.some((extraRef) => {
+        if (extraRef && extraRef.current) {
+          const { current } = extraRef;
+
+          // This is how we evaluate if an extra ref is clicked if that extra ref is an rcSelect
+          // dropdown component
+          if (current.rcSelect) {
+            const popupNode = current.rcSelect.getPopupDOMNode();
+            return popupNode && popupNode.contains(event.target as Node);
+          }
+
+          return current.contains && current.contains(event.target as Node);
+        }
+
+        return false;
       });
 
       // The popover is currently open but the user clicks anywhere besides the content of the
-      // popOver, thus closing the popOver
+      // popOver or any child refs, thus closing the popOver
       const clickOutsideToClose = isVisible
       && popOverNode
-      && !bar
+      && !extraRefsClicked
       && !popOverNode.contains(event.target as Node)
       && !childrenNode.contains(event.target as Node);
 
@@ -148,7 +160,7 @@ const PopOver: React.FC<Props> = ({
       }
     };
   }, [
-    childRefs,
+    extraRefs,
     childrenRef,
     delay,
     popOverRef,

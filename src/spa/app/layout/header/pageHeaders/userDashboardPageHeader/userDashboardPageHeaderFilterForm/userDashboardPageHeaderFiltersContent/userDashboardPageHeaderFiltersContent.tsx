@@ -16,15 +16,14 @@ interface Props extends ContentPopOverProps {
   form?: FormProp;
 }
 
-const FormContent: React.FC<Props> = ({ form, setChildRefs }) => {
+const FormContent: React.FC<Props> = ({ form, setExtraRefs }) => {
   const dropdownRef = React.useRef<any>(null);
   const [userCardsQuery] = useLazyQuery(USER_CARDS_WITH_FILTERS_QUERY, { fetchPolicy: 'no-cache' });
   const { state } = useUserDashboardContext();
 
   React.useEffect(() => {
-    // console.log(dropdownRef);
     if (dropdownRef && dropdownRef.current) {
-      setChildRefs([dropdownRef]);
+      setExtraRefs([dropdownRef]);
     }
   }, [dropdownRef]);
 
@@ -93,9 +92,9 @@ const FormContent: React.FC<Props> = ({ form, setChildRefs }) => {
   );
 };
 
-const UserDashboardPageHeaderFiltersContent: React.FC<ContentPopOverProps> = ({ setChildRefs }) => (
+const UserDashboardPageHeaderFiltersContent: React.FC<ContentPopOverProps> = ({ setExtraRefs }) => (
   <Form>
-    <FormContent setChildRefs={setChildRefs} />
+    <FormContent setExtraRefs={setExtraRefs} />
   </Form>
 );
 
