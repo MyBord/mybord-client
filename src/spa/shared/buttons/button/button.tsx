@@ -29,6 +29,17 @@ const Button: React.FC<Props> = ({
   size = 'normal',
   type = 'primary',
 }) => {
+  const divRef = React.useRef<any>(null);
+  const [buttonWidth, setButtonWidth] = React.useState<number>(null);
+
+  React.useEffect(() => {
+    if (divRef && divRef.current) {
+      const containerRect = divRef.current.getBoundingClientRect();
+      // 15 is the padding that seems to not be considered in the calculation
+      setButtonWidth(containerRect.width + 15);
+    }
+  }, [divRef]);
+
   const getClassNames = (): string => {
     if (disabled) {
       return [
@@ -44,24 +55,28 @@ const Button: React.FC<Props> = ({
   };
 
   return (
-    <AntButton
-      className={getClassNames()}
-      disabled={disabled}
-      htmlType={htmlType}
-      loading={isWaiting}
-      onClick={onClick}
-      size={size === 'normal' ? 'default' : size}
-      type={type === 'primary' ? 'primary' : null}
-    >
-      {
-        // @ts-ignore
-        isWaiting && <LoadingOutlined />
-      }
-      {
-        iconName && <Icon iconName={iconName} size={16} />
-      }
-      {label}
-    </AntButton>
+    <div className={styles.div} ref={divRef}>
+      <AntButton
+        className={getClassNames()}
+        disabled={disabled}
+        htmlType={htmlType}
+        onClick={onClick}
+        size={size === 'normal' ? 'default' : size}
+        style={{ width: buttonWidth || 'auto' }}
+        type={type === 'primary' ? 'primary' : null}
+      >
+        {
+          // @ts-ignore
+          isWaiting && <LoadingOutlined />
+        }
+        {
+          iconName && <Icon iconName={iconName} size={16} />
+        }
+        {
+          !isWaiting && label
+        }
+      </AntButton>
+    </div>
   );
 };
 
