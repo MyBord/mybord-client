@@ -41,17 +41,18 @@ const Button: React.FC<Props> = ({
   }, [divRef]);
 
   const getClassNames = (): string => {
+    const buttonStyles = [styles.button];
     if (disabled) {
-      return [
-        styles.button,
-        styles[`${type}-${color}-disabled`],
-      ].join(' ');
+      buttonStyles.push(styles[`${type}-${color}-disabled`]);
+    } else {
+      buttonStyles.push(styles[`${type}-${color}`]);
     }
 
-    return [
-      styles.button,
-      styles[`${type}-${color}`],
-    ].join(' ');
+    if (isWaiting) {
+      buttonStyles.push(styles.isWaiting);
+    }
+
+    return buttonStyles.join(' ');
   };
 
   return (
