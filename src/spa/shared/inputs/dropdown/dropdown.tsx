@@ -18,9 +18,11 @@ const Dropdown = React.forwardRef<Select, DropdownProps>(({
   value,
 }, ref) => (
   <Select
+    className={styles.dropdown}
     mode={multiSelect ? 'multiple' : 'default'}
     onChange={onChange}
     ref={ref}
+    showArrow
     suffixIcon={<DropdownIcon />}
     value={value || undefined}
   >

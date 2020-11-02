@@ -27,25 +27,29 @@ const bothPages = (props: Props): void => {
       height: '100vh',
     }))
     .add('Summary', () => (
-      <SummaryPage
-        Examples={props.Examples}
-        api={props.api}
-        componentName={props.componentName}
-        description={props.description}
-        howTo={props.howTo}
-        path={path}
-      />
+      <React.Suspense fallback={<div>Loading...</div>}>
+        <SummaryPage
+          Examples={props.Examples}
+          api={props.api}
+          componentName={props.componentName}
+          description={props.description}
+          howTo={props.howTo}
+          path={path}
+        />
+      </React.Suspense>
     ))
     .add('Demo', () => (
-      <DemoPage
-        Demo={props.Demo}
-        componentName={props.componentName}
-        demoCenter={props.demoCenter}
-        demoHeader={props.demoHeader}
-        demoMargin={props.demoMargin}
-        description={props.description}
-        path={path}
-      />
+      <React.Suspense fallback={<div>Loading...</div>}>
+        <DemoPage
+          Demo={props.Demo}
+          componentName={props.componentName}
+          demoCenter={props.demoCenter}
+          demoHeader={props.demoHeader}
+          demoMargin={props.demoMargin}
+          description={props.description}
+          path={path}
+        />
+      </React.Suspense>
     ));
 };
 
@@ -56,16 +60,18 @@ const demoPageOnly = (props: Props): void => {
       height: '100vh',
     }))
     .add(props.componentName, () => (
-      <DemoPage
-        Demo={props.Demo}
-        componentName={props.componentName}
-        demoCenter={props.demoCenter}
-        demoHeader={props.demoHeader}
-        demoMargin={props.demoMargin}
-        description={props.description}
-        path={path}
-        summaryPage={props.summaryPage}
-      />
+      <React.Suspense fallback={<div>Loading...</div>}>
+        <DemoPage
+          Demo={props.Demo}
+          componentName={props.componentName}
+          demoCenter={props.demoCenter}
+          demoHeader={props.demoHeader}
+          demoMargin={props.demoMargin}
+          description={props.description}
+          path={path}
+          summaryPage={props.summaryPage}
+        />
+      </React.Suspense>
     ));
 };
 

@@ -85,7 +85,7 @@ const FormContent: React.FC<Props> = ({ form, setExtraRefs }) => {
           labelType="blue"
           layout="horizontal"
         >
-          <Dropdown options={dropdownCategoryOptions} ref={dropdownRef} />
+          <Dropdown multiSelect options={dropdownCategoryOptions} ref={dropdownRef} />
         </FormItem>
       </li>
     </ul>

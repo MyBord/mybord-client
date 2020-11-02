@@ -5,7 +5,7 @@ export interface DropdownOption {
 
 export interface DropdownProps {
   multiSelect?: boolean;
-  onChange?: () => void;
+  onChange?: (value: string | string[] | number | number[]) => void;
   options: DropdownOption[];
   value?: string | string[] | number | number[];
 }
