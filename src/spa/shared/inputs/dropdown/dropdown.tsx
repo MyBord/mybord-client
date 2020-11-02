@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Select } from 'antd';
 import Icon from 'icons/icon/icon';
+import 'antd/dist/antd.css';
 import { DropdownProps } from 'types/inputTypes';
 import * as styles from './dropdown.module.less';
 import './dropdown.less';
@@ -18,9 +19,11 @@ const Dropdown = React.forwardRef<Select, DropdownProps>(({
   value,
 }, ref) => (
   <Select
+    className={styles.dropdown}
     mode={multiSelect ? 'multiple' : 'default'}
     onChange={onChange}
     ref={ref}
+    showArrow
     suffixIcon={<DropdownIcon />}
     value={value || undefined}
   >
