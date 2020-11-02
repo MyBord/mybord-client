@@ -1,3 +1,5 @@
+export type DropdownValue = string | string[] | number | number[];
+
 export interface DropdownOption {
   label: string;
   value: number | string;
@@ -5,7 +7,7 @@ export interface DropdownOption {
 
 export interface DropdownProps {
   multiSelect?: boolean;
-  onChange?: (value: string | string[] | number | number[]) => void;
+  onChange?: (value: DropdownValue) => void;
   options: DropdownOption[];
-  value?: string | string[] | number | number[];
+  value?: DropdownValue;
 }

@@ -5,8 +5,8 @@ import Form from 'forms/form/form';
 import FormItem from 'forms/formItem/formItem';
 import Toggle from 'inputs/toggle/toggle';
 import { ContentPopOverProps } from 'types/modalTypes';
+import { DropdownValue } from 'types/inputTypes';
 import { FormProp } from 'types/formTypes';
-import { Select } from 'antd';
 import { USER_CARDS_WITH_FILTERS_QUERY } from 'schema/card';
 import { dropdownCategoryOptions } from 'mockData/inputsMockData';
 import { useUserDashboardContext } from 'context/userDashboardContext/userDashboardContext';
@@ -26,6 +26,10 @@ const FormContent: React.FC<Props> = ({ form, setExtraRefs }) => {
       setExtraRefs([dropdownRef]);
     }
   }, [dropdownRef]);
+
+  const handleCategoriesChange = async (value: DropdownValue): Promise<void> => {
+    form.setFieldsValue({ filterCategory: ['Gif', 'Video'] });
+  };
 
   const handleToggleFavoriteFilter = async (): Promise<void> => {
     await userCardsQuery({
@@ -49,7 +53,7 @@ const FormContent: React.FC<Props> = ({ form, setExtraRefs }) => {
     <ul className={styles.ul}>
       <li className={styles.li}>
         <FormItem
-          fieldName="filter-favorites"
+          fieldName="filterFavorites"
           form={form}
           label="Favorites:"
           labelType="blue"
@@ -64,7 +68,7 @@ const FormContent: React.FC<Props> = ({ form, setExtraRefs }) => {
       </li>
       <li className={styles.li}>
         <FormItem
-          fieldName="filter-todo"
+          fieldName="filterTodo"
           form={form}
           label="To Do:"
           labelType="blue"
@@ -77,15 +81,22 @@ const FormContent: React.FC<Props> = ({ form, setExtraRefs }) => {
           />
         </FormItem>
       </li>
+      // @ts-ignore
+      <button type="button" onClick={handleCategoriesChange}>Click Me</button>
       <li className={[styles.li, styles.dropdownLi].join(' ')}>
         <FormItem
-          fieldName="filter-category"
+          fieldName="filterCategory"
           form={form}
           label="Category:"
           labelType="blue"
           layout="horizontal"
         >
-          <Dropdown multiSelect options={dropdownCategoryOptions} ref={dropdownRef} />
+          <Dropdown
+            multiSelect
+            onChange={handleCategoriesChange}
+            options={dropdownCategoryOptions}
+            ref={dropdownRef}
+          />
         </FormItem>
       </li>
     </ul>
