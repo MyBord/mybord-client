@@ -1,4 +1,5 @@
 @import '~styles/_sizes';
+@import '~styles/_transitions';
 
 .horizontal {
   :global {
@@ -16,8 +17,8 @@
 .vertical {
   :global {
     .ant-form-item-with-help {
-      margin-bottom: calc(@formItemMarginBottom + 0.5rem);
-      transition: 0.3s margin-bottom ease;
+      margin-bottom: @formItemMarginBottomWithHelp;
+      transition: @formItemMarginBottomTransition;
     }
   }
 }
