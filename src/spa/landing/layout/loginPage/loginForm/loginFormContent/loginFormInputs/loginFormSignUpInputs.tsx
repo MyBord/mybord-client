@@ -5,9 +5,9 @@ import TextInput from 'inputs/textInput/textInput';
 import Typography from 'typography/typography';
 import { FormProp } from 'types/formTypes';
 import { useLoginContext } from 'context/loginContext/loginContext';
+import Foo from './foo';
+import Bar from './bar';
 import * as styles from './loginFormInputs.module.less';
-
-const duplicateEmailMessage = 'That account already exists';
 
 const duplicateUsernameMessage = 'That username is already taken';
 
@@ -74,28 +74,11 @@ const LoginFormSignUpInputs: React.FC<Props> = ({ form }) => {
 
   return (
     <>
-      <FormItem
-        errorMessage={signUpStatus === 'duplicate email' && duplicateEmailMessage}
-        fieldName="loginEmail"
+      <Foo
         form={form}
-        required
-        requiredMessage="Please enter your email address"
-        type="email"
-        typeMessage="You entered an invalid email address"
-      >
-        <TextInput placeholder="Email" />
-      </FormItem>
-      <div className={usernameClassName}>
-        <FormItem
-          errorMessage={getUsernameErrorMessage()}
-          fieldName="loginUsername"
-          form={form}
-          required
-          requiredMessage="Please enter a username"
-        >
-          <TextInput placeholder="Username" />
-        </FormItem>
-      </div>
+        isDuplicateEmail={signUpStatus === 'duplicate email'}
+      />
+      <Bar form={form} signUpStatus={signUpStatus} />
       <div className={loginPasswordClassName}>
         <FormItem
           errorMessage={signUpStatus === 'weak password' && PasswordReactMessage}
