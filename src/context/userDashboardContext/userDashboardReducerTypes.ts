@@ -1,4 +1,4 @@
-import { UserCard } from 'schema/card';
+import { CardCategory, UserCard } from 'schema/card';
 
 // ----- CONSTANTS ----- //
 
@@ -6,6 +6,7 @@ export const ADD_CARD = 'ADD_CARD';
 export const DELETE_CARD = 'DELETE_CARD';
 export const RECEIVE_FILTERED_CARDS = 'RECEIVE_FILTERED_CARDS';
 export const SET_CARDS = 'SET_CARDS';
+export const SET_CARD_CATEGORIES_FILTER = 'SET_CARD_CATEGORIES_FILTER';
 export const TOGGLE_CARD_FILTER = 'TOGGLE_CARD_FILTER';
 
 // ----- INTERFACES ----- //
@@ -34,6 +35,11 @@ interface SetCards {
   cards: UserCard[];
 }
 
+interface SetCardCategoriesFilter {
+  type: typeof SET_CARD_CATEGORIES_FILTER;
+  categories: CardCategory[];
+}
+
 interface ToggleCardFilter {
   type: typeof TOGGLE_CARD_FILTER;
   filter: 'favorite' | 'toDo';
@@ -44,4 +50,5 @@ export type UserDashboardDispatchTypes = AddCard
 | DeleteCard
 | ReceiveFilteredCards
 | SetCards
+| SetCardCategoriesFilter
 | ToggleCardFilter;

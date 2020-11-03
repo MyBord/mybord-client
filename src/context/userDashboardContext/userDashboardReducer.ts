@@ -6,6 +6,7 @@ import {
   DELETE_CARD,
   RECEIVE_FILTERED_CARDS,
   SET_CARDS,
+  SET_CARD_CATEGORIES_FILTER,
   TOGGLE_CARD_FILTER,
 } from './userDashboardReducerTypes';
 
@@ -13,6 +14,7 @@ export const initialUserDashboardState: UserDashboardState = {
   allIds: [],
   byId: {},
   filters: {
+    categories: [],
     hasFilters: false,
     isFavorite: false,
     isToDo: false,
@@ -43,7 +45,9 @@ export const userDashboardReducer = (
         allIds: reducerUtil.getAllIds(action.cards),
         byId: reducerUtil.getById(action.cards),
         isHydrated: true,
+        // todo
         filters: {
+          ...state.filters, // todo: remove this line
           hasFilters: action.filters.isFavorite || action.filters.isToDo,
           isFavorite: !!action.filters.isFavorite,
           isToDo: !!action.filters.isToDo,
@@ -56,6 +60,14 @@ export const userDashboardReducer = (
         allIds: reducerUtil.getAllIds(action.cards),
         byId: reducerUtil.getById(action.cards),
         isHydrated: true,
+      };
+    case SET_CARD_CATEGORIES_FILTER:
+      return {
+        ...state,
+        filters: {
+          ...state.filters,
+          categories: [...action.categories],
+        },
       };
     case TOGGLE_CARD_FILTER:
       return reducerUtil.toggleCardFilter(action.filter, action.id, state);
