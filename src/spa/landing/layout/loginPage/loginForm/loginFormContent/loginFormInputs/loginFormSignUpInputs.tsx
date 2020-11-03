@@ -64,6 +64,14 @@ const LoginFormSignUpInputs: React.FC<Props> = ({ form }) => {
     return null;
   };
 
+  const usernameClassName = signUpStatus === 'invalid username'
+    ? styles.invalidUsernameDiv
+    : styles.usernameDiv;
+
+  const loginPasswordClassName = signUpStatus === 'weak password'
+    ? styles.weakLoginPasswordDiv
+    : styles.loginPasswordDiv;
+
   return (
     <>
       <FormItem
@@ -77,28 +85,34 @@ const LoginFormSignUpInputs: React.FC<Props> = ({ form }) => {
       >
         <TextInput placeholder="Email" />
       </FormItem>
-      <FormItem
-        errorMessage={getUsernameErrorMessage()}
-        fieldName="loginUsername"
-        form={form}
-        required
-        requiredMessage="Please enter a username"
-      >
-        <TextInput placeholder="Username" />
-      </FormItem>
-      <FormItem
-        errorMessage={signUpStatus === 'weak password' && PasswordReactMessage}
-        fieldName="loginPassword"
-        form={form}
-        required
-        requiredMessage="Please enter a password"
-      >
-        <PasswordInput placeholder="Password" />
-      </FormItem>
+      <div className={usernameClassName}>
+        <FormItem
+          errorMessage={getUsernameErrorMessage()}
+          fieldName="loginUsername"
+          form={form}
+          required
+          requiredMessage="Please enter a username"
+        >
+          <TextInput placeholder="Username" />
+        </FormItem>
+      </div>
+      <div className={loginPasswordClassName}>
+        <FormItem
+          errorMessage={signUpStatus === 'weak password' && PasswordReactMessage}
+          fieldName="loginPassword"
+          form={form}
+          required
+          requiredMessage="Please enter a password"
+        >
+          <PasswordInput placeholder="Password" />
+        </FormItem>
+      </div>
       <FormItem
         fieldName="confirmPassword"
         form={form}
         isSuccess={confirmPasswordIsSuccess}
+        required
+        requiredMessage="Please confirm your password"
       >
         <PasswordInput placeholder="Confirm Password" />
       </FormItem>
