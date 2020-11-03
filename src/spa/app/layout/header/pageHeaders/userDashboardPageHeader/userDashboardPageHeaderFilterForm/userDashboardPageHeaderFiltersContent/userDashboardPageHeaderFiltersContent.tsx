@@ -4,10 +4,10 @@ import Dropdown from 'inputs/dropdown/dropdown';
 import Form from 'forms/form/form';
 import FormItem from 'forms/formItem/formItem';
 import Toggle from 'inputs/toggle/toggle';
+import { CardCategory, USER_CARDS_WITH_FILTERS_QUERY } from 'schema/card';
 import { ContentPopOverProps } from 'types/modalTypes';
 import { FormProp } from 'types/formTypes';
-import { Select } from 'antd';
-import { USER_CARDS_WITH_FILTERS_QUERY } from 'schema/card';
+import { SET_CARD_CATEGORIES_FILTER } from 'context/userDashboardContext/userDashboardReducerTypes';
 import { dropdownCategoryOptions } from 'mockData/inputsMockData';
 import { useUserDashboardContext } from 'context/userDashboardContext/userDashboardContext';
 import * as styles from './userDashboardPageHeaderFiltersContent.module.less';
@@ -19,7 +19,13 @@ interface Props extends ContentPopOverProps {
 const FormContent: React.FC<Props> = ({ form, setExtraRefs }) => {
   const dropdownRef = React.useRef<any>(null);
   const [userCardsQuery] = useLazyQuery(USER_CARDS_WITH_FILTERS_QUERY, { fetchPolicy: 'no-cache' });
-  const { state } = useUserDashboardContext();
+  const { state, dispatch } = useUserDashboardContext();
+
+  const { categories, isFavorite, isToDo } = state.filters;
+
+  React.useEffect(() => {
+    form.setFieldsValue({ filterCategory: categories });
+  }, [categories]);
 
   React.useEffect(() => {
     if (dropdownRef && dropdownRef.current) {
@@ -27,11 +33,24 @@ const FormContent: React.FC<Props> = ({ form, setExtraRefs }) => {
     }
   }, [dropdownRef]);
 
+  const handleCategoriesChange = async (cardCategories: CardCategory[]): Promise<void> => {
+    await userCardsQuery({
+      variables: {
+        categories: cardCategories,
+        isFavorite,
+        isToDo,
+      },
+    });
+
+    dispatch({ type: SET_CARD_CATEGORIES_FILTER, categories: cardCategories });
+  };
+
   const handleToggleFavoriteFilter = async (): Promise<void> => {
     await userCardsQuery({
       variables: {
-        isFavorite: !state.filters.isFavorite,
-        isToDo: state.filters.isToDo,
+        categories,
+        isFavorite: !isFavorite,
+        isToDo,
       },
     });
   };
@@ -39,8 +58,9 @@ const FormContent: React.FC<Props> = ({ form, setExtraRefs }) => {
   const handleToggleToDoFilter = async (): Promise<void> => {
     await userCardsQuery({
       variables: {
-        isFavorite: state.filters.isFavorite,
-        isToDo: !state.filters.isToDo,
+        categories,
+        isFavorite,
+        isToDo: !isToDo,
       },
     });
   };
@@ -49,7 +69,7 @@ const FormContent: React.FC<Props> = ({ form, setExtraRefs }) => {
     <ul className={styles.ul}>
       <li className={styles.li}>
         <FormItem
-          fieldName="filter-favorites"
+          fieldName="filterFavorites"
           form={form}
           label="Favorites:"
           labelType="blue"
@@ -64,7 +84,7 @@ const FormContent: React.FC<Props> = ({ form, setExtraRefs }) => {
       </li>
       <li className={styles.li}>
         <FormItem
-          fieldName="filter-todo"
+          fieldName="filterTodo"
           form={form}
           label="To Do:"
           labelType="blue"
@@ -79,13 +99,18 @@ const FormContent: React.FC<Props> = ({ form, setExtraRefs }) => {
       </li>
       <li className={[styles.li, styles.dropdownLi].join(' ')}>
         <FormItem
-          fieldName="filter-category"
+          fieldName="filterCategory"
           form={form}
           label="Category:"
           labelType="blue"
           layout="horizontal"
         >
-          <Dropdown multiSelect options={dropdownCategoryOptions} ref={dropdownRef} />
+          <Dropdown
+            multiSelect
+            onChange={handleCategoriesChange}
+            options={dropdownCategoryOptions}
+            ref={dropdownRef}
+          />
         </FormItem>
       </li>
     </ul>
