@@ -45,4 +45,11 @@ const Bar: React.FC<Props> = ({ form, signUpStatus }) => {
   );
 };
 
-export default Bar;
+export default React.memo(Bar, ((prevProps, nextProps) => {
+  console.log('**************');
+  console.log(prevProps);
+  console.log(nextProps);
+  console.log('**************');
+  return false;
+  // return true;
+}));
