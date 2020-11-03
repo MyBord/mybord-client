@@ -219,6 +219,7 @@ export const FILTERED_USER_CARDS_SUBSCRIPTION = gql`
   subscription filteredUserCards {
     filteredUserCards {
       filters {
+        categories
         isFavorite
         isToDo
       }

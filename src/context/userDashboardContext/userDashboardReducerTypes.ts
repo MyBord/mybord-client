@@ -25,6 +25,7 @@ interface ReceiveFilteredCards {
   type: typeof RECEIVE_FILTERED_CARDS;
   cards: UserCard[];
   filters: {
+    categories: CardCategory[];
     isFavorite?: boolean;
     isToDo?: boolean;
   };

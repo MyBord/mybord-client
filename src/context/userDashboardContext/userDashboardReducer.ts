@@ -40,17 +40,18 @@ export const userDashboardReducer = (
         byId: reducerUtil.removeById(state.byId, action.id),
       };
     case RECEIVE_FILTERED_CARDS: {
+      const { categories, isFavorite, isToDo } = action.filters;
+      const hasFilters = (categories && categories.length > 0) || isFavorite || isToDo;
       return {
         ...state,
         allIds: reducerUtil.getAllIds(action.cards),
         byId: reducerUtil.getById(action.cards),
         isHydrated: true,
-        // todo
         filters: {
-          ...state.filters, // todo: remove this line
-          hasFilters: action.filters.isFavorite || action.filters.isToDo,
-          isFavorite: !!action.filters.isFavorite,
-          isToDo: !!action.filters.isToDo,
+          categories,
+          hasFilters,
+          isFavorite: !!isFavorite,
+          isToDo: !!isToDo,
         },
       };
     }
