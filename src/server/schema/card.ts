@@ -134,8 +134,16 @@ export const USER_CARDS_QUERY = gql`
 `;
 
 export const USER_CARDS_WITH_FILTERS_QUERY = gql`
-  query userCardsWithFilters($isFavorite: Boolean!, $isToDo: Boolean!){
-    userCardsWithFilters(data: {isFavorite: $isFavorite, isToDo: $isToDo}){
+  query userCardsWithFilters(
+    $categories: [CardCategory]!
+    $isFavorite: Boolean!,
+    $isToDo: Boolean!
+  ){
+    userCardsWithFilters(data: {
+      categories: $categories,
+      isFavorite: $isFavorite,
+      isToDo: $isToDo
+    }){
       id
       category
       isFavorite

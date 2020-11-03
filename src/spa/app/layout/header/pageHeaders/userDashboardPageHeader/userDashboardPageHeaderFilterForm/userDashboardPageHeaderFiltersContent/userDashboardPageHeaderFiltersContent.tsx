@@ -21,9 +21,11 @@ const FormContent: React.FC<Props> = ({ form, setExtraRefs }) => {
   const [userCardsQuery] = useLazyQuery(USER_CARDS_WITH_FILTERS_QUERY, { fetchPolicy: 'no-cache' });
   const { state, dispatch } = useUserDashboardContext();
 
+  const { categories, isFavorite, isToDo } = state.filters;
+
   React.useEffect(() => {
-    form.setFieldsValue({ filterCategory: state.filters.categories });
-  }, [state.filters.categories]);
+    form.setFieldsValue({ filterCategory: categories });
+  }, [categories]);
 
   React.useEffect(() => {
     if (dropdownRef && dropdownRef.current) {
@@ -31,15 +33,24 @@ const FormContent: React.FC<Props> = ({ form, setExtraRefs }) => {
     }
   }, [dropdownRef]);
 
-  const handleCategoriesChange = async (categories: CardCategory[]): Promise<void> => {
-    dispatch({ type: SET_CARD_CATEGORIES_FILTER, categories });
+  const handleCategoriesChange = async (cardCategories: CardCategory[]): Promise<void> => {
+    await userCardsQuery({
+      variables: {
+        categories: cardCategories,
+        isFavorite,
+        isToDo,
+      },
+    });
+
+    dispatch({ type: SET_CARD_CATEGORIES_FILTER, categories: cardCategories });
   };
 
   const handleToggleFavoriteFilter = async (): Promise<void> => {
     await userCardsQuery({
       variables: {
-        isFavorite: !state.filters.isFavorite,
-        isToDo: state.filters.isToDo,
+        categories,
+        isFavorite: !isFavorite,
+        isToDo,
       },
     });
   };
@@ -47,8 +58,9 @@ const FormContent: React.FC<Props> = ({ form, setExtraRefs }) => {
   const handleToggleToDoFilter = async (): Promise<void> => {
     await userCardsQuery({
       variables: {
-        isFavorite: state.filters.isFavorite,
-        isToDo: !state.filters.isToDo,
+        categories,
+        isFavorite,
+        isToDo: !isToDo,
       },
     });
   };
