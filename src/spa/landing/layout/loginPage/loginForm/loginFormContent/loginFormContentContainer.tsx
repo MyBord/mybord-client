@@ -6,20 +6,21 @@ import { useHistory } from 'react-router';
 import { useLazyQuery, useMutation } from '@apollo/react-hooks';
 import Form from 'forms/form/form';
 import handleError from 'server/errors/handleError';
-import { CREATE_USER_MUTATION, GET_CURRENT_USER_QUERY, LOGIN_USER_MUTATION } from 'schema/user';
+import { GET_CURRENT_USER_QUERY, LOGIN_USER_MUTATION } from 'schema/user';
 import { FormProp } from 'types/formTypes';
 import { useCurrentUserContext } from 'context/currentUserContext/currentUserContext';
 import { useLoginContext } from 'context/loginContext/loginContext';
+import { useModalContext } from 'context/modalContext/modalContext';
 import LoginFormContentComponent from './loginFormContentComponent';
 import './loginFormContent.less';
 
 /* eslint-disable brace-style */
 const LoginFormContentContainer: React.FC = () => {
   const history = useHistory();
+  const { setModalId } = useModalContext();
 
   // ----- QUERIES & MUTATIONS ----- //
 
-  const [createUser] = useMutation(CREATE_USER_MUTATION);
   const [getCurrentUserQuery, { called, data, loading }] = useLazyQuery(
     GET_CURRENT_USER_QUERY, { fetchPolicy: 'no-cache' },
   );
@@ -33,7 +34,7 @@ const LoginFormContentContainer: React.FC = () => {
     formStatus,
     setAlertMessage,
     setIsAuthenticationWaiting,
-    setSignUpStatus,
+    userHasAgreedToTerms,
   } = useLoginContext();
 
   // ----- HANDLERS ----- //
@@ -70,44 +71,8 @@ const LoginFormContentContainer: React.FC = () => {
 
   // Function that gets invoked when the user clicks on the 'signup' button in order to create a
   // user
-  const handleSignUp = async (form: FormProp): Promise<void> => {
-    const values = form.getFieldsValue();
-    try {
-      setIsAuthenticationWaiting(true);
-
-      // try to create the new user with the backend
-      await createUser({
-        variables: {
-          email: values.loginEmail,
-          password: values.loginPassword,
-          username: values.loginUsername,
-        },
-      });
-
-      // ask the backend if the user is now authenticated
-      getCurrentUserQuery();
-
-      setIsAuthenticationWaiting(false);
-    } catch (error) {
-      setIsAuthenticationWaiting(false);
-
-      // If a 400 status is returned, notify the user that their password is not strong enough
-      const { message, status } = handleError(error);
-      if (status === 400) {
-        if (message === 'invalid username') {
-          setSignUpStatus('invalid username');
-        }
-        if (message === 'duplicate username') {
-          setSignUpStatus('duplicate username');
-        }
-        if (message === 'weak password') {
-          setSignUpStatus('weak password');
-        }
-        if (message === 'duplicate email') {
-          setSignUpStatus('duplicate email');
-        }
-      }
-    }
+  const handleSignUp = (): void => {
+    setModalId('signup-terms-modal');
   };
 
   // Function that gets invoked when the 'submit' button is invoked, whichever button that may be
@@ -125,7 +90,7 @@ const LoginFormContentContainer: React.FC = () => {
 
     // if the user clicks 'sign up', register them to the db
     else if (formStatus === 'signUp') {
-      handleSignUp(form);
+      handleSignUp();
     }
 
     // Throw an error for anything else
@@ -135,6 +100,15 @@ const LoginFormContentContainer: React.FC = () => {
   };
 
   // ----- DATA HANDLING ----- //
+
+  // If, when signing up, the user has agreed to the Terms & Conditions and the Privacy Policy,
+  // and thus the user has been created, then run the `getCurrentUserQuery` so we can then now
+  // authenticate the newly created user and un-gate the application.
+  React.useEffect(() => {
+    if (userHasAgreedToTerms) {
+      getCurrentUserQuery();
+    }
+  }, [userHasAgreedToTerms]);
 
   // After the user tries to login, if the back-end says they are authenticated, then update
   // their status on the front end as authenticated and push them towards the app

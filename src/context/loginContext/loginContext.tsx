@@ -14,7 +14,9 @@ interface LoginState {
   setFormStatus: (formStatus: FormStatus) => void;
   setIsAuthenticationWaiting: (isAuthenticationWaiting: boolean) => void;
   setSignUpStatus: (loginStatus: SignUpStatus) => void;
+  setUserHasAgreedToTerms: (userHasAgreedToTerms: boolean) => void;
   signUpStatus: SignUpStatus;
+  userHasAgreedToTerms: boolean;
 }
 
 const initialLoginState: LoginState = {
@@ -25,16 +27,19 @@ const initialLoginState: LoginState = {
   setFormStatus: () => {},
   setIsAuthenticationWaiting: () => {},
   setSignUpStatus: () => {},
+  setUserHasAgreedToTerms: () => {},
   signUpStatus: null,
+  userHasAgreedToTerms: false,
 };
 
 const LoginContext = React.createContext<LoginState>(initialLoginState);
 
 export const LoginContextProvider = (props: object): React.ReactElement => {
-  const [formStatus, setFormStatusFn] = React.useState<FormStatus>('login');
   const [alertMessage, setAlertMessage] = React.useState<string>(null);
+  const [formStatus, setFormStatusFn] = React.useState<FormStatus>('login');
   const [isAuthenticationWaiting, setIsAuthenticationWaiting] = React.useState<boolean>(false);
   const [signUpStatus, setSignUpStatus] = React.useState<SignUpStatus>(null);
+  const [userHasAgreedToTerms, setUserHasAgreedToTerms] = React.useState<boolean>(false);
 
   const setFormStatus = (status: FormStatus): void => {
     setAlertMessage(null);
@@ -51,7 +56,9 @@ export const LoginContextProvider = (props: object): React.ReactElement => {
         setFormStatus,
         setIsAuthenticationWaiting,
         setSignUpStatus,
+        setUserHasAgreedToTerms,
         signUpStatus,
+        userHasAgreedToTerms,
       }}
       {...props}
     />
