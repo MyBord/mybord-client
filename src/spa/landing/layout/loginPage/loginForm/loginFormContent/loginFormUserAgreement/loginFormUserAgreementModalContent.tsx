@@ -19,10 +19,17 @@ interface Props {
 const LoginFormUserAgreementModalContent: React.FC<Props> = ({
   form,
 }) => {
-  const { setModalId } = useModalContext();
   const [createUser] = useMutation(CREATE_USER_MUTATION);
   const [isAuthenticationWaiting, setIsAuthenticationWaiting] = React.useState<boolean>(false);
+  const containerDivRef = React.useRef<HTMLDivElement>(null);
+  const { setModalId } = useModalContext();
   const { setSignUpStatus, setUserHasAgreedToTerms } = useLoginContext();
+
+  React.useEffect(() => {
+    if (containerDivRef && containerDivRef.current) {
+      containerDivRef.current.focus();
+    }
+  }, [containerDivRef])
 
   const handleSignup = async (): Promise<void> => {
     const values = form.getFieldsValue();
@@ -67,7 +74,7 @@ const LoginFormUserAgreementModalContent: React.FC<Props> = ({
   };
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} ref={containerDivRef}>
       <Typography text={agreement} />
       <ul>
         <li>
