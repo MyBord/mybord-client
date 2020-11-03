@@ -11,7 +11,7 @@ const duplicateEmailMessage = 'That account already exists';
 
 const duplicateUsernameMessage = 'That username is already taken';
 
-const invalidUsernameMessage = 'The username can only letters (a-z), numbers (0-9), dashes,'
+const invalidUsernameMessage = 'The username can only contain letters (a-z), numbers (0-9), dashes,'
   + ' underscores and periods (-_.)';
 
 const PasswordReactMessage = (

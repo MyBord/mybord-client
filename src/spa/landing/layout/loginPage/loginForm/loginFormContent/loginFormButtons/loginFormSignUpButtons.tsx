@@ -11,9 +11,12 @@ interface Props {
 }
 
 const LoginFormSignUpButtons: React.FC<Props> = ({ form }) => {
-  const { isAuthenticationWaiting, setFormStatus } = useLoginContext();
+  const { isAuthenticationWaiting, setFormStatus, setSignUpStatus } = useLoginContext();
 
-  const handleBack = (): void => setFormStatus('login');
+  const handleBack = (): void => {
+    setFormStatus('login');
+    setSignUpStatus(null);
+  };
 
   return (
     <>
