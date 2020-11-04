@@ -6,9 +6,9 @@ import PopOver from 'modals/popOver/popOver';
 import TextInput from 'inputs/textInput/textInput';
 import { FormProp } from 'types/formTypes';
 import { useMultiSelectCardContext } from 'context/multiSelectCardContext/multiSelectCardContext';
-import UserDashboardPageHeaderFiltersContent
-  from './userDashboardPageHeaderFiltersContent/userDashboardPageHeaderFiltersContent';
-import * as styles from './userDashboardPageHeaderFilterForm.module.less';
+import UserDashboardPageHeaderFilters
+  from './userDashboardPageHeaderFilters/userDashboardPageHeaderFilters';
+import * as styles from './userDashboardPageHeaderForm.module.less';
 
 interface Props {
   errorMessage: string;
@@ -16,7 +16,7 @@ interface Props {
   isWaiting: boolean;
 }
 
-const UserDashboardPageHeaderFilterFormContent: React.FC<Props> = ({
+const UserDashboardPageHeaderFormContent: React.FC<Props> = ({
   errorMessage,
   form,
   isWaiting,
@@ -47,7 +47,7 @@ const UserDashboardPageHeaderFilterFormContent: React.FC<Props> = ({
       </div>
       <div className={styles.buttonsContainer}>
         <PopOver
-          Content={<UserDashboardPageHeaderFiltersContent />}
+          Content={<UserDashboardPageHeaderFilters />}
           caretPlacement="center"
           placement="bottom-center"
         >
@@ -69,4 +69,4 @@ const UserDashboardPageHeaderFilterFormContent: React.FC<Props> = ({
   );
 };
 
-export default UserDashboardPageHeaderFilterFormContent;
+export default UserDashboardPageHeaderFormContent;

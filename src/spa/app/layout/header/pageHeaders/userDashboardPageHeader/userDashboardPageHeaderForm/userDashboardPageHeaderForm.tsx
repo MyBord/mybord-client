@@ -5,9 +5,9 @@ import handleError from 'server/errors/handleError';
 import { INITIATE_USER_CARD_MUTATION } from 'schema/card';
 import { FormProp } from 'types/formTypes';
 import { useModalContext } from 'context/modalContext/modalContext';
-import UserDashboardPageHeaderFilterFormContent from './UserDashboardPageHeaderFilterFormContent';
+import UserDashboardPageHeaderFormContent from './UserDashboardPageHeaderFormContent';
 
-const UserDashboardPageHeaderFilterForm: React.FC = () => {
+const UserDashboardPageHeaderForm: React.FC = () => {
   const [initiateUserCard] = useMutation(INITIATE_USER_CARD_MUTATION);
   const [inputErrorMessage, setInputErrorMessage] = React.useState<string>(null);
   const [isSubmitWaiting, setIsSubmitWaiting] = React.useState<boolean>(false);
@@ -54,7 +54,7 @@ const UserDashboardPageHeaderFilterForm: React.FC = () => {
 
   return (
     <Form layout="horizontal" onSubmit={handleSubmit}>
-      <UserDashboardPageHeaderFilterFormContent
+      <UserDashboardPageHeaderFormContent
         errorMessage={inputErrorMessage}
         isWaiting={isSubmitWaiting}
       />
@@ -62,4 +62,4 @@ const UserDashboardPageHeaderFilterForm: React.FC = () => {
   );
 };
 
-export default UserDashboardPageHeaderFilterForm;
+export default UserDashboardPageHeaderForm;

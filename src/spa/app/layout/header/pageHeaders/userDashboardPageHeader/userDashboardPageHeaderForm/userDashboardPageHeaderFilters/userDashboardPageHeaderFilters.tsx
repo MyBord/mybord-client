@@ -10,7 +10,7 @@ import { FormProp } from 'types/formTypes';
 import { SET_CARD_CATEGORIES_FILTER } from 'context/userDashboardContext/userDashboardReducerTypes';
 import { dropdownCategoryOptions } from 'mockData/inputsMockData';
 import { useUserDashboardContext } from 'context/userDashboardContext/userDashboardContext';
-import * as styles from './userDashboardPageHeaderFiltersContent.module.less';
+import * as styles from './userDashboardPageHeaderFilters.module.less';
 
 interface Props extends ContentPopOverProps {
   form?: FormProp;
@@ -117,10 +117,10 @@ const FormContent: React.FC<Props> = ({ form, setExtraRefs }) => {
   );
 };
 
-const UserDashboardPageHeaderFiltersContent: React.FC<ContentPopOverProps> = ({ setExtraRefs }) => (
+const UserDashboardPageHeaderFilters: React.FC<ContentPopOverProps> = ({ setExtraRefs }) => (
   <Form>
     <FormContent setExtraRefs={setExtraRefs} />
   </Form>
 );
 
-export default UserDashboardPageHeaderFiltersContent;
+export default UserDashboardPageHeaderFilters;
