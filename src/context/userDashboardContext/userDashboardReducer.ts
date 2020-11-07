@@ -50,11 +50,11 @@ export const userDashboardReducer = (
         byId: reducerUtil.getById(action.cards),
         isHydrated: true,
         filters: {
+          ...state.filters,
           categories,
           hasFilters,
-          isFavorite: !!isFavorite,
-          isToDo: !!isToDo,
-          showFilters: state.filters.showFilters,
+          isFavorite,
+          isToDo,
         },
       };
     }
