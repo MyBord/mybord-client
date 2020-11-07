@@ -1,13 +1,14 @@
-import { UserDashboardState } from './userDashboardState';
+import {UserDashboardState} from './userDashboardState';
 import reducerUtil from './userDashboardReducerUtil';
 import {
   ADD_CARD,
-  UserDashboardDispatchTypes,
   DELETE_CARD,
   RECEIVE_FILTERED_CARDS,
-  SET_CARDS,
   SET_CARD_CATEGORIES_FILTER,
+  SET_CARDS,
   TOGGLE_CARD_FILTER,
+  TOGGLE_SHOW_FILTERS,
+  UserDashboardDispatchTypes,
 } from './userDashboardReducerTypes';
 
 export const initialUserDashboardState: UserDashboardState = {
@@ -18,6 +19,7 @@ export const initialUserDashboardState: UserDashboardState = {
     hasFilters: false,
     isFavorite: false,
     isToDo: false,
+    showFilters: false,
   },
   isHydrated: false,
 };
@@ -52,6 +54,7 @@ export const userDashboardReducer = (
           hasFilters,
           isFavorite: !!isFavorite,
           isToDo: !!isToDo,
+          showFilters: state.filters.showFilters,
         },
       };
     }
@@ -72,6 +75,14 @@ export const userDashboardReducer = (
       };
     case TOGGLE_CARD_FILTER:
       return reducerUtil.toggleCardFilter(action.filter, action.id, state);
+    case TOGGLE_SHOW_FILTERS:
+      return {
+        ...state,
+        filters: {
+          ...state.filters,
+          showFilters: !state.filters.showFilters,
+        },
+      };
     default:
       return state;
   }

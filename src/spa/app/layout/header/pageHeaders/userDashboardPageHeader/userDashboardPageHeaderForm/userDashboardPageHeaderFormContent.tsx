@@ -1,9 +1,12 @@
 import * as React from 'react';
 import Button from 'buttons/button/button';
+import IconButton from 'icons/iconButton/iconButton';
 import FormItem from 'forms/formItem/formItem';
 import TextInput from 'inputs/textInput/textInput';
 import { FormProp } from 'types/formTypes';
+import { TOGGLE_SHOW_FILTERS } from 'context/userDashboardContext/userDashboardReducerTypes';
 import { useMultiSelectCardContext } from 'context/multiSelectCardContext/multiSelectCardContext';
+import { useUserDashboardContext } from 'context/userDashboardContext/userDashboardContext';
 import UserDashboardPageHeaderFilters
   from './userDashboardPageHeaderFilters/userDashboardPageHeaderFilters';
 import * as styles from './userDashboardPageHeaderForm.module.less';
@@ -20,6 +23,11 @@ const UserDashboardPageHeaderFormContent: React.FC<Props> = ({
   isWaiting,
 }) => {
   const { canMultiEdit, toggleMultiEditStatus } = useMultiSelectCardContext();
+  const { dispatch } = useUserDashboardContext();
+
+  const handleFilterClick = (): void => {
+    dispatch({ type: TOGGLE_SHOW_FILTERS });
+  }
 
   return (
     <div className={styles.formContainer}>
@@ -44,6 +52,12 @@ const UserDashboardPageHeaderFormContent: React.FC<Props> = ({
             </div>
           </FormItem>
         </div>
+        <IconButton
+          color="blue"
+          iconName="filter"
+          onClick={handleFilterClick}
+          size={32}
+        />
         {/* <FormItem fieldName="edit-cards" form={form}> */}
         {/*  <Button */}
         {/*    htmlType="button" */}

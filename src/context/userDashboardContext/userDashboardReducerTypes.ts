@@ -8,6 +8,7 @@ export const RECEIVE_FILTERED_CARDS = 'RECEIVE_FILTERED_CARDS';
 export const SET_CARDS = 'SET_CARDS';
 export const SET_CARD_CATEGORIES_FILTER = 'SET_CARD_CATEGORIES_FILTER';
 export const TOGGLE_CARD_FILTER = 'TOGGLE_CARD_FILTER';
+export const TOGGLE_SHOW_FILTERS = 'TOGGLE_SHOW_FILTERS';
 
 // ----- INTERFACES ----- //
 
@@ -47,9 +48,14 @@ interface ToggleCardFilter {
   id: UserCard['id'];
 }
 
+interface ToggleShowFilters {
+  type: typeof TOGGLE_SHOW_FILTERS;
+}
+
 export type UserDashboardDispatchTypes = AddCard
 | DeleteCard
 | ReceiveFilteredCards
 | SetCards
 | SetCardCategoriesFilter
-| ToggleCardFilter;
+| ToggleCardFilter
+| ToggleShowFilters;
