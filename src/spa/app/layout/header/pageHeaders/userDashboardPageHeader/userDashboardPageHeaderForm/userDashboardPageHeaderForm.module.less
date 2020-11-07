@@ -4,14 +4,22 @@
   margin: 0 1.5rem;
 }
 
-.buttonsContainer {
-  margin-top: 0.25rem;
-  position: relative;
-}
-
 .formContainer {
   display: flex;
+  flex-direction: column;
   margin-left: @pageMarginLeft;
+}
+
+.mainContainer {
+  display: flex;
+  :global {
+    .ant-form-item {
+      margin-bottom: 0;
+    }
+    .ant-form-item-control {
+      line-height: initial;
+    }
+  }
 }
 
 .input {

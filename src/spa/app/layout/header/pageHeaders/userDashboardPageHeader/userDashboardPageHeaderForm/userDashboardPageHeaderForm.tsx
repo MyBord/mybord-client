@@ -53,7 +53,7 @@ const UserDashboardPageHeaderForm: React.FC = () => {
   };
 
   return (
-    <Form layout="horizontal" onSubmit={handleSubmit}>
+    <Form onSubmit={handleSubmit}>
       <UserDashboardPageHeaderFormContent
         errorMessage={inputErrorMessage}
         isWaiting={isSubmitWaiting}

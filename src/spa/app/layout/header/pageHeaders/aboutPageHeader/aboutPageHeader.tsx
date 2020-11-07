@@ -1,20 +1,18 @@
 import * as React from 'react';
-import Typography from 'typography/typography';
+import TypographyPageTitle from 'typography/typographyPageTitle/typographyPageTitle';
 import * as styles from './aboutPageHeader.module.less';
 
 const AboutPageHeader: React.FC = () => (
   <section className={styles.section}>
     <div>
-      <Typography
+      <TypographyPageTitle
         link="/about"
-        size="four"
         text="About MyBord"
       />
     </div>
     <div className={styles.devDiv}>
-      <Typography
+      <TypographyPageTitle
         link="/about/dev"
-        size="four"
         text="For Developers"
       />
     </div>
