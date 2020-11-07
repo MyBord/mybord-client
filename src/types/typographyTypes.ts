@@ -20,7 +20,6 @@ export interface TypographyProps {
   color?: ExportedColors;
   disabled?: boolean;
   font?: TypographyFont;
-  isPageTitle?: boolean;
   lineHeight?: 'large';
   link?: string;
   maxTextLength?: number;
