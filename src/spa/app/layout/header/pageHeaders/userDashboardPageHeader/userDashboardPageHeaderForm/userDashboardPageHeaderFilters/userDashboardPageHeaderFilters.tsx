@@ -3,7 +3,6 @@ import { useLazyQuery } from '@apollo/react-hooks';
 import Checkbox from 'inputs/checkbox/checkbox';
 import Dropdown from 'inputs/dropdown/dropdown';
 import FormItem from 'forms/formItem/formItem';
-import Toggle from 'inputs/toggle/toggle';
 import { CardCategory, USER_CARDS_WITH_FILTERS_QUERY } from 'schema/card';
 import { FormProp } from 'types/formTypes';
 import { SET_CARD_CATEGORIES_FILTER } from 'context/userDashboardContext/userDashboardReducerTypes';
@@ -84,20 +83,22 @@ const UserDashboardPageHeaderFilters: React.FC<Props> = ({ form }) => {
           onChange={handleToggleToDoFilter}
         />
       </FormItem>
-      <FormItem
-        fieldName="filterCategory"
-        form={form}
-        label="Category:"
-        labelType="blue"
-        layout="horizontal"
-      >
-        <Dropdown
-          multiSelect
-          onChange={handleCategoriesChange}
-          options={dropdownCategoryOptions}
-          ref={dropdownRef}
-        />
-      </FormItem>
+      <div className={styles.dropdownDiv}>
+        <FormItem
+          fieldName="filterCategory"
+          form={form}
+          label="Category:"
+          labelType="blue"
+          layout="horizontal"
+        >
+          <Dropdown
+            multiSelect
+            onChange={handleCategoriesChange}
+            options={dropdownCategoryOptions}
+            ref={dropdownRef}
+          />
+        </FormItem>
+      </div>
     </div>
   );
 };
