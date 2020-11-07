@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { useLazyQuery } from '@apollo/react-hooks';
+import Checkbox from 'inputs/checkbox/checkbox';
 import Dropdown from 'inputs/dropdown/dropdown';
 import FormItem from 'forms/formItem/formItem';
 import Toggle from 'inputs/toggle/toggle';
@@ -66,10 +67,9 @@ const UserDashboardPageHeaderFilters: React.FC<Props> = ({ form }) => {
         labelType="blue"
         layout="horizontal"
       >
-        <Toggle
+        <Checkbox
           checked={state.filters.isFavorite}
-          onClick={handleToggleFavoriteFilter}
-          size="small"
+          onChange={handleToggleFavoriteFilter}
         />
       </FormItem>
       <FormItem
@@ -79,10 +79,9 @@ const UserDashboardPageHeaderFilters: React.FC<Props> = ({ form }) => {
         labelType="blue"
         layout="horizontal"
       >
-        <Toggle
+        <Checkbox
           checked={state.filters.isToDo}
-          onClick={handleToggleToDoFilter}
-          size="small"
+          onChange={handleToggleToDoFilter}
         />
       </FormItem>
       <FormItem
