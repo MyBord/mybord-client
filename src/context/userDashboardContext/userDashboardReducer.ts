@@ -1,4 +1,4 @@
-import {UserDashboardState} from './userDashboardState';
+import { UserDashboardState } from './userDashboardState';
 import reducerUtil from './userDashboardReducerUtil';
 import {
   ADD_CARD,
