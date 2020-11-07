@@ -13,6 +13,7 @@ export interface UserDashboardState {
     hasFilters: boolean;
     isFavorite: boolean;
     isToDo: boolean;
+    showFilters: boolean;
   };
   // indicates if the reducer has been populated with the necessary data (we don't want to
   // evaluate allIds.length because we could possibly hydrate this reducer with empty data).
