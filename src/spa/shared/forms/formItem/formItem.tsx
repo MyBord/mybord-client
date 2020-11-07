@@ -2,7 +2,6 @@ import * as React from 'react';
 import Typography from 'typography/typography';
 import { Form } from 'antd';
 import { GetFieldDecoratorOptionsType, FormProp } from 'types/formTypes';
-import { TypographyProps } from 'types/typographyTypes';
 import * as styles from './formItem.module.less';
 import './formItem.less';
 
