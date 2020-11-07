@@ -3,6 +3,7 @@ import { useLazyQuery } from '@apollo/react-hooks';
 import Checkbox from 'inputs/checkbox/checkbox';
 import Dropdown from 'inputs/dropdown/dropdown';
 import FormItem from 'forms/formItem/formItem';
+import UserDashboardFiltersAnimation from 'framerMotion/userDashboardFiltersAnimation';
 import { CardCategory, USER_CARDS_WITH_FILTERS_QUERY } from 'schema/card';
 import { FormProp } from 'types/formTypes';
 import { SET_CARD_CATEGORIES_FILTER } from 'context/userDashboardContext/userDashboardReducerTypes';
@@ -58,48 +59,50 @@ const UserDashboardPageHeaderFilters: React.FC<Props> = ({ form }) => {
   };
 
   return (
-    <div className={styles.divContainer}>
-      <FormItem
-        fieldName="filterFavorites"
-        form={form}
-        label="Favorites:"
-        labelType="blue"
-        layout="horizontal"
-      >
-        <Checkbox
-          checked={state.filters.isFavorite}
-          onChange={handleToggleFavoriteFilter}
-        />
-      </FormItem>
-      <FormItem
-        fieldName="filterTodo"
-        form={form}
-        label="To Do:"
-        labelType="blue"
-        layout="horizontal"
-      >
-        <Checkbox
-          checked={state.filters.isToDo}
-          onChange={handleToggleToDoFilter}
-        />
-      </FormItem>
-      <div className={styles.dropdownDiv}>
+    <UserDashboardFiltersAnimation showFilters={state.filters.showFilters}>
+      <div className={styles.divContainer}>
         <FormItem
-          fieldName="filterCategory"
+          fieldName="filterFavorites"
           form={form}
-          label="Category:"
+          label="Favorites:"
           labelType="blue"
           layout="horizontal"
         >
-          <Dropdown
-            multiSelect
-            onChange={handleCategoriesChange}
-            options={dropdownCategoryOptions}
-            ref={dropdownRef}
+          <Checkbox
+            checked={state.filters.isFavorite}
+            onChange={handleToggleFavoriteFilter}
           />
         </FormItem>
+        <FormItem
+          fieldName="filterTodo"
+          form={form}
+          label="To Do:"
+          labelType="blue"
+          layout="horizontal"
+        >
+          <Checkbox
+            checked={state.filters.isToDo}
+            onChange={handleToggleToDoFilter}
+          />
+        </FormItem>
+        <div className={styles.dropdownDiv}>
+          <FormItem
+            fieldName="filterCategory"
+            form={form}
+            label="Category:"
+            labelType="blue"
+            layout="horizontal"
+          >
+            <Dropdown
+              multiSelect
+              onChange={handleCategoriesChange}
+              options={dropdownCategoryOptions}
+              ref={dropdownRef}
+            />
+          </FormItem>
+        </div>
       </div>
-    </div>
+    </UserDashboardFiltersAnimation>
   );
 };
 
