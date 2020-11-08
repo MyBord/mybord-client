@@ -7,6 +7,7 @@ import * as styles from './button.module.less';
 import './button.less';
 
 interface Props {
+  autoFocus?: boolean;
   color?: 'blue' | 'red';
   disabled?: boolean;
   htmlType?: 'button' | 'reset' | 'submit';
@@ -19,6 +20,7 @@ interface Props {
 }
 
 const Button: React.FC<Props> = ({
+  autoFocus = false,
   color = 'blue',
   disabled = false,
   htmlType = 'button',
@@ -45,6 +47,7 @@ const Button: React.FC<Props> = ({
 
   return (
     <AntButton
+      autoFocus={autoFocus}
       className={getClassNames()}
       disabled={disabled}
       htmlType={htmlType}

@@ -62,7 +62,6 @@ const LoginFormUserAgreementModalContent: React.FC<Props> = ({
           setSignUpStatus('duplicate email');
         }
       }
-
     }
   };
 
@@ -79,6 +78,7 @@ const LoginFormUserAgreementModalContent: React.FC<Props> = ({
       </ul>
       <div className={styles.buttonContainer}>
         <Button
+          autoFocus
           isWaiting={isAuthenticationWaiting}
           label="Accept"
           onClick={handleSignup}
