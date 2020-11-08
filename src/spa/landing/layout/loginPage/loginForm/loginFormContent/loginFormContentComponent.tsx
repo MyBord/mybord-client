@@ -1,10 +1,8 @@
 import * as React from 'react';
 import Modal from 'modals/modal/modal';
-import Toast from 'modals/toast/toast';
 import Typography from 'typography/typography';
 import { FormProp } from 'types/formTypes';
 import { useLandingContext } from 'context/landingContext/landingContext';
-import { useToastContext } from 'context/toastContext/toastContext';
 import LoginFormAlert from './loginFormAlert/loginFormAlert';
 import LoginFormButtons from './loginFormButtons/loginFormButtons';
 import LoginFormInputs from './loginFormInputs/loginFormInputs';
@@ -18,7 +16,6 @@ interface Props {
 
 const LoginFormContentComponent: React.FC<Props> = ({ form }) => {
   const { headerRef } = useLandingContext();
-  const { setToastId } = useToastContext();
 
   const handleClick = (): void => {
     setTimeout(() => {
@@ -33,12 +30,6 @@ const LoginFormContentComponent: React.FC<Props> = ({ form }) => {
 
   return (
     <>
-      <button type="button" onClick={() => setToastId('user-agreement-toast')}>Click Me</button>
-      <Toast
-        delay
-        id="user-agreement-toast"
-        text="By not accepting the user agreement, you are unable to signup for MyBord."
-      />
       <Modal id="signup-terms-modal" title="User Agreement">
         <LoginFormUserAgreementModalContent form={form} />
       </Modal>

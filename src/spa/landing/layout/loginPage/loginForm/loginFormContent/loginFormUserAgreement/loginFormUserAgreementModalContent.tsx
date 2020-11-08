@@ -1,12 +1,14 @@
 import * as React from 'react';
 import { useMutation } from '@apollo/react-hooks';
 import Button from 'buttons/button/button';
+import Toast from 'modals/toast/toast';
 import Typography from 'typography/typography';
 import handleError from 'server/errors/handleError';
 import { CREATE_USER_MUTATION } from 'schema/user';
 import { FormProp } from 'types/formTypes';
 import { useLoginContext } from 'context/loginContext/loginContext';
 import { useModalContext } from 'context/modalContext/modalContext';
+import { useToastContext } from 'context/toastContext/toastContext';
 import * as styles from './loginFormUserAgreementModalContent.module.less';
 
 const agreement = "By clicking 'Accept', I agree to the Terms & Conditions and the Privacy Policy"
@@ -23,6 +25,12 @@ const LoginFormUserAgreementModalContent: React.FC<Props> = ({
   const [createUser] = useMutation(CREATE_USER_MUTATION);
   const [isAuthenticationWaiting, setIsAuthenticationWaiting] = React.useState<boolean>(false);
   const { setSignUpStatus, setUserHasAgreedToTerms } = useLoginContext();
+  const { setToastId } = useToastContext();
+
+  const handleBack = (): void => {
+    setModalId(null);
+    setToastId('user-agreement-toast');
+  };
 
   const handleSignup = async (): Promise<void> => {
     const values = form.getFieldsValue();
@@ -66,30 +74,36 @@ const LoginFormUserAgreementModalContent: React.FC<Props> = ({
   };
 
   return (
-    <div className={styles.container}>
-      <Typography text={agreement} />
-      <ul>
-        <li>
-          <Typography link="/termsAndConditions" text="Terms & Conditions" />
-        </li>
-        <li>
-          <Typography link="/privacyPolicy" text="Privacy Policy" />
-        </li>
-      </ul>
-      <div className={styles.buttonContainer}>
-        <Button
-          autoFocus
-          isWaiting={isAuthenticationWaiting}
-          label="Accept"
-          onClick={handleSignup}
-        />
-        <Button
-          label="back"
-          onClick={() => setModalId(null)}
-          type="tertiary"
-        />
+    <>
+      <Toast
+        id="user-agreement-toast"
+        text="By not accepting the user agreement, you are unable to signup for MyBord."
+      />
+      <div className={styles.container}>
+        <Typography text={agreement} />
+        <ul>
+          <li>
+            <Typography link="/termsAndConditions" text="Terms & Conditions" />
+          </li>
+          <li>
+            <Typography link="/privacyPolicy" text="Privacy Policy" />
+          </li>
+        </ul>
+        <div className={styles.buttonContainer}>
+          <Button
+            autoFocus
+            isWaiting={isAuthenticationWaiting}
+            label="Accept"
+            onClick={handleSignup}
+          />
+          <Button
+            label="back"
+            onClick={handleBack}
+            type="tertiary"
+          />
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
