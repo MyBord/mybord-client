@@ -35,6 +35,7 @@ const LoginFormContentComponent: React.FC<Props> = ({ form }) => {
     <>
       <button type="button" onClick={() => setToastId('user-agreement-toast')}>Click Me</button>
       <Toast
+        delay
         id="user-agreement-toast"
         text="By not accepting the user agreement, you are unable to signup for MyBord."
       />
