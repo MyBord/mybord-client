@@ -7,6 +7,7 @@ import { CREATE_USER_MUTATION } from 'schema/user';
 import { FormProp } from 'types/formTypes';
 import { useLoginContext } from 'context/loginContext/loginContext';
 import { useModalContext } from 'context/modalContext/modalContext';
+import { useToastContext } from 'context/toastContext/toastContext';
 import * as styles from './loginFormUserAgreementModalContent.module.less';
 
 const agreement = "By clicking 'Accept', I agree to the Terms & Conditions and the Privacy Policy"
@@ -23,6 +24,12 @@ const LoginFormUserAgreementModalContent: React.FC<Props> = ({
   const [createUser] = useMutation(CREATE_USER_MUTATION);
   const [isAuthenticationWaiting, setIsAuthenticationWaiting] = React.useState<boolean>(false);
   const { setSignUpStatus, setUserHasAgreedToTerms } = useLoginContext();
+  const { setToastId } = useToastContext();
+
+  const handleBack = (): void => {
+    setModalId(null);
+    setToastId('user-agreement-toast');
+  };
 
   const handleSignup = async (): Promise<void> => {
     const values = form.getFieldsValue();
@@ -85,7 +92,7 @@ const LoginFormUserAgreementModalContent: React.FC<Props> = ({
         />
         <Button
           label="back"
-          onClick={() => setModalId(null)}
+          onClick={handleBack}
           type="tertiary"
         />
       </div>

@@ -26,10 +26,6 @@ export interface PopOverCallback {
   showPopOver: () => void;
 }
 
-export interface ContentPopOverProps {
-  setExtraRefs?: (extraRefs: ExtraRefs) => void;
-}
-
 export interface PopOverProps {
   callback?: (props: PopOverCallback) => void;
   caretPlacement?:
