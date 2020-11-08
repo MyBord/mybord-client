@@ -1,6 +1,7 @@
 import * as React from 'react';
 import IconButton from 'icons/iconButton/iconButton';
 import Portal from 'portal/portal';
+import ToastAnimation from 'framerMotion/toastAnimation';
 import Typography from 'typography/typography';
 import { useToastContext } from 'context/toastContext/toastContext';
 import * as styles from './toast.module.less';
@@ -11,13 +12,13 @@ interface Props {
 }
 
 const Toast: React.FC<Props> = ({ id, text }) => {
-  const { toastId } = useToastContext();
+  const { setToastId, toastId } = useToastContext();
 
   const isVisible = id === toastId;
 
   return (
     <Portal>
-      <section className={styles.section}>
+      <ToastAnimation isVisible={isVisible}>
         <div className={styles.div}>
           <Typography
             color="blue"
@@ -26,12 +27,12 @@ const Toast: React.FC<Props> = ({ id, text }) => {
           <IconButton
             color="black"
             iconName="close"
-            // onClick={handleClose}
+            onClick={() => setToastId(null)}
             size={24}
             strokeWidth={4}
           />
         </div>
-      </section>
+      </ToastAnimation>
     </Portal>
   );
 };

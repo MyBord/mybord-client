@@ -1,13 +1,13 @@
 import * as React from 'react';
 
 interface ToastState {
-  toastId: string;
   setToastId: (toastId: string) => void;
+  toastId: string;
 }
 
 const initialToastState: ToastState = {
-  toastId: null,
   setToastId: () => {},
+  toastId: null,
 };
 
 const ToastContext = React.createContext<ToastState>(initialToastState);
@@ -18,8 +18,8 @@ export const ToastContextProvider = (props: object): React.ReactElement => {
   return (
     <ToastContext.Provider
       value={{
-        toastId,
         setToastId,
+        toastId,
       }}
       {...props}
     />
