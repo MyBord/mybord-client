@@ -28,6 +28,7 @@ const PencilIcon = React.lazy(() => import('./individualIcons/pencilIcon'));
 const PlaylistIcon = React.lazy(() => import('./individualIcons/playlistIcon'));
 const SettingsIcon = React.lazy(() => import('./individualIcons/settingsIcon'));
 const StarIcon = React.lazy(() => import('./individualIcons/starIcon'));
+const SuccessIcon = React.lazy(() => import('./individualIcons/successIcon'));
 const ThumbsUpIcon = React.lazy(() => import('./individualIcons/thumbsUpIcon'));
 const TwitterIcon = React.lazy(() => import('./individualIcons/twitterIcon'));
 const UserDashboardIcon = React.lazy(() => import('./individualIcons/userDashboardIcon'));
@@ -66,6 +67,7 @@ export const iconNames = {
   playlist: 'foo',
   settings: 'foo',
   star: 'foo',
+  success: 'foo',
   thumbsUp: 'foo',
   twitter: 'foo',
   userDashboard: 'foo',
@@ -143,6 +145,8 @@ const Icon: React.FC<IconProps> = ({
       return <SettingsIcon color={color} size={size} />;
     case 'star':
       return <StarIcon size={size} />;
+    case 'success':
+      return <SuccessIcon color={color} size={size} strokeWidth={strokeWidth} />;
     case 'twitter':
       return <TwitterIcon color={color} size={size} />;
     case 'thumbsUp':

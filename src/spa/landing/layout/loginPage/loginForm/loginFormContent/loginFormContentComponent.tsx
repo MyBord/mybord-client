@@ -34,6 +34,7 @@ const LoginFormContentComponent: React.FC<Props> = ({ form }) => {
       <Toast
         id="user-agreement-toast"
         text="By not accepting the user agreement, you are unable to signup for MyBord."
+        type="warning"
       />
       <Modal id="signup-terms-modal" title="User Agreement">
         <LoginFormUserAgreementModalContent form={form} />

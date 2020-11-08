@@ -2,12 +2,14 @@
 export type ExportedColors =
   'black'
   | 'blue'
+  | 'green'
   | 'lightGrey'
   | 'orange'
   | 'red'
   | 'transparentBlack'
   | 'transparentWhite'
-  | 'white';
+  | 'white'
+  | 'yellow';
 
 export type TagColors =
   | 'blue'
