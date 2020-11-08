@@ -1,8 +1,10 @@
 import * as React from 'react';
+import Icon from 'icons/icon/icon';
 import IconButton from 'icons/iconButton/iconButton';
 import Portal from 'portal/portal';
 import ToastAnimation from 'framerMotion/toastAnimation';
 import Typography from 'typography/typography';
+import { ExportedColors } from 'types/colorTypes';
 import { useToastContext } from 'context/toastContext/toastContext';
 import * as styles from './toast.module.less';
 
@@ -10,12 +12,14 @@ interface Props {
   delay?: boolean;
   id: string;
   text: string;
+  type: 'error' | 'success' | 'warning';
 }
 
 const Toast: React.FC<Props> = ({
   delay,
   id,
   text,
+  type,
 }) => {
   const { setToastId, toastId } = useToastContext();
 
@@ -25,10 +29,31 @@ const Toast: React.FC<Props> = ({
     }
   }, [toastId]);
 
+  const getIconColor = (): ExportedColors => {
+    switch (type) {
+      case 'error':
+        return 'red';
+      case 'success':
+        return 'green';
+      case 'warning':
+        return 'yellow';
+      default:
+        throw Error('unsupported icon type');
+    }
+  };
+
   return (
     <Portal>
       <ToastAnimation isVisible={id === toastId}>
-        <div className={styles.div}>
+        <div className={styles.divContainer}>
+          <div className={styles.iconDiv}>
+            <Icon
+              color={getIconColor()}
+              iconName={type === 'error' ? 'warning' : type}
+              size={24}
+              strokeWidth={type === 'warning' ? 5 : 4}
+            />
+          </div>
           <Typography
             color="blue"
             text={text}
