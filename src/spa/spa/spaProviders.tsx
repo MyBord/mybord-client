@@ -4,6 +4,7 @@ import { HydrationContextProvider } from 'context/hydrationContext/hydrationCont
 import { ModalContextProvider } from 'context/modalContext/modalContext';
 import { MultiSelectCardContextProvider }
   from 'context/multiSelectCardContext/multiSelectCardContext';
+import { ToastContextProvider } from 'context/toastContext/toastContext';
 import { UserDashboardContextProvider } from 'context/userDashboardContext/userDashboardContext';
 
 interface Props {
@@ -15,9 +16,11 @@ const SpaProviders: React.FC<Props> = ({ children }) => (
     <HydrationContextProvider>
       <ModalContextProvider>
         <MultiSelectCardContextProvider>
-          <UserDashboardContextProvider>
-            {children}
-          </UserDashboardContextProvider>
+          <ToastContextProvider>
+            <UserDashboardContextProvider>
+              {children}
+            </UserDashboardContextProvider>
+          </ToastContextProvider>
         </MultiSelectCardContextProvider>
       </ModalContextProvider>
     </HydrationContextProvider>
