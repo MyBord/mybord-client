@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[68],{1029:function(n,t,o){"use strict";o.r(t);var e=o(0),c=o(104);t.default=function(n){var t=n.children,o=n.commonStyles,i=n.onClick;return e.createElement("button",{className:[c.button,o].join(" "),type:"button",onClick:i},t)}}}]);
-//# sourceMappingURL=68.bundle.js.map
