@@ -9,7 +9,6 @@ import client from 'server/client';
 import myBordMark from 'assets/logo/myBordMark.png';
 import Spa from './spa/spa/spa';
 
-
 createRoot(document.getElementById('app')).render(
   <ApolloProvider client={client}>
     <Spa />
