@@ -1,12 +1,10 @@
 import * as React from 'react';
-import logo from 'assets/logo/mb.png';
-import Typography from 'typography/typography';
+import logoWithType from 'assets/logo/myBordMarkType.png';
 import * as styles from './loginFormHeader.module.less';
 
 const LoginFormHeader: React.FC = () => (
   <div className={styles.div}>
-    <img alt="MyBord logo" className={styles.img} src={logo} />
-    <Typography size="five" text="MyBord.io" weight="bold" />
+    <img alt="MyBord logo" className={styles.img} src={logoWithType} />
   </div>
 );
 

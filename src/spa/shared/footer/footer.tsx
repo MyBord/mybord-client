@@ -1,7 +1,7 @@
 import * as React from 'react';
 import FooterContent from 'shared/footer/footerContent/footerContent';
 import Typography from 'typography/typography';
-import logo from 'assets/logo/mb.png';
+import logo from 'assets/logo/myBordMark.png';
 import { FooterHrStyle, FooterImgStyle, FooterProps } from 'types/footerTypes';
 import footerIcons from './footerIcons/footerIcons';
 import { getHrStyles, getImgStyles } from './getFooterStyles';
@@ -44,7 +44,7 @@ const Footer: React.FC<FooterProps> = ({ isApp }) => {
           Content={() => <footerIcons.CopyrightContent isApp={isApp} />}
           color={isApp ? 'black' : 'white'}
           size="three"
-          text="Copyright 2020 by MyBord.io. All Rights Reserved."
+          text="Copyright 2020 by MyBord LLC. All Rights Reserved."
         />
       </div>
     </section>
