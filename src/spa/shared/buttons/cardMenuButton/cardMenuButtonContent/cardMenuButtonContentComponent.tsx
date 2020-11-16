@@ -1,6 +1,7 @@
 // *1: adding an `onClick` turns this into a typography button, which enforces our intended styling
 
 import * as React from 'react';
+import Checkbox from 'inputs/checkbox/checkbox';
 import Icon from 'icons/icon/icon';
 import PopConfirm from 'modals/popConfirm/popConfirm';
 import Toggle from 'inputs/toggle/toggle';
@@ -19,7 +20,7 @@ const CardMenuButtonContentComponent: React.FC<Props> = ({
   toggleToDo,
 }) => {
   const DeleteIconContent: React.FC = () => (
-    <div className={styles.iconDiv}>
+    <div className={styles.contentDiv}>
       <Icon
         color="blue"
         fill="blue"
@@ -29,13 +30,19 @@ const CardMenuButtonContentComponent: React.FC<Props> = ({
     </div>
   );
 
+  const ToDoCheckboxContent: React.FC = () => (
+    <div className={styles.contentDiv}>
+      <Checkbox checked={isToDo} />
+    </div>
+  );
+
   return (
     <ul className={styles.ul}>
       <li className={styles.li}>
-        <Toggle
-          checked={isToDo}
+        <Typography
+          Content={ToDoCheckboxContent}
           onClick={toggleToDo}
-          size="small"
+          size="two"
           text="to do"
         />
       </li>

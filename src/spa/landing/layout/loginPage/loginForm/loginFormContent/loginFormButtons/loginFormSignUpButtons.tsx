@@ -20,14 +20,14 @@ const LoginFormSignUpButtons: React.FC<Props> = ({ form }) => {
 
   return (
     <>
-      <div className={styles.rememberForgotDiv}>
-        <FormItem
-          fieldName="remember-me"
-          form={form}
-        >
-          <Checkbox label="Remember Me" />
-        </FormItem>
-      </div>
+      {/* <div className={styles.rememberForgotDiv}> */}
+      {/*  <FormItem */}
+      {/*    fieldName="remember-me" */}
+      {/*    form={form} */}
+      {/*  > */}
+      {/*    <Checkbox label="Remember Me" /> */}
+      {/*  </FormItem> */}
+      {/* </div> */}
       <div className={[styles.buttonDiv, styles.signUpDiv].join(' ')}>
         <FormItem
           fieldName="sign-up"
