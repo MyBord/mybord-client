@@ -1,7 +1,12 @@
 import * as React from 'react';
 import Typography from 'typography/typography';
 import { Form } from 'antd';
-import { GetFieldDecoratorOptionsType, FormProp } from 'types/formTypes';
+import {
+  FormProp,
+  GetFieldDecoratorOptionsType,
+  ValidationRules,
+  Validator,
+} from 'types/formTypes';
 import * as styles from './formItem.module.less';
 import './formItem.less';
 
@@ -19,6 +24,7 @@ interface Props {
   requiredMessage?: string;
   type?: string;
   typeMessage?: string;
+  validator?: Validator;
 }
 
 const FormItem: React.FC<Props> = ({
@@ -35,13 +41,17 @@ const FormItem: React.FC<Props> = ({
   requiredMessage = null,
   type = null,
   typeMessage = false,
+  validator = null,
 }) => {
-  const rules = [];
+  const rules: ValidationRules = [];
   if (required && requiredMessage) {
     rules.push({ message: requiredMessage, required });
   }
   if (type && typeMessage) {
     rules.push({ message: typeMessage, type });
+  }
+  if (validator) {
+    rules.push({ validator });
   }
 
   const options: GetFieldDecoratorOptionsType = {
