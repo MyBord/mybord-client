@@ -43,3 +43,9 @@ export const LOGOUT_USER_QUERY = gql`
     logoutUser
   }
 `;
+
+export const VALIDATE_USER_SIGNUP = gql`
+  query validateUserSignup($email: String!, $password: String!, $username: String!) {
+    validateUserSignup(data: {email: $email, password: $password, username: $username})
+  }
+`;
