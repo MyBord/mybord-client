@@ -5,8 +5,13 @@ import * as React from 'react';
 import { useHistory } from 'react-router';
 import { useLazyQuery, useMutation } from '@apollo/react-hooks';
 import Form from 'forms/form/form';
+import getGraphQLErrorMessage from 'utils/getGraphQLErrorMessage';
 import handleError from 'server/errors/handleError';
-import { GET_CURRENT_USER_QUERY, LOGIN_USER_MUTATION } from 'schema/user';
+import {
+  GET_CURRENT_USER_QUERY,
+  LOGIN_USER_MUTATION,
+  VALIDATE_USER_SIGNUP,
+} from 'schema/user';
 import { FormProp } from 'types/formTypes';
 import { useCurrentUserContext } from 'context/currentUserContext/currentUserContext';
 import { useLoginContext } from 'context/loginContext/loginContext';
@@ -22,7 +27,12 @@ const LoginFormContentContainer: React.FC = () => {
   // ----- QUERIES & MUTATIONS ----- //
 
   const [getCurrentUserQuery, { called, data, loading }] = useLazyQuery(
-    GET_CURRENT_USER_QUERY, { fetchPolicy: 'no-cache' },
+    GET_CURRENT_USER_QUERY,
+    { fetchPolicy: 'no-cache' },
+  );
+  const [validateUserSignupQuery, validateOptions] = useLazyQuery(
+    VALIDATE_USER_SIGNUP,
+    { fetchPolicy: 'no-cache' },
   );
   const [loginUser] = useMutation(LOGIN_USER_MUTATION);
 
@@ -35,6 +45,7 @@ const LoginFormContentContainer: React.FC = () => {
     setAlertMessage,
     setIsAuthenticationWaiting,
     userHasAgreedToTerms,
+    setSignUpStatus,
   } = useLoginContext();
 
   // ----- HANDLERS ----- //
@@ -71,8 +82,18 @@ const LoginFormContentContainer: React.FC = () => {
 
   // Function that gets invoked when the user clicks on the 'signup' button in order to create a
   // user
-  const handleSignUp = (): void => {
-    setModalId('signup-terms-modal');
+  const handleSignUp = async (form: FormProp): Promise<void> => {
+    const values = form.getFieldsValue();
+
+    setIsAuthenticationWaiting(true);
+
+    await validateUserSignupQuery({
+      variables: {
+        email: values.loginEmail,
+        password: values.loginPassword,
+        username: values.loginUsername,
+      },
+    });
   };
 
   // Function that gets invoked when the 'submit' button is invoked, whichever button that may be
@@ -90,7 +111,7 @@ const LoginFormContentContainer: React.FC = () => {
 
     // if the user clicks 'sign up', register them to the db
     else if (formStatus === 'signUp') {
-      handleSignUp();
+      handleSignUp(form);
     }
 
     // Throw an error for anything else
@@ -126,6 +147,29 @@ const LoginFormContentContainer: React.FC = () => {
     // as sentry.
     else {
       throw new Error('Unable to authenticate');
+    }
+  }
+
+  if (validateOptions.called && !validateOptions.loading) {
+    if (validateOptions.error) {
+      setIsAuthenticationWaiting(false);
+      const errorMessage = getGraphQLErrorMessage(validateOptions.error.message);
+
+      if (errorMessage === 'invalid username') {
+        setSignUpStatus('invalid username');
+      }
+      if (errorMessage === 'duplicate username') {
+        setSignUpStatus('duplicate username');
+      }
+      if (errorMessage === 'weak password') {
+        setSignUpStatus('weak password');
+      }
+      if (errorMessage === 'duplicate email') {
+        setSignUpStatus('duplicate email');
+      }
+    } else {
+      setIsAuthenticationWaiting(false);
+      setModalId('signup-terms-modal');
     }
   }
 
