@@ -153,7 +153,7 @@ const resolve = {
     header: path.resolve(__dirname, 'src/spa/app/layout/header/'),
     hooks: path.resolve(__dirname, 'src/hooks/'),
     icon: path.resolve(__dirname, 'src/spa/components/neutrons/icon/'),
-    inputs: path.resolve(__dirname, 'src/spa/shared/inputs/'),
+    inputs: path.resolve(__dirname, 'src/spa/components/atoms/inputs/'),
     landing: path.resolve(__dirname, 'src/spa/landing/'),
     layout: path.resolve(__dirname, 'src/spa/app/layout/'),
     lottiePlayer: path.resolve(__dirname, 'src/spa/components/neutrons/lottiePlayer/'),

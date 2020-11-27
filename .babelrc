@@ -34,7 +34,7 @@
         "header": "./src/spa/app/layout/header/",
         "hooks": "./src/hooks/",
         "icon": "./src/spa/components/neutrons/icon/",
-        "inputs": "./src/spa/shared/inputs/",
+        "inputs": "./src/spa/components/atoms/inputs/",
         "landing": "./src/spa/landing/",
         "layout": "./src/spa/app/layout/",
         "lottiePlayer": "./src/spa/components/neutrons/lottiePlayer/",

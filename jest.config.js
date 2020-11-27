@@ -28,7 +28,7 @@ module.exports = {
     '^header(.*)$': '<rootDir>/src/spa/app/layout/header$1',
     '^hooks(.*)$': '<rootDir>/src/hooks$1',
     '^icon(.*)$': '<rootDir>/src/spa/components/neutrons/icon$1',
-    '^inputs(.*)$': '<rootDir>/src/spa/shared/inputs$1',
+    '^inputs(.*)$': '<rootDir>/src/spa/components/atoms/inputs$1',
     '^landing(.*)$': '<rootDir>/src/spa/landing$1',
     '^layout(.*)$': '<rootDir>/src/spa/app/layout$1',
     '^lottiePlayer(.*)$': '<rootDir>/src/spa/components/neutrons/lottiePlayer$1',
