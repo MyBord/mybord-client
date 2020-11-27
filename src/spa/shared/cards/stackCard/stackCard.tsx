@@ -1,5 +1,5 @@
 import * as React from 'react';
-import StackCardOverlayAnimation from 'framerMotion/stackCardOverlayAnimation';
+import StackCardOverlayAnimation from 'animations/stackCardOverlayAnimation';
 import config, { Id } from './stackCardConfig';
 import * as styles from './stackCard.module.less';
 

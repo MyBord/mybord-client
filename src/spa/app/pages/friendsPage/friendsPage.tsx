@@ -1,7 +1,7 @@
 import * as React from 'react';
-import LottiePlayer from 'lotty/lottiePlayer';
+import LottiePlayer from 'lottiePlayer/lottiePlayer';
 import Typography from 'typography/typography';
-import followingAnimation from 'lotty/lotties/following.json';
+import followingAnimation from 'lotties/following.json';
 import pageWrapper from 'pages/pageWrapper/pageWrapper';
 import * as styles from './friendsPage.module.less';
 

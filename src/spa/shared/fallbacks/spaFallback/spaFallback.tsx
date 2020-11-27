@@ -1,8 +1,8 @@
 import * as React from 'react';
-import LottiePlayer from 'lotty/lottiePlayer';
-import SpaFallbackAnimation from 'framerMotion/spaFallbackAnimation';
+import LottiePlayer from 'lottiePlayer/lottiePlayer';
+import SpaFallbackAnimation from 'animations/spaFallbackAnimation';
 import logo from 'assets/logo/myBordMark.png';
-import dotLoading from 'lotty/lotties/dotLoading.json';
+import dotLoading from 'lotties/dotLoading.json';
 import * as styles from './spaFallback.module.less';
 
 // This component is used to render a fallback for the entire spa when the spa is loading /

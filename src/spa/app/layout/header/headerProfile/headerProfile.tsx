@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Icon from 'icon/icon';
-import PopOver from 'modals/popOver/popOver';
+import PopOver from 'popOver/popOver';
 import { PopOverCallback } from 'types/modalTypes';
 import HeaderProfileContent from './headerProfileContent';
 import * as styles from './headerProfile.module.less';

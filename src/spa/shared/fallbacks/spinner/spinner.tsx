@@ -1,6 +1,6 @@
 import * as React from 'react';
-import LottiePlayer from 'lotty/lottiePlayer';
-import spinnerAnimation from 'lotty/lotties/spinner.json';
+import LottiePlayer from 'lottiePlayer/lottiePlayer';
+import spinnerAnimation from 'lotties/spinner.json';
 import * as styles from './spinner.module.less';
 
 const Spinner: React.FC = () => (

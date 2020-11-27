@@ -1,8 +1,8 @@
 import * as React from 'react';
 import Icon from 'icon/icon';
-import FavoriteButtonAnimation from 'framerMotion/favoriteButtonAnimation';
-import LottiePlayer from 'lotty/lottiePlayer';
-import animationData from 'lotty/lotties/fireworks.json';
+import FavoriteButtonAnimation from 'animations/favoriteButtonAnimation';
+import LottiePlayer from 'lottiePlayer/lottiePlayer';
+import animationData from 'lotties/fireworks.json';
 import * as styles from './favoriteButton.module.less';
 
 interface Props {

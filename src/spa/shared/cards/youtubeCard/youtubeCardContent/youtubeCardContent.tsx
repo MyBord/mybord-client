@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { UserCard } from 'schema/card';
-import YoutubeCardThumbnailAnimation from 'framerMotion/youtubeCardThumbnailAnimation';
+import YoutubeCardThumbnailAnimation from 'animations/youtubeCardThumbnailAnimation';
 import YoutubePlayer from 'cards/youtubeCard/youtubePlayer/youtubePlayer';
 import { useMultiSelectCardContext } from 'context/multiSelectCardContext/multiSelectCardContext';
 import YoutubeCardThumbnail from './youtubeCardThumbnail';

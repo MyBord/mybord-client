@@ -2,7 +2,7 @@
 // clicked, we don't want to close said popover.
 
 import * as React from 'react';
-import PopOverAnimation from 'framerMotion/popOverAnimation';
+import PopOverAnimation from 'animations/popOverAnimation';
 import Portal from 'portal/portal';
 import { ExtraRefs, PopOverProps, PopOverStyle } from 'types/modalTypes';
 import PopOverCaret from './popOverCaret/popOverCaret';
