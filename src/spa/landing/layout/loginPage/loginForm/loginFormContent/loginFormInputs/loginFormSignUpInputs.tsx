@@ -3,7 +3,7 @@ import FormItem from 'forms/formItem/formItem';
 import PasswordInput from 'inputs/passwordInput/passwordInput';
 import TextInput from 'inputs/textInput/textInput';
 import Typography from 'typography/typography';
-import { FormProp } from 'types/formTypes';
+import { FormProp, Validator } from 'types/formTypes';
 import { useLoginContext } from 'context/loginContext/loginContext';
 import * as styles from './loginFormInputs.module.less';
 
@@ -52,6 +52,14 @@ const LoginFormSignUpInputs: React.FC<Props> = ({ form }) => {
   const confirmPasswordIsSuccess = confirmPassword
     && confirmPassword.length > 0
     && confirmPassword === loginPassword;
+
+  const validateConfirmPassword: Validator = (rule, value, callback) => {
+    if (confirmPasswordIsSuccess) {
+      return callback();
+    }
+
+    return callback('Passwords must match');
+  };
 
   const getUsernameErrorMessage = (): string => {
     if (signUpStatus === 'invalid username') {
@@ -113,6 +121,7 @@ const LoginFormSignUpInputs: React.FC<Props> = ({ form }) => {
         isSuccess={confirmPasswordIsSuccess}
         required
         requiredMessage="Please confirm your password"
+        validator={validateConfirmPassword}
       >
         <PasswordInput placeholder="Confirm Password" />
       </FormItem>
