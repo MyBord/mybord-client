@@ -20,7 +20,7 @@ const ImageCardDescription: React.FC<Props> = ({ isPreview, userCard }) => {
 
   const ExpandIconContent: React.FC = () => (
     <Icon
-      color={isPreview ? 'lightGrey' : 'blue'}
+      color={isPreview ? 'darkGrey' : 'blue'}
       iconName="expand"
       size={18}
     />
@@ -28,7 +28,7 @@ const ImageCardDescription: React.FC<Props> = ({ isPreview, userCard }) => {
 
   const LinkIconContent: React.FC = () => (
     <Icon
-      color={isPreview ? 'lightGrey' : 'blue'}
+      color={isPreview ? 'darkGrey' : 'blue'}
       iconName="link"
       size={18}
     />

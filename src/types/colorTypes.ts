@@ -2,8 +2,8 @@
 export type ExportedColors =
   'black'
   | 'blue'
+  | 'darkGrey'
   | 'green'
-  | 'lightGrey'
   | 'orange'
   | 'red'
   | 'transparentBlack'
