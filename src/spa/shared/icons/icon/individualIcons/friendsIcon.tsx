@@ -4,7 +4,7 @@ interface Props {
   size: number;
 }
 
-const AddUserIcon: React.FC<Props> = ({ size }) => (
+const FriendsIcon: React.FC<Props> = ({ size }) => (
   <svg height={size} width={size} viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
     <title>a heart</title>
     <g fill="#565e5f" stroke="#565e5f" strokeLinecap="square" strokeWidth="2">
@@ -15,4 +15,4 @@ const AddUserIcon: React.FC<Props> = ({ size }) => (
   </svg>
 );
 
-export default AddUserIcon;
+export default FriendsIcon;

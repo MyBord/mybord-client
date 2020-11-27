@@ -20,7 +20,7 @@ const NavigationButtons: React.FC = () => {
           pageTitle="Trending"
         />
         <NavigationButton
-          iconName="addUser"
+          iconName="friends"
           link="friends"
           pageTitle="Friends"
         />

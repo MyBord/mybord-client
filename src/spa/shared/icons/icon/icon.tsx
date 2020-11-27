@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { IndividualIconProps } from 'types/iconTypes';
 const AboutIcon = React.lazy(() => import('./individualIcons/aboutIcon'));
-const AddUserIcon = React.lazy(() => import('./individualIcons/addUserIcon'));
 const AvatarIcon = React.lazy(() => import('./individualIcons/avatarIcon'));
 const BellIcon = React.lazy(() => import('./individualIcons/bellIcon'));
 const CalendarIcon = React.lazy(() => import('./individualIcons/calendarIcon'));
@@ -15,6 +14,7 @@ const ExpandIcon = React.lazy(() => import('./individualIcons/expandIcon'));
 const EyeIcon = React.lazy(() => import('./individualIcons/eyeIcon'));
 const FacebookIcon = React.lazy(() => import('./individualIcons/facebookIcon'));
 const FilterIcon = React.lazy(() => import('./individualIcons/filterIcon'));
+const FriendsIcon = React.lazy(() => import('./individualIcons/friendsIcon'));
 const GoogleIcon = React.lazy(() => import('./individualIcons/googleIcon'));
 const HeartIcon = React.lazy(() => import('./individualIcons/heartIcon'));
 const InstagramIcon = React.lazy(() => import('./individualIcons/instagramIcon'));
@@ -40,7 +40,6 @@ const WarningIcon = React.lazy(() => import('./individualIcons/warningIcon'));
 // https://github.com/microsoft/TypeScript/issues/20965
 export const iconNames = {
   about: 'foo',
-  addUser: 'foo',
   avatar: 'foo',
   calendar: 'foo',
   caretDown: 'foo',
@@ -53,6 +52,7 @@ export const iconNames = {
   eye: 'foo',
   facebook: 'foo',
   filter: 'foo',
+  friends: 'foo',
   google: 'foo',
   heart: 'foo',
   instagram: 'foo',
@@ -91,8 +91,6 @@ const Icon: React.FC<IconProps> = ({
   switch (iconName) {
     case 'about':
       return <AboutIcon color={color} size={size} />;
-    case 'addUser':
-      return <AddUserIcon size={size} />;
     case 'avatar':
       return <AvatarIcon size={size} />;
     case 'calendar':
@@ -117,6 +115,8 @@ const Icon: React.FC<IconProps> = ({
       return <FacebookIcon color={color} size={size} />;
     case 'filter':
       return <FilterIcon color={color} size={size} />;
+    case 'friends':
+      return <FriendsIcon size={size} />;
     case 'google':
       return <GoogleIcon size={size} />;
     case 'heart':
