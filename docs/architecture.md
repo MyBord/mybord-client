@@ -258,6 +258,7 @@ src/
      |- components/ 
         |- atoms/ 
         |- molecules/ 
+        |- neutrons/ 
      |- landing/ 
      |- shared/ 
      |- spa/ 
@@ -270,6 +271,12 @@ src/
   * Atomic components.
 * **components/molecules/:**
   * Molecular components.
+* **components/neutrons/:**
+  * Neutrons are sub-component level items that provide visual information and visual tooling to our
+   components, such as animations, styles, and even icons. While icons themselves can be used at
+   the component level, they often are used as additional visual cues for even atomic level
+   components, such as an icon in a button or an icon in our dropdown component, so we have
+   placed icons here.
 * **landing/:**
   * The source code for what users see and interact with when they are not logged in. For further
    details, see the [landing folder outline](#g-landing-folder).

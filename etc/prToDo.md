@@ -2,5 +2,4 @@
 Make sure to remove all notes before merging (except for this one, of course).
 ----------------------------------------------------------------------------------------------------
 - cardMenuButton
-- lotties
-- lottiePlayer
+- remove typography from toggle
