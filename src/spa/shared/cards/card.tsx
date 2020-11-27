@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { UserCard } from 'schema/card';
 import { useMultiSelectCardContext } from 'context/multiSelectCardContext/multiSelectCardContext';
-import CardContent from './cardContent/cardContent';
-import CardDescription from './cardDescription/cardDescription';
-// import CardFooter from './cardFooter/cardFooter';
-import CardOverlay from './cardOverlay/cardOverlay';
+import CardContent from 'card/cardContent/cardContent';
+import CardDescription from 'card/cardDescription/cardDescription';
+// import CardFooter from 'card/cardFooter/cardFooter';
+import CardOverlay from 'card/cardOverlay/cardOverlay';
 import * as styles from './card.module.less';
 
 // This card component is the parent component that wraps every is the unique card type to make
