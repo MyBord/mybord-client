@@ -11,11 +11,15 @@ import * as styles from './card.module.less';
 // sure that every card, regardless of type, has the same consistent styling and functionality.
 
 export interface Props {
+  Content: React.ReactElement;
+  Description: React.ReactElement;
   isPreview?: boolean;
   userCard: UserCard;
 }
 
 const Card: React.FC<Props> = ({
+  Content,
+  Description,
   isPreview = false,
   userCard,
 }) => {
@@ -34,11 +38,15 @@ const Card: React.FC<Props> = ({
       <CardContent
         isPreview={isPreview}
         userCard={userCard}
-      />
+      >
+        {Content}
+      </CardContent>
       <CardDescription
         isPreview={isPreview}
         userCard={userCard}
-      />
+      >
+        {Description}
+      </CardDescription>
       {/* <CardFooter /> */}
     </div>
   );

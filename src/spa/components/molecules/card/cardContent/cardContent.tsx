@@ -7,15 +7,16 @@ import { TOGGLE_CARD_FILTER } from 'context/userDashboardContext/userDashboardRe
 import { TOGGLE_FAVORITE_USER_CARD_MUTATION, UserCard } from 'schema/card';
 import { useUserDashboardContext } from 'context/userDashboardContext/userDashboardContext';
 import { useMultiSelectCardContext } from 'context/multiSelectCardContext/multiSelectCardContext';
-import CardContentSwitch from './cardContentSwitch';
 import * as styles from './cardContent.module.less';
 
 interface Props {
+  children: React.ReactElement;
   isPreview: boolean;
   userCard: UserCard;
 }
 
 const CardContent: React.FC<Props> = ({
+  children,
   isPreview,
   userCard,
 }) => {
@@ -50,7 +51,7 @@ const CardContent: React.FC<Props> = ({
           </CardContentButtonsAnimation>
         )
       }
-      <CardContentSwitch userCard={userCard} />
+      {React.cloneElement(children, { userCard })}
     </div>
   );
 };
