@@ -1,6 +1,6 @@
 import * as React from 'react';
-import LottiePlayer from 'lotty/lottiePlayer';
-import animationData from 'lotty/lotties/backgroundSpinner.json';
+import LottiePlayer from 'lottiePlayer/lottiePlayer';
+import animationData from 'lotties/backgroundSpinner.json';
 import * as styles from './playButton.module.less';
 
 interface Props {

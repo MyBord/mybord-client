@@ -1,5 +1,5 @@
 import * as React from 'react';
-import NavigationAnimation from 'framerMotion/navigationAnimation';
+import NavigationAnimation from 'animations/navigationAnimation';
 import NavigationButtons from './navigationButtons/navigationButtons';
 import NavigationLogo from './navigationLogo/navigationLogo';
 

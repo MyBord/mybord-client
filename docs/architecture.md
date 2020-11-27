@@ -231,15 +231,12 @@ tooling. It is organized in the following manner:
 ```
 src/
   |- thirdParty/ 
-     |- framerMotion/ 
      |- lotty/ 
         |- lotties/ 
         |- lottiePlayer.tsx 
      |- storybook/ 
 ```
 
-* **framerMotion/:**
-  * This folder contains code that deals with our framer motion api and related animations.
 * **lotty/:**
   * Folder containing [Lottie](https://airbnb.io/lottie/#/) code. Note this folder is named
    'lotty' and not 'lottie' so it's folder alias won't create conflicts.

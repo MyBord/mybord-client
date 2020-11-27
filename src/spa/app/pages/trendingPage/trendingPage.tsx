@@ -1,8 +1,8 @@
 import * as React from 'react';
-import LottiePlayer from 'lotty/lottiePlayer';
+import LottiePlayer from 'lottiePlayer/lottiePlayer';
 import Typography from 'typography/typography';
 import pageWrapper from 'pages/pageWrapper/pageWrapper';
-import trendingAnimation from 'lotty/lotties/trending.json';
+import trendingAnimation from 'lotties/trending.json';
 import * as styles from './trendingPage.module.less';
 
 const TrendingPage: React.FC = () => (

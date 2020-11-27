@@ -3,7 +3,7 @@ import { useLazyQuery } from '@apollo/react-hooks';
 import Checkbox from 'inputs/checkbox/checkbox';
 import Dropdown from 'inputs/dropdown/dropdown';
 import FormItem from 'forms/formItem/formItem';
-import UserDashboardFiltersAnimation from 'framerMotion/userDashboardFiltersAnimation';
+import UserDashboardFiltersAnimation from 'animations/userDashboardFiltersAnimation';
 import { CardCategory, USER_CARDS_WITH_FILTERS_QUERY } from 'schema/card';
 import { FormProp } from 'types/formTypes';
 import { SET_CARD_CATEGORIES_FILTER } from 'context/userDashboardContext/userDashboardReducerTypes';

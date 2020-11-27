@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Button from 'buttons/button/button';
-import PopOver from 'modals/popOver/popOver';
+import PopOver from 'popOver/popOver';
 import Typography from 'typography/typography';
 import memo from 'utils/memo';
 import { PopOverCallback, PopOverProps } from 'types/modalTypes';

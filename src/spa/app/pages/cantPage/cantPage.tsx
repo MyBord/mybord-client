@@ -1,7 +1,7 @@
 import * as React from 'react';
-import LottiePlayer from 'lotty/lottiePlayer';
+import LottiePlayer from 'lottiePlayer/lottiePlayer';
 import Typography from 'typography/typography';
-import cantAnimation from 'lotty/lotties/cant.json';
+import cantAnimation from 'lotties/cant.json';
 import pageWrapper from 'pages/pageWrapper/pageWrapper';
 import * as styles from './cantPage.module.less';
 

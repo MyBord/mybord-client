@@ -1,5 +1,5 @@
 import * as React from 'react';
-import ModalAnimation from 'framerMotion/modalAnimation';
+import ModalAnimation from 'animations/modalAnimation';
 import Portal from 'portal/portal';
 import { ModalProps } from 'types/modalTypes';
 import { useModalContext } from 'context/modalContext/modalContext';

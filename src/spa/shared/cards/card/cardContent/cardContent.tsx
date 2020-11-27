@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useMutation } from '@apollo/react-hooks';
-import CardContentButtonsAnimation from 'framerMotion/cardContentButtonsAnimation';
+import CardContentButtonsAnimation from 'animations/cardContentButtonsAnimation';
 import CardMenuButton from 'buttons/cardMenuButton/cardMenuButton';
 import FavoriteButton from 'buttons/favoriteButton/favoriteButton';
 import { TOGGLE_CARD_FILTER } from 'context/userDashboardContext/userDashboardReducerTypes';

@@ -2,7 +2,7 @@ import * as React from 'react';
 import Icon from 'icon/icon';
 import IconButton from 'buttons/iconButton/iconButton';
 import Portal from 'portal/portal';
-import ToastAnimation from 'framerMotion/toastAnimation';
+import ToastAnimation from 'animations/toastAnimation';
 import Typography from 'typography/typography';
 import { ExportedColors } from 'types/colorTypes';
 import { useToastContext } from 'context/toastContext/toastContext';

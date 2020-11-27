@@ -1,7 +1,7 @@
 import * as React from 'react';
 import HeaderProfile from './headerProfile/headerProfile';
 import PageHeader from './pageHeaders/pageHeader';
-import HeaderAnimation from 'framerMotion/headerAnimation';
+import HeaderAnimation from 'animations/headerAnimation';
 import * as styles from './header.module.less';
 
 const Header: React.FC = () => (
