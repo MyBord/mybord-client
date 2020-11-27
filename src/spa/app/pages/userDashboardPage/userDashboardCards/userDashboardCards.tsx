@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Card from 'cards/card/card';
+import Card from 'cards/card';
 import EmptyCard from 'cards/emptyCard/emptyCard';
 import PhantomCard from 'shared/cards/phantomCard/phantomCard';
 import { useUserDashboardContext } from 'context/userDashboardContext/userDashboardContext';

@@ -19,11 +19,12 @@
       "app/*": ["src/spa/app/*"],
       "assets/*": ["src/assets/*"],
       "buttons/*": ["src/spa/components/atoms/buttons/*"],
+      "card/*": ["src/spa/components/molecules/card/*"],
       "cards/*": ["src/spa/shared/cards/*"],
       "context/*": ["src/context/*"],
-      "fallbacks/*": ["src/spa/shared/fallbacks/*"],
+      "fallbacks/*": ["src/spa/components/atoms/fallbacks/*"],
       "footer/*": ["src/spa/shared/footer/*"],
-      "forms/*": ["src/spa/shared/forms/*"],
+      "forms/*": ["src/spa/components/atoms/forms/*"],
       "graphics/*": ["src/spa/components/atoms/graphics/*"],
       "header/*": ["src/spa/app/layout/header/*"],
       "hooks/*": ["src/hooks/*"],
@@ -46,7 +47,7 @@
       "storybook/*": ["src/thirdParty/storybook/*"],
       "styles/*": ["src/styles/*"],
       "tags/*": ["src/spa/shared/tags/*"],
-      "typography/*": ["src/spa/shared/typography/*"],
+      "typography/*": ["src/spa/components/atoms/typography/*"],
       "types/*": ["src/types/*"],
       "utils/*": ["src/utils/*"]
     }
