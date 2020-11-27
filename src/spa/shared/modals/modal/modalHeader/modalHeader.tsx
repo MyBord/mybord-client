@@ -1,5 +1,5 @@
 import * as React from 'react';
-import IconButton from 'icons/iconButton/iconButton';
+import IconButton from 'buttons/iconButton/iconButton';
 import Typography from 'typography/typography';
 import { ModalProps } from 'types/modalTypes';
 import * as styles from './modalHeader.module.less';

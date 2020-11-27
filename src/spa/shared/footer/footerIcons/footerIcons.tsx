@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Icon from 'icons/icon/icon';
+import Icon from 'icon/icon';
 import { FooterProps } from 'types/footerTypes';
 import * as styles from './footerIcons.module.less';
 

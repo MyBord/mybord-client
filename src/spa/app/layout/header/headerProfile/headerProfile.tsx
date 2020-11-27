@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Icon from 'icons/icon/icon';
+import Icon from 'icon/icon';
 import PopOver from 'modals/popOver/popOver';
 import { PopOverCallback } from 'types/modalTypes';
 import HeaderProfileContent from './headerProfileContent';

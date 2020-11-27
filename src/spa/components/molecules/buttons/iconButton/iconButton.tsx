@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Icon, { IconNames } from 'icons/icon/icon';
+import Icon, { IconNames } from 'icon/icon';
 import { IndividualIconProps } from 'types/iconTypes';
 import * as styles from './iconButton.module.less';
 

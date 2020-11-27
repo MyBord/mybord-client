@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import Checkbox from 'inputs/checkbox/checkbox';
-import Icon from 'icons/icon/icon';
+import Icon from 'icon/icon';
 import PopConfirm from 'modals/popConfirm/popConfirm';
 import Toggle from 'inputs/toggle/toggle';
 import Typography from 'typography/typography';
