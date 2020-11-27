@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useHistory } from 'react-router';
 import { useLazyQuery } from '@apollo/react-hooks';
-import Icon from 'icons/icon/icon';
+import Icon from 'icon/icon';
 import Typography from 'typography/typography';
 import { LOGOUT_USER_QUERY } from 'schema/user';
 import { PopOverCallback } from 'types/modalTypes';

@@ -154,13 +154,7 @@ const Icon: React.FC<IconProps> = ({
     case 'userDashboard':
       return <UserDashboardIcon size={size} />;
     case 'warning':
-      return (
-        <WarningIcon
-          color={color}
-          size={size}
-          strokeWidth={strokeWidth}
-        />
-      );
+      return <WarningIcon color={color} size={size} strokeWidth={strokeWidth} />;
     default:
       throw Error('Component: `Icon` - iconName parameter is invalid, expected icon cannot be'
         + ' found.');

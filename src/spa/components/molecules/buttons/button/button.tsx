@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { LoadingOutlined } from '@ant-design/icons';
 import { Button as AntButton } from 'antd';
-import Icon from 'icons/icon/icon';
+import Icon from 'icon/icon';
 import { IconNames } from 'types/iconNameTypes';
 import * as styles from './button.module.less';
 import './button.less';

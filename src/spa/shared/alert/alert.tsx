@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Alert as AntAlert } from 'antd';
 import AlertAnimation from 'framerMotion/alertAnimation';
-import Icon from 'icons/icon/icon';
+import Icon from 'icon/icon';
 import * as styles from './alert.module.less';
 import './alert.less';
 

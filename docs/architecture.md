@@ -257,15 +257,22 @@ The spa folder contains the react application source code and is organized in th
 ```
 src/
   |- spa/
-    |- app/ 
-    |- landing/ 
-    |- shared/ 
-    |- spa/ 
+     |- app/ 
+     |- components/ 
+        |- atoms/ 
+        |- molecules/ 
+     |- landing/ 
+     |- shared/ 
+     |- spa/ 
 ```
 
 * **app/:**
   * The source code for the MyBord application (once a user is able to login). For further
    details, see the [app folder outline](#f-app-folder).
+* **components/atoms/:**
+  * Atomic components.
+* **components/molecules/:**
+  * Molecular components.
 * **landing/:**
   * The source code for what users see and interact with when they are not logged in. For further
    details, see the [landing folder outline](#g-landing-folder).
@@ -348,3 +355,4 @@ related content if you need):
 * [Three rules for structuring Redux applications](https://jaysoo.ca/2016/02/28/organizing-redux-application/)
 * [A better file structure for for React/Redux applications](https://marmelab.com/blog/2015/12/17/react-directory-structure.html)
 * [Organizing Large React Applications](http://engineering.kapost.com/2016/01/organizing-large-react-applications/)
+* [Atomic Design Methodology - Brad Frost](https://atomicdesign.bradfrost.com/chapter-2/)

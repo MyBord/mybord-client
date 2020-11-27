@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Icon from 'icons/icon/icon';
+import Icon from 'icon/icon';
 import FavoriteButtonAnimation from 'framerMotion/favoriteButtonAnimation';
 import LottiePlayer from 'lotty/lottiePlayer';
 import animationData from 'lotty/lotties/fireworks.json';

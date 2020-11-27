@@ -1,5 +1,5 @@
 import * as React from 'react';
-import IconButton from 'icons/iconButton/iconButton';
+import IconButton from 'buttons/iconButton/iconButton';
 import Typography from 'typography/typography';
 import { TagColors } from 'types/colorTypes';
 import * as colors from 'styles/_colors.less';

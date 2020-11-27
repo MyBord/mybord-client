@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useLocation, Link } from 'react-router-dom';
-import Icon from 'icons/icon/icon';
+import Icon from 'icon/icon';
 import Tooltip from 'modals/tooltip/tooltip';
 import { IconNames } from 'types/iconNameTypes';
 import * as styles from './navigationButton.module.less';

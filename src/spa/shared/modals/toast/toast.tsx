@@ -1,6 +1,6 @@
 import * as React from 'react';
-import Icon from 'icons/icon/icon';
-import IconButton from 'icons/iconButton/iconButton';
+import Icon from 'icon/icon';
+import IconButton from 'buttons/iconButton/iconButton';
 import Portal from 'portal/portal';
 import ToastAnimation from 'framerMotion/toastAnimation';
 import Typography from 'typography/typography';

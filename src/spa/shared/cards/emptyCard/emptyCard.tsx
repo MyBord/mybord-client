@@ -1,6 +1,6 @@
 import * as React from 'react';
-import Empty from 'icons/empty/empty';
-import Icon from 'icons/icon/icon';
+import Empty from 'graphics/empty/empty';
+import Icon from 'icon/icon';
 import Typography from 'typography/typography';
 import * as styles from './emptyCard.module.less';
 

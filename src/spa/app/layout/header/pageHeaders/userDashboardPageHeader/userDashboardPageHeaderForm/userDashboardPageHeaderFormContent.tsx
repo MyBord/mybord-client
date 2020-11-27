@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Button from 'buttons/button/button';
-import IconButton from 'icons/iconButton/iconButton';
+import IconButton from 'buttons/iconButton/iconButton';
 import FormItem from 'forms/formItem/formItem';
 import TextInput from 'inputs/textInput/textInput';
 import { FormProp } from 'types/formTypes';

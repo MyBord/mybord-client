@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Icon from 'icons/icon/icon';
+import Icon from 'icon/icon';
 import Typography from 'typography/typography';
 import { UserCard } from 'schema/card';
 import { useModalContext } from 'context/modalContext/modalContext';
