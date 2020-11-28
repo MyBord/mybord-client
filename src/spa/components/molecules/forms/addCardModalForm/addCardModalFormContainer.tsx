@@ -8,7 +8,7 @@ import { useAddCardModalContext } from 'context/addCardModalContext/addCardModal
 import { useModalContext } from 'context/modalContext/modalContext';
 import AddCardModalFormContent from './addCardModalFormContent';
 
-const AddCardModalForm: React.FC<AddCardModalProps> = ({ formData }) => {
+const AddCardModalFormContainer: React.FC<AddCardModalProps> = ({ formData }) => {
   const [createUserCard] = useMutation(CREATE_USER_CARD_MUTATION);
   const { setTitle } = useAddCardModalContext();
   const [isWaiting, setIsWaiting] = React.useState<boolean>(false);
@@ -47,4 +47,4 @@ const AddCardModalForm: React.FC<AddCardModalProps> = ({ formData }) => {
   );
 };
 
-export default AddCardModalForm;
+export default AddCardModalFormContainer;
