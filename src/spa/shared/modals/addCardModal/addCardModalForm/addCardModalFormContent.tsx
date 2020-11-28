@@ -2,7 +2,7 @@ import * as React from 'react';
 import Button from 'buttons/button/button';
 import Dropdown from 'inputs/dropdown/dropdown';
 import FavoriteButton from 'buttons/favoriteButton/favoriteButton';
-import FormItem from 'forms/formItem/formItem';
+import FormItem from 'formItem/formItem';
 import TextInput from 'inputs/textInput/textInput';
 import Toggle from 'inputs/toggle/toggle';
 import usePrevious from 'hooks/usePrevious';

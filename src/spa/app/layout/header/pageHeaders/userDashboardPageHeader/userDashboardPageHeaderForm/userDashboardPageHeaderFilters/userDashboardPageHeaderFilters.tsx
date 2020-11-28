@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useLazyQuery } from '@apollo/react-hooks';
 import Checkbox from 'inputs/checkbox/checkbox';
 import Dropdown from 'inputs/dropdown/dropdown';
-import FormItem from 'forms/formItem/formItem';
+import FormItem from 'formItem/formItem';
 import UserDashboardFiltersAnimation from 'animations/userDashboardFiltersAnimation';
 import { CardCategory, USER_CARDS_WITH_FILTERS_QUERY } from 'schema/card';
 import { FormProp } from 'types/formTypes';

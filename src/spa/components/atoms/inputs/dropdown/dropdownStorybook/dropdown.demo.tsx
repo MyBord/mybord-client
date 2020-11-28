@@ -1,8 +1,8 @@
 import * as React from 'react';
 import * as styles from 'storybook/storybook.module.less';
 import { mockDropdownOptions } from 'mockData/inputsMockData';
-import Form from 'forms/form/form';
-import FormItem from 'forms/formItem/formItem';
+import Form from 'form/form';
+import FormItem from 'formItem/formItem';
 import Dropdown from '../dropdown';
 
 const DropdownDemo: React.FC = () => (
