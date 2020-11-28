@@ -5,7 +5,7 @@ import GifCardContent from './gifCardContent/gifCardContent';
 import GifCardDescription from './gifCardDescription/gifCardDescription';
 
 interface Props {
-  isPreview?: boolean;
+  isPreview: boolean;
   userCard: UserCard;
 }
 

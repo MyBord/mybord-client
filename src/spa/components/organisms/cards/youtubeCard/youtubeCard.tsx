@@ -5,7 +5,7 @@ import YoutubeCardContent from './youtubeCardContent/youtubeCardContent';
 import YoutubeCardDescription from './youtubeCardDescription/youtubeCardDescription';
 
 interface Props {
-  isPreview?: boolean;
+  isPreview: boolean;
   userCard: UserCard;
 }
 

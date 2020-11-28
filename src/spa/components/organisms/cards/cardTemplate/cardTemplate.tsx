@@ -13,14 +13,14 @@ import * as styles from './cardTemplate.module.less';
 export interface Props {
   Content: React.ReactElement;
   Description: React.ReactElement;
-  isPreview?: boolean;
+  isPreview: boolean;
   userCard: UserCard;
 }
 
 const CardTemplate: React.FC<Props> = ({
   Content,
   Description,
-  isPreview = false,
+  isPreview,
   userCard,
 }) => {
   const { selectedCardIds } = useMultiSelectCardContext();

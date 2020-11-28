@@ -5,7 +5,7 @@ import ImageCardContent from './imageCardContent/imageCardContent';
 import ImageCardDescription from './imageCardDescription/imageCardDescription';
 
 interface Props {
-  isPreview?: boolean;
+  isPreview: boolean;
   userCard: UserCard;
 }
 
