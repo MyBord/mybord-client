@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Typography from 'typography/typography';
-import forklift from 'assets/illustrations/forklift.png';
-import programming from 'assets/illustrations/programming.png';
+import forklift from 'graphics/forklift.png';
+import programming from 'graphics/programming.png';
 import { partOne, partTwo, partThree } from './aboutForDevsText';
 import * as styles from './aboutForDevs.module.less';
 

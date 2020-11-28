@@ -1,7 +1,7 @@
 // This is technically not a 'page' but I don't know what else to call this component ¯\_(ツ)_/¯
 
 import * as React from 'react';
-import loginBackground from 'assets/pictures/loginBackgroundRoad.jpg';
+import loginBackground from 'images/loginBackgroundRoad.jpg';
 import LoginForm from './loginForm/loginForm';
 import * as styles from './loginPage.module.less';
 
