@@ -1,9 +1,9 @@
 import * as React from 'react';
 import StackCard from 'molecules/stackCard/stackCard';
 import Typography from 'typography/typography';
-import * as styles from './aboutForDevsStack.module.less';
+import * as styles from './aboutStack.module.less';
 
-const AboutForDevsStack: React.FC = () => (
+const AboutStack: React.FC = () => (
   <section className={styles.stackSection}>
     <div className={styles.stackTitleDiv}>
       <Typography color="blue" size="five" text="Stack" />
@@ -57,4 +57,4 @@ const AboutForDevsStack: React.FC = () => (
   </section>
 );
 
-export default AboutForDevsStack;
+export default AboutStack;

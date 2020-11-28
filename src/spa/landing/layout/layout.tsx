@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useLocation } from 'react-router-dom';
-import Footer from 'shared/footer/footer';
+import Footer from 'footer/footer';
 import { useLandingContext } from 'context/landingContext/landingContext';
 import Header from './header/header';
 import LoginPage from './loginPage/loginPage';
