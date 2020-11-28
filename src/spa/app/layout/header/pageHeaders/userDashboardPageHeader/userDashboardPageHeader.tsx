@@ -1,5 +1,5 @@
 import * as React from 'react';
-import AddCardModal from 'modals/addCardModal/addCardModal';
+import AddCardModal from '../../../../../shared/modals/addCardModal/addCardModal';
 import UserDashboardPageHeaderForm from './userDashboardPageHeaderForm/userDashboardPageHeaderForm';
 import * as styles from './userDashboardPageHeader.module.less';
 

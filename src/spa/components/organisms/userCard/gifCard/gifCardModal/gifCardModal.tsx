@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Modal from 'modals/modal/modal';
+import Modal from 'modal/modal';
 import { UserCardData } from 'schema/card';
 import * as styles from './gifCardModal.module.less';
 
