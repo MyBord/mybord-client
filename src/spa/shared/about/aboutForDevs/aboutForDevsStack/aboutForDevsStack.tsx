@@ -1,5 +1,5 @@
 import * as React from 'react';
-import StackCard from 'cards/stackCard/stackCard';
+import StackCard from 'molecules/stackCard/stackCard';
 import Typography from 'typography/typography';
 import * as styles from './aboutForDevsStack.module.less';
 

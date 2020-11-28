@@ -18,9 +18,8 @@
       "api/*": ["src/api/*"],
       "app/*": ["src/spa/app/*"],
       "assets/*": ["src/assets/*"],
+      "atoms/*": ["src/spa/components/atoms/*"],
       "buttons/*": ["src/spa/components/atoms/buttons/*"],
-      "card/*": ["src/spa/components/molecules/card/*"],
-      "cards/*": ["src/spa/shared/cards/*"],
       "context/*": ["src/context/*"],
       "fallbacks/*": ["src/spa/components/atoms/fallbacks/*"],
       "footer/*": ["src/spa/shared/footer/*"],
@@ -36,7 +35,10 @@
       "lotties/*": ["src/spa/components/neutrons/lotties/*"],
       "mockData/*": ["src/mockData/*"],
       "modals/*": ["src/spa/shared/modals/*"],
+      "molecules/*": ["src/spa/components/molecules/*"],
       "navigation/*": ["src/spa/app/layout/navigation/*"],
+      "neutrons/*": ["src/spa/components/neutrons/*"],
+      "organisms/*": ["src/spa/components/organisms/*"],
       "pages/*": ["src/spa/app/pages/*"],
       "popOver/*": ["src/spa/components/atoms/popOver/*"],
       "portal/*": ["src/spa/components/neutrons/portal/*"],
@@ -47,8 +49,10 @@
       "storybook/*": ["src/thirdParty/storybook/*"],
       "styles/*": ["src/styles/*"],
       "tags/*": ["src/spa/shared/tags/*"],
+      "templates/*": ["src/spa/components/templates/*"],
       "typography/*": ["src/spa/components/atoms/typography/*"],
       "types/*": ["src/types/*"],
+      "userCard/*": ["src/spa/components/organisms/userCard/*"],
       "utils/*": ["src/utils/*"]
     }
   }

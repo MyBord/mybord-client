@@ -1,7 +1,7 @@
 import * as React from 'react';
-import Card from 'cards/card';
-import EmptyCard from 'cards/emptyCard/emptyCard';
-import PhantomCard from 'shared/cards/phantomCard/phantomCard';
+import EmptyCard from 'molecules/emptyCard/emptyCard';
+import PhantomCard from 'molecules/phantomCard/phantomCard';
+import UserCard from 'userCard/userCard';
 import { useUserDashboardContext } from 'context/userDashboardContext/userDashboardContext';
 import * as styles from './userDashboardCards.module.less';
 
@@ -13,7 +13,7 @@ const UserDashboardCards: React.FC = () => {
       <section className={styles.section}>
         {
           state.allIds.map((userCardId: string) => (
-            <Card key={userCardId} userCard={state.byId[userCardId]} />
+            <UserCard key={userCardId} userCardData={state.byId[userCardId]} />
           ))
         }
         {

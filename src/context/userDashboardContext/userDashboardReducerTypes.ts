@@ -1,4 +1,4 @@
-import { CardCategory, UserCard } from 'schema/card';
+import { CardCategory, UserCardData } from 'schema/card';
 
 // ----- CONSTANTS ----- //
 
@@ -14,17 +14,17 @@ export const TOGGLE_SHOW_FILTERS = 'TOGGLE_SHOW_FILTERS';
 
 interface AddCard {
   type: typeof ADD_CARD;
-  card: UserCard;
+  card: UserCardData;
 }
 
 interface DeleteCard {
   type: typeof DELETE_CARD;
-  id: UserCard['id'];
+  id: UserCardData['id'];
 }
 
 interface ReceiveFilteredCards {
   type: typeof RECEIVE_FILTERED_CARDS;
-  cards: UserCard[];
+  cards: UserCardData[];
   filters: {
     categories: CardCategory[];
     isFavorite?: boolean;
@@ -34,7 +34,7 @@ interface ReceiveFilteredCards {
 
 interface SetCards {
   type: typeof SET_CARDS;
-  cards: UserCard[];
+  cards: UserCardData[];
 }
 
 interface SetCardCategoriesFilter {
@@ -45,7 +45,7 @@ interface SetCardCategoriesFilter {
 interface ToggleCardFilter {
   type: typeof TOGGLE_CARD_FILTER;
   filter: 'favorite' | 'toDo';
-  id: UserCard['id'];
+  id: UserCardData['id'];
 }
 
 interface ToggleShowFilters {
