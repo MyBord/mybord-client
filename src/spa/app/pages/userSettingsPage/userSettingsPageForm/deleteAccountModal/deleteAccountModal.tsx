@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useMutation } from '@apollo/react-hooks';
 import Button from 'buttons/button/button';
 import Form from 'form/form';
-import Modal from 'modals/modal/modal';
+import Modal from 'modal/modal';
 import Typography from 'typography/typography';
 import { DELETE_CURRENT_USER_MUTATION } from 'schema/user';
 import { useModalContext } from 'context/modalContext/modalContext';

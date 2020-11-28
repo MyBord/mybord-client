@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Modal from 'modals/modal/modal';
+import Modal from 'modal/modal';
 import UserCard from 'userCard/userCard';
 import { AddCardModalProps } from 'types/modalTypes';
 import { UserCardData } from 'schema/card';

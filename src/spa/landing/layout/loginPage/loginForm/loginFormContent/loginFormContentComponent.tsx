@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Modal from 'modals/modal/modal';
+import Modal from 'modal/modal';
 import Toast from 'molecules/toast/toast';
 import Typography from 'typography/typography';
 import { FormProp } from 'types/formTypes';

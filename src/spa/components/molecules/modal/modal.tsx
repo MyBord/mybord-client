@@ -1,10 +1,12 @@
 import * as React from 'react';
+import IconButton from 'buttons/iconButton/iconButton';
 import ModalAnimation from 'animations/modalAnimation';
+import ModalBackground from 'backgrounds/modalBackground/modalBackground';
 import Portal from 'portal/portal';
+import Typography from 'typography/typography';
 import { ModalProps } from 'types/modalTypes';
 import { useModalContext } from 'context/modalContext/modalContext';
-import ModalBackground from './modalBackground/modalBackground';
-import ModalHeader from './modalHeader/modalHeader';
+import * as styles from './modal.module.less';
 
 const Modal: React.FC<ModalProps> = ({
   children,
@@ -31,7 +33,24 @@ const Modal: React.FC<ModalProps> = ({
     <>
       <Portal>
         <ModalAnimation isVisible={isVisible}>
-          <ModalHeader handleClose={handleClose} title={title} />
+          <header className={styles.header}>
+            <div className={styles.typographyDiv}>
+              <Typography
+                size="four"
+                text={title}
+                weight="bold"
+              />
+            </div>
+            <div className={styles.closeDiv}>
+              <IconButton
+                color="black"
+                iconName="close"
+                onClick={handleClose}
+                size={24}
+                strokeWidth={4}
+              />
+            </div>
+          </header>
           {children}
         </ModalAnimation>
       </Portal>
