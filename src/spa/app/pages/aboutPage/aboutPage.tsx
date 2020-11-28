@@ -1,6 +1,6 @@
 import * as React from 'react';
-import AboutForUsers from 'about/aboutForUsers/aboutForUsers';
-import Footer from 'shared/footer/footer';
+import AboutForUsers from 'copy/aboutForUsers/aboutForUsers';
+import Footer from 'footer/footer';
 import pageWrapper from 'pages/pageWrapper/pageWrapper';
 import * as styles from './aboutPage.module.less';
 

@@ -137,7 +137,6 @@ const plugins = [
 const resolve = {
   extensions: ['.jsx', '.js', '.tsx', '.ts', '.less'],
   alias: {
-    about: path.resolve(__dirname, 'src/spa/shared/about/'),
     alert: path.resolve(__dirname, 'src/spa/components/atoms/alert/'),
     animations: path.resolve(__dirname, 'src/spa/components/neutrons/animations/'),
     api: path.resolve(__dirname, 'src/api/'),
@@ -146,6 +145,7 @@ const resolve = {
     atoms: path.resolve(__dirname, 'src/spa/components/atoms/'),
     buttons: path.resolve(__dirname, 'src/spa/components/atoms/buttons/'),
     context: path.resolve(__dirname, 'src/context/'),
+    copy: path.resolve(__dirname, 'src/spa/components/molecules/copy/'),
     fallbacks: path.resolve(__dirname, 'src/spa/components/atoms/fallbacks/'),
     footer: path.resolve(__dirname, 'src/spa/components/organisms/footer/'),
     forms: path.resolve(__dirname, 'src/spa/components/atoms/forms/'),
@@ -170,7 +170,6 @@ const resolve = {
     routing: path.resolve(__dirname, 'src/spa/app/routing/'),
     schema: path.resolve(__dirname, 'src/server/schema/'),
     server: path.resolve(__dirname, 'src/server/'),
-    shared: path.resolve(__dirname, 'src/spa/shared/'),
     storybook: path.resolve(__dirname, 'src/thirdParty/storybook/'),
     styles: path.resolve(__dirname, 'src/styles/'),
     tags: path.resolve(__dirname, 'src/spa/components/molecules/tags/'),
