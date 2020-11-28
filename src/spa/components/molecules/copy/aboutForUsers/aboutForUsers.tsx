@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Typography from 'typography/typography';
-import bookshelf from 'assets/pictures/bookshelf.jpg';
-import spongebog from 'assets/pictures/spongebob.png';
+import bookshelf from 'images/bookshelf.jpg';
+import spongebog from 'images/spongebob.png';
 import {
   partOne,
   partTwo,
