@@ -281,5 +281,5 @@ export interface UserCardData {
 }
 
 export interface UserCardsQueryResponse {
-  userCards: UserCard[];
+  userCards: UserCardData[];
 }

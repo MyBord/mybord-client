@@ -6,7 +6,7 @@ import {
   FILTERED_USER_CARDS_SUBSCRIPTION,
   USER_CARD_SUBSCRIPTION,
   USER_CARDS_QUERY,
-  UserCard,
+  UserCardData,
 } from 'schema/card';
 import {
   ADD_CARD,
@@ -20,7 +20,7 @@ import UserDashboardPageComponent from './userDashboardPageComponent';
 
 interface Props {
   data: {
-    userCards: UserCard[];
+    userCards: UserCardData[];
   };
 }
 

@@ -41,7 +41,7 @@ const GifCardDescription: React.FC<Props> = ({ isPreview, userCardData }) => {
           <Typography
             maxTextLength={60}
             size="two"
-            text={userCard.title}
+            text={userCardData.title}
             weight="bold"
           />
         </div>
