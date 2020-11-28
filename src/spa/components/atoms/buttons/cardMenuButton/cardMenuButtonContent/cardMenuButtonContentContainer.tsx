@@ -4,13 +4,17 @@
 
 import * as React from 'react';
 import { useMutation } from '@apollo/react-hooks';
-import { DELETE_USER_CARD_MUTATION, TOGGLE_TO_DO_USER_CARD_MUTATION, UserCard } from 'schema/card';
+import {
+  DELETE_USER_CARD_MUTATION,
+  TOGGLE_TO_DO_USER_CARD_MUTATION,
+  UserCardData,
+} from 'schema/card';
 import { TOGGLE_CARD_FILTER } from 'context/userDashboardContext/userDashboardReducerTypes';
 import { useUserDashboardContext } from 'context/userDashboardContext/userDashboardContext';
 import CardMenuButtonContentComponent from './cardMenuButtonContentComponent';
 
 export interface Props {
-  cardId: UserCard['id'];
+  cardId: UserCardData['id'];
 }
 
 const CardMenuButtonContentContainer: React.FC<Props> = ({ cardId }) => {

@@ -270,7 +270,7 @@ export type CardCategory = 'Gif' | 'Image' | 'Video';
 
 export type CardType = 'Gif' | 'Image' | 'Youtube';
 
-export interface UserCard {
+export interface UserCardData {
   id: string;
   category: CardCategory;
   isFavorite: boolean;

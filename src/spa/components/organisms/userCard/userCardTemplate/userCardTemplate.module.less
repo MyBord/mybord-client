@@ -1,0 +1,28 @@
+@import "~styles/_colors";
+@import "~styles/_sizes";
+@import "~styles/_shadows";
+
+.container {
+  background: @white;
+  border-radius: @standardBorderRadius;
+  box-shadow: @cardBoxShadow;
+  display: flex;
+  flex-direction: column;
+  height: @userCardTotalHeight;
+  margin: @userCardMargin;
+  min-width: @userCardWidth;
+  overflow: hidden;
+  position: relative;
+  transition: box-shadow 0.1s ease;
+  width: @userCardWidth;
+}
+
+.containerPreview {
+  border: 0.0625rem solid @transparentBlackThreeQuarterOpacity;
+  box-shadow: none !important;
+}
+
+.selectedContainer {
+  box-shadow: @cardBoxShadowSelected;
+  transition: box-shadow 0.1s ease;
+}

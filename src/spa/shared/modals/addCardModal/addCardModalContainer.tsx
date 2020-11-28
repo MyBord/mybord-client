@@ -1,13 +1,13 @@
 import * as React from 'react';
 import { AddCardModalProps } from 'types/modalTypes';
-import { UserCard } from 'schema/card';
+import { UserCardData } from 'schema/card';
 import { useAddCardModalContext } from 'context/addCardModalContext/addCardModalContext';
 import { useModalContext } from 'context/modalContext/modalContext';
 import AddCardModalFormComponent from './addCardModalComponent';
 
 const AddCardModalContainer: React.FC = () => {
   const [formData, setFormData] = React.useState<AddCardModalProps['formData']>(null);
-  const [userCard, setUserCard] = React.useState<UserCard>(null);
+  const [userCard, setUserCard] = React.useState<UserCardData>(null);
   const { title: updatedTitle } = useAddCardModalContext();
   const { modalData, modalId } = useModalContext();
 
@@ -45,7 +45,7 @@ const AddCardModalContainer: React.FC = () => {
       return (
         <AddCardModalFormComponent
           formData={formData}
-          userCard={{ ...userCard, title: updatedTitle }}
+          userCardData={{ ...userCard, title: updatedTitle }}
         />
       );
     }
@@ -53,7 +53,7 @@ const AddCardModalContainer: React.FC = () => {
     return (
       <AddCardModalFormComponent
         formData={formData}
-        userCard={userCard}
+        userCardData={userCard}
       />
     );
   }

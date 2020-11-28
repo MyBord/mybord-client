@@ -5,48 +5,48 @@ import {
   pull,
 } from 'lodash';
 import { UserDashboardState } from './userDashboardState';
-import { UserCard } from 'schema/card';
+import { UserCardData } from 'schema/card';
 import { capitalize } from 'utils/language';
 
 type AllIdsCards = UserDashboardState['allIds'];
 type ByIdCards = UserDashboardState['byId'];
 
-const addAllId = (allIds: AllIdsCards, id: UserCard['id']): AllIdsCards => {
+const addAllId = (allIds: AllIdsCards, id: UserCardData['id']): AllIdsCards => {
   const clonedAllIds = cloneDeep(allIds);
   return clonedAllIds.concat(id);
 };
 
-const addById = (byId: ByIdCards, card: UserCard): ByIdCards => {
+const addById = (byId: ByIdCards, card: UserCardData): ByIdCards => {
   const clonedById = cloneDeep(byId);
   const newCard = { [card.id]: card };
   return assign(clonedById, newCard);
 };
 
-const getAllIds = (userCards: UserCard[]): AllIdsCards => {
+const getAllIds = (userCards: UserCardData[]): AllIdsCards => {
   const clonedUserCards = cloneDeep(userCards);
-  return clonedUserCards.map((userCard: UserCard) => userCard.id);
+  return clonedUserCards.map((userCard: UserCardData) => userCard.id);
 };
 
-const getById = (userCards: UserCard[]): ByIdCards => {
+const getById = (userCards: UserCardData[]): ByIdCards => {
   const clonedUserCards = cloneDeep(userCards);
   const byId: ByIdCards = {};
-  clonedUserCards.forEach((userCard: UserCard) => { byId[userCard.id] = userCard; });
+  clonedUserCards.forEach((userCard: UserCardData) => { byId[userCard.id] = userCard; });
   return byId;
 };
 
-const removeAllId = (allIds: AllIdsCards, id: UserCard['id']): AllIdsCards => {
+const removeAllId = (allIds: AllIdsCards, id: UserCardData['id']): AllIdsCards => {
   const clonedAllIds = cloneDeep(allIds);
   return pull(clonedAllIds, id);
 };
 
-const removeById = (byId: ByIdCards, id: UserCard['id']): ByIdCards => {
+const removeById = (byId: ByIdCards, id: UserCardData['id']): ByIdCards => {
   const clonedById = cloneDeep(byId);
   return omit(clonedById, id);
 };
 
 const toggleCardFilter = (
   filter: 'favorite' | 'toDo',
-  id: UserCard['id'],
+  id: UserCardData['id'],
   state: UserDashboardState,
 ): UserDashboardState => {
   const clonedState = cloneDeep(state);

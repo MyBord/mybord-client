@@ -1,0 +1,16 @@
+@import "~styles/_sizes";
+
+.container {
+  height: @userCardContentHeight;
+  width: @userCardWidth;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  &:hover {
+    :global {
+      .card-menu-button, .card-youtube-play-button, .like-button {
+        opacity: 1;
+      }
+    }
+  }
+}

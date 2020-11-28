@@ -1,11 +1,11 @@
 // Creating this interface in a separate file to avoid a dependency cycle between
 // `userDashboardReducer.ts` and `userDashboardReducerUtil.ts`
 
-import { CardCategory, UserCard } from 'schema/card';
+import { CardCategory, UserCardData } from 'schema/card';
 
 export interface UserDashboardState {
   allIds: string[];
-  byId: { [key in string]: UserCard; };
+  byId: { [key in string]: UserCardData; };
   filters: {
     categories: CardCategory[];
     // this tells us if filters have been applied, which is useful in knowing what ui to present
