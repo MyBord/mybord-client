@@ -51,7 +51,7 @@ const CardContent: React.FC<Props> = ({
           </CardContentButtonsAnimation>
         )
       }
-      {React.cloneElement(children, { userCard })}
+      {children}
     </div>
   );
 };

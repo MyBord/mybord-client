@@ -5,7 +5,7 @@ import CardContent from 'card/cardContent/cardContent';
 import CardDescription from 'card/cardDescription/cardDescription';
 // import CardFooter from 'card/cardFooter/cardFooter';
 import CardOverlay from 'card/cardOverlay/cardOverlay';
-import * as styles from './card.module.less';
+import * as styles from './cardTemplate.module.less';
 
 // This card component is the parent component that wraps every is the unique card type to make
 // sure that every card, regardless of type, has the same consistent styling and functionality.
@@ -17,7 +17,7 @@ export interface Props {
   userCard: UserCard;
 }
 
-const Card: React.FC<Props> = ({
+const CardTemplate: React.FC<Props> = ({
   Content,
   Description,
   isPreview = false,
@@ -41,10 +41,7 @@ const Card: React.FC<Props> = ({
       >
         {Content}
       </CardContent>
-      <CardDescription
-        isPreview={isPreview}
-        userCard={userCard}
-      >
+      <CardDescription>
         {Description}
       </CardDescription>
       {/* <CardFooter /> */}
@@ -52,4 +49,4 @@ const Card: React.FC<Props> = ({
   );
 };
 
-export default Card;
+export default CardTemplate;

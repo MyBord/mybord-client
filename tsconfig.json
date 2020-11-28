@@ -20,7 +20,7 @@
       "assets/*": ["src/assets/*"],
       "buttons/*": ["src/spa/components/atoms/buttons/*"],
       "card/*": ["src/spa/components/molecules/card/*"],
-      "cards/*": ["src/spa/shared/cards/*"],
+      "cards/*": ["src/spa/components/organisms/cards/*"],
       "context/*": ["src/context/*"],
       "fallbacks/*": ["src/spa/components/atoms/fallbacks/*"],
       "footer/*": ["src/spa/shared/footer/*"],

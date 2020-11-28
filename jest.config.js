@@ -20,7 +20,7 @@ module.exports = {
     '^assets(.*)$': '<rootDir>/src/assets$1',
     '^buttons(.*)$': '<rootDir>/src/spa/components/atoms/buttons$1',
     '^card(.*)$': '<rootDir>/src/spa/components/molecules/card$1',
-    '^cards(.*)$': '<rootDir>/src/spa/shared/cards$1',
+    '^cards(.*)$': '<rootDir>/src/spa/components/organisms/cards$1',
     '^context(.*)$': '<rootDir>/src/context$1',
     '^fallbacks(.*)$': '<rootDir>/src/spa/components/atoms/fallbacks$1',
     '^footer(.*)$': '<rootDir>/src/spa/shared/footer$1',

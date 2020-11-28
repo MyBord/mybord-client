@@ -1,16 +1,15 @@
 import * as React from 'react';
-import CardDescriptionSwitch from './cardDescriptionSwitch';
-import { UserCard } from 'schema/card';
 import * as styles from './cardDescription.module.less';
 
 interface Props {
-  isPreview: boolean;
-  userCard: UserCard;
+  children: React.ReactElement;
 }
 
-const CardDescription: React.FC<Props> = ({ isPreview, userCard }) => (
+const CardDescription: React.FC<Props> = ({
+  children,
+}) => (
   <div className={styles.div}>
-    <CardDescriptionSwitch isPreview={isPreview} userCard={userCard} />
+    {children}
   </div>
 );
 

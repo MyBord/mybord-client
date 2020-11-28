@@ -145,7 +145,7 @@ const resolve = {
     assets: path.resolve(__dirname, 'src/assets/'),
     buttons: path.resolve(__dirname, 'src/spa/components/atoms/buttons/'),
     card: path.resolve(__dirname, 'src/spa/components/molecules/card/'),
-    cards: path.resolve(__dirname, 'src/spa/shared/cards/'),
+    cards: path.resolve(__dirname, 'src/spa/components/organisms/cards/'),
     context: path.resolve(__dirname, 'src/context/'),
     fallbacks: path.resolve(__dirname, 'src/spa/components/atoms/fallbacks/'),
     footer: path.resolve(__dirname, 'src/spa/shared/footer/'),
