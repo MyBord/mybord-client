@@ -1,9 +1,9 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[64],{
 
-/***/ "./src/spa/shared/icons/icon/individualIcons/userDashboardIcon.tsx":
-/*!*************************************************************************!*\
-  !*** ./src/spa/shared/icons/icon/individualIcons/userDashboardIcon.tsx ***!
-  \*************************************************************************/
+/***/ "./src/spa/landing/layout/loginPage/loginForm/loginFormContent/loginFormInputs/loginFormForgotInputs.tsx":
+/*!***************************************************************************************************************!*\
+  !*** ./src/spa/landing/layout/loginPage/loginForm/loginFormContent/loginFormInputs/loginFormForgotInputs.tsx ***!
+  \***************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -11,21 +11,20 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var formItem_formItem__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! formItem/formItem */ "./src/spa/components/atoms/formItem/formItem.tsx");
+/* harmony import */ var inputs_textInput_textInput__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! inputs/textInput/textInput */ "./src/spa/components/atoms/inputs/textInput/textInput.tsx");
 
-var UserDashboardIcon = function (_a) {
-    var size = _a.size;
-    return (react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("svg", { height: size, width: size, viewBox: "0 0 64 64", xmlns: "http://www.w3.org/2000/svg" },
-        react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("title", null, "layout 11"),
-        react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("g", { fill: "#565e5f", stroke: "#565e5f", strokeLinecap: "square", strokeWidth: "2" },
-            react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("rect", { height: "34", width: "22", fill: "none", stroke: "#565e5f", x: "6", y: "2" }),
-            react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("rect", { height: "18", width: "22", fill: "none", x: "6", y: "44" }),
-            react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("rect", { height: "18", width: "22", fill: "none", x: "36", y: "2" }),
-            react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("rect", { height: "34", width: "22", fill: "none", stroke: "#565e5f", x: "36", y: "28" }))));
+
+
+var LoginFormForgotInputs = function (_a) {
+    var form = _a.form;
+    return (react__WEBPACK_IMPORTED_MODULE_0__["createElement"](formItem_formItem__WEBPACK_IMPORTED_MODULE_1__["default"], { fieldName: "emailOrUsername", form: form, required: true, requiredMessage: "Your email address or username is required." },
+        react__WEBPACK_IMPORTED_MODULE_0__["createElement"](inputs_textInput_textInput__WEBPACK_IMPORTED_MODULE_2__["default"], { placeholder: "Please enter your email address or username" })));
 };
-/* harmony default export */ __webpack_exports__["default"] = (UserDashboardIcon);
+/* harmony default export */ __webpack_exports__["default"] = (LoginFormForgotInputs);
 
 
 /***/ })
 
 }]);
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9zcmMvc3BhL3NoYXJlZC9pY29ucy9pY29uL2luZGl2aWR1YWxJY29ucy91c2VyRGFzaGJvYXJkSWNvbi50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7OztBQUFBO0FBQUE7QUFBQTtBQUErQjtBQU0vQixJQUFNLGlCQUFpQixHQUFvQixVQUFDLEVBQVE7UUFBTixjQUFJO0lBQU8sUUFDdkQsNkRBQUssTUFBTSxFQUFFLElBQUksRUFBRSxLQUFLLEVBQUUsSUFBSSxFQUFFLE9BQU8sRUFBQyxXQUFXLEVBQUMsS0FBSyxFQUFDLDRCQUE0QjtRQUNwRiwrRUFBd0I7UUFDeEIsMkRBQUcsSUFBSSxFQUFDLFNBQVMsRUFBQyxNQUFNLEVBQUMsU0FBUyxFQUFDLGFBQWEsRUFBQyxRQUFRLEVBQUMsV0FBVyxFQUFDLEdBQUc7WUFDdkUsOERBQU0sTUFBTSxFQUFDLElBQUksRUFBQyxLQUFLLEVBQUMsSUFBSSxFQUFDLElBQUksRUFBQyxNQUFNLEVBQUMsTUFBTSxFQUFDLFNBQVMsRUFBQyxDQUFDLEVBQUMsR0FBRyxFQUFDLENBQUMsRUFBQyxHQUFHLEdBQUc7WUFDeEUsOERBQU0sTUFBTSxFQUFDLElBQUksRUFBQyxLQUFLLEVBQUMsSUFBSSxFQUFDLElBQUksRUFBQyxNQUFNLEVBQUMsQ0FBQyxFQUFDLEdBQUcsRUFBQyxDQUFDLEVBQUMsSUFBSSxHQUFHO1lBQ3hELDhEQUFNLE1BQU0sRUFBQyxJQUFJLEVBQUMsS0FBSyxFQUFDLElBQUksRUFBQyxJQUFJLEVBQUMsTUFBTSxFQUFDLENBQUMsRUFBQyxJQUFJLEVBQUMsQ0FBQyxFQUFDLEdBQUcsR0FBRztZQUN4RCw4REFBTSxNQUFNLEVBQUMsSUFBSSxFQUFDLEtBQUssRUFBQyxJQUFJLEVBQUMsSUFBSSxFQUFDLE1BQU0sRUFBQyxNQUFNLEVBQUMsU0FBUyxFQUFDLENBQUMsRUFBQyxJQUFJLEVBQUMsQ0FBQyxFQUFDLElBQUksR0FBRyxDQUN4RSxDQUNBLENBQ1A7QUFWd0QsQ0FVeEQsQ0FBQztBQUVhLGdGQUFpQixFQUFDIiwiZmlsZSI6IjY0LmJ1bmRsZS5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCAqIGFzIFJlYWN0IGZyb20gJ3JlYWN0JztcblxuaW50ZXJmYWNlIFByb3BzIHtcbiAgc2l6ZTogbnVtYmVyO1xufVxuXG5jb25zdCBVc2VyRGFzaGJvYXJkSWNvbjogUmVhY3QuRkM8UHJvcHM+ID0gKHsgc2l6ZSB9KSA9PiAoXG4gIDxzdmcgaGVpZ2h0PXtzaXplfSB3aWR0aD17c2l6ZX0gdmlld0JveD1cIjAgMCA2NCA2NFwiIHhtbG5zPVwiaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmdcIj5cbiAgICA8dGl0bGU+bGF5b3V0IDExPC90aXRsZT5cbiAgICA8ZyBmaWxsPVwiIzU2NWU1ZlwiIHN0cm9rZT1cIiM1NjVlNWZcIiBzdHJva2VMaW5lY2FwPVwic3F1YXJlXCIgc3Ryb2tlV2lkdGg9XCIyXCI+XG4gICAgICA8cmVjdCBoZWlnaHQ9XCIzNFwiIHdpZHRoPVwiMjJcIiBmaWxsPVwibm9uZVwiIHN0cm9rZT1cIiM1NjVlNWZcIiB4PVwiNlwiIHk9XCIyXCIgLz5cbiAgICAgIDxyZWN0IGhlaWdodD1cIjE4XCIgd2lkdGg9XCIyMlwiIGZpbGw9XCJub25lXCIgeD1cIjZcIiB5PVwiNDRcIiAvPlxuICAgICAgPHJlY3QgaGVpZ2h0PVwiMThcIiB3aWR0aD1cIjIyXCIgZmlsbD1cIm5vbmVcIiB4PVwiMzZcIiB5PVwiMlwiIC8+XG4gICAgICA8cmVjdCBoZWlnaHQ9XCIzNFwiIHdpZHRoPVwiMjJcIiBmaWxsPVwibm9uZVwiIHN0cm9rZT1cIiM1NjVlNWZcIiB4PVwiMzZcIiB5PVwiMjhcIiAvPlxuICAgIDwvZz5cbiAgPC9zdmc+XG4pO1xuXG5leHBvcnQgZGVmYXVsdCBVc2VyRGFzaGJvYXJkSWNvbjtcbiJdLCJzb3VyY2VSb290IjoiIn0=
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9zcmMvc3BhL2xhbmRpbmcvbGF5b3V0L2xvZ2luUGFnZS9sb2dpbkZvcm0vbG9naW5Gb3JtQ29udGVudC9sb2dpbkZvcm1JbnB1dHMvbG9naW5Gb3JtRm9yZ290SW5wdXRzLnRzeCJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7O0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUErQjtBQUNVO0FBQ1U7QUFPbkQsSUFBTSxxQkFBcUIsR0FBb0IsVUFBQyxFQUFRO1FBQU4sY0FBSTtJQUFPLFFBQzNELG9EQUFDLHlEQUFRLElBQ1AsU0FBUyxFQUFDLGlCQUFpQixFQUMzQixJQUFJLEVBQUUsSUFBSSxFQUNWLFFBQVEsUUFDUixlQUFlLEVBQUMsNkNBQTZDO1FBRTdELG9EQUFDLGtFQUFTLElBQUMsV0FBVyxFQUFDLDZDQUE2QyxHQUFHLENBQzlELENBQ1o7QUFUNEQsQ0FTNUQsQ0FBQztBQUVhLG9GQUFxQixFQUFDIiwiZmlsZSI6IjY0LmJ1bmRsZS5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCAqIGFzIFJlYWN0IGZyb20gJ3JlYWN0JztcbmltcG9ydCBGb3JtSXRlbSBmcm9tICdmb3JtSXRlbS9mb3JtSXRlbSc7XG5pbXBvcnQgVGV4dElucHV0IGZyb20gJ2lucHV0cy90ZXh0SW5wdXQvdGV4dElucHV0JztcbmltcG9ydCB7IEZvcm1Qcm9wIH0gZnJvbSAndHlwZXMvZm9ybVR5cGVzJztcblxuaW50ZXJmYWNlIFByb3BzIHtcbiAgZm9ybTogRm9ybVByb3A7XG59XG5cbmNvbnN0IExvZ2luRm9ybUZvcmdvdElucHV0czogUmVhY3QuRkM8UHJvcHM+ID0gKHsgZm9ybSB9KSA9PiAoXG4gIDxGb3JtSXRlbVxuICAgIGZpZWxkTmFtZT1cImVtYWlsT3JVc2VybmFtZVwiXG4gICAgZm9ybT17Zm9ybX1cbiAgICByZXF1aXJlZFxuICAgIHJlcXVpcmVkTWVzc2FnZT1cIllvdXIgZW1haWwgYWRkcmVzcyBvciB1c2VybmFtZSBpcyByZXF1aXJlZC5cIlxuICA+XG4gICAgPFRleHRJbnB1dCBwbGFjZWhvbGRlcj1cIlBsZWFzZSBlbnRlciB5b3VyIGVtYWlsIGFkZHJlc3Mgb3IgdXNlcm5hbWVcIiAvPlxuICA8L0Zvcm1JdGVtPlxuKTtcblxuZXhwb3J0IGRlZmF1bHQgTG9naW5Gb3JtRm9yZ290SW5wdXRzO1xuIl0sInNvdXJjZVJvb3QiOiIifQ==

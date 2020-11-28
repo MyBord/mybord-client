@@ -231,19 +231,9 @@ tooling. It is organized in the following manner:
 ```
 src/
   |- thirdParty/ 
-     |- lotty/ 
-        |- lotties/ 
-        |- lottiePlayer.tsx 
      |- storybook/ 
 ```
 
-* **lotty/:**
-  * Folder containing [Lottie](https://airbnb.io/lottie/#/) code. Note this folder is named
-   'lotty' and not 'lottie' so it's folder alias won't create conflicts.
-* **lottie/lotties:**
-  * Folder containing [Lottie](https://airbnb.io/lottie/#/) json files.
-* **`lottie/lottiePlayer.tsx`:**
-  * Utility component to play a lottie file.
 * **storybook/:**
   * Folder containing storybook code and universal tooling / wrapper.
 
@@ -259,6 +249,7 @@ src/
         |- atoms/ 
         |- molecules/ 
         |- neutrons/ 
+        |- organisms/ 
      |- landing/ 
      |- shared/ 
      |- spa/ 
@@ -268,15 +259,17 @@ src/
   * The source code for the MyBord application (once a user is able to login). For further
    details, see the [app folder outline](#f-app-folder).
 * **components/atoms/:**
-  * Atomic components.
+  * Atom components.
 * **components/molecules/:**
-  * Molecular components.
+  * Molecule components.
 * **components/neutrons/:**
   * Neutrons are sub-component level items that provide visual information and visual tooling to our
    components, such as animations, styles, and even icons. While icons themselves can be used at
    the component level, they often are used as additional visual cues for even atomic level
    components, such as an icon in a button or an icon in our dropdown component, so we have
    placed icons here.
+* **components/organisms/:**
+  * Organism components.
 * **landing/:**
   * The source code for what users see and interact with when they are not logged in. For further
    details, see the [landing folder outline](#g-landing-folder).
