@@ -172,7 +172,7 @@ const resolve = {
     schema: path.resolve(__dirname, 'src/server/schema/'),
     server: path.resolve(__dirname, 'src/server/'),
     storybook: path.resolve(__dirname, 'src/thirdParty/storybook/'),
-    styles: path.resolve(__dirname, 'src/styles/'),
+    styles: path.resolve(__dirname, 'src/spa/components/neutrons/styles/'),
     tags: path.resolve(__dirname, 'src/spa/components/molecules/tags/'),
     templates: path.resolve(__dirname, 'src/spa/components/templates/'),
     typography: path.resolve(__dirname, 'src/spa/components/atoms/typography/'),

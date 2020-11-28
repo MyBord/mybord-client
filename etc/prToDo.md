@@ -5,3 +5,4 @@ Make sure to remove all notes before merging (except for this one, of course).
 - remove typography from toggle
 - asset
 - move storybook folder
+- review all aliases

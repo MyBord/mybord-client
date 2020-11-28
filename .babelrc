@@ -53,7 +53,7 @@
         "schema": "./src/server/schema/",
         "server": "./src/server/",
         "storybook": "./src/thirdParty/storybook/",
-        "styles": "./src/styles/",
+        "styles": "./src/spa/components/neutrons/styles/",
         "tags": "./src/spa/components/molecules/tags/",
         "templates": "./src/spa/components/templates/",
         "typography": "./src/spa/components/atoms/typography/",
