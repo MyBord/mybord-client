@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useMutation } from '@apollo/react-hooks';
-import Form from 'forms/form/form';
+import Form from 'form/form';
 import { AddCardModalProps } from 'types/modalTypes';
 import { CREATE_USER_CARD_MUTATION } from 'schema/card';
 import { FormProp } from 'types/formTypes';

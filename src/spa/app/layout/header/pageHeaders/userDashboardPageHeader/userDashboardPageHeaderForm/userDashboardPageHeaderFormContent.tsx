@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Button from 'buttons/button/button';
 import IconButton from 'buttons/iconButton/iconButton';
-import FormItem from 'forms/formItem/formItem';
+import FormItem from 'formItem/formItem';
 import TextInput from 'inputs/textInput/textInput';
 import { FormProp } from 'types/formTypes';
 import { TOGGLE_SHOW_FILTERS } from 'context/userDashboardContext/userDashboardReducerTypes';

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Tooltip from 'modals/tooltip/tooltip';
+import Tooltip from 'molecules/tooltip/tooltip';
 import { TypographyProps } from 'types/typographyTypes';
 import FinalText from './finalText';
 import * as styles from './typographyText.module.less';

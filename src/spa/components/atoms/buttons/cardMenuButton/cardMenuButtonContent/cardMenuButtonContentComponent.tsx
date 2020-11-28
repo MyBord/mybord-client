@@ -3,7 +3,7 @@
 import * as React from 'react';
 import Checkbox from 'inputs/checkbox/checkbox';
 import Icon from 'icon/icon';
-import PopConfirm from 'modals/popConfirm/popConfirm';
+import PopConfirm from 'molecules/popConfirm/popConfirm';
 import Toggle from 'inputs/toggle/toggle';
 import Typography from 'typography/typography';
 import * as styles from './cardMenuButtonContent.module.less';

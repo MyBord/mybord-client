@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Form from 'forms/form/form';
+import Form from 'form/form';
 import UserSettingsPageFormContent from './userSettingsPageFormContent';
 
 const UserSettingsPageForm: React.FC = () => (

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Modal from 'modals/modal/modal';
-import Toast from 'modals/toast/toast';
+import Toast from 'molecules/toast/toast';
 import Typography from 'typography/typography';
 import { FormProp } from 'types/formTypes';
 import { useLandingContext } from 'context/landingContext/landingContext';

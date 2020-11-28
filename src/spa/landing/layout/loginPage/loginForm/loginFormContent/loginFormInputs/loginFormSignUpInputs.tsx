@@ -1,5 +1,5 @@
 import * as React from 'react';
-import FormItem from 'forms/formItem/formItem';
+import FormItem from 'formItem/formItem';
 import PasswordInput from 'inputs/passwordInput/passwordInput';
 import TextInput from 'inputs/textInput/textInput';
 import Typography from 'typography/typography';

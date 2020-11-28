@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Button from 'buttons/button/button';
-import FormItem from 'forms/formItem/formItem';
+import FormItem from 'formItem/formItem';
 import { FormProp } from 'types/formTypes';
 import * as styles from './loginFormButtons.module.less';
 

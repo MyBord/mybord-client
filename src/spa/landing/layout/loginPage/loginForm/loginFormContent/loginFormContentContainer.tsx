@@ -4,7 +4,7 @@
 import * as React from 'react';
 import { useHistory } from 'react-router';
 import { useLazyQuery, useMutation } from '@apollo/react-hooks';
-import Form from 'forms/form/form';
+import Form from 'form/form';
 import getGraphQLErrorMessage from 'utils/getGraphQLErrorMessage';
 import handleError from 'server/errors/handleError';
 import {
