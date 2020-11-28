@@ -150,7 +150,7 @@ const resolve = {
     footer: path.resolve(__dirname, 'src/spa/components/organisms/footer/'),
     form: path.resolve(__dirname, 'src/spa/components/atoms/form/'),
     formItem: path.resolve(__dirname, 'src/spa/components/atoms/formItem/'),
-    graphics: path.resolve(__dirname, 'src/spa/components/atoms/graphics/'),
+    graphics: path.resolve(__dirname, 'src/spa/components/neutrons/graphics/'),
     header: path.resolve(__dirname, 'src/spa/app/layout/header/'),
     hooks: path.resolve(__dirname, 'src/hooks/'),
     icon: path.resolve(__dirname, 'src/spa/components/neutrons/icon/'),

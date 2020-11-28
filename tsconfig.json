@@ -25,7 +25,7 @@
       "footer/*": ["src/spa/components/organisms/footer/*"],
       "form/*": ["src/spa/components/atoms/form/*"],
       "formItem/*": ["src/spa/components/atoms/formItem/*"],
-      "graphics/*": ["src/spa/components/atoms/graphics/*"],
+      "graphics/*": ["src/spa/components/neutrons/graphics/*"],
       "header/*": ["src/spa/app/layout/header/*"],
       "hooks/*": ["src/hooks/*"],
       "icon/*": ["src/spa/components/neutrons/icon/*"],

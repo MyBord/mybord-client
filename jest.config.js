@@ -25,7 +25,7 @@ module.exports = {
     '^footer(.*)$': '<rootDir>/src/spa/components/organisms/footer$1',
     '^form(.*)$': '<rootDir>/src/spa/components/atoms/form$1',
     '^formItem(.*)$': '<rootDir>/src/spa/components/atoms/formItem$1',
-    '^graphics(.*)$': '<rootDir>/src/spa/components/atoms/graphics$1',
+    '^graphics(.*)$': '<rootDir>/src/spa/components/neutrons/graphics$1',
     '^header(.*)$': '<rootDir>/src/spa/app/layout/header$1',
     '^hooks(.*)$': '<rootDir>/src/hooks$1',
     '^icon(.*)$': '<rootDir>/src/spa/components/neutrons/icon$1',

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Typography from 'typography/typography';
-import logo from 'assets/logo/myBordMark.png';
+import logo from 'graphics/logo.png';
 import { FooterHrStyle, FooterImgStyle, FooterProps } from 'types/footerTypes';
 import FooterContent from './footerContent/footerContent';
 import footerIcons from './footerIcons/footerIcons';

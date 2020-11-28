@@ -1,5 +1,5 @@
 import * as React from 'react';
-import logoWithType from 'assets/logo/myBordMarkType.png';
+import logoWithType from 'graphics/logoWithType.png';
 import * as styles from './loginFormHeader.module.less';
 
 const LoginFormHeader: React.FC = () => (
