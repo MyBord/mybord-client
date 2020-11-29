@@ -4,9 +4,8 @@ import * as React from 'react';
 import Checkbox from 'inputs/checkbox/checkbox';
 import Icon from 'icon/icon';
 import PopConfirm from 'molecules/popConfirm/popConfirm';
-import Toggle from 'inputs/toggle/toggle';
 import Typography from 'typography/typography';
-import * as styles from './cardMenuButtonContent.module.less';
+import * as styles from './userCardMenuContent.module.less';
 
 interface Props {
   handleDelete: () => void;
@@ -14,7 +13,7 @@ interface Props {
   toggleToDo: () => void;
 }
 
-const CardMenuButtonContentComponent: React.FC<Props> = ({
+const UserCardMenuContentComponent: React.FC<Props> = ({
   handleDelete,
   isToDo,
   toggleToDo,
@@ -64,4 +63,4 @@ const CardMenuButtonContentComponent: React.FC<Props> = ({
   );
 };
 
-export default CardMenuButtonContentComponent;
+export default UserCardMenuContentComponent;

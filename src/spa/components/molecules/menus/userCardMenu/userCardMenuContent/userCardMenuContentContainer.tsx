@@ -11,13 +11,13 @@ import {
 } from 'schema/card';
 import { TOGGLE_CARD_FILTER } from 'context/userDashboardContext/userDashboardReducerTypes';
 import { useUserDashboardContext } from 'context/userDashboardContext/userDashboardContext';
-import CardMenuButtonContentComponent from './cardMenuButtonContentComponent';
+import UserCardMenuContentComponent from './userCardMenuContentComponent';
 
 export interface Props {
   cardId: UserCardData['id'];
 }
 
-const CardMenuButtonContentContainer: React.FC<Props> = ({ cardId }) => {
+const UserCardMenuContentContainer: React.FC<Props> = ({ cardId }) => {
   const { state, dispatch } = useUserDashboardContext();
 
   const userCard = state.byId[cardId]; // *1
@@ -46,7 +46,7 @@ const CardMenuButtonContentContainer: React.FC<Props> = ({ cardId }) => {
   };
 
   return (
-    <CardMenuButtonContentComponent
+    <UserCardMenuContentComponent
       handleDelete={handleDelete}
       isToDo={isToDo}
       toggleToDo={toggleToDo}
@@ -54,4 +54,4 @@ const CardMenuButtonContentContainer: React.FC<Props> = ({ cardId }) => {
   );
 };
 
-export default CardMenuButtonContentContainer;
+export default UserCardMenuContentContainer;

@@ -161,6 +161,7 @@ const resolve = {
     layout: path.resolve(__dirname, 'src/spa/app/layout/'),
     lottiePlayer: path.resolve(__dirname, 'src/spa/components/neutrons/lottiePlayer/'),
     lotties: path.resolve(__dirname, 'src/spa/components/neutrons/lotties/'),
+    menus: path.resolve(__dirname, 'src/spa/components/molecules/menus/'),
     mockData: path.resolve(__dirname, 'src/mockData/'),
     modal: path.resolve(__dirname, 'src/spa/components/molecules/modal/'),
     modals: path.resolve(__dirname, 'src/spa/components/organisms/modals/'),

@@ -36,6 +36,7 @@
       "layout/*": ["src/spa/app/layout/*"],
       "lottiePlayer/*": ["src/spa/components/neutrons/lottiePlayer/*"],
       "lotties/*": ["src/spa/components/neutrons/lotties/*"],
+      "menus/*": ["src/spa/components/molecules/menus/*"],
       "mockData/*": ["src/mockData/*"],
       "modal/*": ["src/spa/components/molecules/modal/*"],
       "modals/*": ["src/spa/components/organisms/modals/*"],
