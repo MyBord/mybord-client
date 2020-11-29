@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import SpaProviders from './spaProviders';
-import SpaAuthentication from './spaAuthentication';
+import SpaProviders from 'context/spaProviders/spaProviders';
+import SpaAuthentication from './initialization/spaAuthentication';
 
 // This is the actual final, production React code that instantiates our application. It contains:
 //   * A router
