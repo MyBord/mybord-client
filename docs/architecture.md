@@ -174,7 +174,8 @@ src/
 * **assets/:**
   * Image assets used in the app.
 * **context/:**
-  * Folder containing react context code to be used by different components.
+  * Folder containing react context code to be used by different components. Includes the root
+   providers for the entire spa (`spaProviders.tsx`).
 * **hooks/:**
   * Folder containing custom hooks.
 * **mockData/:**
@@ -250,9 +251,9 @@ src/
         |- molecules/ 
         |- neutrons/ 
         |- organisms/ 
+     |- initialization/ 
      |- landing/ 
-     |- shared/ 
-     |- spa/ 
+     |- spa.tsx
 ```
 
 * **app/:**
@@ -270,17 +271,13 @@ src/
    placed icons here.
 * **components/organisms/:**
   * Organism components.
+* **initialization/:**
+  * Contains the code that invokes the final spa and initializes it.
 * **landing/:**
   * The source code for what users see and interact with when they are not logged in. For further
    details, see the [landing folder outline](#g-landing-folder).
-* **shared/:**   
-  * This folder contains react components that are not exclusive to any route or page but are shared
-   across the app (including possibly the landing page).
-* **spa/:**
-  * This folder contains the actual code that invokes the final spa and initializes it. Although
-   it is certainly redundant to have a 'spa' folder under the 'spa' folder, I wasn't sure what
-   else to call this folder. Essentially, the first spa folder contains all react application
-   source code, and the second spa folder contains code that invokes the final spa.
+* **`spa.tsx`:**
+  * The root index of our spa application.
   
 ### F. app folder
 
