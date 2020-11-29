@@ -1,17 +1,17 @@
 import * as React from 'react';
 import ErrorBoundary from 'landing/errorBoundary/errorBoundary';
 import Routes from 'landing/routing/routes';
-import LandingProviders from './landingProviders';
+import { LandingContextProvider } from 'context/landingContext/landingContext';
 import Layout from './layout/layout';
 
 const Landing: React.FC = () => (
-  <LandingProviders>
+  <LandingContextProvider>
     <Layout>
       <ErrorBoundary>
         <Routes />
       </ErrorBoundary>
     </Layout>
-  </LandingProviders>
+  </LandingContextProvider>
 );
 
 export default Landing;
