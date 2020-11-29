@@ -1,15 +1,13 @@
 import * as React from 'react';
 import PopOver from 'popOver/popOver';
 import { PopOverCallback } from 'types/modalTypes';
-import { UserCardData } from 'schema/card';
-import CardMenuButtonContent from './cardMenuButtonContent/cardMenuButtonContent';
 import * as styles from './cardMenuButton.module.less';
 
 interface Props {
-  userCardData: UserCardData;
+  Content: React.ReactElement;
 }
 
-const CardMenuButton: React.FC<Props> = ({ userCardData }) => {
+const CardMenuButton: React.FC<Props> = ({ Content }) => {
   const [isPopOverVisible, setIsPopOverVisible] = React.useState<boolean>(false);
 
   const handleCallback = (props: PopOverCallback): void => {
@@ -18,7 +16,7 @@ const CardMenuButton: React.FC<Props> = ({ userCardData }) => {
 
   return (
     <PopOver
-      Content={<CardMenuButtonContent cardId={userCardData.id} />}
+      Content={Content}
       callback={handleCallback}
     >
       <div

@@ -36,6 +36,7 @@ module.exports = {
     '^layout(.*)$': '<rootDir>/src/spa/app/layout$1',
     '^lottiePlayer(.*)$': '<rootDir>/src/spa/components/neutrons/lottiePlayer$1',
     '^lotties(.*)$': '<rootDir>/src/spa/components/neutrons/lotties$1',
+    '^menus(.*)$': '<rootDir>/src/spa/components/molecules/menus$1',
     '^mockData(.*)$': '<rootDir>/src/mockData$1',
     '^modal(.*)$': '<rootDir>/src/spa/components/molecules/modal$1',
     '^modals(.*)$': '<rootDir>/src/spa/components/organisms/modals$1',
