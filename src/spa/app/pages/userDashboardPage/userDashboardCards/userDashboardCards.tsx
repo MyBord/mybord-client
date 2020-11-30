@@ -1,7 +1,7 @@
 import * as React from 'react';
 import EmptyCard from 'molecules/emptyCard/emptyCard';
 import PhantomCard from 'molecules/phantomCard/phantomCard';
-import UserCard from 'userCard/userCard';
+import UserCard from 'organisms/userCard/userCard';
 import { useUserDashboardContext } from 'context/userDashboardContext/userDashboardContext';
 import * as styles from './userDashboardCards.module.less';
 
