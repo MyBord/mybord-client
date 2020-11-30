@@ -2,7 +2,6 @@ import * as React from 'react';
 import { FormProp } from 'types/formTypes';
 import { useLoginContext } from 'context/loginContext/loginContext';
 const LoginFormForgotInputs = React.lazy(() => import('./loginFormForgotInputs'));
-const LoginFormLoginInputs = React.lazy(() => import('./loginFormLoginInputs'));
 const LoginFormSignUpInputs = React.lazy(() => import('./loginFormSignUpInputs'));
 
 interface Props {
@@ -15,8 +14,6 @@ const LoginFormInputs: React.FC<Props> = ({ form }) => {
   switch (formStatus) {
     case 'forgot':
       return <LoginFormForgotInputs form={form} />;
-    case 'login':
-      return <LoginFormLoginInputs form={form} />;
     case 'signUp':
       return <LoginFormSignUpInputs form={form} />;
     default:
