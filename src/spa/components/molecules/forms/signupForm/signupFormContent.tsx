@@ -1,11 +1,14 @@
 import * as React from 'react';
+import Button from 'buttons/button/button';
 import FormItem from 'formItem/formItem';
 import PasswordInput from 'inputs/passwordInput/passwordInput';
 import TextInput from 'inputs/textInput/textInput';
+import Toast from 'molecules/toast/toast';
 import Typography from 'typography/typography';
-import { FormProp, Validator } from 'types/formTypes';
+import UserAgreementModal from 'modals/userAgreementModal/userAgreementModal';
 import { useLoginContext } from 'context/loginContext/loginContext';
-import * as styles from './loginFormInputs.module.less';
+import {FormProp, Validator} from 'types/formTypes';
+import * as styles from './signupForm.module.less';
 
 const duplicateEmailMessage = 'That account already exists';
 
@@ -16,36 +19,27 @@ const invalidUsernameMessage = 'The username can only contain letters (a-z), num
 
 const PasswordReactMessage = (
   <>
-    <Typography
-      color="red"
-      text="Your password must be:"
-    />
+    <Typography color="red" text="Your password must be:" />
     <div className={styles.weakPasswordDiv}>
-      <Typography
-        color="red"
-        text="• At least 8 characters long"
-      />
-      <Typography
-        color="red"
-        text="• Have at least one upper case character"
-      />
-      <Typography
-        color="red"
-        text="• Contain at least one number"
-      />
-      <Typography
-        color="red"
-        text="• Contain at least one special character (!@#$&*-)"
-      />
+      <Typography color="red" text="• At least 8 characters long" />
+      <Typography color="red" text="• Have at least one upper case character" />
+      <Typography color="red" text="• Contain at least one number" />
+      <Typography color="red" text="• Contain at least one special character (!@#$&*-)" />
     </div>
   </>
 );
 
 interface Props {
   form: FormProp;
+  handleBack: () => void;
+  isAuthenticationWaiting: boolean;
 }
 
-const LoginFormSignUpInputs: React.FC<Props> = ({ form }) => {
+const SignupFormContent: React.FC<Props> = ({
+  form,
+  handleBack,
+  isAuthenticationWaiting,
+}) => {
   const { signUpStatus } = useLoginContext();
 
   const { confirmPassword, loginPassword } = form.getFieldsValue(['confirmPassword', 'loginPassword']);
@@ -82,6 +76,12 @@ const LoginFormSignUpInputs: React.FC<Props> = ({ form }) => {
 
   return (
     <>
+      <Toast
+        id="user-agreement-toast"
+        text="By not accepting the user agreement, you are unable to signup for MyBord."
+        type="warning"
+      />
+      <UserAgreementModal form={form} />
       <FormItem
         errorMessage={signUpStatus === 'duplicate email' && duplicateEmailMessage}
         fieldName="loginEmail"
@@ -125,8 +125,27 @@ const LoginFormSignUpInputs: React.FC<Props> = ({ form }) => {
       >
         <PasswordInput placeholder="Confirm Password" />
       </FormItem>
+      <div className={styles.buttonDiv}>
+        <FormItem
+          fieldName="sign-up"
+          form={form}
+        >
+          <Button
+            htmlType="submit"
+            isWaiting={isAuthenticationWaiting}
+            label="Sign Up"
+            type="primary"
+          />
+        </FormItem>
+        <FormItem
+          fieldName="back"
+          form={form}
+        >
+          <Button label="back" onClick={handleBack} type="tertiary" />
+        </FormItem>
+      </div>
     </>
   );
 };
 
-export default LoginFormSignUpInputs;
+export default SignupFormContent;

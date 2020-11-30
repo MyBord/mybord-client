@@ -16,8 +16,6 @@ import { FormProp } from 'types/formTypes';
 import { useCurrentUserContext } from 'context/currentUserContext/currentUserContext';
 import { useLoginContext } from 'context/loginContext/loginContext';
 import { useModalContext } from 'context/modalContext/modalContext';
-import LoginFormContentComponent from './loginFormContentComponent';
-import './loginFormContent.less';
 
 /* eslint-disable brace-style */
 const LoginFormContentContainer: React.FC = () => {

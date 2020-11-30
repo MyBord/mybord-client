@@ -1,25 +1,18 @@
 import * as React from 'react';
 import { useMutation } from '@apollo/react-hooks';
-import Button from 'buttons/button/button';
-import Typography from 'typography/typography';
 import handleError from 'server/errors/handleError';
 import { CREATE_USER_MUTATION } from 'schema/user';
 import { FormProp } from 'types/formTypes';
 import { useLoginContext } from 'context/loginContext/loginContext';
 import { useModalContext } from 'context/modalContext/modalContext';
 import { useToastContext } from 'context/toastContext/toastContext';
-import * as styles from './loginFormUserAgreementModalContent.module.less';
-
-const agreement = "By clicking 'Accept', I agree to the Terms & Conditions and the Privacy Policy"
-+ ' provided below:';
+import UserAgreementModalComponent from './userAgreementModalComponent';
 
 interface Props {
   form: FormProp;
 }
 
-const LoginFormUserAgreementModalContent: React.FC<Props> = ({
-  form,
-}) => {
+const UserAgreementModalContainer: React.FC<Props> = ({ form }) => {
   const { setModalId } = useModalContext();
   const [createUser] = useMutation(CREATE_USER_MUTATION);
   const [isAuthenticationWaiting, setIsAuthenticationWaiting] = React.useState<boolean>(false);
@@ -73,31 +66,12 @@ const LoginFormUserAgreementModalContent: React.FC<Props> = ({
   };
 
   return (
-    <div className={styles.container}>
-      <Typography text={agreement} />
-      <ul>
-        <li>
-          <Typography link="/termsAndConditions" text="Terms & Conditions" />
-        </li>
-        <li>
-          <Typography link="/privacyPolicy" text="Privacy Policy" />
-        </li>
-      </ul>
-      <div className={styles.buttonContainer}>
-        <Button
-          autoFocus
-          isWaiting={isAuthenticationWaiting}
-          label="Accept"
-          onClick={handleSignup}
-        />
-        <Button
-          label="back"
-          onClick={handleBack}
-          type="tertiary"
-        />
-      </div>
-    </div>
+    <UserAgreementModalComponent
+      handleBack={handleBack}
+      handleSignup={handleSignup}
+      isAuthenticationWaiting={isAuthenticationWaiting}
+    />
   );
 };
 
-export default LoginFormUserAgreementModalContent;
+export default UserAgreementModalContainer;
