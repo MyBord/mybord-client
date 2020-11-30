@@ -1,7 +1,7 @@
 import * as React from 'react';
 import AddCardModalForm from 'forms/addCardModalForm/addCardModalForm';
 import Modal from 'modal/modal';
-import UserCard from 'userCard/userCard';
+import UserCard from 'organisms/userCard/userCard';
 import { AddCardModalProps } from 'types/modalTypes';
 import { UserCardData } from 'schema/card';
 import * as styles from './addCardModal.module.less';
