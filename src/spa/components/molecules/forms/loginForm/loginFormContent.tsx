@@ -9,7 +9,7 @@ import * as styles from './loginForm.module.less';
 
 interface Props {
   alertMessage: string;
-  form: FormProp;
+  form?: FormProp;
   isAuthenticationWaiting: boolean;
 }
 

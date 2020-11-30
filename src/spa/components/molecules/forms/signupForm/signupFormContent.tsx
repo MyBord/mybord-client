@@ -30,7 +30,7 @@ const PasswordReactMessage = (
 );
 
 interface Props {
-  form: FormProp;
+  form?: FormProp;
   handleBack: () => void;
   isAuthenticationWaiting: boolean;
 }
