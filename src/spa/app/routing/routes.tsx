@@ -9,7 +9,8 @@ const FriendsPage = React.lazy(() => import('pages/friendsPage/friendsPage'));
 const TrendingPage = React.lazy(() => import('pages/trendingPage/trendingPage'));
 const UserDashboardPage = React.lazy(() => import('pages/userDashboardPage/userDashboardPage'));
 const UserSettingsPage = React.lazy(() => import('pages/userSettingsPage/userSettingsPage'));
-import { MotionRedirect, MotionRoute } from 'utils/routing';
+import MotionRedirect from 'neutrons/routing/motionRedirect';
+import MotionRoute from 'neutrons/routing/motionRoute';
 
 interface Props {
   username: string;
