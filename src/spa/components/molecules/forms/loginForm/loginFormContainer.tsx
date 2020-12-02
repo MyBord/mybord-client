@@ -8,8 +8,12 @@ import { FormProp } from 'types/formTypes';
 import { GET_CURRENT_USER_QUERY, LOGIN_USER_MUTATION } from 'schema/user';
 import { useCurrentUserContext } from 'context/currentUserContext/currentUserContext';
 
+interface Props {
+  handleSignup: () => void;
+}
+
 /* eslint-disable brace-style */
-const LoginFormContainer: React.FC = () => {
+const LoginFormContainer: React.FC<Props> = (props) => {
   // ----- STATE ----- //
 
   const [alertMessage, setAlertMessage] = React.useState<string>(null);
@@ -85,6 +89,7 @@ const LoginFormContainer: React.FC = () => {
       <LoginFormContent
         alertMessage={alertMessage}
         isAuthenticationWaiting={isAuthenticationWaiting}
+        {...props}
       />
     </Form>
   );

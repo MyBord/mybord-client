@@ -1,19 +1,23 @@
 import * as React from 'react';
 import { useLazyQuery } from '@apollo/react-hooks';
 import Form from 'form/form';
+import SignupFormContent from 'forms/signupForm/signupFormContent';
 import getGraphQLErrorMessage from 'utils/getGraphQLErrorMessage';
 import { FormProp } from 'types/formTypes';
 import { VALIDATE_USER_SIGNUP } from 'schema/user';
 import { useLoginContext } from 'context/loginContext/loginContext';
 import { useModalContext } from 'context/modalContext/modalContext';
-import SignupFormContent from 'forms/signupForm/signupFormContent';
 
 export type SignupStatus = 'duplicate email'
 | 'duplicate username'
 | 'invalid username'
 | 'weak password';
 
-const SignupFormContainer: React.FC = () => {
+interface Props {
+  handleBack: () => void
+}
+
+const SignupFormContainer: React.FC<Props> = (props) => {
   // ----- STATE ----- //
 
   const [isAuthenticationWaiting, setIsAuthenticationWaiting] = React.useState<boolean>(false);
@@ -80,9 +84,9 @@ const SignupFormContainer: React.FC = () => {
   return (
     <Form onSubmit={handleSignUp}>
       <SignupFormContent
-        handleBack={() => console.log('back')}
         isAuthenticationWaiting={isAuthenticationWaiting}
         signupStatus={signupStatus}
+        {...props}
       />
     </Form>
   );

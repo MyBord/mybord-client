@@ -10,12 +10,14 @@ import * as styles from './loginForm.module.less';
 interface Props {
   alertMessage: string;
   form?: FormProp;
+  handleSignup: () => void;
   isAuthenticationWaiting: boolean;
 }
 
 const LoginFormContent: React.FC<Props> = ({
   alertMessage,
   form,
+  handleSignup,
   isAuthenticationWaiting,
 }) => (
   <>
@@ -43,7 +45,12 @@ const LoginFormContent: React.FC<Props> = ({
         <Button htmlType="submit" isWaiting={isAuthenticationWaiting} label="Login" />
       </FormItem>
       <FormItem fieldName="sign-up" form={form}>
-        <Button htmlType="button" label="Sign Up" type="secondary" />
+        <Button
+          htmlType="button"
+          label="Sign Up"
+          type="secondary"
+          onClick={handleSignup}
+        />
       </FormItem>
     </div>
   </>

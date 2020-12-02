@@ -1,6 +1,10 @@
 import * as React from 'react';
 import SignupFormContainer from './signupFormContainer';
 
-const SignupForm: React.FC = () => <SignupFormContainer />;
+interface Props {
+  handleBack: () => void;
+}
+
+const SignupForm: React.FC<Props> = (props) => <SignupFormContainer {...props} />;
 
 export default SignupForm;

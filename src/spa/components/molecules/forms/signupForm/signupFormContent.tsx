@@ -7,7 +7,7 @@ import Toast from 'molecules/toast/toast';
 import Typography from 'typography/typography';
 import UserAgreementModal from 'modals/userAgreementModal/userAgreementModal';
 import { FormProp, Validator } from 'types/formTypes';
-import { SignupStatus } from './signupFormContainer';
+import { SignupStatus } from 'forms/signupForm/signupFormContainer';
 import * as styles from './signupForm.module.less';
 
 const duplicateEmailMessage = 'That account already exists';
@@ -126,10 +126,7 @@ const SignupFormContent: React.FC<Props> = ({
         <PasswordInput placeholder="Confirm Password" />
       </FormItem>
       <div className={styles.buttonDiv}>
-        <FormItem
-          fieldName="sign-up"
-          form={form}
-        >
+        <FormItem fieldName="sign-up" form={form}>
           <Button
             htmlType="submit"
             isWaiting={isAuthenticationWaiting}
@@ -137,10 +134,7 @@ const SignupFormContent: React.FC<Props> = ({
             type="primary"
           />
         </FormItem>
-        <FormItem
-          fieldName="back"
-          form={form}
-        >
+        <FormItem fieldName="back" form={form}>
           <Button label="back" onClick={handleBack} type="tertiary" />
         </FormItem>
       </div>
