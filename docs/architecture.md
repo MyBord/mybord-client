@@ -288,15 +288,12 @@ authenticated), and is organized in the following manner:
 src/
   |- spa/
     |- app/ 
-      |- errorBoundary/ 
       |- layout/ 
       |- pages/ 
       |- routing/ 
       |- app.tsx
 ```
 
-* **errorBoundary/:**
-  * The react error boundary used for our application.
 * **layout/:**
   * The frame and navigation of the application.
 * **pages/:**
@@ -315,7 +312,6 @@ logged in / authenticated, and is organized in the following manner:
 src/
   |- spa/
     |- landing/ 
-      |- errorBoundary/ 
       |- landing/ 
       |- pages/ 
       |- routing/ 
@@ -323,8 +319,6 @@ src/
       |- landing.tsx
 ```
 
-* **errorBoundary/:**
-  * The react error boundary used for our landing application.
 * **layout/:**
   * The frame and navigation of the landing application.
 * **pages/:**
