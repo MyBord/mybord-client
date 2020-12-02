@@ -1,5 +1,5 @@
 import * as React from 'react';
-import logo from 'assets/logo/myBordMark.png';
+import logo from 'graphics/logo.png';
 import * as styles from './navigationLogo.module.less';
 
 const NavigationLogo: React.FC = () => (

@@ -174,7 +174,8 @@ src/
 * **assets/:**
   * Image assets used in the app.
 * **context/:**
-  * Folder containing react context code to be used by different components.
+  * Folder containing react context code to be used by different components. Includes the root
+   providers for the entire spa (`spaProviders.tsx`).
 * **hooks/:**
   * Folder containing custom hooks.
 * **mockData/:**
@@ -231,19 +232,9 @@ tooling. It is organized in the following manner:
 ```
 src/
   |- thirdParty/ 
-     |- lotty/ 
-        |- lotties/ 
-        |- lottiePlayer.tsx 
      |- storybook/ 
 ```
 
-* **lotty/:**
-  * Folder containing [Lottie](https://airbnb.io/lottie/#/) code. Note this folder is named
-   'lotty' and not 'lottie' so it's folder alias won't create conflicts.
-* **lottie/lotties:**
-  * Folder containing [Lottie](https://airbnb.io/lottie/#/) json files.
-* **`lottie/lottiePlayer.tsx`:**
-  * Utility component to play a lottie file.
 * **storybook/:**
   * Folder containing storybook code and universal tooling / wrapper.
 
@@ -259,35 +250,34 @@ src/
         |- atoms/ 
         |- molecules/ 
         |- neutrons/ 
+        |- organisms/ 
+     |- initialization/ 
      |- landing/ 
-     |- shared/ 
-     |- spa/ 
+     |- spa.tsx
 ```
 
 * **app/:**
   * The source code for the MyBord application (once a user is able to login). For further
    details, see the [app folder outline](#f-app-folder).
 * **components/atoms/:**
-  * Atomic components.
+  * Atom components.
 * **components/molecules/:**
-  * Molecular components.
+  * Molecule components.
 * **components/neutrons/:**
   * Neutrons are sub-component level items that provide visual information and visual tooling to our
    components, such as animations, styles, and even icons. While icons themselves can be used at
    the component level, they often are used as additional visual cues for even atomic level
    components, such as an icon in a button or an icon in our dropdown component, so we have
    placed icons here.
+* **components/organisms/:**
+  * Organism components.
+* **initialization/:**
+  * Contains the code that invokes the final spa and initializes it.
 * **landing/:**
   * The source code for what users see and interact with when they are not logged in. For further
    details, see the [landing folder outline](#g-landing-folder).
-* **shared/:**   
-  * This folder contains react components that are not exclusive to any route or page but are shared
-   across the app (including possibly the landing page).
-* **spa/:**
-  * This folder contains the actual code that invokes the final spa and initializes it. Although
-   it is certainly redundant to have a 'spa' folder under the 'spa' folder, I wasn't sure what
-   else to call this folder. Essentially, the first spa folder contains all react application
-   source code, and the second spa folder contains code that invokes the final spa.
+* **`spa.tsx`:**
+  * The root index of our spa application.
   
 ### F. app folder
 
@@ -298,15 +288,12 @@ authenticated), and is organized in the following manner:
 src/
   |- spa/
     |- app/ 
-      |- errorBoundary/ 
       |- layout/ 
       |- pages/ 
       |- routing/ 
       |- app.tsx
 ```
 
-* **errorBoundary/:**
-  * The react error boundary used for our application.
 * **layout/:**
   * The frame and navigation of the application.
 * **pages/:**
@@ -325,7 +312,6 @@ logged in / authenticated, and is organized in the following manner:
 src/
   |- spa/
     |- landing/ 
-      |- errorBoundary/ 
       |- landing/ 
       |- pages/ 
       |- routing/ 
@@ -333,8 +319,6 @@ src/
       |- landing.tsx
 ```
 
-* **errorBoundary/:**
-  * The react error boundary used for our landing application.
 * **layout/:**
   * The frame and navigation of the landing application.
 * **pages/:**

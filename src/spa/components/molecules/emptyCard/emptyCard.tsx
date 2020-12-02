@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Empty from 'graphics/empty/empty';
+import Empty from 'graphics/empty';
 import Icon from 'icon/icon';
 import Typography from 'typography/typography';
 import * as styles from './emptyCard.module.less';
@@ -12,7 +12,9 @@ const EmptyCard: React.FC<Props> = ({ hasFilters }) => {
   if (hasFilters) {
     return (
       <div className={styles.div}>
-        <Empty />
+        <div className={styles.emptyDiv}>
+          <Empty />
+        </div>
         <Typography
           color="blue"
           size="three"
@@ -27,7 +29,9 @@ const EmptyCard: React.FC<Props> = ({ hasFilters }) => {
 
   return (
     <div className={styles.div}>
-      <Empty />
+      <div className={styles.emptyDiv}>
+        <Empty />
+      </div>
       <Typography
         color="blue"
         size="three"
