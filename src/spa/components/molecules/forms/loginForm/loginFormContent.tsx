@@ -43,7 +43,7 @@ const LoginFormContent: React.FC<Props> = ({
         <Button htmlType="submit" isWaiting={isAuthenticationWaiting} label="Login" />
       </FormItem>
       <FormItem fieldName="sign-up" form={form}>
-        <Button htmlType="button" label="Sign Up" type="secondary"/>
+        <Button htmlType="button" label="Sign Up" type="secondary" />
       </FormItem>
     </div>
   </>

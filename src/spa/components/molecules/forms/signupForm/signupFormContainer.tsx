@@ -8,12 +8,18 @@ import { useLoginContext } from 'context/loginContext/loginContext';
 import { useModalContext } from 'context/modalContext/modalContext';
 import SignupFormContent from 'forms/signupForm/signupFormContent';
 
+export type SignupStatus = 'duplicate email'
+| 'duplicate username'
+| 'invalid username'
+| 'weak password';
+
 const SignupFormContainer: React.FC = () => {
   // ----- STATE ----- //
 
   const [isAuthenticationWaiting, setIsAuthenticationWaiting] = React.useState<boolean>(false);
+  const [signupStatus, setSignupStatus] = React.useState<SignupStatus>(null);
   const { setModalId } = useModalContext();
-  const { userHasAgreedToTerms, setSignUpStatus } = useLoginContext();
+  const { userHasAgreedToTerms } = useLoginContext();
 
   // ----- QUERIES & MUTATIONS ----- //
 
@@ -51,17 +57,16 @@ const SignupFormContainer: React.FC = () => {
       setIsAuthenticationWaiting(false);
       const errorMessage = getGraphQLErrorMessage(error.message);
 
-      if (errorMessage === 'invalid username') {
-        setSignUpStatus('invalid username');
-      }
-      if (errorMessage === 'duplicate username') {
-        setSignUpStatus('duplicate username');
-      }
-      if (errorMessage === 'weak password') {
-        setSignUpStatus('weak password');
-      }
-      if (errorMessage === 'duplicate email') {
-        setSignUpStatus('duplicate email');
+      if (
+        [
+          'duplicate email',
+          'duplicate username',
+          'invalid username',
+          'weak password',
+        ].includes(errorMessage)
+      ) {
+        // @ts-ignore - error message is compatible
+        setSignupStatus(errorMessage);
       }
     } else {
       setIsAuthenticationWaiting(false);
@@ -77,6 +82,7 @@ const SignupFormContainer: React.FC = () => {
       <SignupFormContent
         handleBack={() => console.log('back')}
         isAuthenticationWaiting={isAuthenticationWaiting}
+        signupStatus={signupStatus}
       />
     </Form>
   );

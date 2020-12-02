@@ -1,5 +1,5 @@
 import * as React from 'react';
-import LoginFormContent from 'landing/layout/loginPage/loginForm/loginFormContent/loginFormContent';
+import LoginForm from 'forms/loginForm/loginForm';
 import Typography from 'typography/typography';
 import logoWithType from 'graphics/logoWithType.png';
 import pageWrapper from 'landing/pages/pageWrapper/pageWrapper';
@@ -27,7 +27,7 @@ const LoginCard: React.FC = () => {
         <div className={styles.logoDiv}>
           <img alt="MyBord logo" className={styles.img} src={logoWithType} />
         </div>
-        <LoginFormContent />
+        <LoginForm />
         <Typography
           text="About MyBord"
           link="/about"

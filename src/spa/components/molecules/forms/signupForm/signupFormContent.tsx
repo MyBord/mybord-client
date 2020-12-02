@@ -6,8 +6,8 @@ import TextInput from 'inputs/textInput/textInput';
 import Toast from 'molecules/toast/toast';
 import Typography from 'typography/typography';
 import UserAgreementModal from 'modals/userAgreementModal/userAgreementModal';
-import { useLoginContext } from 'context/loginContext/loginContext';
-import {FormProp, Validator} from 'types/formTypes';
+import { FormProp, Validator } from 'types/formTypes';
+import { SignupStatus } from './signupFormContainer';
 import * as styles from './signupForm.module.less';
 
 const duplicateEmailMessage = 'That account already exists';
@@ -33,15 +33,15 @@ interface Props {
   form?: FormProp;
   handleBack: () => void;
   isAuthenticationWaiting: boolean;
+  signupStatus: SignupStatus;
 }
 
 const SignupFormContent: React.FC<Props> = ({
   form,
   handleBack,
   isAuthenticationWaiting,
+  signupStatus,
 }) => {
-  const { signUpStatus } = useLoginContext();
-
   const { confirmPassword, loginPassword } = form.getFieldsValue(['confirmPassword', 'loginPassword']);
   const confirmPasswordIsSuccess = confirmPassword
     && confirmPassword.length > 0
@@ -56,21 +56,21 @@ const SignupFormContent: React.FC<Props> = ({
   };
 
   const getUsernameErrorMessage = (): string => {
-    if (signUpStatus === 'invalid username') {
+    if (signupStatus === 'invalid username') {
       return invalidUsernameMessage;
     }
-    if (signUpStatus === 'duplicate username') {
+    if (signupStatus === 'duplicate username') {
       return duplicateUsernameMessage;
     }
 
     return null;
   };
 
-  const usernameClassName = signUpStatus === 'invalid username'
+  const usernameClassName = signupStatus === 'invalid username'
     ? styles.invalidUsernameDiv
     : styles.usernameDiv;
 
-  const loginPasswordClassName = signUpStatus === 'weak password'
+  const loginPasswordClassName = signupStatus === 'weak password'
     ? styles.weakLoginPasswordDiv
     : styles.loginPasswordDiv;
 
@@ -83,7 +83,7 @@ const SignupFormContent: React.FC<Props> = ({
       />
       <UserAgreementModal form={form} />
       <FormItem
-        errorMessage={signUpStatus === 'duplicate email' && duplicateEmailMessage}
+        errorMessage={signupStatus === 'duplicate email' && duplicateEmailMessage}
         fieldName="loginEmail"
         form={form}
         required
@@ -106,7 +106,7 @@ const SignupFormContent: React.FC<Props> = ({
       </div>
       <div className={loginPasswordClassName}>
         <FormItem
-          errorMessage={signUpStatus === 'weak password' && PasswordReactMessage}
+          errorMessage={signupStatus === 'weak password' && PasswordReactMessage}
           fieldName="loginPassword"
           form={form}
           required
