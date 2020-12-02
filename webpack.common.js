@@ -70,7 +70,14 @@ const rules = [
       'postcss-loader',
       {
         loader: 'less-loader',
-        options: { javascriptEnabled: true },
+        options: {
+          javascriptEnabled: true,
+          additionalData: (content, loaderContext) => {
+            const variables = fs.readFileSync('src/spa/components/neutrons/styles/_index.less');
+
+            return variables + content;
+          },
+        },
       },
     ],
   },
