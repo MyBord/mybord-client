@@ -1,4 +1,5 @@
 const path = require('path');
+const fs = require('fs');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const webpack = require('webpack');
 const Dotenv = require('dotenv-webpack');
@@ -63,37 +64,19 @@ const rules = [
   },
   {
     test: /\.less$/,
-    exclude: /\.module\.less$/,
     use: [
       MiniCssExtractPlugin.loader,
       'css-loader',
       'postcss-loader',
       {
         loader: 'less-loader',
-        options: { javascriptEnabled: true },
-      },
-    ],
-  },
-  {
-    test: /\.module\.less$/,
-    use: [
-      {
-        loader: 'style-loader',
-      },
-      {
-        loader: 'css-loader',
         options: {
-          sourceMap: true,
-          modules: true,
-          localIdentName: '[local]___[hash:base64:5]',
+          additionalData: (content, loaderContext) => {
+            const variables = fs.readFileSync(`${SRC_DIR}/_styles.less`);
+
+            return variables + content;
+          },
         },
-      },
-      {
-        loader: 'postcss-loader',
-      },
-      {
-        loader: 'less-loader',
-        options: { javascriptEnabled: true },
       },
     ],
   },
