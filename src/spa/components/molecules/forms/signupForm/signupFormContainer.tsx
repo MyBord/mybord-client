@@ -5,7 +5,6 @@ import SignupFormContent from 'forms/signupForm/signupFormContent';
 import getGraphQLErrorMessage from 'utils/getGraphQLErrorMessage';
 import { FormProp } from 'types/formTypes';
 import { VALIDATE_USER_SIGNUP } from 'schema/user';
-import { useLoginContext } from 'context/loginContext/loginContext';
 import { useModalContext } from 'context/modalContext/modalContext';
 
 export type SignupStatus = 'duplicate email'
@@ -14,7 +13,7 @@ export type SignupStatus = 'duplicate email'
 | 'weak password';
 
 interface Props {
-  handleBack: () => void
+  handleBack: () => void;
 }
 
 const SignupFormContainer: React.FC<Props> = (props) => {
@@ -22,8 +21,8 @@ const SignupFormContainer: React.FC<Props> = (props) => {
 
   const [isAuthenticationWaiting, setIsAuthenticationWaiting] = React.useState<boolean>(false);
   const [signupStatus, setSignupStatus] = React.useState<SignupStatus>(null);
+  const [userHasAgreedToTerms, setUserHasAgreedToTerms] = React.useState<boolean>(false);
   const { setModalId } = useModalContext();
-  const { userHasAgreedToTerms } = useLoginContext();
 
   // ----- QUERIES & MUTATIONS ----- //
 
@@ -84,6 +83,7 @@ const SignupFormContainer: React.FC<Props> = (props) => {
   return (
     <Form onSubmit={handleSignUp}>
       <SignupFormContent
+        handleAcceptTerms={() => setUserHasAgreedToTerms(true)}
         isAuthenticationWaiting={isAuthenticationWaiting}
         signupStatus={signupStatus}
         {...props}

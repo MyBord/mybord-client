@@ -4,12 +4,13 @@ import { FormProp } from 'types/formTypes';
 import UserAgreementModalContainer from './userAgreementModalContainer';
 
 interface Props {
+  handleAcceptTerms: () => void;
   form: FormProp;
 }
 
-const UserAgreementModal: React.FC<Props> = ({ form }) => (
+const UserAgreementModal: React.FC<Props> = (props) => (
   <Modal id="signup-terms-modal" title="User Agreement">
-    <UserAgreementModalContainer form={form} />
+    <UserAgreementModalContainer {...props} />
   </Modal>
 );
 

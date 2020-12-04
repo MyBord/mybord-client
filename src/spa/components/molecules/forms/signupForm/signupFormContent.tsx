@@ -31,6 +31,7 @@ const PasswordReactMessage = (
 
 interface Props {
   form?: FormProp;
+  handleAcceptTerms: () => void;
   handleBack: () => void;
   isAuthenticationWaiting: boolean;
   signupStatus: SignupStatus;
@@ -38,6 +39,7 @@ interface Props {
 
 const SignupFormContent: React.FC<Props> = ({
   form,
+  handleAcceptTerms,
   handleBack,
   isAuthenticationWaiting,
   signupStatus,
@@ -81,7 +83,7 @@ const SignupFormContent: React.FC<Props> = ({
         text="By not accepting the user agreement, you are unable to signup for MyBord."
         type="warning"
       />
-      <UserAgreementModal form={form} />
+      <UserAgreementModal handleAcceptTerms={handleAcceptTerms} form={form} />
       <FormItem
         errorMessage={signupStatus === 'duplicate email' && duplicateEmailMessage}
         fieldName="loginEmail"

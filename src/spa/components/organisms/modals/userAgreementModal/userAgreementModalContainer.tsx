@@ -1,22 +1,20 @@
 import * as React from 'react';
 import { useMutation } from '@apollo/react-hooks';
-import handleError from 'server/errors/handleError';
 import { CREATE_USER_MUTATION } from 'schema/user';
 import { FormProp } from 'types/formTypes';
-import { useLoginContext } from 'context/loginContext/loginContext';
 import { useModalContext } from 'context/modalContext/modalContext';
 import { useToastContext } from 'context/toastContext/toastContext';
 import UserAgreementModalComponent from './userAgreementModalComponent';
 
 interface Props {
+  handleAcceptTerms: () => void;
   form: FormProp;
 }
 
-const UserAgreementModalContainer: React.FC<Props> = ({ form }) => {
+const UserAgreementModalContainer: React.FC<Props> = ({ form, handleAcceptTerms }) => {
   const { setModalId } = useModalContext();
   const [createUser] = useMutation(CREATE_USER_MUTATION);
   const [isAuthenticationWaiting, setIsAuthenticationWaiting] = React.useState<boolean>(false);
-  const { setSignUpStatus, setUserHasAgreedToTerms } = useLoginContext();
   const { setToastId } = useToastContext();
 
   const handleBack = (): void => {
@@ -38,7 +36,7 @@ const UserAgreementModalContainer: React.FC<Props> = ({ form }) => {
         },
       });
 
-      setUserHasAgreedToTerms(true);
+      handleAcceptTerms();
 
       setIsAuthenticationWaiting(false);
       setModalId(null);
@@ -46,22 +44,7 @@ const UserAgreementModalContainer: React.FC<Props> = ({ form }) => {
       setIsAuthenticationWaiting(false);
       setModalId(null);
 
-      // If a 400 status is returned, notify the user that their password is not strong enough
-      const { message, status } = handleError(error);
-      if (status === 400) {
-        if (message === 'invalid username') {
-          setSignUpStatus('invalid username');
-        }
-        if (message === 'duplicate username') {
-          setSignUpStatus('duplicate username');
-        }
-        if (message === 'weak password') {
-          setSignUpStatus('weak password');
-        }
-        if (message === 'duplicate email') {
-          setSignUpStatus('duplicate email');
-        }
-      }
+      throw new Error(error);
     }
   };
 

@@ -4,7 +4,6 @@ import SignupForm from 'forms/signupForm/signupForm';
 import Typography from 'typography/typography';
 import logoWithType from 'graphics/logoWithType.png';
 import pageWrapper from 'landing/pages/pageWrapper/pageWrapper';
-import { LoginContextProvider } from 'context/loginContext/loginContext';
 import { useLandingContext } from 'context/landingContext/landingContext';
 import * as styles from './loginCard.module.less';
 
@@ -26,20 +25,18 @@ const LoginCard: React.FC = () => {
   };
 
   return (
-    <LoginContextProvider>
-      <div className={styles.containerDiv}>
-        <div className={styles.logoDiv}>
-          <img alt="MyBord logo" className={styles.img} src={logoWithType} />
-        </div>
-        { loginStatus === 'login' && <LoginForm handleSignup={() => setLoginStatus('signup')} /> }
-        { loginStatus === 'signup' && <SignupForm handleBack={() => setLoginStatus('login')} /> }
-        <Typography
-          text="About MyBord"
-          link="/about"
-          onClick={handleClick}
-        />
+    <div className={styles.containerDiv}>
+      <div className={styles.logoDiv}>
+        <img alt="MyBord logo" className={styles.img} src={logoWithType} />
       </div>
-    </LoginContextProvider>
+      { loginStatus === 'login' && <LoginForm handleSignup={() => setLoginStatus('signup')} /> }
+      { loginStatus === 'signup' && <SignupForm handleBack={() => setLoginStatus('login')} /> }
+      <Typography
+        text="About MyBord"
+        link="/about"
+        onClick={handleClick}
+      />
+    </div>
   );
 };
 
