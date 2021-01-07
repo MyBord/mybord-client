@@ -28,13 +28,13 @@ const YoutubeCardThumbnail: React.FC<Props> = ({
       />
     </div>
     <div className={styles.durationDiv}>
-      <Typography
-        color="white"
-        font="roboto"
-        size="one"
-        text={youtubeVideoData.duration}
-        weight="light"
-      />
+      {/* <Typography */}
+      {/*  color="white" */}
+      {/*  font="roboto" */}
+      {/*  size="one" */}
+      {/*  text={youtubeVideoData.duration} */}
+      {/*  weight="light" */}
+      {/* /> */}
     </div>
   </>
 );

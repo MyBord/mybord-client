@@ -28,13 +28,13 @@ const StackCardOverlayAnimation: React.FC<Props> = ({ showOverlay, text }) => (
   >
     <div className={styles.line} />
     <div className={styles.typographyDiv}>
-      <Typography
-        color="white"
-        size="four"
-        text={text}
-        textAlign="center"
-        weight="bold"
-      />
+      {/* <Typography */}
+      {/*  color="white" */}
+      {/*  size="four" */}
+      {/*  text={text} */}
+      {/*  textAlign="center" */}
+      {/*  weight="bold" */}
+      {/* /> */}
     </div>
   </motion.div>
 );

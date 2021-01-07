@@ -32,8 +32,8 @@ const DeleteAccountModal: React.FC = () => {
     <Modal id="user-settings-delete-account-modal" title="Delete Account">
       <div className={styles.container}>
         <div className={styles.typographyContainer}>
-          <Typography color="red" text="Are you sure you want to delete your account?" />
-          <Typography color="red" text={'Please type "delete" to confirm:'} />
+          {/* <Typography color="red" text="Are you sure you want to delete your account?" /> */}
+          {/* <Typography color="red" text={'Please type "delete" to confirm:'} /> */}
         </div>
         <Form>
           <DeleteAccountModalFormContent setCanDelete={setCanDelete} />

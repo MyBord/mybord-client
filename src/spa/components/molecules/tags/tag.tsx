@@ -12,12 +12,12 @@ interface Props {
 
 const Tag: React.FC<Props> = ({ color, label }) => (
   <div className={styles.div} style={{ background: colors[color] }}>
-    <Typography
-      color="white"
-      size="one"
-      text={label}
-      weight="light"
-    />
+    {/* <Typography */}
+    {/*  color="white" */}
+    {/*  size="one" */}
+    {/*  text={label} */}
+    {/*  weight="light" */}
+    {/* /> */}
     <IconButton
       iconName="close"
       onClick={() => console.log('delete tag')}

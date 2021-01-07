@@ -20,22 +20,22 @@ const AboutForUsers: React.FC = () => (
         src="https://media.giphy.com/media/i4Mgat1S2f3Co/giphy.gif"
       />
       <div className={styles.paragraphDiv}>
-        <Typography
-          lineHeight="large"
-          size="four"
-          text={partOne}
-          textAlign="justify"
-        />
+        {/* <Typography */}
+        {/*  lineHeight="large" */}
+        {/*  size="four" */}
+        {/*  text={partOne} */}
+        {/*  textAlign="justify" */}
+        {/* /> */}
       </div>
     </section>
     <section className={[styles.paragraphSection, styles.paragraphMargin].join(' ')}>
       <div className={styles.paragraphDiv}>
-        <Typography
-          lineHeight="large"
-          size="four"
-          text={partTwo}
-          textAlign="justify"
-        />
+        {/* <Typography */}
+        {/*  lineHeight="large" */}
+        {/*  size="four" */}
+        {/*  text={partTwo} */}
+        {/*  textAlign="justify" */}
+        {/* /> */}
       </div>
       <img
         alt="bookshelf"
@@ -50,32 +50,32 @@ const AboutForUsers: React.FC = () => (
         src={spongebog}
       />
       <div className={styles.paragraphDiv}>
-        <Typography
-          lineHeight="large"
-          size="four"
-          text={partThree}
-          textAlign="justify"
-        />
+        {/* <Typography */}
+        {/*  lineHeight="large" */}
+        {/*  size="four" */}
+        {/*  text={partThree} */}
+        {/*  textAlign="justify" */}
+        {/* /> */}
       </div>
     </section>
     <section className={[styles.paragraphSection, styles.paragraphMarginThree].join(' ')}>
       <div className={[styles.paragraphDiv, styles.paragraphDivNoImg].join(' ')}>
-        <Typography
-          lineHeight="large"
-          size="four"
-          text={partFour}
-          textAlign="justify"
-        />
+        {/* <Typography */}
+        {/*  lineHeight="large" */}
+        {/*  size="four" */}
+        {/*  text={partFour} */}
+        {/*  textAlign="justify" */}
+        {/* /> */}
       </div>
     </section>
     <section className={[styles.paragraphSection, styles.paragraphMarginTwo].join(' ')}>
       <div className={[styles.paragraphDiv, styles.paragraphDivNoImg].join(' ')}>
-        <Typography
-          lineHeight="large"
-          size="four"
-          text={partFive}
-          textAlign="justify"
-        />
+        {/* <Typography */}
+        {/*  lineHeight="large" */}
+        {/*  size="four" */}
+        {/*  text={partFive} */}
+        {/*  textAlign="justify" */}
+        {/* /> */}
       </div>
     </section>
   </>

@@ -40,12 +40,12 @@ const Footer: React.FC<FooterProps> = ({ isApp }) => {
       <FooterContent isApp={isApp} ref={contentRef} />
       <hr className={isApp ? styles.hrApp : styles.hrLanding} style={hrStyles} />
       <div className={isApp ? styles.copyrightContentApp : styles.copyrightContentLanding}>
-        <Typography
-          Content={() => <footerIcons.CopyrightContent isApp={isApp} />}
-          color={isApp ? 'black' : 'white'}
-          size="three"
-          text="Copyright 2020 by MyBord LLC. All Rights Reserved."
-        />
+        {/* <Typography */}
+        {/*  Content={() => <footerIcons.CopyrightContent isApp={isApp} />} */}
+        {/*  color={isApp ? 'black' : 'white'} */}
+        {/*  size="three" */}
+        {/*  text="Copyright 2020 by MyBord LLC. All Rights Reserved." */}
+        {/* /> */}
       </div>
     </section>
   );

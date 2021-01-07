@@ -18,13 +18,13 @@ const UserAgreementModalComponent: React.FC<Props> = ({
   isAuthenticationWaiting,
 }) => (
   <div className={styles.container}>
-    <Typography text={agreement} />
+    {/* <Typography text={agreement} /> */}
     <ul>
       <li>
-        <Typography link="/termsAndConditions" text="Terms & Conditions" />
+        {/* <Typography link="/termsAndConditions" text="Terms & Conditions" /> */}
       </li>
       <li>
-        <Typography link="/privacyPolicy" text="Privacy Policy" />
+        {/* <Typography link="/privacyPolicy" text="Privacy Policy" /> */}
       </li>
     </ul>
     <div className={styles.buttonContainer}>

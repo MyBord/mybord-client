@@ -19,12 +19,12 @@ const invalidUsernameMessage = 'The username can only contain letters (a-z), num
 
 const PasswordReactMessage = (
   <>
-    <Typography color="red" text="Your password must be:" />
+    {/* <Typography color="red" text="Your password must be:" /> */}
     <div className={styles.weakPasswordDiv}>
-      <Typography color="red" text="• At least 8 characters long" />
-      <Typography color="red" text="• Have at least one upper case character" />
-      <Typography color="red" text="• Contain at least one number" />
-      <Typography color="red" text="• Contain at least one special character (!@#$&*-)" />
+      {/* <Typography color="red" text="• At least 8 characters long" /> */}
+      {/* <Typography color="red" text="• Have at least one upper case character" /> */}
+      {/* <Typography color="red" text="• Contain at least one number" /> */}
+      {/* <Typography color="red" text="• Contain at least one special character (!@#$&*-)" /> */}
     </div>
   </>
 );

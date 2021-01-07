@@ -35,11 +35,11 @@ const Modal: React.FC<ModalProps> = ({
         <ModalAnimation isVisible={isVisible}>
           <header className={styles.header}>
             <div className={styles.typographyDiv}>
-              <Typography
-                size="four"
-                text={title}
-                weight="bold"
-              />
+              {/* <Typography */}
+              {/*  size="four" */}
+              {/*  text={title} */}
+              {/*  weight="bold" */}
+              {/* /> */}
             </div>
             <div className={styles.closeDiv}>
               <IconButton

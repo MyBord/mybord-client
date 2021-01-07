@@ -38,30 +38,30 @@ const ImageCardDescription: React.FC<Props> = ({ isPreview, userCardData }) => {
     <>
       <div className={styles.container}>
         <div>
-          <Typography
-            maxTextLength={60}
-            size="two"
-            text={userCardData.title}
-            weight="bold"
-          />
+          {/* <Typography */}
+          {/*  maxTextLength={60} */}
+          {/*  size="two" */}
+          {/*  text={userCardData.title} */}
+          {/*  weight="bold" */}
+          {/* /> */}
         </div>
         <div className={styles.footer}>
-          <Typography
-            Content={LinkIconContent}
-            disabled={isPreview}
-            link={userCardData.cardData.imageCardData.imageUrl}
-            size="two"
-            text="Link"
-            weight="bold"
-          />
-          <Typography
-            Content={ExpandIconContent}
-            disabled={isPreview}
-            onClick={handleClick}
-            size="two"
-            text="Expand"
-            weight="bold"
-          />
+          {/* <Typography */}
+          {/*  Content={LinkIconContent} */}
+          {/*  disabled={isPreview} */}
+          {/*  link={userCardData.cardData.imageCardData.imageUrl} */}
+          {/*  size="two" */}
+          {/*  text="Link" */}
+          {/*  weight="bold" */}
+          {/* /> */}
+          {/* <Typography */}
+          {/*  Content={ExpandIconContent} */}
+          {/*  disabled={isPreview} */}
+          {/*  onClick={handleClick} */}
+          {/*  size="two" */}
+          {/*  text="Expand" */}
+          {/*  weight="bold" */}
+          {/* /> */}
         </div>
       </div>
       <ImageCardModal

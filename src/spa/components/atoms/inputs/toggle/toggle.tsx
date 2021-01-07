@@ -28,15 +28,15 @@ const Toggle: React.FC<Props> = ({
       onChange={onChange}
       size={size === 'large' ? 'default' : size}
     />
-    {
-      text && (
-        <Typography
-          onClick={onClick}
-          size={size === 'large' ? 'normal' : 'two'}
-          text={text}
-        />
-      )
-    }
+    {/* { */}
+    {/*  text && ( */}
+    {/*    <Typography */}
+    {/*      onClick={onClick} */}
+    {/*      size={size === 'large' ? 'normal' : 'two'} */}
+    {/*      text={text} */}
+    {/*    /> */}
+    {/*  ) */}
+    {/* } */}
   </div>
 );
 

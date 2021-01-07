@@ -81,12 +81,12 @@ const FormItem: React.FC<Props> = ({
       {
         label && (
           <div className={styles.typographyDiv}>
-            <Typography
-              color={labelType === 'blue' ? 'blue' : 'black'}
-              size={labelType === 'blue' ? 'normal' : 'three'}
-              text={label}
-              weight={labelType === 'blue' ? 'regular' : 'bold'}
-            />
+            {/* <Typography */}
+            {/*  color={labelType === 'blue' ? 'blue' : 'black'} */}
+            {/*  size={labelType === 'blue' ? 'normal' : 'three'} */}
+            {/*  text={label} */}
+            {/*  weight={labelType === 'blue' ? 'regular' : 'bold'} */}
+            {/* /> */}
           </div>
         )
       }

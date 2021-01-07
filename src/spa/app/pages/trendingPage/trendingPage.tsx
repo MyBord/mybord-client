@@ -7,11 +7,11 @@ import * as styles from './trendingPage.module.less';
 
 const TrendingPage: React.FC = () => (
   <div className={styles.div}>
-    <Typography
-      color="blue"
-      size="five"
-      text="...under construction"
-    />
+    {/* <Typography */}
+    {/*  color="blue" */}
+    {/*  size="five" */}
+    {/*  text="...under construction" */}
+    {/* /> */}
     <LottiePlayer
       animationData={trendingAnimation}
       autoplay

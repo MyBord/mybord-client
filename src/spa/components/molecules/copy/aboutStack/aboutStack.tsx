@@ -6,10 +6,10 @@ import * as styles from './aboutStack.module.less';
 const AboutStack: React.FC = () => (
   <section className={styles.stackSection}>
     <div className={styles.stackTitleDiv}>
-      <Typography color="blue" size="five" text="Stack" />
+      {/* <Typography color="blue" size="five" text="Stack" /> */}
     </div>
     <div className={styles.typographyDiv}>
-      <Typography color="blue" size="four" text="General" />
+      {/* <Typography color="blue" size="four" text="General" /> */}
     </div>
     <div className={styles.stackCardsContainer}>
       <StackCard id="typescript" />
@@ -21,7 +21,7 @@ const AboutStack: React.FC = () => (
       <StackCard id="jest" />
     </div>
     <div className={styles.typographyDiv}>
-      <Typography color="blue" size="four" text="Front End" />
+      {/* <Typography color="blue" size="four" text="Front End" /> */}
     </div>
     <div className={styles.stackCardsContainer}>
       <StackCard id="react" />
@@ -36,7 +36,7 @@ const AboutStack: React.FC = () => (
       <StackCard id="antDesign" />
     </div>
     <div className={styles.typographyDiv}>
-      <Typography color="blue" size="four" text="Back End" />
+      {/* <Typography color="blue" size="four" text="Back End" /> */}
     </div>
     <div className={styles.stackCardsContainer}>
       <StackCard id="node" />
@@ -47,7 +47,7 @@ const AboutStack: React.FC = () => (
       <StackCard id="passport" />
     </div>
     <div className={styles.typographyDiv}>
-      <Typography color="blue" size="four" text="Deployment & Hosting" />
+      {/* <Typography color="blue" size="four" text="Deployment & Hosting" /> */}
     </div>
     <div className={styles.stackCardsContainer}>
       <StackCard id="heroku" />

@@ -31,11 +31,11 @@ const LoginCard: React.FC = () => {
       </div>
       { loginStatus === 'login' && <LoginForm handleSignup={() => setLoginStatus('signup')} /> }
       { loginStatus === 'signup' && <SignupForm handleBack={() => setLoginStatus('login')} /> }
-      <Typography
-        text="About MyBord"
-        link="/about"
-        onClick={handleClick}
-      />
+      {/* <Typography */}
+      {/*  text="About MyBord" */}
+      {/*  link="/about" */}
+      {/*  onClick={handleClick} */}
+      {/* /> */}
     </div>
   );
 };

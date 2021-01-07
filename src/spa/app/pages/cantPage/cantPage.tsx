@@ -13,11 +13,11 @@ const CantPage: React.FC = () => (
       loop
       size={600}
     />
-    <Typography
-      size="four"
-      text="Sorry, page not found."
-      textAlign="center"
-    />
+    {/* <Typography */}
+    {/*  size="four" */}
+    {/*  text="Sorry, page not found." */}
+    {/*  textAlign="center" */}
+    {/* /> */}
   </div>
 );
 

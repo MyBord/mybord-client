@@ -38,12 +38,12 @@ const UserCardMenuContentComponent: React.FC<Props> = ({
   return (
     <ul className={styles.ul}>
       <li className={styles.li}>
-        <Typography
-          Content={ToDoCheckboxContent}
-          onClick={toggleToDo}
-          size="two"
-          text="to do"
-        />
+        {/* <Typography */}
+        {/*  Content={ToDoCheckboxContent} */}
+        {/*  onClick={toggleToDo} */}
+        {/*  size="two" */}
+        {/*  text="to do" */}
+        {/* /> */}
       </li>
       <li className={styles.li}>
         <PopConfirm
@@ -51,12 +51,7 @@ const UserCardMenuContentComponent: React.FC<Props> = ({
           onMouseDown={() => console.log('pop confirm has been clicked')}
           text="Are you sure you want to delete?"
         >
-          <Typography
-            Content={DeleteIconContent}
-            onClick={() => {}} // *1
-            size="two"
-            text="delete"
-          />
+          <h1>foo</h1>
         </PopConfirm>
       </li>
     </ul>

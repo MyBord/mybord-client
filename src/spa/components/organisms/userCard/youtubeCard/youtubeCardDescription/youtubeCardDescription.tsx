@@ -11,12 +11,12 @@ interface Props {
 const YoutubeCardDescription: React.FC<Props> = ({ userCardData }) => (
   <div className={styles.container}>
     <div>
-      <Typography
-        maxTextLength={60}
-        size="two"
-        text={userCardData.title}
-        weight="bold"
-      />
+      {/* <Typography */}
+      {/*  maxTextLength={60} */}
+      {/*  size="two" */}
+      {/*  text={userCardData.title} */}
+      {/*  weight="bold" */}
+      {/* /> */}
     </div>
     <div>
       <div className={styles.channelDiv}>
@@ -26,34 +26,34 @@ const YoutubeCardDescription: React.FC<Props> = ({ userCardData }) => (
           src={userCardData.cardData.youtubeCardData.channelThumbnail}
         />
         <div className={styles.channelTitle}>
-          <Typography
-            maxTextLength={60}
-            size="one"
-            text={userCardData.cardData.youtubeCardData.channelTitle}
-          />
+          {/* <Typography */}
+          {/*  maxTextLength={60} */}
+          {/*  size="one" */}
+          {/*  text={userCardData.cardData.youtubeCardData.channelTitle} */}
+          {/* /> */}
         </div>
       </div>
       <div className={styles.statsContainer}>
         <div className={styles.statsDiv}>
           <Icon iconName="thumbsUp" size={16} />
-          <Typography
-            size="one"
-            text={userCardData.cardData.youtubeCardData.likes}
-          />
+          {/* <Typography */}
+          {/*  size="one" */}
+          {/*  text={userCardData.cardData.youtubeCardData.likes} */}
+          {/* /> */}
         </div>
         <div className={styles.statsDiv}>
           <Icon iconName="eye" size={16} />
-          <Typography
-            size="one"
-            text={userCardData.cardData.youtubeCardData.views}
-          />
+          {/* <Typography */}
+          {/*  size="one" */}
+          {/*  text={userCardData.cardData.youtubeCardData.views} */}
+          {/* /> */}
         </div>
         <div className={styles.statsDiv}>
           <Icon iconName="calendar" size={16} />
-          <Typography
-            size="one"
-            text={userCardData.cardData.youtubeCardData.publishedAt}
-          />
+          {/* <Typography */}
+          {/*  size="one" */}
+          {/*  text={userCardData.cardData.youtubeCardData.publishedAt} */}
+          {/* /> */}
         </div>
       </div>
     </div>

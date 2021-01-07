@@ -35,7 +35,7 @@ const PopConfirm: React.FC<Props> = ({
 
   const Content: React.FC = () => (
     <div className={styles.contentContainer} onMouseDown={onMouseDown}>
-      <Typography size="two" text={text} />
+      {/* <Typography size="two" text={text} /> */}
       <div className={styles.contentButtons}>
         <Button
           label="No"

@@ -14,22 +14,22 @@ const AboutForDevs: React.FC = () => (
         src={programming}
       />
       <div className={styles.paragraphDiv}>
-        <Typography
-          lineHeight="large"
-          size="four"
-          text={partOne}
-          textAlign="justify"
-        />
+        {/* <Typography */}
+        {/*  lineHeight="large" */}
+        {/*  size="four" */}
+        {/*  text={partOne} */}
+        {/*  textAlign="justify" */}
+        {/* /> */}
       </div>
     </section>
     <section className={[styles.paragraphSection, styles.paragraphMargin].join(' ')}>
       <div className={styles.paragraphDiv}>
-        <Typography
-          lineHeight="large"
-          size="four"
-          text={partTwo}
-          textAlign="justify"
-        />
+        {/* <Typography */}
+        {/*  lineHeight="large" */}
+        {/*  size="four" */}
+        {/*  text={partTwo} */}
+        {/*  textAlign="justify" */}
+        {/* /> */}
       </div>
       <img
         alt="programming"
@@ -39,12 +39,12 @@ const AboutForDevs: React.FC = () => (
     </section>
     <section className={[styles.paragraphSection, styles.paragraphMargin].join(' ')}>
       <div className={[styles.paragraphDiv, styles.paragraphDivNoImg].join(' ')}>
-        <Typography
-          lineHeight="large"
-          size="four"
-          text={partThree}
-          textAlign="justify"
-        />
+        {/* <Typography */}
+        {/*  lineHeight="large" */}
+        {/*  size="four" */}
+        {/*  text={partThree} */}
+        {/*  textAlign="justify" */}
+        {/* /> */}
       </div>
     </section>
   </>

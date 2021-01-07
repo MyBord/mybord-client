@@ -13,10 +13,10 @@ const ErrorPage: React.FC = () => (
       loop
       size={400}
     />
-    <Typography
-      size="four"
-      text="Oops ... it looks like something went wrong."
-    />
+    {/* <Typography */}
+    {/*  size="four" */}
+    {/*  text="Oops ... it looks like something went wrong." */}
+    {/* /> */}
   </div>
 );
 

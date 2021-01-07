@@ -30,30 +30,30 @@ const HeaderProfileContent: React.FC<Props> = ({ hidePopOver }) => {
   return (
     <ul className={styles.ul}>
       <li>
-        <Typography
-          Content={SettingsIconContent}
-          link="settings"
-          size="three"
-          text="Settings"
-          onClick={hidePopOver}
-        />
+        {/* <Typography */}
+        {/*  Content={SettingsIconContent} */}
+        {/*  link="settings" */}
+        {/*  size="three" */}
+        {/*  text="Settings" */}
+        {/*  onClick={hidePopOver} */}
+        {/* /> */}
       </li>
       <li>
-        <Typography
-          Content={AboutIconContent}
-          link="about"
-          size="three"
-          text="About MyBord"
-          onClick={hidePopOver}
-        />
+        {/* <Typography */}
+        {/*  Content={AboutIconContent} */}
+        {/*  link="about" */}
+        {/*  size="three" */}
+        {/*  text="About MyBord" */}
+        {/*  onClick={hidePopOver} */}
+        {/* /> */}
       </li>
       <li>
-        <Typography
-          Content={LogoutIconContent}
-          onClick={handleLogout}
-          size="three"
-          text="Logout"
-        />
+        {/* <Typography */}
+        {/*  Content={LogoutIconContent} */}
+        {/*  onClick={handleLogout} */}
+        {/*  size="three" */}
+        {/*  text="Logout" */}
+        {/* /> */}
       </li>
     </ul>
   );

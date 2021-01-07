@@ -10,12 +10,12 @@ interface Props {
 
 const TypographyPageTitle: React.FC<Props> = ({ link, text }) => (
   <div className={styles.div}>
-    <Typography
-      color="blue"
-      link={link}
-      size="five"
-      text={text}
-    />
+    {/* <Typography */}
+    {/*  color="blue" */}
+    {/*  link={link} */}
+    {/*  size="five" */}
+    {/*  text={text} */}
+    {/* /> */}
   </div>
 );
 

@@ -15,11 +15,11 @@ const EmptyCard: React.FC<Props> = ({ hasFilters }) => {
         <div className={styles.emptyDiv}>
           <Empty />
         </div>
-        <Typography
-          color="blue"
-          size="three"
-          text="There's nothing left"
-        />
+        {/* <Typography */}
+        {/*  color="blue" */}
+        {/*  size="three" */}
+        {/*  text="There's nothing left" */}
+        {/* /> */}
         <div className={styles.iconDiv}>
           <Icon iconName="monkey" size={40} />
         </div>
@@ -32,11 +32,11 @@ const EmptyCard: React.FC<Props> = ({ hasFilters }) => {
       <div className={styles.emptyDiv}>
         <Empty />
       </div>
-      <Typography
-        color="blue"
-        size="three"
-        text="You don't have any cards. You should add some."
-      />
+      {/* <Typography */}
+      {/*  color="blue" */}
+      {/*  size="three" */}
+      {/*  text="You don't have any cards. You should add some." */}
+      {/* /> */}
     </div>
   );
 };

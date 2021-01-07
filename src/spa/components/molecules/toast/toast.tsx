@@ -54,10 +54,10 @@ const Toast: React.FC<Props> = ({
               strokeWidth={type === 'warning' ? 5 : 4}
             />
           </div>
-          <Typography
-            color="blue"
-            text={text}
-          />
+          {/* <Typography */}
+          {/*  color="blue" */}
+          {/*  text={text} */}
+          {/* /> */}
           {
             !delay && (
               <IconButton
