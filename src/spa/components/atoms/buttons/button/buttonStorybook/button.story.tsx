@@ -2,7 +2,7 @@ import * as React from 'react';
 import Button from '../button';
 import * as styles from 'storybook/storybook.module.less';
 
-const ButtonDemo: React.FC = () => {
+const ButtonStory: React.FC = () => {
   const [isWaiting, setIsWaiting] = React.useState(false);
 
   return (
@@ -25,4 +25,4 @@ const ButtonDemo: React.FC = () => {
   );
 };
 
-export default ButtonDemo;
+export default ButtonStory;

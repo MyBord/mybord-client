@@ -1,11 +1,9 @@
 import createStory from 'storybook/createStory';
-import ButtonDemo from './button.demo';
+import ButtonStory from './button.story';
 
 createStory({
-  Demo: ButtonDemo,
-  demoMargin: true,
-  description: 'Our app\'s main button.',
+  Story: ButtonStory,
+  description: 'The buttons used in our app.',
   componentName: 'Button',
-  summaryPage: false,
   rootDirectory: 'Buttons',
 });
