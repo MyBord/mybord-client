@@ -4,24 +4,40 @@
 .commonButtonMixin {
   border: none;
   cursor: pointer;
+  font-family: @poppins;
   outline: none;
 }
+
+// ----- SIZE ----- //
+
+.default {
+  border-radius: 0.5rem;
+  font-size: 1.125rem;
+  height: 2.25rem;
+  padding: 0 1.125rem;
+}
+
+// ----- TYPE ----- //
 
 .primary {
   .commonButtonMixin;
   background: @blue;
-  border-radius: 0.5rem;
   color: @white;
-  font-family: @poppins;
-  font-size: 1.125rem;
-  height: 2.25rem;
-  padding: 0 1.125rem;
-  //transition: background 0.5s;
-  transition: box-shadow 0.2s;
+  transition: background 0.5s, box-shadow 0.2s;
   &:hover {
     background: @lightBlue;
   }
   &:active {
-    box-shadow: 0 0 0.25rem 0 rgb(61,184,245,0.25);
+    box-shadow: 0 0 0.25rem 0 @lightBlue;
+  }
+}
+
+.secondary {
+  .commonButtonMixin;
+  background: @white;
+  color: @blue;
+  transition: color 0.5s;
+  &:hover {
+    color: @lightBlue;
   }
 }
