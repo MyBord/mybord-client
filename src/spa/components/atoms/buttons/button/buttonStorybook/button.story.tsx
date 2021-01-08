@@ -22,6 +22,9 @@ const ButtonStory: React.FC = () => (
     <Button label="lorem ipsum" type="secondary" />
     <Typography size="h3" text="Default w/ Icon" />
     <Button iconName="send" label="lorem ipsum" type="secondary" />
+    <Typography size="h1" text="Text Buttons" />
+    <Typography size="h3" text="Default" />
+    <Button label="lorem ipsum" type="text" />
   </>
 );
 

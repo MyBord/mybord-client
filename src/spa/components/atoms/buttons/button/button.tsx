@@ -7,7 +7,7 @@ interface Props {
   label: string;
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
   size?: 'default' | 'large';
-  type?: 'primary' | 'secondary';
+  type?: 'primary' | 'secondary' | 'text';
 }
 
 const Button: React.FC<Props> = ({
