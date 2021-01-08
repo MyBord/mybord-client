@@ -1,6 +1,7 @@
 import * as React from 'react';
 import addonStyles from '@sambego/storybook-styles';
 import { storiesOf } from '@storybook/react';
+import Typography from 'typography/typography';
 import * as styles from './storybook.module.less';
 
 interface Props {
@@ -22,10 +23,11 @@ export default ({
     }))
     .add(componentName, () => (
       <React.Suspense fallback={<div>Loading...</div>}>
-        <section>
-          <header className={styles.header}>
-            <h1 className={styles.h1}>{componentName}</h1>
-            <p className={styles.description}>{description}</p>
+        <section className={styles.section}>
+          <header>
+            <Typography size="h1" text={componentName} />
+            <Typography size="h3" text={description} />
+            <hr className={styles.hr} />
           </header>
           <Story />
         </section>
