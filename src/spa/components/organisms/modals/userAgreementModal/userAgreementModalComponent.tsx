@@ -28,17 +28,17 @@ const UserAgreementModalComponent: React.FC<Props> = ({
       </li>
     </ul>
     <div className={styles.buttonContainer}>
-      <Button
-        autoFocus
-        isWaiting={isAuthenticationWaiting}
-        label="Accept"
-        onClick={handleSignup}
-      />
-      <Button
-        label="back"
-        onClick={handleBack}
-        type="tertiary"
-      />
+      {/*<Button*/}
+      {/*  autoFocus*/}
+      {/*  isWaiting={isAuthenticationWaiting}*/}
+      {/*  label="Accept"*/}
+      {/*  onClick={handleSignup}*/}
+      {/*/>*/}
+      {/*<Button*/}
+      {/*  label="back"*/}
+      {/*  onClick={handleBack}*/}
+      {/*  type="tertiary"*/}
+      {/*/>*/}
     </div>
   </div>
 );

@@ -44,11 +44,11 @@ const UserDashboardPageHeaderFormContent: React.FC<Props> = ({
         <div className={styles.buttonsContainer}>
           <FormItem fieldName="add-card-url-submit" form={form}>
             <div className={styles.buttonDiv}>
-              <Button
-                htmlType="submit"
-                isWaiting={isWaiting}
-                label="Add"
-              />
+              {/*<Button*/}
+              {/*  htmlType="submit"*/}
+              {/*  isWaiting={isWaiting}*/}
+              {/*  label="Add"*/}
+              {/*/>*/}
             </div>
           </FormItem>
         </div>

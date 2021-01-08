@@ -42,15 +42,15 @@ const LoginFormContent: React.FC<Props> = ({
     </FormItem>
     <div className={styles.buttonDiv}>
       <FormItem fieldName="login" form={form}>
-        <Button htmlType="submit" isWaiting={isAuthenticationWaiting} label="Login" />
+        {/*<Button htmlType="submit" isWaiting={isAuthenticationWaiting} label="Login" />*/}
       </FormItem>
       <FormItem fieldName="sign-up" form={form}>
-        <Button
-          htmlType="button"
-          label="Sign Up"
-          type="secondary"
-          onClick={handleSignup}
-        />
+        {/*<Button*/}
+        {/*  htmlType="button"*/}
+        {/*  label="Sign Up"*/}
+        {/*  type="secondary"*/}
+        {/*  onClick={handleSignup}*/}
+        {/*/>*/}
       </FormItem>
     </div>
   </>

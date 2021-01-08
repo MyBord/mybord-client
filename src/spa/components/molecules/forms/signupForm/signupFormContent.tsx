@@ -129,15 +129,15 @@ const SignupFormContent: React.FC<Props> = ({
       </FormItem>
       <div className={styles.buttonDiv}>
         <FormItem fieldName="sign-up" form={form}>
-          <Button
-            htmlType="submit"
-            isWaiting={isAuthenticationWaiting}
-            label="Sign Up"
-            type="primary"
-          />
+          {/*<Button*/}
+          {/*  htmlType="submit"*/}
+          {/*  isWaiting={isAuthenticationWaiting}*/}
+          {/*  label="Sign Up"*/}
+          {/*  type="primary"*/}
+          {/*/>*/}
         </FormItem>
         <FormItem fieldName="back" form={form}>
-          <Button label="back" onClick={handleBack} type="tertiary" />
+          {/*<Button label="back" onClick={handleBack} type="tertiary" />*/}
         </FormItem>
       </div>
     </>

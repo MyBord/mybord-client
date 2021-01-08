@@ -79,8 +79,8 @@ const AddCardModalFormContent: React.FC<Props> = ({
         </div>
       </div>
       <div className={styles.buttonsDiv}>
-        <Button htmlType="submit" label="Add" isWaiting={isWaiting} />
-        <Button label="Cancel" onClick={handleCancel} type="tertiary" />
+        {/*<Button htmlType="submit" label="Add" isWaiting={isWaiting} />*/}
+        {/*<Button label="Cancel" onClick={handleCancel} type="tertiary" />*/}
       </div>
     </>
   );

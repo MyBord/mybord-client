@@ -39,13 +39,13 @@ const DeleteAccountModal: React.FC = () => {
           <DeleteAccountModalFormContent setCanDelete={setCanDelete} />
         </Form>
         <div className={styles.buttonDiv}>
-          <Button
-            color="red"
-            disabled={!canDelete}
-            label="Delete My Account"
-            isWaiting={hasDeletingBegun && !hasDeletingFinished}
-            onClick={handleDelete}
-          />
+          {/*<Button*/}
+          {/*  color="red"*/}
+          {/*  disabled={!canDelete}*/}
+          {/*  label="Delete My Account"*/}
+          {/*  isWaiting={hasDeletingBegun && !hasDeletingFinished}*/}
+          {/*  onClick={handleDelete}*/}
+          {/*/>*/}
         </div>
       </div>
     </Modal>

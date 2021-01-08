@@ -37,17 +37,17 @@ const PopConfirm: React.FC<Props> = ({
     <div className={styles.contentContainer} onMouseDown={onMouseDown}>
       {/* <Typography size="two" text={text} /> */}
       <div className={styles.contentButtons}>
-        <Button
-          label="No"
-          onClick={handleNo}
-          size="small"
-          type="secondary"
-        />
-        <Button
-          label="Yes"
-          onClick={onConfirm}
-          size="small"
-        />
+        {/* <Button */}
+        {/*  label="No" */}
+        {/*  onClick={handleNo} */}
+        {/*  size="small" */}
+        {/*  type="secondary" */}
+        {/* /> */}
+        {/* <Button */}
+        {/*  label="Yes" */}
+        {/*  onClick={onConfirm} */}
+        {/*  size="small" */}
+        {/* /> */}
       </div>
     </div>
   );
