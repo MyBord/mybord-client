@@ -15,14 +15,13 @@ const Alert: React.FC<Props> = ({ message, showAlert }) => (
     <AntAlert
       className={styles.alert}
       message={message}
-      icon={(
-        <Icon
-          color="orange"
-          iconName="warning"
-          size={16}
-          strokeWidth={4.5}
-        />
-      )}
+      // icon={(
+      //   <Icon
+      //     iconName="warning"
+      //     size={16}
+      //     strokeWidth={4.5}
+      //   />
+      // )}
       showIcon
       type="warning"
     />

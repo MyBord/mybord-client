@@ -18,21 +18,21 @@ const ImageCardDescription: React.FC<Props> = ({ isPreview, userCardData }) => {
     setModalId(userCardData.id);
   };
 
-  const ExpandIconContent: React.FC = () => (
-    <Icon
-      color={isPreview ? 'darkGrey' : 'blue'}
-      iconName="expand"
-      size={18}
-    />
-  );
-
-  const LinkIconContent: React.FC = () => (
-    <Icon
-      color={isPreview ? 'darkGrey' : 'blue'}
-      iconName="link"
-      size={18}
-    />
-  );
+  // const ExpandIconContent: React.FC = () => (
+  //   <Icon
+  //     color={isPreview ? 'darkGrey' : 'blue'}
+  //     iconName="expand"
+  //     size={18}
+  //   />
+  // );
+  //
+  // const LinkIconContent: React.FC = () => (
+  //   <Icon
+  //     color={isPreview ? 'darkGrey' : 'blue'}
+  //     iconName="link"
+  //     size={18}
+  //   />
+  // );
 
   return (
     <>

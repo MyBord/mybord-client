@@ -20,12 +20,12 @@ const UserCardMenuContentComponent: React.FC<Props> = ({
 }) => {
   const DeleteIconContent: React.FC = () => (
     <div className={styles.contentDiv}>
-      <Icon
-        color="blue"
-        fill="blue"
-        iconName="delete"
-        size={16}
-      />
+      {/*<Icon*/}
+      {/*  color="blue"*/}
+      {/*  fill="blue"*/}
+      {/*  iconName="delete"*/}
+      {/*  size={16}*/}
+      {/*/>*/}
     </div>
   );
 

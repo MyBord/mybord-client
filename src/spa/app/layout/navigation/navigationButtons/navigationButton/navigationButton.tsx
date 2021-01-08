@@ -23,7 +23,7 @@ const NavigationButton: React.FC<Props> = ({ iconName, link, pageTitle }) => {
         ].join(' ')}
         to={path}
       >
-        <Icon iconName={iconName} size={30} />
+        {/*<Icon iconName={iconName} size={30} />*/}
       </Link>
     </Tooltip>
   );

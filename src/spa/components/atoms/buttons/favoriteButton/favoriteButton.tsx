@@ -58,18 +58,18 @@ const FavoriteButton: React.FC<Props> = ({
           hasBeenClicked={hasBeenClicked}
           isFavorite={isFavoriteFinal}
         >
-          <Icon
-            color="transparentWhite"
-            fill="red"
-            iconName="heart"
-            size={size}
-          />
-          <Icon
-            color="transparentWhite"
-            fill="transparentBlack"
-            iconName="heart"
-            size={size}
-          />
+          {/*<Icon*/}
+          {/*  color="transparentWhite"*/}
+          {/*  fill="red"*/}
+          {/*  iconName="heart"*/}
+          {/*  size={size}*/}
+          {/*/>*/}
+          {/*<Icon*/}
+          {/*  color="transparentWhite"*/}
+          {/*  fill="transparentBlack"*/}
+          {/*  iconName="heart"*/}
+          {/*  size={size}*/}
+          {/*/>*/}
         </FavoriteButtonAnimation>
       </button>
     </div>

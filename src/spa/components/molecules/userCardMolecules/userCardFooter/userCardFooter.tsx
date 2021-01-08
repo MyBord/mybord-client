@@ -6,12 +6,12 @@ const UserCardFooter: React.FC = () => (
   <div className={styles.footerContainer}>
     <hr className={styles.hr} />
     <div className={styles.tagContainer}>
-      <Tag color="blue" label="lorem ipsum" />
-      <Tag color="green" label="lorem" />
-      <Tag color="orange" label="lorem" />
-      <Tag color="purple" label="lorem ipsum" />
-      <Tag color="red" label="lorem ipsum dolor" />
-      <Tag color="yellow" label="lorem" />
+      {/*<Tag color="blue" label="lorem ipsum" />*/}
+      {/*<Tag color="green" label="lorem" />*/}
+      {/*<Tag color="orange" label="lorem" />*/}
+      {/*<Tag color="purple" label="lorem ipsum" />*/}
+      {/*<Tag color="red" label="lorem ipsum dolor" />*/}
+      {/*<Tag color="yellow" label="lorem" />*/}
     </div>
   </div>
 );

@@ -9,21 +9,21 @@ const NavigationButtons: React.FC = () => {
   return (
     <section className={styles.parentSection}>
       <section className={styles.section}>
-        <NavigationButton
-          iconName="userDashboard"
-          link={currentUser.username}
-          pageTitle="My Bord"
-        />
-        <NavigationButton
-          iconName="chart"
-          link="trending"
-          pageTitle="Trending"
-        />
-        <NavigationButton
-          iconName="friends"
-          link="friends"
-          pageTitle="Friends"
-        />
+        {/*<NavigationButton*/}
+        {/*  iconName="userDashboard"*/}
+        {/*  link={currentUser.username}*/}
+        {/*  pageTitle="My Bord"*/}
+        {/*/>*/}
+        {/*<NavigationButton*/}
+        {/*  iconName="chart"*/}
+        {/*  link="trending"*/}
+        {/*  pageTitle="Trending"*/}
+        {/*/>*/}
+        {/*<NavigationButton*/}
+        {/*  iconName="friends"*/}
+        {/*  link="friends"*/}
+        {/*  pageTitle="Friends"*/}
+        {/*/>*/}
       </section>
     </section>
   );

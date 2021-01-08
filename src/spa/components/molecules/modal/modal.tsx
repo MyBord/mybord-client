@@ -42,13 +42,13 @@ const Modal: React.FC<ModalProps> = ({
               {/* /> */}
             </div>
             <div className={styles.closeDiv}>
-              <IconButton
-                color="black"
-                iconName="close"
-                onClick={handleClose}
-                size={24}
-                strokeWidth={4}
-              />
+              {/*<IconButton*/}
+              {/*  color="black"*/}
+              {/*  iconName="close"*/}
+              {/*  onClick={handleClose}*/}
+              {/*  size={24}*/}
+              {/*  strokeWidth={4}*/}
+              {/*/>*/}
             </div>
           </header>
           {children}

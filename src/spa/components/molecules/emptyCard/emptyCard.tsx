@@ -21,7 +21,7 @@ const EmptyCard: React.FC<Props> = ({ hasFilters }) => {
         {/*  text="There's nothing left" */}
         {/* /> */}
         <div className={styles.iconDiv}>
-          <Icon iconName="monkey" size={40} />
+          {/*<Icon iconName="monkey" size={40} />*/}
         </div>
       </div>
     );

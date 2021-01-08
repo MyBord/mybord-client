@@ -22,12 +22,12 @@ const IconButton = React.forwardRef<HTMLButtonElement, Props>(({
     ref={ref}
     type="button"
   >
-    <Icon
-      fill={fill}
-      iconName={iconName}
-      size={size}
-      strokeWidth={strokeWidth}
-    />
+    {/*<Icon*/}
+    {/*  fill={fill}*/}
+    {/*  iconName={iconName}*/}
+    {/*  size={size}*/}
+    {/*  strokeWidth={strokeWidth}*/}
+    {/*/>*/}
   </button>
 ));
 

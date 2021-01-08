@@ -23,9 +23,9 @@ const HeaderProfileContent: React.FC<Props> = ({ hidePopOver }) => {
     history.push('/');
   };
 
-  const AboutIconContent: React.FC = () => <Icon color="blue" iconName="about" size={18} />;
-  const SettingsIconContent: React.FC = () => <Icon color="blue" iconName="settings" size={18} />;
-  const LogoutIconContent: React.FC = () => <Icon color="blue" iconName="logout" size={18} />;
+  // const AboutIconContent: React.FC = () => <Icon color="blue" iconName="about" size={18} />;
+  // const SettingsIconContent: React.FC = () => <Icon color="blue" iconName="settings" size={18} />;
+  // const LogoutIconContent: React.FC = () => <Icon color="blue" iconName="logout" size={18} />;
 
   return (
     <ul className={styles.ul}>

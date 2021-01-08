@@ -21,7 +21,7 @@ const HeaderProfile: React.FC = () => {
       placement="bottom-right"
     >
       <div className={styles.div}>
-        <Icon iconName="avatar" size={40} />
+        {/* <Icon iconName="avatar" size={40} /> */}
       </div>
     </PopOver>
   );

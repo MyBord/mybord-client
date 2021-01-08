@@ -2,19 +2,6 @@
 export type ExportedColors =
   'black'
   | 'blue'
-  | 'darkGrey'
   | 'green'
-  | 'orange'
   | 'red'
-  | 'transparentBlack'
-  | 'transparentWhite'
-  | 'white'
-  | 'yellow';
-
-export type TagColors =
-  | 'blue'
-  | 'green'
-  | 'orange'
-  | 'purple'
-  | 'red'
-  | 'yellow';
+  | 'white';

@@ -52,12 +52,12 @@ const UserDashboardPageHeaderFormContent: React.FC<Props> = ({
             </div>
           </FormItem>
         </div>
-        <IconButton
-          color="blue"
-          iconName="filter"
-          onClick={handleFilterClick}
-          size={32}
-        />
+        {/*<IconButton*/}
+        {/*  color="blue"*/}
+        {/*  iconName="filter"*/}
+        {/*  onClick={handleFilterClick}*/}
+        {/*  size={32}*/}
+        {/*/>*/}
         {/* <FormItem fieldName="edit-cards" form={form}> */}
         {/*  <Button */}
         {/*    htmlType="button" */}

@@ -35,8 +35,6 @@ const Toast: React.FC<Props> = ({
         return 'red';
       case 'success':
         return 'green';
-      case 'warning':
-        return 'yellow';
       default:
         throw Error('unsupported icon type');
     }
@@ -47,28 +45,28 @@ const Toast: React.FC<Props> = ({
       <ToastAnimation isVisible={id === toastId}>
         <div className={styles.divContainer}>
           <div className={styles.iconDiv}>
-            <Icon
-              color={getIconColor()}
-              iconName={type === 'error' ? 'warning' : type}
-              size={24}
-              strokeWidth={type === 'warning' ? 5 : 4}
-            />
+            {/*<Icon*/}
+            {/*  color={getIconColor()}*/}
+            {/*  iconName={type === 'error' ? 'warning' : type}*/}
+            {/*  size={24}*/}
+            {/*  strokeWidth={type === 'warning' ? 5 : 4}*/}
+            {/*/>*/}
           </div>
           {/* <Typography */}
           {/*  color="blue" */}
           {/*  text={text} */}
           {/* /> */}
-          {
-            !delay && (
-              <IconButton
-                color="black"
-                iconName="close"
-                onClick={() => setToastId(null)}
-                size={24}
-                strokeWidth={4}
-              />
-            )
-          }
+          {/*{*/}
+          {/*  !delay && (*/}
+          {/*    <IconButton*/}
+          {/*      color="black"*/}
+          {/*      iconName="close"*/}
+          {/*      onClick={() => setToastId(null)}*/}
+          {/*      size={24}*/}
+          {/*      strokeWidth={4}*/}
+          {/*    />*/}
+          {/*  )*/}
+          {/*}*/}
         </div>
       </ToastAnimation>
     </Portal>

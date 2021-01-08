@@ -7,7 +7,7 @@ import './dropdown.less';
 
 const DropdownIcon: React.FC = () => (
   <div className={styles.iconDiv}>
-    <Icon color="darkGrey" iconName="caretDown" size={24} />
+    {/* <Icon color="darkGrey" iconName="caretDown" size={24} /> */}
   </div>
 );
 
