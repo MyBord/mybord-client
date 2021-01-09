@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { loremIpsum } from 'utils/loremIpsum';
 import Typography from '../typography';
 
 const TypographyStory: React.FC = () => (
@@ -16,6 +17,9 @@ const TypographyStory: React.FC = () => (
     <Typography size="h5" text="Lorem ipsum dolor sit amet" />
     <Typography size="h3" text="h6" />
     <Typography size="h6" text="Lorem ipsum dolor sit amet" />
+    <Typography size="h1" text="Bodies" />
+    <Typography size="h3" text="body large" />
+    <Typography size="bodyLarge" text={loremIpsum} />
   </>
 );
 
