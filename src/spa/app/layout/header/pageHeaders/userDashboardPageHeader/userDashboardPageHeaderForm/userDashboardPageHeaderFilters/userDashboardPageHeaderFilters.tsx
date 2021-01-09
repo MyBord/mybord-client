@@ -68,10 +68,10 @@ const UserDashboardPageHeaderFilters: React.FC<Props> = ({ form }) => {
           labelType="blue"
           layout="horizontal"
         >
-          <Checkbox
-            checked={state.filters.isFavorite}
-            onChange={handleToggleFavoriteFilter}
-          />
+          {/*<Checkbox*/}
+          {/*  checked={state.filters.isFavorite}*/}
+          {/*  onChange={handleToggleFavoriteFilter}*/}
+          {/*/>*/}
         </FormItem>
         <FormItem
           fieldName="filterTodo"
@@ -80,10 +80,10 @@ const UserDashboardPageHeaderFilters: React.FC<Props> = ({ form }) => {
           labelType="blue"
           layout="horizontal"
         >
-          <Checkbox
-            checked={state.filters.isToDo}
-            onChange={handleToggleToDoFilter}
-          />
+          {/*<Checkbox*/}
+          {/*  checked={state.filters.isToDo}*/}
+          {/*  onChange={handleToggleToDoFilter}*/}
+          {/*/>*/}
         </FormItem>
         <div className={styles.dropdownDiv}>
           <FormItem
