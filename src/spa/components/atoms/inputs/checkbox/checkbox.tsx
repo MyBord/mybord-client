@@ -3,49 +3,46 @@ import * as styles from './checkbox.module.less';
 
 interface Props {
   checked: boolean;
+  disabled?: boolean;
   onClick: () => void;
 }
 
 const Checkbox: React.FC<Props> = ({
-  checked = false,
+  checked,
+  disabled = false,
   onClick,
 }) => (
-  <>
-    <input
-      checked={checked}
-      className={styles.hiddenCheckbox}
-      type="checkbox"
-    />
-    <div
-      aria-checked={checked}
+  <div
+    aria-checked={checked}
+    className={[
+      styles.styledCheckbox,
+      checked ? styles.checked : styles.unchecked,
+      disabled ? styles[`disabled-${checked ? 'checked' : 'unchecked'}`] : undefined,
+    ].join(' ')}
+    aria-disabled={disabled}
+    onClick={onClick}
+    onKeyPress={onClick}
+    role="checkbox"
+    tabIndex={0}
+  >
+    <svg
       className={[
-        styles.styledCheckbox,
-        checked ? styles.checked : styles.unchecked,
+        styles.svg,
+        checked ? styles.svgVisible : styles.svgHidden,
       ].join(' ')}
-      onClick={onClick}
-      onKeyPress={onClick}
-      role="checkbox"
-      tabIndex={0}
+      fill="none"
+      height="13"
+      viewBox="0 0 16 13"
+      width="16"
     >
-      <svg
-        className={[
-          styles.svg,
-          checked ? styles.svgVisible : styles.svgHidden,
-        ].join(' ')}
-        fill="none"
-        height="13"
-        viewBox="0 0 16 13"
-        width="16"
-      >
-        <path
-          d="M2 7.5L5.65217 11L14 2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="4"
-        />
-      </svg>
-    </div>
-  </>
+      <path
+        d="M2 7.5L5.65217 11L14 2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="4"
+      />
+    </svg>
+  </div>
 );
 
 export default Checkbox;

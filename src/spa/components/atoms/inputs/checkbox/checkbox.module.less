@@ -1,17 +1,5 @@
 @import "~styles/_colors";
-
-.hiddenCheckbox {
-  border: 0;
-  clip-path: inset(50%);
-  clip: rect(0 0 0 0);
-  height: 0.0625rem;
-  margin: -0.0625rem;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  white-space: nowrap;
-  width: 0.0625rem;
-}
+@import "~styles/_shadows";
 
 .styledCheckbox {
   align-items: center;
@@ -36,7 +24,6 @@
 }
 
 .svgVisible {
-  //visibility: hidden;
   visibility: visible;
 }
 
@@ -44,10 +31,30 @@
 
 .checked {
   background: @blue;
-  border: 0.125rem solid @blue;
+  border: 0.125rem solid transparent;
+  &:active {
+    box-shadow: @buttonClickShadow;
+  }
+  &:hover {
+    background: @lightBlue;
+  }
 }
 
 .unchecked {
   background: @white;
   border: 0.125rem solid @lightGrey;
+}
+
+.disabled-checked {
+  background: @disabledGrey;
+  border: 0.125rem solid transparent;
+  cursor: not-allowed;
+  &:hover {
+    background: @disabledGrey;
+  }
+}
+
+.disabled-unchecked {
+  background: @disabledInputGrey;
+  cursor: not-allowed;
 }

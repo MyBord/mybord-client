@@ -1,5 +1,6 @@
 @import "~styles/_colors";
 @import "~styles/_fonts";
+@import "~styles/_shadows";
 
 .commonButtonMixin {
   align-items: center;
@@ -36,11 +37,11 @@
   background: @blue;
   color: @white;
   transition: background 0.5s, box-shadow 0.2s;
+  &:active {
+    box-shadow: @buttonClickShadow;
+  }
   &:hover {
     background: @lightBlue;
-  }
-  &:active {
-    box-shadow: 0 0 0.25rem 0 @lightBlue;
   }
 }
 
