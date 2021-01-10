@@ -1,29 +1,64 @@
 @import "~styles/_colors";
 @import "~styles/_fonts";
 
-.h1 {
+.typographyMixin {
   color: @black;
-  font-family: @poppins;
-  font-size: 3rem;
-  font-weight: bold;
-  letter-spacing: 0.0625rem;
+  font-family: @prompt;
   margin: 1rem 0;
+}
+
+.h1 {
+  .typographyMixin;
+  font-size: 3rem;
+  font-weight: 500;
 }
 
 .h2 {
-  color: @black;
-  font-family: @poppins;
+  .typographyMixin;
   font-size: 2.25rem;
-  font-weight: bold;
-  letter-spacing: 0.046875rem;
-  margin: 1rem 0;
+  font-weight: 500;
 }
 
 .h3 {
-  color: @black;
-  font-family: @poppins;
+  .typographyMixin;
   font-size: 2.25rem;
-  font-weight: lighter;
-  letter-spacing: 0.046875rem;
-  margin: 1rem 0;
+  font-weight: 300;
+}
+
+.h4 {
+  .typographyMixin;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.h5 {
+  .typographyMixin;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.h6 {
+  .typographyMixin;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.bodyLarge {
+  .typographyMixin;
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 175%;
+}
+
+.bodyDefault {
+  .typographyMixin;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 150%;
+}
+
+.bodySmall {
+  .typographyMixin;
+  font-size: 0.625rem;
+  font-weight: 300;
 }

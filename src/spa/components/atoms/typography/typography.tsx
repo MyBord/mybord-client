@@ -9,9 +9,9 @@ interface Props {
   | 'h4'
   | 'h5'
   | 'h6'
-  | 'BodyLarge'
-  | 'BodyDefault'
-  | 'BodySmall';
+  | 'bodyLarge'
+  | 'bodyDefault'
+  | 'bodySmall';
   text: string;
 }
 
