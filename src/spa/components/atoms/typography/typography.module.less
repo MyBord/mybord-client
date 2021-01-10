@@ -1,76 +1,64 @@
 @import "~styles/_colors";
 @import "~styles/_fonts";
 
-.h1 {
+.typographyMixin {
   color: @black;
   font-family: @prompt;
+  margin: 1rem 0;
+}
+
+.h1 {
+  .typographyMixin;
   font-size: 3rem;
   font-weight: 500;
-  margin: 1rem 0;
 }
 
 .h2 {
-  color: @black;
-  font-family: @prompt;
+  .typographyMixin;
   font-size: 2.25rem;
   font-weight: 500;
-  margin: 1rem 0;
 }
 
 .h3 {
-  color: @black;
-  font-family: @prompt;
+  .typographyMixin;
   font-size: 2.25rem;
   font-weight: 300;
-  margin: 1rem 0;
 }
 
 .h4 {
-  color: @black;
-  font-family: @prompt;
+  .typographyMixin;
   font-size: 1.5rem;
   font-weight: 500;
-  margin: 1rem 0;
 }
 
 .h5 {
-  color: @black;
-  font-family: @prompt;
+  .typographyMixin;
   font-size: 1rem;
   font-weight: 300;
-  margin: 1rem 0;
 }
 
 .h6 {
-  color: @black;
-  font-family: @prompt;
+  .typographyMixin;
   font-size: 0.875rem;
   font-weight: 500;
-  margin: 1rem 0;
 }
 
 .bodyLarge {
-  color: @black;
-  font-family: @prompt;
+  .typographyMixin;
   font-size: 1.5rem;
   font-weight: 300;
   line-height: 175%;
-  margin: 1rem 0;
 }
 
 .bodyDefault {
-  color: @black;
-  font-family: @prompt;
+  .typographyMixin;
   font-size: 1rem;
   font-weight: 300;
   line-height: 150%;
-  margin: 1rem 0;
 }
 
 .bodySmall {
-  color: @black;
-  font-family: @prompt;
+  .typographyMixin;
   font-size: 0.625rem;
   font-weight: 300;
-  margin: 1rem 0;
 }
