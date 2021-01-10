@@ -31,15 +31,15 @@ const Checkbox: React.FC<Props> = ({
         checked ? styles.svgVisible : styles.svgHidden,
       ].join(' ')}
       fill="none"
-      height="13"
-      viewBox="0 0 16 13"
-      width="16"
+      height="11"
+      viewBox="0 0 13 11"
+      width="13"
     >
       <path
-        d="M2 7.5L5.65217 11L14 2"
+        d="M2 6.27778L4.73913 9L11 2"
         strokeLinecap="round"
         strokeLinejoin="round"
-        strokeWidth="4"
+        strokeWidth="3"
       />
     </svg>
   </div>
