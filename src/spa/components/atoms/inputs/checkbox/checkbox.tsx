@@ -4,18 +4,23 @@ import * as styles from './checkbox.module.less';
 interface Props {
   checked: boolean;
   disabled?: boolean;
+  label?: string;
   onClick: () => void;
 }
 
 const Checkbox: React.FC<Props> = ({
   checked,
   disabled = false,
+  label = null,
   onClick,
 }) => (
   <div
     aria-checked={checked}
     aria-disabled={disabled}
-    className={styles.divContainer}
+    className={[
+      styles.divContainer,
+      disabled ? styles.disabledDivContainer : styles.enabledDivContainer,
+    ].join(' ')}
     onClick={onClick}
     onKeyPress={onClick}
     role="checkbox"
@@ -46,6 +51,9 @@ const Checkbox: React.FC<Props> = ({
         />
       </svg>
     </div>
+    {
+      label && <p className={styles.p}>{label}</p>
+    }
   </div>
 );
 
