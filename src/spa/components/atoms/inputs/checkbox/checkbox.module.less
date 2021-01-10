@@ -1,0 +1,78 @@
+@import "~styles/_colors";
+@import "~styles/_fonts";
+@import "~styles/_shadows";
+
+.checkbox {
+  align-items: center;
+  border-radius: 0.25rem;
+  display: flex;
+  height: 1rem;
+  justify-content: center;
+  width: 1rem;
+  transition: all 0.2s;
+}
+
+.divContainer {
+  align-items: center;
+  display: inline-flex;
+  outline: none;
+}
+
+.disabledDivContainer {
+  cursor: not-allowed;
+}
+
+.enabledDivContainer {
+  cursor: pointer;
+}
+
+.p {
+  font-family: @prompt;
+  font-weight: 300;
+  font-size: 1rem;
+  margin: 0 0 0 0.75rem;
+}
+
+.svg {
+  > path {
+    stroke: @white;
+  }
+}
+
+.svgHidden {
+  visibility: hidden;
+}
+
+.svgVisible {
+  visibility: visible;
+}
+
+// ----- CHECKBOX STATES ----- //
+
+.checked {
+  background: @blue;
+  border: 0.125rem solid transparent;
+  &:active {
+    box-shadow: @buttonClickShadow;
+  }
+  &:hover {
+    background: @lightBlue;
+  }
+}
+
+.unchecked {
+  background: @white;
+  border: 0.125rem solid @lightGrey;
+}
+
+.disabled-checked {
+  background: @disabledGrey;
+  border: 0.125rem solid transparent;
+  &:hover {
+    background: @disabledGrey;
+  }
+}
+
+.disabled-unchecked {
+  background: @disabledInputGrey;
+}

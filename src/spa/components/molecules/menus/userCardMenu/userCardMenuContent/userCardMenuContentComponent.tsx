@@ -31,7 +31,7 @@ const UserCardMenuContentComponent: React.FC<Props> = ({
 
   const ToDoCheckboxContent: React.FC = () => (
     <div className={styles.contentDiv}>
-      <Checkbox checked={isToDo} />
+      {/*<Checkbox checked={isToDo} />*/}
     </div>
   );
 
