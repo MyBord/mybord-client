@@ -93,7 +93,7 @@ const SignupFormContent: React.FC<Props> = ({
         type="email"
         typeMessage="You entered an invalid email address"
       >
-        <TextInput placeholder="Email" />
+        {/*<TextInput placeholder="Email" />*/}
       </FormItem>
       <div className={usernameClassName}>
         <FormItem
@@ -103,7 +103,7 @@ const SignupFormContent: React.FC<Props> = ({
           required
           requiredMessage="Please enter a username"
         >
-          <TextInput placeholder="Username" />
+          {/*<TextInput placeholder="Username" />*/}
         </FormItem>
       </div>
       <div className={loginPasswordClassName}>

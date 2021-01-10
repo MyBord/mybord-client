@@ -30,7 +30,7 @@ const LoginFormContent: React.FC<Props> = ({
       required
       requiredMessage="Please enter your email address or username"
     >
-      <TextInput placeholder="Email or Username" />
+      {/*<TextInput placeholder="Email or Username" />*/}
     </FormItem>
     <FormItem
       fieldName="password"

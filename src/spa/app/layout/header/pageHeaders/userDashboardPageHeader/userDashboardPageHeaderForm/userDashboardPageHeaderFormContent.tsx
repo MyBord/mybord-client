@@ -39,7 +39,7 @@ const UserDashboardPageHeaderFormContent: React.FC<Props> = ({
           required
           requiredMessage="A url is required"
         >
-          <TextInput overlayClassName={styles.input} placeholder="url" />
+          {/*<TextInput overlayClassName={styles.input} placeholder="url" />*/}
         </FormItem>
         <div className={styles.buttonsContainer}>
           <FormItem fieldName="add-card-url-submit" form={form}>

@@ -54,7 +54,7 @@ const AddCardModalFormContent: React.FC<Props> = ({
         required
         requiredMessage="a title is required"
       >
-        <TextInput />
+        {/*<TextInput />*/}
       </FormItem>
       <div className={styles.rowDiv}>
         <div className={styles.toDoDiv}>

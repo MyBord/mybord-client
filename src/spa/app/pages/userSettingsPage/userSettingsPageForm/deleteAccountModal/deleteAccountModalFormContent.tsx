@@ -22,7 +22,7 @@ const DeleteAccountModalFormContent: React.FC<Props> = ({ form, setCanDelete }) 
 
   return (
     <FormItem fieldName={fieldName} form={form}>
-      <TextInput color="red" />
+      {/*<TextInput color="red" />*/}
     </FormItem>
   );
 };

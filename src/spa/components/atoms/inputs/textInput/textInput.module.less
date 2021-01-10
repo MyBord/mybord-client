@@ -1,18 +1,15 @@
 @import "~styles/_colors";
+@import "~styles/_fonts";
 @import "~styles/_shadows";
 
-.blue {
-  color: @black;
-  &:focus {
-    border-color: @blue;
-    box-shadow: @antInputBlueShadow;
-  }
+.textInput {
+  border-radius: 0.5rem;
+  border: none;
+  font-family: @prompt;
+  font-size: 1.125rem;
+  font-weight: 400;
+  height: 2.25rem;
+  outline: none;
+  padding: 0 1rem;
 }
 
-.red {
-  color: @red;
-  &:focus {
-    border-color: @red;
-    box-shadow: @antInputRedShadow;
-  }
-}
