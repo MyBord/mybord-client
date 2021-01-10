@@ -20,6 +20,10 @@ const TypographyStory: React.FC = () => (
     <Typography size="h1" text="Bodies" />
     <Typography size="h3" text="body large" />
     <Typography size="bodyLarge" text={loremIpsum} />
+    <Typography size="h3" text="body default" />
+    <Typography size="bodyDefault" text={loremIpsum} />
+    <Typography size="h3" text="body small" />
+    <Typography size="bodySmall" text={loremIpsum} />
   </>
 );
 
