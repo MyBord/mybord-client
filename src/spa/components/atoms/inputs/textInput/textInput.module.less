@@ -2,14 +2,24 @@
 @import "~styles/_fonts";
 @import "~styles/_shadows";
 
+.disabled {
+  background: @disabledInputGrey !important;
+  cursor: not-allowed;
+}
+
 .textInput {
+  background: @white;
   border-radius: 0.5rem;
   border: none;
   font-family: @prompt;
   font-size: 1.125rem;
-  font-weight: 400;
+  font-weight: 300;
   height: 2.25rem;
+  letter-spacing: 0.03125rem;
   outline: none;
   padding: 0 1rem;
+  &::placeholder {
+    color: @disabledGrey;
+  }
 }
 
