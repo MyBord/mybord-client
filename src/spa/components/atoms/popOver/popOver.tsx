@@ -40,6 +40,10 @@ const PopOver: React.FC<Props> = ({
   const [popOverStyle, setPopOverStyle] = React.useState<PopOverStyle>(null);
   const [isVisible, setIsVisible] = React.useState<boolean>(defaultVisible);
 
+  React.useEffect(() => {
+    setFinalCaretPlacement(caretPlacement);
+  }, [caretPlacement])
+
   // ----- Cloning Children and Content ----- //
 
   const FinalChildren = React.cloneElement(

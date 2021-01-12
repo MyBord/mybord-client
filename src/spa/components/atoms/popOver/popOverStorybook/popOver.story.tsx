@@ -18,7 +18,17 @@ const PopOverContent: React.FC = () => (
   <div className={styles.typographyDiv}>
     <Typography size="bodyDefault" text={lorem} />
   </div>
-)
+);
+
+const caretPlacementOptions = [
+  { label: 'none', value: null },
+  { label: 'auto', value: 'auto' },
+  { label: 'bottom', value: 'bottom' },
+  { label: 'center', value: 'center' },
+  { label: 'left', value: 'left' },
+  { label: 'right', value: 'right' },
+  { label: 'top', value: 'top' },
+];
 
 const placementOptions = [
   { label: 'bottom-center', value: 'bottom-center' },
@@ -36,20 +46,39 @@ const placementOptions = [
 ];
 
 const PopOverStory: React.FC = () => {
+  const [caretPlacement, setCaretPlacement] = React.useState<PopOverProps['caretPlacement']>(null);
   const [placement, setPlacement] = React.useState<PopOverProps['placement']>('right-center');
 
   return (
     <>
       <Typography size="h1" text="Standard PopOver" />
-      <Dropdown
-        // @ts-ignore
-        onChange={(event) => setPlacement(event.target.value)}
-        options={placementOptions}
-        value={placement}
-      />
-      <PopOver Content={<PopOverContent />} placement={placement}>
-        <PopOverBox />
-      </PopOver>
+      <div className={styles.popOverContainer}>
+        <div>
+          <Typography size="h5" text="Placement" />
+          <Dropdown
+            // @ts-ignore
+            onChange={(event) => setPlacement(event.target.value)}
+            options={placementOptions}
+            value={placement}
+          />
+          <Typography size="h5" text="Caret" />
+          <Dropdown
+            // @ts-ignore
+            onChange={(event) => setCaretPlacement(event.target.value)}
+            options={caretPlacementOptions}
+            value={caretPlacement}
+          />
+        </div>
+        <div className={styles.parentBoxContainer}>
+          <PopOver
+            Content={<PopOverContent />}
+            caretPlacement={caretPlacement}
+            placement={placement}
+          >
+            <PopOverBox />
+          </PopOver>
+        </div>
+      </div>
     </>
   );
 };
