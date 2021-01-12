@@ -2,10 +2,21 @@
 @import "~styles/_fonts";
 
 .typographyMixin {
-  color: @black;
   font-family: @prompt;
   margin: 1rem 0;
 }
+
+// ----- COLOR ----- //
+
+.black {
+  color: @black;
+}
+
+.white {
+  color: @white;
+}
+
+// ----- SIZE ----- //
 
 .h1 {
   .typographyMixin;
