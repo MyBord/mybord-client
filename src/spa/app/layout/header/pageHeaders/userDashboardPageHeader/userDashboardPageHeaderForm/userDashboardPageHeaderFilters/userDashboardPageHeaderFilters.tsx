@@ -93,12 +93,12 @@ const UserDashboardPageHeaderFilters: React.FC<Props> = ({ form }) => {
             labelType="blue"
             layout="horizontal"
           >
-            <Dropdown
-              multiSelect
-              onChange={handleCategoriesChange}
-              options={dropdownCategoryOptions}
-              ref={dropdownRef}
-            />
+            {/*<Dropdown*/}
+            {/*  multiSelect*/}
+            {/*  onChange={handleCategoriesChange}*/}
+            {/*  options={dropdownCategoryOptions}*/}
+            {/*  ref={dropdownRef}*/}
+            {/*/>*/}
           </FormItem>
         </div>
       </div>

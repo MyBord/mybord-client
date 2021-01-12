@@ -44,7 +44,7 @@ const AddCardModalFormContent: React.FC<Props> = ({
         required
         requiredMessage="a category is required"
       >
-        <Dropdown options={dropdownCategoryOptions} />
+        {/*<Dropdown options={dropdownCategoryOptions} />*/}
       </FormItem>
       <FormItem
         fieldName="add-card-modal-title"
