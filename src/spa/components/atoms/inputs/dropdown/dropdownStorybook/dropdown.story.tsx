@@ -9,15 +9,11 @@ const mockOptions = [
   { label: 'Option 4', value: 'option-4' },
 ]
 
-const CheckboxStory: React.FC = () => {
-  const [isCheckedOne, setIsCheckedOne] = React.useState<boolean>(false);
-
-  return (
-    <>
-      <Typography size="h1" text="Standard Dropdown" />
-      <Dropdown options={mockOptions} />
-    </>
-  );
-};
+const CheckboxStory: React.FC = () => (
+  <>
+    <Typography size="h1" text="Standard Dropdown" />
+    <Dropdown onChange={() => {}} options={mockOptions} />
+  </>
+);
 
 export default CheckboxStory;
