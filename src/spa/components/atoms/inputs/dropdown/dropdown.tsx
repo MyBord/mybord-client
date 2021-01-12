@@ -1,37 +1,38 @@
 import * as React from 'react';
-import { Select } from 'antd';
-import Icon from 'icon/icon';
-import { DropdownProps } from 'types/inputTypes';
 import * as styles from './dropdown.module.less';
-import './dropdown.less';
 
-const DropdownIcon: React.FC = () => (
-  <div className={styles.iconDiv}>
-    {/* <Icon color="darkGrey" iconName="caretDown" size={24} /> */}
-  </div>
-);
+interface Props {
+  onChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
+  options: {
+    label: string;
+    value: string;
+  }[];
+  value?: string;
+}
 
-const Dropdown = React.forwardRef<Select, DropdownProps>(({
-  multiSelect = false,
+const Dropdown: React.FC<Props> = ({
   onChange,
   options,
   value,
-}, ref) => (
-  <Select
-    className={styles.dropdown}
-    mode={multiSelect ? 'multiple' : 'default'}
-    onChange={onChange}
-    ref={ref}
-    showArrow
-    suffixIcon={<DropdownIcon />}
-    value={value || undefined}
-  >
-    {options.map((option) => (
-      <Select.Option key={option.value} value={option.value}>
-        {option.label}
-      </Select.Option>
-    ))}
-  </Select>
-));
+}) => (
+  <>
+    <select
+      className={styles.dropdown}
+      onChange={(event) => onChange(event)}
+      value={value}
+    >
+      {
+        options.map((option, index) => (
+          <option
+            key={`${option.label}-${index}`}
+            value={option.value}
+          >
+            {option.label}
+          </option>
+        ))
+      }
+    </select>
+  </>
+);
 
 export default Dropdown;
