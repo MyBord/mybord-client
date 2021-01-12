@@ -9,11 +9,11 @@ const mockOptions = [
   { label: 'Option 4', value: 'option-4' },
 ]
 
-const CheckboxStory: React.FC = () => (
+const DropdownStory: React.FC = () => (
   <>
     <Typography size="h1" text="Standard Dropdown" />
     <Dropdown onChange={() => {}} options={mockOptions} />
   </>
 );
 
-export default CheckboxStory;
+export default DropdownStory;
