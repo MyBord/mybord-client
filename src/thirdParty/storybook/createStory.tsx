@@ -25,8 +25,8 @@ export default ({
       <React.Suspense fallback={<div>Loading...</div>}>
         <section className={styles.section}>
           <header>
-            <Typography size="h1" text={componentName} />
-            <Typography size="h3" text={description} />
+            <Typography type="h1" text={componentName} />
+            <Typography type="h3" text={description} />
             <hr className={styles.hr} />
           </header>
           <Story />

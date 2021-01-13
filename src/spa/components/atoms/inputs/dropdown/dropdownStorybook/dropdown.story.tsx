@@ -7,11 +7,11 @@ const mockOptions = [
   { label: 'Option 2', value: 'option-2' },
   { label: 'Option 3', value: 'option-3' },
   { label: 'Option 4', value: 'option-4' },
-]
+];
 
 const DropdownStory: React.FC = () => (
   <>
-    <Typography size="h1" text="Standard Dropdown" />
+    <Typography type="h1" text="Standard Dropdown" />
     <Dropdown onChange={() => {}} options={mockOptions} />
   </>
 );

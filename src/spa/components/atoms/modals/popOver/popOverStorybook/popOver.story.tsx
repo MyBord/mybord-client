@@ -9,7 +9,7 @@ import * as styles from './popOverStory.module.less';
 
 const PopOverContent: React.FC = () => (
   <div className={styles.typographyDiv}>
-    <Typography size="bodyDefault" text={lorem} />
+    <Typography type="bodyDefault" text={lorem} />
   </div>
 );
 
@@ -56,31 +56,31 @@ const PopOverStory: React.FC = () => {
 
   return (
     <>
-      <Typography size="h1" text="Standard PopOver" />
+      <Typography type="h1" text="Standard PopOver" />
       <div className={styles.popOverContainer}>
         <div>
-          <Typography size="h5" text="Placement" />
+          <Typography type="h5" text="Placement" />
           <Dropdown
             // @ts-ignore
             onChange={(event) => setPlacement(event.target.value)}
             options={placementOptions}
             value={placement}
           />
-          <Typography size="h5" text="Caret" />
+          <Typography type="h5" text="Caret" />
           <Dropdown
             // @ts-ignore
             onChange={(event) => setCaretPlacement(event.target.value)}
             options={caretPlacementOptions}
             value={caretPlacement}
           />
-          <Typography size="h5" text="Color" />
+          <Typography type="h5" text="Color" />
           <Dropdown
             // @ts-ignore
             onChange={(event) => setColor(event.target.value)}
             options={colorOptions}
             value={color}
           />
-          <Typography size="h5" text="Trigger" />
+          <Typography type="h5" text="Trigger" />
           <Dropdown
             // @ts-ignore
             onChange={(event) => setTrigger(event.target.value)}
