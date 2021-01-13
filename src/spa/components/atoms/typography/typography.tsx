@@ -3,6 +3,7 @@ import * as styles from './typography.module.less';
 
 interface Props {
   color?: 'black' | 'white';
+  hasMargin?: boolean;
   size:
   'h1'
   | 'h2'
@@ -18,6 +19,7 @@ interface Props {
 
 const Typography: React.FC<Props> = ({
   color = 'black',
+  hasMargin = true,
   size,
   text,
 }) => (
@@ -25,6 +27,7 @@ const Typography: React.FC<Props> = ({
     className={[
       styles[color],
       styles[size],
+      hasMargin ? styles.hasMargin : styles.noMargin,
     ].join(' ')}
   >
     {text}
