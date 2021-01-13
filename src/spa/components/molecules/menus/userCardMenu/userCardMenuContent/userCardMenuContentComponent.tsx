@@ -3,7 +3,7 @@
 import * as React from 'react';
 import Checkbox from 'inputs/checkbox/checkbox';
 import Icon from 'icon/icon';
-import PopConfirm from 'molecules/popConfirm/popConfirm';
+// import PopConfirm from 'molecules/popConfirm/popConfirm';
 import Typography from 'typography/typography';
 import * as styles from './userCardMenuContent.module.less';
 
@@ -46,13 +46,13 @@ const UserCardMenuContentComponent: React.FC<Props> = ({
         {/* /> */}
       </li>
       <li className={styles.li}>
-        <PopConfirm
-          onConfirm={handleDelete}
-          onMouseDown={() => console.log('pop confirm has been clicked')}
-          text="Are you sure you want to delete?"
-        >
-          <h1>foo</h1>
-        </PopConfirm>
+        {/*<PopConfirm*/}
+        {/*  onConfirm={handleDelete}*/}
+        {/*  onMouseDown={() => console.log('pop confirm has been clicked')}*/}
+        {/*  text="Are you sure you want to delete?"*/}
+        {/*>*/}
+        {/*  <h1>foo</h1>*/}
+        {/*</PopConfirm>*/}
       </li>
     </ul>
   );

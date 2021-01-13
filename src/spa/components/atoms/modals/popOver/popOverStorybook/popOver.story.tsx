@@ -1,18 +1,11 @@
 import * as React from 'react';
 import Dropdown from 'inputs/dropdown/dropdown';
 import Typography from 'typography/typography';
+import { PopOverBox } from 'storybook/commonStorybookComponents';
 import { PopOverProps } from 'types/modalTypes';
 import { lorem } from 'utils/loremIpsum';
 import PopOver from '../popOver';
 import * as styles from './popOverStory.module.less';
-
-const PopOverBox = React.forwardRef<HTMLDivElement, {}>(({}, ref) => (
-  <div className={styles.boxDivContainer}>
-    <div ref={ref} className={styles.boxDiv}>
-      <Typography color="white" size="bodyDefault" text="Click Me" />
-    </div>
-  </div>
-));
 
 const PopOverContent: React.FC = () => (
   <div className={styles.typographyDiv}>

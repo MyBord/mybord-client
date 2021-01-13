@@ -5,7 +5,7 @@ import PasswordInput from 'inputs/passwordInput/passwordInput';
 import TextInput from 'inputs/textInput/textInput';
 import Toast from 'molecules/toast/toast';
 import Typography from 'typography/typography';
-import UserAgreementModal from 'modals/userAgreementModal/userAgreementModal';
+// import UserAgreementModal from 'modals/userAgreementModal/userAgreementModal';
 import { FormProp, Validator } from 'types/formTypes';
 import { SignupStatus } from 'forms/signupForm/signupFormContainer';
 import * as styles from './signupForm.module.less';
@@ -83,7 +83,7 @@ const SignupFormContent: React.FC<Props> = ({
         text="By not accepting the user agreement, you are unable to signup for MyBord."
         type="warning"
       />
-      <UserAgreementModal handleAcceptTerms={handleAcceptTerms} form={form} />
+      {/*<UserAgreementModal handleAcceptTerms={handleAcceptTerms} form={form} />*/}
       <FormItem
         errorMessage={signupStatus === 'duplicate email' && duplicateEmailMessage}
         fieldName="loginEmail"
