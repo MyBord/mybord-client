@@ -1,9 +1,11 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 import * as styles from './typography.module.less';
 
 interface Props {
   color?: 'black' | 'white';
   hasMargin?: boolean;
+  link?: string;
   text: string;
   type:
   'h1'
@@ -14,24 +16,36 @@ interface Props {
   | 'h6'
   | 'bodyLarge'
   | 'bodyDefault'
-  | 'bodySmall';
+  | 'bodySmall'
+  | 'linkDefault';
 }
 
 const Typography: React.FC<Props> = ({
   color = 'black',
   hasMargin = true,
+  link = null,
   text,
   type,
-}) => (
-  <p
-    className={[
-      styles[color],
-      styles[type],
-      hasMargin ? styles.hasMargin : styles.noMargin,
-    ].join(' ')}
-  >
-    {text}
-  </p>
-);
+}) => {
+  if (link && type === 'linkDefault') {
+    return (
+      <Link className={styles[type]} to={link}>
+        {text}
+      </Link>
+    );
+  }
+
+  return (
+    <p
+      className={[
+        styles[color],
+        styles[type],
+        hasMargin ? styles.hasMargin : styles.noMargin,
+      ].join(' ')}
+    >
+      {text}
+    </p>
+  );
+};
 
 export default Typography;
