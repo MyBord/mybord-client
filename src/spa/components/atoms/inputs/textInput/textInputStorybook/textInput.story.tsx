@@ -4,15 +4,15 @@ import TextInput from '../textInput';
 
 const TextInputStory: React.FC = () => (
   <>
-    <Typography size="h1" text="Standard Text Input" />
-    <Typography size="h3" text="Default" />
+    <Typography type="h1" text="Standard Text Input" />
+    <Typography type="h3" text="Default" />
     <TextInput />
-    <Typography size="h3" text="w/ Placeholder" />
+    <Typography type="h3" text="w/ Placeholder" />
     <TextInput placeholder="lorem ipsum dolor sit amet" />
-    <Typography size="h1" text="Disabled Text Input" />
-    <Typography size="h3" text="Default" />
+    <Typography type="h1" text="Disabled Text Input" />
+    <Typography type="h3" text="Default" />
     <TextInput disabled />
-    <Typography size="h3" text="w/ Placeholder" />
+    <Typography type="h3" text="w/ Placeholder" />
     <TextInput disabled placeholder="lorem ipsum dolor sit amet" />
   </>
 );

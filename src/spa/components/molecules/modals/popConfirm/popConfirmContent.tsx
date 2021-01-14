@@ -11,7 +11,7 @@ interface Props {
 const PopConfirmContent: React.FC<Props> = ({ onHide, text }) => (
   <div className={styles.contentContainer}>
     <div>
-      <Typography hasMargin={false} size="bodyDefault" text={text} />
+      <Typography hasMargin={false} type="bodyDefault" text={text} />
     </div>
     <div className={styles.buttonContainer}>
       <Button label="Cancel" onClick={onHide} type="secondary" />

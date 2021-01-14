@@ -6,7 +6,7 @@ import PopConfirm from '../popConfirm';
 
 const PopConfirmStory: React.FC = () => (
   <>
-    <Typography size="h1" text="Standard PopConfirm" />
+    <Typography type="h1" text="Standard PopConfirm" />
     <PopConfirm text={loremIpsumQ}>
       <PopOverBox />
     </PopConfirm>
