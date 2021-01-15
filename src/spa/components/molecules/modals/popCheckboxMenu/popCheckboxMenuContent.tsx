@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Checkbox from 'inputs/checkbox/checkbox';
+import { CheckboxState, getInitialCheckboxState } from 'modals/modalUtils/checkboxState';
 import * as styles from './popCheckboxMenu.module.less';
 
 interface Props {
@@ -8,23 +9,11 @@ interface Props {
   }[];
 }
 
-type CheckboxState = Record<number, boolean>;
-
-const getInitialState = (n: number): CheckboxState => {
-  const state: CheckboxState = {};
-  let i: number;
-  for (i = 0; i < n; i += 1) {
-    state[i] = false;
-  }
-
-  return state;
-};
-
 const PopCheckboxMenuContent: React.FC<Props> = ({ options }) => {
   const [
     checkboxState,
     setCheckboxState,
-  ] = React.useState<CheckboxState>(getInitialState(options.length));
+  ] = React.useState<CheckboxState>(getInitialCheckboxState(options.length));
 
   const handleClick = (i: number): void => {
     setCheckboxState((prevState) => ({
