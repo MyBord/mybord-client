@@ -8,14 +8,16 @@ interface Props {
   options: {
     label: string;
   }[];
+  title: string;
 }
 
 const PopCheckboxSearchMenu: React.FC<Props> = ({
   children,
   options,
+  title,
 }) => (
   <PopOver
-    Content={<PopCheckboxSearchMenuContent options={options} />}
+    Content={<PopCheckboxSearchMenuContent options={options} title={title} />}
     caretPlacement="center"
     placement="right-center"
   >

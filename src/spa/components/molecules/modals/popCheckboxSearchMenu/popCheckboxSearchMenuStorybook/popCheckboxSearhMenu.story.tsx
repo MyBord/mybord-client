@@ -6,13 +6,19 @@ import PopCheckboxSearchMenu from '../popCheckboxSearchMenu';
 const options = [
   { label: 'Lorem Ipsum' },
   { label: 'Dolor Sit Amet' },
-  { label: 'Consectetur Adipiscing Elit' },
+  { label: 'Consectetur' },
+  { label: 'Adipiscing' },
+  { label: 'Elit' },
+  { label: 'Volutpat' },
+  { label: 'Risus Cras' },
+  { label: 'Pretium' },
+  { label: 'Senectus' },
 ];
 
 const PopCheckboxSearchMenuStory: React.FC = () => (
   <>
     <Typography text="Standard PopCheckboxSearchMenu" type="h1" />
-    <PopCheckboxSearchMenu options={options}>
+    <PopCheckboxSearchMenu options={options} title="Title">
       <PopOverBox />
     </PopCheckboxSearchMenu>
   </>
