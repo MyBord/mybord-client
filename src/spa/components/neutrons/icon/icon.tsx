@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { IndividualIconProps } from 'types/iconTypes';
+const SearchIcon = React.lazy(() => import('./individualIcons/searchIcon'));
 const SendIcon = React.lazy(() => import('./individualIcons/sendIcon'));
 
 // declaring an iconNames from an object instead of an array
@@ -7,6 +8,7 @@ const SendIcon = React.lazy(() => import('./individualIcons/sendIcon'));
 // because TS sucks at accessing values in arrays so we can re-use that array in other places.
 // https://github.com/microsoft/TypeScript/issues/20965
 export const iconNames = {
+  search: 'foo',
   send: 'foo',
 };
 
@@ -25,6 +27,8 @@ const Icon: React.FC<IconProps> = ({
   strokeWidth = 2,
 }) => {
   switch (iconName) {
+    case 'search':
+      return <SearchIcon color={color} size={size} strokeWidth={strokeWidth} />;
     case 'send':
       return <SendIcon color={color} size={size} strokeWidth={strokeWidth} />;
     default:
