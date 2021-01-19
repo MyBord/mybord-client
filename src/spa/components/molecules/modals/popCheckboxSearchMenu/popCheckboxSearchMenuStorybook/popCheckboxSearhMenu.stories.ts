@@ -3,7 +3,7 @@ import PopCheckboxSearchMenuStory from './popCheckboxSearhMenu.story';
 
 createStory({
   Story: PopCheckboxSearchMenuStory,
-  componentName: 'PopCheckboxSearchMenu',
+  componentName: 'Pop Checkbox Search Menu',
   description: 'popover with a checkbox search menu.',
   rootDirectory: 'Modals',
 });

@@ -3,7 +3,7 @@ import PopCheckboxMenuStory from './popCheckboxMenu.story';
 
 createStory({
   Story: PopCheckboxMenuStory,
-  componentName: 'PopCheckboxMenu',
+  componentName: 'Pop Checkbox Menu',
   description: 'popover with a checkbox menu.',
   rootDirectory: 'Modals',
 });

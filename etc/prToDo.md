@@ -2,4 +2,3 @@
 Make sure to remove all notes before merging (except for this one, of course).
 ----------------------------------------------------------------------------------------------------
 
-fix textinput / search input to be 100% width

@@ -3,7 +3,7 @@ import PopConfirmStory from './popConfirm.story';
 
 createStory({
   Story: PopConfirmStory,
-  componentName: 'PopConfirm',
+  componentName: 'Pop Confirm',
   description: 'popconfirm used in our app.',
   rootDirectory: 'Modals',
 });
