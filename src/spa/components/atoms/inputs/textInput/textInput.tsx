@@ -5,14 +5,20 @@ import * as styles from './textInput.module.less';
 interface Props {
   disabled?: boolean;
   iconName?: IconNames;
+  onChange?: (value: string) => void;
   placeholder?: string;
 }
 
 const TextInput: React.FC<Props> = ({
   disabled = false,
   iconName = null,
+  onChange = null,
   placeholder = null,
 }) => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
+    onChange(event.target.value);
+  };
+
   if (iconName) {
     return (
       <div className={styles.inputWithIconContainer}>
@@ -28,6 +34,7 @@ const TextInput: React.FC<Props> = ({
             disabled ? styles.disabled : undefined,
           ].join(' ')}
           disabled={disabled}
+          onChange={handleChange}
           placeholder={placeholder}
           type="text"
         />
@@ -42,6 +49,7 @@ const TextInput: React.FC<Props> = ({
         disabled ? styles.disabled : undefined,
       ].join(' ')}
       disabled={disabled}
+      onChange={handleChange}
       placeholder={placeholder}
       type="text"
     />
