@@ -4,12 +4,16 @@ import { SetState } from 'types/reactTypes';
 
 interface Props {
   mutateValues: SetState<string[]>;
-  values: string[];
+  resetValues: () => void;
 }
 
-const SearchInput: React.FC<Props> = ({ mutateValues, values }) => {
+const SearchInput: React.FC<Props> = ({ mutateValues, resetValues }) => {
   const handleChange = (value: string): void => {
-    console.log(value);
+    if (value.length === 0) {
+      resetValues();
+    } else {
+      mutateValues((prevState) => prevState.filter((i) => i.includes(value)));
+    }
   };
 
   return (
