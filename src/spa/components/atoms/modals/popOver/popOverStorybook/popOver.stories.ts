@@ -4,6 +4,6 @@ import PopOverStory from './popOver.story';
 createStory({
   Story: PopOverStory,
   description: 'pop overs used in our app.',
-  componentName: 'PopOver',
+  componentName: 'Pop Over',
   rootDirectory: 'Modals',
 });

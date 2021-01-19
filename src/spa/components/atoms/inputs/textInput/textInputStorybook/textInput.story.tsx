@@ -14,6 +14,8 @@ const TextInputStory: React.FC = () => (
     <TextInput disabled />
     <Typography type="h3" text="w/ Placeholder" />
     <TextInput disabled placeholder="lorem ipsum dolor sit amet" />
+    <Typography type="h3" text="w/ Icon" />
+    <TextInput iconName="search" placeholder="lorem ipsum dolor sit amet" />
   </>
 );
 

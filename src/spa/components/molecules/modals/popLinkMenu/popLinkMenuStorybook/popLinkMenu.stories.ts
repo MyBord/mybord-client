@@ -3,7 +3,7 @@ import PopLinkMenuStory from './popLinkMenu.story';
 
 createStory({
   Story: PopLinkMenuStory,
-  componentName: 'PopLinkMenu',
+  componentName: 'Pop Link Menu',
   description: 'popover menu with various links.',
   rootDirectory: 'Modals',
 });
