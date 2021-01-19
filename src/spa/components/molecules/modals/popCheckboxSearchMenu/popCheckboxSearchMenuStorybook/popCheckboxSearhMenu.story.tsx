@@ -4,15 +4,15 @@ import { PopOverBox } from 'storybook/commonStorybookComponents';
 import PopCheckboxSearchMenu from '../popCheckboxSearchMenu';
 
 const options = [
-  { label: 'Lorem Ipsum' },
-  { label: 'Dolor Sit Amet' },
-  { label: 'Consectetur' },
-  { label: 'Adipiscing' },
-  { label: 'Elit' },
-  { label: 'Volutpat' },
-  { label: 'Risus Cras' },
-  { label: 'Pretium' },
-  { label: 'Senectus' },
+  { label: 'Lorem Ipsum', value: true },
+  { label: 'Dolor Sit Amet', value: true },
+  { label: 'Consectetur', value: true },
+  { label: 'Adipiscing', value: false },
+  { label: 'Elit', value: false },
+  { label: 'Volutpat', value: true },
+  { label: 'Risus Cras', value: true },
+  { label: 'Pretium', value: false },
+  { label: 'Senectus', value: false },
 ];
 
 const PopCheckboxSearchMenuStory: React.FC = () => (
