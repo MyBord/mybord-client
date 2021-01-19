@@ -1,18 +1,17 @@
 import * as React from 'react';
 import TextInput from 'inputs/textInput/textInput';
-import { SetState } from 'types/reactTypes';
 
 interface Props {
-  mutateValues: SetState<string[]>;
-  resetValues: () => void;
+  onSearch: (value: string) => void;
+  onReset: () => void;
 }
 
-const SearchInput: React.FC<Props> = ({ mutateValues, resetValues }) => {
+const SearchInput: React.FC<Props> = ({ onSearch, onReset }) => {
   const handleChange = (value: string): void => {
     if (value.length === 0) {
-      resetValues();
+      onReset();
     } else {
-      mutateValues((prevState) => prevState.filter((i) => i.includes(value)));
+      onSearch(value);
     }
   };
 

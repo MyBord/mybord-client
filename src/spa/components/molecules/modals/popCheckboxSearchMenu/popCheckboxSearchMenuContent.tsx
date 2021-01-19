@@ -29,14 +29,21 @@ const PopCheckboxSearchMenuContent: React.FC<Props> = ({
     }));
   };
 
+  const handleSearch = (value: string): void => {
+    console.log('foo');
+  };
+
+  const handleReset = (): void => setFinalOptions(options);
+
   return (
     <div className={styles.divContainer}>
       <div className={styles.typographyDiv}>
         <Typography hasMargin={false} text={title} type="h5" />
       </div>
       <Hr />
-      {/* <SearchInput mutateValues="" resetValues="" /> */}
-      <TextInput />
+      <div className={styles.searchInputDiv}>
+        <SearchInput onSearch={handleSearch} onReset={handleReset} />
+      </div>
       <Hr />
       <div className={styles.optionsContainer}>
         {
