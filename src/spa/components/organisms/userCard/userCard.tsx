@@ -51,10 +51,15 @@ const UserCard: React.FC<Props> = ({ userCardData }) => (
               key={`${tag}-${index}`}
               className={styles.tag}
               color={getTagColor(index)}
-              label={tag}
+              label={tag.toUpperCase()}
             />
           ))
         }
+        <Tag
+          className={styles.tag}
+          color="blue"
+          label="..."
+        />
       </div>
     </div>
   </section>

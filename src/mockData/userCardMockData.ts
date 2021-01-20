@@ -8,6 +8,7 @@ export const defaultUserCardMockData: UserCardData = {
   isToDo: false,
   subtitle: 'Augue at ut arcu risus euismod morbi blandit non facilisi.',
   tags: ['lorem', 'ipsum', 'consectetur', 'dolor sit', 'adipiscing', 'elit'],
+  // tags: ['0123456789'],
   title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
   type: 'Youtube',
 };

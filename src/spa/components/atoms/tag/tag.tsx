@@ -5,23 +5,43 @@ import * as styles from './tag.module.less';
 interface Props {
   className?: string;
   color: TagColors;
-  label: string;
+  ellipsis?: boolean;
+  label?: string;
 }
 
 const Tag: React.FC<Props> = ({
   className = null,
   color,
+  ellipsis = false,
   label,
-}) => (
-  <div
-    className={[
-      styles.divContainer,
-      styles[color],
-      className || undefined,
-    ].join(' ')}
-  >
-    <p className={styles.p}>{label}</p>
-  </div>
-);
+}) => {
+  if (ellipsis) {
+    return (
+      <div
+        className={[
+          styles.divContainer,
+          styles[color],
+          className || undefined,
+        ].join(' ')}
+      >
+        <div className={styles.dot} />
+        <div className={styles.dot} />
+        <div className={styles.dot} />
+      </div>
+    );
+  }
+
+  return (
+    <div
+      className={[
+        styles.divContainer,
+        styles[color],
+        className || undefined,
+      ].join(' ')}
+    >
+      <p className={styles.p}>{label}</p>
+    </div>
+  );
+};
 
 export default Tag;
