@@ -38,7 +38,7 @@ const UserCard: React.FC<Props> = ({ userCardData }) => {
         />
         <div className={styles.tagsContainer}>
           {
-            userCardTags && userCardTags.tags.map((tag, index) => (
+            userCardTags && userCardTags.tags.filter((tag) => tag.show).map((tag, index) => (
               <Tag
                 key={`${tag.label}-${index}`}
                 className={styles.tag}

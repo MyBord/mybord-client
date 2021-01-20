@@ -8,6 +8,7 @@ export interface UserCardTags {
   tags: {
     color: TagColors;
     label: string;
+    show: boolean;
   }[];
   totalLength: number;
 }
@@ -158,13 +159,26 @@ export default (tags: string[]) => {
 
     if (totalLength <= 204) {
       userCardTags.totalLength += finalTagLength;
-      userCardTags.tags.push({ color: tagColor, label: tag.label });
+      userCardTags.tags.push({
+        color: tagColor,
+        label: tag.label,
+        show: true,
+      });
     } else if (userCardTags.totalLength + finalTagLength < 164 && !userCardTags.ellipsis.show) {
       userCardTags.totalLength += finalTagLength;
-      userCardTags.tags.push({ color: tagColor, label: tag.label });
+      userCardTags.tags.push({
+        color: tagColor,
+        label: tag.label,
+        show: true,
+      });
     } else if (userCardTags.totalLength + finalTagLength >= 164 && !userCardTags.ellipsis.show) {
       userCardTags.ellipsis.color = tagColor;
       userCardTags.ellipsis.show = true;
+      userCardTags.tags.push({
+        color: tagColor,
+        label: tag.label,
+        show: false,
+      });
     }
   });
 
