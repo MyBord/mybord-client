@@ -1,13 +1,10 @@
-export type DropdownValue = string | string[] | number | number[];
-
-export interface DropdownOption {
+export type CheckboxOptions = {
   label: string;
-  value: number | string;
-}
+  value: boolean;
+}[];
 
-export interface DropdownProps {
-  multiSelect?: boolean;
-  onChange?: (value: DropdownValue) => void;
-  options: DropdownOption[];
-  value?: DropdownValue;
-}
+export type CheckboxOptionsWithVisibility = {
+  isVisible: boolean;
+  label: string;
+  value: boolean;
+}[];

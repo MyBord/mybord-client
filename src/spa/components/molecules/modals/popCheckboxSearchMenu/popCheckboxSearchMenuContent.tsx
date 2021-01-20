@@ -2,15 +2,14 @@ import * as React from 'react';
 import Button from 'buttons/button/button';
 import Checkbox from 'inputs/checkbox/checkbox';
 import Hr from 'atoms/hr/hr';
-import TextInput from 'inputs/textInput/textInput';
+import SearchInput from 'inputs/searchInput/searchInput';
 import Typography from 'typography/typography';
-import { CheckboxState, getInitialCheckboxState } from 'modals/modalUtils/checkboxState';
+import { CheckboxOptions, CheckboxOptionsWithVisibility } from 'types/inputTypes';
+import { getCheckboxVisibilityOptions } from 'modals/modalUtils/getCheckboxVisibilityOptions';
 import * as styles from './popCheckboxSearchMenu.module.less';
 
 interface Props {
-  options: {
-    label: string;
-  }[];
+  options: CheckboxOptions;
   title: string;
 }
 
@@ -19,14 +18,49 @@ const PopCheckboxSearchMenuContent: React.FC<Props> = ({
   title,
 }) => {
   const [
-    checkboxState,
-    setCheckboxState,
-  ] = React.useState<CheckboxState>(getInitialCheckboxState(options.length));
+    finalOptions,
+    setFinalOptions,
+  ] = React.useState<CheckboxOptionsWithVisibility>(getCheckboxVisibilityOptions(options));
 
-  const handleClick = (i: number): void => {
-    setCheckboxState((prevState) => ({
-      ...prevState,
-      [i]: !prevState[i],
+  const handleClick = (label: string): void => {
+    setFinalOptions((prevState) => prevState.map((option) => {
+      if (option.label === label) {
+        return {
+          ...option,
+          value: !option.value,
+        };
+      }
+
+      return { ...option };
+    }));
+  };
+
+  const handleSearch = (value: string): void => {
+    setFinalOptions((prevState) => prevState.map((option) => {
+      if (option.label.toLocaleLowerCase().includes(value.toLocaleLowerCase())) {
+        return {
+          ...option,
+          isVisible: true,
+        };
+      } else {
+        return {
+          ...option,
+          isVisible: false,
+        };
+      }
+    }));
+  };
+
+  const handleReset = (): void => {
+    setFinalOptions((prevState) => prevState.map((option) => {
+      if (!option.isVisible) {
+        return {
+          ...option,
+          isVisible: !option.isVisible,
+        };
+      }
+
+      return { ...option };
     }));
   };
 
@@ -36,17 +70,19 @@ const PopCheckboxSearchMenuContent: React.FC<Props> = ({
         <Typography hasMargin={false} text={title} type="h5" />
       </div>
       <Hr />
-      <TextInput />
+      <div className={styles.searchInputDiv}>
+        <SearchInput onSearch={handleSearch} onReset={handleReset} />
+      </div>
       <Hr />
       <div className={styles.optionsContainer}>
         {
-          options.map((option, index) => (
+          finalOptions.filter((option) => option.isVisible).map((option, index) => (
             <div className={styles.checkboxDiv}>
               <Checkbox
                 key={`${option.label}-${index}`}
-                checked={checkboxState[index]}
+                checked={option.value}
                 label={option.label}
-                onClick={() => handleClick(index)}
+                onClick={() => handleClick(option.label)}
               />
             </div>
           ))

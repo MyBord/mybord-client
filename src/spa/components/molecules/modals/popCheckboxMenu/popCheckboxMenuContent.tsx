@@ -1,37 +1,38 @@
 import * as React from 'react';
 import Checkbox from 'inputs/checkbox/checkbox';
-import { CheckboxState, getInitialCheckboxState } from 'modals/modalUtils/checkboxState';
+import { CheckboxOptions } from 'types/inputTypes';
 import * as styles from './popCheckboxMenu.module.less';
 
 interface Props {
-  options: {
-    label: string;
-  }[];
+  options: CheckboxOptions;
 }
 
 const PopCheckboxMenuContent: React.FC<Props> = ({ options }) => {
-  const [
-    checkboxState,
-    setCheckboxState,
-  ] = React.useState<CheckboxState>(getInitialCheckboxState(options.length));
+  const [finalOptions, setFinalOptions] = React.useState<CheckboxOptions>(options);
 
-  const handleClick = (i: number): void => {
-    setCheckboxState((prevState) => ({
-      ...prevState,
-      [i]: !prevState[i],
+  const handleClick = (label: string): void => {
+    setFinalOptions((prevState) => prevState.map((option) => {
+      if (option.label === label) {
+        return {
+          ...option,
+          value: !option.value,
+        };
+      }
+
+      return { ...option };
     }));
   };
 
   return (
     <div className={styles.divContainer}>
       {
-        options.map((option, index) => (
+        finalOptions.map((option, index) => (
           <div className={styles.checkboxDiv}>
             <Checkbox
               key={`${option.label}-${index}`}
-              checked={checkboxState[index]}
+              checked={option.value}
               label={option.label}
-              onClick={() => handleClick(index)}
+              onClick={() => handleClick(option.label)}
             />
           </div>
         ))

@@ -4,9 +4,9 @@ import { PopOverBox } from 'storybook/commonStorybookComponents';
 import PopCheckboxMenu from '../popCheckboxMenu';
 
 const options = [
-  { label: 'Lorem Ipsum' },
-  { label: 'Dolor Sit Amet' },
-  { label: 'Consectetur Adipiscing Elit' },
+  { label: 'Lorem Ipsum', value: true },
+  { label: 'Dolor Sit Amet', value: false },
+  { label: 'Consectetur Adipiscing Elit', value: false },
 ];
 
 const PopCheckboxMenuStory: React.FC = () => (

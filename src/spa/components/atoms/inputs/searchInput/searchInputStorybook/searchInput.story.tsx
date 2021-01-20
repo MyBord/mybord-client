@@ -17,12 +17,20 @@ const values = [
 
 const SearchInputStory: React.FC = () => {
   const [finalValues, setFinalValues] = React.useState<string[]>(values);
-  const resetValues = (): void => setFinalValues(values);
+
+  const handleSearch = (value: string): void => {
+    setFinalValues((prevState) => prevState.filter((i) => i.includes(value)));
+  };
+
+  const handleReset = (): void => setFinalValues(values);
 
   return (
     <>
       <Typography type="h1" text="Standard Search Input" />
-      <SearchInput mutateValues={setFinalValues} resetValues={resetValues} />
+      <SearchInput
+        onSearch={handleSearch}
+        onReset={handleReset}
+      />
       <ul>
         {
           finalValues.map((value, index) => (
