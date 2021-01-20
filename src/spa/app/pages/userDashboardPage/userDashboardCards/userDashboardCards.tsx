@@ -11,11 +11,11 @@ const UserDashboardCards: React.FC = () => {
   if (state.allIds.length > 0) {
     return (
       <section className={styles.section}>
-        {
-          state.allIds.map((userCardId: string) => (
-            <UserCard key={userCardId} userCardData={state.byId[userCardId]} />
-          ))
-        }
+        {/* { */}
+        {/*  state.allIds.map((userCardId: string) => ( */}
+        {/*    <UserCard key={userCardId} userCardData={state.byId[userCardId]} /> */}
+        {/*  )) */}
+        {/* } */}
         {
           // we create some phantom cards that do not appear visible but are rendered so that we can
           // `justify-content: center` our flexbox card content while having our last row be

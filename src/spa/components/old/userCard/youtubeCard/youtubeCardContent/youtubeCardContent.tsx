@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { UserCardData } from 'schema/card';
 import YoutubeCardThumbnailAnimation from 'animations/youtubeCardThumbnailAnimation';
-import YoutubePlayer from 'userCard/youtubeCard/youtubePlayer/youtubePlayer';
+import YoutubePlayer from '../youtubePlayer/youtubePlayer';
 import { useMultiSelectCardContext } from 'context/multiSelectCardContext/multiSelectCardContext';
 import YoutubeCardThumbnail from './youtubeCardThumbnail';
 
