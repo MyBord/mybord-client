@@ -277,6 +277,7 @@ export interface UserCardData {
   isFavorite: boolean;
   isToDo: boolean;
   subtitle: string;
+  tags: string[];
   title: string;
   type: CardType;
 }

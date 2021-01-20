@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { UserCardData } from 'schema/card';
 import Typography from 'typography/typography';
+import Tag from 'atoms/tag/tag';
 import * as styles from './userCard.module.less';
 
 interface Props {
@@ -28,6 +29,13 @@ const UserCard: React.FC<Props> = ({ userCardData }) => (
         text={userCardData.subtitle}
         type="bodySmall"
       />
+    </div>
+    <div>
+      {
+        userCardData.tags.map((tag) => (
+          <Tag color="purple" label={tag} />
+        ))
+      }
     </div>
   </section>
 );

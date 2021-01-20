@@ -17,12 +17,7 @@ const Tag: React.FC<Props> = ({ color, label }) => (
       styles[color],
     ].join(' ')}
   >
-    <Typography
-      color="white"
-      hasMargin={false}
-      text={label}
-      type="bodyDefault"
-    />
+    <p className={styles.p}>{label}</p>
   </div>
 );
 
