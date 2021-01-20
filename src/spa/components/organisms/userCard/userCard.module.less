@@ -1,8 +1,13 @@
 @import "~styles/_colors";
 @import "~styles/_shadows";
 
+@contentHeight: 9.375rem;
+@descriptionMargin: 1.125rem;
+@cardHeight: 20rem;
+@descriptionHeight: @cardHeight - (@descriptionMargin * 2 + @contentHeight);
+
 .contentContainer {
-  height: 8.5rem;
+  height: @contentHeight;
   overflow: hidden;
   width: 100%;
 }
@@ -12,18 +17,28 @@
 }
 
 .descriptionContainer {
-  padding: 1.125rem;
+  display: flex;
+  flex-direction: column;
+  height: @descriptionHeight;
+  justify-content: space-between;
+  margin: @descriptionMargin;
 }
 
 .img {
   width: 100%;
 }
 
+.tag {
+  &:not(:last-child) {
+    margin-right: 0.25rem;
+  }
+}
+
 .userCardContainer {
   background: @white;
   border-radius: 1.5rem;
   box-shadow: @userCardShadow;
-  height: 18rem;
+  height: @cardHeight;
   overflow: hidden;
   width: 15rem;
 }

@@ -2,11 +2,27 @@ import * as React from 'react';
 import { UserCardData } from 'schema/card';
 import Typography from 'typography/typography';
 import Tag from 'atoms/tag/tag';
+import { TagColors } from 'types/colorTypes';
 import * as styles from './userCard.module.less';
 
 interface Props {
   userCardData: UserCardData;
 }
+
+const getTagColor = (n: number): TagColors => {
+  switch (n % 4) {
+    case 0:
+      return 'purple';
+    case 1:
+      return 'pink';
+    case 2:
+      return 'yellow';
+    case 3:
+      return 'blue';
+    default:
+      throw Error;
+  }
+};
 
 const UserCard: React.FC<Props> = ({ userCardData }) => (
   <section className={styles.userCardContainer}>
@@ -24,18 +40,22 @@ const UserCard: React.FC<Props> = ({ userCardData }) => (
         type="h6"
       />
       <Typography
-        className={styles.subtitle}
         hasMargin={false}
         text={userCardData.subtitle}
         type="bodySmall"
       />
-    </div>
-    <div>
-      {
-        userCardData.tags.map((tag) => (
-          <Tag color="purple" label={tag} />
-        ))
-      }
+      <div>
+        {
+          userCardData.tags.map((tag, index) => (
+            <Tag
+              key={`${tag}-${index}`}
+              className={styles.tag}
+              color={getTagColor(index)}
+              label={tag}
+            />
+          ))
+        }
+      </div>
     </div>
   </section>
 );

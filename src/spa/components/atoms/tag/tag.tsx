@@ -1,20 +1,23 @@
 import * as React from 'react';
-import Typography from 'typography/typography';
+import { TagColors } from 'types/colorTypes';
 import * as styles from './tag.module.less';
 
 interface Props {
-  color: 'blue'
-  | 'pink'
-  | 'purple'
-  | 'yellow';
+  className?: string;
+  color: TagColors;
   label: string;
 }
 
-const Tag: React.FC<Props> = ({ color, label }) => (
+const Tag: React.FC<Props> = ({
+  className = null,
+  color,
+  label,
+}) => (
   <div
     className={[
       styles.divContainer,
       styles[color],
+      className || undefined,
     ].join(' ')}
   >
     <p className={styles.p}>{label}</p>
