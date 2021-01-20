@@ -52,7 +52,6 @@ module.exports = {
     '^server(.*)$': '<rootDir>/src/server$1',
     '^storybook(.*)$': '<rootDir>/src/thirdParty/storybook$1',
     '^styles(.*)$': '<rootDir>/src/styles$1',
-    '^tags(.*)$': '<rootDir>/src/spa/components/molecules/tags$1',
     '^templates(.*)$': '<rootDir>/src/spa/components/templates$1',
     '^typography(.*)$': '<rootDir>/src/spa/components/atoms/typography$1',
     '^types(.*)$': '<rootDir>/src/types$1',

@@ -52,7 +52,6 @@
       "server/*": ["src/server/*"],
       "storybook/*": ["src/thirdParty/storybook/*"],
       "styles/*": ["src/styles/*"],
-      "tags/*": ["src/spa/components/molecules/tags/*"],
       "templates/*": ["src/spa/components/templates/*"],
       "typography/*": ["src/spa/components/atoms/typography/*"],
       "types/*": ["src/types/*"],
