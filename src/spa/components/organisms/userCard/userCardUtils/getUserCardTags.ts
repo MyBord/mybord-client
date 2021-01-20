@@ -1,6 +1,6 @@
 import { TagColors } from 'types/colorTypes';
 
-interface Props {
+export interface UserCardTags {
   ellipsis: {
     color: TagColors;
     show: boolean;
@@ -137,7 +137,7 @@ export default (tags: string[]) => {
   const tagLengths: TagLengths = tags.map((tag) => ({ label: tag, length: getTagLength(tag) }));
   const nTags = tagLengths.length;
 
-  const props: Props = {
+  const userCardTags: UserCardTags = {
     totalLength: 0,
     tags: [],
     ellipsis: {
@@ -157,16 +157,16 @@ export default (tags: string[]) => {
     const tagColor = getTagColor(index);
 
     if (totalLength <= 204) {
-      props.totalLength += finalTagLength;
-      props.tags.push({ color: tagColor, label: tag.label });
-    } else if (props.totalLength + finalTagLength < 164 && !props.ellipsis.show) {
-      props.totalLength += finalTagLength;
-      props.tags.push({ color: tagColor, label: tag.label });
-    } else if (props.totalLength + finalTagLength >= 164 && !props.ellipsis.show) {
-      props.ellipsis.color = tagColor;
-      props.ellipsis.show = true;
+      userCardTags.totalLength += finalTagLength;
+      userCardTags.tags.push({ color: tagColor, label: tag.label });
+    } else if (userCardTags.totalLength + finalTagLength < 164 && !userCardTags.ellipsis.show) {
+      userCardTags.totalLength += finalTagLength;
+      userCardTags.tags.push({ color: tagColor, label: tag.label });
+    } else if (userCardTags.totalLength + finalTagLength >= 164 && !userCardTags.ellipsis.show) {
+      userCardTags.ellipsis.color = tagColor;
+      userCardTags.ellipsis.show = true;
     }
   });
 
-  return props;
+  return userCardTags;
 };
