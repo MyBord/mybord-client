@@ -1,48 +1,12 @@
 @import "~styles/_colors";
 @import "~styles/_shadows";
-
-@contentHeight: 9.375rem;
-@descriptionMargin: 1.125rem;
-@cardHeight: 20rem;
-@descriptionHeight: @cardHeight - (@descriptionMargin * 2 + @contentHeight);
-
-.contentContainer {
-  height: @contentHeight;
-  overflow: hidden;
-  width: 100%;
-}
-
-.subtitle {
-  margin: 0.5rem 0;
-}
-
-.descriptionContainer {
-  display: flex;
-  flex-direction: column;
-  height: @descriptionHeight;
-  justify-content: space-between;
-  margin: @descriptionMargin;
-}
-
-.img {
-  width: 100%;
-}
-
-.tag {
-  &:not(:last-child) {
-    margin-right: 0.25rem;
-  }
-}
-
-.tagsContainer {
-  display: flex;
-}
+@import "~styles/_sizes";
 
 .userCardContainer {
   background: @white;
   border-radius: 1.5rem;
   box-shadow: @userCardShadow;
-  height: @cardHeight;
+  height: @userCardHeight;
   overflow: hidden;
   width: 15rem;
 }

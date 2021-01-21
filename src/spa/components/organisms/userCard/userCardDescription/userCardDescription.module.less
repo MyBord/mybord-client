@@ -1,0 +1,19 @@
+@import "~styles/_sizes";
+
+.descriptionContainer {
+  display: flex;
+  flex-direction: column;
+  height: @userCardDescriptionHeight;
+  justify-content: space-between;
+  margin: @userCardDescriptionMargin;
+}
+
+.tag {
+  &:not(:last-child) {
+    margin-right: 0.25rem;
+  }
+}
+
+.tagsContainer {
+  display: flex;
+}
