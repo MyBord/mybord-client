@@ -9,8 +9,8 @@ interface Props extends IndividualIconProps {
 }
 
 const IconButton = React.forwardRef<HTMLButtonElement, Props>(({
-  color = 'white',
-  fill = null,
+  color,
+  fill,
   iconName,
   onClick,
   size,
@@ -22,12 +22,12 @@ const IconButton = React.forwardRef<HTMLButtonElement, Props>(({
     ref={ref}
     type="button"
   >
-    {/*<Icon*/}
-    {/*  fill={fill}*/}
-    {/*  iconName={iconName}*/}
-    {/*  size={size}*/}
-    {/*  strokeWidth={strokeWidth}*/}
-    {/*/>*/}
+    <Icon
+      fill={fill}
+      iconName={iconName}
+      size={size}
+      strokeWidth={strokeWidth}
+    />
   </button>
 ));
 
