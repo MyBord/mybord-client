@@ -1,27 +1,18 @@
 import * as React from 'react';
-const GifCard = React.lazy(() => import('userCard/gifCard/gifCard'));
-const ImageCard = React.lazy(() => import('userCard/imageCard/imageCard'));
-const YoutubeCard = React.lazy(() => import('userCard/youtubeCard/youtubeCard'));
 import { UserCardData } from 'schema/card';
+import UserCardDescription from './userCardDescription/userCardDescription';
+import UserCardContainer from './userCardContainer/userCardContainer';
+import * as styles from './userCard.module.less';
 
 interface Props {
-  isPreview?: boolean;
   userCardData: UserCardData;
 }
 
-const UserCard: React.FC<Props> = ({ isPreview = false, userCardData }) => {
-  switch (userCardData.type) {
-    case 'Gif':
-      return <GifCard key={userCardData.id} isPreview={isPreview} userCardData={userCardData} />;
-    case 'Image':
-      return <ImageCard key={userCardData.id} isPreview={isPreview} userCardData={userCardData} />;
-    case 'Youtube':
-      return (
-        <YoutubeCard key={userCardData.id} isPreview={isPreview} userCardData={userCardData} />
-      );
-    default:
-      throw new Error('Invalid user card type.');
-  }
-};
+const UserCard: React.FC<Props> = ({ userCardData }) => (
+  <section className={styles.userCardContainer}>
+    <UserCardContainer />
+    <UserCardDescription userCardData={userCardData} />
+  </section>
+);
 
 export default UserCard;

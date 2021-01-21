@@ -21,15 +21,15 @@ const AddCardModalContainer: React.FC = () => {
         url,
       } = modalData;
 
-      setUserCard({
-        id: 'preview-card',
-        category,
-        isFavorite: false,
-        isToDo: false,
-        title,
-        type,
-        cardData,
-      });
+      // setUserCard({
+      //   id: 'preview-card',
+      //   category,
+      //   isFavorite: false,
+      //   isToDo: false,
+      //   title,
+      //   type,
+      //   cardData,
+      // });
 
       setFormData({
         cardData,

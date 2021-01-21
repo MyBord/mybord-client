@@ -1,29 +1,52 @@
 import * as React from 'react';
-import Typography from 'typography/typography';
+import { TagColors } from 'types/colorTypes';
 import * as styles from './tag.module.less';
 
 interface Props {
-  color: 'blue'
-  | 'pink'
-  | 'purple'
-  | 'yellow';
-  label: string;
+  className?: string;
+  color: TagColors;
+  ellipsis?: boolean;
+  label?: string;
 }
 
-const Tag: React.FC<Props> = ({ color, label }) => (
-  <div
-    className={[
-      styles.divContainer,
-      styles[color],
-    ].join(' ')}
-  >
-    <Typography
-      color="white"
-      hasMargin={false}
-      text={label}
-      type="bodyDefault"
-    />
-  </div>
-);
+const Tag = React.forwardRef<HTMLDivElement, Props>((
+  {
+    className = null,
+    color,
+    ellipsis = false,
+    label,
+  },
+  ref,
+) => {
+  if (ellipsis) {
+    return (
+      <div
+        className={[
+          styles.divContainer,
+          styles[color],
+          className || undefined,
+        ].join(' ')}
+        ref={ref}
+      >
+        <div className={styles.dot} />
+        <div className={styles.dot} />
+        <div className={styles.dot} />
+      </div>
+    );
+  }
+
+  return (
+    <div
+      className={[
+        styles.divContainer,
+        styles[color],
+        className || undefined,
+      ].join(' ')}
+      ref={ref}
+    >
+      <p className={styles.p}>{label}</p>
+    </div>
+  );
+});
 
 export default Tag;

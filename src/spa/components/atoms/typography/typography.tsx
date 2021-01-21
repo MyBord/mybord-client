@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import * as styles from './typography.module.less';
 
 interface Props {
+  className?: string;
   color?: 'black' | 'white';
   hasMargin?: boolean;
   link?: string;
@@ -21,6 +22,7 @@ interface Props {
 }
 
 const Typography: React.FC<Props> = ({
+  className = null,
   color = 'black',
   hasMargin = true,
   link = null,
@@ -29,7 +31,13 @@ const Typography: React.FC<Props> = ({
 }) => {
   if (link && type === 'linkDefault') {
     return (
-      <Link className={styles[type]} to={link}>
+      <Link
+        className={[
+          styles[type],
+          className || undefined,
+        ].join(' ')}
+        to={link}
+      >
         {text}
       </Link>
     );
@@ -41,6 +49,7 @@ const Typography: React.FC<Props> = ({
         styles[color],
         styles[type],
         hasMargin ? styles.hasMargin : styles.noMargin,
+        className || undefined,
       ].join(' ')}
     >
       {text}

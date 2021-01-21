@@ -17,7 +17,7 @@ const AddCardModalComponent: React.FC<Props> = ({
   <Modal id="add-card-modal" title="Add To My Bord">
     <div className={styles.parentDiv}>
       <div className={styles.previewDiv}>
-        <UserCard isPreview userCardData={userCardData} />
+        {/* <UserCard isPreview userCardData={userCardData} /> */}
       </div>
       <div className={styles.formDiv}>
         <AddCardModalForm formData={formData} />

@@ -6,3 +6,8 @@ export type ExportedColors =
 | 'placeholderGrey'
 | 'red'
 | 'white';
+
+export type TagColors = 'blue'
+| 'pink'
+| 'purple'
+| 'yellow';

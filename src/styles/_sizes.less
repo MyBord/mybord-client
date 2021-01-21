@@ -6,15 +6,13 @@
 
 // ----- CARDS ----- //
 
-// general card sizes
-@userCardContentHeight: 8.4375rem;
-@userCardDescriptionHeight: 6.5rem;
-@userCardInnerMargin: 0.75rem;
-@userCardMargin: 1rem;
-@userCardTotalHeight: calc(
-  @userCardContentHeight + @userCardDescriptionHeight + @userCardMargin * 2
+@userCardContentHeight: 9.375rem;
+@userCardDescriptionMargin: 1.125rem;
+@userCardHeight: 20rem;
+@userCardDescriptionHeight: @userCardHeight - (
+  @userCardDescriptionMargin * 2 + @userCardContentHeight
 );
-@userCardWidth: 15rem;
+
 @stackCardMargin: 3rem;
 @stackCardSize: 7rem;
 @stackCardBorderRadius: 1rem;
@@ -51,7 +49,6 @@
 // ----- PAGES ----- //
 
 @userDashboardPagePaddingLeft: 1rem;
-@pageMarginLeft: calc(@userCardMargin + @userDashboardPagePaddingLeft);
 @aboutPageMargin: 7rem;
 
 // ----- SIZE EXPORTS ----- //

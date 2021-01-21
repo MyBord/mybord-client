@@ -272,12 +272,14 @@ export type CardType = 'Gif' | 'Image' | 'Youtube';
 
 export interface UserCardData {
   id: string;
+  cardData: CardData;
   category: CardCategory;
   isFavorite: boolean;
   isToDo: boolean;
+  subtitle: string;
+  tags: string[];
   title: string;
   type: CardType;
-  cardData: CardData;
 }
 
 export interface UserCardsQueryResponse {
