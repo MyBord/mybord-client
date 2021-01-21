@@ -38,7 +38,7 @@ const Icon: React.FC<IconProps> = ({
     case 'checkmark':
       return <CheckmarkIcon color={color} size={size} strokeWidth={strokeWidth} />;
     case 'heart':
-      return <HeartIcon color={color} size={size} strokeWidth={strokeWidth} />;
+      return <HeartIcon color={color} fill={fill} size={size} strokeWidth={strokeWidth} />;
     case 'pencil':
       return <PencilIcon color={color} size={size} strokeWidth={strokeWidth} />;
     case 'search':
