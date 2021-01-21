@@ -23,6 +23,7 @@ const IconButton = React.forwardRef<HTMLButtonElement, Props>(({
     type="button"
   >
     <Icon
+      color={color}
       fill={fill}
       iconName={iconName}
       size={size}
