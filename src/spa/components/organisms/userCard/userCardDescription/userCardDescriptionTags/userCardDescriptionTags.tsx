@@ -1,7 +1,9 @@
 import * as React from 'react';
-import { UserCardData } from 'schema/card';
+import PopOver from 'popOver/popOver';
 import Tag from 'atoms/tag/tag';
+import UserCardEllipsisTagContent from './userCardEllipsisTagContent';
 import getUserCardTags, { UserCardTags } from 'userCard/userCardUtils/getUserCardTags';
+import { UserCardData } from 'schema/card';
 import * as styles from './userCardDescriptionTags.module.less';
 
 interface Props {
@@ -29,11 +31,16 @@ const UserCardDescriptionTags: React.FC<Props> = ({ userCardData }) => {
       }
       {
         userCardTags && userCardTags.ellipsis.show && (
-          <Tag
-            className={styles.tag}
-            color={userCardTags.ellipsis.color}
-            ellipsis
-          />
+          <PopOver
+            Content={<UserCardEllipsisTagContent userCardTags={userCardTags} />}
+            caretPlacement="center"
+          >
+            <Tag
+              className={[styles.tag, styles.ellipsis].join(' ')}
+              color={userCardTags.ellipsis.color}
+              ellipsis
+            />
+          </PopOver>
         )
       }
     </div>

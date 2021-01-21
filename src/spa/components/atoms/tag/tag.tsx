@@ -9,12 +9,15 @@ interface Props {
   label?: string;
 }
 
-const Tag: React.FC<Props> = ({
-  className = null,
-  color,
-  ellipsis = false,
-  label,
-}) => {
+const Tag = React.forwardRef<HTMLDivElement, Props>((
+  {
+    className = null,
+    color,
+    ellipsis = false,
+    label,
+  },
+  ref,
+) => {
   if (ellipsis) {
     return (
       <div
@@ -23,6 +26,7 @@ const Tag: React.FC<Props> = ({
           styles[color],
           className || undefined,
         ].join(' ')}
+        ref={ref}
       >
         <div className={styles.dot} />
         <div className={styles.dot} />
@@ -38,10 +42,11 @@ const Tag: React.FC<Props> = ({
         styles[color],
         className || undefined,
       ].join(' ')}
+      ref={ref}
     >
       <p className={styles.p}>{label}</p>
     </div>
   );
-};
+});
 
 export default Tag;

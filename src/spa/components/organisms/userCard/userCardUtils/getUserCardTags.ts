@@ -179,6 +179,12 @@ export default (tags: string[]) => {
         label: tag.label,
         show: false,
       });
+    } else {
+      userCardTags.tags.push({
+        color: tagColor,
+        label: tag.label,
+        show: false,
+      });
     }
   });
 
