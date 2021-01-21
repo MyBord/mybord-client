@@ -6,15 +6,18 @@ const HeartIcon: React.FC<IndividualIconProps> = ({
   color,
   fill,
   size,
+  strokeWidth,
 }) => (
-  <svg height={size} width={size} viewBox="0 0 64 64">
-    <g fill="#000000" stroke="#000000" strokeLinecap="square" strokeWidth="2">
-      <path
-        d="M44.693,5A15.027,15.027,0,0,0,32,11.89,15.027,15.027,0,0,0,19.307,5,15.337,15.337,0,0,0,4,20.455C4,35.817,32,59,32,59S60,35.817,60,20.455A15.337,15.337,0,0,0,44.693,5Z"
-        fill={colors[fill]}
-        stroke={colors[color]}
-      />
-    </g>
+  <svg height={size} width={size} fill="none" viewBox="0 0 24 24">
+    <path
+      d="M20.3999 4.62C19.3399 3.54 17.9499 3 16.5399 3C15.1499 3 13.7499 3.54 12.6799 4.62L11.9999 5.31L11.3199 4.62C10.2499 3.54 8.84994 3 7.44994 3C6.04994 3 4.65994 3.54 3.59994 4.62C1.46994 6.8 1.46994 10.3 3.59994 12.46L12.0099 21L19.7199 13.16L20.3999 12.47C22.5299 10.3 22.5299 6.8 20.3999 4.62Z"
+      fill="none"
+      stroke={colors[color]}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeMiterlimit="10"
+      strokeWidth={strokeWidth}
+    />
   </svg>
 );
 
