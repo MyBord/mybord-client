@@ -10,7 +10,9 @@ interface Props {
 
 const UserCard: React.FC<Props> = ({ userCardData }) => (
   <section className={styles.userCardContainer}>
-    <UserCardContainer />
+    <div className={styles.contentContainer}>
+      <UserCardContainer userCardData={userCardData} />
+    </div>
     <UserCardDescription userCardData={userCardData} />
   </section>
 );
