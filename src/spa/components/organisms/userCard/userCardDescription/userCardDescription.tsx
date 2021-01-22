@@ -13,12 +13,14 @@ const UserCardDescription: React.FC<Props> = ({ userCardData }) => (
   <div className={styles.descriptionContainer}>
     <Typography
       hasMargin={false}
+      maxTextLength={48}
       text={userCardData.title}
       type="h6"
     />
     <Typography
       className={styles.subTitle}
       hasMargin={false}
+      maxTextLength={56}
       text={userCardData.subtitle}
       type="bodySmall"
     />

@@ -1,6 +1,27 @@
 @import "~styles/_colors";
 @import "~styles/_fonts";
 
+.dot {
+  background: @blue;
+  border-radius: 50%;
+}
+
+.ellipsis {
+  cursor: pointer;
+  display: inline-flex;
+  margin: 0 0 0 0.125rem;
+  &:hover {
+    > div {
+      background: @lightBlue;
+    }
+  }
+  > div {
+    height: 0.1875rem;
+    margin: 0.0625rem;
+    width: 0.1875rem;
+  }
+}
+
 .typographyMixin {
   font-family: @prompt;
 }
