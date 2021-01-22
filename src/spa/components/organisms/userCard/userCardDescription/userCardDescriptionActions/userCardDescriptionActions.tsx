@@ -1,10 +1,15 @@
 import * as React from 'react';
 import IconButton from 'buttons/iconButton/iconButton';
+import { UserCardData } from 'schema/card';
 import * as styles from './userCardDescriptionActions.module.less';
 
-const UserCardDescriptionActions: React.FC = () => {
-  const [isFavorite, setIsFavorite] = React.useState<boolean>(false);
-  const [isToDo, setIsToDo] = React.useState<boolean>(false);
+interface Props {
+  userCardData: UserCardData;
+}
+
+const UserCardDescriptionActions: React.FC<Props> = ({ userCardData }) => {
+  const [isFavorite, setIsFavorite] = React.useState<boolean>(userCardData.isFavorite);
+  const [isToDo, setIsToDo] = React.useState<boolean>(userCardData.isToDo);
 
   const handleFavorite = (): void => setIsFavorite((prevState) => !prevState);
   const handleToDo = (): void => setIsToDo((prevState) => !prevState);

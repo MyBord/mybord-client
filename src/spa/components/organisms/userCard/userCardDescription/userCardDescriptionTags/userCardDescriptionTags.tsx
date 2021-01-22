@@ -18,7 +18,12 @@ const UserCardDescriptionTags: React.FC<Props> = ({ userCardData }) => {
   }, [userCardData.tags]);
 
   return (
-    <div className={styles.tagsContainer}>
+    <div
+      className={[
+        styles.tagsContainer,
+        userCardTags && userCardTags.tags.length ? styles.hasTags : styles.noTags,
+      ].join(' ')}
+    >
       {
         userCardTags && userCardTags.tags.filter((tag) => tag.show).map((tag, index) => (
           <Tag
