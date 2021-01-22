@@ -6,9 +6,9 @@ const defaultData: UserCardData = {
   category: 'Video',
   isFavorite: false,
   isToDo: false,
-  subtitle: 'Augue at ut arcu risus euismod morbi blandit non facilisi.',
+  subtitle: 'Augue at ut arcu risus euismod morbi blandit facilisi.',
   tags: ['lorem', 'dolor', 'elit', 'consectetur', 'adipiscing', 'amet', 'blandit'],
-  title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+  title: 'Lorem ipsum dolor sit amet consectetur elit.',
   type: 'Youtube',
 };
 
@@ -20,6 +20,15 @@ const isFavorite: UserCardData = {
 const isToDo: UserCardData = {
   ...defaultData,
   isToDo: true,
+};
+
+const longTitle: UserCardData = {
+  ...defaultData,
+  subtitle: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu'
+  + ' fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui'
+  + ' officia deserunt mollit anim id est laborum.',
+  title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt'
+  + ' ut labore et dolore magna aliqua.',
 };
 
 const noTags: UserCardData = {
@@ -36,6 +45,7 @@ export default {
   defaultData,
   isFavorite,
   isToDo,
+  longTitle,
   noTags,
   someTags,
 };

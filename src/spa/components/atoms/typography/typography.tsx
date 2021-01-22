@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
+import Tooltip from 'molecules/tooltip/tooltip';
 import * as styles from './typography.module.less';
 
 interface Props {
@@ -7,6 +8,7 @@ interface Props {
   color?: 'black' | 'white';
   hasMargin?: boolean;
   link?: string;
+  maxTextLength?: number;
   text: string;
   type:
   'h1'
@@ -26,9 +28,17 @@ const Typography: React.FC<Props> = ({
   color = 'black',
   hasMargin = true,
   link = null,
+  maxTextLength = null,
   text,
   type,
 }) => {
+  const pClassName = [
+    styles[color],
+    styles[type],
+    hasMargin ? styles.hasMargin : styles.noMargin,
+    className || undefined,
+  ].join(' ');
+
   if (link && type === 'linkDefault') {
     return (
       <Link
@@ -43,15 +53,23 @@ const Typography: React.FC<Props> = ({
     );
   }
 
+  if (maxTextLength && text && text.length > maxTextLength) {
+    return (
+      <p className={pClassName}>
+        {text.slice(0, maxTextLength).trim()}
+        <Tooltip text={text} trigger="click">
+          <div className={[styles.ellipsis].join(' ')}>
+            <div className={styles.dot} />
+            <div className={styles.dot} />
+            <div className={styles.dot} />
+          </div>
+        </Tooltip>
+      </p>
+    );
+  }
+
   return (
-    <p
-      className={[
-        styles[color],
-        styles[type],
-        hasMargin ? styles.hasMargin : styles.noMargin,
-        className || undefined,
-      ].join(' ')}
-    >
+    <p className={pClassName}>
       {text}
     </p>
   );

@@ -22,6 +22,9 @@ const UserCardStory: React.FC = () => (
     <UserCard userCardData={userCardMockData.isFavorite} />
     <Typography text="is To Do" type="h3" />
     <UserCard userCardData={userCardMockData.isToDo} />
+    <Typography text="Card Titles" type="h1" />
+    <Typography text="w/ long titles" type="h3" />
+    <UserCard userCardData={userCardMockData.longTitle} />
   </>
 );
 

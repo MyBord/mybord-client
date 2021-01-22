@@ -23,11 +23,12 @@ const Tooltip: React.FC<Props> = ({
 }) => {
   const Content: React.FC = () => (
     <div className={styles.textDiv}>
-      {/* <Typography */}
-      {/*  color="white" */}
-      {/*  size="normal" */}
-      {/*  text={text} */}
-      {/* /> */}
+      <Typography
+        color="white"
+        hasMargin={false}
+        text={text}
+        type="bodyDefault"
+      />
     </div>
   );
 
