@@ -14,7 +14,11 @@ const PopConfirmContent: React.FC<Props> = ({ onHide, text }) => (
       <Typography hasMargin={false} type="bodyDefault" text={text} />
     </div>
     <div className={styles.buttonContainer}>
-      <Button label="Cancel" onClick={onHide} type="secondary" />
+      <Button
+        label="Cancel"
+        onClick={onHide}
+        type="text"
+      />
       <Button label="Yes" />
     </div>
   </div>
