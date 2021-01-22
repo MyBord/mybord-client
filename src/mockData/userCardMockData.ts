@@ -6,9 +6,9 @@ const defaultData: UserCardData = {
   category: 'Video',
   isFavorite: false,
   isToDo: false,
-  subtitle: 'Augue at ut arcu risus euismod morbi blandit non facilisi.',
+  subtitle: 'Augue at ut arcu risus euismod morbi blandit facilisi.',
   tags: ['lorem', 'dolor', 'elit', 'consectetur', 'adipiscing', 'amet', 'blandit'],
-  title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+  title: 'Lorem ipsum dolor sit amet consectetur elit.',
   type: 'Youtube',
 };
 
