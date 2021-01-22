@@ -12,14 +12,13 @@ const UserCardDescriptionActions: React.FC = () => {
   return (
     <div className={styles.divContainer}>
       <IconButton
-        color={isToDo ? 'green' : 'black'}
+        className={isToDo ? styles.greenCheckmark : styles.blackCheckmark}
         iconName="checkmark"
         onClick={handleToDo}
         size={20}
-        strokeWidth={isToDo ? 1.5 : 0.75}
       />
       <IconButton
-        fill={isFavorite ? 'red' : null}
+        className={isFavorite ? styles.redHeart : styles.emptyHeart}
         iconName="heart"
         onClick={handleFavorite}
         size={20}

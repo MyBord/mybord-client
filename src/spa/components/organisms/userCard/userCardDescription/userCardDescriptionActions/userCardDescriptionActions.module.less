@@ -1,3 +1,43 @@
+@import "~styles/_colors";
+
+.blackCheckmark {
+  > svg {
+    * {
+      stroke: @black;
+      stroke-width: 0.046875rem;
+      transition: all 0.5s;
+    }
+  }
+}
+
+.greenCheckmark {
+  > svg {
+    * {
+      stroke: @green;
+      stroke-width: 0.09375rem;
+      transition: all 0.5s;
+    }
+  }
+}
+
+.emptyHeart {
+  > svg {
+    * {
+      fill: transparent;
+      transition: all 0.5s;
+    }
+  }
+}
+
+.redHeart {
+  > svg {
+    * {
+      fill: @red;
+      transition: all 0.5s;
+    }
+  }
+}
+
 .divContainer {
   display: flex;
   justify-content: space-between;

@@ -17,6 +17,7 @@ const UserCardDescription: React.FC<Props> = ({ userCardData }) => (
       type="h6"
     />
     <Typography
+      className={styles.subTitle}
       hasMargin={false}
       text={userCardData.subtitle}
       type="bodySmall"
