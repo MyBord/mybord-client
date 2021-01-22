@@ -1,5 +1,6 @@
 import * as React from 'react';
 import IconButton from 'buttons/iconButton/iconButton';
+import PopConfirm from 'modals/popConfirm/popConfirm';
 import { UserCardData } from 'schema/card';
 import * as styles from './userCardDescriptionActions.module.less';
 
@@ -29,11 +30,13 @@ const UserCardDescriptionActions: React.FC<Props> = ({ userCardData }) => {
         size={20}
         strokeWidth={0.75}
       />
-      <IconButton
-        iconName="trash"
-        size={20}
-        strokeWidth={0.75}
-      />
+      <PopConfirm text="Are you sure you want to delete?">
+        <IconButton
+          iconName="trash"
+          size={20}
+          strokeWidth={0.75}
+        />
+      </PopConfirm>
       <IconButton
         iconName="pencil"
         size={20}
