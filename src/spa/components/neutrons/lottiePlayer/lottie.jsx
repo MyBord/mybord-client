@@ -1,11 +1,11 @@
-/* eslint-disable react/prop-types
-  jsx-a11y/no-noninteractive-tabindex,
-  jsx-a11y/no-static-element-interactions,
-  jsx-a11y/click-events-have-key-events
-*/
+/* eslint-disable */
+/* eslint-disable jsx-a11y/no-noninteractive-tabindex */
+/* eslint-disable react/jsx-filename-extension */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 
 // Source: https://github.com/chenqingspring/react-lottie
 
+// eslint-disable-next-line no-use-before-define
 import React from 'react';
 import lottie from 'lottie-web';
 
@@ -25,19 +25,19 @@ export default class Lottie extends React.Component {
     } = options;
 
     this.options = {
-      container: this.el,
-      renderer: 'svg',
-      loop: loop !== false,
-      autoplay: autoplay !== false,
-      segments: segments !== false,
       animationData,
+      autoplay: autoplay !== false,
+      container: this.el,
+      loop: loop !== false,
+      renderer: 'svg',
       rendererSettings,
+      segments: segments !== false,
     };
-
 
     this.options = { ...this.options, ...options };
 
     this.anim = lottie.loadAnimation(this.options);
+    // eslint-disable-next-line react/destructuring-assignment
     this.anim.setSpeed(this.props.speed);
     this.registerEvents(eventListeners);
   }
@@ -45,6 +45,7 @@ export default class Lottie extends React.Component {
   UNSAFE_componentWillUpdate(nextProps /* , nextState */) {
     /* Recreate the animation handle if the data is changed */
     if (this.options.animationData !== nextProps.options.animationData) {
+      // eslint-disable-next-line react/destructuring-assignment
       this.deRegisterEvents(this.props.eventListeners);
       this.destroy();
       this.options = { ...this.options, ...nextProps.options };
@@ -54,8 +55,10 @@ export default class Lottie extends React.Component {
   }
 
   componentDidUpdate() {
+    // eslint-disable-next-line react/destructuring-assignment
     if (this.props.isStopped) {
       this.stop();
+      // eslint-disable-next-line react/destructuring-assignment
     } else if (this.props.segments) {
       this.playSegments();
     } else {
@@ -68,17 +71,21 @@ export default class Lottie extends React.Component {
   }
 
   componentWillUnmount() {
+    // eslint-disable-next-line react/destructuring-assignment
     this.deRegisterEvents(this.props.eventListeners);
     this.destroy();
     this.options.animationData = null;
     this.anim = null;
   }
 
+  // eslint-disable-next-line react/sort-comp
   setSpeed() {
+    // eslint-disable-next-line react/destructuring-assignment
     this.anim.setSpeed(this.props.speed);
   }
 
   setDirection() {
+    // eslint-disable-next-line react/destructuring-assignment
     this.anim.setDirection(this.props.direction);
   }
 
@@ -97,6 +104,7 @@ export default class Lottie extends React.Component {
   }
 
   playSegments() {
+    // eslint-disable-next-line react/destructuring-assignment
     this.anim.playSegments(this.props.segments);
   }
 
@@ -105,8 +113,10 @@ export default class Lottie extends React.Component {
   }
 
   pause() {
+    // eslint-disable-next-line react/destructuring-assignment
     if (this.props.isPaused && !this.anim.isPaused) {
       this.anim.pause();
+      // eslint-disable-next-line react/destructuring-assignment
     } else if (!this.props.isPaused && this.anim.isPaused) {
       this.anim.pause();
     }
@@ -152,10 +162,13 @@ export default class Lottie extends React.Component {
 
     const lottieStyles = {
       width: getSize(width),
+      // eslint-disable-next-line sort-keys
       height: getSize(height),
       overflow: 'hidden',
+      // eslint-disable-next-line sort-keys
       margin: '0 auto',
       outline: 'none',
+      // eslint-disable-next-line react/destructuring-assignment
       ...this.props.style,
     };
 
@@ -166,24 +179,24 @@ export default class Lottie extends React.Component {
         ref={(c) => {
           this.el = c;
         }}
-        style={lottieStyles}
-        onClick={onClickHandler}
-        title={title}
-        role={ariaRole}
         aria-label={ariaLabel}
+        onClick={onClickHandler}
+        role={ariaRole}
+        style={lottieStyles}
         tabIndex="0"
+        title={title}
       />
     );
   }
 }
 
 Lottie.defaultProps = {
-  eventListeners: [],
-  isStopped: false,
-  isPaused: false,
-  speed: 1,
-  ariaRole: 'button',
   ariaLabel: 'animation',
+  ariaRole: 'button',
+  eventListeners: [],
   isClickToPauseDisabled: false,
+  isPaused: false,
+  isStopped: false,
+  speed: 1,
   title: '',
 };
