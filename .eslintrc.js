@@ -69,7 +69,13 @@ module.exports = {
     'react/jsx-props-no-spreading': 1,
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'error',
-    'import/no-unresolved': 0
+    'import/no-unresolved': 0,
+    "import/extensions": ["warning", "ignorePackages", {
+      "js": "never",
+      "jsx": "never",
+      "ts": "never",
+      "tsx": "never"
+    }]
   },
   settings: {
     'import/extensions': [

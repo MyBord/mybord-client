@@ -1,5 +1,4 @@
-/* eslint-disable
-  react/prop-types,
+/* eslint-disable react/prop-types
   jsx-a11y/no-noninteractive-tabindex,
   jsx-a11y/no-static-element-interactions,
   jsx-a11y/click-events-have-key-events
