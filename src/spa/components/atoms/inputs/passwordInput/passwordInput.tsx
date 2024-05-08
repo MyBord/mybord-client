@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Input } from 'antd';
-import '../textInput/textInput.less';
+import '../textInput/textInput.module.less';
 
 interface Props {
   disabled?: boolean;
