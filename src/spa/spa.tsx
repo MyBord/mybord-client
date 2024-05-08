@@ -9,13 +9,11 @@ import Landing from 'landing/landing';
 //   * Context Providers
 //   * Our actual spa application with authentication handling
 const Spa: React.FC = () => (
-  <BrowserRouter>
-    <SpaProviders>
-      <React.Suspense fallback={<div />}>
-        <App />
-      </React.Suspense>
-    </SpaProviders>
-  </BrowserRouter>
+  <SpaProviders>
+    <React.Suspense fallback={<div />}>
+      <App />
+    </React.Suspense>
+  </SpaProviders>
 );
 
 export default Spa;

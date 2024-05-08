@@ -5,7 +5,7 @@ import * as styles from './navigationAnimation.module.less';
 
 export const variants = {
   initial: {
-    width: 0,
+    width: sizes.navWidth,
   },
   enter: {
     width: sizes.navWidth,

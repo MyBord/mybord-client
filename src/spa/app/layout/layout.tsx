@@ -20,7 +20,7 @@ const Layout: React.FC<Props> = ({ children }) => {
     <>
       <Navigation />
       <main className={styles.main}>
-        <Header />
+        {/*<Header />*/}
         <section className={styles.section}>
           {children}
         </section>

@@ -1,7 +1,6 @@
 import * as React from 'react';
-import UserDashboardPageContainer from './userDashboardPageContainer';
+import UserDashboardPageComponent from './userDashboardPageComponent';
 
-// @ts-expect-error foo
-const UserDashboardPage: React.FC = () => <UserDashboardPageContainer />;
+const UserDashboardPage: React.FC = () => <UserDashboardPageComponent />;
 
 export default UserDashboardPage;

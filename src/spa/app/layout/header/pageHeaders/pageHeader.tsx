@@ -10,20 +10,23 @@ const UserSettingsPageHeader = React.lazy(
 import { useCurrentUserContext } from 'context/currentUserContext/currentUserContext';
 
 const PageHeader: React.FC = () => {
-  const { pathname } = useLocation();
+  // const { pathname } = useLocation();
   const { currentUser } = useCurrentUserContext();
 
-  const path = pathname.split('/')[1];
-  switch (path) {
-    case currentUser.username:
-      return <UserDashboardPageHeader />;
-    case 'about':
-      return <AboutPageHeader />;
-    case 'settings':
-      return <UserSettingsPageHeader />;
-    default:
-      return null;
-  }
+  return <UserDashboardPageHeader />;
+  // // const path = pathname.split('/')[1];
+  // const path = 'foo';
+  // switch (path) {
+  //   // case currentUser.username:
+  //   case 'foo':
+  //     return <UserDashboardPageHeader />;
+  //   case 'about':
+  //     return <AboutPageHeader />;
+  //   case 'settings':
+  //     return <UserSettingsPageHeader />;
+  //   default:
+  //     return null;
+  // }
 };
 
 export default PageHeader;
