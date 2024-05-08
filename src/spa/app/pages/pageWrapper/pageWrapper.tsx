@@ -10,87 +10,22 @@
 
 import * as React from 'react';
 import Spinner from 'fallbacks/spinner/spinner';
-import api from 'api/api';
-import { GqlString } from 'types/gqlTypes';
-import { useHydrationContext } from 'context/hydrationContext/hydrationContext';
-
-interface PageContentProps {
-  isAnimationComplete: boolean;
-  setHydrationStatus: (status: boolean) => void;
-}
 
 interface Props {
-  Component: React.FC<WrappedComponentProps>;
-  gqlString?: GqlString;
+  Component: React.FC;
+  gqlString?: string;
   setHydration?: boolean;
-}
-
-interface WrappedComponentProps {
-  data?: any;
 }
 
 const pageWrapper = ({
   Component,
   gqlString,
   setHydration = true,
-}: Props): React.FC => {
-  // ----- NO DATA IS NEEDED ----- //
-  if (!gqlString) {
-    const NoDataPage: React.FC = () => {
-      const { isAnimationComplete, setHydrationStatus } = useHydrationContext();
-
-      // See *1 in `hydrationContext.tsx`
-      React.useEffect(() => {
-        if (setHydration) {
-          setHydrationStatus(true);
-        }
-      }, [setHydrationStatus]);
-
-      // See *2 in `hydrationContext.tsx`
-      if (isAnimationComplete) {
-        return <Component />;
-      }
-      return null;
-    };
-
-    return NoDataPage;
-  }
-
-  // ----- DATA IS NEEDED ----- //
-  const resource = api.query(gqlString);
-
-  const Page: React.FC = () => {
-    const { isAnimationComplete, isHydrated, setHydrationStatus } = useHydrationContext();
-    // See *1 notes in `hydrationContext.tsx` about why our fallback `Spinner` may not render unless
-    // our app has been hydrated.
-    return (
-      <React.Suspense fallback={isHydrated && <Spinner />}>
-        <PageContent
-          isAnimationComplete={isAnimationComplete}
-          setHydrationStatus={setHydrationStatus}
-        />
-      </React.Suspense>
-    );
-  };
-
-  const PageContent: React.FC<PageContentProps> = ({ isAnimationComplete, setHydrationStatus }) => {
-    const data = resource.data.read();
-
-    // See *1 in `hydrationContext.tsx`
-    React.useEffect(() => {
-      if (setHydration) {
-        setHydrationStatus(true);
-      }
-    }, [setHydrationStatus]);
-
-    // See *2 in `hydrationContext.tsx`
-    if (isAnimationComplete) {
-      return <Component data={data} />;
-    }
-    return null;
-  };
-
-  return Page;
-};
+}: Props): React.ReactElement => (
+  <div>
+    <Spinner />
+    <Component />
+  </div>
+);
 
 export default pageWrapper;

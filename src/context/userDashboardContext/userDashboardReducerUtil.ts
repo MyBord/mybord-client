@@ -1,12 +1,10 @@
-import {
-  assign,
-  cloneDeep,
-  omit,
-  pull,
-} from 'lodash';
-import { UserDashboardState } from './userDashboardState';
+import assign from 'lodash/assign';
+import cloneDeep from 'lodash/cloneDeep';
+import omit from 'lodash/omit';
+import pull from 'lodash/pull';
 import { UserCardData } from 'schema/card';
 import { capitalize } from 'utils/language';
+import { UserDashboardState } from './userDashboardState';
 
 type AllIdsCards = UserDashboardState['allIds'];
 type ByIdCards = UserDashboardState['byId'];

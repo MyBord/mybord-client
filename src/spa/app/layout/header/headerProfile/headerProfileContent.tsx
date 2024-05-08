@@ -1,4 +1,5 @@
 import * as React from 'react';
+// @ts-expect-error foo
 import { useHistory } from 'react-router';
 import { useLazyQuery } from '@apollo/react-hooks';
 import Icon from 'icon/icon';

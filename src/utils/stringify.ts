@@ -1,4 +1,4 @@
-import { cloneDeep } from 'lodash';
+import cloneDeep from 'lodash/cloneDeep';
 import { CommonObject } from 'types/commonTypes';
 
 const stripProp = (object: CommonObject): void => {
