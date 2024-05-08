@@ -1,14 +1,14 @@
 import * as React from 'react';
 import { AnimatePresence } from 'framer-motion';
 import { Switch, useLocation } from 'react-router-dom';
-const AboutDevPage = React.lazy(() => import('pages/aboutDevPage/aboutDevPage'));
-const AboutPage = React.lazy(() => import('pages/aboutPage/aboutPage'));
-const CantPage = React.lazy(() => import('pages/cantPage/cantPage'));
-const ErrorPage = React.lazy(() => import('pages/errorPage/errorPage'));
-const FriendsPage = React.lazy(() => import('pages/friendsPage/friendsPage'));
-const TrendingPage = React.lazy(() => import('pages/trendingPage/trendingPage'));
-const UserDashboardPage = React.lazy(() => import('pages/userDashboardPage/userDashboardPage'));
-const UserSettingsPage = React.lazy(() => import('pages/userSettingsPage/userSettingsPage'));
+import AboutDevPage from 'pages/aboutDevPage/aboutDevPage';
+import AboutPage from 'pages/aboutPage/aboutPage';
+import CantPage from 'pages/cantPage/cantPage';
+import ErrorPage from 'pages/errorPage/errorPage';
+import FriendsPage from 'pages/friendsPage/friendsPage';
+import TrendingPage from 'pages/trendingPage/trendingPage';
+import UserDashboardPage from 'pages/userDashboardPage/userDashboardPage';
+import UserSettingsPage from 'pages/userSettingsPage/userSettingsPage';
 import MotionRedirect from 'neutrons/routing/motionRedirect';
 import MotionRoute from 'neutrons/routing/motionRoute';
 
