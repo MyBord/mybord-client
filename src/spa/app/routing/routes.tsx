@@ -12,12 +12,8 @@ import UserSettingsPage from 'pages/userSettingsPage/userSettingsPage';
 import MotionRedirect from 'neutrons/routing/motionRedirect';
 import MotionRoute from 'neutrons/routing/motionRoute';
 
-interface Props {
-  username: string;
-}
-
-const Routes: React.FC<Props> = ({ username }) => {
-  const usernamePath = `/${username}`;
+const Routes: React.FC = () => {
+  const usernamePath = `/user`;
   const location = useLocation();
   return (
     <AnimatePresence exitBeforeEnter>

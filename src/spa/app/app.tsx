@@ -5,12 +5,10 @@ import Routes from 'routing/routes';
 import { useCurrentUserContext } from 'context/currentUserContext/currentUserContext';
 
 const App: React.FC = () => {
-  const { currentUser } = useCurrentUserContext();
-
   return (
     <Layout>
       <ErrorBoundary>
-        <Routes username={currentUser.username} />
+        <Routes />
       </ErrorBoundary>
     </Layout>
   );

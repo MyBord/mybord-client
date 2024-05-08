@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import SpaProviders from 'context/spaProviders/spaProviders';
-import SpaAuthentication from './initialization/spaAuthentication';
+import App from 'app/app';
+import Landing from 'landing/landing';
 
 // This is the actual final, production React code that instantiates our application. It contains:
 //   * A router
@@ -10,7 +11,9 @@ import SpaAuthentication from './initialization/spaAuthentication';
 const Spa: React.FC = () => (
   <BrowserRouter>
     <SpaProviders>
-      <SpaAuthentication />
+      <React.Suspense fallback={<div />}>
+        <App />
+      </React.Suspense>
     </SpaProviders>
   </BrowserRouter>
 );
