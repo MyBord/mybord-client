@@ -1,8 +1,5 @@
 import * as React from 'react';
-import Button from 'buttons/button/button';
-import IconButton from 'buttons/iconButton/iconButton';
 import FormItem from 'formItem/formItem';
-import TextInput from 'inputs/textInput/textInput';
 import { FormProp } from 'types/formTypes';
 import { TOGGLE_SHOW_FILTERS } from 'context/userDashboardContext/userDashboardReducerTypes';
 import { useMultiSelectCardContext } from 'context/multiSelectCardContext/multiSelectCardContext';
@@ -27,7 +24,7 @@ const UserDashboardPageHeaderFormContent: React.FC<Props> = ({
 
   const handleFilterClick = (): void => {
     dispatch({ type: TOGGLE_SHOW_FILTERS });
-  }
+  };
 
   return (
     <div className={styles.formContainer}>

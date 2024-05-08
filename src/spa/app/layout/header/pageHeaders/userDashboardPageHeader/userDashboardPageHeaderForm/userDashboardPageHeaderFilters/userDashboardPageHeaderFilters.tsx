@@ -4,7 +4,7 @@ import Checkbox from 'inputs/checkbox/checkbox';
 import Dropdown from 'inputs/dropdown/dropdown';
 import FormItem from 'formItem/formItem';
 import UserDashboardFiltersAnimation from 'animations/userDashboardFiltersAnimation';
-import { CardCategory, USER_CARDS_WITH_FILTERS_QUERY } from 'schema/card';
+import { CardCategory } from 'schema/card';
 import { FormProp } from 'types/formTypes';
 import { SET_CARD_CATEGORIES_FILTER } from 'context/userDashboardContext/userDashboardReducerTypes';
 import { dropdownCategoryOptions } from 'mockData/inputsMockData';
@@ -17,7 +17,6 @@ interface Props {
 
 const UserDashboardPageHeaderFilters: React.FC<Props> = ({ form }) => {
   const dropdownRef = React.useRef<any>(null);
-  const [userCardsQuery] = useLazyQuery(USER_CARDS_WITH_FILTERS_QUERY, { fetchPolicy: 'no-cache' });
   const { state, dispatch } = useUserDashboardContext();
 
   const { categories, isFavorite, isToDo } = state.filters;
@@ -27,35 +26,13 @@ const UserDashboardPageHeaderFilters: React.FC<Props> = ({ form }) => {
   }, [categories]);
 
   const handleCategoriesChange = async (cardCategories: CardCategory[]): Promise<void> => {
-    await userCardsQuery({
-      variables: {
-        categories: cardCategories,
-        isFavorite,
-        isToDo,
-      },
-    });
-
     dispatch({ type: SET_CARD_CATEGORIES_FILTER, categories: cardCategories });
   };
 
   const handleToggleFavoriteFilter = async (): Promise<void> => {
-    await userCardsQuery({
-      variables: {
-        categories,
-        isFavorite: !isFavorite,
-        isToDo,
-      },
-    });
   };
 
   const handleToggleToDoFilter = async (): Promise<void> => {
-    await userCardsQuery({
-      variables: {
-        categories,
-        isFavorite,
-        isToDo: !isToDo,
-      },
-    });
   };
 
   return (

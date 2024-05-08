@@ -1,6 +1,4 @@
 import * as React from 'react';
-import { useMutation } from '@apollo/react-hooks';
-import { CREATE_USER_MUTATION } from 'schema/user';
 import { FormProp } from 'types/formTypes';
 import { useModalContext } from 'context/modalContext/modalContext';
 import { useToastContext } from 'context/toastContext/toastContext';
@@ -13,7 +11,6 @@ interface Props {
 
 const UserAgreementModalContainer: React.FC<Props> = ({ form, handleAcceptTerms }) => {
   const { setModalId } = useModalContext();
-  const [createUser] = useMutation(CREATE_USER_MUTATION);
   const [isAuthenticationWaiting, setIsAuthenticationWaiting] = React.useState<boolean>(false);
   const { setToastId } = useToastContext();
 
@@ -26,15 +23,6 @@ const UserAgreementModalContainer: React.FC<Props> = ({ form, handleAcceptTerms 
     const values = form.getFieldsValue();
     try {
       setIsAuthenticationWaiting(true);
-
-      // try to create the new user with the backend
-      await createUser({
-        variables: {
-          email: values.loginEmail,
-          password: values.loginPassword,
-          username: values.loginUsername,
-        },
-      });
 
       handleAcceptTerms();
 

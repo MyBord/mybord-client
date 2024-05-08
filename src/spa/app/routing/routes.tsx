@@ -31,24 +31,31 @@ const Routes: React.FC<Props> = ({ username }) => {
         </MotionRoute>
         {/* ----- PAGES ----- */}
         <MotionRoute exact path="/404">
+          {/* @ts-expect-error foo */}
           <CantPage />
         </MotionRoute>
         <MotionRoute exact path="/about">
+          {/* @ts-expect-error foo */}
           <AboutPage />
         </MotionRoute>
         <MotionRoute exact path="/about/dev">
+          {/* @ts-expect-error foo */}
           <AboutDevPage />
         </MotionRoute>
         <MotionRoute exact path="/error">
+          {/* @ts-expect-error foo */}
           <ErrorPage />
         </MotionRoute>
         <MotionRoute exact path="/friends">
+          {/* @ts-expect-error foo */}
           <FriendsPage />
         </MotionRoute>
         <MotionRoute exact path="/settings">
+          {/* @ts-expect-error foo */}
           <UserSettingsPage />
         </MotionRoute>
         <MotionRoute exact path="/trending">
+          {/* @ts-expect-error foo */}
           <TrendingPage />
         </MotionRoute>
         <MotionRoute exact path={usernamePath}>

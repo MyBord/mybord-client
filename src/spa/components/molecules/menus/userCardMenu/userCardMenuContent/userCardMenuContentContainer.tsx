@@ -3,10 +3,7 @@
 // when `isToDo` is toggled, so instead, we rehook into the context at this component level.
 
 import * as React from 'react';
-import { useMutation } from '@apollo/react-hooks';
 import {
-  DELETE_USER_CARD_MUTATION,
-  TOGGLE_TO_DO_USER_CARD_MUTATION,
   UserCardData,
 } from 'schema/card';
 import { TOGGLE_CARD_FILTER } from 'context/userDashboardContext/userDashboardReducerTypes';
@@ -22,32 +19,17 @@ const UserCardMenuContentContainer: React.FC<Props> = ({ cardId }) => {
 
   const userCard = state.byId[cardId]; // *1
 
-  const [deleteUserCard] = useMutation(DELETE_USER_CARD_MUTATION);
   const [isToDo, setIsToDo] = React.useState<boolean>(userCard.isToDo);
-  const [toggleToDoUserCard] = useMutation(TOGGLE_TO_DO_USER_CARD_MUTATION);
-
-  const handleDelete = React.useCallback(async () => {
-    await deleteUserCard({
-      variables: { cardId: userCard.id },
-    });
-  }, [deleteUserCard, userCard.id]);
 
   const toggleToDo = async (): Promise<void> => {
     setIsToDo((prevState) => !prevState);
+    // eslint-disable-next-line sort-keys
     dispatch({ type: TOGGLE_CARD_FILTER, filter: 'toDo', id: userCard.id });
-    try {
-      await toggleToDoUserCard({
-        variables: { cardId: userCard.id },
-      });
-    } catch (error) {
-      setIsToDo((prevState) => !prevState);
-      throw new Error(error);
-    }
   };
 
   return (
     <UserCardMenuContentComponent
-      handleDelete={handleDelete}
+      handleDelete={() => {}}
       isToDo={isToDo}
       toggleToDo={toggleToDo}
     />

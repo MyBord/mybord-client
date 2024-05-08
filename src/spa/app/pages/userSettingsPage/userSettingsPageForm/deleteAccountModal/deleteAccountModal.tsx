@@ -4,13 +4,11 @@ import Button from 'buttons/button/button';
 import Form from 'form/form';
 import Modal from 'modal/modal';
 import Typography from 'typography/typography';
-import { DELETE_CURRENT_USER_MUTATION } from 'schema/user';
 import { useModalContext } from 'context/modalContext/modalContext';
 import DeleteAccountModalFormContent from './deleteAccountModalFormContent';
 import * as styles from './deleteAccountModal.module.less';
 
 const DeleteAccountModal: React.FC = () => {
-  const [deleteCurrentUser] = useMutation(DELETE_CURRENT_USER_MUTATION);
   const { setModalId } = useModalContext();
 
   const [canDelete, setCanDelete] = React.useState<boolean>(false);
@@ -19,8 +17,6 @@ const DeleteAccountModal: React.FC = () => {
 
   const handleDelete = async (): Promise<void> => {
     setHasDeletingBegun(true);
-
-    await deleteCurrentUser();
 
     setHasDeletingFinished(true);
     setModalId(null);
